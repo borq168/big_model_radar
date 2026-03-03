@@ -2,7 +2,7 @@
 
 English | [中文](./README.zh.md)
 
-A GitHub Actions workflow that runs every morning at 08:00 CST. It tracks GitHub activity from AI CLI tools, OpenClaw and its peer projects in the AI agent ecosystem, scrapes official news and research from Anthropic and OpenAI, and monitors the GitHub AI trending repos daily — then publishes Chinese-language daily digests as GitHub Issues and committed Markdown files.
+A GitHub Actions workflow that runs every morning at 08:00 CST. It tracks GitHub activity from AI CLI tools, OpenClaw and its peer projects in the AI agent ecosystem, scrapes official news and research from Anthropic and OpenAI, and monitors the GitHub AI trending repos daily — then publishes bilingual (Chinese + English) daily digests as GitHub Issues and committed Markdown files. Weekly and monthly rollup reports are also generated automatically.
 
 ## Web UI
 
@@ -142,39 +142,42 @@ Files are written to `digests/YYYY-MM-DD/`:
 
 A shared state file `digests/web-state.json` tracks which web URLs have been seen; it is committed alongside the daily digests.
 
+Each report is generated in both Chinese (`ai-cli.md`) and English (`ai-cli-en.md`). The Web UI sidebar shows ZH / EN toggle buttons for reports that have both variants.
+
 ---
 
-`ai-cli.md` structure (written in Chinese):
+`ai-cli.md` / `ai-cli-en.md` structure:
 ```
-## 横向对比
-  生态全景 / 活跃度对比表 / 共同需求 / 差异定位 / 趋势信号
+## Cross-Tool Comparison
+  Ecosystem overview / Activity comparison table / Shared themes / Differentiation / Trend signals
 
-## 各工具详细报告
-  <details> Claude Code    — [Claude Code Skills 社区热点]
-                             热门 Skills 排行 / 社区需求趋势 / 高潜力待合并 Skills
+## Per-Tool Reports
+  <details> Claude Code    — [Claude Code Skills Highlights]
+                             Top skills / Community demand trends / High-potential pending skills
                              ---
-                             今日速览 / 热点 Issues / PR 进展 / 趋势
-  <details> OpenAI Codex   — 今日速览 / 热点 Issues / PR 进展 / 趋势
+                             Today's summary / Hot issues / PR progress / Trends
+  <details> OpenAI Codex   — Today's summary / Hot issues / PR progress / Trends
   <details> Gemini CLI     — ...
+  <details> GitHub Copilot CLI — ...
   <details> Kimi Code CLI  — ...
   <details> OpenCode       — ...
   <details> Qwen Code      — ...
 ```
 
-`ai-agents.md` structure (written in Chinese):
+`ai-agents.md` / `ai-agents-en.md` structure:
 ```
-Issues: N | PRs: N | 覆盖项目: 10 个
+Issues: N | PRs: N | Projects covered: 10
 
-## OpenClaw 项目深度报告
-  今日速览 / 版本发布 / 项目进展 / 社区热点 /
-  Bug稳定性 / 功能请求 / 用户反馈 / 待处理积压
+## OpenClaw Deep Dive
+  Today's summary / Releases / Project progress / Community highlights /
+  Bug stability / Feature requests / User feedback / Backlog
 
-## 横向生态对比
-  生态全景 / 活跃度对比表 / OpenClaw定位分析 /
-  共同技术方向 / 差异化定位 / 社区热度与成熟度 / 趋势信号
+## Cross-Ecosystem Comparison
+  Ecosystem overview / Activity table / OpenClaw positioning /
+  Shared technical directions / Differentiation / Community maturity / Trend signals
 
-## 同赛道项目详细报告
-  <details> Zeroclaw   — 今日速览 / 版本发布 / 项目进展 / ...（8节）
+## Peer Project Reports
+  <details> Zeroclaw   — Today's summary / Releases / Progress / ... (8 sections)
   <details> EasyClaw   — ...
   <details> LobsterAI  — ...
   <details> ZeptoClaw  — ...
@@ -186,57 +189,77 @@ Issues: N | PRs: N | 覆盖项目: 10 个
   <details> CoPaw      — ...
 ```
 
-`ai-web.md` structure (written in Chinese):
+`ai-web.md` / `ai-web-en.md` structure:
 ```
-数据来源: anthropic.com (N 篇) + openai.com (N 篇)
+Sources: anthropic.com (N articles) + openai.com (N articles)
 
-今日速览
-Anthropic/Claude 内容精选  (news / research / engineering / learn)
-OpenAI 内容精选            (research / release / company / safety / ...)
-战略信号解读
-值得关注的细节
-[首次全量时额外包含: 内容格局总览]
-```
-
-`ai-trending.md` structure (written in Chinese):
-```
-数据来源: GitHub Trending + GitHub Search API
-
-今日速览
-各维度热门项目
-  🔧 AI 基础工具   — 框架 / SDK / 推理引擎 / CLI
-  🤖 AI 智能体/工作流 — Agent 框架 / 多智能体 / 自动化
-  📦 AI 应用       — 垂直场景产品 / 解决方案
-  🧠 大模型/训练   — 模型权重 / 训练框架 / 微调工具
-  🔍 RAG/知识库    — 向量数据库 / 检索增强
-趋势信号分析
-社区关注热点
+Today's summary
+Anthropic / Claude highlights  (news / research / engineering / learn)
+OpenAI highlights              (research / release / company / safety / ...)
+Strategic signals
+Notable details
+[First full crawl also includes: Content landscape overview]
 ```
 
-`ai-hn.md` structure (written in Chinese):
+`ai-trending.md` / `ai-trending-en.md` structure:
 ```
-数据来源: Hacker News (top-30 AI stories, last 24h)
+Sources: GitHub Trending + GitHub Search API
 
-今日速览
-热门新闻与讨论
-  🔬 模型与研究   — 新模型发布 / 论文 / 基准测试
-  🛠️ 工具与工程   — 开源项目 / 框架 / 工程实践
-  🏢 产业动态     — 公司新闻 / 融资 / 产品发布
-  💬 观点与争议   — Ask HN / Show HN / 热议帖子
-社区情绪信号
-值得深读
+Today's summary
+Top repos by dimension
+  🔧 AI Infrastructure  — frameworks / SDKs / inference engines / CLIs
+  🤖 AI Agents          — agent frameworks / multi-agent / automation
+  📦 AI Applications    — vertical products / solutions
+  🧠 Models & Training  — model weights / training frameworks / fine-tuning
+  🔍 RAG & Knowledge    — vector databases / retrieval augmentation
+Trend signal analysis
+Community focus
 ```
 
-Historical digests are stored in [`digests/`](./digests/). Published issues are tagged by type: [`digest`](../../issues?label=digest) · [`openclaw`](../../issues?label=openclaw) · [`web`](../../issues?label=web) · [`trending`](../../issues?label=trending) · [`hn`](../../issues?label=hn).
+`ai-hn.md` / `ai-hn-en.md` structure:
+```
+Sources: Hacker News (top-30 AI stories, last 24h)
+
+Today's summary
+Top stories & discussions
+  🔬 Models & Research  — new model releases / papers / benchmarks
+  🛠️ Tools & Engineering — open-source projects / frameworks / engineering practice
+  🏢 Industry news      — company news / funding / product launches
+  💬 Opinions & debate  — Ask HN / Show HN / hot threads
+Community sentiment signals
+Worth reading
+```
+
+`ai-weekly.md` / `ai-weekly-en.md` structure (generated every Monday):
+```
+Coverage: YYYY-MM-DD ~ YYYY-MM-DD  (last 7 daily digests)
+
+Weekly highlights
+Key trends & developments
+Notable releases
+Community momentum
+Outlook
+```
+
+`ai-monthly.md` / `ai-monthly-en.md` structure (generated on the 1st of each month):
+```
+Sources: N weekly reports  (or sampled daily reports if fewer than 2 weeklies available)
+
+Month in review
+Major themes
+Ecosystem shifts
+Top projects & releases
+Looking ahead
+```
+
+Historical digests are stored in [`digests/`](./digests/). Published issues are tagged by type: [`digest`](../../issues?label=digest) · [`openclaw`](../../issues?label=openclaw) · [`web`](../../issues?label=web) · [`trending`](../../issues?label=trending) · [`hn`](../../issues?label=hn) · [`weekly`](../../issues?label=weekly) · [`monthly`](../../issues?label=monthly).
 
 ## Schedule
 
-Default cron `"0 0 * * *"` = **00:00 UTC = 08:00 CST**.
+| Workflow | Cron | UTC | CST |
+|----------|------|-----|-----|
+| Daily digest | `0 0 * * *` | 00:00 daily | 08:00 daily |
+| Weekly rollup | `0 1 * * 1` | 01:00 Monday | 09:00 Monday |
+| Monthly rollup | `0 2 1 * *` | 02:00 on the 1st | 10:00 on the 1st |
 
-To change the time, edit the cron expression in `.github/workflows/daily-digest.yml`:
-
-| CST  | UTC cron       |
-|------|----------------|
-| 08:00 | `0 0 * * *`  |
-| 09:00 | `0 1 * * *`  |
-| 10:00 | `0 2 * * *`  |
+To change the schedule, edit the cron expressions in the corresponding workflow files under `.github/workflows/`.
