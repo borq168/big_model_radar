@@ -4,6 +4,10 @@ English | [中文](./README.zh.md)
 
 A GitHub Actions workflow that runs every morning at 08:00 CST. It tracks GitHub activity from AI CLI tools, OpenClaw and its peer projects in the AI agent ecosystem, scrapes official news and research from Anthropic and OpenAI, and monitors the GitHub AI trending repos daily — then publishes bilingual (Chinese + English) daily digests as GitHub Issues and committed Markdown files. Weekly and monthly rollup reports are also generated automatically.
 
+## Architecture roadmap
+
+The ongoing V2 architecture plan / status board lives in [`docs/architecture-v2.md`](./docs/architecture-v2.md). This is the canonical place for what has been decided, what has been done, and what is still pending.
+
 ## Web UI
 
 **[https://gsscsd.github.io/big_model_radar](https://gsscsd.github.io/big_model_radar)**
@@ -162,6 +166,7 @@ New articles are detected by comparing sitemap `lastmod` timestamps against a pe
 - Publishes GitHub Issues for each report type; commits Markdown files to `digests/YYYY-MM-DD/`
 - Runs on a daily schedule via GitHub Actions; supports manual triggering
 - All tracked repositories are configurable via `config.yml` — no code changes needed
+- The loader now supports both the legacy schema and the new V2-style `tracks[]` schema
 
 ## Setup
 
@@ -170,6 +175,19 @@ New articles are detected by comparing sitemap `lastmod` timestamps against a pe
 ### 2. Customize `config.yml` (optional)
 
 Edit `config.yml` in the repo root to add, remove, or replace the tracked repositories. The file is fully commented. No code changes are needed — the pipeline reads it on every run and falls back to built-in defaults if the file is absent.
+
+The runtime currently supports **two config shapes**:
+
+- **Legacy schema** — `cli_repos`, `skills_repo`, `openclaw`, `openclaw_peers` (stable today)
+- **V2-style `tracks[]` schema** — supported by the loader and ready for staged migration; see [`config.tracks.example.yml`](./config.tracks.example.yml)
+
+Current `tracks[]` support boundary:
+
+- `github_group` tracks for CLI / skills / agents are supported by the loader
+- skills tracks can now aggregate **multiple** repositories into one skills ecosystem summary
+- `content_group` tracks now execute through the runtime with config-driven source discovery and extraction
+- supported content discovery kinds: `sitemap`, `sitemap-index`, `sitemap-index-template`, `rss`, `atom`
+- supported extraction modes: `full-page`, `metadata-only`, `feed-first`
 
 ```yaml
 # Add a new CLI tool
@@ -185,13 +203,15 @@ openclaw_peers:
     name: My Agent
 ```
 
-### 3. Add Secrets
+  If you want to start migrating to the V2 config model without replacing your current setup yet, copy [`config.tracks.example.yml`](./config.tracks.example.yml) into a branch and iterate there first.
+
+### 3. Add Secrets and Variables
 
 Go to **Settings → Secrets and variables → Actions** and add:
 
 | Secret | Required | Description |
 |--------|----------|-------------|
-| `OPENAI_API_KEY` | ✅ | API key for any OpenAI-compatible endpoint |
+| `OPENAI_API_KEY` | required | API key for any OpenAI-compatible endpoint |
 | `OPENAI_BASE_URL` | optional | API endpoint override. Leave unset for OpenAI, or set a compatible provider URL such as `https://api.openai.com/v1` |
 | `OPENAI_MODEL` | optional | Model name passed to `chat/completions`, e.g. `gpt-4.1-mini` |
 | `REPORT_LANGS` | optional | Report languages, e.g. `zh` or `zh,en` (default: `zh`) |
@@ -200,7 +220,6 @@ Go to **Settings → Secrets and variables → Actions** and add:
 | `TELEGRAM_CHAT_ID` | optional | Telegram chat/channel/group ID to send notifications to. Required if you enable Telegram notifications |
 
 > `GITHUB_TOKEN` is provided automatically by GitHub Actions.
->
 > Backward compatibility: `ANTHROPIC_API_KEY`, `ANTHROPIC_BASE_URL`, and `ANTHROPIC_MODEL` are still accepted as aliases, but new setups should use `OPENAI_*`.
 
 **Setting up Telegram notifications** (optional):
@@ -223,6 +242,10 @@ To test immediately, go to **Actions → Daily Big Model Radar → Run workflow*
 
 ## Running locally
 
+Local scripts automatically load `.env` via `dotenv`, so if you've already filled in the repo-root `.env`, you can usually run the commands directly without re-exporting every variable in your shell.
+
+OpenAI-compatible endpoint example:
+
 ```bash
 pnpm install
 
@@ -236,6 +259,14 @@ export DIGEST_REPO=your-username/big_model_radar  # optional; omit to only write
 pnpm start
 ```
 
+Or simply:
+
+```bash
+pnpm start
+```
+
+when your `.env` file is already configured.
+
 ## Output format
 
 Files are written to `digests/YYYY-MM-DD/`:
@@ -243,6 +274,7 @@ Files are written to `digests/YYYY-MM-DD/`:
 | File | Content | GitHub Issue label |
 |------|---------|-------------------|
 | `ai-cli.md` | CLI digest — cross-tool comparison + per-tool details | `digest` |
+| `ai-skills.md` | Skills ecosystem digest — cross-repository skills highlights | `skills` |
 | `ai-agents.md` | OpenClaw deep report + cross-ecosystem comparison + 10 peer details | `openclaw` |
 | `ai-web.md` | Official web content report (only written when new content exists) | `web` |
 | `ai-trending.md` | GitHub AI trending report — repos classified by dimension + trend signals (only written when data is available) | `trending` |
@@ -260,16 +292,20 @@ Each report is generated in both Chinese (`ai-cli.md`) and English (`ai-cli-en.m
   Ecosystem overview / Activity comparison table / Shared themes / Differentiation / Trend signals
 
 ## Per-Tool Reports
-  <details> Claude Code    — [Claude Code Skills Highlights]
-                             Top skills / Community demand trends / High-potential pending skills
-                             ---
-                             Today's summary / Hot issues / PR progress / Trends
+  <details> Claude Code    — Today's summary / Hot issues / PR progress / Trends
   <details> OpenAI Codex   — Today's summary / Hot issues / PR progress / Trends
   <details> Gemini CLI     — ...
   <details> GitHub Copilot CLI — ...
   <details> Kimi Code CLI  — ...
   <details> OpenCode       — ...
   <details> Qwen Code      — ...
+```
+
+`ai-skills.md` / `ai-skills-en.md` structure:
+```
+## Skills Ecosystem Highlights
+  Top skills across repositories / Repository-by-repository highlights /
+  Community demand trends / High-potential pending skills / Cross-repo insight
 ```
 
 `ai-agents.md` / `ai-agents-en.md` structure:
@@ -299,11 +335,11 @@ Issues: N | PRs: N | Projects covered: 10
 
 `ai-web.md` / `ai-web-en.md` structure:
 ```
-Sources: anthropic.com (N articles) + openai.com (N articles)
+Sources: configured content sources (each source shows new/discovered counts)
 
 Today's summary
-Anthropic / Claude highlights  (news / research / engineering / learn)
-OpenAI highlights              (research / release / company / safety / ...)
+Per-source highlights          (organized by source and category)
+Cross-source signal analysis
 Strategic signals
 Notable details
 [First full crawl also includes: Content landscape overview]

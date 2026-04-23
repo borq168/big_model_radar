@@ -9,10 +9,18 @@
  *   PAGES_URL           — GitHub Pages base URL; derived from repo slug when omitted
  */
 
+import "./env.ts";
+
 import fs from "node:fs";
 
 const BOT_TOKEN = process.env["TELEGRAM_BOT_TOKEN"] ?? "";
 const CHAT_ID = process.env["TELEGRAM_CHAT_ID"] ?? "";
+
+interface ReportRegistryEntry {
+  id: string;
+  shortLabel: string;
+  kind: "github_group" | "content_group" | "rollup";
+}
 
 function resolvePagesUrl(): string {
   const explicit = process.env["PAGES_URL"] ?? process.env["SITE_URL"];
@@ -29,25 +37,33 @@ function resolvePagesUrl(): string {
 
 const PAGES_URL = resolvePagesUrl();
 
-const ZH_LABELS: Record<string, string> = {
-  "ai-cli": "AI CLI 工具",
-  "ai-agents": "AI Agents 生态",
-  "ai-web": "官网动态",
-  "ai-trending": "GitHub 趋势",
-  "ai-hn": "HN 社区动态",
-  "ai-weekly": "AI 工具生态周报",
-  "ai-monthly": "AI 工具生态月报",
-};
+function loadRegistryMap(): Record<string, ReportRegistryEntry> {
+  if (!fs.existsSync("report-registry.json")) return {};
 
-const EN_LABELS: Record<string, string> = {
-  "ai-cli": "AI CLI Tools",
-  "ai-agents": "AI Agents Ecosystem",
-  "ai-web": "Official Updates",
-  "ai-trending": "GitHub Trends",
-  "ai-hn": "HN Community",
-  "ai-weekly": "AI Tools Weekly",
-  "ai-monthly": "AI Tools Monthly",
-};
+  try {
+    const { reports } = JSON.parse(fs.readFileSync("report-registry.json", "utf-8")) as {
+      reports?: ReportRegistryEntry[];
+    };
+    return Object.fromEntries((reports ?? []).map((report) => [report.id, report]));
+  } catch (error) {
+    console.warn(
+      `[notify] Failed to load report-registry.json: ${error instanceof Error ? error.message : String(error)}`,
+    );
+    return {};
+  }
+}
+
+const REPORTS_BY_ID = loadRegistryMap();
+
+function getShortLabel(reportId: string): string {
+  return REPORTS_BY_ID[reportId]?.shortLabel ?? reportId;
+}
+
+function isRollup(reportId: string): boolean {
+  const kind = REPORTS_BY_ID[reportId]?.kind;
+  if (kind) return kind === "rollup";
+  return reportId.includes("weekly") || reportId.includes("monthly");
+}
 
 async function sendTelegram(text: string): Promise<void> {
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
@@ -76,18 +92,17 @@ function buildMessage(date: string, reports: string[]): string {
   const suffix = isMonthly ? " 月报" : isWeekly ? " 周报" : "";
   const lines: string[] = [`${icon} <b>Big Model Radar${suffix} · ${date}</b>\n`];
 
-  // Daily reports first, then rollups
   const ordered = [
-    ...baseReports.filter((r) => !r.includes("weekly") && !r.includes("monthly")),
-    ...baseReports.filter((r) => r.includes("weekly") || r.includes("monthly")),
+    ...baseReports.filter((r) => !isRollup(r)),
+    ...baseReports.filter((r) => isRollup(r)),
   ];
 
   for (const r of ordered) {
-    const zhLabel = ZH_LABELS[r] ?? r;
+    const zhLabel = getShortLabel(r);
     const zhUrl = `${PAGES_URL}/#${date}/${r}`;
     const enKey = `${r}-en`;
     if (reports.includes(enKey)) {
-      const enLabel = EN_LABELS[r] ?? "EN";
+      const enLabel = getShortLabel(enKey);
       const enUrl = `${PAGES_URL}/#${date}/${enKey}`;
       lines.push(`• <a href="${zhUrl}">${zhLabel}</a>  ·  <a href="${enUrl}">${enLabel}</a>`);
     } else {

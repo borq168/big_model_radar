@@ -3,6 +3,10 @@
  * Reads GITHUB_TOKEN and DIGEST_REPO from environment at call time.
  */
 
+interface GitHubFetchFailure {
+  fetchError?: string;
+}
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -61,6 +65,8 @@ export interface GitHubRelease {
 
 /** Maximum pages to fetch for paginated repos (100 items/page). */
 const MAX_PAGES = 5;
+const GITHUB_MAX_RETRIES = 3;
+const GITHUB_RETRY_BASE_MS = 1500;
 
 function headers(): Record<string, string> {
   return {
@@ -70,12 +76,74 @@ function headers(): Record<string, string> {
   };
 }
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isRetryableStatus(status: number): boolean {
+  return status === 429 || status >= 500;
+}
+
+function getRetryDelayMs(attempt: number, retryAfterHeader?: string | null): number {
+  const retryAfterSeconds = Number(retryAfterHeader ?? "");
+  if (Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0) {
+    return retryAfterSeconds * 1000;
+  }
+  return GITHUB_RETRY_BASE_MS * 2 ** attempt;
+}
+
+function isRetryableFetchError(error: unknown): boolean {
+  if (!(error instanceof Error)) return false;
+
+  const code = (error.cause as { code?: string } | undefined)?.code;
+  if (code && ["ECONNRESET", "ETIMEDOUT", "ENOTFOUND", "ECONNREFUSED", "EAI_AGAIN"].includes(code)) {
+    return true;
+  }
+
+  const text = `${error.name} ${error.message}`.toLowerCase();
+  return text.includes("fetch failed") || text.includes("socket") || text.includes("network");
+}
+
+function formatFetchError(error: unknown): string {
+  if (error instanceof Error) return error.message;
+  return String(error);
+}
+
 async function githubGet<T>(url: string, params: Record<string, string> = {}): Promise<T> {
   const u = new URL(url);
   for (const [k, v] of Object.entries(params)) u.searchParams.set(k, v);
-  const resp = await fetch(u.toString(), { headers: headers() });
-  if (!resp.ok) throw new Error(`GitHub API error ${resp.status} (${url}): ${await resp.text()}`);
-  return resp.json() as Promise<T>;
+
+  for (let attempt = 0; ; attempt++) {
+    try {
+      const resp = await fetch(u.toString(), { headers: headers() });
+      if (!resp.ok) {
+        const body = await resp.text();
+        if (attempt < GITHUB_MAX_RETRIES && isRetryableStatus(resp.status)) {
+          const waitMs = getRetryDelayMs(attempt, resp.headers.get("retry-after"));
+          console.warn(
+            `[github] ${resp.status} for ${u.pathname} — retry ${attempt + 1}/${GITHUB_MAX_RETRIES} in ${waitMs}ms`,
+          );
+          await sleep(waitMs);
+          continue;
+        }
+
+        throw new Error(`GitHub API error ${resp.status} (${url}): ${body}`);
+      }
+
+      return resp.json() as Promise<T>;
+    } catch (error) {
+      if (attempt < GITHUB_MAX_RETRIES && isRetryableFetchError(error)) {
+        const waitMs = getRetryDelayMs(attempt);
+        console.warn(
+          `[github] Network failure for ${u.pathname} — retry ${attempt + 1}/${GITHUB_MAX_RETRIES} in ${waitMs}ms: ${formatFetchError(error)}`,
+        );
+        await sleep(waitMs);
+        continue;
+      }
+
+      throw error;
+    }
+  }
 }
 
 async function fetchItemPage(
@@ -163,8 +231,10 @@ export async function ensureLabel(name: string, color: string): Promise<void> {
  * PRs sorted by popularity (comment count); issues sorted by comments.
  * No `since` filter — we want all-time hot items, not just the last 24 h.
  */
-export async function fetchSkillsData(repo: string): Promise<{ prs: GitHubItem[]; issues: GitHubItem[] }> {
-  const [prs, issuesRaw] = await Promise.all([
+export async function fetchSkillsData(
+  repo: string,
+): Promise<{ prs: GitHubItem[]; issues: GitHubItem[] } & GitHubFetchFailure> {
+  const [prsResult, issuesResult] = await Promise.allSettled([
     githubGet<GitHubItem[]>(`https://api.github.com/repos/${repo}/pulls`, {
       state: "open",
       sort: "popularity",
@@ -178,7 +248,23 @@ export async function fetchSkillsData(repo: string): Promise<{ prs: GitHubItem[]
       per_page: "50",
     }),
   ]);
-  return { prs, issues: issuesRaw.filter((i) => !i.pull_request) };
+
+  const errors: string[] = [];
+  const prs = prsResult.status === "fulfilled" ? prsResult.value : [];
+  if (prsResult.status === "rejected") {
+    errors.push(`PR fetch failed: ${formatFetchError(prsResult.reason)}`);
+  }
+
+  const issuesRaw = issuesResult.status === "fulfilled" ? issuesResult.value : [];
+  if (issuesResult.status === "rejected") {
+    errors.push(`Issue fetch failed: ${formatFetchError(issuesResult.reason)}`);
+  }
+
+  return {
+    prs,
+    issues: issuesRaw.filter((i) => !i.pull_request),
+    ...(errors.length > 0 ? { fetchError: errors.join(" | ") } : {}),
+  };
 }
 
 const GITHUB_ISSUE_BODY_LIMIT = 65536;
@@ -190,13 +276,17 @@ export async function createGitHubIssue(title: string, body: string, label: stri
     body = body.slice(0, GITHUB_ISSUE_BODY_LIMIT - TRUNCATION_NOTICE.length) + TRUNCATION_NOTICE;
   }
   const LABEL_COLORS: Record<string, string> = {
+    digest: "2563eb",
     openclaw: "e11d48",
+    skills: "7c3aed",
+    web: "4f46e5",
     trending: "f9a825",
     hn: "ff6600",
     weekly: "7c3aed",
     monthly: "0d9488",
     "digest-en": "1d76db",
     "openclaw-en": "f472b6",
+    "skills-en": "8b5cf6",
     "web-en": "6366f1",
     "trending-en": "fbbf24",
     "hn-en": "fb923c",

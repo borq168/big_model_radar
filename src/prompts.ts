@@ -19,6 +19,12 @@ export interface RepoDigest {
   summary: string;
 }
 
+export interface SkillsRepoSnapshot {
+  config: RepoConfig;
+  issues: GitHubItem[];
+  prs: GitHubItem[];
+}
+
 // ---------------------------------------------------------------------------
 // Formatting
 // ---------------------------------------------------------------------------
@@ -324,65 +330,130 @@ ${peerSections}
 }
 
 export function buildSkillsPrompt(
-  prs: GitHubItem[],
-  issues: GitHubItem[],
+  repos: SkillsRepoSnapshot[],
   dateStr: string,
   lang: "zh" | "en" = "zh",
 ): string {
-  const topPrs = topN(prs, 20);
-  const topIssues = topN(issues, 15);
-
+  const effectiveRepos = repos.filter((repo) => repo.prs.length > 0 || repo.issues.length > 0);
+  const sourceRepos = effectiveRepos.length > 0 ? effectiveRepos : repos;
+  const multiRepo = sourceRepos.length > 1;
+  const prLimit = multiRepo ? 10 : 20;
+  const issueLimit = multiRepo ? 8 : 15;
+  const totalPrs = sourceRepos.reduce((sum, repo) => sum + repo.prs.length, 0);
+  const totalIssues = sourceRepos.reduce((sum, repo) => sum + repo.issues.length, 0);
   const noneStr = lang === "en" ? "None" : "无";
-  const prsText = topPrs.map((p) => formatItem(p, lang)).join("\n") || noneStr;
-  const issuesText = topIssues.map((i) => formatItem(i, lang)).join("\n") || noneStr;
+
+  const repoSections = sourceRepos
+    .map(({ config, prs, issues }) => {
+      const topPrs = topN(prs, prLimit);
+      const topIssues = topN(issues, issueLimit);
+      const prsText = topPrs.map((pr) => formatItem(pr, lang)).join("\n") || noneStr;
+      const issuesText = topIssues.map((issue) => formatItem(issue, lang)).join("\n") || noneStr;
+
+      return [
+        `## ${config.name} (github.com/${config.repo})`,
+        lang === "en"
+          ? `Pull Requests (sorted by comments, ${prs.length} total, showing top ${topPrs.length})`
+          : `Pull Requests（按评论数排序，共 ${prs.length} 条，展示前 ${topPrs.length} 条）`,
+        prsText,
+        "",
+        lang === "en"
+          ? `Issues (sorted by comments, ${issues.length} total, showing top ${topIssues.length})`
+          : `Issues（按评论数排序，共 ${issues.length} 条，展示前 ${topIssues.length} 条）`,
+        issuesText,
+      ].join("\n");
+    })
+    .join("\n\n---\n\n");
 
   if (lang === "en") {
-    return `You are a technical analyst focused on the Claude Code ecosystem. The following data is from github.com/anthropics/skills (official Claude Code Skills repository). Analyze the community's most-watched Skills activity (data as of ${dateStr}).
+    if (!multiRepo) {
+      const repo = sourceRepos[0];
+      return `You are a technical analyst focused on AI coding skills ecosystems. The following data is from github.com/${repo?.config.repo} (${repo?.config.name}) as of ${dateStr}. Each PR usually represents a new or improved Skill, while Issues reveal unmet workflow demand.
 
 ## Repository Context
-anthropics/skills is the official Claude Code Skills collection. Each PR typically represents a new or improved Skill. The community proposes new Skills and reports issues via Issues; PRs represent actual Skill submissions.
+- Skills repositories covered: 1
+- Total PRs considered: ${totalPrs}
+- Total Issues considered: ${totalIssues}
 
-## Popular Pull Requests (sorted by comments, ${prs.length} total, showing top ${topPrs.length})
-${prsText}
-
-## Community Issues (sorted by comments, ${issues.length} total, showing top ${topIssues.length})
-${issuesText}
+${repoSections}
 
 ---
 
-Generate a Claude Code Skills community highlights report in English with these sections:
+Generate a skills community highlights report in English with these sections:
 
-1. **Top Skills Ranking** - List the 5-8 most-discussed Skills (PRs) by comments/attention, describe each Skill's functionality, discussion highlights, and current status (open/merged/draft)
-2. **Community Demand Trends** - From Issues, distill the most-anticipated new Skill directions (e.g. workflow automation, code review, test generation, documentation)
+1. **Top Skills Ranking** - List the 5-8 most-discussed Skills (PRs), describe each Skill's functionality, discussion highlights, and current status
+2. **Community Demand Trends** - From Issues, distill the most-anticipated new Skill directions
 3. **High-Potential Pending Skills** - Active-comment PRs not yet merged; these Skills may land soon
-4. **Skills Ecosystem Insight** - One-sentence summary: what is the community's most concentrated demand at the Skills level?
+4. **Skills Ecosystem Insight** - One concise summary sentence: what is the community's most concentrated demand at the Skills level?
 
-Style: concise and professional, include GitHub links for each item.
-`;
+Style: concise and professional, include GitHub links for each item.`;
+    }
+
+    return `You are a technical analyst focused on AI coding skills ecosystems. The following data covers ${sourceRepos.length} GitHub skills repositories as of ${dateStr}. Each PR usually represents a new or improved Skill, while Issues reveal unmet workflow demand.
+
+## Ecosystem Context
+- Skills repositories covered: ${sourceRepos.length}
+- Total PRs considered: ${totalPrs}
+- Total Issues considered: ${totalIssues}
+
+${repoSections}
+
+---
+
+Generate a cross-repository skills ecosystem highlights report in English with these sections:
+
+1. **Top Skills Across Repositories** - List the 6-10 most-discussed Skills or Skill PRs across all repositories, noting which repo each one belongs to
+2. **Repository-by-Repository Highlights** - For each skills repo, summarize its current focus, strongest discussions, and contribution momentum in 2-4 sentences
+3. **Community Demand Trends** - Distill the most-requested new Skill directions across repositories, grouping similar themes together
+4. **High-Potential Pending Skills** - Identify active-comment PRs that appear close to landing, and explain why they matter
+5. **Cross-Repo Ecosystem Insight** - Compare how the repositories differ in focus, target users, or contribution style, then close with one concise ecosystem takeaway
+
+Style: concise and professional, include GitHub links for each item.`;
   }
 
-  return `你是一位专注于 Claude Code 生态的技术分析师。以下是来自 github.com/anthropics/skills（Claude Code Skills 官方仓库）的数据，请分析社区最关注的 Skills 动态（数据截止 ${dateStr}）。
+  if (!multiRepo) {
+    const repo = sourceRepos[0];
+    return `你是一位专注于 AI coding skills 生态的技术分析师。以下是 github.com/${repo?.config.repo}（${repo?.config.name}）在 ${dateStr} 的数据。每个 PR 通常对应一个新增或改进的 Skill，Issues 则反映尚未满足的工作流需求。
 
-## 仓库说明
-anthropics/skills 是 Claude Code 官方 Skills 集合仓库，每个 PR 通常对应一个新增或改进的 Skill。社区通过 Issues 提出新 Skill 需求或反馈问题，PR 则代表实际提交的 Skill。
+## 仓库概览
+- 覆盖 Skills 仓库：1 个
+- 纳入分析的 PR：${totalPrs} 条
+- 纳入分析的 Issue：${totalIssues} 条
 
-## 热门 Pull Requests（按评论数排序，共 ${prs.length} 条，展示前 ${topPrs.length} 条）
-${prsText}
-
-## 社区 Issues（按评论数排序，共 ${issues.length} 条，展示前 ${topIssues.length} 条）
-${issuesText}
+${repoSections}
 
 ---
 
-请生成一份 Claude Code Skills 社区热点报告，包含以下部分：
+请生成一份 Skills 社区热点报告，包含以下部分：
 
-1. **热门 Skills 排行** - 列出评论/关注度最高的 5~8 个 Skills（PR），说明每个 Skill 的功能、社区讨论热点及当前状态（open/merged/draft）
-2. **社区需求趋势** - 从 Issues 中提炼社区最期待的新 Skill 方向（如工作流自动化、代码审查、测试生成、文档等）
+1. **热门 Skills 排行** - 列出评论/关注度最高的 5~8 个 Skills（PR），说明每个 Skill 的功能、讨论热点和当前状态
+2. **社区需求趋势** - 从 Issues 中提炼社区最期待的新 Skill 方向
 3. **高潜力待合并 Skills** - 评论活跃但尚未合并的 PR，这些 Skills 可能近期落地
-4. **Skills 生态洞察** - 一句话总结：当前社区在 Skills 层面最集中的诉求是什么
+4. **Skills 生态洞察** - 用一句话总结：当前社区在 Skills 层面最集中的诉求是什么
 
-语言要求：简洁专业，每个条目附上 GitHub 链接。
-`;
+语言要求：简洁专业，每个条目附上 GitHub 链接。`;
+  }
+
+  return `你是一位专注于 AI coding skills 生态的技术分析师。以下是 ${dateStr} 来自 ${sourceRepos.length} 个 GitHub skills 仓库的数据。每个 PR 通常对应一个新增或改进的 Skill，Issues 则反映尚未满足的工作流需求。
+
+## 生态概览
+- 覆盖 Skills 仓库：${sourceRepos.length} 个
+- 纳入分析的 PR：${totalPrs} 条
+- 纳入分析的 Issue：${totalIssues} 条
+
+${repoSections}
+
+---
+
+请生成一份跨仓库 Skills 生态热点报告，包含以下部分：
+
+1. **全生态热门 Skills** - 列出全体仓库中评论/关注度最高的 6~10 个 Skills / Skill PR，并注明所属仓库
+2. **各仓库亮点** - 对每个 skills repo 用 2~4 句话概括其当前重点、讨论热点和贡献活跃度
+3. **社区需求趋势** - 汇总多个仓库共同出现的 Skill 方向，把相近诉求归类分析
+4. **高潜力待合并 Skills** - 找出评论活跃、最可能近期落地的 PR，并解释其意义
+5. **跨仓库生态洞察** - 比较这些仓库在关注重点、目标用户或贡献方式上的差异，最后给出一句整体判断
+
+语言要求：简洁专业，每个条目附上 GitHub 链接。`;
 }
 
 export function buildComparisonPrompt(
@@ -578,9 +649,10 @@ export function buildWebReportPrompt(
   lang: "zh" | "en" = "zh",
 ): string {
   const isAnyFirstRun = results.some((r) => r.isFirstRun);
+  const sourceNames = results.map((result) => result.sourceName).join(lang === "en" ? ", " : "、");
 
   const siteSections = results
-    .map(({ siteName, isFirstRun, newItems, totalDiscovered }) => {
+    .map(({ sourceName, isFirstRun, newItems, totalDiscovered }) => {
       const mode =
         lang === "en"
           ? isFirstRun
@@ -590,20 +662,28 @@ export function buildWebReportPrompt(
             ? `首次全量抓取（sitemap 共 ${totalDiscovered} 条 URL，以下为最新 ${newItems.length} 篇正文内容）`
             : `今日增量更新，共 ${newItems.length} 篇新内容`;
 
-      if (newItems.length === 0) return `## ${siteName}\n\n（${mode}，暂无可供分析的内容。）`;
+      if (newItems.length === 0) {
+        return lang === "en"
+          ? `## ${sourceName}\n\n(${mode}; no analyzable content this cycle.)`
+          : `## ${sourceName}\n\n（${mode}，暂无可供分析的内容。）`;
+      }
 
       const unableToExtract = lang === "en" ? "(Unable to extract text content)" : "（无法提取文本内容）";
       const itemsText = newItems
         .map((item) =>
           [
             `### [${item.title || item.url}](${item.url})`,
-            `- 分类: ${item.category} | 发布/更新: ${item.lastmod.slice(0, 10) || "未知"}`,
-            `- 内容节选: ${item.content || unableToExtract}`,
+            lang === "en"
+              ? `- Category: ${item.category} | Published/Updated: ${item.publishedAt.slice(0, 10) || "Unknown"}`
+              : `- 分类: ${item.category} | 发布/更新: ${item.publishedAt.slice(0, 10) || "未知"}`,
+            lang === "en"
+              ? `- Content excerpt: ${item.content || unableToExtract}`
+              : `- 内容节选: ${item.content || unableToExtract}`,
           ].join("\n"),
         )
         .join("\n\n");
 
-      return `## ${siteName}（${mode}）\n\n${itemsText}`;
+      return lang === "en" ? `## ${sourceName} (${mode})\n\n${itemsText}` : `## ${sourceName}（${mode}）\n\n${itemsText}`;
     })
     .join("\n\n---\n\n");
 
@@ -617,69 +697,65 @@ export function buildWebReportPrompt(
         : "本次为增量更新，请聚焦今日新增内容，并结合上下文判断其战略意义。";
 
   if (lang === "en") {
-    return `You are a deep content analyst focused on AI, skilled at extracting strategic signals from official announcements, technical blogs, research papers, and product documentation.
+     return `You are a deep content analyst focused on AI and developer ecosystems, skilled at extracting strategic signals from official announcements, technical blogs, research papers, product documentation, and curated feeds.
 
-The following content was crawled on ${dateStr} from Anthropic (claude.com / anthropic.com) and OpenAI (openai.com). ${firstRunNote}
+  The following content was crawled on ${dateStr} from these configured sources: ${sourceNames}. ${firstRunNote}
 
 ${siteSections}
 
 ---
 
-Generate a detailed AI Official Content Tracking Report in English with these sections:
+  Generate a detailed content tracking report in English with these sections:
 
 1. **Today's Highlights** — 3-5 sentences on the most important new releases or developments, calling out key highlights
 
-2. **Anthropic / Claude Content Highlights** — Organize important content by category (news / research / engineering / learn, etc.):
-   - For each piece, 2-4 sentences extracting core insights, technical details, or business significance
-   - Note publication date and original link
-   - If first full crawl, trace important milestones chronologically
+  2. **Per-Source Highlights** — For each source, organize the important content by category:
+    - For each piece, write 2-4 sentences extracting core insights, technical details, or strategic significance
+    - Note publication date and original link
+    - If first full crawl, trace major milestones chronologically where helpful
 
-3. **OpenAI Content Highlights** — Same structure, organized by research / release / company / safety categories
+  3. **Cross-Source Signal Analysis** — Based on release cadence and content focus across sources, analyze:
+    - Which technical priorities are most visible right now (model capabilities / safety / productization / ecosystem / developer workflows)
+    - Whether different sources are converging on the same themes or emphasizing different directions
+    - Potential impact on developers, builders, and enterprise users
 
-4. **Strategic Signal Analysis** — Based on both companies' release cadence and content focus, analyze:
-   - Each company's recent technical priorities (model capabilities / safety / productization / ecosystem)
-   - Competitive dynamics: who is setting the agenda, who is following
-   - Potential impact on developers and enterprise users
-
-5. **Notable Details** — Extract hidden signals from titles, phrasing, and timing, e.g.:
+  4. **Notable Details** — Extract hidden signals from titles, phrasing, timing, and source mix, e.g.:
    - New terms or topics appearing for the first time
    - Dense releases in a category (may signal a product milestone)
-   - Policy, compliance, and safety developments
+    - Policy, compliance, ecosystem, or safety developments
 
-${isAnyFirstRun ? "6. **Content Landscape Overview** — First full crawl only: summarize the content category distribution for both companies and describe their content strategy style (academic-oriented vs product-oriented vs user stories, etc.)\n\n" : ""}Style: English, professional and detailed, suited for AI researchers, product managers, and technical decision-makers. Every item must include official links.
+  ${isAnyFirstRun ? "5. **Content Landscape Overview** — First full crawl only: summarize the content category distribution across sources and describe each source's content strategy style (research-oriented vs product-oriented vs ecosystem-oriented vs community-oriented, etc.)\n\n" : ""}Style: English, professional and detailed, suited for AI researchers, product managers, and technical decision-makers. Every item must include official links.
 `;
   }
 
-  return `你是一位专注于 AI 领域的深度内容分析师，擅长从官方公告、技术博客、研究论文和产品文档中提炼战略信号。
+    return `你是一位专注于 AI 与开发者生态的深度内容分析师，擅长从官方公告、技术博客、研究论文、产品文档和信息流中提炼战略信号。
 
-以下是 ${dateStr} 从 Anthropic（claude.com / anthropic.com）和 OpenAI（openai.com）官网抓取的内容，${firstRunNote}
+  以下是 ${dateStr} 从这些已配置来源抓取的内容：${sourceNames}。${firstRunNote}
 
 ${siteSections}
 
 ---
 
-请生成一份详实的《AI 官方内容追踪报告》，包含以下部分：
+  请生成一份详实的《内容追踪报告》，包含以下部分：
 
 1. **今日速览** — 3~5 句话概括最重要的新发布或动向，点出核心亮点
 
-2. **Anthropic / Claude 内容精选** — 按分类（news / research / engineering / learn 等）逐条整理重要内容：
+  2. **各来源内容精选** — 按来源和分类逐条整理重要内容：
    - 每篇用 2~4 句话提炼核心观点、技术细节或业务意义
    - 标注发布日期和原文链接
    - 如首次全量，按时间线梳理重要里程碑
 
-3. **OpenAI 内容精选** — 同上，按 research / release / company / safety 等分类整理
+  3. **跨来源战略信号解读** — 基于各来源的发布节奏和内容重点，分析：
+    - 当前最突出的技术优先级（模型能力 / 安全 / 产品化 / 生态 / 开发者工作流）
+    - 不同来源是在收敛到同一主题，还是各自强调不同方向
+    - 对开发者、创业团队和企业用户的潜在影响
 
-4. **战略信号解读** — 基于两家公司的发布节奏和内容重点，分析：
-   - 各自近期的技术优先级（模型能力 / 安全 / 产品化 / 生态）
-   - 竞争态势：谁在引领议题，谁在跟进
-   - 对开发者和企业用户的潜在影响
-
-5. **值得关注的细节** — 从标题、措辞、发布时机中提取隐含信号，例如：
+  4. **值得关注的细节** — 从标题、措辞、发布时机和来源组合中提取隐含信号，例如：
    - 新兴词汇或话题的首次出现
    - 某类主题的密集发布（可能预示产品节点）
-   - 政策、合规、安全方面的动向
+    - 政策、合规、生态、安全方面的动向
 
-${isAnyFirstRun ? "6. **内容格局总览** — 首次全量独有：汇总两家公司各内容类别的数量分布，并说明各自的内容运营风格（学术导向 vs 产品导向 vs 用户故事等）\n\n" : ""}语言要求：中文，专业深入，内容详实，适合 AI 领域研究者、产品经理和技术决策者阅读。每个条目必须附上 GitHub/官网链接。
+  ${isAnyFirstRun ? "5. **内容格局总览** — 首次全量独有：汇总各来源的内容类别分布，并说明各自的内容运营风格（研究导向 / 产品导向 / 生态导向 / 社区导向等）\n\n" : ""}语言要求：中文，专业深入，内容详实，适合 AI 领域研究者、产品经理和技术决策者阅读。每个条目必须附上官网链接。
 `;
 }
 

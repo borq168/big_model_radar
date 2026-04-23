@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-23T01:22:50.071Z",
+  "generated": "2026-04-23T02:47:57.572Z",
   "dates": [
     {
       "date": "2026-04-23",
@@ -25,6 +25,7 @@
       "date": "2026-04-21",
       "reports": [
         "ai-cli",
+        "ai-skills",
         "ai-agents",
         "ai-web",
         "ai-trending",

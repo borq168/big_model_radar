@@ -1,3 +1,5 @@
+import "./env.ts";
+
 import { runMonthlyRollup } from "./rollup.ts";
 
 runMonthlyRollup().catch((err) => {

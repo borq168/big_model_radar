@@ -9,13 +9,19 @@ import path from "node:path";
 const DEFAULT_OPENAI_BASE_URL = "https://api.openai.com/v1";
 const DEFAULT_MODEL = "gpt-4.1-mini";
 
+function getConfiguredLlmConcurrency(): number {
+  const raw = Number(process.env["LLM_CONCURRENCY"] ?? "");
+  if (Number.isFinite(raw) && raw >= 1) return Math.floor(raw);
+  return 5;
+}
+
 // ---------------------------------------------------------------------------
 // Concurrency limiter — prevents rate-limit (429) errors when many LLM calls
 // are fired in parallel. At most LLM_CONCURRENCY requests are in-flight at
 // any given time; the rest queue and run as slots free up.
 // ---------------------------------------------------------------------------
 
-const LLM_CONCURRENCY = 5;
+const LLM_CONCURRENCY = getConfiguredLlmConcurrency();
 let llmSlots = LLM_CONCURRENCY;
 const llmQueue: Array<() => void> = [];
 
@@ -47,11 +53,23 @@ function is429(err: unknown): boolean {
   return (err as { status?: number })?.status === 429 || String(err).includes("429");
 }
 
+function isRetryableLlmError(err: unknown): boolean {
+  if (is429(err)) return true;
+
+  const text = String(err).toLowerCase();
+  return (
+    text.includes("timed out") ||
+    text.includes("returned empty output") ||
+    text.includes("returned no usable output") ||
+    text.includes("rate limit")
+  );
+}
+
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-function getLlmApiKey(): string {
+function getOpenAiCompatibleApiKey(): string {
   return process.env["OPENAI_API_KEY"] ?? process.env["ANTHROPIC_API_KEY"] ?? "";
 }
 
@@ -63,12 +81,20 @@ export function getLlmBaseUrl(): string {
   ).replace(/\/$/, "");
 }
 
-function getLlmModel(): string {
+function getOpenAiCompatibleModel(): string {
   return process.env["OPENAI_MODEL"] ?? process.env["ANTHROPIC_MODEL"] ?? DEFAULT_MODEL;
 }
 
+export function getLlmRuntimeLabel(): string {
+  return `openai-compatible:${getOpenAiCompatibleModel()} @ ${getLlmBaseUrl()}`;
+}
+
+export function getLlmConfigurationError(): string {
+  return "Missing required environment variable: OPENAI_API_KEY";
+}
+
 export function hasLlmCredentials(): boolean {
-  return getLlmApiKey().length > 0;
+  return getOpenAiCompatibleApiKey().length > 0;
 }
 
 function extractTextContent(content: unknown): string {
@@ -96,46 +122,50 @@ function extractTextContent(content: unknown): string {
   throw new Error("Unexpected response type from LLM");
 }
 
+async function callOpenAiCompatibleLlm(prompt: string, maxTokens: number): Promise<string> {
+  const apiKey = getOpenAiCompatibleApiKey();
+  if (!apiKey) throw new Error("Missing required environment variable: OPENAI_API_KEY");
+
+  const resp = await fetch(`${getLlmBaseUrl()}/chat/completions`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: getOpenAiCompatibleModel(),
+      messages: [{ role: "user", content: prompt }],
+      temperature: 0.2,
+      max_tokens: maxTokens,
+    }),
+  });
+  if (!resp.ok) {
+    throw new Error(`LLM API ${resp.status}: ${await resp.text()}`);
+  }
+
+  const data = (await resp.json()) as {
+    choices?: Array<{
+      message?: {
+        content?: unknown;
+      };
+    }>;
+  };
+  const content = data.choices?.[0]?.message?.content;
+  return extractTextContent(content);
+}
+
 export async function callLlm(prompt: string, maxTokens = 4096): Promise<string> {
   for (let attempt = 0; ; attempt++) {
     await acquireSlot();
     let released = false;
     try {
-      const apiKey = getLlmApiKey();
-      if (!apiKey) throw new Error("Missing required environment variable: OPENAI_API_KEY");
-
-      const resp = await fetch(`${getLlmBaseUrl()}/chat/completions`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: getLlmModel(),
-          messages: [{ role: "user", content: prompt }],
-          temperature: 0.2,
-          max_tokens: maxTokens,
-        }),
-      });
-      if (!resp.ok) {
-        throw new Error(`LLM API ${resp.status}: ${await resp.text()}`);
-      }
-
-      const data = (await resp.json()) as {
-        choices?: Array<{
-          message?: {
-            content?: unknown;
-          };
-        }>;
-      };
-      const content = data.choices?.[0]?.message?.content;
-      return extractTextContent(content);
+      return await callOpenAiCompatibleLlm(prompt, maxTokens);
     } catch (err) {
-      if (attempt < MAX_RETRIES && is429(err)) {
+      if (attempt < MAX_RETRIES && isRetryableLlmError(err)) {
         releaseSlot();
         released = true;
         const wait = RETRY_BASE_MS * 2 ** attempt;
-        console.error(`[llm] 429 — retry ${attempt + 1}/${MAX_RETRIES} in ${wait / 1000}s...`);
+        console.error(`[llm] retry ${attempt + 1}/${MAX_RETRIES} in ${wait / 1000}s after: ${String(err)}`);
         await sleep(wait);
         continue;
       }

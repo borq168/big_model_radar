@@ -29,6 +29,9 @@ cli_repos:
   - id: qwen-code
     repo: QwenLM/qwen-code
     name: Qwen Code
+  - id: pi
+    repo: badlogic/pi-mono
+    name: Pi
 
 # ── Claude Code Skills ────────────────────────────────────────────────────────
 # Tracked separately without a date filter, sorted by community engagement.
@@ -83,3 +86,6 @@ openclaw_peers:
   - id: easyclaw
     repo: gaoyangz77/easyclaw
     name: EasyClaw
+  - id: nemoclaw
+    repo: NVIDIA/NemoClaw
+    name: NemoClaw

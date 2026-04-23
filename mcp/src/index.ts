@@ -13,23 +13,6 @@
 
 const PAGES_URL = "https://gsscsd.github.io/big_model_radar";
 
-const REPORT_LABELS: Record<string, string> = {
-  "ai-cli": "AI CLI Tools Digest (ZH)",
-  "ai-cli-en": "AI CLI Tools Digest (EN)",
-  "ai-agents": "AI Agents Ecosystem (ZH)",
-  "ai-agents-en": "AI Agents Ecosystem (EN)",
-  "ai-web": "Official AI Content (ZH)",
-  "ai-web-en": "Official AI Content (EN)",
-  "ai-trending": "GitHub AI Trends (ZH)",
-  "ai-trending-en": "GitHub AI Trends (EN)",
-  "ai-hn": "Hacker News AI Community (ZH)",
-  "ai-hn-en": "Hacker News AI Community (EN)",
-  "ai-weekly": "Weekly Rollup (ZH)",
-  "ai-weekly-en": "Weekly Rollup (EN)",
-  "ai-monthly": "Monthly Rollup (ZH)",
-  "ai-monthly-en": "Monthly Rollup (EN)",
-};
-
 interface ManifestDate {
   date: string;
   reports: string[];
@@ -37,6 +20,16 @@ interface ManifestDate {
 
 interface Manifest {
   dates: ManifestDate[];
+}
+
+interface ReportRegistryEntry {
+  id: string;
+  fullTitle: string;
+  includeInSearch: boolean;
+}
+
+interface ReportRegistry {
+  reports: ReportRegistryEntry[];
 }
 
 // ---------------------------------------------------------------------------
@@ -49,6 +42,30 @@ async function fetchManifest(): Promise<Manifest> {
   } as RequestInit);
   if (!res.ok) throw new Error(`Failed to fetch manifest: HTTP ${res.status}`);
   return res.json() as Promise<Manifest>;
+}
+
+async function fetchRegistry(): Promise<ReportRegistry> {
+  const res = await fetch(`${PAGES_URL}/report-registry.json`, {
+    cf: { cacheTtl: 300 },
+  } as RequestInit);
+  if (!res.ok) throw new Error(`Failed to fetch report-registry.json: HTTP ${res.status}`);
+  return res.json() as Promise<ReportRegistry>;
+}
+
+async function fetchRegistrySafe(): Promise<ReportRegistry> {
+  try {
+    return await fetchRegistry();
+  } catch {
+    return { reports: [] };
+  }
+}
+
+function toRegistryMap(registry: ReportRegistry): Map<string, ReportRegistryEntry> {
+  return new Map(registry.reports.map((report) => [report.id, report]));
+}
+
+function getReportTitle(reportType: string, registryMap: Map<string, ReportRegistryEntry>): string {
+  return registryMap.get(reportType)?.fullTitle ?? reportType;
 }
 
 async function fetchReport(date: string, type: string): Promise<string> {
@@ -65,11 +82,12 @@ async function fetchReport(date: string, type: string): Promise<string> {
 
 async function toolListReports(args: Record<string, unknown>): Promise<string> {
   const days = Math.min(Number(args["days"] ?? 7), 30);
-  const { dates } = await fetchManifest();
+  const [{ dates }, registry] = await Promise.all([fetchManifest(), fetchRegistrySafe()]);
+  const registryMap = toRegistryMap(registry);
   const slice = dates.slice(0, days);
 
   const lines = slice.map(({ date, reports }) => {
-    const labels = reports.map((r) => `${r} (${REPORT_LABELS[r] ?? r})`).join(", ");
+    const labels = reports.map((r) => `${r} (${getReportTitle(r, registryMap)})`).join(", ");
     return `• ${date}: ${labels}`;
   });
 
@@ -85,12 +103,14 @@ async function toolGetReport(args: Record<string, unknown>): Promise<string> {
 }
 
 async function toolGetLatest(args: Record<string, unknown>): Promise<string> {
-  const type = String(args["type"] ?? "ai-cli-en").trim();
-  const { dates } = await fetchManifest();
+  const [registry, { dates }] = await Promise.all([fetchRegistrySafe(), fetchManifest()]);
+  const registryMap = toRegistryMap(registry);
+  const defaultType = registry.reports.find((report) => report.id === "ai-cli-en")?.id ?? "ai-cli-en";
+  const type = String(args["type"] ?? defaultType).trim();
   for (const { date, reports } of dates) {
     if (reports.includes(type)) {
       const content = await fetchReport(date, type);
-      return `# ${date} — ${REPORT_LABELS[type] ?? type}\n\n${content}`;
+      return `# ${date} — ${getReportTitle(type, registryMap)}\n\n${content}`;
     }
   }
   throw new Error(`No report found for type: ${type}`);
@@ -101,17 +121,20 @@ async function toolSearch(args: Record<string, unknown>): Promise<string> {
   if (!query) throw new Error("'query' is required");
   const days = Math.min(Number(args["days"] ?? 7), 14);
 
-  const { dates } = await fetchManifest();
+  const [registry, { dates }] = await Promise.all([fetchRegistrySafe(), fetchManifest()]);
+  const searchableReports = new Set(
+    registry.reports.filter((report) => report.includeInSearch).map((report) => report.id),
+  );
   const slice = dates.slice(0, days);
 
   const results: string[] = [];
 
   await Promise.all(
     slice.map(async ({ date, reports }) => {
-      // Skip -en duplicates and rollups to avoid redundant noise
-      const targets = reports.filter(
-        (r) => !r.endsWith("-en") && !r.includes("weekly") && !r.includes("monthly"),
-      );
+      const targets = reports.filter((reportType) => {
+        if (searchableReports.size > 0) return searchableReports.has(reportType);
+        return !reportType.endsWith("-en") && !reportType.includes("weekly") && !reportType.includes("monthly");
+      });
       await Promise.all(
         targets.map(async (type) => {
           try {
@@ -161,8 +184,7 @@ const TOOLS = [
         date: { type: "string", description: "Date in YYYY-MM-DD format" },
         type: {
           type: "string",
-          description:
-            "Report type: ai-cli-en, ai-agents-en, ai-web-en, ai-trending-en, ai-hn-en, ai-weekly-en, ai-monthly-en (drop -en suffix for Chinese versions)",
+          description: "Report type identifier. Use list_reports to discover available report types.",
         },
       },
       required: ["date", "type"],

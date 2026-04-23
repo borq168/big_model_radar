@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 ## Project overview
 
@@ -28,7 +28,7 @@ export DIGEST_REPO=owner/repo   # omit to skip GitHub issue creation
 
 The pipeline runs in four sequential phases, each implemented as a named async function in `src/index.ts`:
 
-1. **`fetchAllData`** — all network I/O in parallel: GitHub API (issues/PRs/releases) for 17 repos, Claude Code Skills, Anthropic/OpenAI sitemaps, GitHub Trending HTML + Search API, Hacker News Algolia API.
+1. **`fetchAllData`** — all network I/O in parallel: GitHub API (issues/PRs/releases) for 17 repos, Codex Skills, Anthropic/OpenAI sitemaps, GitHub Trending HTML + Search API, Hacker News Algolia API.
 2. **`generateSummaries`** — per-repo LLM calls, all in parallel, rate-limited to 5 concurrent requests by a queue in `src/report.ts`.
 3. **Comparisons** — two LLM calls: cross-tool CLI comparison and OpenClaw cross-ecosystem comparison.
 4. **Save phase** — `buildCliReportContent` / `buildOpenclawReportContent` build Markdown strings; `saveWebReport` / `saveTrendingReport` / `saveHnReport` call LLM + write file + create GitHub Issue.
@@ -61,7 +61,7 @@ Files written to `digests/YYYY-MM-DD/`:
 
 ## Tracked sources
 
-- **CLI_REPOS** (6): claude-code, codex, gemini-cli, kimi-cli, opencode, qwen-code
+- **CLI_REPOS** (6): Codex, codex, gemini-cli, kimi-cli, opencode, qwen-code
 - **OPENCLAW** + **OPENCLAW_PEERS** (11): openclaw/openclaw + 10 peer projects (sorted by stars)
 - **Skills**: one or more configured skills repositories — no date filter, sorted by popularity
 - **Content tracks**: config-driven `content_group` sources via sitemap / sitemap-index / sitemap-index-template / rss / atom, state in `digests/web-state.json`

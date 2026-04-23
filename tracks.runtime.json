@@ -1,0 +1,217 @@
+{
+  "generated": "2026-04-23T02:47:57.572Z",
+  "tracks": [
+    {
+      "id": "ai-cli",
+      "kind": "github_group",
+      "name": "AI CLI Tools",
+      "analysisProfile": "cli",
+      "topology": "symmetric",
+      "members": [
+        {
+          "id": "claude-code",
+          "repo": "anthropics/claude-code",
+          "name": "Claude Code"
+        },
+        {
+          "id": "codex",
+          "repo": "openai/codex",
+          "name": "OpenAI Codex"
+        },
+        {
+          "id": "gemini-cli",
+          "repo": "google-gemini/gemini-cli",
+          "name": "Gemini CLI"
+        },
+        {
+          "id": "copilot-cli",
+          "repo": "github/copilot-cli",
+          "name": "GitHub Copilot CLI"
+        },
+        {
+          "id": "kimi-cli",
+          "repo": "MoonshotAI/kimi-cli",
+          "name": "Kimi Code CLI"
+        },
+        {
+          "id": "opencode",
+          "repo": "anomalyco/opencode",
+          "name": "OpenCode"
+        },
+        {
+          "id": "qwen-code",
+          "repo": "QwenLM/qwen-code",
+          "name": "Qwen Code"
+        },
+        {
+          "id": "pi",
+          "repo": "badlogic/pi-mono",
+          "name": "Pi"
+        }
+      ],
+      "report": {
+        "label": "digest",
+        "titleZh": "AI CLI 工具社区动态日报",
+        "titleEn": "AI CLI Tools Digest",
+        "includeInRollups": true
+      }
+    },
+    {
+      "id": "ai-skills",
+      "kind": "github_group",
+      "name": "Skills Ecosystem",
+      "analysisProfile": "skills",
+      "topology": "symmetric",
+      "members": [
+        {
+          "id": "claude-code-skills",
+          "repo": "anthropics/skills",
+          "name": "Claude Code Skills"
+        }
+      ],
+      "report": {
+        "label": "skills",
+        "titleZh": "Skills 生态热点",
+        "titleEn": "Skills Ecosystem Highlights",
+        "includeInRollups": true
+      }
+    },
+    {
+      "id": "ai-agents",
+      "kind": "github_group",
+      "name": "AI Agents Ecosystem",
+      "analysisProfile": "project",
+      "topology": "primary-peer",
+      "primaryMemberId": "openclaw",
+      "members": [
+        {
+          "id": "openclaw",
+          "repo": "openclaw/openclaw",
+          "name": "OpenClaw",
+          "paginated": true
+        },
+        {
+          "id": "nanobot",
+          "repo": "HKUDS/nanobot",
+          "name": "NanoBot",
+          "paginated": true
+        },
+        {
+          "id": "zeroclaw",
+          "repo": "zeroclaw-labs/zeroclaw",
+          "name": "Zeroclaw"
+        },
+        {
+          "id": "picoclaw",
+          "repo": "sipeed/picoclaw",
+          "name": "PicoClaw",
+          "paginated": true
+        },
+        {
+          "id": "nanoclaw",
+          "repo": "qwibitai/nanoclaw",
+          "name": "NanoClaw"
+        },
+        {
+          "id": "ironclaw",
+          "repo": "nearai/ironclaw",
+          "name": "IronClaw"
+        },
+        {
+          "id": "lobsterai",
+          "repo": "netease-youdao/LobsterAI",
+          "name": "LobsterAI"
+        },
+        {
+          "id": "tinyclaw",
+          "repo": "TinyAGI/tinyclaw",
+          "name": "TinyClaw"
+        },
+        {
+          "id": "moltis",
+          "repo": "moltis-org/moltis",
+          "name": "Moltis"
+        },
+        {
+          "id": "copaw",
+          "repo": "agentscope-ai/CoPaw",
+          "name": "CoPaw"
+        },
+        {
+          "id": "zeptoclaw",
+          "repo": "qhkm/zeptoclaw",
+          "name": "ZeptoClaw"
+        },
+        {
+          "id": "easyclaw",
+          "repo": "gaoyangz77/easyclaw",
+          "name": "EasyClaw"
+        },
+        {
+          "id": "nemoclaw",
+          "repo": "NVIDIA/NemoClaw",
+          "name": "NemoClaw"
+        }
+      ],
+      "report": {
+        "label": "agents",
+        "titleZh": "AI Agents 生态日报",
+        "titleEn": "AI Agents Ecosystem Digest",
+        "includeInRollups": true
+      }
+    },
+    {
+      "id": "ai-web",
+      "kind": "content_group",
+      "name": "Official AI Sites",
+      "analysisProfile": "official_content",
+      "sources": [
+        {
+          "id": "anthropic",
+          "name": "Anthropic (Claude)",
+          "discovery": {
+            "kind": "sitemap",
+            "url": "https://www.anthropic.com/sitemap.xml",
+            "prefixes": [
+              "/news/",
+              "/research/",
+              "/engineering/",
+              "/learn/"
+            ]
+          },
+          "extract": {
+            "mode": "full-page"
+          }
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI",
+          "discovery": {
+            "kind": "sitemap-index-template",
+            "template": "https://openai.com/sitemap.xml/{name}/",
+            "names": [
+              "research",
+              "publication",
+              "release",
+              "company",
+              "engineering",
+              "milestone",
+              "learn-guides",
+              "safety",
+              "product"
+            ]
+          },
+          "extract": {
+            "mode": "metadata-only"
+          }
+        }
+      ],
+      "report": {
+        "label": "web",
+        "titleZh": "AI 官方内容追踪报告",
+        "titleEn": "Official AI Content Report",
+        "includeInRollups": true
+      }
+    }
+  ]
+}

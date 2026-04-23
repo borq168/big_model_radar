@@ -1,44 +1,17 @@
-import fs from "fs";
-import path from "path";
+import "./env.ts";
+
+import fs from "node:fs";
+import path from "node:path";
+import { loadConfig, type RadarTrack } from "./config.ts";
+import { getReportRegistryArtifact, sortReportsByRegistry } from "./report-registry.ts";
 
 const DIGESTS_DIR = "digests";
 const MANIFEST_PATH = "manifest.json";
 const FEED_PATH = "feed.xml";
+const REPORT_REGISTRY_PATH = "report-registry.json";
+const TRACKS_RUNTIME_PATH = "tracks.runtime.json";
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-const REPORT_FILES = [
-  "ai-cli",
-  "ai-cli-en",
-  "ai-agents",
-  "ai-agents-en",
-  "ai-web",
-  "ai-web-en",
-  "ai-trending",
-  "ai-trending-en",
-  "ai-hn",
-  "ai-hn-en",
-  "ai-weekly",
-  "ai-weekly-en",
-  "ai-monthly",
-  "ai-monthly-en",
-] as const;
 const MAX_FEED_ITEMS = 30;
-
-const REPORT_LABELS: Record<string, string> = {
-  "ai-cli": "AI CLI 工具社区动态日报",
-  "ai-cli-en": "AI CLI Tools Digest",
-  "ai-agents": "AI Agents 生态日报",
-  "ai-agents-en": "AI Agents Ecosystem Digest",
-  "ai-web": "AI 官方内容追踪报告",
-  "ai-web-en": "Official AI Content Report",
-  "ai-trending": "AI 开源趋势日报",
-  "ai-trending-en": "AI Open Source Trends",
-  "ai-hn": "Hacker News AI 社区动态日报",
-  "ai-hn-en": "Hacker News AI Community Digest",
-  "ai-weekly": "AI 工具生态周报",
-  "ai-weekly-en": "AI Tools Weekly Digest",
-  "ai-monthly": "AI 工具生态月报",
-  "ai-monthly-en": "AI Tools Monthly Digest",
-};
 
 interface DateEntry {
   date: string;
@@ -48,6 +21,11 @@ interface DateEntry {
 interface Manifest {
   generated: string;
   dates: DateEntry[];
+}
+
+interface TracksRuntimeArtifact {
+  generated: string;
+  tracks: RadarTrack[];
 }
 
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -78,26 +56,49 @@ function escapeXml(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
+const generated = new Date().toISOString();
+const loadedConfig = loadConfig();
+const registryArtifact = getReportRegistryArtifact(generated, loadedConfig.tracks);
+const tracksRuntimeArtifact: TracksRuntimeArtifact = {
+  generated,
+  tracks: loadedConfig.tracks,
+};
+const reportEntriesById = new Map(registryArtifact.reports.map((entry) => [entry.id, entry]));
+const knownReportIds = new Set(registryArtifact.reports.map((entry) => entry.id));
 const SITE_URL = resolveSiteUrl();
+
+function getKnownReportsForDate(date: string): string[] {
+  const dir = path.join(DIGESTS_DIR, date);
+  const reports = fs
+    .readdirSync(dir)
+    .filter((name) => name.endsWith(".md"))
+    .map((name) => name.slice(0, -3))
+    .filter((reportId) => knownReportIds.has(reportId));
+
+  return sortReportsByRegistry(reports, loadedConfig.tracks);
+}
 
 const entries = fs
   .readdirSync(DIGESTS_DIR)
   .filter((name) => DATE_RE.test(name) && fs.statSync(path.join(DIGESTS_DIR, name)).isDirectory())
   .sort()
   .reverse()
-  .map((date) => {
-    const reports = REPORT_FILES.filter((r) => fs.existsSync(path.join(DIGESTS_DIR, date, `${r}.md`)));
-    return { date, reports };
-  })
-  .filter((e) => e.reports.length > 0);
+  .map((date) => ({ date, reports: getKnownReportsForDate(date) }))
+  .filter((entry) => entry.reports.length > 0);
 
 const manifest: Manifest = {
-  generated: new Date().toISOString(),
+  generated,
   dates: entries,
 };
 
 fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + "\n");
 console.log(`manifest.json updated: ${entries.length} dates`);
+
+fs.writeFileSync(REPORT_REGISTRY_PATH, JSON.stringify(registryArtifact, null, 2) + "\n");
+console.log(`report-registry.json updated: ${registryArtifact.reports.length} reports`);
+
+fs.writeFileSync(TRACKS_RUNTIME_PATH, JSON.stringify(tracksRuntimeArtifact, null, 2) + "\n");
+console.log(`tracks.runtime.json updated: ${tracksRuntimeArtifact.tracks.length} tracks`);
 
 // ── RSS Feed ──────────────────────────────────────────────────────────────────
 
@@ -109,12 +110,11 @@ outer: for (const entry of entries) {
   }
 }
 
-const buildDate = toRfc822(new Date());
+const buildDate = toRfc822(new Date(generated));
 
 const itemsXml = feedItems
   .map(({ date, report }) => {
-    const label = REPORT_LABELS[report] ?? report;
-    const title = `${label} ${date}`;
+    const title = `${reportEntriesById.get(report)?.fullTitle ?? report} ${date}`;
     const link = `${SITE_URL}/#${date}/${report}`;
     const parts = date.split("-").map(Number);
     const pubDate = toRfc822(new Date(Date.UTC(parts[0]!, parts[1]! - 1, parts[2]!)));

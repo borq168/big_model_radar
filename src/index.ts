@@ -12,6 +12,8 @@
  *   DIGEST_REPO         - owner/repo where digest issues are posted (optional)
  */
 
+import "./env.ts";
+
 import {
   type RepoConfig,
   type GitHubItem,
@@ -32,22 +34,41 @@ import {
   buildTrendingPrompt,
   buildHnPrompt,
 } from "./prompts.ts";
-import { callLlm, saveFile, autoGenFooter, getLlmBaseUrl, hasLlmCredentials } from "./report.ts";
+import {
+  callLlm,
+  saveFile,
+  autoGenFooter,
+  getLlmConfigurationError,
+  getLlmRuntimeLabel,
+  hasLlmCredentials,
+} from "./report.ts";
 import { loadWebState, saveWebState, fetchSiteContent, type WebFetchResult, type WebState } from "./web.ts";
 import { fetchTrendingData, type TrendingData } from "./trending.ts";
 import { fetchHnData, type HnData } from "./hn.ts";
-import { loadConfig } from "./config.ts";
+import { loadConfig, type ContentGroupTrack } from "./config.ts";
 
 // ---------------------------------------------------------------------------
 // Repo config — loaded from config.yml, falls back to built-in defaults
 // ---------------------------------------------------------------------------
 
+const loadedConfig = loadConfig();
+
 const {
   cliRepos: CLI_REPOS,
-  skillsRepo: CLAUDE_SKILLS_REPO,
+  skillsRepos: SKILLS_REPOS,
   openclaw: OPENCLAW,
   openclawPeers: OPENCLAW_PEERS,
-} = loadConfig();
+  contentTracks: CONTENT_TRACKS,
+} = loadedConfig;
+
+const CONTENT_SOURCE_ID_COUNTS = CONTENT_TRACKS.flatMap((track) => track.sources.map((source) => source.id)).reduce(
+  (map, id) => map.set(id, (map.get(id) ?? 0) + 1),
+  new Map<string, number>(),
+);
+
+function getContentSourceRuntimeId(trackId: string, sourceId: string): string {
+  return (CONTENT_SOURCE_ID_COUNTS.get(sourceId) ?? 0) > 1 ? `${trackId}:${sourceId}` : sourceId;
+}
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -68,6 +89,26 @@ interface RepoFetch {
   issues: GitHubItem[];
   prs: GitHubItem[];
   releases: GitHubRelease[];
+  fetchError?: string;
+}
+
+interface SkillsRepoFetch {
+  cfg: RepoConfig;
+  prs: GitHubItem[];
+  issues: GitHubItem[];
+  fetchError?: string;
+}
+
+type SkillsFetch = SkillsRepoFetch[];
+
+interface ContentTrackFetch {
+  track: ContentGroupTrack;
+  results: WebFetchResult[];
+}
+
+function formatError(err: unknown): string {
+  if (err instanceof Error) return err.message;
+  return String(err);
 }
 
 // ---------------------------------------------------------------------------
@@ -79,49 +120,97 @@ async function fetchAllData(
   webState: WebState,
 ): Promise<{
   fetched: RepoFetch[];
-  skillsData: { prs: GitHubItem[]; issues: GitHubItem[] };
-  webResults: WebFetchResult[];
+  skillsData: SkillsFetch;
+  contentResults: ContentTrackFetch[];
   trendingData: TrendingData;
   hnData: HnData;
 }> {
   const allConfigs = [...CLI_REPOS, OPENCLAW, ...OPENCLAW_PEERS];
-  console.log(`  Tracking: ${allConfigs.map((r) => r.id).join(", ")}, claude-code-skills, web, hn`);
+  console.log(
+    `  Tracking: ${[
+      ...allConfigs.map((r) => r.id),
+      ...SKILLS_REPOS.map((r) => r.id),
+      ...CONTENT_TRACKS.flatMap((track) => track.sources.map((source) => `content/${track.id}/${source.id}`)),
+      "trending",
+      "hn",
+    ].join(", ")}`,
+  );
 
-  const [fetched, skillsData, webResults, trendingData, hnData] = await Promise.all([
+  const [fetched, skillsData, contentResults, trendingData, hnData] = await Promise.all([
     Promise.all(
       allConfigs.map(async (cfg) => {
-        const [issuesRaw, prs, releases] = await Promise.all([
+        const [issuesResult, prsResult, releasesResult] = await Promise.allSettled([
           fetchRecentItems(cfg, "issues", since),
           fetchRecentItems(cfg, "pulls", since),
           fetchRecentReleases(cfg.repo, since),
         ]);
+
+        const errors: string[] = [];
+        const issuesRaw = issuesResult.status === "fulfilled" ? issuesResult.value : [];
+        if (issuesResult.status === "rejected") {
+          errors.push(`issues: ${formatError(issuesResult.reason)}`);
+        }
+
+        const prs = prsResult.status === "fulfilled" ? prsResult.value : [];
+        if (prsResult.status === "rejected") {
+          errors.push(`pulls: ${formatError(prsResult.reason)}`);
+        }
+
+        const releases = releasesResult.status === "fulfilled" ? releasesResult.value : [];
+        if (releasesResult.status === "rejected") {
+          errors.push(`releases: ${formatError(releasesResult.reason)}`);
+        }
+
         const issues = issuesRaw.filter((i) => !i.pull_request);
         console.log(
           `  [${cfg.id}] issues: ${issues.length}, prs: ${prs.length}, releases: ${releases.length}`,
         );
-        return { cfg, issues, prs, releases };
+        if (errors.length > 0) {
+          console.error(`  [${cfg.id}] fetch failed partially: ${errors.join(" | ")}`);
+        }
+        return { cfg, issues, prs, releases, ...(errors.length > 0 ? { fetchError: errors.join(" | ") } : {}) };
       }),
     ),
-    fetchSkillsData(CLAUDE_SKILLS_REPO).then((d) => {
-      console.log(`  [claude-code-skills] prs: ${d.prs.length}, issues: ${d.issues.length}`);
-      return d;
-    }),
-    Promise.all([
-      fetchSiteContent("anthropic", webState).catch((err): WebFetchResult => {
-        console.error(`  [web/anthropic] fetch failed: ${err}`);
-        return {
-          site: "anthropic",
-          siteName: "Anthropic (Claude)",
-          isFirstRun: false,
-          newItems: [],
-          totalDiscovered: 0,
-        };
-      }),
-      fetchSiteContent("openai", webState).catch((err): WebFetchResult => {
-        console.error(`  [web/openai] fetch failed: ${err}`);
-        return { site: "openai", siteName: "OpenAI", isFirstRun: false, newItems: [], totalDiscovered: 0 };
-      }),
-    ]),
+    Promise.all(
+      SKILLS_REPOS.map((cfg) =>
+        fetchSkillsData(cfg.repo)
+          .then((data): SkillsRepoFetch => {
+            console.log(`  [skills/${cfg.id}] prs: ${data.prs.length}, issues: ${data.issues.length}`);
+            if (data.fetchError) {
+              console.error(`  [skills/${cfg.id}] fetch failed partially: ${data.fetchError}`);
+            }
+            return { cfg, prs: data.prs, issues: data.issues, ...(data.fetchError ? { fetchError: data.fetchError } : {}) };
+          })
+          .catch((err): SkillsRepoFetch => {
+            const fetchError = formatError(err);
+            console.error(`  [skills/${cfg.id}] fetch failed: ${fetchError}`);
+            return { cfg, prs: [], issues: [], fetchError };
+          }),
+      ),
+    ),
+    CONTENT_TRACKS.length > 0
+      ? Promise.all(
+          CONTENT_TRACKS.map(async (track): Promise<ContentTrackFetch> => ({
+            track,
+            results: await Promise.all(
+              track.sources.map((source) =>
+                fetchSiteContent({ ...source, id: getContentSourceRuntimeId(track.id, source.id) }, webState).catch(
+                  (err: unknown): WebFetchResult => {
+                    console.error(`  [content/${track.id}/${source.id}] fetch failed: ${err}`);
+                    return {
+                      sourceId: source.id,
+                      sourceName: source.name,
+                      isFirstRun: false,
+                      newItems: [],
+                      totalDiscovered: 0,
+                    };
+                  },
+                ),
+              ),
+            ),
+          })),
+        )
+      : Promise.resolve([]),
     fetchTrendingData().catch(
       (): TrendingData => ({
         trendingRepos: [],
@@ -132,7 +221,7 @@ async function fetchAllData(
     fetchHnData().catch((): HnData => ({ stories: [], fetchSuccess: false })),
   ]);
 
-  return { fetched, skillsData, webResults, trendingData, hnData };
+  return { fetched, skillsData, contentResults, trendingData, hnData };
 }
 
 // ---------------------------------------------------------------------------
@@ -142,7 +231,7 @@ async function fetchAllData(
 async function generateSummaries(
   fetchedCli: RepoFetch[],
   fetchedOpenclaw: RepoFetch,
-  skillsData: { prs: GitHubItem[]; issues: GitHubItem[] },
+  skillsData: SkillsFetch,
   fetchedPeers: RepoFetch[],
   trendingData: TrendingData,
   dateStr: string,
@@ -155,7 +244,15 @@ async function generateSummaries(
   trendingSummary: string;
 }> {
   const noActivity = lang === "en" ? "No activity in the last 24 hours." : "过去24小时无活动。";
+  const fetchFailed =
+    lang === "en"
+      ? "⚠️ GitHub fetch failed for this project. The report uses partial or missing data."
+      : "⚠️ 该项目的 GitHub 数据抓取失败，以下内容基于部分数据或缺失数据。";
   const summaryFailed = lang === "en" ? "⚠️ Summary generation failed." : "⚠️ 摘要生成失败。";
+  const skillsFetchFailed =
+    lang === "en"
+      ? "⚠️ One or more skills repositories failed to fetch. The report uses partial or missing data."
+      : "⚠️ 一个或多个 skills 仓库抓取失败，以下内容基于部分数据或缺失数据。";
   const skillsFailed = lang === "en" ? "⚠️ Skills summary generation failed." : "⚠️ Skills 摘要生成失败。";
   const trendingNoData =
     lang === "en"
@@ -165,8 +262,18 @@ async function generateSummaries(
 
   const [cliDigests, openclawSummary, skillsSummary, peerDigests, trendingSummary] = await Promise.all([
     Promise.all(
-      fetchedCli.map(async ({ cfg, issues, prs, releases }): Promise<RepoDigest> => {
+      fetchedCli.map(async ({ cfg, issues, prs, releases, fetchError }): Promise<RepoDigest> => {
         const hasData = issues.length || prs.length || releases.length;
+        const fetchNotice = fetchError ? `${fetchFailed}\n\n> ${fetchError}\n\n` : "";
+        if (fetchError && !hasData) {
+          return {
+            config: cfg,
+            issues,
+            prs,
+            releases,
+            summary: `${fetchFailed}\n\n> ${fetchError}`,
+          };
+        }
         if (!hasData) {
           console.log(`  [${cfg.id}] No activity, skipping LLM call`);
           return { config: cfg, issues, prs, releases, summary: noActivity };
@@ -174,7 +281,8 @@ async function generateSummaries(
         console.log(`  [${cfg.id}] Calling LLM for summary...`);
         try {
           const summary = await callLlm(buildCliPrompt(cfg, issues, prs, releases, dateStr, lang));
-          return { config: cfg, issues, prs, releases, summary };
+          console.log(`  [${cfg.id}] Summary ready.`);
+          return { config: cfg, issues, prs, releases, summary: fetchNotice + summary };
         } catch (err) {
           console.error(`  [${cfg.id}] LLM call failed: ${err}`);
           return { config: cfg, issues, prs, releases, summary: summaryFailed };
@@ -182,46 +290,77 @@ async function generateSummaries(
       }),
     ),
     (async () => {
-      const { cfg, issues, prs, releases } = fetchedOpenclaw;
+      const { cfg, issues, prs, releases, fetchError } = fetchedOpenclaw;
       const hasData = issues.length || prs.length || releases.length;
+      const fetchNotice = fetchError ? `${fetchFailed}\n\n> ${fetchError}\n\n` : "";
+      if (fetchError && !hasData) return `${fetchFailed}\n\n> ${fetchError}`;
       if (!hasData) {
         console.log(`  [openclaw] No activity, skipping LLM call`);
         return noActivity;
       }
       console.log(`  [openclaw] Calling LLM for OpenClaw report...`);
       try {
-        return await callLlm(buildPeerPrompt(cfg, issues, prs, releases, dateStr, 50, 30, lang));
+        const summary = await callLlm(buildPeerPrompt(cfg, issues, prs, releases, dateStr, 50, 30, lang));
+        console.log("  [openclaw] Summary ready.");
+        return fetchNotice + summary;
       } catch (err) {
         console.error(`  [openclaw] LLM call failed: ${err}`);
         return summaryFailed;
       }
     })(),
     (async () => {
-      console.log("  [claude-code-skills] Calling LLM for skills report...");
+      const hasData = skillsData.some((repo) => repo.prs.length > 0 || repo.issues.length > 0);
+      const fetchErrors = skillsData.filter((repo) => repo.fetchError);
+      const fetchNotice =
+        fetchErrors.length > 0
+          ? `${skillsFetchFailed}\n\n${fetchErrors
+              .map((repo) => `> ${repo.cfg.name}: ${repo.fetchError}`)
+              .join("\n")}\n\n`
+          : "";
+      if (fetchErrors.length > 0 && !hasData) return `${skillsFetchFailed}\n\n${fetchErrors.map((repo) => `> ${repo.cfg.name}: ${repo.fetchError}`).join("\n")}`;
+      console.log("  [skills] Calling LLM for skills report...");
       try {
-        return await callLlm(buildSkillsPrompt(skillsData.prs, skillsData.issues, dateStr, lang));
+        const summary = await callLlm(
+          buildSkillsPrompt(
+            skillsData.map((repo) => ({ config: repo.cfg, prs: repo.prs, issues: repo.issues })),
+            dateStr,
+            lang,
+          ),
+        );
+        console.log("  [skills] Summary ready.");
+        return fetchNotice + summary;
       } catch (err) {
-        console.error(`  [claude-code-skills] LLM call failed: ${err}`);
+        console.error(`  [skills] LLM call failed: ${err}`);
         return skillsFailed;
       }
     })(),
     Promise.all(
-      fetchedPeers.map(async ({ cfg, issues, prs, releases }): Promise<RepoDigest> => {
+      fetchedPeers.map(async ({ cfg, issues, prs, releases, fetchError }): Promise<RepoDigest> => {
         const hasData = issues.length || prs.length || releases.length;
+        const fetchNotice = fetchError ? `${fetchFailed}\n\n> ${fetchError}\n\n` : "";
+        if (fetchError && !hasData) {
+          return {
+            config: cfg,
+            issues,
+            prs,
+            releases,
+            summary: `${fetchFailed}\n\n> ${fetchError}`,
+          };
+        }
         if (!hasData) {
           console.log(`  [${cfg.id}] No activity, skipping LLM call`);
           return { config: cfg, issues, prs, releases, summary: noActivity };
         }
         console.log(`  [${cfg.id}] Calling LLM for peer summary...`);
         try {
+          const summary = await callLlm(buildPeerPrompt(cfg, issues, prs, releases, dateStr, undefined, undefined, lang));
+          console.log(`  [${cfg.id}] Peer summary ready.`);
           return {
             config: cfg,
             issues,
             prs,
             releases,
-            summary: await callLlm(
-              buildPeerPrompt(cfg, issues, prs, releases, dateStr, undefined, undefined, lang),
-            ),
+            summary: fetchNotice + summary,
           };
         } catch (err) {
           console.error(`  [${cfg.id}] LLM call failed: ${err}`);
@@ -234,7 +373,9 @@ async function generateSummaries(
       if (!hasData) return trendingNoData;
       console.log("  [trending] Calling LLM for trending report...");
       try {
-        return await callLlm(buildTrendingPrompt(trendingData, dateStr, lang), 6144);
+        const summary = await callLlm(buildTrendingPrompt(trendingData, dateStr, lang), 6144);
+        console.log("  [trending] Summary ready.");
+        return summary;
       } catch (err) {
         console.error(`  [trending] LLM call failed: ${err}`);
         return trendingFailed;
@@ -251,53 +392,43 @@ async function generateSummaries(
 
 function buildCliReportContent(
   cliDigests: RepoDigest[],
-  skillsSummary: string,
   comparison: string,
   utcStr: string,
   dateStr: string,
   footer: string,
   lang: "zh" | "en" = "zh",
 ): string {
-  const repoLinks =
-    cliDigests.map((d) => `- [${d.config.name}](https://github.com/${d.config.repo})`).join("\n") +
-    `\n- [Claude Code Skills](https://github.com/${CLAUDE_SKILLS_REPO})`;
+  const repoLinks = cliDigests
+    .map((d) => d.config)
+    .map((repo) => `- [${repo.name}](https://github.com/${repo.repo})`)
+    .join("\n");
 
   const t =
     lang === "en"
       ? {
           title: `# AI CLI Tools Community Digest ${dateStr}\n\n`,
           meta: `> Generated: ${utcStr} UTC | Tools covered: ${cliDigests.length}\n\n`,
-          skillsHeading: `## Claude Code Skills Highlights`,
-          skillsSource: `Source`,
           comparison: `## Cross-Tool Comparison\n\n`,
           detail: `## Per-Tool Reports\n\n`,
         }
       : {
           title: `# AI CLI 工具社区动态日报 ${dateStr}\n\n`,
           meta: `> 生成时间: ${utcStr} UTC | 覆盖工具: ${cliDigests.length} 个\n\n`,
-          skillsHeading: `## Claude Code Skills 社区热点`,
-          skillsSource: `数据来源`,
           comparison: `## 横向对比\n\n`,
           detail: `## 各工具详细报告\n\n`,
         };
 
-  const skillsSection =
-    `${t.skillsHeading}\n\n` +
-    `> ${t.skillsSource}: [anthropics/skills](https://github.com/${CLAUDE_SKILLS_REPO})\n\n` +
-    `${skillsSummary}\n\n---\n\n`;
-
   const toolSections = cliDigests
-    .map((d) => {
-      const skills = d.config.id === "claude-code" ? skillsSection : "";
-      return [
+    .map((d) =>
+      [
         `<details>`,
         `<summary><strong>${d.config.name}</strong> — <a href="https://github.com/${d.config.repo}">${d.config.repo}</a></summary>`,
         ``,
-        skills + d.summary,
+        d.summary,
         ``,
         `</details>`,
-      ].join("\n");
-    })
+      ].join("\n"),
+    )
     .join("\n\n");
 
   return (
@@ -312,6 +443,32 @@ function buildCliReportContent(
     toolSections +
     footer
   );
+}
+
+function buildSkillsReportContent(
+  skillsRepos: RepoConfig[],
+  skillsSummary: string,
+  utcStr: string,
+  dateStr: string,
+  footer: string,
+  lang: "zh" | "en" = "zh",
+): string {
+  const repoLinks = skillsRepos.map((repo) => `- [${repo.name}](https://github.com/${repo.repo})`).join("\n");
+
+  const t =
+    lang === "en"
+      ? {
+          title: `# Skills Ecosystem Highlights ${dateStr}\n\n`,
+          meta: `> Generated: ${utcStr} UTC | Repositories covered: ${skillsRepos.length}\n\n`,
+          sources: `Sources:\n`,
+        }
+      : {
+          title: `# Skills 生态热点 ${dateStr}\n\n`,
+          meta: `> 生成时间: ${utcStr} UTC | 覆盖仓库: ${skillsRepos.length} 个\n\n`,
+          sources: `数据来源:\n`,
+        };
+
+  return t.title + t.meta + t.sources + repoLinks + `\n\n---\n\n` + skillsSummary + footer;
 }
 
 function buildOpenclawReportContent(
@@ -381,50 +538,54 @@ function buildOpenclawReportContent(
 // Report savers (LLM call + file save + optional GitHub issue)
 // ---------------------------------------------------------------------------
 
-async function saveWebReport(
+async function saveContentReport(
+  track: ContentGroupTrack,
   webResults: WebFetchResult[],
-  webState: WebState,
   utcStr: string,
   dateStr: string,
   digestRepo: string,
   footer: string,
   lang: "zh" | "en" = "zh",
 ): Promise<void> {
+  if (track.sources.length === 0) {
+    console.log(`  [content/${track.id}/${lang}] No content_group sources configured, skipping report.`);
+    return;
+  }
+
   const hasNewContent = webResults.some((r) => r.newItems.length > 0);
+  const reportBaseId = track.id;
+  const reportLabel = track.report?.label ?? track.id;
+  const reportTitle = lang === "en" ? track.report?.titleEn ?? track.name : track.report?.titleZh ?? track.name;
 
   if (hasNewContent) {
-    console.log(`  [web/${lang}] Calling LLM for web content report...`);
+    console.log(`  [content/${track.id}/${lang}] Calling LLM for content report...`);
     try {
       const webSummary = await callLlm(buildWebReportPrompt(webResults, dateStr, lang), 8192);
       const isFirstRun = webResults.some((r) => r.isFirstRun);
       const totalNew = webResults.reduce((sum, r) => sum + r.newItems.length, 0);
 
-      const anthropicNew = webResults.find((r) => r.site === "anthropic")?.newItems.length ?? 0;
-      const anthropicTotal = webResults.find((r) => r.site === "anthropic")?.totalDiscovered ?? 0;
-      const openaiNew = webResults.find((r) => r.site === "openai")?.newItems.length ?? 0;
-      const openaiTotal = webResults.find((r) => r.site === "openai")?.totalDiscovered ?? 0;
-
-      const fileName = lang === "en" ? "ai-web-en.md" : "ai-web.md";
+      const fileName = lang === "en" ? `${reportBaseId}-en.md` : `${reportBaseId}.md`;
+      const sourceLines = webResults
+        .map((result) =>
+          lang === "en"
+            ? `- ${result.sourceName} — ${result.newItems.length} new item(s) (discovered total: ${result.totalDiscovered})`
+            : `- ${result.sourceName} — 新增 ${result.newItems.length} 条（共发现 ${result.totalDiscovered} 条）`,
+        )
+        .join("\n");
 
       const t =
         lang === "en"
           ? {
               mode: isFirstRun ? "First full crawl" : "Today's update",
-              title: `# Official AI Content Report ${dateStr}\n\n`,
+              title: `# ${reportTitle} ${dateStr}\n\n`,
               meta: `> ${isFirstRun ? "First full crawl" : "Today's update"} | New content: ${totalNew} articles | Generated: ${utcStr} UTC\n\n`,
-              sources:
-                `Sources:\n` +
-                `- Anthropic: [anthropic.com](https://www.anthropic.com) — ${anthropicNew} new articles (sitemap total: ${anthropicTotal})\n` +
-                `- OpenAI: [openai.com](https://openai.com) — ${openaiNew} new articles (sitemap total: ${openaiTotal})\n\n`,
+              sources: `Sources:\n${sourceLines}\n\n`,
             }
           : {
               mode: isFirstRun ? "首次全量" : "今日更新",
-              title: `# AI 官方内容追踪报告 ${dateStr}\n\n`,
+              title: `# ${reportTitle} ${dateStr}\n\n`,
               meta: `> ${isFirstRun ? "首次全量" : "今日更新"} | 新增内容: ${totalNew} 篇 | 生成时间: ${utcStr} UTC\n\n`,
-              sources:
-                `数据来源:\n` +
-                `- Anthropic: [anthropic.com](https://www.anthropic.com) — 新增 ${anthropicNew} 篇（sitemap 共 ${anthropicTotal} 条）\n` +
-                `- OpenAI: [openai.com](https://openai.com) — 新增 ${openaiNew} 篇（sitemap 共 ${openaiTotal} 条）\n\n`,
+              sources: `数据来源:\n${sourceLines}\n\n`,
             };
 
       const webContent = t.title + t.meta + t.sources + `---\n\n` + webSummary + footer;
@@ -434,22 +595,17 @@ async function saveWebReport(
       if (digestRepo) {
         const webTitle =
           lang === "en"
-            ? `🌐 Official AI Content Report ${dateStr}${isFirstRun ? " (First Crawl)" : ""}`
-            : `🌐 AI 官方内容追踪报告 ${dateStr}${isFirstRun ? "（首次全量）" : ""}`;
-        const webLabel = lang === "en" ? "web-en" : "web";
+            ? `🌐 ${reportTitle} ${dateStr}${isFirstRun ? " (First Crawl)" : ""}`
+            : `🌐 ${reportTitle} ${dateStr}${isFirstRun ? "（首次全量）" : ""}`;
+        const webLabel = lang === "en" ? `${reportLabel}-en` : reportLabel;
         const webUrl = await createGitHubIssue(webTitle, webContent, webLabel);
-        console.log(`  Created web issue (${lang}): ${webUrl}`);
+        console.log(`  Created content issue (${track.id}/${lang}): ${webUrl}`);
       }
     } catch (err) {
-      console.error(`  [web/${lang}] Report generation failed: ${err}`);
+      console.error(`  [content/${track.id}/${lang}] Report generation failed: ${err}`);
     }
   } else {
-    console.log(`  [web/${lang}] No new content detected, skipping report.`);
-  }
-
-  if (lang === "zh") {
-    saveWebState(webState);
-    console.log("  [web] State saved.");
+    console.log(`  [content/${track.id}/${lang}] No new content detected, skipping report.`);
   }
 }
 
@@ -538,7 +694,7 @@ async function saveHnReport(
 async function main(): Promise<void> {
   requireEnv("GITHUB_TOKEN");
   if (!hasLlmCredentials()) {
-    throw new Error("Missing required environment variable: OPENAI_API_KEY");
+    throw new Error(getLlmConfigurationError());
   }
 
   const now = new Date();
@@ -547,7 +703,7 @@ async function main(): Promise<void> {
   const utcStr = now.toISOString().slice(0, 16).replace("T", " ");
   const digestRepo = process.env["DIGEST_REPO"] ?? "";
 
-  console.log(`[${now.toISOString()}] Starting digest | endpoint: ${getLlmBaseUrl()}`);
+  console.log(`[${now.toISOString()}] Starting digest | llm: ${getLlmRuntimeLabel()}`);
 
   const langs = (process.env["REPORT_LANGS"] ?? "zh")
     .split(",")
@@ -560,7 +716,7 @@ async function main(): Promise<void> {
 
   // 1. Fetch all data in parallel
   const webState = loadWebState();
-  const { fetched, skillsData, webResults, trendingData, hnData } = await fetchAllData(since, webState);
+  const { fetched, skillsData, contentResults, trendingData, hnData } = await fetchAllData(since, webState);
 
   const peerIds = new Set(OPENCLAW_PEERS.map((p) => p.id));
   const fetchedCli = fetched.filter((f) => f.cfg.id !== OPENCLAW.id && !peerIds.has(f.cfg.id));
@@ -634,13 +790,13 @@ async function main(): Promise<void> {
   if (genZh && zhSummaries) {
     const digestContent = buildCliReportContent(
       zhSummaries.cliDigests,
-      zhSummaries.skillsSummary,
       comparison,
       utcStr,
       dateStr,
       footer,
       "zh",
     );
+    const skillsContent = buildSkillsReportContent(SKILLS_REPOS, zhSummaries.skillsSummary, utcStr, dateStr, footer, "zh");
     const openclawContent = buildOpenclawReportContent(
       fetchedOpenclaw,
       zhSummaries.peerDigests,
@@ -652,6 +808,7 @@ async function main(): Promise<void> {
       "zh",
     );
     console.log(`  Saved ${saveFile(digestContent, dateStr, "ai-cli.md")}`);
+    console.log(`  Saved ${saveFile(skillsContent, dateStr, "ai-skills.md")}`);
     console.log(`  Saved ${saveFile(openclawContent, dateStr, "ai-agents.md")}`);
     if (digestRepo) {
       const cliUrl = await createGitHubIssue(
@@ -660,6 +817,12 @@ async function main(): Promise<void> {
         "digest",
       );
       console.log(`  Created CLI issue (zh): ${cliUrl}`);
+      const skillsUrl = await createGitHubIssue(
+        `🧩 Skills 生态热点 ${dateStr}`,
+        skillsContent,
+        "skills",
+      );
+      console.log(`  Created Skills issue (zh): ${skillsUrl}`);
       const openclawUrl = await createGitHubIssue(
         `🦞 OpenClaw 生态日报 ${dateStr}`,
         openclawContent,
@@ -671,8 +834,15 @@ async function main(): Promise<void> {
   if (genEn && enSummaries) {
     const enDigestContent = buildCliReportContent(
       enSummaries.cliDigests,
-      enSummaries.skillsSummary,
       enComparison,
+      utcStr,
+      dateStr,
+      enFooter,
+      "en",
+    );
+    const enSkillsContent = buildSkillsReportContent(
+      SKILLS_REPOS,
+      enSummaries.skillsSummary,
       utcStr,
       dateStr,
       enFooter,
@@ -689,6 +859,7 @@ async function main(): Promise<void> {
       "en",
     );
     console.log(`  Saved ${saveFile(enDigestContent, dateStr, "ai-cli-en.md")}`);
+    console.log(`  Saved ${saveFile(enSkillsContent, dateStr, "ai-skills-en.md")}`);
     console.log(`  Saved ${saveFile(enOpenclawContent, dateStr, "ai-agents-en.md")}`);
     if (digestRepo) {
       const cliEnUrl = await createGitHubIssue(
@@ -697,6 +868,12 @@ async function main(): Promise<void> {
         "digest-en",
       );
       console.log(`  Created CLI issue (en): ${cliEnUrl}`);
+      const skillsEnUrl = await createGitHubIssue(
+        `🧩 Skills Ecosystem Highlights ${dateStr}`,
+        enSkillsContent,
+        "skills-en",
+      );
+      console.log(`  Created Skills issue (en): ${skillsEnUrl}`);
       const openclawEnUrl = await createGitHubIssue(
         `🦞 OpenClaw Ecosystem Digest ${dateStr}`,
         enOpenclawContent,
@@ -706,9 +883,23 @@ async function main(): Promise<void> {
     }
   }
 
-  // Web report: zh saves state, en skips state save
-  if (genZh) await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, footer, "zh");
-  if (genEn) await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, enFooter, "en");
+  await Promise.all([
+    ...contentResults.map((contentTrack) =>
+      genZh
+        ? saveContentReport(contentTrack.track, contentTrack.results, utcStr, dateStr, digestRepo, footer, "zh")
+        : Promise.resolve(),
+    ),
+    ...contentResults.map((contentTrack) =>
+      genEn
+        ? saveContentReport(contentTrack.track, contentTrack.results, utcStr, dateStr, digestRepo, enFooter, "en")
+        : Promise.resolve(),
+    ),
+  ]);
+
+  if (contentResults.length > 0) {
+    saveWebState(webState);
+    console.log("  [content] State saved.");
+  }
 
   await Promise.all([
     genZh && zhSummaries

@@ -1,0 +1,375 @@
+{
+  "generated": "2026-04-23T02:47:57.572Z",
+  "tracks": [
+    {
+      "id": "ai-cli",
+      "kind": "github_group",
+      "order": 10,
+      "includeInRollups": true,
+      "variants": [
+        {
+          "id": "ai-cli",
+          "language": "zh",
+          "shortLabel": "AI CLI 工具",
+          "fullTitle": "AI CLI 工具社区动态日报"
+        },
+        {
+          "id": "ai-cli-en",
+          "language": "en",
+          "shortLabel": "AI CLI Tools",
+          "fullTitle": "AI CLI Tools Digest"
+        }
+      ]
+    },
+    {
+      "id": "ai-skills",
+      "kind": "github_group",
+      "order": 15,
+      "includeInRollups": true,
+      "variants": [
+        {
+          "id": "ai-skills",
+          "language": "zh",
+          "shortLabel": "Skills 生态热点",
+          "fullTitle": "Skills 生态热点"
+        },
+        {
+          "id": "ai-skills-en",
+          "language": "en",
+          "shortLabel": "Skills Highlights",
+          "fullTitle": "Skills Ecosystem Highlights"
+        }
+      ]
+    },
+    {
+      "id": "ai-agents",
+      "kind": "github_group",
+      "order": 20,
+      "includeInRollups": true,
+      "variants": [
+        {
+          "id": "ai-agents",
+          "language": "zh",
+          "shortLabel": "AI Agents 生态",
+          "fullTitle": "AI Agents 生态日报"
+        },
+        {
+          "id": "ai-agents-en",
+          "language": "en",
+          "shortLabel": "AI Agents Ecosystem",
+          "fullTitle": "AI Agents Ecosystem Digest"
+        }
+      ]
+    },
+    {
+      "id": "ai-web",
+      "kind": "content_group",
+      "order": 30,
+      "includeInRollups": true,
+      "variants": [
+        {
+          "id": "ai-web",
+          "language": "zh",
+          "shortLabel": "OpenAI & Anthropic 官网动态",
+          "fullTitle": "AI 官方内容追踪报告"
+        },
+        {
+          "id": "ai-web-en",
+          "language": "en",
+          "shortLabel": "OpenAI & Anthropic Updates",
+          "fullTitle": "Official AI Content Report"
+        }
+      ]
+    },
+    {
+      "id": "ai-trending",
+      "kind": "content_group",
+      "order": 40,
+      "includeInRollups": true,
+      "variants": [
+        {
+          "id": "ai-trending",
+          "language": "zh",
+          "shortLabel": "GitHub AI 趋势",
+          "fullTitle": "AI 开源趋势日报"
+        },
+        {
+          "id": "ai-trending-en",
+          "language": "en",
+          "shortLabel": "GitHub AI Trends",
+          "fullTitle": "AI Open Source Trends"
+        }
+      ]
+    },
+    {
+      "id": "ai-hn",
+      "kind": "content_group",
+      "order": 50,
+      "includeInRollups": true,
+      "variants": [
+        {
+          "id": "ai-hn",
+          "language": "zh",
+          "shortLabel": "HN 社区动态",
+          "fullTitle": "Hacker News AI 社区动态日报"
+        },
+        {
+          "id": "ai-hn-en",
+          "language": "en",
+          "shortLabel": "HN Community Digest",
+          "fullTitle": "Hacker News AI Community Digest"
+        }
+      ]
+    },
+    {
+      "id": "ai-weekly",
+      "kind": "rollup",
+      "order": 100,
+      "includeInRollups": false,
+      "variants": [
+        {
+          "id": "ai-weekly",
+          "language": "zh",
+          "shortLabel": "AI 工具生态周报",
+          "fullTitle": "AI 工具生态周报"
+        },
+        {
+          "id": "ai-weekly-en",
+          "language": "en",
+          "shortLabel": "AI Tools Weekly",
+          "fullTitle": "AI Tools Weekly Digest"
+        }
+      ]
+    },
+    {
+      "id": "ai-monthly",
+      "kind": "rollup",
+      "order": 110,
+      "includeInRollups": false,
+      "variants": [
+        {
+          "id": "ai-monthly",
+          "language": "zh",
+          "shortLabel": "AI 工具生态月报",
+          "fullTitle": "AI 工具生态月报"
+        },
+        {
+          "id": "ai-monthly-en",
+          "language": "en",
+          "shortLabel": "AI Tools Monthly",
+          "fullTitle": "AI Tools Monthly Digest"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "id": "ai-cli",
+      "baseId": "ai-cli",
+      "kind": "github_group",
+      "order": 10,
+      "filename": "ai-cli.md",
+      "language": "zh",
+      "shortLabel": "AI CLI 工具",
+      "fullTitle": "AI CLI 工具社区动态日报",
+      "includeInRollups": true,
+      "includeInSearch": true,
+      "pairId": "ai-cli-en"
+    },
+    {
+      "id": "ai-cli-en",
+      "baseId": "ai-cli",
+      "kind": "github_group",
+      "order": 10,
+      "filename": "ai-cli-en.md",
+      "language": "en",
+      "shortLabel": "AI CLI Tools",
+      "fullTitle": "AI CLI Tools Digest",
+      "includeInRollups": true,
+      "includeInSearch": false,
+      "pairId": "ai-cli"
+    },
+    {
+      "id": "ai-skills",
+      "baseId": "ai-skills",
+      "kind": "github_group",
+      "order": 15,
+      "filename": "ai-skills.md",
+      "language": "zh",
+      "shortLabel": "Skills 生态热点",
+      "fullTitle": "Skills 生态热点",
+      "includeInRollups": true,
+      "includeInSearch": true,
+      "pairId": "ai-skills-en"
+    },
+    {
+      "id": "ai-skills-en",
+      "baseId": "ai-skills",
+      "kind": "github_group",
+      "order": 15,
+      "filename": "ai-skills-en.md",
+      "language": "en",
+      "shortLabel": "Skills Highlights",
+      "fullTitle": "Skills Ecosystem Highlights",
+      "includeInRollups": true,
+      "includeInSearch": false,
+      "pairId": "ai-skills"
+    },
+    {
+      "id": "ai-agents",
+      "baseId": "ai-agents",
+      "kind": "github_group",
+      "order": 20,
+      "filename": "ai-agents.md",
+      "language": "zh",
+      "shortLabel": "AI Agents 生态",
+      "fullTitle": "AI Agents 生态日报",
+      "includeInRollups": true,
+      "includeInSearch": true,
+      "pairId": "ai-agents-en"
+    },
+    {
+      "id": "ai-agents-en",
+      "baseId": "ai-agents",
+      "kind": "github_group",
+      "order": 20,
+      "filename": "ai-agents-en.md",
+      "language": "en",
+      "shortLabel": "AI Agents Ecosystem",
+      "fullTitle": "AI Agents Ecosystem Digest",
+      "includeInRollups": true,
+      "includeInSearch": false,
+      "pairId": "ai-agents"
+    },
+    {
+      "id": "ai-web",
+      "baseId": "ai-web",
+      "kind": "content_group",
+      "order": 30,
+      "filename": "ai-web.md",
+      "language": "zh",
+      "shortLabel": "OpenAI & Anthropic 官网动态",
+      "fullTitle": "AI 官方内容追踪报告",
+      "includeInRollups": true,
+      "includeInSearch": true,
+      "pairId": "ai-web-en"
+    },
+    {
+      "id": "ai-web-en",
+      "baseId": "ai-web",
+      "kind": "content_group",
+      "order": 30,
+      "filename": "ai-web-en.md",
+      "language": "en",
+      "shortLabel": "OpenAI & Anthropic Updates",
+      "fullTitle": "Official AI Content Report",
+      "includeInRollups": true,
+      "includeInSearch": false,
+      "pairId": "ai-web"
+    },
+    {
+      "id": "ai-trending",
+      "baseId": "ai-trending",
+      "kind": "content_group",
+      "order": 40,
+      "filename": "ai-trending.md",
+      "language": "zh",
+      "shortLabel": "GitHub AI 趋势",
+      "fullTitle": "AI 开源趋势日报",
+      "includeInRollups": true,
+      "includeInSearch": true,
+      "pairId": "ai-trending-en"
+    },
+    {
+      "id": "ai-trending-en",
+      "baseId": "ai-trending",
+      "kind": "content_group",
+      "order": 40,
+      "filename": "ai-trending-en.md",
+      "language": "en",
+      "shortLabel": "GitHub AI Trends",
+      "fullTitle": "AI Open Source Trends",
+      "includeInRollups": true,
+      "includeInSearch": false,
+      "pairId": "ai-trending"
+    },
+    {
+      "id": "ai-hn",
+      "baseId": "ai-hn",
+      "kind": "content_group",
+      "order": 50,
+      "filename": "ai-hn.md",
+      "language": "zh",
+      "shortLabel": "HN 社区动态",
+      "fullTitle": "Hacker News AI 社区动态日报",
+      "includeInRollups": true,
+      "includeInSearch": true,
+      "pairId": "ai-hn-en"
+    },
+    {
+      "id": "ai-hn-en",
+      "baseId": "ai-hn",
+      "kind": "content_group",
+      "order": 50,
+      "filename": "ai-hn-en.md",
+      "language": "en",
+      "shortLabel": "HN Community Digest",
+      "fullTitle": "Hacker News AI Community Digest",
+      "includeInRollups": true,
+      "includeInSearch": false,
+      "pairId": "ai-hn"
+    },
+    {
+      "id": "ai-weekly",
+      "baseId": "ai-weekly",
+      "kind": "rollup",
+      "order": 100,
+      "filename": "ai-weekly.md",
+      "language": "zh",
+      "shortLabel": "AI 工具生态周报",
+      "fullTitle": "AI 工具生态周报",
+      "includeInRollups": false,
+      "includeInSearch": false,
+      "pairId": "ai-weekly-en"
+    },
+    {
+      "id": "ai-weekly-en",
+      "baseId": "ai-weekly",
+      "kind": "rollup",
+      "order": 100,
+      "filename": "ai-weekly-en.md",
+      "language": "en",
+      "shortLabel": "AI Tools Weekly",
+      "fullTitle": "AI Tools Weekly Digest",
+      "includeInRollups": false,
+      "includeInSearch": false,
+      "pairId": "ai-weekly"
+    },
+    {
+      "id": "ai-monthly",
+      "baseId": "ai-monthly",
+      "kind": "rollup",
+      "order": 110,
+      "filename": "ai-monthly.md",
+      "language": "zh",
+      "shortLabel": "AI 工具生态月报",
+      "fullTitle": "AI 工具生态月报",
+      "includeInRollups": false,
+      "includeInSearch": false,
+      "pairId": "ai-monthly-en"
+    },
+    {
+      "id": "ai-monthly-en",
+      "baseId": "ai-monthly",
+      "kind": "rollup",
+      "order": 110,
+      "filename": "ai-monthly-en.md",
+      "language": "en",
+      "shortLabel": "AI Tools Monthly",
+      "fullTitle": "AI Tools Monthly Digest",
+      "includeInRollups": false,
+      "includeInSearch": false,
+      "pairId": "ai-monthly"
+    }
+  ]
+}

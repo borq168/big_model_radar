@@ -283,7 +283,7 @@ function renderMarkdown(raw) {
   });
 }
 
-const LABELS = {
+const FALLBACK_LABELS = {
   'ai-cli':          'AI CLI 工具',
   'ai-cli-en':       'AI CLI Tools',
   'ai-agents':       'AI Agents 生态',
@@ -295,6 +295,26 @@ const LABELS = {
   'ai-hn':           'HN 社区动态',
   'ai-hn-en':        'HN Community Digest',
 };
+
+let registryById = new Map();
+
+function setRegistry(registry) {
+  registryById = new Map((registry?.reports || []).map((report) => [report.id, report]));
+}
+
+function getReportLabel(reportId) {
+  return registryById.get(reportId)?.shortLabel || FALLBACK_LABELS[reportId] || reportId;
+}
+
+async function fetchRegistry() {
+  try {
+    const res = await fetch('./report-registry.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch {
+    return { reports: [] };
+  }
+}
 
 // ── Theme ──
 const htmlEl = document.documentElement;
@@ -471,7 +491,7 @@ function buildNav(dates) {
 
         const label = document.createElement('span');
         label.className = 'rpt-label';
-        const baseLabel = LABELS[r] || r;
+        const baseLabel = getReportLabel(r);
         label.textContent = baseLabel;
         label.title = baseLabel;
 
@@ -498,7 +518,7 @@ function buildNav(dates) {
         const btn = document.createElement('button');
         btn.className = 'rpt-btn';
         btn.dataset.key = `${date}/${r}`;
-        btn.textContent = LABELS[r] || r;
+        btn.textContent = getReportLabel(r);
         btn.onclick = () => loadReport(date, r);
         list.appendChild(btn);
       }
@@ -517,10 +537,12 @@ window.addEventListener('popstate', () => {
 // ── Init ──
 (async () => {
   try {
-    const res = await fetch('./manifest.json');
+    const [res, registry] = await Promise.all([fetch('./manifest.json'), fetchRegistry()]);
     if (!res.ok) throw new Error('manifest.json not found');
     const { dates } = await res.json();
     if (!dates?.length) throw new Error('manifest is empty');
+
+    setRegistry(registry);
 
     buildNav(dates);
     initSearch(dates);

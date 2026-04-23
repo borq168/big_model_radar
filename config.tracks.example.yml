@@ -1,0 +1,132 @@
+# Big Model Radar V2-style configuration example
+#
+# Current runtime support:
+# - `github_group` tracks for AI CLI / skills / AI agents are supported by `src/config.ts`
+# - The skills runtime can aggregate multiple skills repositories into one summary section
+# - `content_group` tracks are now executed by the runtime via configurable source discovery
+# - Supported discovery kinds: `sitemap`, `sitemap-index`, `sitemap-index-template`, `rss`, `atom`
+# - Supported extract modes: `full-page`, `metadata-only`, `feed-first`
+#
+# Recommended migration path:
+# 1. Copy this file to config.yml in a feature branch
+# 2. Start by migrating github_group tracks first
+# 3. Expand `content_group.sources` as needed; no fetcher code changes should be required
+
+tracks:
+  - id: ai-cli
+    kind: github_group
+    name: AI CLI Tools
+    analysis_profile: cli
+    topology: symmetric
+    report:
+      label: digest
+      title_zh: AI CLI 工具社区动态日报
+      title_en: AI CLI Tools Digest
+      include_in_rollups: true
+    members:
+      - id: claude-code
+        repo: anthropics/claude-code
+        name: Claude Code
+      - id: codex
+        repo: openai/codex
+        name: OpenAI Codex
+      - id: gemini-cli
+        repo: google-gemini/gemini-cli
+        name: Gemini CLI
+      - id: copilot-cli
+        repo: github/copilot-cli
+        name: GitHub Copilot CLI
+      - id: kimi-cli
+        repo: MoonshotAI/kimi-cli
+        name: Kimi Code CLI
+      - id: opencode
+        repo: anomalyco/opencode
+        name: OpenCode
+      - id: qwen-code
+        repo: QwenLM/qwen-code
+        name: Qwen Code
+
+  - id: ai-skills
+    kind: github_group
+    name: Skills Ecosystem
+    analysis_profile: skills
+    topology: symmetric
+    report:
+      label: skills
+      title_zh: Skills 生态热点
+      title_en: Skills Ecosystem Highlights
+      include_in_rollups: true
+    members:
+      - id: claude-skills
+        repo: anthropics/skills
+        name: Claude Code Skills
+
+  - id: ai-agents
+    kind: github_group
+    name: AI Agents Ecosystem
+    analysis_profile: project
+    topology: primary-peer
+    primary_member_id: openclaw
+    report:
+      label: agents
+      title_zh: AI Agents 生态日报
+      title_en: AI Agents Ecosystem Digest
+      include_in_rollups: true
+    members:
+      - id: openclaw
+        repo: openclaw/openclaw
+        name: OpenClaw
+        paginated: true
+      - id: nanobot
+        repo: HKUDS/nanobot
+        name: NanoBot
+        paginated: true
+      - id: zeroclaw
+        repo: zeroclaw-labs/zeroclaw
+        name: Zeroclaw
+      - id: picoclaw
+        repo: sipeed/picoclaw
+        name: PicoClaw
+        paginated: true
+
+  - id: ai-web
+    kind: content_group
+    name: Official AI Sites
+    analysis_profile: official_content
+    report:
+      label: web
+      title_zh: AI 官方内容追踪报告
+      title_en: Official AI Content Report
+      include_in_rollups: true
+    sources:
+      - id: anthropic
+        name: Anthropic
+        discovery:
+          kind: sitemap
+          url: https://www.anthropic.com/sitemap.xml
+        extract:
+          mode: full-page
+      - id: openai
+        name: OpenAI
+        discovery:
+          kind: sitemap-index-template
+          template: https://openai.com/sitemap.xml/{name}/
+          names:
+            - research
+            - publication
+            - release
+            - company
+            - engineering
+            - milestone
+            - learn-guides
+            - safety
+            - product
+        extract:
+          mode: metadata-only
+      - id: cloudflare-blog
+        name: Cloudflare Blog
+        discovery:
+          kind: rss
+          url: https://blog.cloudflare.com/rss/
+        extract:
+          mode: feed-first

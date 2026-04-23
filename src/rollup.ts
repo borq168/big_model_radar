@@ -8,12 +8,15 @@ import path from "node:path";
 import { callLlm, saveFile, autoGenFooter } from "./report.ts";
 import { buildWeeklyPrompt, buildMonthlyPrompt } from "./prompts.ts";
 import { createGitHubIssue } from "./github.ts";
+import { loadConfig } from "./config.ts";
+import { getReportRegistryEntries } from "./report-registry.ts";
 
 const DIGESTS_DIR = "digests";
 const MAX_CHARS_PER_REPORT = 2500;
-
-// Source report types to read for rollups (in priority order)
-const ROLLUP_SOURCES = ["ai-cli", "ai-agents", "ai-trending", "ai-hn", "ai-web"];
+const { tracks } = loadConfig();
+const ROLLUP_SOURCES = getReportRegistryEntries(tracks)
+  .filter((entry) => entry.includeInRollups && entry.language === "zh")
+  .map((entry) => entry.id);
 
 // ---------------------------------------------------------------------------
 // Helpers
