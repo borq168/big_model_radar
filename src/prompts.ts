@@ -47,7 +47,7 @@ export function formatItem(item: GitHubItem, lang: "zh" | "en" = "zh"): string {
       : { author: "作者", created: "创建", updated: "更新", comments: "评论", url: "链接", summary: "摘要" };
   return [
     `#${item.number} [${item.state.toUpperCase()}]${labelStr} ${item.title}`,
-    `  ${t.author}: @${item.user.login} | ${t.created}: ${item.created_at.slice(0, 10)} | ${t.updated}: ${item.updated_at.slice(0, 10)} | ${t.comments}: ${item.comments} | 👍: ${item.reactions?.["+1"] ?? 0}`,
+    `  ${t.author}: [@${item.user.login}](https://github.com/${item.user.login}) | ${t.created}: ${item.created_at.slice(0, 10)} | ${t.updated}: ${item.updated_at.slice(0, 10)} | ${t.comments}: ${item.comments} | 👍: ${item.reactions?.["+1"] ?? 0}`,
     `  ${t.url}: ${item.html_url}`,
     `  ${t.summary}: ${body}${ellipsis}`,
   ].join("\n");
@@ -683,7 +683,9 @@ export function buildWebReportPrompt(
         )
         .join("\n\n");
 
-      return lang === "en" ? `## ${sourceName} (${mode})\n\n${itemsText}` : `## ${sourceName}（${mode}）\n\n${itemsText}`;
+      return lang === "en"
+        ? `## ${sourceName} (${mode})\n\n${itemsText}`
+        : `## ${sourceName}（${mode}）\n\n${itemsText}`;
     })
     .join("\n\n---\n\n");
 
@@ -697,7 +699,7 @@ export function buildWebReportPrompt(
         : "本次为增量更新，请聚焦今日新增内容，并结合上下文判断其战略意义。";
 
   if (lang === "en") {
-     return `You are a deep content analyst focused on AI and developer ecosystems, skilled at extracting strategic signals from official announcements, technical blogs, research papers, product documentation, and curated feeds.
+    return `You are a deep content analyst focused on AI and developer ecosystems, skilled at extracting strategic signals from official announcements, technical blogs, research papers, product documentation, and curated feeds.
 
   The following content was crawled on ${dateStr} from these configured sources: ${sourceNames}. ${firstRunNote}
 
@@ -728,7 +730,7 @@ ${siteSections}
 `;
   }
 
-    return `你是一位专注于 AI 与开发者生态的深度内容分析师，擅长从官方公告、技术博客、研究论文、产品文档和信息流中提炼战略信号。
+  return `你是一位专注于 AI 与开发者生态的深度内容分析师，擅长从官方公告、技术博客、研究论文、产品文档和信息流中提炼战略信号。
 
   以下是 ${dateStr} 从这些已配置来源抓取的内容：${sourceNames}。${firstRunNote}
 
@@ -866,11 +868,11 @@ export function buildHnPrompt(data: HnData, dateStr: string, lang: "zh" | "en" =
         ? `${i + 1}. **${s.title}**\n` +
           `   Link: ${s.url}\n` +
           `   Discussion: ${s.hnUrl}\n` +
-          `   Score: ${s.points} | Comments: ${s.comments} | Author: @${s.author} | 时间: ${s.createdAt.slice(0, 16)}`
+          `   Score: ${s.points} | Comments: ${s.comments} | Author: [${s.author}](https://news.ycombinator.com/user?id=${s.author}) | 时间: ${s.createdAt.slice(0, 16)}`
         : `${i + 1}. **${s.title}**\n` +
           `   链接: ${s.url}\n` +
           `   讨论: ${s.hnUrl}\n` +
-          `   分数: ${s.points} | 评论: ${s.comments} | 作者: @${s.author} | 时间: ${s.createdAt.slice(0, 16)}`,
+          `   分数: ${s.points} | 评论: ${s.comments} | 作者: [${s.author}](https://news.ycombinator.com/user?id=${s.author}) | 时间: ${s.createdAt.slice(0, 16)}`,
     )
     .join("\n\n");
 
