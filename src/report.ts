@@ -97,8 +97,14 @@ export function hasLlmCredentials(): boolean {
   return getOpenAiCompatibleApiKey().length > 0;
 }
 
+function stripReasoning(text: string): string {
+  // Some reasoning models embed <think>...</think> blocks inside the response
+  // content. Strip them so they don't leak into published reports.
+  return text.replace(/<think>[\s\S]*?<\/think>\s*/gi, "").trim();
+}
+
 function extractTextContent(content: unknown): string {
-  if (typeof content === "string") return content.trim();
+  if (typeof content === "string") return stripReasoning(content);
   if (Array.isArray(content)) {
     const text = content
       .map((part) => {
@@ -115,9 +121,9 @@ function extractTextContent(content: unknown): string {
         }
         return "";
       })
-      .join("")
-      .trim();
-    if (text) return text;
+      .join("");
+    const stripped = stripReasoning(text);
+    if (stripped) return stripped;
   }
   throw new Error("Unexpected response type from LLM");
 }
