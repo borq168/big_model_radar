@@ -6,7 +6,7 @@
     <description>AI 开源生态每日简报 · Daily AI ecosystem digest</description>
     <language>zh-CN</language>
     <atom:link href="https://borq168.github.io/big_model_radar/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 01 May 2026 02:20:33 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 05:40:35 +0000</lastBuildDate>
     <item>
       <title>AI CLI 工具社区动态日报 2026-05-01</title>
       <link>https://borq168.github.io/big_model_radar/#2026-05-01/ai-cli</link>
@@ -90,6 +90,20 @@
       <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-05-01/ai-hn-en</guid>
       <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
       <description>Hacker News AI Community Digest 2026-05-01</description>
+    </item>
+    <item>
+      <title>AI 工具生态月报 2026-05-01</title>
+      <link>https://borq168.github.io/big_model_radar/#2026-05-01/ai-monthly</link>
+      <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-05-01/ai-monthly</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <description>AI 工具生态月报 2026-05-01</description>
+    </item>
+    <item>
+      <title>AI Tools Monthly Digest 2026-05-01</title>
+      <link>https://borq168.github.io/big_model_radar/#2026-05-01/ai-monthly-en</link>
+      <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-05-01/ai-monthly-en</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <description>AI Tools Monthly Digest 2026-05-01</description>
     </item>
     <item>
       <title>AI CLI 工具社区动态日报 2026-04-30</title>
@@ -202,20 +216,6 @@
       <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-04-29/ai-skills-en</guid>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
       <description>Skills Ecosystem Highlights 2026-04-29</description>
-    </item>
-    <item>
-      <title>AI Agents 生态日报 2026-04-29</title>
-      <link>https://borq168.github.io/big_model_radar/#2026-04-29/ai-agents</link>
-      <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-04-29/ai-agents</guid>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-      <description>AI Agents 生态日报 2026-04-29</description>
-    </item>
-    <item>
-      <title>AI Agents Ecosystem Digest 2026-04-29</title>
-      <link>https://borq168.github.io/big_model_radar/#2026-04-29/ai-agents-en</link>
-      <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-04-29/ai-agents-en</guid>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-      <description>AI Agents Ecosystem Digest 2026-04-29</description>
     </item>
   </channel>
 </rss>
