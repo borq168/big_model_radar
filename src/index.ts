@@ -61,10 +61,9 @@ const {
   contentTracks: CONTENT_TRACKS,
 } = loadedConfig;
 
-const CONTENT_SOURCE_ID_COUNTS = CONTENT_TRACKS.flatMap((track) => track.sources.map((source) => source.id)).reduce(
-  (map, id) => map.set(id, (map.get(id) ?? 0) + 1),
-  new Map<string, number>(),
-);
+const CONTENT_SOURCE_ID_COUNTS = CONTENT_TRACKS.flatMap((track) =>
+  track.sources.map((source) => source.id),
+).reduce((map, id) => map.set(id, (map.get(id) ?? 0) + 1), new Map<string, number>());
 
 function getContentSourceRuntimeId(trackId: string, sourceId: string): string {
   return (CONTENT_SOURCE_ID_COUNTS.get(sourceId) ?? 0) > 1 ? `${trackId}:${sourceId}` : sourceId;
@@ -168,7 +167,13 @@ async function fetchAllData(
         if (errors.length > 0) {
           console.error(`  [${cfg.id}] fetch failed partially: ${errors.join(" | ")}`);
         }
-        return { cfg, issues, prs, releases, ...(errors.length > 0 ? { fetchError: errors.join(" | ") } : {}) };
+        return {
+          cfg,
+          issues,
+          prs,
+          releases,
+          ...(errors.length > 0 ? { fetchError: errors.join(" | ") } : {}),
+        };
       }),
     ),
     Promise.all(
@@ -179,7 +184,12 @@ async function fetchAllData(
             if (data.fetchError) {
               console.error(`  [skills/${cfg.id}] fetch failed partially: ${data.fetchError}`);
             }
-            return { cfg, prs: data.prs, issues: data.issues, ...(data.fetchError ? { fetchError: data.fetchError } : {}) };
+            return {
+              cfg,
+              prs: data.prs,
+              issues: data.issues,
+              ...(data.fetchError ? { fetchError: data.fetchError } : {}),
+            };
           })
           .catch((err): SkillsRepoFetch => {
             const fetchError = formatError(err);
@@ -190,12 +200,15 @@ async function fetchAllData(
     ),
     CONTENT_TRACKS.length > 0
       ? Promise.all(
-          CONTENT_TRACKS.map(async (track): Promise<ContentTrackFetch> => ({
-            track,
-            results: await Promise.all(
-              track.sources.map((source) =>
-                fetchSiteContent({ ...source, id: getContentSourceRuntimeId(track.id, source.id) }, webState).catch(
-                  (err: unknown): WebFetchResult => {
+          CONTENT_TRACKS.map(
+            async (track): Promise<ContentTrackFetch> => ({
+              track,
+              results: await Promise.all(
+                track.sources.map((source) =>
+                  fetchSiteContent(
+                    { ...source, id: getContentSourceRuntimeId(track.id, source.id) },
+                    webState,
+                  ).catch((err: unknown): WebFetchResult => {
                     console.error(`  [content/${track.id}/${source.id}] fetch failed: ${err}`);
                     return {
                       sourceId: source.id,
@@ -204,11 +217,11 @@ async function fetchAllData(
                       newItems: [],
                       totalDiscovered: 0,
                     };
-                  },
+                  }),
                 ),
               ),
-            ),
-          })),
+            }),
+          ),
         )
       : Promise.resolve([]),
     fetchTrendingData().catch(
@@ -317,7 +330,8 @@ async function generateSummaries(
               .map((repo) => `> ${repo.cfg.name}: ${repo.fetchError}`)
               .join("\n")}\n\n`
           : "";
-      if (fetchErrors.length > 0 && !hasData) return `${skillsFetchFailed}\n\n${fetchErrors.map((repo) => `> ${repo.cfg.name}: ${repo.fetchError}`).join("\n")}`;
+      if (fetchErrors.length > 0 && !hasData)
+        return `${skillsFetchFailed}\n\n${fetchErrors.map((repo) => `> ${repo.cfg.name}: ${repo.fetchError}`).join("\n")}`;
       console.log("  [skills] Calling LLM for skills report...");
       try {
         const summary = await callLlm(
@@ -353,7 +367,9 @@ async function generateSummaries(
         }
         console.log(`  [${cfg.id}] Calling LLM for peer summary...`);
         try {
-          const summary = await callLlm(buildPeerPrompt(cfg, issues, prs, releases, dateStr, undefined, undefined, lang));
+          const summary = await callLlm(
+            buildPeerPrompt(cfg, issues, prs, releases, dateStr, undefined, undefined, lang),
+          );
           console.log(`  [${cfg.id}] Peer summary ready.`);
           return {
             config: cfg,
@@ -555,7 +571,8 @@ async function saveContentReport(
   const hasNewContent = webResults.some((r) => r.newItems.length > 0);
   const reportBaseId = track.id;
   const reportLabel = track.report?.label ?? track.id;
-  const reportTitle = lang === "en" ? track.report?.titleEn ?? track.name : track.report?.titleZh ?? track.name;
+  const reportTitle =
+    lang === "en" ? (track.report?.titleEn ?? track.name) : (track.report?.titleZh ?? track.name);
 
   if (hasNewContent) {
     console.log(`  [content/${track.id}/${lang}] Calling LLM for content report...`);
@@ -796,7 +813,14 @@ async function main(): Promise<void> {
       footer,
       "zh",
     );
-    const skillsContent = buildSkillsReportContent(SKILLS_REPOS, zhSummaries.skillsSummary, utcStr, dateStr, footer, "zh");
+    const skillsContent = buildSkillsReportContent(
+      SKILLS_REPOS,
+      zhSummaries.skillsSummary,
+      utcStr,
+      dateStr,
+      footer,
+      "zh",
+    );
     const openclawContent = buildOpenclawReportContent(
       fetchedOpenclaw,
       zhSummaries.peerDigests,
@@ -817,11 +841,7 @@ async function main(): Promise<void> {
         "digest",
       );
       console.log(`  Created CLI issue (zh): ${cliUrl}`);
-      const skillsUrl = await createGitHubIssue(
-        `🧩 Skills 生态热点 ${dateStr}`,
-        skillsContent,
-        "skills",
-      );
+      const skillsUrl = await createGitHubIssue(`🧩 Skills 生态热点 ${dateStr}`, skillsContent, "skills");
       console.log(`  Created Skills issue (zh): ${skillsUrl}`);
       const openclawUrl = await createGitHubIssue(
         `🦞 OpenClaw 生态日报 ${dateStr}`,
@@ -886,12 +906,28 @@ async function main(): Promise<void> {
   await Promise.all([
     ...contentResults.map((contentTrack) =>
       genZh
-        ? saveContentReport(contentTrack.track, contentTrack.results, utcStr, dateStr, digestRepo, footer, "zh")
+        ? saveContentReport(
+            contentTrack.track,
+            contentTrack.results,
+            utcStr,
+            dateStr,
+            digestRepo,
+            footer,
+            "zh",
+          )
         : Promise.resolve(),
     ),
     ...contentResults.map((contentTrack) =>
       genEn
-        ? saveContentReport(contentTrack.track, contentTrack.results, utcStr, dateStr, digestRepo, enFooter, "en")
+        ? saveContentReport(
+            contentTrack.track,
+            contentTrack.results,
+            utcStr,
+            dateStr,
+            digestRepo,
+            enFooter,
+            "en",
+          )
         : Promise.resolve(),
     ),
   ]);

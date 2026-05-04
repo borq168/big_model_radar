@@ -183,7 +183,10 @@ function decodeEntities(text: string): string {
 }
 
 function stripTags(text: string): string {
-  return decodeEntities(text).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return decodeEntities(text)
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function extractTag(block: string, tag: string): string {
@@ -221,13 +224,11 @@ function isSitemapIndex(xml: string): boolean {
 
 function extractTitle(html: string): string {
   return (
-    (
-      html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']{1,200})["']/i)?.[1] ??
-      html.match(/<meta[^>]+content=["']([^"']{1,200})["'][^>]+property=["']og:title["']/i)?.[1] ??
-      html.match(/<title[^>]*>([^<]{1,200})<\/title>/i)?.[1] ??
-      ""
-    ).trim()
-  );
+    html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']{1,200})["']/i)?.[1] ??
+    html.match(/<meta[^>]+content=["']([^"']{1,200})["'][^>]+property=["']og:title["']/i)?.[1] ??
+    html.match(/<title[^>]*>([^<]{1,200})<\/title>/i)?.[1] ??
+    ""
+  ).trim();
 }
 
 function extractText(html: string): string {
@@ -312,7 +313,11 @@ function emptyState(): ContentState {
 function isSourceState(value: unknown): value is SourceState {
   if (!value || typeof value !== "object") return false;
   const candidate = value as Partial<SourceState>;
-  return typeof candidate.lastChecked === "string" && typeof candidate.seenUrls === "object" && candidate.seenUrls !== null;
+  return (
+    typeof candidate.lastChecked === "string" &&
+    typeof candidate.seenUrls === "object" &&
+    candidate.seenUrls !== null
+  );
 }
 
 function normalizeState(raw: unknown): ContentState {
@@ -503,7 +508,10 @@ async function buildFeedItems(source: ContentSource, entries: FeedEntry[]): Prom
 // Main export
 // ---------------------------------------------------------------------------
 
-export async function fetchSiteContent(source: ContentSource, state: ContentState): Promise<ContentFetchResult> {
+export async function fetchSiteContent(
+  source: ContentSource,
+  state: ContentState,
+): Promise<ContentFetchResult> {
   const sourceState = getSourceState(state, source.id);
   const isFirstRun = Object.keys(sourceState.seenUrls).length === 0;
 

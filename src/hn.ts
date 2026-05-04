@@ -88,7 +88,9 @@ async function fetchWithRetry(url: string, init: RetryRequestInit = {}): Promise
 
       if (attempt < FETCH_MAX_RETRIES && isRetryableStatus(response.status)) {
         const waitMs = getRetryDelayMs(attempt, response.headers.get("retry-after"));
-        console.warn(`  [hn] ${response.status} for ${url} — retry ${attempt + 1}/${FETCH_MAX_RETRIES} in ${waitMs}ms`);
+        console.warn(
+          `  [hn] ${response.status} for ${url} — retry ${attempt + 1}/${FETCH_MAX_RETRIES} in ${waitMs}ms`,
+        );
         await sleep(waitMs);
         continue;
       }
