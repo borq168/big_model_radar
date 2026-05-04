@@ -109,10 +109,7 @@ function buildMessage(date: string, reports: string[]): string {
   const suffix = isMonthly ? " 月报" : isWeekly ? " 周报" : "";
   const lines: string[] = [`${icon} <b>Big Model Radar${suffix} · ${date}</b>\n`];
 
-  const ordered = [
-    ...baseReports.filter((r) => !isRollup(r)),
-    ...baseReports.filter((r) => isRollup(r)),
-  ];
+  const ordered = [...baseReports.filter((r) => !isRollup(r)), ...baseReports.filter((r) => isRollup(r))];
 
   for (const r of ordered) {
     const zhLabel = getShortLabel(r);

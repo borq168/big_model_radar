@@ -335,7 +335,9 @@ function toContentSource(source: RawContentSource): ContentSource | undefined {
         discovery: {
           kind: "sitemap",
           url,
-          ...(toStringArray(source.discovery.prefixes) ? { prefixes: toStringArray(source.discovery.prefixes) } : {}),
+          ...(toStringArray(source.discovery.prefixes)
+            ? { prefixes: toStringArray(source.discovery.prefixes) }
+            : {}),
         },
         extract: { mode },
       };
@@ -349,8 +351,12 @@ function toContentSource(source: RawContentSource): ContentSource | undefined {
         discovery: {
           kind: "sitemap-index",
           url,
-          ...(toStringArray(source.discovery.includes) ? { includes: toStringArray(source.discovery.includes) } : {}),
-          ...(toStringArray(source.discovery.excludes) ? { excludes: toStringArray(source.discovery.excludes) } : {}),
+          ...(toStringArray(source.discovery.includes)
+            ? { includes: toStringArray(source.discovery.includes) }
+            : {}),
+          ...(toStringArray(source.discovery.excludes)
+            ? { excludes: toStringArray(source.discovery.excludes) }
+            : {}),
         },
         extract: { mode },
       };
@@ -410,14 +416,19 @@ function parseTracks(rawTracks: RawTrack[] | undefined): RadarTrack[] {
         kind: "content_group",
         name: track.name?.trim() || track.id,
         analysisProfile: track.analysis_profile?.trim(),
-        sources: Array.isArray(track.sources) ? track.sources.map(toContentSource).filter((source): source is ContentSource => Boolean(source)) : [],
+        sources: Array.isArray(track.sources)
+          ? track.sources.map(toContentSource).filter((source): source is ContentSource => Boolean(source))
+          : [],
         ...(toTrackReport(track.report) ? { report: toTrackReport(track.report) } : {}),
       },
     ];
   });
 }
 
-function findGithubTrack(tracks: RadarTrack[], predicate: (track: GitHubGroupTrack) => boolean): GitHubGroupTrack | undefined {
+function findGithubTrack(
+  tracks: RadarTrack[],
+  predicate: (track: GitHubGroupTrack) => boolean,
+): GitHubGroupTrack | undefined {
   return tracks.find((track): track is GitHubGroupTrack => track.kind === "github_group" && predicate(track));
 }
 
@@ -426,13 +437,18 @@ function deriveSkillsRepos(track: GitHubGroupTrack | undefined): RepoConfig[] {
   return track.members;
 }
 
-function deriveOpenclawConfig(track: GitHubGroupTrack | undefined): { openclaw: RepoConfig; openclawPeers: RepoConfig[] } {
+function deriveOpenclawConfig(track: GitHubGroupTrack | undefined): {
+  openclaw: RepoConfig;
+  openclawPeers: RepoConfig[];
+} {
   if (!track || track.members.length === 0) {
     return { openclaw: DEFAULT_OPENCLAW, openclawPeers: DEFAULT_OPENCLAW_PEERS };
   }
 
   const primary =
-    (track.primaryMemberId ? track.members.find((member) => member.id === track.primaryMemberId) : undefined) ??
+    (track.primaryMemberId
+      ? track.members.find((member) => member.id === track.primaryMemberId)
+      : undefined) ??
     track.members.find((member) => member.id === "openclaw") ??
     track.members[0];
 
@@ -481,7 +497,15 @@ function buildLegacyConfig(raw: RawConfig): RadarConfig {
     return track;
   });
 
-  return { cliRepos, skillsRepo, skillsRepos, openclaw, openclawPeers, contentTracks: deriveContentTracks(tracks), tracks };
+  return {
+    cliRepos,
+    skillsRepo,
+    skillsRepos,
+    openclaw,
+    openclawPeers,
+    contentTracks: deriveContentTracks(tracks),
+    tracks,
+  };
 }
 
 function buildTracksConfig(raw: RawConfig, tracks: RadarTrack[]): RadarConfig {
