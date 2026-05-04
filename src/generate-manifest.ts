@@ -33,9 +33,26 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 
 function resolveSiteUrl(): string {
   const explicit = process.env["PAGES_URL"] ?? process.env["SITE_URL"];
-  if (explicit) return explicit.replace(/\/$/, "");
-
   const repo = process.env["DIGEST_REPO"] ?? process.env["GITHUB_REPOSITORY"];
+
+  if (explicit) {
+    const normalizedExplicit = explicit.replace(/\/$/, "");
+    if (repo) {
+      const [owner, name] = repo.split("/");
+      if (owner && name) {
+        const defaultUrl = `https://${owner}.github.io/${name}`;
+        const explicitGithubPages = /^https:\/\/[^/]+\.github\.io\/.+/.test(normalizedExplicit);
+        if (explicitGithubPages && normalizedExplicit !== defaultUrl) {
+          console.warn(
+            `[manifest] PAGES_URL (${normalizedExplicit}) does not match DIGEST_REPO (${repo}). ` +
+              `This can produce dead links in feed/notifications. Expected: ${defaultUrl}`,
+          );
+        }
+      }
+    }
+    return normalizedExplicit;
+  }
+
   if (repo) {
     const [owner, name] = repo.split("/");
     if (owner && name) return `https://${owner}.github.io/${name}`;
