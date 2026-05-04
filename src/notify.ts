@@ -24,9 +24,26 @@ interface ReportRegistryEntry {
 
 function resolvePagesUrl(): string {
   const explicit = process.env["PAGES_URL"] ?? process.env["SITE_URL"];
-  if (explicit) return explicit.replace(/\/$/, "");
-
   const repo = process.env["DIGEST_REPO"] ?? process.env["GITHUB_REPOSITORY"];
+
+  if (explicit) {
+    const normalizedExplicit = explicit.replace(/\/$/, "");
+    if (repo) {
+      const [owner, name] = repo.split("/");
+      if (owner && name) {
+        const defaultUrl = `https://${owner}.github.io/${name}`;
+        const explicitGithubPages = /^https:\/\/[^/]+\.github\.io\/.+/.test(normalizedExplicit);
+        if (explicitGithubPages && normalizedExplicit !== defaultUrl) {
+          console.warn(
+            `[notify] PAGES_URL (${normalizedExplicit}) does not match DIGEST_REPO (${repo}). ` +
+              `Telegram message links may be invalid. Expected: ${defaultUrl}`,
+          );
+        }
+      }
+    }
+    return normalizedExplicit;
+  }
+
   if (repo) {
     const [owner, name] = repo.split("/");
     if (owner && name) return `https://${owner}.github.io/${name}`;

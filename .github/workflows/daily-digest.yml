@@ -40,7 +40,6 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || secrets.ANTHROPIC_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL || secrets.ANTHROPIC_MODEL }}
           REPORT_LANGS: ${{ vars.REPORT_LANGS || secrets.REPORT_LANGS }}
-          DIGEST_REPO: ${{ github.repository }}
         run: pnpm start
 
       - name: Commit digest files
@@ -59,7 +58,6 @@ jobs:
 
       - name: Update web manifest
         env:
-          DIGEST_REPO: ${{ github.repository }}
           PAGES_URL: ${{ vars.PAGES_URL || secrets.PAGES_URL }}
           REPORT_LANGS: ${{ vars.REPORT_LANGS || secrets.REPORT_LANGS }}
         run: pnpm manifest
@@ -77,7 +75,6 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          DIGEST_REPO: ${{ github.repository }}
           PAGES_URL: ${{ vars.PAGES_URL || secrets.PAGES_URL }}
           REPORT_LANGS: ${{ vars.REPORT_LANGS || secrets.REPORT_LANGS }}
         run: pnpm notify
