@@ -7,41 +7,6 @@
 
 ---
 
-<think>用户要求我生成一份关于 Claude Code Skills 社区的热点报告，基于提供的 GitHub 数据。让我分析这些数据并按照要求的格式生成报告。
-
-从 PR 数据中，我需要找出评论/关注度最高的技能。看起来数据中评论数都是 undefined，但我可以从 PR 的活跃度、更新频率、标题内容等来判断热度。
-
-让我重新审视数据：
-- PR #514: document-typography skill - 文档排版质量控制
-- PR #538: pdf 修复 - 大小写敏感文件引用
-- PR #83: skill-quality-analyzer 和 skill-security-analyzer
-- PR #210: frontend-design skill 改进
-- PR #486: ODT skill - OpenDocument 处理
-- PR #539: skill-creator 修复 - YAML 特殊字符警告
-- PR #541: docx 修复 - 书签冲突
-- PR #509: 添加 CONTRIBUTING.md
-- PR #95: 系统文档和流程图
-- PR #181: SAP-RPT-1-OSS 预测技能
-- PR #723: testing-patterns skill
-- PR #335: masonry-generate-image-and-videos
-- PR #806: sensory skill - AppleScript 自动化
-- PR #54: 西班牙语文档改进
-
-
-- PR #154: shodh-memory skill - 持久化上下文
-- PR #147: codebase-inventory-audit skill
-- PR #568: ServiceNow platform skill
-- PR #666: 移除重复的 skill-creator
-- PR #664: claude-obsidian-reporter
-- PR #616: HADS skill - 文档标准
-
-从 Issues 数据中，我看到 #62 有 10 条评论关于技能消失的问题，#228 有 9 条评论关于组织级技能分享的需求。
-
-#202、#556、#189 和 #492 分别涉及 skill-creator 更新、run_eval.py 触发率、插件重复安装和安全问题。#412 是关于 agent-governance 的已关闭提案，#29 和 #16 讨论 Bedrock 兼容性和 MCP 暴露。#184 的重定向错误已关闭，#61 和 #868 报告了 404 错误和链接问题。#532 涉及 API 密钥要求，#406 和 #403 分别处理上传和删除功能的服务器错误。
-
-现在我需要整理这些信息来生成报告。
-</think>
-
 # Claude Code Skills 社区热点报告
 
 **数据来源**: github.com/anthropics/skills | **快照日期**: 2026-05-02

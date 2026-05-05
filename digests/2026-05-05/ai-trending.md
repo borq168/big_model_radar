@@ -4,51 +4,6 @@
 
 ---
 
-<think>用户要求我作为一位专注于 AI 开源生态的技术分析师，对 2026-05-05 的 GitHub AI 相关热门仓库数据进行筛选、分类和趋势分析，生成一份《AI 开源趋势日报》。
-
-让我按照用户的要求逐步进行：
-
-## 第一步：过滤
-
-首先，我需要从 Trending 榜单（15个）中筛选出 AI 相关项目：
-
-1. ruvnet/ruflo - ✅ AI 相关（Agent 编排平台）
-2. TauricResearch/TradingAgents - ✅ AI 相关（多智能体 LLM 金融交易框架）
-3. browserbase/skills - ✅ AI 相关（Claude Agent SDK）
-4. Hmbown/DeepSeek-TUI - ✅ AI 相关（DeepSeek 编码代理）
-5. soxoj/maigret - ❌ 非 AI（人物信息收集工具）
-6. qbittorrent/qBittorrent - ❌ 非 AI（BitTorrent 客户端）
-7. czlonkowski/n8n-mcp - ✅ AI 相关（MCP 工作流）
-8. 1jehuang/jcode - ✅ AI 相关（编码代理）
-9. msitarzewski/agency-agents - ✅ AI 相关（AI agency）
-
-
-10. virattt/dexter - ✅ AI 相关（金融研究代理）
-11. Flowseal/zapret-discord-youtube - ❌ 非 AI（网络工具）
-12. fspecii/ace-step-ui - ✅ AI 相关（AI 音乐生成）
-13. jellyfin/jellyfin - ❌ 非 AI（媒体服务器）
-14. cocoindex-io/cocoindex - ✅ AI 相关（增量引擎）
-15. docusealco/docuseal - ❌ 非 AI（文档签名工具）
-
-从主题搜索结果中，我看到 langgenius/dify、langchain-ai/langchain、open-webui/open-webui、Shubhamsaboo/awesome-llm-apps、PaddlePaddle/PaddleOCR、thedotmack/claude-mem、Mintplex-Labs/anything-llm、mem0ai/mem0、FlowiseAI/Flowise、run-llama/llama_index、jeecgboot/JeecgBoot、milvus-io/milvus、safishamsi/graphify、datawhalechina/hello-agents、mindsdb/mindsdb、jingyaogong/minimind、ScrapeGraphAI/Scrapegraph-ai、0xPlaygrounds/rig、BrainBlend-AI/atomic-agents、genieincodebottle/generative-ai、EgoAlpha/prompt-in-context-learning、samchon/nestia、llm-jp/awesome-japanese-llm、chrisliu298/awesome-llm-unlearning、apache/casbin-gateway、Mirrowel/LLM-API-Key-Proxy、galilai-group/stable-pretraining、xuyang-liu16/VidCom2、thinkwee/AwesomeOPD、testtimescaling/testtimescaling.github.io、meilisearch/meilisearch、qdrant/qdrant、topoteretes/cognee、weaviate/weaviate、neuml/txtai、langchain4j/langchain4j、yichuan-w/LEANN、zilliztech/claude-context、lancedb/lancedb、oceanbase/oceanbase、alibaba/zvec、databendlabs/databend、Significant-Gravitas/AutoGPT、affaan-m/everything-claude-code、ollama/ollama、f/prompts.chat、huggingface/transformers、NousResearch/hermes-agent、firecrawl/firecrawl、browser-use/browser-use、vllm-project/vllm、OpenHands/OpenHands、hiyouga/LlamaFactory、TauricResearch/TradingAgents、tensorflow/tensorflow、pytorch/pytorch、Developer-Y/cs-video-courses、netdata/netdata、OpenBB-finance/OpenBB、scikit-learn/scikit-learn、keras-team/keras、ultralytics/yolov5、ultralytics/ultralytics、deepfakes/faceswap、JuliaLang/julia、apache/airflow、streamlit/streamlit、CherryHQ/cherry-studio、zhayujie/CowAgent、santifer/career-ops、HKUDS/nanobot、CopilotKit/CopilotKit、Gitlawb/openclaude、googleworkspace/cli、iOfficeAI/AionUi、nocobase/nocobase、activepieces/activepieces、jackwener/OpenCLI、leon-ai/leon、trycua/cua、e2b-dev/E2B
-
-现在需要对这些项目进行分类。一个项目可以属于多个类别，但应该优先归入最相关的类别。
-
-AI 基础工具包括框架、SDK、推理引擎和开发工具，比如 ruvnet/ruflo、browserbase/skills、1jehuang/jcode、msitarzewski/agency-agents、czlonkowski/n8n-mcp、cocoindex-io/cocoindex、langgenius/dify、langchain-ai/langchain、FlowiseAI/Flowise、run-llama/llama_index、0xPlaygrounds/rig、mem0ai/mem0、topoteretes/cognee、neuml/txtai、langchain4j/langchain4j、apache/casbin-gateway、Mirrowel/LLM-API-Key-Proxy、Significant-Gravitas/AutoGPT、affaan-m/everything-claude-code、ollama/ollama、huggingface/transformers、firecrawl/firecrawl、browser-use/browser-use、vllm-project/vllm、OpenHands/OpenHands、hiyouga/LlamaFactory、tensorflow/tensorflow、pytorch/pytorch、keras-team/keras、CopilotKit/CopilotKit、googleworkspace/cli、activepieces/activepieces、trycua/cua、e2b-dev/E2B。
-
-AI 智能体和工作流方面包括 ruvnet/ruflo、TauricResearch/TradingAgents、browserbase/skills、Hmbown/DeepSeek-TUI、1jehuang/jcode、msitarzewski/agency-agents、virattt/dexter、czlonkowski/n8n-mcp、langgenius/dify、FlowiseAI/Flowise、mem0ai/mem0、topoteretes/cognee、Significant-Gravitas/AutoGPT、affaan-m/everything-claude-code、NousResearch/hermes-agent、OpenHands/OpenHands、CherryHQ/cherry-studio、zhayujie/CowAgent、santifer/career-ops、HKUDS/nanobot、CopilotKit/CopilotKit、Gitlawb/openclaude、iOfficeAI/AionUi、nocobase/nocobase、activepieces/activepieces、jackwener/OpenCLI、leon-ai/leon、trycua/cua、e2b-dev/E2B。
-
-在具体应用层面，TradingAgents 专注于金融交易，DeepSeek-TUI 提供终端编码体验，dexter 处理金融研究，ace-step-ui 生成 AI 音乐，open-webui 提供用户友好的 AI 界面，awesome-llm-apps 展示 LLM 应用集合，PaddleOCR 处理文档识别，anything-llm 作为生产力工具，jeecgboot/JeecgBoot 是低代码平台，scrapegraph-ai 进行网页爬取，open-webui 也是用户友好的 AI 界面。
-
-此外还有 OpenBB-finance 用于金融数据，cowagent 作为聊天机器人，career-ops 处理求职系统，nanobot 作为个人 AI 代理，openclaude 提供开源 Claude 替代方案，aionui 是本地 AI 应用，nocobase 结合 AI 和低代码，opencli 作为通用 CLI 工具，leon 作为个人助手。
-
-在大模型和训练方面，minimind 是小型 LLM 项目，atomic-agents 采用原子化设计，generative-ai 提供生成式 AI 资源，prompt-in-context-learning 支持上下文学习，nestia 是 NestJS 辅助工具，awesome-japanese-llm 专注日语 LLM，awesome-llm-unlearning 处理 LLM 反学习，stable-pretraining 提供稳定预训练，vidcom2 处理视频压缩，testtimescaling 关注测试时扩展，llama-factory 用于微调，transformers 是 transformer 模型库，vllm 是推理引擎。
-
-RAG 和知识库方向包括 dify、langchain、open-webui、awesome-llm-apps、claude-mem、anything-llm、mem0、flowise、llama-index、jeecgboot、milvus、graphify、hello-agents、mindsdb、scrapegraph-ai、meilisearch、qdrant、cognee、weaviate、txtai、langchain4j、leann、claude-context、lancedb、oceanbase、zvec、databend 等项目，涵盖向量数据库、检索增强、知识管理和知识图谱构建等多个技术方向。
-
-现在需要整理成结构清晰的日报格式。
-</think>
-
 # AI 开源趋势日报
 
 **日期**：2026-05-05

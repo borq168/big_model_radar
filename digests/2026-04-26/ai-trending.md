@@ -4,52 +4,6 @@
 
 ---
 
-<think>用户要求我作为AI开源生态技术分析师，基于2026-04-26的GitHub数据生成一份AI开源趋势日报。
-
-让我按照用户的要求逐步进行：
-
-**第一步：过滤AI相关项目**
-
-从Trending榜单（13个）中筛选：
-1. Alishahryar1/free-claude-code - AI相关（Claude Code工具）
-2. mattpocock/skills - AI相关（Claude相关技能目录）
-3. Z4nzu/hackingtool - 非AI（黑客工具，与AI无关）
-4. PostHog/posthog - 部分AI（包含AI产品助手，但不是核心）
-5. davila7/claude-code-templates - AI相关（Claude Code）
-6. deepseek-ai/DeepEP - AI相关（深度学习通信库）
-7. PowerShell/PowerShell - 非AI（系统工具）
-8. RooCodeInc/Roo-Code - AI相关（AI代码编辑器）
-9. huggingface/ml-intern - AI相关（机器学习）
-10. codecrafters-io/build-your-own-x - 非AI（编程学习）
-11. CJackHwang/ds2api - AI相关（DeepSeek API中间件）
-12. Universal-Commerce-Protocol/ucp - 非AI（商业协议）
-13. ComposioHQ/awesome-codex-skills - AI相关（Codex技能）
-
-
-14. 
-现在从81个主题搜索结果中提取AI相关项目，按stars数量排序。hermes-agent和cherry-studio是重要的AI agent项目，分别获得116,798和44,385 stars。cowagent作为微信上的chatgpt实现有43,712 stars，nanobot作为轻量级个人AI agent有40,864 stars。career-ops利用Claude Code进行AI驱动的工作搜索，获得39,664 stars。
-
-copilotkit、googleworkspace/cli、aionui和activepieces都是AI agent框架，分别获得30,437、25,385、22,556和21,880 stars。opencli作为通用CLI工具支持AI agent有17,278 stars，cua和e2b-dev分别提供计算机使用代理的基础设施和安全环境，分别有14,155和11,921 stars。waoowaoo是工业级AI视频制作平台，有11,742 stars，opensandbox为AI agent提供沙箱环境，有10,251 stars。
-
-ppt-master能通过AI生成可编辑的PPT演示文稿。
-
-在大型语言模型领域，autogpt拥有183,756 stars，ollama获得170,004 stars，everything-claude-code有166,983 stars，prompts.chat收集160,667 stars的提示词。transformers、dify、langchain、open-webui和firecrawl分别是模型框架、工作流开发、AI接口、网页交互和网页抓取工具，分别有159,925、139,149、134,906、134,115和112,245 stars。browser-use让AI agent能够操作浏览器。
-
-vllm提供高效推理服务，openhands实现AI驱动开发，llamafactory支持微调100多个模型，deer-flow处理长时间任务。
-
-向量数据库方面，anything-llm有58,987 stars，meilisearch提供快速搜索，llama_index有48,929 stars用于文档处理，milvus和qdrant分别有43,983和30,689 stars用于向量存储。pageindex、cognee、weaviate和txtai分别提供页面索引、记忆管理、对象向量存储和语义搜索功能。
-
-langchain4j支持Java开发，leann实现高效RAG，lancedb提供嵌入式检索，oceanbase和zvec分别处理向量和数据库功能，claude-context为Claude提供代码搜索能力。
-
-在RAG和知识库领域，paddleocr处理文档识别，claude-mem提供记忆功能，mem0作为通用记忆层，flowise支持可视化构建AI agent，jeecgboot是低代码平台，hello-agents是智能体教程，mindsdb和lightrag分别处理数据查询和快速检索，graphrag实现图增强生成。
-
-机器学习框架方面，tensorflow拥有最大社区（194,882 stars），pytorch紧随其后（99,439 stars），ML-For-Beginners提供入门课程。netdata、tesseract、OpenBB、scikit-learn、keras、yolov5和ultralytics分别在可观测性、OCR、金融分析、传统ML、深度学习、目标检测等领域有广泛应用。AI-For-Beginners也是重要的学习资源。
-
-在模型训练领域，minimind仅用2小时完成64M参数GPT的训练，rig提供Rust实现，opencompass支持多模型评估，tiny-llm在Apple Silicon上运行小型模型。stable-pretraining、testtimescaling、mxcp和Project_Chronos分别涉及预训练、测试时扩展、数据管道和推理优化。
-
-现在需要将这些项目分类整理成报告。
-</think>
-
 # AI 开源趋势日报
 
 **日期**：2026-04-26 | **数据来源**：GitHub Trending + Topic Search

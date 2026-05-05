@@ -4,57 +4,6 @@
 
 ---
 
-<think>Let me analyze the Hacker News AI posts from the past 24 hours (2026-04-27) and create a structured digest.
-
-**Today's Highlights:**
-
-Looking at the top posts:
-1. SWE-bench Verified no longer measures frontier coding capabilities (249 score, 141 comments) - This is by far the biggest story. OpenAI published an article explaining why they no longer evaluate on SWE-bench Verified, suggesting it no longer measures frontier capabilities. This has generated significant discussion.
-
-2. AI memory with biological decay (59 score, 30 comments) - Interesting project about memory systems.
-
-3. Google banks on AI edge to catch up to cloud rivals (55 score, 16 comments) - Industry news about Google's strategy.
-
-4. SpaceX AI burning cash (18 score) - Financial news about AI costs.
-
-5. Neal Stephenson video about AI threat (16 score) - Opinion piece.
-
-**Categories to organize:**
-
-🔬 Models & Research:
-- SWE-bench Verified no longer measures frontier coding capabilities (249/141)
-- DeepSeek drops input cache price to 1/10th (6/1)
-
-🛠️ Tools & Engineering:
-- AI memory with biological decay (59/30)
-- The New Linux Kernel AI Bot (10/1)
-- DSS, lightweight TUI spreadsheet editor (7/0)
-- 8v: One CLI for AI agent (7/1)
-- Relay plugin for Claude Code (5/1)
-- Semble – Fast code search for agents (5/0)
-- Lambda ERP – Open-source ERP through chat (5/0)
-- Polynya – Turn Postgres into workspaces for AI (4/0)
-
-🏢 Industry News:
-- Google banks on AI edge (55/16)
-- SpaceX AI burning cash (18/0)
-
-
-- xAI discussed partnership with Mistral (4/0)
-- Elon Musk's legal battle with OpenAI going to trial (4/0)
-- UK departments at odds over AI datacenters energy (4/0)
-- Reporters at news site are AI bots, OpenAI funding (6/0)
-
-💬 Opinions & Debates:
-- Neal Stephenson: The Real Threat Isn't AI, It's Us (16/3)
-- How OpenAI Kills Oracle (11/2)
-- Ask HN: Has Claude Opus 4.7 nerfed? (4/7)
-- CIOs struggle to find clarity in AI strategies (5/0)
-
-**Community Sentiment Signal:**
-The discussion is heavily focused on SWE-bench's limitations as a benchmark for measuring frontier model capabilities. There's notable concern about AI infrastructure costs and energy consumption, with multiple threads touching on regulatory and competitive pressures. Developer tools are generating interest, particularly around memory systems and CLI utilities for AI workflows. The community seems skeptical about enterprise AI adoption, judging by the low engagement on strategy-focused posts.
-</think>
-
 # Hacker News AI Community Digest
 
 **Date:** April 27, 2026 | **Period:** Past 24 Hours

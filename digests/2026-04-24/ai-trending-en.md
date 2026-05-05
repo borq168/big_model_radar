@@ -4,59 +4,6 @@
 
 ---
 
-<think>Let me analyze the data provided and create a structured AI Open Source Trends Report.
-
-First, let me filter AI-related projects from the trending list:
-
-From the 16 trending repos:
-1. huggingface/ml-intern - AI/ML (ML engineer that reads papers, trains models)
-2. zilliztech/claude-context - AI (Code search MCP for Claude Code)
-3. HKUDS/RAG-Anything - AI (RAG Framework)
-4. Z4nzu/hackingtool - NOT AI (hacking tool)
-5. ruvnet/RuView - AI (WiFi DensePose, human pose estimation)
-6. Anil-matcha/Open-Generative-AI - AI (uncensored AI image/video generation)
-7. Alishahryar1/free-claude-code - AI (free Claude Code alternative)
-8. open-metadata/OpenMetadata - NOT AI (data platform, not specifically AI)
-9. microsoft/ai-agents-for-beginners - AI (AI agents course)
-10. PowerShell/PowerShell - NOT AI
-11. cline/cline - AI (autonomous coding agent)
-12. microsoft/onnxruntime - AI (ML inference engine)
-13. mksglu/context-mode - AI (context window optimization for AI coding agents)
-14. coreyhaines31/marketingskills - AI (marketing skills for Claude Code)
-15. chiphuyen/aie-book - AI (AI engineering resources)
-16. VoltAgent/awesome-agent-skills - AI (agent skills collection)
-
-Now let me categorize:
-
-AI Infrastructure:
-- huggingface/ml-intern
-- microsoft/onnxruntime
-- mksglu/context-mode
-- cline/cline
-
-AI Agents / Workflows:
-- microsoft/ai-agents-for-beginners
-- cline/cline
-- VoltAgent/awesome-agent-skills
-
-
-- Alishahryar1/free-claude-code
-- coreyhaines31/marketingskills
-
-AI Applications:
-- ruvnet/RuView
-- Anil-matcha/Open-Generative-AI
-- zilliztech/claude-context
-
-LLMs / Training:
-- chiphuyen/aie-book
-
-RAG / Knowledge:
-- HKUDS/RAG-Anything
-
-Now I'll structure the report with these filtered and categorized projects.
-</think>
-
 # AI Open Source Trends Report
 ## April 24, 2026
 

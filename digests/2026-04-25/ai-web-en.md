@@ -8,53 +8,6 @@ Sources:
 
 ---
 
-<think>The user wants me to generate a detailed content tracking report based on the crawled content from Anthropic (Claude) and OpenAI. Let me analyze the content and create a comprehensive report.
-
-Let me first identify the key content pieces:
-
-**Anthropic (Claude) - 6 new articles:**
-1. Election safeguards update (2026-04-24)
-2. Amazon compute expansion (2026-04-20)
-3. Infrastructure noise in agentic coding evals (2026-04-24)
-4. Scaling Managed Agents (2026-04-08)
-5. Claude Code quality reports postmortem (2026-04-23)
-6. Anthropic and NEC partnership (2026-04-24)
-
-**OpenAI - 31 new articles:**
-Many of these have "(Unable to extract text content)" which means I can't see the actual content. Let me identify what I can see:
-1. Introducing GPT 5.5 (2026-04-25)
-2. ChatGPT Usage and Adoption Patterns At Work (2026-04-25)
-3. ChatGPT for Excel (2026-04-25)
-4. Introducing ChatGPT Images 2.0 (2026-04-25)
-5. Speeding Up Agentic Workflows With Websockets (2026-04-24)
-6. The State Of Enterprise AI 2025 Report (2026-04-24)
-7. Stateful Runtime Environment For Agents In Amazon Bedrock (2026-04-24)
-8. Making ChatGPT Better For Clinicians (2026-04-24)
-9. Staying Ahead In The Age Of AI (2026-04-24)
-10. GPT 5.5 System Card (2026-04-24)
-11. Introducing OpenAI Privacy Filter (2026-04-24)
-12. Accelerating Cyber Defense Ecosystem (2026-04-24)
-
-
-13. Scaling Codex To Enterprises Worldwide (2026-04-24)
-14. Introducing Workspace Agents In ChatGPT (2026-04-24)
-15. GPT 5.5 Bio Bug Bounty (2026-04-24)
-16. Introducing GPT Rosalind (2026-04-24)
-17. Introducing GPT 5.4 (2026-04-24)
-18. Introducing GPT 5.3 Codex Spark (2026-04-24)
-19. Scaling Trusted Access For Cyber Defense (2026-04-24)
-20. ChatGPT Business SMB Guide (2026-04-24)
-21. Introducing GPT-OS (2026-04-24)
-
-I notice multiple product launches and updates across different domains. The releases span enterprise solutions, specialized AI tools, and platform enhancements. Key focus areas include enterprise AI, cybersecurity, and specialized AI applications for sectors like healthcare and business.
-
-The content reveals significant AI ecosystem developments, with OpenAI and Anthropic introducing multiple product variants and strategic partnerships. Enterprise-focused AI solutions seem particularly prominent, with tools targeting specific professional and business needs.
-
-The infrastructure and partnership announcements suggest a strategic push toward more robust, scalable AI deployment across different industries and use cases. Partnerships with major cloud providers and enterprise clients indicate a move towards deeper integration of AI technologies in professional environments.
-
-The technical depth of the releases, especially around agentic systems and coding evaluations, points to a sophisticated approach to AI development that balances performance, reliability, and practical application.
-</think>
-
 # Content Tracking Report — April 25, 2026
 
 ## 1. Today's Highlights

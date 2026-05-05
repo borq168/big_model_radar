@@ -15,72 +15,9 @@
 
 ## 横向对比
 
-<think>用户要求我基于之前生成的各工具日报数据，生成一份横向对比分析报告。让我整理一下各工具的关键数据：
-
-**Claude Code:**
-- Issues: 50条
-- PRs: 9条
-- Releases: 1个 (v2.1.123)
-- 热门Issue评论峰值: 79 (#13480)
-- 热门Issue点赞峰值: 162 (#36151)
-
-**OpenAI Codex:**
-- Issues: 50条
-- PRs: 9条
-- Releases: 5个 Rust SDK alpha版本
-- 热门Issue评论峰值: 20 (#19220)
-- 热门Issue点赞峰值: 65 (#13018)
-
-**Gemini CLI:**
-- Issues: 50条
-- PRs: 50条
-- Releases: 1个夜间版 (v0.42.0-nightly)
-- 热门Issue评论峰值: 5 (#22745)
-- 热门Issue点赞峰值: 3 (#25166)
-
-**GitHub Copilot CLI:**
-- Issues: 34条更新
-- PRs: 1条
-- Releases: 1个 (v1.0.40-0)
-- 热门Issue评论峰值: 12 (#1044)
-- 热门Issue点赞峰值: 12 (#1973)
-
-**Kimi Code CLI:**
-- Issues: 6条
-- PRs: 11条
-- Releases: 无
-- 热门Issue评论峰值: 1 (多个)
-- 热门Issue点赞峰值: 1 (多个)
-
-**OpenCode:**
-- Issues: 48条
-
-
-- PRs: 46条
-- Releases: 1个 (v1.14.30)
-- 热门Issue评论峰值: 40 (#20698)
-- 热门Issue点赞峰值: 22 (#9281)
-
-**Qwen Code:**
-- Issues: 48条
-- PRs: 46条
-- Releases: 3个 (v0.15.5, v0.15.5-preview.0, v0.15.3-nightly)
-- 热门Issue评论峰值: 11 (#3579)
-- 热门Issue点赞峰值: 6 (#3879)
-
-**Pi:**
-- Issues: 50条
-- PRs: 23条
-- Releases: 无
-- 热门Issue评论峰值: 6 (#3929, #3984)
-- 热门Issue点赞峰值: 6 (#3879)
-
-现在需要整理成横向对比报告。
-</think>
-
 # AI CLI 工具生态横向对比分析报告
 
-**日期**: 2026-04-30  
+**日期**: 2026-04-30
 **分析范围**: Claude Code、OpenAI Codex、Gemini CLI、GitHub Copilot CLI、Kimi Code CLI、OpenCode、Qwen Code、Pi
 
 ---
@@ -277,8 +214,8 @@ Claude Code、Copilot CLI、Kimi Code CLI 均支持 ACP 协议，Zed、JetBrains
 
 ---
 
-**报告生成时间**: 2026-04-30  
-**数据完整性**: 各工具数据覆盖过去 24 小时（2026-04-29 ~ 2026-04-30），Issues 和 PRs 数据均来自 GitHub 公开 API  
+**报告生成时间**: 2026-04-30
+**数据完整性**: 各工具数据覆盖过去 24 小时（2026-04-29 ~ 2026-04-30），Issues 和 PRs 数据均来自 GitHub 公开 API
 **免责声明**: 本报告基于公开数据生成，部分工具（如 Kimi Code CLI）的数据量可能受统计周期影响而偏低
 
 ---
@@ -288,66 +225,9 @@ Claude Code、Copilot CLI、Kimi Code CLI 均支持 ACP 协议，Zed、JetBrains
 <details>
 <summary><strong>Claude Code</strong> — <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-30 的 Claude Code 社区动态日报。我需要：
-
-1. 今日速览 - 2-3句话概括最重要动态
-2. 版本发布 - v2.1.123 的修复内容
-3. 社区热点 Issues - 挑选 10 个最值得关注的
-4. 重要 PR 进展 - 挑选 10 个重要的 PR
-5. 功能需求趋势 - 从 Issues 中提炼
-6. 开发者关注点 - 痛点和高频需求
-
-让我分析数据：
-
-**版本发布：**
-- v2.1.123: 修复了当 `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` 时 OAuth 认证失败导致 401 重试循环的问题
-
-**热门 Issues（按评论数排序）：**
-1. #13480 - 超大图片破坏对话（79评论，78👍）- 长期未解决
-2. #53262 - HERMES.md 导致计费路由错误（64评论，103👍）- 已关闭
-3. #36151 - 移动端多账户切换（50评论，162👍）- 功能请求
-4. #13585 - CLI 添加配额信息访问（12评论，67👍）- 增强功能
-5. #50466 - 2.1.113 在 Ivy Bridge Mac 上崩溃（12评论）- 已关闭
-
-
-6. #48806 - Chrome 控制失败（11评论）
-7. #54862 - Web 版本不可用（10评论）
-8. #51649 - 桌面 webview 挂起（10评论）
-9. #49917 - Windows 安装程序失败（10评论）
-10. #39185 - 图片尺寸超限（9评论）
-
-**重要 PR：**
-1. #20448 - Web4 governance 插件
-2. #54777 - export-session 插件（md/json/txt/docx/pdf）
-3. #54749 - hookify 全局规则加载
-4. #54741 - README 文档澄清
-5. #41611 - 添加缺失的源
-6. #1 - SECURITY.md（已关闭）
-7. #52666 - README 品牌大小写修复
-8. #54551 - 终端内联图像渲染提案
-9. #54531 - 安全修复
-
-**功能需求趋势：**
-- 配额/计费信息透明度
-- 多平台支持（Windows、macOS、Linux）
-- 移动端功能
-- 工具稳定性
-- 图像处理能力
-- 插件系统
-
-**开发者痛点：**
-- 计费路由异常导致额外费用
-- OAuth 认证流程中的重试循环
-- 跨平台兼容性问题
-- 工具调用超时或无响应
-- 路径安全扫描误报
-
-现在组织成日报格式。
-</think>
-
 # Claude Code 社区动态日报
 
-**日期：** 2026-04-30  
+**日期：** 2026-04-30
 **数据来源：** github.com/anthropics/claude-code
 
 ---
@@ -361,7 +241,7 @@ Claude Code、Copilot CLI、Kimi Code CLI 均支持 ACP 协议，Zed、JetBrains
 ## 2. 版本发布
 
 ### v2.1.123
-**发布时间：** 2026-04-30  
+**发布时间：** 2026-04-30
 **更新内容：**
 - **修复：** 解决当 `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` 环境变量设置时，OAuth 认证失败并陷入 401 重试循环的问题
 
@@ -549,36 +429,6 @@ Linux:
 <details>
 <summary><strong>OpenAI Codex</strong> — <a href="https://github.com/openai/codex">openai/codex</a></summary>
 
-<think>Let me analyze the provided GitHub data and generate a structured daily report in Chinese.
-
-Let me first organize the data:
-
-**Releases (past 24 hours):**
-- rust-v0.126.0-alpha.17 through rust-v0.126.0-alpha.13 (5 alpha releases)
-
-**Issues (50 total, showing top 30 by comments):**
-Let me pick the 10 most noteworthy ones:
-
-1. #19220 - macOS startup failure with workspace_dependencies (20 comments, 2 👍)
-2. #16857 - High GPU usage due to animation (19 comments, 21 👍)
-
-
-3. #13699 - Windows crashed with WSL (17 comments, 9 👍)
-4. #17318 - Can't change model and reasoning efforts (14 comments, 22 👍)
-5. #8732 - Azure DefaultAzureCredential auth support (13 comments, 18 👍)
-6. #13018 - Allow to delete threads (11 comments, 65 👍) - highest 👍
-7. #10969 - Blank commit message autofill ignores Git config (9 comments, 12 👍)
-8. #18299 - Display dot files and folders (9 comments, 13 👍)
-9. #20161 - Codex needs phone number (9 comments, 3 👍)
-10. #18507 - macOS CLI bundled Computer Use helper microphone permission (9 comments, 4 👍)
-
-Now looking at the pull requests, I see several key additions and fixes: IDE context support for the TUI, helper mappings for server notifications, dead API version cleanup, and terminal tool review event emission. There are also tool review event schemas being added, tool item events from lifecycle management, and protocol-native item timestamps being implemented.
-
-I'm also tracking workspace plugin sharing APIs, remote plugin caching by account, analytics for remote plugin installs, compact lifecycle hooks, and library tool/file upload support. There's also work on bypassing review for always-allow MCP tools in auto-review mode and fixing the Bedrock runtime endpoint display in /status.
-
-Looking at the closed PRs, there's a fix for stale guardian events in reused reviews, centralized thread analytics state, and admin-disabled remote plugin status surfacing. The main themes emerging are around plugin ecosystem improvements, analytics instrumentation, and lifecycle management refinements.
-</think>
-
 # OpenAI Codex 社区动态日报
 
 **日期：** 2026-04-30
@@ -762,74 +612,9 @@ Looking at the closed PRs, there's a fix for stale guardian events in reused rev
 <details>
 <summary><strong>Gemini CLI</strong> — <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-30 的 Gemini CLI 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据包括：
-1. 最新 Releases - 1个夜间版本
-2. 最新 Issues - 50条，展示30条评论最多的
-3. 最新 Pull Requests - 50条，展示20条评论最多的
-
-我需要：
-1. 今日速览 - 2-3句话概括
-2. 版本发布 - 总结更新内容
-3. 社区热点 Issues - 10个最值得关注的
-4. 重要 PR 进展 - 10个重要的
-5. 功能需求趋势 - 从 Issues 提炼
-6. 开发者关注点 - 痛点或高频需求
-
-让我分析数据：
-
-**版本发布：**
-- v0.42.0-nightly.20260429.g6d9911393
-- 更新内容：
-  - Update policy so transient errors are not marked terminal (PR #26066)
-  - Implement bot that performs time-series metric analysis and suggests repo management improvements
-
-**热点 Issues（按评论数排序）：**
-1. #22745 - AST-aware file reads, search, mapping (5条评论)
-2. #22323 - Subagent recovery after MAX_TURNS (4条评论)
-3. #24916 - Gemini cli keeps asking for permissions (3条评论)
-
-
-4. #24353 - Robust component level evaluations (3条评论)
-5. #22203 - Rename ToDo to Tasks (3条评论)
-6. #25166 - Shell command execution gets stuck (2条评论, 3个赞)
-7. #23571 - Model frequently creates tmp scripts (2条评论)
-8. #22267 - Browser Agent ignores settings.json (2条评论)
-9. #25216 - Gemini failed to open in a temporary path (1条评论)
-10. #24915 - Thick black border at the top and bottom (1条评论)
-
-还有几个值得关注的议题：#24246 涉及超过128个工具导致的400错误，#24202 是SSH文本混乱的问题，#23582 关于子代理对活跃审批模式的感知，#22819 实现内存路由功能，#22816 需要为二级依赖使用多个缩进，#22809 调整主代理提示词以鼓励主动内存写入，#22746 调查AST感知CLI工具，#22672 代理应停止或劝阻破坏性行为，#22232 增强浏览器代理弹性。
-
-还有#22186 的get-shit-done输出钩子导致崩溃，#25218 表格在流式传输中增量渲染，#24943 需要澄清并行工具调用布局，#24935 终端缓冲区模式下退出外部编辑器后出现损坏，#24546 需要SSH检测辅助函数，#24470 长对话滚动问题，#24037 追踪器应在重新规划阶段更新，#23925 默认启用团队追踪器，#23897 为子代理工具调用拒绝添加行为评估，#23823 更新内部工具模型至3.1 flash lite，#23556 调查病态压缩情况。
-
-**重要 PR：**
-1. #26244 - Changelog for v0.41.0-preview.0
-2. #26245 - Changelog for v0.40.0
-3. #26149 - feat(session): expose runtime identity for external observers
-4. #26243 - Changelog for v0.40.0 (CLOSED)
-5. #26242 - Changelog for v0.41.0-preview.0 (CLOSED)
-6. #26241 - fix(cli): resolve tmux scroll issue
-7. #26073 - Fix remaining issues with generalist profile
-8. #18499 - feat: Add voice input with pluggable backend
-9. #26240 - Metrics Integrity & Standardized Reporting
-10. #26222 - refactor(acp): delegate prompt turn processing logic
-11. #26239 - Backlog Management & Metrics Integrity
-12. #26238 - Fix topic marker leakage in CLI output
-13. #26236 - fix(bot): productivity and backlog optimizations
-14. #26220 - fix(core): discourage unprompted git add .
-15. #26234 - Allow non-https proxy urls
-16. #26233 - docs(core): add automated gemma setup guide
-17. #26235 - Fix: Inconsistent Case-Sensitivity in GrepTool
-18. #26232 - Fix: Inconsistent Case-Sensitivity in GrepTool
-19. #26169 - fix: remove unsafe exec() in app.ts
-
-现在需要整理成结构化的日报格式。
-</think>
-
 # Gemini CLI 社区动态日报
 
-**日期：** 2026-04-30  
+**日期：** 2026-04-30
 **数据来源：** github.com/google-gemini/gemini-cli
 
 ---
@@ -920,16 +705,16 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 
 ### 🎯 核心痛点
 
-1. **权限管理失效**  
+1. **权限管理失效**
    用户反馈"allow for all future sessions"选项有时不生效，导致同一文件被反复请求授权
 
-2. **Shell 执行状态不一致**  
+2. **Shell 执行状态不一致**
    命令已结束但 UI 仍显示"等待输入"，开发者(@rnett)已提供详细复现步骤
 
-3. **配置覆盖不生效**  
+3. **配置覆盖不生效**
    Browser Agent 完全忽略 `settings.json` 中的 `maxTurns` 等关键配置
 
-4. **临时文件污染**  
+4. **临时文件污染**
    模型被限制 shell 后转向创建分散的临时脚本，增加清理成本
 
 ### 💡 高频需求
@@ -950,8 +735,8 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 
 ---
 
-**📅 报告生成时间：** 2026-04-30  
-**📈 数据覆盖：** 过去 24 小时（2026-04-29 ~ 2026-04-30）  
+**📅 报告生成时间：** 2026-04-30
+**📈 数据覆盖：** 过去 24 小时（2026-04-29 ~ 2026-04-30）
 **🔗 订阅更新：** 关注 [Gemini CLI 仓库](https://github.com/google-gemini/gemini-cli) 获取最新动态
 
 </details>
@@ -959,44 +744,9 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 <details>
 <summary><strong>GitHub Copilot CLI</strong> — <a href="https://github.com/github/copilot-cli">github/copilot-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub Copilot CLI 数据生成一份 2026-04-30 的社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Release: v1.0.40-0（过去24小时）
-- Issues: 34条更新，30条展示
-- PRs: 1条
-
-让我按照要求的格式组织内容：
-
-1. **今日速览** - 总结最重要动态
-2. **版本发布** - v1.0.40-0 的更新
-3. **社区热点 Issues** - 挑选10个最值得关注的
-4. **重要 PR 进展** - 只有1个PR
-5. **功能需求趋势** - 提炼社区关注方向
-6. **开发者关注点** - 痛点和需求
-
-让我仔细分析Issues，按重要性排序：
-
-高热度/重要性的Issues：
-1. #1973 - 工具白名单功能请求（12个👍，8条评论）- 交互模式下需要手动批准每个工具调用
-2. #2071 - 支持pass作为headless服务器的凭证后端（8个👍）- 安全问题
-3. #1044 - ACP中slash命令支持（12条评论）- 功能缺失
-4. #2282 - MCP服务器连接问题（7条评论）- 常见问题
-5. #1928 - 允许暂停copilot工作（7条评论）- 工作流程需求
-
-
-6. #839 - 子代理使用skills（7条评论）- 功能需求
-7. #2643 - preToolUse静默重写命令问题（5条评论）- 插件开发痛点
-8. #2881 - Autopilot模式无限循环（2条评论）- 严重bug
-9. #2995 - DeepSeek API支持（5个👍）- 新模型支持需求
-10. #3031 - 远程会话URL问题（2条评论）- 容器环境问题
-
-现在让我生成报告。
-</think>
-
 # GitHub Copilot CLI 社区动态日报
 
-**日期**: 2026-04-30  
+**日期**: 2026-04-30
 **数据来源**: github.com/github/copilot-cli
 
 ---
@@ -1114,53 +864,9 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 <details>
 <summary><strong>Kimi Code CLI</strong> — <a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-30 的 Kimi Code CLI 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases：过去24小时无新版本
-- 最新 Issues：6条
-- 最新 Pull Requests：11条
-
-让我整理一下：
-
-**Issues (6条)**：
-1. #1956 - ACP integration: Session history not replayed (victorhqc)
-2. #1745 - Plan mode can't write file in Zed ACP (lihsai0)
-3. #2120 - Tool call safety configuration (iaindooley)
-4. #2119 - VSCode plugin supports multiple active sessions (thsun6)
-5. #2118 - 今天为啥这么卡？(1260924056)
-6. #2116 - Expose runtime identity for external observers (yeelam-gordon)
-
-**Pull Requests (11条)**：
-1. #1933 - feat(subagents): add work_dir override for subagent dispatch
-2. #1960 - feat(soul): RalphFlow architecture with ephemeral context
-3. #2115 - fix(clipboard): enable clipboard paste on headless Linux over SSH
-4. #2082 - feat(session): expose runtime identity (pid + session id)
-5. #2083 - feat(proctitle): set dynamic terminal title with cwd + session topic
-6. #2114 - feat(config): Add Granular Auto-Approval Rules
-7. #2097 - feat(soul): add /reload-skills command
-
-
-8. #2113 - fix(acp): wrap shell command in `bash -c` for `terminal/create`
-9. #2112 - fix(mcp): add schema exposure guardrails for large MCP tool lists
-10. #2095 - feat: auto approval w/ config granularity issue 1631 (CLOSED)
-11. #2080 - fix(web): <ToolInput/> show diff content
-
-现在按照要求的格式生成日报：
-
-1. **今日速览** - 总结最重要动态
-2. **版本发布** - 无新版本
-3. **社区热点 Issues** - 挑选10个最值得关注的 Issue
-4. **重要 PR 进展** - 挑选10个重要的 PR
-5. **功能需求趋势** - 从所有 Issues 中提炼出社区最关注的功能方向
-6. **开发者关注点** - 总结开发者反馈中的痛点或高频需求
-
-语言要求：简洁专业，适合技术开发者阅读。每个条目附上 GitHub 链接。
-</think>
-
 # Kimi Code CLI 社区动态日报
 
-**日期**: 2026-04-30  
+**日期**: 2026-04-30
 **数据来源**: github.com/MoonshotAI/kimi-cli
 
 ---
@@ -1334,69 +1040,13 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 
 ---
 
-**报告生成时间**: 2026-04-30  
+**报告生成时间**: 2026-04-30
 **数据覆盖范围**: 2026-04-29 00:00 - 2026-04-30 00:00 (UTC)
 
 </details>
 
 <details>
 <summary><strong>OpenCode</strong> — <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-30 的 OpenCode 社区动态日报。我需要按照指定的格式和结构来组织内容，包括：
-
-1. 今日速览
-2. 版本发布
-3. 社区热点 Issues（10个）
-4. 重要 PR 进展（10个）
-5. 功能需求趋势
-6. 开发者关注点
-
-让我分析数据：
-
-**最新 Releases:**
-- v1.14.30 发布了，包含 Core 修复：
-  - 修复 Desktop 中因路径不匹配导致的会话丢失问题
-  - 修复 Azure Responses 默认值以避免 reasoning 项目排序错误
-  - 改进 DeepSeek 兼容性
-  - 添加 Mistral Medium 3.5
-
-**热门 Issues（按评论数排序前10个）:**
-1. #20698 - GPT 5.4 Azure reasoning 错误（40评论）
-2. #21010 - Kimi Provider 返回错误（15评论）
-3. #14965 - 启动慢问题（14评论）
-4. #5395 - external_directory 权限分离（14评论）
-5. #24081 - WSL1 无法运行（11评论）
-6. #16612 - 回复上一轮问题（11评论）
-7. #10531 - 多模态上下文支持讨论（11评论）
-8. #20238 - TUI 会话列表缺失（10评论）
-
-
-9. #24261 - DeepSeek reasoning_content 问题（10评论）
-10. #9281 - 使用量追踪功能（9评论）
-
-**重要 PR:**
-1. #25036 - HttpApi 测试移植到 Effect
-2. #25035 - Effect 配置用于 HttpApi 授权
-3. #24783 - Windows 子进程关闭问题修复
-4. #25034 - 默认启用 HTTP API 后端
-5. #25015 - Home/End 键修复
-6. #25016 - TUI 问题选项提交修复
-7. #25033 - HttpApi 授权中间件测试
-8. #18767 - 移动端触摸优化
-9. #13854 - 停止流式渲染后继续
-10. #24962 - 应用 agent variant 修复
-11. #25018 - 控制平面工作区转换
-12. #25027 - HttpApi 工作区路由测试
-13. #25029 - 冷启动优化
-14. #23890 - 搜索服务
-15. #6762 - extra_body 参数支持
-16. #25025 - 重命名工作区适配器
-17. #25014 - 取消测试修复
-18. #25021 - 运行器取消测试修复
-19. #24976 - Perplexity 文档
-
-现在组织日报内容。
-</think>
 
 # OpenCode 社区动态日报 | 2026-04-30
 
@@ -1801,35 +1451,9 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 <details>
 <summary><strong>Qwen Code</strong> — <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-30 的 Qwen Code 社区动态日报。让我仔细分析数据并按照要求的结构组织内容。
-
-数据来源分析：
-1. 最新 Releases：3个版本
-   - v0.15.3-nightly.20260430.da2936336
-   - v0.15.5
-   - v0.15.5-preview.0
-
-2. 最新 Issues：48条，展示30条评论最多的
-   - 重点关注：DeepSeek reasoning_content 问题、连接问题、模型配置问题等
-
-3. 最新 Pull Requests：46条，展示20条评论最多的
-   - 重点关注：Monitor工具、Review pipeline、权限流、DeepSeek修复等
-
-让我按照要求的结构组织日报：
-
-1. 今日速览
-2. 版本发布
-3. 社区热点 Issues（10个）
-4. 重要 PR 进展（10个）
-5. 功能需求趋势
-6. 开发者关注点
-
-让我开始撰写：
-</think>
-
 # Qwen Code 社区动态日报
 
-**日期**: 2026-04-30  
+**日期**: 2026-04-30
 **数据来源**: github.com/QwenLM/qwen-code
 
 ---
@@ -1843,7 +1467,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ## 2. 版本发布
 
 ### v0.15.5 正式版
-**发布时间**: 2026-04-29  
+**发布时间**: 2026-04-29
 **链接**: https://github.com/QwenLM/qwen-code/releases/tag/v0.15.5
 
 **主要更新**:
@@ -1869,7 +1493,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ## 3. 社区热点 Issues
 
 ### 🔥 Issue #3579 - DeepSeek API reasoning_content 错误（已关闭）
-**链接**: https://github.com/QwenLM/qwen-code/issues/3579  
+**链接**: https://github.com/QwenLM/qwen-code/issues/3579
 **评论**: 11 | **状态**: 已关闭
 
 **问题描述**: 使用 DeepSeek V4 模型时，启用思考模式后出现间歇性 400 错误，提示 `reasoning_content in thinking mode must be passed back to the API`。
@@ -1881,7 +1505,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### 🔥 Issue #1002 - 连接问题
-**链接**: https://github.com/QwenLM/qwen-code/issues/1002  
+**链接**: https://github.com/QwenLM/qwen-code/issues/1002
 **评论**: 10 | **状态**: 开放中
 
 **问题描述**: 用户偶尔报告 `connection error` 或 `streaming timeout`，问题难以复现，根因尚不明确。
@@ -1891,7 +1515,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### 🔥 Issue #3740 - 非 Coding Plan 模型配置被覆盖
-**链接**: https://github.com/QwenLM/qwen-code/issues/3740  
+**链接**: https://github.com/QwenLM/qwen-code/issues/3740
 **评论**: 8 | **状态**: 需分类
 
 **问题描述**: v0.15.5 版本中，配置非 Coding Plan 的 OpenAI 兼容模型后，启动时会被覆盖，持续提示是否更新模型。
@@ -1901,7 +1525,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### 🔥 Issue #3652 - 输入长度超出范围
-**链接**: https://github.com/QwenLM/qwen-code/issues/3652  
+**链接**: https://github.com/QwenLM/qwen-code/issues/3652
 **评论**: 7 | **状态**: 需分类
 
 **问题描述**: 长会话场景下报错 `Range of input length should be [1, 983616]`，新会话也无法解决。
@@ -1911,7 +1535,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### 🔥 Issue #3307 - Alibaba Cloud Coding Plan 缺货
-**链接**: https://github.com/QwenLM/qwen-code/issues/3307  
+**链接**: https://github.com/QwenLM/qwen-code/issues/3307
 **评论**: 6 | **状态**: 已关闭
 
 **问题描述**: Alibaba Cloud Coding Plan 已缺货一周，持续显示 "Temporarily out of stock"。
@@ -1921,7 +1545,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### 🔥 Issue #1276 - CLI 独立二进制请求
-**链接**: https://github.com/QwenLM/qwen-code/issues/1276  
+**链接**: https://github.com/QwenLM/qwen-code/issues/1276
 **评论**: 4 | **👍**: 3 | **状态**: 已关闭
 
 **问题描述**: 请求提供无需 Node.js 的跨平台独立二进制文件，适用于企业、代理受限、CI、容器化等环境。
@@ -1931,7 +1555,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### 🔥 Issue #2657 - Ralph 循环跨会话持久化
-**链接**: https://github.com/QwenLM/qwen-code/issues/2657  
+**链接**: https://github.com/QwenLM/qwen-code/issues/2657
 **评论**: 3 | **状态**: 已关闭
 
 **问题描述**: Ralph 循环状态在开启新会话后仍然持续触发，因为使用了非会话特定的持久化状态文件。
@@ -1941,7 +1565,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### 🔥 Issue #3606 - 会话恢复失败
-**链接**: https://github.com/QwenLM/qwen-code/issues/3606  
+**链接**: https://github.com/QwenLM/qwen-code/issues/3606
 **评论**: 3 | **状态**: 已关闭
 
 **问题描述**: 正确退出会话后，使用 `--resume` 加载时报错 "No saved session found"。
@@ -1951,7 +1575,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### 🔥 Issue #3634 - 后台任务管理路线图
-**链接**: https://github.com/QwenLM/qwen-code/issues/3634  
+**链接**: https://github.com/QwenLM/qwen-code/issues/3634
 **评论**: 2 | **状态**: 开放中
 
 **问题描述**: 官方发布后台任务管理功能的阶段规划：Phase A/B 已合并，Phase C 监控工具进行中。
@@ -1961,7 +1585,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### 🔥 Issue #3748 - 非交互模式错误重复打印
-**链接**: https://github.com/QwenLM/qwen-code/issues/3748  
+**链接**: https://github.com/QwenLM/qwen-code/issues/3748
 **评论**: 1 | **状态**: 需分类
 
 **问题描述**: 非交互模式（`-p`）下，4xx 错误会打印三行且第二行双重包装，随后输出堆栈跟踪。
@@ -1973,7 +1597,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ## 4. 重要 PR 进展
 
 ### PR #3747 - 修复 DeepSeek reasoning_content 传递
-**链接**: https://github.com/QwenLM/qwen-code/pull/3747  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3747
 **状态**: 已关闭
 
 **内容**: 将 DeepSeek `reasoning_content` 规范化扩展到所有 prior assistant turns，而不仅限于包含 `tool_calls` 的 turns。
@@ -1981,7 +1605,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### PR #3737 - 保留 rewind/compression/merge 中的 reasoning_content
-**链接**: https://github.com/QwenLM/qwen-code/pull/3737  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3737
 **状态**: 开放中
 
 **内容**: 修复三个仍可能静默丢弃 `reasoning_content` 的路径：Rewind、Compression、Merge，完成 #3579 的修复闭环。
@@ -1989,7 +1613,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### PR #3684 - 事件监控工具 Phase C
-**链接**: https://github.com/QwenLM/qwen-code/pull/3684  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3684
 **状态**: 开放中
 
 **内容**: 新增 Monitor 工具，生成长期运行的 Shell 命令并以 token-bucket 节流方式（burst=5, sustain=1/sec）流式传输 stdout 行；新增 MonitorRegistry 实现生命周期管理。
@@ -1997,17 +1621,17 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### PR #3754 - Review pipeline 扩展 + CLI 子命令
-**链接**: https://github.com/QwenLM/qwen-code/pull/3754  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3754
 **状态**: 开放中
 
-**内容**: 
+**内容**:
 1. 扩展 Review skill 管道：9 个并行 agent（3 种角色）、迭代反向审计、更智能的 Step 9
 2. 新增 `qwen review` CLI 子命令：6 个跨平台助手
 
 ---
 
 ### PR #3723 - 统一工具执行权限流
-**链接**: https://github.com/QwenLM/qwen-code/pull/3723  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3723
 **状态**: 开放中
 
 **内容**: 实现共享的 L3→L4 权限流，统一 Interactive、Non-Interactive、ACP 模式下的工具执行决策。
@@ -2015,7 +1639,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### PR #3645 - 修复模型优先级
-**链接**: https://github.com/QwenLM/qwen-code/pull/3645  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3645
 **状态**: 已关闭
 
 **内容**: 修复 `resolveCliGenerationConfig` 中的模型解析优先级：`argv.model` > `settings.model.name` > auth-specific env model vars。
@@ -2023,7 +1647,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### PR #3749 - 修复非交互模式错误打印
-**链接**: https://github.com/QwenLM/qwen-code/pull/3749  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3749
 **状态**: 开放中
 
 **内容**: 修复非交互模式（`-p`）错误管道，使 4xx 响应只打印一行格式化的 stderr 并以非零码退出。
@@ -2031,7 +1655,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### PR #3753 - 代理设置生效
-**链接**: https://github.com/QwenLM/qwen-code/pull/3753  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3753
 **状态**: 开放中
 
 **内容**: CLI 现在遵循文档化的顶层 `proxy` 设置，保留废弃的 CLI 标志作为最高优先级覆盖，环境变量作为后备。
@@ -2039,7 +1663,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### PR #3739 - 后台 Agent 恢复和继续
-**链接**: https://github.com/QwenLM/qwen-code/pull/3739  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3739
 **状态**: 开放中
 
 **内容**: 为交互式 CLI 会话添加持久化的后台 agent 恢复/继续支持；支持中断后台 agent 作为暂停条目恢复。
@@ -2047,7 +1671,7 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 ---
 
 ### PR #3717 - 文件读取缓存
-**链接**: https://github.com/QwenLM/qwen-code/pull/3717  
+**链接**: https://github.com/QwenLM/qwen-code/pull/3717
 **状态**: 开放中
 
 **内容**: 新增 FileReadCache，对未变更的读取操作短路，避免重复读取配置文件、项目 README 等高频访问文件。
@@ -2110,160 +1734,13 @@ Gemini CLI 社区在 2026-04-30 保持高度活跃，发布了 v0.42.0 夜间版
 
 ---
 
-**日报生成时间**: 2026-04-30  
+**日报生成时间**: 2026-04-30
 **数据覆盖范围**: 2026-04-29 00:00 - 2026-04-30 00:00 (UTC)
 
 </details>
 
 <details>
 <summary><strong>Pi</strong> — <a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-30 的 Pi 社区动态日报。让我仔细分析这些数据：
-
-**数据概览：**
-- 最新 Releases：过去24小时无
-- 最新 Issues：共50条，展示30条评论最多的
-- 最新 PRs：共23条，展示20条评论最多的
-
-**关键信息提取：**
-
-Issues 中评论最多的（≥3条评论）：
-1. #3929 - Bun startup crash (6条评论) - 已关闭
-2. #3984 - Deepseek 4pro on fireworks broken (6条评论) - 已关闭
-3. #3879 - deepseek-v4-flash xhigh thinking level missing (4条评论) - 已关闭
-4. #3942 - pi update --self fails with npm --prefix (4条评论) - 开放
-5. #3959 - Error with Mistral (4条评论) - 已关闭
-6. #3976 - Fix stale tool-call XML recovery (3条评论) - 已关闭
-7. #3956 - displayName for providers registered by extensions (3条评论) - 已关闭
-8. #3978 - pi config hardcodes path (3条评论) - 开放
-9. #3989 - Mistral Medium 3.5 support (3条评论) - 已关闭
-10. #3987 - expose custom fetch hook (3条评论) - 已关闭
-
-
-11. #3944 - deepseek-v4-flash missing xhigh support (3条评论) - 已关闭
-12. #3926 - Handle followup doesn't clear editor (3条评论) - 已关闭
-13. #3931 - pi missing latest openrouter models (3条评论) - 已关闭
-14. #3904 - Thai Sara Am character causes duplicate lines (3条评论) - 已关闭
-15. #3910 - DeepSeek model pricing mismatch (3条评论) - 已关闭
-16. #3912 - Add Xiaomi MiMo as provider (3条评论) - 已关闭
-17. #3905 - Add compact JSON log mode (3条评论) - 已关闭
-18. #3930 - /tree can hang on duplicate entry ids (2条评论) - 已关闭
-19. #3941 - pi.dev package copy button on Firefox (2条评论) - 已关闭
-20. #3872 - !! syntax for apiKey (2条评论) - 已关闭
-21. #3878 - Edit tool fails with escaped backticks (2条评论) - 已关闭
-22. #3894 - edit tool reports File not found when write protected (2条评论) - 已关闭
-23. #3922 - Self-update fails when installed system-wide (2条评论) - 已关闭
-24. #3985 - Antigravity version not supported (2条评论) - 已关闭
-25. #3982 - let extensions override cost (2条评论) - 开放
-26. #3979 - pi.dev packages dropdown low contrast (2条评论) - 已关闭
-27. #3977 - Disable model providers in settings (2条评论) - 已关闭
-28. #3980 - pi update cannot update when installed via bun (2条评论) - 已关闭
-29. #3974 - Double keypress in Alacritty (2条评论) - 已关闭
-30. #3971 - Capture proxy-reported cost (2条评论) - 已关闭
-
-**PRs 中重要的：**
-1. #3991 - fix(coding-agent): handle duplicate session entries (开放)
-2. #3861 - fix(coding-agent): use alternate logic to find Bun's node_modules (已关闭)
-3. #3973 - fix(coding-agent): auto-recover stale tool-call text responses (已关闭)
-4. #3911 - fix(coding-agent): handle duplicate session entries (已关闭)
-5. #3915 - feat(coding-agent,tui): run slash commands from inline autocomplete (已关闭)
-6. #3955 - fix(coding-agent): report edit access failures correctly (开放)
-7. #3868 - refactor(coding-agent): migrate syntax highlighting to Shiki (开放)
-8. #3968 - feat(ai): expose routed model on openai-completions (已关闭)
-9. #3943 - Fix handoff context after compaction (已关闭)
-10. #3678 - fix(ai): honor Fireworks Anthropic tool compat (开放)
-11. #3986 - Add Gloo AI as First-Class Provider (已关闭)
-12. #3981 - fix(coding-agent): correct bun global package root path calculation (已关闭)
-13. #3969 - fix(tui): render cursor inactive on terminal blur (已关闭)
-14. #3964 - fix(ai): bump default Antigravity version to 1.23.2 (已关闭)
-15. #3963 - feat(coding-agent): add --profile and PI_PROFILE for isolated state (已关闭)
-16. #3961 - fix(tui): treat inline <br> HTML as newline (已关闭)
-17. #3958 - fix(ai): deduplicate resolveCacheRetention (已关闭)
-18. #3951 - Draft: add Cloudflare AI Gateway provider (已关闭)
-19. #3948 - feat(modelconfig): add syntax for api key by command uncached (已关闭)
-20. #3887 - feat: image content (开放)
-
-**主题分类：**
-
-1. **Bug 修复类：**
-   - Bun 启动崩溃
-   - Deepseek 4pro fireworks provider 问题
-   - deepseek-v4-flash xhigh thinking level
-   - pi update --self 失败
-   - Mistral API 错误
-   - stale tool-call XML recovery
-   - pi config 硬编码路径
-   - /tree 在重复 entry id 时挂起
-   - pi.dev package copy button on Firefox
-   - Edit tool 处理转义反引号
-   - edit tool 报告文件不存在（但实际存在）
-   - Self-update 系统级安装失败
-   - Antigravity 版本不支持
-   - Alacritty 双击问题
-   - 泰语 Sara Am 字符导致重复行
-   - 重复 session entries
-
-2. **功能增强类：**
-   - displayName for extensions providers
-   - Mistral Medium 3.5 支持
-   - expose custom fetch hook
-   - deepseek-v4-flash xhigh support
-   - 缺少最新 openrouter 模型
-   - DeepSeek 模型定价不匹配
-   - Add Xiaomi MiMo provider
-   - Add compact JSON log mode
-   - let extensions override cost
-   - Disable model providers in settings
-   - Capture proxy-reported cost
-   - !! syntax for apiKey
-   - Add Gloo AI provider
-   - Add --profile and PI_PROFILE
-   - Add Cloudflare AI Gateway provider
-   - Add syntax for api key by command uncached
-   - Image content support
-
-3. **用户体验类：**
-   - pi.dev packages dropdown low contrast
-   - 终端焦点时渲染光标
-   - Inline autocomplete for slash commands
-   - Shiki syntax highlighting
-
-4. **Provider 相关：**
-   - Deepseek 4pro on fireworks broken
-   - Mistral API 错误
-   - Fireworks Anthropic tool compat
-   - Gloo AI provider
-   - Cloudflare AI Gateway provider
-   - Xiaomi MiMo provider
-
-现在生成日报：
-
-**1. 今日速览**
-- 社区活跃度高，30个 issues 和 20个 PRs 更新
-- 重点修复：重复 session entries、Bun 启动问题、Deepseek 模型支持
-- 新增 Provider：Gloo AI、Xiaomi MiMo、Cloudflare AI Gateway
-
-**2. 版本发布**
-无新版本
-
-**3. 社区热点 Issues（10个）**
-选择评论最多或影响最大的 issues
-
-**4. 重要 PR 进展（10个）**
-选择功能性强或修复重要的 PRs
-
-**5. 功能需求趋势**
-- 模型支持扩展（Mistral Medium 3.5、Xiaomi MiMo、Deepseek v4 flash）
-- Provider 生态扩展（Gloo AI、Cloudflare AI Gateway）
-- 开发者体验（--profile、JSON log、custom fetch hook）
-- 修复类（session 管理、路径处理、编辑工具）
-
-**6. 开发者关注点**
-- 安装和更新问题（npm prefix、bun、system-wide）
-- 模型兼容性和定价准确性
-- 编辑器工具的健壮性
-- 扩展性和灵活性（extensions override cost、provider displayName）
-</think>
 
 # Pi 社区动态日报 | 2026-04-30
 

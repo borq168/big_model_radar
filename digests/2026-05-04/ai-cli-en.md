@@ -15,74 +15,9 @@
 
 ## Cross-Tool Comparison
 
-<think>The user wants a cross-tool comparison report synthesizing all the individual digests I just created. Let me analyze the data from each tool and create a comprehensive comparison.
-
-From the digests I created:
-
-**Claude Code (Anthropic):**
-- No releases in last 24h
-- 50 total issues, top 30 by comment count
-- 5 PRs in last 24h
-- Key focus: Plugin system, session persistence, cross-platform (WSL), subscription/auth issues
-
-**OpenAI Codex:**
-- No releases in last 24h
-- 50 total issues, top 30 by comment count
-- 15 PRs total
-- Key focus: Linux desktop, SSO auth, model routing, vi editing mode, multi-provider support
-
-**Gemini CLI (Google):**
-- No releases in last 24h
-- 50 total issues, top 30 by comment count
-- 15 PRs total
-- Key focus: Windows reliability, agent behavior, MCP improvements, memory management, behavioral evals
-
-**GitHub Copilot CLI:**
-- No releases in last 24h
-- 13 issues total
-- 0 PRs in last 24h
-- Key focus: Provider flexibility, model routing, MCP integration, PowerShell issues, file reference UX
-
-**Kimi Code CLI (Moonshot):**
-- No releases in last 24h
-- 8 issues total
-- 1 PR total
-- Key focus: Skill discovery, configurable limits, global config, hook system, dependency security
-
-**OpenCode:**
-- No releases in last 24h
-- 50 issues total, top 30 by comment count
-- 50 PRs total, top 20 by comment count
-- Key focus: Memory issues, tool calling, session management, MCP, mobile optimization
-
-**Qwen Code:**
-
-
-- 1 release (v0.15.6-nightly)
-- 13 issues total
-- 44 PRs total
-- Key focus: FileReadCache, daemon mode, background tasks, memory, OAuth policy
-
-**Pi:**
-- No releases in last 24h
-- 34 issues total, 30 shown
-- 8 PRs in last 24h, all closed
-- Key focus: Provider integration, WebSocket stability, retry logic, profile isolation
-
-I'll synthesize these patterns to identify cross-cutting themes and strategic insights across the AI CLI ecosystem.
-
-The ecosystem reveals intense competition in AI-assisted coding tools, with major players like Anthropic, Google, OpenAI, and emerging Chinese developers (Moonshot, Qwen) driving rapid innovation. Each tool targets distinct developer segments through specialized features like plugin systems, multi-provider support, and platform-specific optimizations. The landscape suggests a dynamic market where differentiation hinges on performance, integration capabilities, and user experience across diverse development environments.
-
-Key differentiators include advanced memory management, intelligent context handling, and robust cross-platform compatibility. Emerging trends point toward sophisticated agent behaviors, enhanced security models, and granular configuration options that empower developers to customize their AI coding assistants.
-
-The ecosystem reveals intense competition across multiple dimensions: platform support, provider flexibility, and intelligent automation. Each tool strategically positions itself to address specific developer pain points, from session management to multi-agent collaboration.
-
-Community momentum signals a rapidly maturing market with significant investment in AI-assisted development tools, where continuous iteration and user feedback drive innovation.
-</think>
-
 # AI CLI Tools Ecosystem — Cross-Tool Comparison Report
 
-**Date:** 2026-05-04  
+**Date:** 2026-05-04
 **Scope:** Claude Code, OpenAI Codex, Gemini CLI, GitHub Copilot CLI, Kimi Code CLI, OpenCode, Qwen Code, Pi
 
 ---
@@ -218,53 +153,6 @@ The AI CLI ecosystem is transitioning from feature parity competition to reliabi
 <details>
 <summary><strong>Claude Code</strong> — <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></summary>
 
-<think>The user wants me to generate a structured English digest for Claude Code community based on the provided GitHub data. Let me analyze the data and create a comprehensive digest.
-
-Key data points:
-- Latest Releases: None in last 24h
-- 50 total issues, showing top 30 by comment count
-- 5 PRs in last 24h
-
-Let me identify the most important items:
-
-**Hot Issues (by comment count and engagement):**
-1. #26452 - Session Disappeared After Logout/Restart (41 comments, 21 👍) - Major UX issue
-2. #13738 - Clipboard image paste not working in WSL (33 comments, 41 👍) - Cross-platform issue
-3. #31012 - Claude Max 20x subscription not recognized (25 comments, 6 👍) - Auth/billing issue
-4. #996 - Auto-update failed on macOS (17 comments, 22 👍) - Update mechanism issue
-5. #9444 - Support for Plugin Dependencies and Shared Resources (17 comments, 46 👍) - Feature request
-6. #29026 - Desktop app ignores settings.json permissions (16 comments, 25 👍) - Permissions issue
-7. #12612 - Add 'claude model list' CLI command (12 comments, 29 👍) - Feature request
-8. #28508 - Remote Control: AskUserQuestion selections not received (11 comments, 8 👍) - Bug
-9. #52679 - Claude Desktop recommendations issue (10 comments, 9 👍) - UX issue
-10. #54588 - Claude Max 20x subscription not recognized (6 comments, 1 👍) - Duplicate auth issue
-
-**Key PRs:**
-1. #55857 - docs: add warning against npm update -g
-2. #55864 - feat: add session-persist plugin
-
-
-3. #55832 - Fix: Remove stray content from plugin-validator.md
-4. #55834 - fix: document false-positive update banner
-5. #46024 - docs: document --exclude-dynamic-system-prompt-sections
-
-**Feature Request Trends:**
-- Plugin system improvements (dependencies, shared resources)
-- CLI enhancements (model list command)
-- MCP (Model Context Protocol) improvements
-- Permission system refinements
-- Cross-platform compatibility
-
-**Developer Pain Points:**
-- Session persistence issues
-- Permission configuration inconsistencies
-- Update mechanism failures
-- Cross-platform clipboard and image handling
-- Subscription/authentication recognition problems
-
-I'll focus on the emerging patterns in developer feedback. The community is highlighting critical usability issues around session management, cross-platform functionality, and authentication systems. Key areas of concern include clipboard interactions, update mechanisms, and plugin ecosystem limitations. These pain points suggest a need for more robust, flexible tooling that works seamlessly across different environments and user scenarios.
-</think>
-
 # Claude Code Community Digest — 2026-05-04
 
 ## Today's Highlights
@@ -281,63 +169,63 @@ No new releases in the last 24 hours.
 
 ## Hot Issues
 
-**1. Session Disappeared After Logout/Restart — Critical UX Bug** [#26452](https://github.com/anthropics/claude-code/issues/26452)  
-*41 comments, 21 👍*  
+**1. Session Disappeared After Logout/Restart — Critical UX Bug** [#26452](https://github.com/anthropics/claude-code/issues/26452)
+*41 comments, 21 👍*
 Users report complete session loss when logging out or restarting the Claude Code Desktop app, with no clear recovery path. This is the most-discussed issue and represents a significant data-loss risk for active developers.
 
-**2. Clipboard Image Paste Not Working in WSL** [#13738](https://github.com/anthropics/claude-code/issues/13738)  
-*33 comments, 41 👍*  
+**2. Clipboard Image Paste Not Working in WSL** [#13738](https://github.com/anthropics/claude-code/issues/13738)
+*33 comments, 41 👍*
 A long-standing cross-platform bug preventing image paste in Windows Subsystem for Linux environments. High engagement indicates this is a common blocker for Windows developers using WSL.
 
-**3. Claude Max 20x Subscription Not Recognized** [#31012](https://github.com/anthropics/claude-code/issues/31012)  
-*25 comments, 6 👍*  
+**3. Claude Max 20x Subscription Not Recognized** [#31012](https://github.com/anthropics/claude-code/issues/31012)
+*25 comments, 6 👍*
 Users with paid Claude Max 20x plans are incorrectly identified as Free tier, blocking access to Pro/Max-required features. A duplicate report [#54588](https://github.com/anthropics/claude-code/issues/54588) confirms this is a systemic auth issue.
 
-**4. Auto-Update Failed on macOS** [#996](https://github.com/anthropics/claude-code/issues/996)  
-*17 comments, 22 👍*  
+**4. Auto-Update Failed on macOS** [#996](https://github.com/anthropics/claude-code/issues/996)
+*17 comments, 22 👍*
 Auto-update mechanism consistently fails on macOS, requiring manual intervention via `claude doctor` or npm reinstallation. Users are stuck on outdated versions.
 
-**5. Desktop App Ignores settings.json Permissions** [#29026](https://github.com/anthropics/claude-code/issues/29026)  
-*16 comments, 25 👍*  
+**5. Desktop App Ignores settings.json Permissions** [#29026](https://github.com/anthropics/claude-code/issues/29026)
+*16 comments, 25 👍*
 The desktop app disregards `permissions.allow` rules and `defaultMode: "bypassPermissions"` in `~/.claude/settings.json`, forcing constant permission prompts on macOS.
 
-**6. Remote Control: AskUserQuestion Selections Not Received** [#28508](https://github.com/anthropics/claude-code/issues/28508)  
-*11 comments, 8 👍*  
+**6. Remote Control: AskUserQuestion Selections Not Received** [#28508](https://github.com/anthropics/claude-code/issues/28508)
+*11 comments, 8 👍*
 Mobile selections in Remote Control mode aren't received by the CLI, causing infinite wait states. Affects users relying on cross-device workflows.
 
-**7. Weekly Usage Warning Re-appears Every Turn** [#55835](https://github.com/anthropics/claude-code/issues/55835)  
-*1 comment, 0 👍*  
+**7. Weekly Usage Warning Re-appears Every Turn** [#55835](https://github.com/anthropics/claude-code/issues/55835)
+*1 comment, 0 👍*
 Desktop app shows dismissed usage warnings repeatedly, disrupting workflow. Recently filed with reproduction steps.
 
-**8. Keychain Credential Storage Leaks Orphaned Entries** [#55916](https://github.com/anthropics/claude-code/issues/55916)  
-*1 comment, 0 👍*  
+**8. Keychain Credential Storage Leaks Orphaned Entries** [#55916](https://github.com/anthropics/claude-code/issues/55916)
+*1 comment, 0 👍*
 Repeated `/login` commands accumulate orphaned Keychain entries (~85 in 10 days), causing credential storage warnings.
 
-**9. MCP Tool Result content[].text Dropped** [#55677](https://github.com/anthropics/claude-code/issues/55677)  
-*3 comments, 0 👍*  
+**9. MCP Tool Result content[].text Dropped** [#55677](https://github.com/anthropics/claude-code/issues/55677)
+*3 comments, 0 👍*
 When MCP tools return both `content[].text` and `structuredContent`, the text portion is lost, breaking tools that rely on it.
 
-**10. Agent Worktree Isolation Leaks cwd** [#52958](https://github.com/anthropics/claude-code/issues/52958)  
-*4 comments, 2 👍*  
+**10. Agent Worktree Isolation Leaks cwd** [#52958](https://github.com/anthropics/claude-code/issues/52958)
+*4 comments, 2 👍*
 Subagent worktree isolation fails mid-session, causing parent checkout to destroy untracked files during git operations.
 
 ---
 
 ## Key PR Progress
 
-**1. Session-Persist Plugin for Client-Side State Preservation** [#55864](https://github.com/anthropics/claude-code/pull/55864)  
+**1. Session-Persist Plugin for Client-Side State Preservation** [#55864](https://github.com/anthropics/claude-code/pull/55864)
 A new plugin offering a client-side workaround for mid-session context loss. Serves as a stopgap until server-side session persistence is implemented.
 
-**2. Warning Against npm update -g for Global Upgrades** [#55857](https://github.com/anthropics/claude-code/pull/55857)  
+**2. Warning Against npm update -g for Global Upgrades** [#55857](https://github.com/anthropics/claude-code/pull/55857)
 Documentation PR alerting users that `npm update -g` can wipe the entire `node_modules` directory in certain npm versions, breaking the Node environment.
 
-**3. Fix False-Positive Update Banner** [#55834](https://github.com/anthropics/claude-code/pull/55834)  
+**3. Fix False-Positive Update Banner** [#55834](https://github.com/anthropics/claude-code/pull/55834)
 Addresses the "Update available!" banner firing incorrectly for Homebrew and WinGet users by checking npm registry regardless of installation method.
 
-**4. Remove Stray Content from plugin-validator.md** [#55832](https://github.com/anthropics/claude-code/pull/55832)  
+**4. Remove Stray Content from plugin-validator.md** [#55832](https://github.com/anthropics/claude-code/pull/55832)
 Cleans up accidental conversation content from documentation file, restoring proper formatting.
 
-**5. Document --exclude-dynamic-system-prompt-sections** [#46024](https://github.com/anthropics/claude-code/pull/46024) *(Closed)*  
+**5. Document --exclude-dynamic-system-prompt-sections** [#46024](https://github.com/anthropics/claude-code/pull/46024) *(Closed)*
 Added README documentation for print mode prompt caching, explaining how the flag optimizes cache reuse by moving dynamic sections.
 
 ---
@@ -381,42 +269,9 @@ Added README documentation for print mode prompt caching, explaining how the fla
 <details>
 <summary><strong>OpenAI Codex</strong> — <a href="https://github.com/openai/codex">openai/codex</a></summary>
 
-<think>The user wants me to generate an OpenAI Codex community digest for 2026-05-04 based on the provided GitHub data. Let me analyze the data and create a structured digest following the specified format.
-
-Let me organize the information:
-
-**Releases**: None in the last 24h
-
-**Top Issues by comment count**:
-1. #20161 - Phone number requirement for SSO login (45 comments)
-2. #11023 - Linux desktop app request (44 comments)
-3. #14919 - Linux bubblewrap sandbox failure (40 comments)
-4. #987 - Can't use other provider model (32 comments)
-5. #11013 - Model changes to Medium uninstructed (30 comments)
-6. #12161 - IDE stuck on "Thinking" (27 comments)
-7. #20501 - Alt+Enter regression in WSL (14 comments)
-8. #8673 - Shift+Enter for newline (8 comments)
-9. #9184 - vi editing mode request (8 comments)
-10. #20547 - Desktop app sluggish (7 comments)
-
-**Top PRs** (by recency and relevance):
-1. #20915 - frodex: pin rollout references by segment
-2. #20897 - Refactor app-server dispatch result flow
-3. #20891 - Enforce Windows protected metadata targets
-4. #20914 - frodex: restore fork command and debug hooks
-5. #20913 - frodex: restore TUI subagent surface
-6. #20912 - frodex: synchronize agent control tools
-7. #20911 - frodex: add custom models and role prompts
-8. #20910 - frodex: add watchdog runtime handles
-9. #20923 - Add plugin ID to skill analytics
-10. #20909 - frodex: preserve fork prompt cache state
-
-Let me create the digest now.
-</think>
-
 # OpenAI Codex Community Digest
 
-**Date:** 2026-05-04  
+**Date:** 2026-05-04
 **Source:** github.com/openai/codex
 
 ---
@@ -500,64 +355,9 @@ The community's most recurring frustrations center on:
 <details>
 <summary><strong>Gemini CLI</strong> — <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></summary>
 
-<think>Let me analyze the GitHub data for the Gemini CLI repository and create a structured digest for 2026-05-04.
-
-Key observations:
-1. No new releases in the last 24h
-2. 50 total issues, showing top 30 by comment count
-3. 15 PRs total, with some recent activity
-
-Let me organize this into the requested sections:
-
-**Today's Highlights:**
-- Multiple Windows-specific fixes being worked on (shell hangs, PowerShell encoding, zombie processes)
-- Security and permission issues being addressed
-- Agent behavior improvements (subagent recovery, memory routing, behavioral evals)
-- Platform improvements (proxy support, quota resilience)
-
-**Hot Issues to highlight (10):**
-1. #24353 - Component level evaluations (5 comments) - Major EPIC for behavioral evals
-2. #22745 - AST-aware file reads/search (5 comments) - Performance optimization
-3. #22323 - Subagent recovery after MAX_TURNS (4 comments) - Bug fix priority
-4. #24916 - Permission asking repeatedly (3 comments) - UX issue
-5. #25166 - Shell command stuck "Waiting input" (2 comments) - Bug
-6. #23571 - Model creates tmp scripts randomly (2 comments) - Cleanup overhead
-7. #22267 - Browser Agent ignores settings.json (2 comments) - Configuration bug
-8. #25216 - EISDIR error on Windows path (1 comment) - Edge case bug
-9. #24246 - 400 error with >128 tools (1 comment) - API limitation
-10. #22819 - Memory routing global vs project (1 comment) - Feature request
-
-**Key PR Progress (10):**
-1. #26361 - Externalize https-proxy-agent (P1, platform)
-2. #25684 - Flash-to-Flash-Lite failover (platform)
-
-
-3. #26418 - Docs audit automated
-4. #26410 - Home directory warning fix (P1, security)
-5. #26407 - IDE client initialization race condition
-6. #25900 - Prefer pwsh.exe over PowerShell 5.1 (P2)
-7. #26392 - Windows hangs, zombie processes
-8. #26404 - Telemetry buffering fix
-9. #26358 - Shell mode backspace exit
-10. #26401 - ENAMETOOLONG handling
-
-**Feature Request Trends:**
-- Agent memory management and context optimization are emerging as key priorities
-- Windows platform reliability and shell integration improvements
-- Enhanced security controls and permission handling
-- Better configuration flexibility across different environments
-
-**Developer Pain Points:**
-- Windows-specific issues causing instability (process hangs, encoding problems)
-- Shell execution getting stuck in waiting states
-- Permission and security model complications
-- Tool scaling limitations when exceeding 128 tools
-- Inconsistent configuration behavior across different agent types
-</think>
-
 # Gemini CLI Community Digest
 
-**Date:** 2026-05-04  
+**Date:** 2026-05-04
 **Repository:** [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
 
 ---
@@ -659,493 +459,9 @@ The community is actively addressing Windows reliability issues, with multiple P
 <details>
 <summary><strong>GitHub Copilot CLI</strong> — <a href="https://github.com/github/copilot-cli">github/copilot-cli</a></summary>
 
-<think>The user wants a structured English digest for the GitHub Copilot CLI community for 2026-05-04. They have provided data: latest releases (none), latest issues (13 items), latest PRs (none). They want sections: Today's Highlights, Releases (if any), Hot Issues (pick 10 noteworthy issues), Key PR Progress (pick 10 important PRs), Feature Request Trends, Developer Pain Points.
-
-We need to produce a concise professional digest. Since there are no releases and no PRs in the last 24h, we can note that. For Hot Issues, we need to pick 10 noteworthy issues from the list of 13. Provide a brief explanation why they matter and community reaction (e.g., upvotes, comments). For Key PR Progress, there are none, but we could note that no PRs merged or opened in the last 24h. Or we could perhaps mention any recent PRs from the data? The data says "Latest Pull Requests (updated in last 24h)(Total: 0 items)". So we can say no PRs.
-
-We need to include GitHub links for each item.
-
-We need to follow style guidelines: concise, professional, technical developers.
-
-We need to include the date.
-
-We need to ensure we include all required sections.
-
-Potential issues to highlight:
-
-- #2995: DeepSeek API integration issue (can't use DeepSeek API). Community interest: 6 👍, 8 comments. Important because it affects provider flexibility.
-
-- #2751: Remote session disabled for org repos. 12 👍, 6 comments. Important for enterprise users.
-
-- #1354: Model routing, per-agent model selection, global hooks. 5 👍, 3 comments. Important for advanced configuration.
-
-- #2979: GitHub Android app prevents Copilot remote use after request limit. 0 👍, 2 comments. Affects mobile workflow.
-
-- #2369: Scrolling long results not working. 4 👍, 2 comments. UX issue.
-
-- #2939: Allow subagents to override model (feature request). 0 👍, 2 comments. Closed, but indicates demand.
-
-- #3083: MCP servers not loading from ./.mcp.json after v1.0.40. 0 👍, 1 comment. Important for MCP integration.
-
-- #3098: Guard against PowerShell $home variable footgun causing profile deletion. 0 👍, 0 comments. Security issue.
-
-- #3097: Pasting long strings inserts extra newlines. 0 👍, 0 comments. Data corruption bug.
-
-- #3096: Add "Ask" / chat-only mode to Copilot ACP agent for Zed. 0 👍, 0 comments. Feature request for external IDE.
-
-- #3095: Add capability declaration fields to SKILL.md frontmatter. 0 👍, 0 comments. Cross-tool consistency.
-
-- #3092: File reference @ does not show files in current directory. 0 👍, 1 comment. UX.
-
-- #3093: invalid (spam). ignore.
-
-We need to pick 10. Let's pick the most impactful: #2995, #2751, #1354, #2979, #2369, #2939 (closed but indicates demand), #3083, #3098, #3097, #3096. That's 10.
-
-Alternatively, we could include #3095 as it's relevant. But we need exactly 10. Let's choose the above.
-
-Now for Key PR Progress: none. We can note that no PRs were merged or opened in the last 24h, indicating a quiet period.
-
-Feature Request Trends: we need to distill from all issues. The issues include: provider flexibility (DeepSeek API), remote session issues for org repos, model routing and per-agent model selection, global hooks, MCP server loading, PowerShell variable footgun, long string pasting, "Ask" mode for ACP agents, capability declaration fields for SKILL.md, file reference @ issues, scrolling issues, etc. So we can summarize trends: provider flexibility, model routing, agent configuration, MCP integration, UX improvements (scrolling, file references), security (PowerShell), external IDE support.
-
-Developer Pain Points: recurring issues: inability to use alternative providers, remote session failures in org context, lack of model routing, MCP server loading changes, PowerShell variable collisions, scrolling issues, file reference @ not working, pasting long strings causing corruption, lack of "Ask" mode for external agents, missing capability declarations.
-
-We need to produce a structured digest.
-
-We need to include the date in the header.
-
-We need to include GitHub links for each issue. The format: https://github.com/github/copilot-cli/issues/<number>.
-
-We need to include the date for each issue? Not necessary.
-
-We need to keep each section concise.
-
-We need to ensure we follow the style: concise and professional.
-
-We need to include the "Today's Highlights" section with 2-3 sentences summarizing the most important updates.
-
-Given no releases or PRs, the highlights will focus on issues.
-
-We need to include "Releases" section: note none.
-
-We need to include "Hot Issues" with 10 items, each with a brief explanation and community reaction.
-
-We need to include "Key PR Progress" with note that no PRs.
-
-We need to include "Feature Request Trends" with a summary.
-
-We need to include "Developer Pain Points" with a summary.
-
-We need to ensure we include the date.
-
-We need to ensure we include the GitHub links.
-
-We need to ensure we follow the required sections exactly.
-
-We need to ensure we don't include any extraneous content.
-
-We need to ensure we are consistent with the data.
-
-We need to ensure we don't hallucinate any data. The data is provided.
-
-We need to ensure we don't include any personal opinions. We can provide analysis.
-
-We need to ensure we are concise.
-
-We need to ensure we are professional.
-
-We need to ensure we are technical.
-
-We need to ensure we include the date in the format: 2026-05-04.
-
-We need to ensure we include the date in the digest header.
-
-We need to ensure we include the date in each section? Not required.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" title.
-
-We need to ensure we include the date in the "GitHub Copilot CLI Community Digest" title.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key PR Progress" maybe.
-
-We need to ensure we include the date in the "Feature Request Trends" maybe.
-
-We need to ensure we include the date in the "Developer Pain Points" maybe.
-
-We need to ensure we include the date in the "Digest" maybe.
-
-We need to ensure we include the date in the "Today's Highlights" maybe.
-
-We need to ensure we include the date in the "Releases" maybe.
-
-We need to ensure we include the date in the "Hot Issues" maybe.
-
-We need to ensure we include the date in the "Key
-
-</details>
-
-<details>
-<summary><strong>Kimi Code CLI</strong> — <a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></summary>
-
-<think>The user wants me to generate a structured English digest for the Kimi Code CLI community for 2026-05-04. I need to analyze the provided GitHub data and create a professional, concise digest with the following sections:
-
-1. Today's Highlights
-2. Releases (if any)
-3. Hot Issues (10 noteworthy issues)
-4. Key PR Progress (10 important PRs)
-5. Feature Request Trends
-6. Developer Pain Points
-
-Let me analyze the data:
-
-**Latest Releases (last 24h)**: None
-
-**Latest Issues (8 total)**:
-1. #1894 - Nested skill directory loading (enhancement) - OPEN
-2. #2157 - Configurable background task limit - OPEN
-3. #2156 - test - CLOSED
-4. #2155 - Configurable prompt symbols - OPEN
-5. #2154 - PermissionRequest hook event - OPEN
-6. #2153 - Update pillow version - OPEN
-7. #1493 - CLI animation not rotating (bug) - CLOSED
-8. #2152 - Support global AGENTS.md - OPEN
-
-**Latest PRs (1 total)**:
-1. #2146 - Recursively discover skills in nested subdirectories - OPEN
-
-Now I need to structure this into the requested format. Since there are only 8 issues total and 1 PR, I'll include all of them but note that some are less significant (like the test issue).
-
-Let me create the digest:
-</think>
-
 # Kimi Code CLI Community Digest
 
-**Date:** 2026-05-04  
+**Date:** 2026-05-04
 **Source:** github.com/MoonshotAI/kimi-cli
 
 ---
@@ -1165,7 +481,7 @@ The Kimi CLI community is actively addressing skill discovery limitations with a
 ## 3. Hot Issues
 
 ### #1894 | Nested Skill Directory Loading
-**Status:** OPEN | **Author:** @retamia | **Comments:** 3  
+**Status:** OPEN | **Author:** @retamia | **Comments:** 3
 [🔗 View Issue](https://github.com/MoonshotAI/kimi-cli/issues/1894)
 
 Kimi CLI cannot recursively load nested skill directories (e.g., `.agents/skills/{name}/skills/xxx`), while Codex supports this structure. This creates compatibility issues for projects using multi-level skill layouts. The community has shown interest with 3 comments discussing the limitation.
@@ -1173,7 +489,7 @@ Kimi CLI cannot recursively load nested skill directories (e.g., `.agents/skills
 ---
 
 ### #2157 | Configurable Background Task Limit
-**Status:** OPEN | **Author:** @Phantomthedog | **Comments:** 0  
+**Status:** OPEN | **Author:** @Phantomthedog | **Comments:** 0
 [🔗 View Issue](https://github.com/MoonshotAI/kimi-cli/issues/2157)
 
 Users request the ability to configure the hard concurrency limit of 4 background/subagent tasks. When workflows exceed this limit, tasks fail with "too many background tasks" errors instead of being queued. This blocks larger multi-agent workflows and limits the tool's scalability.
@@ -1181,7 +497,7 @@ Users request the ability to configure the hard concurrency limit of 4 backgroun
 ---
 
 ### #2155 | Configurable Prompt Symbols
-**Status:** OPEN | **Author:** @sdkks | **Comments:** 0  
+**Status:** OPEN | **Author:** @sdkks | **Comments:** 0
 [🔗 View Issue](https://github.com/MoonshotAI/kimi-cli/issues/2155)
 
 The TUI prompt symbols (✨ for Agent mode, 💫 for Thinking mode, 📋 for Plan mode) are hardcoded. Users cannot easily type these emojis for searching previous prompts, creating a practical UX friction point. A configuration option in `config.toml` is requested.
@@ -1189,7 +505,7 @@ The TUI prompt symbols (✨ for Agent mode, 💫 for Thinking mode, 📋 for Pla
 ---
 
 ### #2154 | PermissionRequest Hook Event
-**Status:** OPEN | **Author:** @sdkks | **Comments:** 0  
+**Status:** OPEN | **Author:** @sdkks | **Comments:** 0
 [🔗 View Issue](https://github.com/MoonshotAI/kimi-cli/issues/2154)
 
 The current hook system supports `PreToolUse` for blocking dangerous actions, but lacks a `PermissionRequest` event for auto-approving safe, routine operations. Every gated tool call requires manual confirmation, reducing automation potential.
@@ -1197,7 +513,7 @@ The current hook system supports `PreToolUse` for blocking dangerous actions, bu
 ---
 
 ### #2153 | Update Pillow to 12.2.0
-**Status:** OPEN | **Author:** @azhidkov | **Comments:** 0  
+**Status:** OPEN | **Author:** @azhidkov | **Comments:** 0
 [🔗 View Issue](https://github.com/MoonshotAI/kimi-cli/issues/2153)
 
 Pillow 12.1.0 contains CVE-2026-25990 (out-of-bounds write when loading PSD images). The community requests an update to 12.2.0. This is a security-sensitive update blocked in security-tight environments.
@@ -1205,7 +521,7 @@ Pillow 12.1.0 contains CVE-2026-25990 (out-of-bounds write when loading PSD imag
 ---
 
 ### #2152 | Global AGENTS.md Support
-**Status:** OPEN | **Author:** @lNeverl | **Comments:** 0  
+**Status:** OPEN | **Author:** @lNeverl | **Comments:** 0
 [🔗 View Issue](https://github.com/MoonshotAI/kimi-cli/issues/2152)
 
 Currently, `AGENTS.md` is only loaded from the current working directory. Developers managing 10+ projects request support for a global `~/.kimi/AGENTS.md` to define shared conventions across all projects, reducing repetitive configuration.
@@ -1213,7 +529,7 @@ Currently, `AGENTS.md` is only loaded from the current working directory. Develo
 ---
 
 ### #1493 | CLI Animation Not Rotating
-**Status:** CLOSED | **Author:** @lNeverl | **Comments:** 0  
+**Status:** CLOSED | **Author:** @lNeverl | **Comments:** 0
 [🔗 View Issue](https://github.com/MoonshotAI/kimi-cli/issues/1493)
 
 A bug report where the CLI animation stops rotating during Kimi execution, making it unclear whether the process is stuck or running. This has been closed, likely addressed in version 1.23.0+.
@@ -1221,7 +537,7 @@ A bug report where the CLI animation stops rotating during Kimi execution, makin
 ---
 
 ### #2156 | Test Issue
-**Status:** CLOSED | **Author:** @Phantomthedog | **Comments:** 0  
+**Status:** CLOSED | **Author:** @Phantomthedog | **Comments:** 0
 [🔗 View Issue](https://github.com/MoonshotAI/kimi-cli/issues/2156)
 
 A test issue submitted for validation purposes.
@@ -1231,7 +547,7 @@ A test issue submitted for validation purposes.
 ## 4. Key PR Progress
 
 ### #2146 | Recursive Skill Discovery
-**Status:** OPEN | **Author:** @netwmr01  
+**Status:** OPEN | **Author:** @netwmr01
 [🔗 View PR](https://github.com/MoonshotAI/kimi-cli/pull/2146)
 
 **Summary:** Implements recursive skill discovery in nested subdirectories. Previously, `discover_skills()` only scanned immediate children, making nested layouts like `.agents/skills/cloudlive/skills/cloudlive-project-layout/SKILL.md` invisible. This PR adds a `_discover_subdir_skills()` helper to address issue #1894.
@@ -1270,65 +586,13 @@ Analysis of recent issues reveals these dominant feature directions:
 
 ---
 
-**End of Digest**  
+**End of Digest**
 *Generated: 2026-05-04*
 
 </details>
 
 <details>
 <summary><strong>OpenCode</strong> — <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></summary>
-
-<think>Let me analyze the GitHub data for OpenCode and create a structured digest for 2026-05-04.
-
-Key observations:
-1. No releases in the last 24h
-2. 50 issues total, top 30 shown
-3. 50 PRs total, top 20 shown
-
-Let me identify the most important items:
-
-**Hot Issues (by comment count and relevance):**
-1. #20695 - Memory Megathread (73 comments) - Major issue about memory problems, collecting heap snapshots
-2. #20650 - Kimi k2.5 tool calling issues (46 comments) - Model-specific tool calling problems
-3. #768 - Github Copilot Premium Requests tracking (32 comments) - Feature request for quota display
-4. #6680 - View archived sessions on desktop (29 comments) - Feature request
-5. #15035 - Agent-teams feature question (20 comments)
-6. #7185 - vLLM local model tool calling bug (20 comments) - CLOSED
-7. #14808 - Plugin session.created event not firing (18 comments)
-8. #12570 - GPT-5.3-Codex early termination (15 comments)
-9. #6231 - Auto-discover models from OpenAI-compatible endpoints (10 comments, 106 👍)
-10. #5182 - TUI as ACP Client (9 comments)
-
-**Key PRs:**
-1. #25659 - Sidebar subagent sessions with collapsible chevron
-2. #25658 - SSE replay buffer with Last-Event-ID support
-3. #25612 - Documentation for per-model context size
-4. #25654 - MCP Accept header fix for Streamable HTTP
-5. #25634 - v2 session message rendering improvements
-6. #21907 - Free model resolution
-7. #18767 - Mobile Touch Optimization
-8. #25652 - Remove LSP as differentiator (docs fix)
-
-
-9. #20750 - Debug capabilities for GitHub action
-10. #24712 - Native LLM core foundation
-
-**Feature Request Trends:**
-- Model discovery and configuration (auto-discover models)
-- Session management (archived sessions, subagent visibility)
-- MCP improvements (Accept header, dynamic servers)
-- Tool calling improvements across models
-- UI/UX improvements (mobile, theme, TUI)
-- LSP timeout fixes
-- Memory management
-
-**Developer Pain Points:**
-- Memory issues (heap snapshots needed)
-- Tool calling failures with specific models
-- LSP timeouts for JVM-based servers
-- SSE reconnection issues
-- Model configuration complexity
-</think>
 
 # OpenCode Community Digest — 2026-05-04
 
@@ -1428,55 +692,6 @@ No new releases in the last 24 hours.
 
 <details>
 <summary><strong>Qwen Code</strong> — <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></summary>
-
-<think>The user wants a structured English digest for Qwen Code community for 2026-05-04. I need to parse the provided GitHub data and generate a professional technical digest.
-
-Let me analyze the data:
-
-**Releases:**
-- v0.15.6-nightly.20260504.e617f20d1 - includes FileReadCache feature, proxy fix
-
-**Issues (13 total, showing top 10):**
-1. #3203 - OAuth Free Tier Policy Adjustment (feature-request, 121 comments) - significant community concern
-2. #3307 - Alibaba Cloud Coding Plan "out of stock" (closed)
-3. #3805 - File read/glob tools failing in long sessions (bug)
-4. #3634 - Background task management roadmap (feature-request)
-5. #3816 - /memory show command broken (bug)
-6. #3812 - Model name display in UI (closed/resolved)
-7. #3806 - UI flickering in 0.15.6 (bug)
-8. #3804 - AskUserQuestion API error (bug)
-9. #3817 - Race condition in McpClientManager (bug)
-10. #3803 - Daemon mode proposal (feature-request)
-11. #3811 - Telemetry shutdown timeout fix (bug/fix)
-12. #3731 - OpenTelemetry hardening (feature-request)
-13. #3802 - Local LM Studio model switch fails (bug)
-
-**Pull Requests (44 total, top 20 by comment count):**
-1. #3815 - Per-model settings for fast model queries (fix)
-2. #3813 - Telemetry shutdown timeout (fix)
-3. #3792 - Monitor tool and UI routing fixes
-4. #3685 - PyPI release workflow for Python SDK
-5. #3799 - Model list response parsing normalization
-
-
-6. #3814 - Auto-memory recall blocking fix
-7. #3783 - Non-interactive model switch from CLI
-8. #3798 - Error classification for retry logic
-9. #3809 - Background long-running command hints
-10. #3701 - Export format completion navigation
-11. #3785 - Memory diagnostics doctor command
-12. #3797 - /model list subcommand
-13. #3115 - Commit attribution with AI tracking
-14. #3810 - FileReadCache clearing on history rewrite
-15. #3808 - Background shell guidance docs
-16. #3774 - Enforce prior read before Edit/WriteFile
-17. #3604 - Parallelize skill loading
-18. #3781 - WeChat image sending support
-19. #3762 - Message edit/rewind UI
-20. #3698 - Auto compression before ACP model sends
-
-Now I'll organize this into the requested format.
-</think>
 
 # Qwen Code Community Digest — 2026-05-04
 
@@ -1653,79 +868,6 @@ Analysis of open issues reveals these dominant feature directions:
 <details>
 <summary><strong>Pi</strong> — <a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></summary>
 
-<think>Let me analyze the GitHub data for the pi-mono repository and generate a structured digest for 2026-05-04.
-
-Key observations:
-1. No new releases in the last 24h
-2. 34 issues total, 30 shown - many are closed
-3. 8 PRs in the last 24h, all closed
-
-Let me identify the most important items:
-
-**Hot Issues (notable ones):**
-1. #27 - Implement Retries (11 comments) - vague error messages, debug mode request
-2. #3942 - pi update --self fails with npm --prefix (8 comments) - self-update broken for nix users
-3. #4082 - Xiaomi MiMo Token Plan support (6 comments) - regional provider issues
-4. #4103 - Codex WebSocket transport prevents --print mode from exiting (4 comments)
-5. #4105 - TypeError in autocomplete (4 comments) - TUI crash
-6. #2994 - pi.sendUserMessage doesn't execute commands (3 comments) - command execution bug
-7. #4108 - /export not saving session (3 comments) - session export broken
-8. #4139 - ppq.ai API key option (2 comments) - feature request
-9. #3966 - Add --profile support for isolated Pi state (2 comments) - profile isolation
-10. #4137 - Anthropic OAuth URL issue (2 comments) - login flow broken
-11. #4116 - NVIDIA NIM as first-class provider (2 comments) - new provider request
-12. #4149 - Expose getSupportedThinkingLevels (1 comment) - API exposure
-13. #4147 - Make agent.state.tools mutations visible (1 comment) - state management
-14. #4146 - UI hangs with large code blocks (1 comment) - performance issue
-15. #4145 - O(n²) bash tool streaming (1 comment) - performance
-
-
-16. #4144 - 100% CPU spin when terminal disappears (1 comment) - resource leak
-17. #4143 - Xiaomi regional providers not working (1 comment)
-18. #4142 - macOS image paste crash (1 comment) - crash
-19. #4141 - Expired tokens cause hung process (1 comment)
-20. #4138 - Kimi K2.6 error 400 (1 comment)
-21. #4135 - /model - toggle back (1 comment) - feature request
-22. #4134 - pi -p does not exit (1 comment) - hang issue
-23. #4132 - ignoreGlobalContext flag (1 comment) - feature request
-24. #4131 - Extension shortcut conflict warning (1 comment)
-25. #4130 - Exclude providers from model listing (1 comment)
-26. #4129 - Ratio-based auto-compaction trigger (1 comment)
-27. #4128 - Print mode hang with Codex WebSocket (1 comment)
-28. #4125 - Agent Manager Overlay not showing (1 comment)
-29. #4124 - Backspace keys on Windows (1 comment)
-
-**Key PRs:**
-1. #4148 - Fix active tool updates during running agent sessions
-2. #4136 - /model - toggle back to previously used model
-3. #4133 - Fall back from codex websocket to sse
-4. #4112 - Fix xiaomi default to api billing, add per-region token plan providers
-5. #4119 - Stabilize env-sensitive test cases
-6. #4127 - Disable provider session cache in print mode
-7. #4126 - Retry on transient HTTP 404/408 status responses
-8. #4117 - Add stopAfterTurn handoff control
-
-**Feature Request Trends:**
-- Provider improvements (NVIDIA NIM, Xiaomi regional, ppq.ai)
-- Profile/isolation support
-- Model switching improvements (/model -)
-- Provider exclusion from listings
-- Auto-compaction triggers
-- Global context flags
-
-**Developer Pain Points:**
-- Self-update failures with npm prefix
-- WebSocket transport issues causing hangs
-- TUI crashes with autocomplete
-- Command execution not working
-- Session export broken
-- macOS pasteboard crashes
-- Expired token handling
-- Large code block UI hangs
-- CPU spin when terminal disappears
-- O(n²) performance in bash tool streaming
-</think>
-
 # Pi Community Digest — 2026-05-04
 
 ## Today's Highlights
@@ -1742,68 +884,68 @@ No new releases in the last 24 hours.
 
 ## Hot Issues
 
-1. **[#27](https://github.com/badlogic/pi-mono/issues/27)** — Implement Retries (11 comments)  
+1. **[#27](https://github.com/badlogic/pi-mono/issues/27)** — Implement Retries (11 comments)
    Users report vague error messages and request debug mode or error dump files. The high comment count suggests retry logic and error visibility are pain points for production use.
 
-2. **[#3942](https://github.com/badlogic/pi-mono/issues/3942)** — `pi update --self` fails with npm `--prefix` (8 comments)  
+2. **[#3942](https://github.com/badlogic/pi-mono/issues/3942)** — `pi update --self` fails with npm `--prefix` (8 comments)
    Self-update is broken for users with custom npm prefixes (common with nix). This blocks users from staying current without manual intervention.
 
-3. **[#4082](https://github.com/badlogic/pi-mono/issues/4082)** — Xiaomi MiMo Token Plan regional providers (6 comments)  
+3. **[#4082](https://github.com/badlogic/pi-mono/issues/4082)** — Xiaomi MiMo Token Plan regional providers (6 comments)
    Chinese regional endpoints require separate configuration. PR #4112 addresses this, but user feedback continues on proper provider setup.
 
-4. **[#4103](https://github.com/badlogic/pi-mono/issues/4103)** — Codex WebSocket transport prevents `--print` mode from exiting (4 comments)  
+4. **[#4103](https://github.com/badlogic/pi-mono/issues/4103)** — Codex WebSocket transport prevents `--print` mode from exiting (4 comments)
    Print mode hangs when using WebSocket transport with OpenAI Codex. PRs #4133 and #4127 address related transport and cache issues.
 
-5. **[#4105](https://github.com/badlogic/pi-mono/issues/4105)** — TypeError in autocomplete (4 comments)  
+5. **[#4105](https://github.com/badlogic/pi-mono/issues/4105)** — TypeError in autocomplete (4 comments)
    TUI crashes when autocomplete returns non-string values. A type-safety issue affecting interactive workflows.
 
-6. **[#2994](https://github.com/badlogic/pi-mono/issues/2994)** — `pi.sendUserMessage` doesn't execute commands (3 comments)  
+6. **[#2994](https://github.com/badlogic/pi-mono/issues/2994)** — `pi.sendUserMessage` doesn't execute commands (3 comments)
    API users cannot trigger built-in commands like `/reload` programmatically, limiting automation scenarios.
 
-7. **[#4108](https://github.com/badlogic/pi-mono/issues/4108)** — `/export` not saving session (3 comments)  
+7. **[#4108](https://github.com/badlogic/pi-mono/issues/4108)** — `/export` not saving session (3 comments)
    Session export fails in v0.72.1, preventing users from archiving conversations.
 
-8. **[#3966](https://github.com/badlogic/pi-mono/issues/3966)** — Add `--profile` support for isolated Pi state (2 comments)  
+8. **[#3966](https://github.com/badlogic/pi-mono/issues/3966)** — Add `--profile` support for isolated Pi state (2 comments)
    Users want clean workspace isolation (auth, sessions, settings) without manual `PI_CODING_AGENT_DIR` management.
 
-9. **[#4137](https://github.com/badlogic/pi-mono/issues/4137)** — Anthropic OAuth URL missing parameters (2 comments)  
+9. **[#4137](https://github.com/badlogic/pi-mono/issues/4137)** — Anthropic OAuth URL missing parameters (2 comments)
    Login flow for Claude Code Pro subscriptions provides an invalid OAuth URL, blocking subscription-tier users.
 
-10. **[#4146](https://github.com/badlogic/pi-mono/issues/4146)** — UI hangs with large code blocks (1 comment)  
+10. **[#4146](https://github.com/badlogic/pi-mono/issues/4146)** — UI hangs with large code blocks (1 comment)
     High CPU usage when rendering large code blocks suggests rendering performance issues in the TUI.
 
 ---
 
 ## Key PR Progress
 
-1. **[#4148](https://github.com/badlogic/pi-mono/pull/4148)** — Fix active tool updates during running agent sessions  
+1. **[#4148](https://github.com/badlogic/pi-mono/pull/4148)** — Fix active tool updates during running agent sessions
    Ensures tools added mid-session are visible to the current prompt cycle. Critical for dynamic tool loading workflows.
 
-2. **[#4136](https://github.com/badlogic/pi-mono/pull/4136)** — `/model -` toggle back to previous model  
+2. **[#4136](https://github.com/badlogic/pi-mono/pull/4136)** — `/model -` toggle back to previous model
    Implements `cd -` semantics for model switching, tracking `_previousModel` on `AgentSession`.
 
-3. **[#4133](https://github.com/badlogic/pi-mono/pull/4133)** — Fall back from Codex WebSocket to SSE  
+3. **[#4133](https://github.com/badlogic/pi-mono/pull/4133)** — Fall back from Codex WebSocket to SSE
    Handles WebSocket errors (1000, 1009) by falling back to SSE transport, improving reliability.
 
-4. **[#4112](https://github.com/badlogic/pi-mono/pull/4112)** — Fix Xiaomi default to API billing, add per-region token plan providers  
+4. **[#4112](https://github.com/badlogic/pi-mono/pull/4112)** — Fix Xiaomi default to API billing, add per-region token plan providers
    Splits Xiaomi provider into API billing (default) and regional Token Plan endpoints.
 
-5. **[#4119](https://github.com/badlogic/pi-mono/pull/4119)** — Stabilize env-sensitive test cases  
+5. **[#4119](https://github.com/badlogic/pi-mono/pull/4119)** — Stabilize env-sensitive test cases
    Forces SSE transport in Codex tests, clears SSH/MOSH env vars, isolates HOME in symlinked tests.
 
-6. **[#4127](https://github.com/badlogic/pi-mono/pull/4127)** — Disable provider session cache in print mode  
+6. **[#4127](https://github.com/badlogic/pi-mono/pull/4127)** — Disable provider session cache in print mode
    Prevents providers from keeping WebSocket sessions alive after print mode completes.
 
-7. **[#4126](https://github.com/badlogic/pi-mono/pull/4126)** — Retry on transient HTTP 404/408 status responses  
+7. **[#4126](https://github.com/badlogic/pi-mono/pull/4126)** — Retry on transient HTTP 404/408 status responses
    Extends retry logic to handle CDN/edge 404/408 errors with exponential backoff.
 
-8. **[#4117](https://github.com/badlogic/pi-mono/pull/4117)** — Add `stopAfterTurn` handoff control  
+8. **[#4117](https://github.com/badlogic/pi-mono/pull/4117)** — Add `stopAfterTurn` handoff control
    Exposes `session.stopAfterTurn()` for graceful agent termination after the current turn.
 
-9. **[#4149](https://github.com/badlogic/pi-mono/issues/4149)** — Expose `getSupportedThinkingLevels` and `clampThinkingLevel`  
+9. **[#4149](https://github.com/badlogic/pi-mono/issues/4149)** — Expose `getSupportedThinkingLevels` and `clampThinkingLevel`
    Public API exposure for extensions to query model thinking capabilities.
 
-10. **[#4147](https://github.com/badlogic/pi-mono/issues/4147)** — Make `agent.state.tools` mutations visible to running agent loop  
+10. **[#4147](https://github.com/badlogic/pi-mono/issues/4147)** — Make `agent.state.tools` mutations visible to running agent loop
     Stabilizes internal tools array identity for mid-session tool modifications.
 
 ---

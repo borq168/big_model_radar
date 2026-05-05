@@ -4,55 +4,6 @@
 
 ---
 
-<think>Let me analyze the data provided and create a structured AI Open Source Trend Daily Report.
-
-First, let me filter AI/ML related projects from both the Trending list and the topic search results.
-
-**Trending List (13 repos) - AI filtering:**
-1. warpdotdev/warp - Terminal emulator, not AI-related → EXCLUDE
-2. TauricResearch/TradingAgents - AI/ML (Multi-Agents LLM Financial Trading) → INCLUDE
-3. mattpocock/skills - Claude directory, AI-related → INCLUDE
-4. obra/superpowers - Agentic skills framework → INCLUDE
-5. lukilabs/craft-agents-oss - AI agents → INCLUDE
-6. public-apis/public-apis - API list, not AI → EXCLUDE
-7. 1jehuang/jcode - Coding Agent Harness → INCLUDE
-8. soxoj/maigret - OSINT tool, not AI → EXCLUDE
-9. HunnByts/GhostTrack - Tracking tool, not AI → EXCLUDE
-10. iamgio/quarkdown - Markdown processor, not AI → EXCLUDE
-11. ghostty-org/ghostty - Terminal emulator, not AI → EXCLUDE
-12. ForrestKnight/open-source-cs - CS curriculum, not AI → EXCLUDE
-13. browserbase/skills - Claude Agent SDK → INCLUDE
-
-**AI-related from Trending: 6 repos**
-- TauricResearch/TradingAgents
-- mattpocock/skills
-- obra/superpowers
-- lukilabs/craft-agents-oss
-- 1jehuang/jcode
-- browserbase/skills
-
-Now let me categorize all the AI-related projects from both sources:
-
-**Category 1: AI 基础工具 (AI Infrastructure/Tools)**
-
-
-I'm identifying core AI infrastructure projects that provide fundamental capabilities for AI development. These include vector databases like Milvus and Qdrant, which enable efficient similarity search, and development frameworks like LangChain that simplify AI application building. Infrastructure tools such as vllm for LLM inference and Ollama for local model deployment are also crucial components of the AI development ecosystem.
-
-The list continues with specialized tools like Unsloth for model training optimization, LlamaFactory for fine-tuning language models, and various agent development frameworks including AutoGPT and OpenHands. These projects represent the diverse tooling needed to create, deploy, and manage AI applications across different use cases and platforms.
-
-The next section highlights AI applications and vertical solutions, showcasing how AI is being applied across different domains like document processing, knowledge management, and productivity tools. Projects like PaddleOCR for document extraction, Anything-LLM for local AI interactions, and Dify for workflow development demonstrate practical implementations of AI technology in real-world scenarios.
-
-The list continues with specialized applications including Mem0 for agent memory management, Flowise for visual AI agent building, and various agent frameworks like CowAgent and Nanobot that enable sophisticated AI interactions across different platforms and use cases.
-
-Additional tools expand this ecosystem with browser automation capabilities through Browser-use, financial analysis platforms like TradingAgents, and productivity solutions such as Skills and Superpowers that enhance AI assistant functionality. Development frameworks like JCode provide agent harnesses for coding tasks, while platforms like JeecgBoot offer low-code AI development environments.
-
-The next category focuses on foundational AI infrastructure, highlighting core libraries like Transformers and PyTorch, training frameworks including LlamaFactory and Unsloth, and specialized tools for model optimization and deployment such as vllm and Ollama. Smaller research projects like MiniMind and DATAGEN demonstrate the diversity of approaches in model development and agent training.
-
-For knowledge management and retrieval, the ecosystem includes established vector databases like Milvus, Qdrant, and Weaviate, alongside RAG frameworks such as LightRAG and LlamaIndex. Platforms like Dify and LangChain provide orchestration capabilities, while specialized tools like txtai and Cognee handle semantic search and knowledge graph generation. The infrastructure layer also encompasses search engines like Meilisearch and data platforms such as MindsDB that enable AI-driven querying and analysis.
-
-The trending repositories reveal concentrated activity in agent development and workflow automation, with frameworks like TradingAgents, Superpowers, and Craft-agents-oss gaining significant traction. Skills repositories and coding agent harnesses like JCode indicate growing interest in developer tooling for AI systems. The most substantial repositories by star count include established projects like AutoGPT, LangChain, and Dify, alongside emerging platforms like Firecrawl and browser-use that focus on web interaction and automation capabilities.
-</think>
-
 # 🤖 AI 开源趋势日报
 
 **日期：2026-05-01**

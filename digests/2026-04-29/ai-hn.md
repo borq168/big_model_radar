@@ -4,52 +4,6 @@
 
 ---
 
-<think>用户要求我作为AI行业资讯分析师，基于2026年4月29日从Hacker News抓取的AI相关热门帖子，生成一份结构清晰的《Hacker News AI 社区动态日报》。
-
-让我先分析这些帖子的内容：
-
-1. **OpenAI CEO's Identity Verification Company Announced Fake Bruno Mars Partnership** - 279分，104评论 - 关于OpenAI CEO Sam Altman的身份验证公司搞了个假合作
-2. **Claude.ai unavailable and elevated errors on the API** - 273分，231评论 - Claude服务不可用
-3. **Anthropic Joins the Blender Development Fund as Corporate Patron** - 240分，190评论 - Anthropic加入Blender开发基金
-4. **OpenAI models coming to Amazon Bedrock** - 183分，71评论 - OpenAI模型将登陆AWS Bedrock
-5. **ChatGPT serves ads** - 142分，85评论 - ChatGPT开始投放广告
-6. **Claude system prompt bug** - 92分，25评论 - Claude系统提示词bug导致用户花钱和代理崩溃
-7. **A playable DOOM MCP app** - 77分，28评论 - 在ChatGPT和Claude里运行DOOM
-8. **Show HN: Drive any macOS app** - 56分，22评论 - macOS应用控制工具
-
-
-9. **Claude for Creative Work** - 46分，36评论 - Anthropic的创意工作功能
-10. **AMD's Lemonade SDK** - 27分，5评论 - AMD SDK更新
-11. **We decreased our LLM costs with Opus** - 24分，3评论 - 降低成本的方法
-12. **Anthropic's Little Brother** - 16分，1评论 - 关于OpenAI模仿Anthropic的文章
-13. **Anthropic just overtook OpenAI with $1T valuation** - 15分，1评论 - Anthropic估值超过OpenAI
-14. **OpenAI Models on Amazon Bedrock** - 15分，3评论 - AWS Bedrock上的OpenAI模型
-15. **OpenAI Reportedly Working on an AI Smartphone** - 14分，8评论 - OpenAI开发AI手机
-16. **Claude for Creative Work** (重复) - 13分
-17. **Nvidia executive says AI is more expensive than paying human workers** - 10分，6评论 - Nvidia高管认为AI成本高于人工
-18. **Lawyers for Sam Altman's sister** - 9分 - 关于 Altman妹妹的诉讼
-19. **Ask HN: Is it just me or is Claude Code getting worst?** - 9分，10评论 - Claude Code质量下降的讨论
-20. **Musk: "The reason OpenAI exists is because Larry Page called me a specieist"** - 8分 - Musk的言论
-21. **OpenAI Models, Codex, and Managed Agents Come to AWS** - 8分 - OpenAI在AWS上的产品
-22. **Show HN: Ragnerock, an AI data analysis tool** - 7分，4评论 - AI数据分析工具
-23. **Tell HN: Your ChatGPT account can be deactivated** - 7分，2评论 - ChatGPT账户可能被停用
-24. **'Stole a charity': Elon Musk accuses Sam Altman** - 7分 - Musk起诉Altman
-25. **Civil Rights Division Sues Cloudera** - 7分 - 司法部起诉Cloudera
-26. **VibeBench: Measuring 1k Engineers' Opinions** - 6分，2评论 - 评估模型的新方法
-27. **'It took nine seconds': Claude AI agent deletes company's database** - 6分 - Claude代理删除数据库
-28. **OpenAI Wants Codex to Shut Up About Goblins** - 5分 - Codex的问题
-29. **Is OpenAI Falling Further Behind in the A.I. Race?** - 5分，2评论 - OpenAI是否落后
-30. **OpenAI Investors Fall After AI Giant Misses Revenue Target** - 5分 - OpenAI收入未达预期
-
-现在需要整理这些信息，按照要求的格式生成日报。
-
-首先总结今日的关键动态：OpenAI面临多重挑战，包括收入未达预期和投资者信心下降，同时Claude服务出现故障引发关注。Anthropic在估值上超越OpenAI并与AWS建立合作，展现强劲发展势头。社区对Claude Code质量下降和AI成本问题展开讨论，OpenAI与Musk的法律纠纷也持续发酵。
-
-接下来按模型与研究、工具与工程、产业动态、观点与争议四个维度组织内容。模型研究方面包括Anthropic估值突破万亿、OpenAI收入下滑以及Claude代理导致数据丢失的案例。工具工程领域则涵盖Claude系统提示词漏洞、DOOM游戏在MCP上的运行、macOS应用驱动工具和AI数据分析平台Ragnerock。产业动态部分重点关注OpenAI与AWS的合作进展。
-
-产业方面，OpenAI的AI手机项目、与Blender的合作、ChatGPT广告服务以及Nvidia对AI成本高于人工的评估都值得关注。社区讨论则聚焦Claude Code的衰退趋势、ChatGPT账户风险和VibeBench的评估方法。
-</think>
-
 # Hacker News AI 社区动态日报
 
 **日期：2026-04-29**

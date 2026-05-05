@@ -20,46 +20,6 @@
 
 ## OpenClaw Deep Dive
 
-<think>Let me analyze the GitHub data for OpenClaw and create a structured project digest for 2026-04-25.
-
-Key data points:
-- Issues updated in last 24h: 500 (open/active: 20, closed: 480)
-- PRs updated in last 24h: 500 (open: 130, merged/closed: 370)
-- New releases: 4 (all v2026.4.23 variants - beta.4, beta.5, beta.6, and stable)
-
-Let me organize this into the required sections.
-
-1. **Today's Overview**: High activity day with 500 issues and 500 PRs updated. 4 releases in the v2026.4.23 series. 130 open PRs, 370 merged/closed. 20 active issues.
-
-2. **Releases**: v2026.4.23 stable and 3 beta versions released. Main changes: OpenAI image generation via Codex OAuth, OpenRouter image generation support.
-
-3. **Project Progress**: Looking at PRs - several fixes merged/closed including:
-   - Fix for thinking default in session rows
-   - Claude CLI auth status reflection
-   - Thread-bound subagent completion fallback
-   - Session history loss prevention
-   - Codex Windows shell fix
-   - WebChat queue persistence
-   - Cron session isolation
-   - And many more
-
-4. **Community Hot Topics**: Looking at issues with most comments:
-   - #45504: devices list/approve regression (18 comments)
-   - #45227: 422 status with mistral (16 comments)
-   - #44714: logs --follow fails (16 comments)
-   - #45560: gateway CLI handshake fails (15 comments)
-   - #45485: Discord WebSocket timeout (14 comments)
-   - #44755: /compact option crashes (14 comments)
-   
-5. **Bugs & Stability**: Multiple regressions from 2026.3.12 affecting gateway CLI, WebSocket connections, and UI components. Several crashes and behavior bugs reported with varying severity levels.
-
-6. **Feature Requests & Roadmap Signals**: Multi-agent session switching in WebChat, context-pressure-aware continuation, and deep research capabilities are being requested.
-
-7. **User Feedback Summary**: Users experiencing pain points with the 2026.3.12 upgrade, particularly around gateway CLI reliability and WebSocket stability.
-
-8. **Backlog Watch**: Several issues remain unresolved, including cron isolated sessions timing out, Telegram provider polling failures, and Control UI crashes with large conversation histories.
-</think>
-
 # OpenClaw Project Digest — 2026-04-25
 
 ## 1. Today's Overview
@@ -270,91 +230,6 @@ The high comment volume on these issues reveals several recurring themes:
 
 ## Cross-Ecosystem Comparison
 
-<think>The user wants a cross-project comparison report synthesizing all the individual project digests I just created. Let me analyze the data from each project and create a comprehensive comparison report.
-
-Let me gather the key metrics from each project:
-
-1. **OpenClaw** (github.com/openclaw/openclaw)
-   - Issues: 500 updated (20 open/active, 480 closed)
-   - PRs: 500 updated (130 open, 370 merged/closed)
-   - Releases: 4 (v2026.4.23 stable + 3 betas)
-   - Health: High activity, strong maintenance
-
-2. **NanoBot** (github.com/HKUDS/nanobot)
-   - Issues: 16 updated (10 open/active, 6 closed)
-   - PRs: 41 updated (7 open, 34 merged/closed)
-   - Releases: 0
-   - Health: Active development
-
-3. **Zeroclaw** (github.com/zeroclaw-labs/zeroclaw)
-   - Issues: 50 updated (43 open/active, 7 closed)
-   - PRs: 50 updated (21 open, 29 merged/closed)
-   - Releases: 0
-   - Health: High activity, many open issues
-
-4. **PicoClaw** (github.com/sipeed/picoclaw)
-   - Issues: 11 updated (7 open/active, 4 closed)
-   - PRs: 38 updated (19 open, 19 merged/closed)
-   - Releases: 1 (nightly build)
-   - Health: Active development
-
-5. **NanoClaw** (github.com/qwibitai/nanoclaw)
-   - Issues: 15 updated (7 open, 8 closed)
-   - PRs: 35 updated (11 open, 24 merged/closed)
-   - Releases: 0
-   - Health: Active, v2 migration in progress
-   
-6. **IronClaw** (github.com/nearai/ironclaw)
-   - Issues: 16 updated (14 open/active, 2 closed)
-   - PRs: 50 updated (43 open, 7 merged/closed)
-   - Releases: 0
-   - Health: High activity, many open PRs
-
-7. **LobsterAI** (github.com/netease-youdao/LobsterAI)
-   - Issues: 3 updated (3 open, 0 closed)
-   - PRs: 42 updated (0 open, 42 merged/closed)
-   - Releases: 2 (v2026.4.24, v2026.4.23)
-   - Health: Very high velocity, rapid releases
-
-8. **TinyClaw** (github.com/TinyAGI/tinyclaw)
-   - Issues: 0 updated
-   - PRs: 0 updated
-   - Releases: 0
-   - Health: No activity
-
-9. **Moltis** (github.com/moltis-org/moltis)
-   - Issues: 10 updated (3 open/active, 7 closed)
-   - PRs: 32 updated (4 open, 28 merged/closed)
-   - Releases: 0
-   - Health: Active, security focus
-
-10. **CoPaw** (github.com/agentscope-ai/CoPaw)
-    - Issues: 50 updated (28 open, 22 closed)
-    - PRs: 50 updated (15 open, 35 merged/closed)
-    - Releases: 2 (v1.1.4, v1.1.4.post1)
-    - Health: Very high velocity, rapid releases
-
-11. **ZeptoClaw** (github.com/qhkm/zeptoclaw)
-    - Issues: 1 updated (1 open, 0 closed)
-    - PRs: 1 updated (1 open, 0 merged/closed)
-    - Releases: 0
-    - Health: Low activity
-
-12. **EasyClaw** (github.com/gaoyangz77/easyclaw)
-    - Issues: 0 updated
-    - PRs: 0 updated
-    - Releases: 1 (v1.8.9)
-    - Health: Minimal activity
-
-13. **NemoClaw** (github.com/NVIDIA/NemoClaw)
-    - Issues: 50 updated (21 open/active, 29 closed)
-    - PRs: 50 updated (18 open, 32 merged/closed)
-    - Releases: 0
-    - Health: High activity, security focus
-
-Now I'll organize this into the comparison report structure.
-</think>
-
 # Cross-Project Comparison Report: Personal AI Assistant & Agent Open-Source Ecosystem
 
 ## 1. Ecosystem Overview
@@ -559,57 +434,6 @@ Tool call logging, activity observability, and tracing are emerging as first-cla
 <details>
 <summary><strong>NanoBot</strong> — <a href="https://github.com/HKUDS/nanobot">HKUDS/nanobot</a></summary>
 
-<think>Let me analyze the GitHub data for NanoBot and create a structured project digest for 2026-04-25.
-
-Key data points:
-- Issues updated in last 24h: 16 (open/active: 10, closed: 6)
-- PRs updated in last 24h: 41 (open: 7, merged/closed: 34)
-- New releases: 0
-
-Let me organize this into the required sections.
-
-**Today's Overview:**
-- High activity with 16 issues and 41 PRs updated
-- 6 issues closed, 34 PRs merged/closed
-- No new releases
-- Multiple bug fixes and features merged
-
-**Releases:**
-- None today
-
-**Project Progress:**
-Looking at the PRs:
-- #3428: fix(agent): add LLM request timeout to prevent session lock starvation (CLOSED)
-- #3430: feat(webui): render video media attachments (CLOSED)
-- #3429: feat(channels): add video support for Telegram and WebSocket (CLOSED)
-- #3423: perf(document): lazy-import heavy document parsers (CLOSED)
-- #3432: fix(msteams): send threaded replies via replyToId (OPEN)
-- #3173: feat(observability): OpenTelemetry tracing for LLM calls and tools (OPEN)
-- #3427: Fix session replay token budgeting and cap session file growth (OPEN)
-
-**Community Hot Topics:**
-Looking at issues by comments:
-- #2049: Missing ability to create skills (13 comments, CLOSED)
-- #3376: 支持模型异常自动切换 (7 comments, OPEN)
-- #3421: RFC: Should we add a `nanobot update` command? (4 comments, OPEN)
-- #3344: DingTalk Group Can not Seed file to Nanobot Agent (4 comments, OPEN)
-
-
-- #162: Improve session management (4 comments, CLOSED)
-
-**Bugs & Stability:**
-Several critical issues emerged today. The agent loop was deadlocking when LLM API calls hung without proper timeout handling (#3424), and the Telegram markdown rendering became unreliable in v0.1.4.post6 (#2568). Memory consumption spiked significantly in v0.1.5.post2 (#3410), while the OpenAI Codex provider stopped streaming progress deltas as a regression (#3426). The anthropic_provider also hardcoded temperature settings that caused Claude Opus 4.7 to reject requests with a 400 error (#3417).
-
-**Feature Requests & Roadmap Signals:**
-The community is requesting provider and model failover mechanisms for automatic switching when exceptions occur (#3376), a CLI command to update nanobot (#3421), and per-chat group policy overrides for the Telegram channel (#3309).
-
-**User Feedback Summary:**
-Users are encountering issues with skill creation, file uploads in DingTalk groups, and WeChat message limits. Telegram markdown rendering remains inconsistent, and memory usage has become problematic.
-
-**Backlog Watch:**
-Several issues remain open and unaddressed: the WeChat message limit of 10 (#2772), DingTalk file upload problems (#3344), and Telegram markdown rendering issues (#2568).
-</think>
-
 # NanoBot Project Digest — 2026-04-25
 
 ## 1. Today's Overview
@@ -737,106 +561,6 @@ Important issues lacking recent activity or maintainer attention:
 
 <details>
 <summary><strong>Zeroclaw</strong> — <a href="https://github.com/zeroclaw-labs/zeroclaw">zeroclaw-labs/zeroclaw</a></summary>
-
-<think>Let me analyze the GitHub data for Zeroclaw and generate a structured project digest for 2026-04-25.
-
-Key data points:
-- Issues updated in last 24h: 50 (open/active: 43, closed: 7)
-- PRs updated in last 24h: 50 (open: 21, merged/closed: 29)
-- New releases: 0
-
-Let me organize the information:
-
-**Today's Overview:**
-- High activity with 50 issues and 50 PRs updated
-- 29 PRs merged/closed, 21 still open
-- No new releases
-- Multiple bug fixes and features in progress
-
-**Releases:**
-- None today
-
-**Project Progress:**
-Merged/Closed PRs:
-1. #6016 - PostgreSQL backend re-introduction
-2. #6010 - request_approval() for Discord, Slack, Signal, Matrix, WhatsApp
-3. #6021 - JSON array parsing fix
-4. #6027 - MiniMax native tool calling enabled
-5. #6092 - fix for fallback providers reading api_key, base_url from config
-6. #6093 - fix for redundant narration push before AssistantToolCalls
-7. #6082 - memory context closing tag fix
-8. #6080 - webhook endpoint tool support
-9. #6076 - rag-pdf feature fix
-10. #6035 - ACP tool output formatting
-11. #5975 - Gemini/OpenRouter tool-call compatibility
-12. #6087 - env var overrides for channel tokens
-13. #6088 - Telegram batch media-group images
-
-Open PRs:
-1. #5788 - Mozilla Fluent pipeline + multi-locale mdBook
-2. #5960 - onboard rewrite
-3. #5735 - decouple gateway and tui-onboarding from agent-runtime
-
-
-4. #6093 - agent narration fix
-5. #6013 - ACP defaultModel fix
-6. #6025 - docker web dashboard
-7. #6064 - security bypass (DO NOT MERGE)
-8. #6091 - session key normalization
-
-**Community Hot Topics:**
-Issues with most comments:
-1. #5815 - Provider ignores llamacpp object (9 comments, in-progress)
-2. #2503 - napcat/onebot channel (8 comments)
-3. #5722 - shell sandbox blocks Python patterns (6 comments)
-4. #4830 - HMAC tool execution receipts (6 comments, closed)
-5. #5584 - Duplicate consecutive assistant messages (6 comments)
-6. #5890 - RFC: Multi-agent UX flow (5 comments)
-7. #5318 - stream_mode Partial (4 comments)
-8. #4846 - WhatsApp-Web Channel Broken (4 comments)
-9. #5556 - Summarization timed out (4 comments)
-10. #2767 - Multi-Agent Routing (4 comments, 8 👍)
-
-**Bugs & Stability:**
-Critical issues blocking workflows:
-1. #5815 - llamacpp provider ignored (S1, in-progress)
-2. #4846 - WhatsApp-Web broken (S1)
-3. #5459 - Ollama tool_count=0 (S1)
-4. #5962 - Ollama provider call failed (S1)
-5. #6051 - self-test reports localhost (S1)
-6. #5984 - zeroclaw-desktop crash (S1)
-7. #6000 - hard-coded defaults vs local hosted (S1, closed)
-8. #2324 - Tools in always_ask silently denied (S1, closed)
-9. #5289 - Bedrock sends API_KEY header (S2)
-10. #5809 - shell policy blocks git -C (S2)
-11. #5584 - Duplicate consecutive assistant messages (S2)
-12. #5285 - Thoughts merge into final message (S2)
-
-**Feature Requests & Roadmap Signals:**
-1. #5890 - RFC: Multi-agent UX flow (active discussion)
-2. #5891 - Multi-agent v1 tracker
-3. #2767 - Multi-Agent Routing (8 👍)
-4. #4647 - Provider-scoped model fallback chains
-5. #5752 - Configurable timeout values
-6. #5674 - classify_channel_reply_intent configurable
-7. #5259 - WeChat iLink channel recovery
-
-**User Feedback Summary:**
-- Ollama integration problems causing tool calling failures
-- Shell sandbox restrictions preventing legitimate git operations
-- WhatsApp-Web channel experiencing breakage
-- Configuration challenges with local LLM setups
-- Memory recall wildcard queries returning no results
-- QQ voice messages generating duplicate entries
-
-**Backlog Watch:**
-Stale or long-running issues needing attention:
-1. #2767 - Multi-Agent Routing (stale)
-2. #5259 - WeChat iLink channel (no recent activity)
-3. #4647 - Provider-scoped model fallback chains
-4. #5752 - Configurable timeout values
-5. #5674 - classify_channel_reply_intent configurable
-</think>
 
 # Zeroclaw Project Digest — 2026-04-25
 
@@ -1010,16 +734,6 @@ Zeroclaw experienced high development activity on 2026-04-25, with 50 issues and
 
 <details>
 <summary><strong>PicoClaw</strong> — <a href="https://github.com/sipeed/picoclaw">sipeed/picoclaw</a></summary>
-
-<think>Let me analyze the GitHub data for PicoClaw and generate a structured project digest for 2026-04-25.
-
-Key data points:
-- Issues updated in last 24h: 11 (open/active: 7, closed: 4)
-- PRs updated in last 24h: 38 (open: 19, merged/closed: 19)
-- New releases: 1 (nightly build v0.2.7-nightly.20260425.8d51d306)
-
-Let me organize this into the required sections.
-</think>
 
 # PicoClaw Project Digest — 2026-04-25
 
@@ -1202,23 +916,6 @@ PicoClaw maintains high development velocity with 38 PRs and 11 issues updated i
 <details>
 <summary><strong>NanoClaw</strong> — <a href="https://github.com/qwibitai/nanoclaw">qwibitai/nanoclaw</a></summary>
 
-<think>Let me analyze the GitHub data for NanoClaw and generate a structured project digest for 2026-04-25.
-
-Key observations:
-1. **Activity**: 15 issues updated in last 24h (7 open, 8 closed), 35 PRs updated (11 open, 24 merged/closed)
-2. **Releases**: None in last 24h
-3. **Recent v2 launch**: v2 was released 2026-04-22, so this is very recent
-4. **Major themes**:
-   - v2 migration issues (setup problems, duplicate replies, systemd detection)
-   - Custom endpoint support (Codex + OpenCode)
-   - Tool call logging/observability
-   - WhatsApp document mimetype fix
-   - Pre-v2 cleanup (docs, stale files)
-   - Security fix (IPC directory isolation)
-
-Let me structure this properly.
-</think>
-
 # NanoClaw Project Digest — 2026-04-25
 
 ## 1. Today's Overview
@@ -1382,69 +1079,6 @@ NanoClaw is experiencing high velocity today with 35 PRs and 15 issues updated i
 <details>
 <summary><strong>IronClaw</strong> — <a href="https://github.com/nearai/ironclaw">nearai/ironclaw</a></summary>
 
-<think>Let me analyze the GitHub data for IronClaw and generate a structured project digest for 2026-04-25.
-
-Key data points:
-- Issues updated in last 24h: 16 (open/active: 14, closed: 2)
-- PRs updated in last 24h: 50 (open: 43, merged/closed: 7)
-- New releases: 0
-
-Let me organize the information:
-
-**Today's Overview:**
-- High activity with 16 issues and 50 PRs updated
-- No new releases
-- Multiple bug reports from QA testing
-- Several large PRs in progress
-
-**Releases:**
-- None
-
-**Project Progress:**
-Looking at closed PRs:
-1. #2952 - Closed, remove mission_id from response, add max/min amount
-2. #2463 - Closed, fix NEAR AI tool schemas
-3. #1988 - Closed, char-boundary-safe truncation for MCP tool descriptions
-4. #2890 - Closed, fix empty "Fetch available models" for NEAR AI
-
-**Community Hot Topics:**
-- #2868 - Large PR for engine-v2 available_actions
-- #2951 - Fix LLM tool schema shaping for near ai
-- #2953 - Feedback on reborn architecture design
-- #2904 - Refactor WASM API-proxy tools to skill-based HTTP
-
-**Bugs & Stability:**
-- #2949 - Platform download error (x86_64-unknown-linux-gnu)
-- #2946 - LLM backend overwritten on startup
-- #2945 - One-time login link returns Unauthorized
-- #2944 - Assistant claims success despite failed steps
-- #2943 - Assistant response only appears after refresh
-- #2942 - Telegram shows MTProto config instead of user-friendly flow
-
-
-- #2939 - Telegram bot stops responding after upgrade
-- #2938 - Routines tab missing after upgrade
-- #2930 - Live canary failed: provider-matrix openai-compatible
-- #2929 - Live canary failed: public-smoke
-
-**Feature Requests:**
-- #2950 - Split provider-safe tool schema cleanup
-- #2900 - Decouple webhook listener from HTTP channel
-- #1344 - Mobile layout redesign
-- #1741 - Kernel/extension architecture design
-
-**User Feedback:**
-- Installation issues
-- Config persistence problems
-- Auth issues
-- UI/UX problems
-
-**Backlog Watch:**
-- #1344 - Mobile layout (open since 2026-03-18)
-- #1741 - Architecture design (open since 2026-03-29)
-- #1764 - Abound demo (open since 2026-03-30)
-</think>
-
 # IronClaw Project Digest — 2026-04-25
 
 ## 1. Today's Overview
@@ -1600,18 +1234,6 @@ IronClaw shows **high development activity** on April 25, 2026, with 16 issues a
 <details>
 <summary><strong>LobsterAI</strong> — <a href="https://github.com/netease-youdao/LobsterAI">netease-youdao/LobsterAI</a></summary>
 
-<think>Let me analyze the GitHub data for LobsterAI and create a structured project digest for 2026-04-25.
-
-Key observations:
-1. **Activity**: Very high - 42 PRs merged/closed, 3 new issues, 2 releases in last 24h
-2. **Releases**: Two releases (2026.4.24 and 2026.4.23) with various fixes and features
-3. **PRs**: Heavy activity around providers (DeepSeek V4, Kimi K2.6), memory settings, UI fixes, IM sync, multi-robot support
-4. **Issues**: 3 open issues, one is a bug report about DeepSeek V4 not working
-5. **Contributors**: liuzhq1986 is very active, also btc69m979y-dotcom and liugang519
-
-Let me structure this properly.
-</think>
-
 # LobsterAI Project Digest — 2026-04-25
 
 ## 1. Today's Overview
@@ -1634,7 +1256,7 @@ LobsterAI demonstrates exceptionally high development velocity today, with **42 
 - **Version Tracking**: Added version field to update requests for better telemetry ([#1785](https://github.com/netease-youdao/LobsterAI/pull/1785))
 - **Install Improvements**: Fixes to installation timing/logging
 
-**Breaking Changes**: None identified  
+**Breaking Changes**: None identified
 **Migration Notes**: No migration required; backward-compatible updates
 
 ---
@@ -1760,7 +1382,7 @@ Based on current PR patterns, the next release likely includes:
 
 ---
 
-*Digest generated from LobsterAI repository activity on 2026-04-25*  
+*Digest generated from LobsterAI repository activity on 2026-04-25*
 *Repository: [github.com/netease-youdao/LobsterAI](https://github.com/netease-youdao/LobsterAI)*
 
 </details>
@@ -1774,68 +1396,6 @@ No activity in the last 24 hours.
 
 <details>
 <summary><strong>Moltis</strong> — <a href="https://github.com/moltis-org/moltis">moltis-org/moltis</a></summary>
-
-<think>The user wants me to generate a structured project digest for the Moltis project based on the provided GitHub data. Let me analyze the data and create a comprehensive digest following the specified sections.
-
-Let me organize the key information:
-
-**Activity Overview:**
-- Issues updated in last 24h: 10 (open/active: 3, closed: 7)
-- PRs updated in last 24h: 32 (open: 4, merged/closed: 28)
-- New releases: 0
-
-**Latest Issues (10 total):**
-Open issues:
-1. #868 - feat: Add Landlock access denial debug logging (2026-04-24)
-2. #867 - [bug] Voice provider API keys stored in plain text in moltis.toml (2026-04-24) - SECURITY
-3. #858 - [Bug]: Heartbeat re-fires in tight loop when agent uses exec during heartbeat turn (2026-04-24)
-
-Closed issues:
-1. #176 - [enhancement] Add datetime to system prompt context (2026-02-17, closed 2026-04-24)
-2. #776 - [bug] task_list.list (2026-04-17, closed 2026-04-24)
-3. #828 - [bug] Docker sandbox fails on WSL2 due to missing /sys/class/dmi (2026-04-22, closed 2026-04-24)
-4. #824 - [enhancement] don't auto-scroll to end of chat session if scrolled up (2026-04-22, closed 2026-04-24)
-5. #344 - [bug] UX for vault is sealed is bad (2026-03-06, closed 2026-04-24)
-6. #848 - [bug] Fireworks Fire Pass: JSON Schema not supported (2026-04-23, closed 2026-04-24)
-
-
-7. #857 - [bug] Silent memory turn saves with wrong dates in filenames (2026-04-23, closed 2026-04-24)
-
-**Latest Pull Requests (32 total, showing top 20):**
-Open PRs:
-1. #870 - feat(skills): add bundled skill whitelist/blacklist filtering (2026-04-25)
-2. #866 - feat: Landlock FS isolation for restricted-host sandbox (2026-04-24)
-3. #871 - feat(cron): add heartbeat wake cooldown to prevent exec re-fire loop (2026-04-25)
-4. #869 - feat(browser): add Obscura as lightweight sidecar browser backend (2026-04-24)
-
-Closed/merged PRs:
-1. #470 - feat(witness): tool execution witness recording + zkperf-service integration (2026-03-23, closed 2026-04-24)
-2. #791 - refactor(splitter): extract moltis-splitter crate for AST-aware chunking (2026-04-18, closed 2026-04-24)
-3. #863 - fix(cron): add heartbeat wake cooldown to prevent exec re-fire loop (2026-04-24, closed 2026-04-24)
-4. #840 - feat(skills): MCP server management skill and post-install recipes (2026-04-22, closed 2026-04-24)
-5. #844 - feat(config): add default sub-agent presets (2026-04-22, closed 2026-04-24)
-6. #865 - feat(discord): channel name pattern filtering and per-pattern overrides (2026-04-24, closed 2026-04-24)
-7. #864 - feat(config): layered config with defaults.toml and override-only user config (2026-04-24, closed 2026-04-24)
-8. #303 - feat(web): add push-to-talk, VAD continuous listening, and voice settings (2026-03-03, closed 2026-04-24)
-9. #339 - feat(i18n): add zh-TW Traditional Chinese locale support (2026-03-05, closed 2026-04-24)
-10. #845 - chore(deps): bump the cargo group across 1 directory with 2 updates (2026-04-23, closed 2026-04-24)
-11. #802 - [AutoDoc] docs: batch 4 — voice, checkpoints, configuration-reference (2026-04-20, closed 2026-04-24)
-12. #800 - [AutoDoc] docs: batch 2 — channels, discord, nostr, browser-automation (2026-04-20, closed 2026-04-24)
-13. #799 - [AutoDoc] docs: batch 1 — core config, hooks, compaction (2026-04-20, closed 2026-04-24)
-14. #789 - [AutoDoc] docs: fix P2 issues from Greptile reviews — rotisserie corrections (2026-04-18, closed 2026-04-24)
-15. #783 - [AutoDoc] docs: batch update — 44 docs audited and fixed across 50 rotisserie commits (2026-04-18, closed 2026-04-24)
-16. #745 - Feature: Nix Flake (2026-04-16, closed 2026-04-24)
-
-**Key observations:**
-- High activity with 32 PRs updated in 24h
-- 28 PRs merged/closed
-- 7 issues closed
-- Security issue reported (#867 - API keys in plain text)
-- Several feature PRs merged including Landlock FS isolation, layered config, MCP server management
-- Heavy documentation updates via AutoDoc
-
-Now I'll structure the digest following the user's requirements.
-</think>
 
 # Moltis Project Digest — 2026-04-25
 
@@ -2009,16 +1569,6 @@ The merged PRs suggest these areas are prioritized:
 
 <details>
 <summary><strong>CoPaw</strong> — <a href="https://github.com/agentscope-ai/CoPaw">agentscope-ai/CoPaw</a></summary>
-
-<think>Let me analyze this GitHub data for CoPaw (QwenPaw) and generate a structured project digest for 2026-04-25.
-
-Key data points:
-- Issues updated in last 24h: 50 (28 open, 22 closed)
-- PRs updated in last 24h: 50 (15 open, 35 merged/closed)
-- New releases: 2 (v1.1.4.post1 and v1.1.4)
-
-Let me organize this into the required sections.
-</think>
 
 # CoPaw (QwenPaw) Project Digest — 2026-04-25
 
@@ -2222,18 +1772,6 @@ CoPaw (QwenPaw) shows **high development velocity** on April 25, 2026, with 50 i
 <details>
 <summary><strong>ZeptoClaw</strong> — <a href="https://github.com/qhkm/zeptoclaw">qhkm/zeptoclaw</a></summary>
 
-<think>Let me analyze the GitHub data for ZeptoClaw and generate a structured project digest for 2026-04-25.
-
-Key data points:
-- Issues updated in last 24h: 1 (open/active: 1, closed: 0)
-- PRs updated in last 24h: 1 (open: 1, merged/closed: 0)
-- New releases: 0
-- Latest Issues: 1 item - Issue #546 about Feishu long-connection
-- Latest PRs: 1 item - PR #544 about CI coverage expansion
-
-Let me structure this into the required sections.
-</think>
-
 # ZeptoClaw Project Digest
 
 **Date:** 2026-04-25
@@ -2350,196 +1888,62 @@ Issue #546 suggests a potential roadmap item around **external worker management
 <details>
 <summary><strong>EasyClaw</strong> — <a href="https://github.com/gaoyangz77/easyclaw">gaoyangz77/easyclaw</a></summary>
 
-<think>The user wants a structured English EasyClaw project digest for 2026-04-25, based on the provided GitHub data. The data includes:
-
-- Issues updated in last 24h: 0
-- PRs updated in last 24h: 0
-- New releases: 1 (v1.8.9: RivonClaw v1.8.9)
-- Installation instructions for macOS (fix for Gatekeeper)
-- No latest issues or PRs.
-
-We need to generate a digest with sections:
-
-1. Today's Overview
-2. Releases
-3. Project Progress
-4. Community Hot Topics
-5. Bugs & Stability
-6. Feature Requests & Roadmap Signals
-7. User Feedback Summary
-8. Backlog Watch
-
-We need to be objective, data-driven, highlighting project health. Include GitHub links for each item.
-
-We have limited data: only a release note about v1.8.9, with installation instructions for macOS. No issues or PRs. So many sections will be empty or minimal.
-
-We need to include GitHub links. The repository is github.com/gaoyangz77/easyclaw. For the release, we can link to the release page: https://github.com/gaoyangz77/easyclaw/releases/tag/v1.8.9
-
-We can also link to the repository main page.
-
-We need to generate plausible content based on the data. Since there is no activity in issues/PRs, we can note that.
-
-We need to follow the style: objective, data-driven.
-
-We need to ensure we don't hallucinate details not present. But we can provide context based on the release notes.
-
-The release note includes installation instructions for macOS, specifically a fix for Gatekeeper. That indicates a known issue with macOS unsigned apps. We can mention that.
-
-We can also note that the release is named "RivonClaw v1.8.9", which might be the name of the software.
-
-We need to generate the digest in English.
-
-We need to be careful with the date: 2026-04-25.
-
-We need to include sections as specified.
-
-Let's outline:
-
-1. **Today's Overview**: Summarize that there is one new release, no issues/PRs activity, project is stable.
-
-2. **Releases**: Detail v1.8.9, changes: installation instructions for macOS, fix for Gatekeeper issue. Possibly note that it's a minor release.
-
-3. **Project Progress**: No PRs merged/closed today. Note that.
-
-4. **Community Hot Topics**: No active issues/PRs. Note that.
-
-5. **Bugs & Stability**: No bugs reported. But note the known macOS Gatekeeper issue addressed in release.
-
-6. **Feature Requests & Roadmap Signals**: No new feature requests. Possibly predict based on previous issues? But we have no data. We can note that none were raised today.
-
-7. **User Feedback Summary**: No feedback. But we can note the release includes guidance for macOS users, indicating user pain point.
-
-8. **Backlog Watch**: No long-unanswered issues. Note that.
-
-We need to include GitHub links. For each item, we can include links to the release, repository, etc.
-
-We need to keep it concise but thorough.
-
-We need to avoid speculation beyond the data.
-
-We need to ensure we follow the format.
-
-Let's write the digest.
-
-We need to include the date.
-
-We need to include section headers.
-
-We need to include bullet points where appropriate.
-
-We need to include links.
-
-We need to ensure it's in English.
-
-Let's start.
-</think>
-
 # EasyClaw Project Digest – 2026-04-25
 
-## 1. Today's Overview  
+## 1. Today's Overview
 EasyClaw (github.com/gaoyangz77/easyclaw) shows minimal activity on 2026-04-25. No issues or pull requests were updated in the last 24 hours, indicating a quiet period. A new release (v1.8.9) was published, focusing on macOS compatibility and providing step-by-step guidance to bypass Gatekeeper restrictions. The project appears stable with no reported bugs or community discussions today.
 
-## 2. Releases  
-- **v1.8.9 – RivonClaw v1.8.9**  
-  - **Release Link**: https://github.com/gaoyangz77/easyclaw/releases/tag/v1.8.9  
-  - **Key Changes**:  
-    - Added detailed macOS installation instructions to resolve Gatekeeper blocking unsigned apps.  
-    - Provided a fix for the “‘RivonClaw’ is damaged and can't be opened” error, common on macOS systems.  
-  - **Migration Notes**: No breaking changes; users on macOS should follow the new steps if they encounter Gatekeeper warnings.  
+## 2. Releases
+- **v1.8.9 – RivonClaw v1.8.9**
+  - **Release Link**: https://github.com/gaoyangz77/easyclaw/releases/tag/v1.8.9
+  - **Key Changes**:
+    - Added detailed macOS installation instructions to resolve Gatekeeper blocking unsigned apps.
+    - Provided a fix for the “‘RivonClaw’ is damaged and can't be opened” error, common on macOS systems.
+  - **Migration Notes**: No breaking changes; users on macOS should follow the new steps if they encounter Gatekeeper warnings.
   - **Severity**: Low (cosmetic/ux improvement for macOS users).
 
-## 3. Project Progress  
-- **PRs Merged/Closed (last 24h)**: 0  
-- **Issues Updated (last 24h)**: 0  
+## 3. Project Progress
+- **PRs Merged/Closed (last 24h)**: 0
+- **Issues Updated (last 24h)**: 0
 - **Assessment**: No code contributions or issue resolutions today. The release is the sole update, suggesting maintainer focus on stability rather than new features.
 
-## 4. Community Hot Topics  
-- **Active Issues**: None (total: 0 items).  
-- **Active PRs**: None (total: 0 items).  
+## 4. Community Hot Topics
+- **Active Issues**: None (total: 0 items).
+- **Active PRs**: None (total: 0 items).
 - **Analysis**: The absence of discussions indicates low community engagement today. The release note addresses a known macOS user pain point, but no further community interaction was recorded.
 
-## 5. Bugs & Stability  
-- **Reported Bugs (last 24h)**: 0  
-- **Known Issues**:  
-  - macOS Gatekeeper blocking unsigned apps (addressed in v1.8.9).  
-- **Regressions**: None reported.  
+## 5. Bugs & Stability
+- **Reported Bugs (last 24h)**: 0
+- **Known Issues**:
+  - macOS Gatekeeper blocking unsigned apps (addressed in v1.8.9).
+- **Regressions**: None reported.
 - **Fix PRs**: None today; the release itself provides a workaround.
 
-## 6. Feature Requests & Roadmap Signals  
-- **New Feature Requests (last 24h)**: 0  
-- **Predicted Next Steps**:  
-  - Given the focus on macOS compatibility, future releases may prioritize signing/certifying the app to eliminate Gatekeeper warnings.  
+## 6. Feature Requests & Roadmap Signals
+- **New Feature Requests (last 24h)**: 0
+- **Predicted Next Steps**:
+  - Given the focus on macOS compatibility, future releases may prioritize signing/certifying the app to eliminate Gatekeeper warnings.
   - No explicit roadmap signals were raised today.
 
-## 7. User Feedback Summary  
-- **Pain Points Addressed**:  
-  - macOS users encountering “damaged app” errors now have clear remediation steps (Terminal commands to remove quarantine attribute).  
-- **Satisfaction/Dissatisfaction**:  
-  - The release improves UX for macOS users, likely reducing support queries related to Gatekeeper.  
+## 7. User Feedback Summary
+- **Pain Points Addressed**:
+  - macOS users encountering “damaged app” errors now have clear remediation steps (Terminal commands to remove quarantine attribute).
+- **Satisfaction/Dissatisfaction**:
+  - The release improves UX for macOS users, likely reducing support queries related to Gatekeeper.
   - No negative feedback recorded today.
 
-## 8. Backlog Watch  
-- **Long-Unanswered Issues**: None (0 items).  
-- **PRs Needing Maintainer Attention**: None (0 items).  
+## 8. Backlog Watch
+- **Long-Unanswered Issues**: None (0 items).
+- **PRs Needing Maintainer Attention**: None (0 items).
 - **Notes**: The project’s issue/PR queue is empty, indicating no pending community contributions require review.
 
----  
+---
 **Project Health Summary**: EasyClaw is stable with a minor release addressing macOS usability. No community activity or bugs today; maintainers are focused on polish rather than new features.
 
 </details>
 
 <details>
 <summary><strong>NemoClaw</strong> — <a href="https://github.com/NVIDIA/NemoClaw">NVIDIA/NemoClaw</a></summary>
-
-<think>Let me analyze the GitHub data for NemoClaw and generate a structured project digest for 2026-04-25.
-
-Key data points:
-- Issues updated in last 24h: 50 (open/active: 21, closed: 29)
-- PRs updated in last 24h: 50 (open: 18, merged/closed: 32)
-- New releases: 0
-
-Let me organize the information:
-
-**Today's Overview:**
-- High activity with 50 issues and 50 PRs updated
-- No new releases
-- Multiple security fixes being worked on
-- Several bugs affecting core functionality (E2E failures, gateway crashes, TLS issues)
-
-**Releases:**
-- None today
-
-**Project Progress (PRs):**
-Looking at the PRs:
-- #2453: fix(onboard): retry and fallback for container reachability check
-- #2466: fix(hermes): set file permissions so sandbox user can read copied files
-- #2449: fix: auto-disable device auth for non-loopback URLs
-- #2411: feat(onboard): auto-allocate dashboard port for multi-sandbox
-- #2345: fix(sandbox): export GIT_SSL_CAINFO so git trusts proxy CA
-- #2465: refactor(cli): centralize subprocess execution
-- #2462: feat(cli): add nemohermes alias for Hermes agent
-- #2464: chore(deps): bump OpenClaw from 2026.4.2 to 2026.4.8
-- #2463: docs: catch up release prep for 0.0.25
-- #2435: fix(test): move installer integration tests to CI-only vitest project
-- #2359: chore(test): apply shfmt formatting to E2E scripts
-- #2414: fix(security): harden config set SSRF validation
-
-
-- #2457: fix(sandbox): survive Landlock and seccomp restrictions on OpenShell 0.0.36
-- #2445: docs: reorganize Get Started and add Deployment Topology diagram
-- #2440: fix(onboard): always inject NEMOCLAW_DASHBOARD_PORT into sandbox env
-- #2436: fix(security): validate symlinks in snapshot create and rollback paths
-- #2461: ci: gate every PR on tsc-cli regardless of touched paths
-- #2227: refactor(sandbox): default to mutable config, make shields opt-in
-- #2460: ci: gate every PR on tsc-cli regardless of touched paths
-- #2459: fix(deploy): correct vLLM HF model id and pass HF_TOKEN to VM
-
-The most active issues are #1992 (nightly E2E failures with 105 comments), #1908 (Jetson Orin HTTP 503 errors at 11 comments), #1831 (security CVE concerns with 6 comments), #2427 (gateway crashes in sandbox environments), and #1828 (proxy CA certificate injection problems). Several security vulnerabilities are being addressed, including SSRF validation hardening and symlink validation in snapshot operations.
-
-Additional security work includes auto-disabling device auth for non-loopback URLs, along with fixes for TLS certificate handling, file permissions in Hermes, and container reachability checks. The project is also tackling platform-specific issues like Docker permission problems, gateway restart failures, and missing Linux tools in sandboxed environments. There's a feature request for a `nemoclaw policy add` command and ongoing work to refactor the onboarding and CLI into a safer, more reviewable structure.
-
-The most critical issue blocking progress is the nightly E2E test failure, which has accumulated 105 comments and is preventing reliable validation of the system.
-</think>
 
 # NemoClaw Project Digest — 2026-04-25
 

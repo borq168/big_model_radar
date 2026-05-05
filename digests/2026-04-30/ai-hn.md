@@ -4,56 +4,6 @@
 
 ---
 
-<think>Let me analyze the Hacker News AI community dynamics for 2026-04-30 based on the provided data.
-
-Let me organize the information:
-
-**Top Posts by Score:**
-1. HERMES.md in commit messages causes requests to route to extra usage billing - 986 points, 421 comments
-2. Claude.ai and API Unavailable - 82 points, 70 comments
-3. I benchmarked Claude Code's caveman plugin against "be brief." - 58 points, 37 comments
-4. Show HN: A new benchmark for testing LLMs for deterministic outputs - 49 points, 21 comments
-5. Anthropic's Champion Kit for engineers pushing Claude Code at their company - 36 points, 24 comments
-
-**Categories to organize:**
-
-🔬 模型与研究:
-- Show HN: A new benchmark for testing LLMs for deterministic outputs (49 points)
-- I benchmarked Claude Code's caveman plugin against "be brief." (58 points)
-- We told 10 frontier LLMs they had 2 hours to live. 8 of them fought back (4 points)
-
-🛠️ 工具与工程:
-- HERMES.md in commit messages causes requests to route to extra usage billing (986 points)
-- Anthropic's Champion Kit for engineers pushing Claude Code at their company (36 points)
-
-
-- Show HN: Snitchmd – Cloudflare-protected URLs into clean Markdown via Docker (7 points)
-- Show HN: AgentPort – Open-source Security Gateway For Agents (5 points)
-- Show HN: OmniForge – document intelligence and audio capture with local LLM (4 points)
-
-🏢 产业动态:
-- Claude.ai and API Unavailable (82 points)
-- OpenAI Codex system prompt includes directive: "never talk about goblins" (14 points)
-- OpenAI has, in practice, abandoned its Stargate JV (10 points)
-- Musk Testifies OpenAI Was Created as Nonprofit to Counter Google (7 points)
-- OpenAI Sued by Seven Families over Mass Shooting Suspect's ChatGPT Use (6 points)
-- Nvidia executive: AI is more expensive than paying human workers (4 points)
-- Pentagon AI chief confirms DoD's expanded use of Google Gemini (4 points)
-- Failed AI tractor company lays off all employees (4 points)
-- When the Bill Comes Due (4 points)
-
-💬 观点与争议:
-- Why Codex works better than Claude Code for my production monolith (14 points)
-- Claude.ai Down Again? (12 points)
-- Ask HN: Anyone feel like they're just opting out of tech these days? (10 points)
-- The Luddites would have loved AI (6 points)
-- Gen Z is outsourcing hard conversations to AI. Why it matters (5 points)
-- Bullshit Ability as an Honest Signal of Intelligence (4 points)
-- Anthropic fails worse than Githubs (4 points)
-
-The community is clearly frustrated with Claude.ai's reliability issues and the billing problems tied to HERMES.md. There's significant debate around OpenAI's governance structure and legal challenges, while practical concerns about AI costs and enterprise adoption are gaining traction. The discussions also touch on broader societal implications—Gen Z's reliance on AI for difficult conversations and philosophical questions about what AI capabilities actually signal.
-</think>
-
 # Hacker News AI 社区动态日报
 
 **2026 年 4 月 30 日**

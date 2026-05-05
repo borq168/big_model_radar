@@ -7,63 +7,9 @@ Sources:
 
 ---
 
-<think>The user wants me to analyze the provided GitHub data from the anthropics/skills repository and generate a skills community highlights report. Let me parse through the data carefully.
-
-From the PRs (Pull Requests), I need to identify the most-discussed skills. The PRs are sorted by comments, but all show "undefined" for comments. Let me look at other indicators - the PR numbers seem to correlate with recency (higher numbers = more recent). Let me identify the top skills based on the data provided.
-
-Looking at the PRs:
-1. #514 - document-typography skill (typographic quality control)
-2. #538 - fix(pdf): case-sensitive file references
-3. #83 - skill-quality-analyzer and skill-security-analyzer
-4. #210 - Improve frontend-design skill
-5. #486 - ODT skill (OpenDocument)
-6. #539 - fix(skill-creator): YAML special characters
-7. #541 - fix(docx): tracked change w:id collision
-8. #509 - docs: add CONTRIBUTING.md
-9. #95 - comprehensive system documentation
-10. #181 - SAP-RPT-1-OSS predictor skill
-11. #723 - testing-patterns skill
-12. #335 - masonry-generate-image-and-videos skill
-13. #806 - sensory skill (AppleScript/macOS automation)
-14. #54 - docs improvement
-15. #154 - shodh-memory skill
-16. #147 - codebase-inventory-audit skill
-17. #568 - ServiceNow platform skill
-18. #666 - Remove duplicate skill-creator skill
-19. #664 - claude-obsidian-reporter skill
-20. #616 - HADS skill (Human-AI Document Standard)
-
-From Issues (sorted by comments):
-1. #62 - Skills disappeared (10 comments)
-2. #228 - Enable org-wide skill sharing (9 comments)
-
-
-3. #202 - skill-creator should be updated (8 comments)
-4. #556 - run_eval.py never triggers skills (6 comments)
-5. #189 - document-skills and example-skills duplicate (5 comments)
-6. #492 - Security: Community skills namespace (4 comments)
-7. #412 - agent-governance skill proposal (4 comments)
-8. #29 - Usage with bedrock (4 comments)
-9. #16 - Expose Skills as MCPs (4 comments)
-10. #184 - agentskills.io redirect error (3 comments)
-11. #61 - Not found error when loading skills (3 comments)
-
-I'll focus on the most critical issues affecting the skills ecosystem. The top issues reveal significant challenges in skill management, sharing, and implementation. Key problems include skills disappearing, lack of org-wide sharing, and evaluation script limitations. These issues suggest a need for more robust skill management infrastructure and improved developer tools.
-
-The security concern about community skills namespace and the agent-governance skill proposal indicate growing awareness of responsible AI skill development. The bedrock usage and MCP exposure issues highlight the need for more flexible integration options.
-
-The most discussed skills span diverse domains: typography, document handling, quality analysis, frontend design, and platform-specific integrations like ServiceNow and SAP. This diversity reflects the expanding scope of AI skill development across different technical and business contexts.
-
-The testing-patterns skill and sensory skill demonstrate emerging trends in comprehensive skill design, covering everything from testing methodologies to native platform automation. The obsidian-reporter and HADS skill further underscore the community's focus on documentation, reporting, and standardized human-AI interactions.
-
-The issues highlight critical infrastructure needs: sharing mechanisms, skill evaluation, and addressing namespace security concerns. These challenges suggest the community is actively refining the technical and operational foundations of skill development.
-
-The emerging skill directions point toward deeper platform integration, enhanced quality assurance, and more robust automation capabilities across various domains.
-</think>
-
 # Skills Community Highlights Report
 
-**Repository:** [github.com/anthropics/skills](https://github.com/anthropics/skills)  
+**Repository:** [github.com/anthropics/skills](https://github.com/anthropics/skills)
 **Data Period:** As of 2026-05-02 | **PRs Analyzed:** 50 | **Issues Analyzed:** 50
 
 ---

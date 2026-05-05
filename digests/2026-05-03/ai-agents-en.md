@@ -20,69 +20,6 @@
 
 ## OpenClaw Deep Dive
 
-<think>Let me analyze the GitHub data for OpenClaw and generate a structured project digest for 2026-05-03.
-
-Let me organize the key information:
-
-**Overview:**
-- Issues updated in last 24h: 500 (open/active: 463, closed: 37)
-- PRs updated in last 24h: 500 (open: 452, merged/closed: 48)
-- New releases: 3 (v2026.5.2, v2026.5.2-beta.3, v2026.5.2-beta.2)
-
-**Releases:**
-- v2026.5.2: External plugin installation, update, doctor repair, dependency reporting, artifact metadata coverage for npm-first cutover, stale configured installs, missing package payloads, beta-channel plugin fallback. Gateway and agent hot paths leaner.
-- v2026.5.2-beta.3 and beta.2: Similar highlights about external plugin installation coverage
-
-**Latest Issues (top by comments):**
-1. #67288 - Bug: amazon-bedrock-mantle lacks config.discovery.enabled gate (10 comments)
-2. #75707 - Bug: Gateway CPU pinned at 100% (10 comments, 5 👍)
-3. #65302 - Chinese language issue about product updates (9 comments, 6 👍)
-4. #63216 - Bug: Repeated hard resets on same session key (9 comments)
-5. #29736 - Bug: Exec approvals path ignores active state root (9 comments)
-6. #13616 - Enhancement: Add backup/restore utility (8 comments)
-7. #39038 - Bug: Windows 11 24H2 PATH issue (8 comments)
-8. #67366 - TypeError during openclaw onboard (7 comments)
-
-
-9. #41165 - Bug: Telegram DMs routing issue (7 comments)
-10. #44845 - Bug: Token usage shows 0/200k for Volcengine (6 comments)
-
-**Latest PRs (top by activity):**
-- #74787: Codex process reaper (L size)
-- #74734: Fix legacy ACP stream keys (M size)
-- #76317: Fix session sendPolicy=deny (S size)
-- #75924: Fix loop-detection (M size)
-- #70864: Add scoped mention pattern policy (XL size)
-- #76181: Fix Ollama num
-
-_ctx (M size)
-- #74905: Proxy direct APNs HTTP2 sessions (XL size)
-- #76370: Fix exec policy controls (S size)
-- #75004: Add shell command explainer (XL size)
-- #76318: Fix UI delete confirm popover (M size)
-- #76345: Circuit-break consecutive LLM idle timeouts (S size)
-- #76355: Show progress during npm install (XS size)
-- #76338: Stop heartbeat tool turns from asking for HEARTBEAT_OK (L size)
-- #76356: Fix subagent startup lifecycle signals (M size)
-- #76341: Fix Slack tool-progress draft preview (S size)
-- #75225: Add description field for dynamic agent discovery (S size)
-- #72896: Harden Slack delivery retries (M size)
-- #63230: Per-channel thread.requireExplicitMention override for Slack (M size)
-- #64956: Dedupe session summaries (S size)
-- #76362: Skip EACCES/EPERM compile cache prune warnings (S size)
-- #76368: Wire memory-core runtime config schema (S size)
-- #55982: Add skipWhenIdle option to cron jobs (M size)
-- #76359: Fix memory-core dreaming daily ingestion (XS size)
-- #76366: Properly handle array index in config unset (M size) - CLOSED
-- #64597: Skip futile overflow truncation retries (M size)
-- #76351: Preserve err.stack when chat.send/agent attachment parsing fails (XS) - CLOSED
-- #76287: Fix kitchen sink crabbox coverage (M) - CLOSED
-- #76091: Fix Discord reply typing lifecycle (M size)
-- #76350: Cache fs.existsSync probes during plugin scan (S size)
-
-Several PRs have been closed including the config unset fix, error stack preservation, and crabbox coverage improvements. New submissions focus on performance optimizations like caching plugin scans and improving Slack integration, with additional work on memory management and session handling.
-</think>
-
 # OpenClaw Project Digest — 2026-05-03
 
 ## 1. Today's Overview
@@ -234,82 +171,6 @@ Identical highlights to stable: external plugin installation coverage expanded a
 ---
 
 ## Cross-Ecosystem Comparison
-
-<think>The user wants a cross-project comparison report based on the digests I generated for each project. Let me compile the data from all the digests and create a comprehensive cross-project analysis.
-
-Let me gather the key data points from each project:
-
-1. **OpenClaw** (github.com/openclaw/openclaw)
-   - Issues: 500 updated, 463 open, 37 closed
-   - PRs: 500 updated, 452 open, 48 merged/closed
-   - Releases: 3 (v2026.5.2 stable + 2 betas)
-   - Health: High activity, multiple regressions in v2026.4.29
-
-2. **NanoBot** (github.com/HKUDS/nanobot)
-   - Issues: 3 updated, 3 open
-   - PRs: 20 updated, 12 open, 8 merged/closed
-   - Releases: 0
-   - Health: Active development, good momentum
-
-3. **Zeroclaw** (github.com/zeroclaw-labs/zeroclaw)
-   - Issues: 50 updated, 48 open, 2 closed
-   - PRs: 34 updated, 27 open, 7 merged/closed
-   - Releases: 0
-   - Health: High activity, schema v3 migration in progress
-
-4. **PicoClaw** (github.com/sipeed/picoclaw)
-   - Issues: 7 updated, 7 open
-   - PRs: 8 updated, 6 open, 2 merged/closed
-   - Releases: 1 (nightly v0.2.8-nightly.20260503.a94ba821)
-   - Health: Stable, active bug fixes
-
-5. **NanoClaw** (github.com/qwibitai/nanoclaw)
-   - Issues: 13 updated, 11 open, 2 closed
-   - PRs: 17 updated, 10 open, 7 merged/closed
-   - Releases: 0
-   - Health: High activity, DeltaChat integration merged
-
-6. **IronClaw** (github.com/nearai/ironclaw)
-   - Issues: 20 updated, 15 open, 5 closed
-   - PRs: 46 updated, 40 open, 6 merged/closed
-   - Releases: 0
-   - Health: High activity, Reborn architecture in progress
-
-7. **LobsterAI** (github.com/netease-youdao/LobsterAI)
-   - Issues: 0 updated
-   - PRs: 4 updated, 4 open, 0 merged/closed
-   - Releases: 0
-   - Health: Low activity, no recent releases
-
-8. **TinyClaw** (github.com/TinyAGI/tinyclaw)
-   - No activity
-
-9. **Moltis** (github.com/moltis-org/moltis)
-   - Issues: 4 updated, 4 open
-   - PRs: 3 updated, 2 open, 1 merged/closed
-   - Releases: 0
-   - Health: Moderate activity
-
-10. **CoPaw** (github.com/agentscope-ai/CoPaw)
-    - Issues: 14 updated, 14 open
-    - PRs: 6 updated, 6 open, 0 merged/closed
-    - Releases: 0
-    - Health: Active development
-
-11. **ZeptoClaw** (github.com/qhkm/zeptoclaw)
-    - No activity
-
-12. **EasyClaw** (github.com/gaoyangz77/easyclaw)
-    - No activity
-
-13. **NemoClaw** (github.com/NVIDIA/NemoClaw)
-    - Issues: 28 updated, 20 open, 8 closed
-    - PRs: 50 updated, 19 open, 31 merged/closed
-    - Releases: 0
-    - Health: Very high activity, security fixes merged
-
-Now I'll organize this into the requested sections.
-</think>
 
 # Cross-Project Comparison Report: Personal AI Assistant & Agent Open-Source Ecosystem
 
@@ -544,59 +405,6 @@ The following trends emerge from community feedback across the ecosystem, provid
 <details>
 <summary><strong>NanoBot</strong> — <a href="https://github.com/HKUDS/nanobot">HKUDS/nanobot</a></summary>
 
-<think>The user wants me to generate a structured English NanoBot project digest for 2026-05-03 based on the provided GitHub data. Let me analyze the data and create a comprehensive digest following the specified sections.
-
-Let me organize the information:
-
-**Today's Overview:**
-- 3 open issues, 20 PRs updated (12 open, 8 merged/closed)
-- No new releases
-- Active development day with multiple features and fixes
-
-**Releases:**
-- None today
-
-**Project Progress (Merged/Closed PRs):**
-1. #2010 - WhatsApp media support (CLOSED)
-2. #2218 - Environment variable syntax support (CLOSED)
-3. #3456 - create-instance skill + webui remote backend (CLOSED)
-4. #3419 - preserve reasoning_content when merging messages (CLOSED)
-5. #3414 - cap recent history section in system prompt (CLOSED)
-6. #3176 - Feishu thread-scoped sessions (CLOSED)
-7. #3247 - fall back to raw_archive on LLM error (CLOSED)
-8. #3594 - allow_patterns priority over deny_patterns in ExecTool (CLOSED)
-
-**Community Hot Topics (Most active):**
-- #3598 - perf(context): cache system prompt with mtime-based invalidation (OPEN, new today)
-- #3589 - Discord interactive components (OPEN)
-- #3587 - fix: honor null reasoning effort disable (OPEN, related to #3585)
-- #3596 - feat(exec): add activity-aware timeout controls (OPEN, related to #3595)
-
-**Bugs & Stability:**
-- #3597 - NanoBot confused about workspace root (OPEN)
-- #3585 - reasoning_effort: null doesn't disable thinking (OPEN, fix in #3587)
-
-
-- Several execution and timeout issues being addressed through new features like #3596
-
-**Feature Requests & Roadmap Signals:**
-- #3595 - Remove 600 second cap on exec timeout (OPEN, fix in #3596)
-- #3591 - Dream update scope controls (OPEN)
-- #3590 - Manual heartbeat trigger (OPEN)
-- #3513 - Unify transcription providers + local Whisper (OPEN)
-- #3492 - Harden public-deploy footguns (OPEN)
-
-**User Feedback Summary:**
-- Users reporting workspace access issues
-- Need for better timeout controls
-- Desire for more platform integrations (Discord, WhatsApp)
-- Security concerns with public deployments
-
-**Backlog Watch:**
-- #3583 - WIP: Improve beta WebUI turn completion (needs attention)
-- #3492 - Security hardening (important but still open)
-</think>
-
 # NanoBot Project Digest — 2026-05-03
 
 ## 1. Today's Overview
@@ -717,74 +525,6 @@ The following items need maintainer attention:
 
 <details>
 <summary><strong>Zeroclaw</strong> — <a href="https://github.com/zeroclaw-labs/zeroclaw">zeroclaw-labs/zeroclaw</a></summary>
-
-<think>Let me analyze the GitHub data for Zeroclaw and generate a structured project digest for 2026-05-03.
-
-Key data points:
-- Issues updated in last 24h: 50 (open/active: 48, closed: 2)
-- PRs updated in last 24h: 34 (open: 27, merged/closed: 7)
-- New releases: 0
-
-Let me organize the information:
-
-**Today's Overview:**
-- High activity with 50 issues and 34 PRs updated
-- No new releases
-- Multiple high-priority bugs being addressed
-- Schema v3 migration in progress
-
-**Releases:**
-- None today
-
-**Project Progress:**
-- 7 PRs closed/merged
-- Key fixes: memory recall wildcard, xAI base URL, Telegram mention_only, reasoning_content preservation, Slack bot_token optional, Windows build fix
-- Schema v3 migration PR targeting integration branch
-
-**Community Hot Topics:**
-- Dream Mode feature (9 comments) - periodic memory consolidation
-- Shell sandbox configuration bug (6 comments) - blocking Python skills
-- DeepSeek reasoning_content bug (5 comments)
-- classify_channel_reply_intent configurable (4 comments, 3 👍)
-
-**Bugs & Stability:**
-- High severity bugs:
-  - #5722: Shell sandbox blocks Python skills (in-progress)
-  - #5654: Telegram encryption config broken (in-progress)
-  - #5605: Default config path issues (S0 - data loss risk)
-  - #6269: Context compressor drops reasoning_content
-  - #6254: WASM plugin path divergence
-  - #5654: Telegram encryption config broken (S1)
-  - #6095: Bedrock temperature deprecated (S1)
-  - #6237: Slack bot_token must be in config (S1)
-  - #6259: OpenAI-compat drops tool_call extra_content (S1)
-  - #6243: Streaming error hangs (S1)
-
-**Feature Requests & Roadmap:**
-- Dream Mode feature tracking periodic memory consolidation and reflective learning cycles
-- Configurable channel reply intent classification
-- LM Studio server URL configuration across chat, embeddings, and config surfaces
-- Retry logic with exponential backoff for webhook channel
-- Phase 2 D5: Reduce all_tools_with_runtime to 10-12 core tools
-- Hybrid skills + WASM tools
-- v0.7.6: zeroclaw skills support and UX improvements
-- V3 schema migration features
-
-**User Feedback:**
-- Shell sandbox blocking realistic Python skill patterns
-- Multi-instance deployment config path issues
-- Telegram encryption not working
-- WASM plugin visibility issues
-
-**Backlog Watch:**
-- #5849: Dream Mode feature (18 days old)
-- #5722: Shell sandbox bug (19 days)
-- #5674: classify_channel_reply_intent (21 days)
-- #5628: Daemon auto-start port conflict (22 days)
-- #5654: Telegram encryption (21 days)
-- #5605: Default config path issues (23 days)
-- #5617: Phase 2 D5 (22 days)
-</think>
 
 # Zeroclaw Project Digest — 2026-05-03
 
@@ -963,16 +703,6 @@ Zeroclaw shows **high development velocity** with 50 issues and 34 PRs updated i
 <details>
 <summary><strong>PicoClaw</strong> — <a href="https://github.com/sipeed/picoclaw">sipeed/picoclaw</a></summary>
 
-<think>Let me analyze the GitHub data for PicoClaw and generate a structured project digest for 2026-05-03.
-
-Key data points:
-- Issues updated in last 24h: 7 (all open/active)
-- PRs updated in last 24h: 8 (6 open, 2 closed/merged)
-- New releases: 1 (nightly build v0.2.8-nightly.20260503.a94ba821)
-
-Let me organize this into the requested sections.
-</think>
-
 # PicoClaw Project Digest — 2026-05-03
 
 ---
@@ -1116,59 +846,6 @@ PicoClaw shows **high activity** on May 3rd, 2026, with 7 issues and 8 PRs updat
 
 <details>
 <summary><strong>NanoClaw</strong> — <a href="https://github.com/qwibitai/nanoclaw">qwibitai/nanoclaw</a></summary>
-
-<think>Let me analyze the GitHub data for NanoClaw and generate a structured project digest for 2026-05-03.
-
-Let me organize the data:
-
-**Issues updated in last 24h: 13**
-- Open/active: 11
-- Closed: 2
-
-**PRs updated in last 24h: 17**
-- Open: 10
-- Merged/closed: 7
-
-**New releases: 0**
-
-Let me categorize the issues and PRs:
-
-**Latest Issues (13 total):**
-1. #1017 [OPEN] - Enhancement: add percentage to badge in repo-tokens (good first issue)
-2. #2188 [CLOSED] - Bug: host-sweep readonly database crash
-3. #2046 [CLOSED] - Bug: OneCLI agent identifier rejected (400 error)
-4. #2200 [OPEN] - Telegram connection failing on OpenRC
-5. #2199 [OPEN] - Docker failed to start in OpenRC
-6. #2196 [OPEN] - host-sweep deleteOrphanProcessingClaims crashes
-7. #2195 [OPEN] - add-gmail-tool: no documentation for multi-account Gmail
-8. #2194 [OPEN] - WhatsApp LID→phone JID mapping not persisted
-9. #2193 [OPEN] - init-first-agent: WhatsApp platform_id stored with prefix
-10. #2191 [OPEN] - migrate-v2.sh: misleading error when sqlite3 CLI not installed
-11. #2189 [OPEN] - Token/Perf Optimization Opportunities
-12. #2186 [OPEN] - CLI channel namespacedPlatformId produces cli:local
-13. #2185 [OPEN] - claude-md-compose.ts doesn't import CLAUDE.local.md
-
-
-14. #2003 [OPEN] - Voice transcription V2 (container-side, sovereign)
-15. #2201 [OPEN] - Add opencode provider and custom model support
-16. #2198 [OPEN] - Fix: show badge percentage
-17. #2197 [OPEN] - Fix: guard merge state to prevent silent single-parent commits
-18. #2192 [CLOSED] - Add DeltaChat channel adapter
-19. #2179 [CLOSED] - Fix: sanitize OneCLI agent identifiers
-20. #2178 [CLOSED] - Andy ops fixes: 10 issues
-21. #2187 [OPEN] - Fix: don't namespace CLI bare platform ids
-22. #2181 [CLOSED] - Fix: slash commands silently broken on warm containers
-23. #2183 [CLOSED] - Fix: reopen outbound DB as writable for orphan claim cleanup
-24. #2190 [CLOSED] - Fix: Atom feed link parsing
-25. #1931 [CLOSED] - feat: v1 → v2 migration to setup flow
-26. #1624 [OPEN] - feat: Matrix E2EE channel + per-group model/effort configuration
-27. #2184 [OPEN] - Fix: retry immediately on stale session
-28. #2182 [CLOSED] - Fix: openInboundDb honors in-memory test DB
-29. #1327 [OPEN] - feat: add Home Assistant MCP integration skill
-30. #2069 [OPEN] - Skill/webchat v1
-
-The repository shows significant activity with 17 pull requests and 13 issues updated in the past day. Seven PRs have been merged, including the DeltaChat channel adapter, OneCLI identifier sanitization, and various operational fixes. The open PRs include voice transcription improvements, opencode provider support, and Matrix E2EE channel implementation. Notable closed items resolved slash command issues on warm containers, outbound database access problems, and Atom feed parsing. The v1 to v2 migration feature is now complete, while Matrix E2EE and Home Assistant MCP integration remain in progress.
-</think>
 
 # NanoClaw Project Digest — 2026-05-03
 
@@ -1338,52 +1015,6 @@ NanoClaw is experiencing high development velocity today, with **13 issues and 1
 <details>
 <summary><strong>IronClaw</strong> — <a href="https://github.com/nearai/ironclaw">nearai/ironclaw</a></summary>
 
-<think>Let me analyze the GitHub data for IronClaw and generate a structured project digest for 2026-05-03.
-
-Key data points:
-- Issues updated in last 24h: 20 (open/active: 15, closed: 5)
-- PRs updated in last 24h: 46 (open: 40, merged/closed: 6)
-- New releases: 0
-
-Let me organize this into the requested sections.
-
-1. **Today's Overview**: High activity day with 20 issues and 46 PRs updated. Major focus on "Reborn" architecture refactoring, bug fixes for Gemini integration, and new CLI features.
-
-2. **Releases**: None today.
-
-3. **Project Progress**: 6 PRs merged/closed. Key ones:
-   - #3215: fix for thoughtSignature in Cloud Code SSE handler
-   - #3209: debounce fix for admin UI
-   - #3186: ironclaw import backup feature
-   - #3218: NEAR intents trial mode
-   - #3178: ironclaw backup --quick
-   - #3207: NEAR Intents trading agent foundation
-   - #3189: native autoverify command
-   - #3177: ironclaw insights for usage analytics
-   - #3217: Docker Hub image name fix
-   - #3216: stderr emission fix
-   - #3206: numeric-string guardrails fix
-   - #3211: paid research layer
-   - #2700: chat titles instead of hex IDs
-   - #3212: Reborn event projection service
-   - #3213: workspace identity override
-   - #3105: WASM channels staging
-   - #3210: auth.optional fix
-   - #3208: linux/arm64 Docker builds
-   - #3187: magic-link onboarding
-   - #3184: reborn-memory test port
-
-4. **Community Hot Topics**: The most active discussions center on the Reborn architecture (#3016, #3013, #3107, #3204, #3202, #3199, #3198, #3195, #3193), audio pipeline capabilities (#90), and ARM64 platform support (#3168). The #3215 PR addressing the thoughtSignature issue is generating significant engagement.
-
-5. **Bugs & Stability**: Several critical issues are being addressed—the thoughtSignature bug in Cloud Code SSE (#3214) has a corresponding PR #3215, the DeepSeek tool use problem (#3201) needs investigation, and there are staging web UI console errors (#2344) plus an x86_64-unknown-linux-gnu installer failure (#2818) that's already been resolved.
-
-6. **Feature Requests & Roadmap Signals**: Major initiatives include the Reborn architecture overhaul, audio pipeline development (#90), ARM64 Docker support (#3168), backup and import functionality (#3186, #3178), NEAR Intents integration (#3218, #3207, #3211), and the insights analytics command (#3177).
-
-7. **User Feedback Summary**: Users are encountering Docker Hub image naming inconsistencies, duplicate user creation in the admin UI, and workspace identity configuration issues that need addressing.
-
-8. **Backlog Watch**: The Reborn architecture work spans multiple interconnected issues, while the audio pipeline remains a long-standing feature request. Web UI console errors persist despite previous attempts to resolve them.
-</think>
-
 # IronClaw Project Digest — 2026-05-03
 
 ## 1. Today's Overview
@@ -1523,50 +1154,6 @@ Six PRs reached closed/merged state today, with 40 new PRs opened across all con
 <details>
 <summary><strong>LobsterAI</strong> — <a href="https://github.com/netease-youdao/LobsterAI">netease-youdao/LobsterAI</a></summary>
 
-<think>Let me analyze the GitHub data for LobsterAI and create a structured project digest for 2026-05-03.
-
-Key data points:
-- Issues updated in last 24h: 0 (open/active: 0, closed: 0)
-- PRs updated in last 24h: 4 (open: 4, merged/closed: 0)
-- New releases: 0
-- Latest Releases: None
-- Latest Issues: None
-- Latest PRs: 4 items
-
-Let me structure this into the required format:
-
-1. **Today's Overview** - Summarize the project status
-2. **Releases** - None
-3. **Project Progress** - 4 PRs, all open, no merges
-4. **Community Hot Topics** - Analyze the PRs
-5. **Bugs & Stability** - Identify bug fixes
-6. **Feature Requests & Roadmap Signals** - Identify feature requests
-7. **User Feedback Summary** - Extract pain points
-8. **Backlog Watch** - Look for stale PRs
-
-Let me analyze each PR:
-
-1. #1879 - fix: preserve manually-added plugin load paths on config sync
-   - Bug fix for plugin load paths being overwritten
-   - Author: @gvaiis
-
-2. #813 - feat(config): 小米渠道新增 MiMo V2 Pro 和 MiMo V2 Omni 模型
-   - Feature request to add new Xiaomi models
-   - Status: stale
-   - Author: @swuzjb
-
-3. #1181 - fix(cowork): hide OpenClaw main agent sessions from session list
-   - Bug fix to hide internal sessions from user-facing list
-   - Author: @Noodles006
-
-4. #1191 - fix(定时任务): 修复通知渠道过滤缺陷，升级渠道选择器显示体验
-   - Bug fix for notification channel filtering
-   - Status: stale
-   - Author: @gongzhi-netease
-
-I'll focus on the project's current state, highlighting key development areas and potential improvements. The PRs reveal ongoing refinements in plugin management, model integration, and user interface interactions. No new releases suggest a period of incremental development and bug fixing.
-</think>
-
 # LobsterAI Project Digest — 2026-05-03
 
 ## 1. Today's Overview
@@ -1689,100 +1276,6 @@ No activity in the last 24 hours.
 <details>
 <summary><strong>Moltis</strong> — <a href="https://github.com/moltis-org/moltis">moltis-org/moltis</a></summary>
 
-<think>The user wants a structured English Moltis project digest for 2026-05-03. The data provided includes:
-
-- Issues updated in last 24h: 4 (open/active: 4, closed: 0)
-- PRs updated in last 24h: 3 (open: 2, merged/closed: 1)
-- New releases: 0
-
-Latest releases: none.
-
-Latest issues (4 items):
-- #959: [OPEN] [bug] DeepSeek - Error: reasoning_content in thinking mode must be passed back to API. Author: @krokozha, created 2026-05-02, updated 2026-05-02, comments: 1, 👍: 0.
-- #960: [OPEN] Add SwarmScore — Portable Trust Rating for AI Agents. Author: @bkauto3, created 2026-05-02, updated 2026-05-02, comments: 0, 👍: 0.
-- #958: [OPEN] [documentation] Voice Services > Local TTS Provider Setup - Documentation links to unmaintained/archived repos. Author: @Thndr, created 2026-05-02, updated 2026-05-02, comments: 0, 👍: 0.
-- #956: [OPEN] [enhancement] Add image generation support (gpt-image-2) via OpenAI Codex OAuth. Author: @bashrusakh, created 2026-05-02, updated 2026-05-02, comments: 0, 👍: 0.
-
-Latest PRs (3 items):
-- #942: [OPEN] feat(sandbox): remote & multi-backend sandbox support (Vercel, Daytona, Firecracker). Author: @penso, created 2026-04-30, updated 2026-05-02, comments undefined, 👍: 0.
-- #957: [OPEN] fix(matrix): add debug logging for OIDC registration and deduplicate redirect normalization. Author: @penso, created 2026-05-02, updated 2026-05-02, comments undefined, 👍: 0.
-- #339: [CLOSED] feat(i18n): add zh-TW Traditional Chinese locale support. Author: @PeterDaveHello, created 2026-03-05, updated 2026-05-02, comments undefined, 👍: 0.
-
-We need to generate a structured digest with sections:
-
-1. **Today's Overview** - 3-5 sentences summarizing project status, including activity assessment.
-2. **Releases** - If new versions exist, detail changes, breaking changes, migration notes; omit if none.
-3. **Project Progress** - Merged/closed PRs today, what features advanced or were fixed.
-4. **Community Hot Topics** - Most active Issues/PRs with most comments/reactions (with links), analyze underlying needs.
-5. **Bugs & Stability** - Bugs, crashes, regressions reported today, ranked by severity, note if fix PRs exist.
-6. **Feature Requests & Roadmap Signals** - User-requested features, predict which might be in next version.
-7. **User Feedback Summary** - Real user pain points, use cases, satisfaction/dissatisfaction.
-8. **Backlog Watch** - Long-unanswered important Issues or PRs needing maintainer attention.
-
-We need to include GitHub links for each item.
-
-We need to be objective, data-driven, highlighting project health.
-
-We need to note that there are no new releases. So Releases section should be omitted or note none.
-
-Project Progress: The only merged PR is #339 (feat(i18n): add zh-TW Traditional Chinese locale support). So we can mention that.
-
-Community Hot Topics: The most active issues are #959 (bug) with 1 comment, #960 (SwarmScore) with 0 comments, #958 (docs) with 0 comments, #956 (enhancement) with 0 comments. Among PRs, #942 (sandbox) and #957 (matrix) are open. The one with most activity is #959 (bug) with 1 comment. Also #960 is a feature request for SwarmScore, which might be interesting. The PR #942 is a large feature for remote sandbox support. #957 is a fix for debug logging.
-
-We need to rank bugs by severity. The only bug is #959: DeepSeek reasoning_content error. It seems like a bug that affects the DeepSeek integration in thinking mode. It might be high severity because it prevents proper functionality. There's no fix PR yet. So we should note it.
-
-Feature Requests: #956 (image generation support via OpenAI Codex OAuth), #960 (SwarmScore trust rating). Also #942 (remote sandbox support) is a PR, but it's a feature. #957 is a fix.
-
-User Feedback Summary: We can infer from the issues: #958 is about documentation links being broken, which is a pain point for users trying to set up local TTS. #959 is a bug that affects DeepSeek users. #960 is a suggestion to add trust rating. #956 is a request for image generation.
-
-Backlog Watch: There may be long-unanswered issues. We only have data for the last 24h. However, we can note that #942 (sandbox) has been open since 2026-04-30 and is still open, maybe needs attention. #339 was just closed. #957 is a fix that is open. #958 is a docs issue. #956 is a feature request. We can also note that there are no new releases, but there is ongoing activity.
-
-We need to include GitHub links for each item. The base URL is https://github.com/moltis-org/moltis. For issues: https://github.com/moltis-org/moltis/issues/959, etc. For PRs: https://github.com/moltis-org/moltis/pull/942, etc.
-
-We should structure the digest accordingly.
-
-Let's draft each section.
-
-1. **Today's Overview**: Summarize that the project had 4 issues and 3 PRs updated in the last 24h, no new releases, one PR merged (Chinese locale support), several open issues including a bug in DeepSeek, a documentation issue, and feature requests for image generation and trust rating. The project is active with ongoing development.
-
-2. **Releases**: Since there are no new releases, we can omit this section or note "No new releases today."
-
-3. **Project Progress**: 
-   - Merged PR: #339 (feat(i18n): add zh-TW Traditional Chinese locale support) - adds Traditional Chinese support for macOS and web apps.
-   - Open PRs: #942 (feat(sandbox): remote & multi-backend sandbox support) and #957 (fix(matrix): add debug logging for OIDC registration and deduplicate redirect normalization).
-
-4. **Community Hot Topics**:
-   - Issue #959 (bug) has 1 comment, indicating active discussion. It's about DeepSeek reasoning_content error.
-   - Issue #960 (SwarmScore) is a feature request for portable trust rating, possibly of interest for agent reputation.
-   - PR #942 (sandbox) is a significant feature for remote sandbox support, likely important for cloud deployments.
-
-5. **Bugs & Stability**:
-   - #959: DeepSeek reasoning_content error in thinking mode. Severity: High (affects API usage). No fix PR yet.
-   - #958: Documentation links to unmaintained repos. Severity: Medium (hinders setup). No fix PR yet.
-
-6. **Feature Requests & Roadmap Signals**:
-   - #956: Add image generation support via OpenAI Codex OAuth. This could be a candidate for next version.
-   - #960: SwarmScore portable trust rating for AI agents. Might be considered for future roadmap.
-   - #942: Remote sandbox support. This is in PR, likely to be merged soon.
-
-7. **User Feedback Summary**:
-   - Users reporting documentation issues (#958) causing setup problems.
-   - Users encountering DeepSeek bug (#959) affecting functionality.
-   - Users requesting new features like image generation (#956) and trust rating (#960).
-
-8. **Backlog Watch**:
-   - #942 (sandbox) has been open for a few days, may need review.
-   - #957 (matrix fix) is a small fix, should be reviewed.
-   - #956 (image generation) is a feature request, may need evaluation.
-   - #960 (SwarmScore) is a proposal, may need discussion.
-
-We need to include GitHub links. For each item, we should include the URL.
-
-We should format the digest clearly.
-
-Let's write the final answer.
-</think>
-
 ## Moltis Project Digest – 2026-05-03
 
 ### 1. Today's Overview
@@ -1792,109 +1285,71 @@ Moltis maintained steady activity on 2026-05-03, with 4 issues and 3 pull reques
 No new releases were published today. The last release information is not available in the provided data.
 
 ### 3. Project Progress
-- **Merged PRs**  
-  - **#339** – *feat(i18n): add zh‑TW Traditional Chinese locale support* (merged 2026‑05‑02)  
-    Adds full Traditional Chinese (Taiwan) language support to macOS and web apps, including UI strings, locale detection, and language selection.  
+- **Merged PRs**
+  - **#339** – *feat(i18n): add zh‑TW Traditional Chinese locale support* (merged 2026‑05‑02)
+    Adds full Traditional Chinese (Taiwan) language support to macOS and web apps, including UI strings, locale detection, and language selection.
     🔗 https://github.com/moltis-org/moltis/pull/339
 
-- **Open PRs**  
-  - **#942** – *feat(sandbox): remote & multi‑backend sandbox support (Vercel, Daytona, Firecracker)* (opened 2026‑04‑30, updated 2026‑05‑02)  
-    Introduces remote and multi‑backend sandbox capabilities to enable sandboxed command execution on cloud platforms where Docker‑in‑Docker is unavailable.  
-    🔗 https://github.com/moltis-org/moltis/pull/942  
-  - **#957** – *fix(matrix): add debug logging for OIDC registration and deduplicate redirect normalization* (opened 2026‑05‑02, updated 2026‑05‑02)  
-    Improves debuggability of Matrix OIDC registration and removes duplicate loopback redirect normalization logic.  
+- **Open PRs**
+  - **#942** – *feat(sandbox): remote & multi‑backend sandbox support (Vercel, Daytona, Firecracker)* (opened 2026‑04‑30, updated 2026‑05‑02)
+    Introduces remote and multi‑backend sandbox capabilities to enable sandboxed command execution on cloud platforms where Docker‑in‑Docker is unavailable.
+    🔗 https://github.com/moltis-org/moltis/pull/942
+  - **#957** – *fix(matrix): add debug logging for OIDC registration and deduplicate redirect normalization* (opened 2026‑05‑02, updated 2026‑05‑02)
+    Improves debuggability of Matrix OIDC registration and removes duplicate loopback redirect normalization logic.
     🔗 https://github.com/moltis-org/moltis/pull/957
 
 ### 4. Community Hot Topics
-- **Issue #959** – *[bug] DeepSeek – Error: reasoning_content in thinking mode must be passed back to the API* (1 comment)  
-  Active discussion around a DeepSeek integration issue that prevents proper reasoning content handling. This is the only issue with comments, indicating user concern.  
+- **Issue #959** – *[bug] DeepSeek – Error: reasoning_content in thinking mode must be passed back to the API* (1 comment)
+  Active discussion around a DeepSeek integration issue that prevents proper reasoning content handling. This is the only issue with comments, indicating user concern.
   🔗 https://github.com/moltis-org/moltis/issues/959
 
-- **Issue #960** – *Add SwarmScore — Portable Trust Rating for AI Agents* (0 comments)  
-  Proposes integrating a portable reputation system for AI agents based on verified execution history. Aligns with emerging trends in agent trust and safety.  
+- **Issue #960** – *Add SwarmScore — Portable Trust Rating for AI Agents* (0 comments)
+  Proposes integrating a portable reputation system for AI agents based on verified execution history. Aligns with emerging trends in agent trust and safety.
   🔗 https://github.com/moltis-org/moltis/issues/960
 
-- **PR #942** – *Remote & multi‑backend sandbox support* (0 comments, but significant feature)  
+- **PR #942** – *Remote & multi‑backend sandbox support* (0 comments, but significant feature)
   Represents a major enhancement for cloud‑native deployments, likely to attract interest from users on platforms like Vercel, Fly.io, and Render.
 
 ### 5. Bugs & Stability
-- **#959** – **High Severity** – DeepSeek reasoning_content error in thinking mode.  
-  Affects API usage for DeepSeek models; no fix PR exists yet.  
+- **#959** – **High Severity** – DeepSeek reasoning_content error in thinking mode.
+  Affects API usage for DeepSeek models; no fix PR exists yet.
   🔗 https://github.com/moltis-org/moltis/issues/959
 
-- **#958** – **Medium Severity** – Documentation links to unmaintained/archived repos for Local TTS Provider Setup.  
-  Hinders users trying to configure local TTS; no fix PR yet.  
+- **#958** – **Medium Severity** – Documentation links to unmaintained/archived repos for Local TTS Provider Setup.
+  Hinders users trying to configure local TTS; no fix PR yet.
   🔗 https://github.com/moltis-org/moltis/issues/958
 
 ### 6. Feature Requests & Roadmap Signals
-- **#956** – *Add image generation support (gpt‑image‑2) via OpenAI Codex OAuth*  
-  Requests integration of OpenAI’s latest image generation model, potentially a near‑term roadmap item.  
+- **#956** – *Add image generation support (gpt‑image‑2) via OpenAI Codex OAuth*
+  Requests integration of OpenAI’s latest image generation model, potentially a near‑term roadmap item.
   🔗 https://github.com/moltis-org/moltis/issues/956
 
-- **#960** – *SwarmScore — Portable Trust Rating for AI Agents*  
-  Suggests a reputation system for agents; may influence future security or trust features.  
+- **#960** – *SwarmScore — Portable Trust Rating for AI Agents*
+  Suggests a reputation system for agents; may influence future security or trust features.
   🔗 https://github.com/moltis-org/moltis/issues/960
 
-- **#942** – *Remote & multi‑backend sandbox support* (PR)  
+- **#942** – *Remote & multi‑backend sandbox support* (PR)
   Likely to be merged soon, indicating focus on cloud‑native and flexible deployment options.
 
 ### 7. User Feedback Summary
-- **Documentation Issues**: Users report broken links in voice services documentation (#958), causing friction during setup.  
-- **Bug Reports**: A DeepSeek integration bug (#959) has been highlighted, showing users rely on multi‑model support.  
+- **Documentation Issues**: Users report broken links in voice services documentation (#958), causing friction during setup.
+- **Bug Reports**: A DeepSeek integration bug (#959) has been highlighted, showing users rely on multi‑model support.
 - **Feature Interest**: Community members are requesting advanced features like image generation (#956) and trust ratings (#960), reflecting demand for richer AI capabilities.
 
 ### 8. Backlog Watch
-- **#942** – Open since 2026‑04‑30; needs review for remote sandbox support.  
+- **#942** – Open since 2026‑04‑30; needs review for remote sandbox support.
   🔗 https://github.com/moltis-org/moltis/pull/942
-- **#957** – Small but useful fix for Matrix OIDC debugging; awaiting merge.  
+- **#957** – Small but useful fix for Matrix OIDC debugging; awaiting merge.
   🔗 https://github.com/moltis-org/moltis/pull/957
-- **#956** – Feature request for image generation; may require evaluation against roadmap priorities.  
+- **#956** – Feature request for image generation; may require evaluation against roadmap priorities.
   🔗 https://github.com/moltis-org/moltis/issues/956
-- **#960** – Proposal for SwarmScore; needs discussion on scope and alignment with project goals.  
+- **#960** – Proposal for SwarmScore; needs discussion on scope and alignment with project goals.
   🔗 https://github.com/moltis-org/moltis/issues/960
 
 </details>
 
 <details>
 <summary><strong>CoPaw</strong> — <a href="https://github.com/agentscope-ai/CoPaw">agentscope-ai/CoPaw</a></summary>
-
-<think>Let me analyze the provided GitHub data for CoPaw (github.com/agentscope-ai/CoPaw) and generate a structured project digest for 2026-05-03.
-
-Key data points:
-- Issues updated in last 24h: 14 (all open/active)
-- PRs updated in last 24h: 6 (all open)
-- New releases: 0
-
-Let me organize this into the requested sections.
-
-Looking at the issues:
-1. #3640 - Bug: MCP client TaskGroup exception causing Agent freeze (Chinese)
-2. #1327 - Feature: Model fallback chain for automatic rate limit handling
-3. #4006 - Bug: Reasoning Content Not Filtered in OpenAI-Compatible Provider
-4. #3991 - Question: Ollama channel cannot carry conversation history
-5. #4011 - Enhancement: Add fallback model option
-6. #4010 - Enhancement: Add interrupt/terminate function for Feishu, WeChat channels
-7. #4008 - Question: Support for agent evaluation functionality
-8. #4004 - feat: auto-derive max_input_length from model context window
-9. #4003 - Enhancement: Ollama support (ARM64 issue)
-10. #4002 - Enhancement: Add visual shared area in dialogue interface
-11. #4001 - Enhancement: Support manual deletion of single messages
-12. #3789 - Enhancement: Add model fallback function
-13. #4000 - User feedback: WeChat dialogue not synced with browser + voice input missing
-14. #3997 - Question: MCP client timeout issue
-
-Pull Requests:
-1. #3999 - feat(skills): add cli skill test command
-2. #4009 - feat(i18n): add Brazilian Portuguese locale support
-3. #4007 - fix: fix #3182 and #3828, add MemoryHook long-term memory enhancement
-
-
-4. #4005 - fix(#3041): WSL2 NAT network environment docs fix
-5. #3831 - Add vector model connection test feature
-6. #3525 - feat(cron): create Discord thread before agent dispatch
-
-Now I'll structure this into the digest format.
-</think>
 
 # CoPaw Project Digest — 2026-05-03
 
@@ -2040,61 +1495,6 @@ No activity in the last 24 hours.
 
 <details>
 <summary><strong>NemoClaw</strong> — <a href="https://github.com/NVIDIA/NemoClaw">NVIDIA/NemoClaw</a></summary>
-
-<think>Let me analyze the GitHub data for NemoClaw and generate a structured project digest for 2026-05-03.
-
-Key data points:
-- Issues updated in last 24h: 28 (open/active: 20, closed: 8)
-- PRs updated in last 24h: 50 (open: 19, merged/closed: 31)
-- New releases: 0
-
-Let me organize this into the required sections.
-
-**Today's Overview:**
-- High activity with 28 issues and 50 PRs updated
-- No new releases
-- Multiple bug fixes merged, including security fixes
-- Several refactoring PRs to extract CLI actions
-- Active development on v0.0.34
-
-**Releases:**
-- None today
-
-**Project Progress:**
-Merged/closed PRs:
-1. #2712 - fix(sandbox): export proxy env in bash -ic / bash -lc (#2704)
-2. #2842 - fix(config): gracefully skip invalid numeric env vars at build time
-3. #2800 - feat(onboard): add WSL Windows-host Ollama install/start/restart flow
-4. #2825 - fix(logs): honor tail and since flags
-5. #2885 - closed (no summary)
-6. #2841 - refactor(cli): shrink runtime bridge
-7. #2840 - refactor(cli): extract credentials and list runtime bits
-8. #2839 - refactor(cli): extract policy and channels actions
-9. #2050 - fix(cli): add nemoclaw <name> recover command
-10. #2888 - fix: normalize OpenClaw config generator permissions
-
-Open PRs with significant work:
-- #2890 - fix(onboard): recover stale onboarding locks after PID reuse
-- #2891 - refactor(cli): extract sandbox connect action
-
-
-- #2889 - fix(installer): surface current-shell PATH readiness
-- #2887 - refactor(cli): extract sandbox skill install action
-- #2886 - refactor(cli): extract sandbox live state helpers
-- #2884 - fix(status): require verified gateway before healthy inference
-- #2737 - fix: complete #2731, #2697, and #2727 reliability fixes
-- #2468 - fix(security): route dashboard URL output through redact() to prevent token leakage
-- #2414 - fix(security): harden config set SSRF validation
-- #2245 - fix(onboard): classify TLS certificate errors as transport failures
-
-The most active discussions center on a few key areas. Issue #1992 has accumulated 338 comments around nightly E2E test failures, while #2733 with 9 comments addresses Ollama tool-call reliability concerns. Several PRs are tackling critical infrastructure work—security hardening for token leakage and SSRF validation, plus ongoing CLI refactoring to extract sandbox-related actions into separate modules. The team is also addressing environment configuration issues like proxy export in sandbox contexts and WSL Ollama integration.
-
-Stability issues span multiple platforms and components. Docker builds fail at Step 17 when patching against bundled OpenClaw versions, and the nightly E2E pipeline remains broken. Networking performance during onboarding needs investigation, while the Brev Launchable dashboard shows version and health reporting problems. Preset application has regressed, and macOS TUI doesn't properly handle exported sandbox ports. The CLI's JSON output formatting is broken, and the logs command ignores tail and since flags. There's also a permission issue with generate-openclaw-config.py and a heartbeat mechanism that can't be disabled.
-
-Several high-priority enhancements are being proposed: a new `nemoclaw inference` CLI wrapper for runtime provider and model switching, a `--sku` flag for Brev instance selection, auto-update capabilities for OpenClaw, and a model size confirmation prompt before downloading Ollama models. A Dashboard Delivery Contract would establish a single source of truth for dashboard configuration.
-
-Users are encountering friction across multiple areas—Ollama integration problems, networking latency during setup, CLI usability gaps, and Docker build reliability issues. The nightly E2E failures and inability to disable heartbeat are particularly problematic. Several issues remain unaddressed, including the nightly E2E failure (17 days old with 338 comments), the Ollama tool-call reliability issue (3 days old), and the missing Ollama ports in the local-inference policy preset (12 days old). The networking latency investigation has been pending for 16 days, and the Brev Launchable dashboard version display issue needs resolution.
-</think>
 
 # NemoClaw Project Digest — 2026-05-03
 

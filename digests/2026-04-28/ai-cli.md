@@ -15,72 +15,9 @@
 
 ## 横向对比
 
-<think>用户要求我基于之前生成的各工具日报数据，生成一份横向对比分析报告。让我整理各工具的数据：
-
-**Claude Code:**
-- Issues: 50条（展示30条评论最多的）
-- PRs: 14条
-- Releases: v2.1.121
-- 热门话题：自动压缩阈值问题、OAuth认证缺陷、权限系统复杂性
-
-**OpenAI Codex:**
-- Issues: 50条（展示30条评论最多的）
-- PRs: 50条（展示20条评论最多的）
-- Releases: rust-v0.126.0-alpha.6/7/8
-- 热门话题：远程开发、1M token上下文、速率限制
-
-**Gemini CLI:**
-- Issues: 50条（展示30条评论最多的）
-- PRs: 50条（展示20条评论最多的）
-- Releases: v0.41.0-nightly.20260427.g42587de73
-- 热门话题：权限管理、Subagent鲁棒性、工具数量限制
-
-**GitHub Copilot CLI:**
-- Issues: 41条（展示30条评论最多的）
-- PRs: 0条
-- Releases: v1.0.37
-- 热门话题：单次请求导致超额消耗、模型列表不一致、Autopilot无限循环
-
-**Kimi Code CLI:**
-- Issues: 6条
-- PRs: 11条
-- Releases: 无
-- 热门话题：审批机制优化、可观测性、长会话性能
-
-
-**OpenCode:**
-- Issues: 50条（展示30条评论最多的）
-- PRs: 50条（展示20条评论最多的）
-- Releases: v1.14.27, v1.14.28
-- 热门话题：多模型支持、存储持久化Bug、TUI体验
-
-**Qwen Code:**
-- Issues: 50条（展示30条评论最多的）
-- PRs: 50条（展示20条评论最多的）
-- Releases: v0.15.2-nightly.20260428
-- 热门话题：DeepSeek V4兼容性、背景任务管理、Markdown渲染
-
-**Pi:**
-- Issues: 50条（展示30条评论最多的）
-- PRs: 27条（展示20条评论最多的）
-- Releases: v0.70.3/0.70.4/0.70.5
-- 热门话题：多提供商支持、多运行时兼容、自更新
-
-现在生成横向对比报告：
-
-1. **生态全景** - 3-5句话概括
-2. **各工具活跃度对比** - 表格
-3. **共同关注的功能方向** - 多工具都关注的
-4. **差异化定位分析** - 各工具的差异
-5. **社区热度与成熟度** - 活跃度评估
-6. **值得关注的趋势信号** - 行业趋势
-
-让我组织内容：
-</think>
-
 # AI CLI 工具生态横向对比分析报告
 
-**日期：** 2026-04-28  
+**日期：** 2026-04-28
 **数据来源：** 各主流 AI CLI 工具 GitHub 社区
 
 ---
@@ -282,77 +219,9 @@ Claude Code 的 OAuth token 缺陷、Gemini CLI 的 workspace trust、Copilot CL
 <details>
 <summary><strong>Claude Code</strong> — <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-28 的 Claude Code 社区动态日报。让我仔细分析这些数据并按照要求的格式生成报告。
-
-数据包括：
-1. 最新 Releases - v2.1.121
-2. 最新 Issues - 50条，展示了30条评论最多的
-3. 最新 Pull Requests - 14条
-
-让我按照要求的结构来组织：
-
-## 1. 今日速览
-- v2.1.121 发布，新增 MCP server `alwaysLoad` 选项和插件清理功能
-- 社区热点集中在自动压缩触发阈值问题（1M上下文窗口下76K就触发）
-- 多个平台（Windows/macOS）的认证和权限问题
-
-## 2. 版本发布
-v2.1.121:
-- 新增 `alwaysLoad` 选项到 MCP server 配置
-- 新增 `claude plugin prune` 命令
-- 插件卸载支持级联清理
-
-## 3. 社区热点 Issues（10个）
-需要挑选10个最有价值的：
-
-1. #12513 - 自动 worktree 创建问题（35评论，59👍）- macOS 用户关注
-2. #49500 - API Stream idle timeout（18评论）- Windows 平台
-3. #28791 - CLI 和 Desktop 应用对话同步（17评论，38👍）- 重要功能需求
-
-
-4. #21943 - 订阅使用数据 API 暴露（10评论，33👍）- 开发者工具需求
-5. #18236 - Bash 工具工作目录删除后失败（9评论，10👍）- 已关闭
-6. #45390 - 1M 上下文额外使用问题（9评论，14👍）- Max 计划用户
-7. #46140 - OAuth Bearer token 问题（7评论）- 关键认证问题
-8. #34332 - 自动压缩在 76K 触发（5评论，10👍）- 性能问题
-
-我注意到这些 Issues 涵盖了多个关键领域：平台兼容性、用户体验、性能优化和开发者工具。每个问题都反映了用户在实际使用中的具体痛点和改进需求。
-
-9. #54121 - 项目特定配置存储（4评论）- 新功能请求
-10. #53199 - 自动压缩阈值问题（3评论）- 回归问题
-
-## 4. 重要 PR 进展（10个）
-1. #54134 - README macOS 拼写修正
-2. #54103 - commit-push-pr 权限修复
-3. #54094 - 插件路径引号问题
-4. #33070 - reframe 插件
-5. #53949 - 安全文档更新
-6. #43824 - 安全漏洞修复
-7. #41447 - 开源请求
-8. #53831 - 提交快照
-9. #33224 - DevContainer Node 版本配置
-10. #33234 - 初始提交处理
-
-## 5. 功能需求趋势
-- IDE 集成改进
-- 跨平台一致性
-- 权限和认证增强
-- 性能优化
-- 新模型支持
-
-## 6. 开发者关注点
-- 自动压缩行为不一致
-- 权限系统复杂性
-- MCP 集成问题
-- 订阅使用透明度
-- 跨平台差异
-
-我将用中文撰写这份报告，确保技术细节清晰且易于理解。
-</think>
-
 # Claude Code 社区动态日报
 
-**日期**: 2026-04-28  
+**日期**: 2026-04-28
 **数据来源**: github.com/anthropics/claude-code
 
 ---
@@ -485,64 +354,9 @@ v2.1.121:
 <details>
 <summary><strong>OpenAI Codex</strong> — <a href="https://github.com/openai/codex">openai/codex</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-28 的 OpenAI Codex 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-1. 最新 Releases：3 个 rust-v0.126.0-alpha 预发布版本
-2. 最新 Issues：50 条，展示了评论数最多的 30 条
-3. 最新 Pull Requests：50 条，展示了评论数最多的 20 条
-
-让我按照要求的结构来组织内容：
-
-## 1. 今日速览
-- 3 个 alpha 版本发布（0.126.0-alpha.6/7/8）
-- 社区关注焦点：远程开发支持、1M token 上下文窗口、速率限制问题
-- 多个安全相关 PR 合并
-
-## 2. 版本发布
-- rust-v0.126.0-alpha.8/7/6 连续发布
-- 这是预发布版本，可能包含新功能或修复
-
-## 3. 社区热点 Issues（10个）
-从数据中挑选最值得关注的：
-
-1. #10450 - 远程开发功能请求（171评论，615👍）- 最热门
-2. #19464 - 1M token 上下文支持（65评论，83👍）
-3. #9224 - Codex 远程控制（44评论，321👍）
-
-
-4. #13917 - Windows PowerShell 启动问题（37评论）
-5. #19204 - 安全检查误报（19评论）
-6. #18993 - VS Code 扩展历史记录问题（15评论）
-7. #13733 - 后台进程轮询消耗 token（14评论）
-8. #19215 - GPT 5.5 速率限制（13评论）
-9. #17318 - 模型切换问题（10评论）
-10. #18506 - Windows WSL UNC 路径问题（6评论）
-
-## 4. 重要 PR 进展（10个）
-从 PR 列表中筛选关键更新：
-
-1. #19905 - 添加紧凑生命周期钩子
-2. #19473 - 回合元数据添加时间戳
-3. #19509 - MCP 工具调用遥测
-4. #19907 - 网络审批提示优化
-5. #19763 - Agent Identity 运行时加载重构
-6. #19764 - JWT 验证功能
-7. #19708 - 云需求加载
-8. #19481 - 移除幽灵快照
-9. #19537 - MCP 审批策略修复
-10. #19769 - Codex 使用提示功能
-
-## 5. 功能需求趋势
-社区反馈集中在几个关键领域：远程开发能力、扩展上下文窗口、跨平台稳定性、速率限制优化、VS Code 集成增强以及安全机制改进。
-
-## 6. 开发者关注点
-主要痛点包括 token 消耗过快、速率限制过严、后台进程资源占用、WSL 兼容性问题、插件系统缺陷和会话历史同步问题。
-</think>
-
 # OpenAI Codex 社区动态日报
 
-**日期：** 2026-04-28  
+**日期：** 2026-04-28
 **数据来源：** github.com/openai/codex
 
 ---
@@ -772,8 +586,8 @@ v2.1.121:
 
 ---
 
-**📅 报告生成时间：** 2026-04-28  
-**数据覆盖范围：** 过去 24 小时  
+**📅 报告生成时间：** 2026-04-28
+**数据覆盖范围：** 过去 24 小时
 **分析师：** AI Development Tools Technical Analyst
 
 </details>
@@ -781,83 +595,9 @@ v2.1.121:
 <details>
 <summary><strong>Gemini CLI</strong> — <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-28 的 Gemini CLI 社区动态日报。让我仔细分析这些数据并按照要求的格式生成报告。
-
-数据来源：
-- 最新 Releases: v0.41.0-nightly.20260427.g42587de73
-- 最新 Issues: 50条，展示30条评论最多的
-- 最新 PRs: 50条，展示20条评论最多的
-
-让我按照要求的结构来组织：
-
-1. 今日速览
-2. 版本发布
-3. 社区热点 Issues（10个）
-4. 重要 PR 进展（10个）
-5. 功能需求趋势
-6. 开发者关注点
-
-让我先分析数据：
-
-**版本发布**：
-- v0.41.0-nightly.20260427.g42587de73
-- 修复了 list suggestion 的显示逻辑
-- 新增了 .env 安全加载和 workspace trust 功能
-
-**热门 Issues**：
-1. #24880 - Google 登录后 403 API Error（38条评论，CLOSED）
-2. #22745 - AST 感知文件读取/搜索/映射的评估（5条评论）
-3. #22323 - Subagent 在 MAX_TURNS 后报告 GOAL success 的问题（4条评论）
-4. #24916 - Gemini CLI 重复请求同一文件的权限（3条评论）
-
-
-5. #22203 - 将 ToDo 重命名为 Tasks（3条评论）
-6. #25166 - Shell 命令执行后卡在 "Waiting input"（2条评论）
-7. #23571 - 模型在随机位置创建临时脚本（2条评论）
-8. #22267 - Browser Agent 忽略 settings.json 覆盖（2条评论）
-9. #25216 - Gemini 在临时路径 A:\ 打开失败（1条评论）
-10. #24915 - 提示符栏顶部和底部出现黑色边框（1条评论）
-
-**重要 PRs**：
-1. #26084 - 修复超过 128 个工具时的 400 错误
-2. #23176 - 修复上下文初始化不匹配
-3. #25352 - 修复日志导致滚动延迟
-4. #25904 - v0.40.0-preview.3 的变更日志
-5. #25772 - v0.39.0-preview.1 的变更日志
-6. #25779 - v0.39.0-preview.2 的变更日志
-7. #25319 - Gundermanc/deep validation
-8. #24477 - 修复并行任务追踪器更新
-9. #25945 - 实现时间序列指标分析机器人
-10. #25930 - 更新沙箱文档
-11. #19857 - 支持 subagent 的 verbose 模式
-12. #21265 - 改进 subagent 对 INVALID_ARGUMENT 错误的处理
-13. #21873 - 修复 subagent 调用工具时的挂起问题
-14. #22677 - 将 port planner 移植到 subagent
-15. #23608 - 让 subagent 了解活跃的审批模式
-16. #25550 - 添加 Newgate 内存管道调查设计
-17. #25846 - v0.40.0-preview.2 的变更日志
-18. #20738 - 使 maxFileCount 可配置
-19. #25291 - 提供用户友好的无效 API 密钥错误消息
-20. #26073 - 修复 generalist profile 的剩余问题
-
-**功能需求趋势**：
-1. 安全性和权限管理
-2. Subagent 鲁棒性和可靠性
-3. 性能优化（滚动、日志、工具限制）
-4. IDE 集成和内存管道
-5. 配置灵活性
-
-**开发者关注点**：
-1. 权限重复请求问题
-2. Shell 命令卡住问题
-3. 工具数量限制（128个）
-4. 认证和 API 错误处理
-5. 子代理的审批模式感知
-</think>
-
 # Gemini CLI 社区动态日报
 
-**日期**: 2026-04-28  
+**日期**: 2026-04-28
 **数据来源**: github.com/google-gemini/gemini-cli
 
 ---
@@ -955,19 +695,19 @@ v2.1.121:
 
 ### 痛点汇总
 
-1. **权限管理失效**  
+1. **权限管理失效**
    用户反馈"allow for all future sessions"选项不生效，同一文件反复请求权限（#24916）
 
-2. **Shell 命令挂起**  
+2. **Shell 命令挂起**
    简单命令执行完成后 CLI 仍显示 "Awaiting user input"，需手动中断（#25166）
 
-3. **工具数量硬限制**  
+3. **工具数量硬限制**
    启用超过 128 个工具时直接触发 400 错误，缺乏智能裁剪（#24246, #26084）
 
-4. **认证错误不友好**  
+4. **认证错误不友好**
    API Key 无效时直接崩溃，缺少引导用户执行 `gemini login` 的提示（#25291）
 
-5. **Subagent 调试困难**  
+5. **Subagent 调试困难**
    subagent 失败时黑盒化，verbose 模式缺失导致问题定位成本高（#19857）
 
 ### 高频需求
@@ -979,47 +719,13 @@ v2.1.121:
 
 ---
 
-> 📊 本报告基于 2026-04-28 00:00 - 23:59 (UTC) 的 GitHub 活动数据生成  
+> 📊 本报告基于 2026-04-28 00:00 - 23:59 (UTC) 的 GitHub 活动数据生成
 > 🔗 订阅 [Gemini CLI 社区动态](https://github.com/google-gemini/gemini-cli/discussions/categories/announcements) 获取每日更新
 
 </details>
 
 <details>
 <summary><strong>GitHub Copilot CLI</strong> — <a href="https://github.com/github/copilot-cli">github/copilot-cli</a></summary>
-
-<think>用户要求我根据提供的 GitHub Copilot CLI 数据生成一份 2026-04-28 的社区动态日报。让我仔细分析数据并按照要求的结构组织内容。
-
-数据概览：
-- 最新 Releases: v1.0.37 (2026-04-27)
-- 最新 Issues: 41 条，展示的 30 条中评论数最多的
-- 最新 PRs: 0 条
-
-让我按照要求的结构来组织：
-
-1. **今日速览** - 总结最重要动态
-2. **版本发布** - v1.0.37 的更新内容
-3. **社区热点 Issues** - 挑选 10 个最值得关注的
-4. **重要 PR 进展** - 0 条 PRs，需要说明
-5. **功能需求趋势** - 从 Issues 中提炼
-6. **开发者关注点** - 痛点和高频需求
-
-让我先筛选出最重要的 Issues（按评论数和👍数排序）：
-
-1. #2591 - 单次请求导致无限 premium 请求消耗 (31 评论, 13 👍) - 重要
-2. #1703 - CLI 不显示所有 org 启用的模型 (25 评论, 40 👍) - 高热度
-3. #1455 - 自动注入 Co-authored by Copilot (8 评论, 2 👍) - 功能建议
-4. #2769 - Pro+ 周限额未重置 (8 评论, 3 👍) - 订阅问题
-
-
-5. #1523 - 无限循环调用 task_complete (3 评论, 3 👍) - 严重 bug
-6. #3000 - config-dir 不隔离插件 (3 评论, 0 👍) - 配置问题
-7. #2977 - Skills 未加载 (3 评论, 1 👍) - 插件问题
-8. #2969 - Autopilot 无限循环 (3 评论, 0 👍) - 严重 bug
-9. #2895 - Compaction 剥离 agent_instructions (2 评论, 1 👍) - 功能缺陷
-10. #2792 - 模型自动切换 (2 评论, 3 👍) - 功能建议
-
-接下来需要从这些 Issues 中提炼功能需求趋势和开发者关注点。#1703 和 #2792 反映了对模型管理的需求，#1455 和 #2895 涉及 Copilot 的集成能力，而 #2591、#1523、#2969 则暴露了核心稳定性问题。#2769 指向订阅计费痛点，#3000 和 #2977 涉及配置和插件系统的改进。
-</think>
 
 # GitHub Copilot CLI 社区动态日报
 
@@ -1163,28 +869,9 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 <details>
 <summary><strong>Kimi Code CLI</strong> — <a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-28 的 Kimi Code CLI 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases：0 条
-- 最新 Issues：6 条（5 OPEN, 1 CLOSED）
-- 最新 Pull Requests：11 条（7 OPEN, 4 CLOSED）
-
-让我整理并生成报告：
-
-1. 今日速览
-2. 版本发布 - 无
-3. 社区热点 Issues - 6条全选
-4. 重要 PR 进展 - 11条全选
-5. 功能需求趋势
-6. 开发者关注点
-
-让我开始撰写：
-</think>
-
 # Kimi Code CLI 社区动态日报
 
-**日期**: 2026-04-28  
+**日期**: 2026-04-28
 **数据来源**: github.com/MoonshotAI/kimi-cli
 
 ---
@@ -1204,7 +891,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ## 3. 社区热点 Issues
 
 ### 🔥 #1823 | Feature Request: Configurable Approval Request Timeout
-**状态**: OPEN | 评论: 5 | 👍: 2  
+**状态**: OPEN | 评论: 5 | 👍: 2
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/1823
 
 **摘要**: 用户请求将审批请求的 300 秒硬编码超时改为可配置选项，支持设置更长超时或无限期。
@@ -1214,7 +901,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 🐛 #2074 | [Bug] v1.39.0 /web 模式 JavaScript 文件 MIME 类型错误
-**状态**: OPEN | 评论: 1 | 👍: 0  
+**状态**: OPEN | 评论: 1 | 👍: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2074
 
 **摘要**: Windows 10 用户报告 /web 模式下 JavaScript 文件返回错误的 MIME 类型，导致页面无法加载。
@@ -1224,7 +911,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 🐛 #2091 | Session becomes extremely slow in v1.37.0 after extensive MATLAB work
-**状态**: OPEN | 评论: 0 | 👍: 0  
+**状态**: OPEN | 评论: 0 | 👍: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2091
 
 **摘要**: 特定会话在长时间 MATLAB 工作后变得极慢（每个 token 数秒），但其他会话正常。
@@ -1234,7 +921,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 🐛 #2090 | [Bug] 首行文本比其他行多一个字符缩进
-**状态**: OPEN | 评论: 0 | 👍: 0  
+**状态**: OPEN | 评论: 0 | 👍: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2090
 
 **摘要**: WSL2 Ubuntu 20.04 用户发现输出文本首行存在额外缩进问题。
@@ -1244,7 +931,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 💡 #2089 | [enhancement] remove session execution
-**状态**: OPEN | 评论: 0 | 👍: 0  
+**状态**: OPEN | 评论: 0 | 👍: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2089
 
 **摘要**: 用户希望添加直接删除 session execution 的功能，无需手动操作文件夹。
@@ -1254,7 +941,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### ✅ #2051 | Shell transcript hides skill and flow slash prompts
-**状态**: CLOSED | 评论: 0 | 👍: 0  
+**状态**: CLOSED | 评论: 0 | 👍: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2051
 
 **摘要**: 交互式 shell 将 slash 命令作为控制命令处理，导致 /skill 和 /flow 输入在转录中不可见。
@@ -1400,53 +1087,6 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 <details>
 <summary><strong>OpenCode</strong> — <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-28 的 OpenCode 社区动态日报。我需要：
-
-1. 今日速览 - 2-3句话概括最重要动态
-2. 版本发布 - 总结 v1.14.28 和 v1.14.27 的更新
-3. 社区热点 Issues - 挑选 10 个最值得关注的 Issue
-4. 重要 PR 进展 - 挑选 10 个重要的 PR
-5. 功能需求趋势 - 提炼社区关注的功能方向
-6. 开发者关注点 - 总结痛点和高频需求
-
-让我分析数据：
-
-**版本发布：**
-- v1.14.28: 修复了 `opencode upgrade` 在 bun 安装时的问题
-- v1.14.27: 添加了可配置的默认 shell，改进 TUI，减少噪音
-
-**热门 Issues（按评论数排序）：**
-1. #3765 - OpenTUI 渲染库初始化失败（30条评论）
-2. #6680 - 查看归档会话的功能请求（27条评论）
-4. #23887 - Kimi K2.6/K2.5 返回 Provider error（24条评论）
-5. #24039 - 添加 GPT-5.5 支持（19条评论）
-6. #16685 - Kimi K2.5 在 Windows 上问题（18条评论）
-
-
-7. #24184 - IDE/编辑器上下文在关闭文件后仍然存在（18条评论）
-8. #24569 - DeepSeek V4 Pro reasoning_content 错误（17条评论）
-9. #17376 - Web 端无限认证循环（16条评论）
-10. #5121 - Winget 安装选项（12条评论）
-
-**重要 PR：**
-1. #24705 - bump effect beta（已关闭）
-2. #24704 - 存储会话相对路径（已合并）
-3. #20468 - 数字键盘支持（进行中）
-4. #24703 - 修复 HTTP API OAuth（已关闭）
-5. #22884 - 写入工具挂起测试（进行中）
-6. #24701 - 修复分享页面滚动（进行中）
-7. #24702 - 修复 compaction parts tail_start_id（进行中）
-8. #18767 - 移动端触摸优化（进行中）
-9. #13854 - 停止流式传输 markdown/code（进行中）
-10. #23839 - 附加服务器无法连接时快速失败（进行中）
-
-还有一些其他 PR 值得关注，包括 #24693 的 HTTP API 会话处理、#24666 的 model.before hook、#22296 的托管设置配置、#24692 的非 git 项目处理，以及 #24691 和 #19127 中关于 agent 排序顺序的功能。
-
-从这些 PR 和 issue 中可以看出几个明显的趋势：多模型支持方面有 GPT-5.5、DeepSeek-V4 和 Kimi K2.6/K2.5 的集成；性能和稳定性问题如 CPU 占用、存储持久化、流式输出截断等；TUI 和 IDE 相关的改进包括 OpenTUI 渲染、数字键盘支持、编辑器上下文管理；认证和权限方面涉及 OAuth 流程、托管配置和企业级功能；最后是移动端和跨平台适配的需求。
-
-开发者们主要在处理几个核心问题：模型调用失败（尤其是 Kimi 系列）、存储数据丢失、认证流程卡死、模型选择器意外重置、Agent 中途停止工作，以及 OpenTUI 的兼容性问题。
-</think>
-
 # OpenCode 社区动态日报 | 2026-04-28
 
 ---
@@ -1487,7 +1127,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ## 3. 社区热点 Issues（Top 10）
 
 ### 1. 🔴 [CLOSED] OpenTUI 渲染库初始化失败
-**#3765** | 评论: 30 | 👍: 0  
+**#3765** | 评论: 30 | 👍: 0
 **作者**: @devahmedshendy | 创建于 2025-11-02
 
 **问题摘要**: 首次安装 OpenCode 后启动失败，报错 `Failed to initialize OpenTUI render library`。
@@ -1499,7 +1139,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 2. 🟡 [OPEN] 查看归档会话功能请求
-**#6680** | 评论: 27 | 👍: 4  
+**#6680** | 评论: 27 | 👍: 4
 **作者**: @0xajka | 创建于 2026-01-02
 
 **问题摘要**: 请求在侧边栏 `...` 菜单中添加"查看归档会话"选项，通过弹窗展示归档会话列表。
@@ -1511,7 +1151,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 3. 🔴 [OPEN] Kimi K2.6/K2.5 返回 Provider Error
-**#23887** | 评论: 24 | 👍: 4  
+**#23887** | 评论: 24 | 👍: 4
 **作者**: @byungsker | 创建于 2026-04-22
 
 **问题摘要**: OpenCode Go + Kimi K2.6/K2.5 模型持续返回 "Provider returned error"，而同订阅下的 GLM-5、Qwen3.5 Plus、MiniMax M2.5/M2.7 均正常工作。
@@ -1523,7 +1163,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 4. 🟢 [CLOSED] 添加 GPT-5.5 支持
-**#24039** | 评论: 19 | 👍: 14  
+**#24039** | 评论: 19 | 👍: 14
 **作者**: @behavio1 | 创建于 2026-04-23
 
 **问题摘要**: 请求为 OpenAI provider 添加第一-class 的 `gpt-5.5` 模型支持。
@@ -1535,7 +1175,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 5. 🔴 [CLOSED] Windows 平台 Kimi K2.5 问题
-**#16685** | 评论: 18 | 👍: 7  
+**#16685** | 评论: 18 | 👍: 7
 **作者**: @ChrisWenChen | 创建于 2026-03-09
 
 **问题摘要**: Windows 桌面客户端通过 OpenCode Go 使用 Kimi K2.5 时持续出现 "Provider returned error"。
@@ -1547,7 +1187,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 6. 🟡 [OPEN] 关闭文件后 IDE 上下文未刷新
-**#24184** | 评论: 18 | 👍: 2  
+**#24184** | 评论: 18 | 👍: 2
 **作者**: @gabethehuman | 创建于 2026-04-24
 
 **问题摘要**: 自 v1.14.23 起，关闭编辑器中的文件后，OpenCode TUI 提示区仍显示旧文件名，导致 LLM 基于过时上下文响应。
@@ -1559,7 +1199,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 7. 🔴 [OPEN] DeepSeek V4 Pro reasoning_content 错误
-**#24569** | 评论: 17 | 👍: 7  
+**#24569** | 评论: 17 | 👍: 7
 **作者**: @077dwei | 创建于 2026-04-27
 
 **问题摘要**: v1.14.27 中使用 DeepSeek V4 Pro 时，`reasoning_content` 在思考模式下未正确回传至 API。
@@ -1571,7 +1211,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 8. 🔴 [OPEN] Web 端 Terminal 无限认证循环
-**#17376** | 评论: 16 | 👍: 14  
+**#17376** | 评论: 16 | 👍: 14
 **作者**: @boyu8266 | 创建于 2026-03-13
 
 **问题摘要**: 在 OpenCode Web 中配置用户名密码后尝试打开 Terminal，进入无限认证循环，正确凭证也无法登录。
@@ -1583,7 +1223,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 9. 🟡 [OPEN] Winget 安装选项
-**#5121** | 评论: 12 | 👍: 18  
+**#5121** | 评论: 12 | 👍: 18
 **作者**: @ma-gu | 创建于 2025-12-05
 
 **问题摘要**: 询问 Windows 包管理器 winget 的安装选项及包维护归属问题。
@@ -1595,7 +1235,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 ---
 
 ### 10. 🔴 [CLOSED] 存储持久化失效（严重）
-**#24628** | 评论: 11 | 👍: 0  
+**#24628** | 评论: 11 | 👍: 0
 **作者**: @davidbernat | 创建于 2026-04-27
 
 **问题摘要**: OpenCode 自 2026-01-31 起停止向 `~/.local/share/opencode/storage/` 写入数据，`session.processor` 执行成功但无文件落地。
@@ -1773,69 +1413,9 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 <details>
 <summary><strong>Qwen Code</strong> — <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-28 的 Qwen Code 社区动态日报。我需要：
-
-1. 今日速览 - 2-3句话概括最重要动态
-2. 版本发布 - 总结新版本更新
-3. 社区热点 Issues - 挑选10个最值得关注的 Issue
-4. 重要 PR 进展 - 挑选10个重要的 PR
-5. 功能需求趋势 - 从 Issues 中提炼社区关注的功能方向
-6. 开发者关注点 - 总结痛点和高频需求
-
-让我分析数据：
-
-**版本发布：**
-- v0.15.2-nightly.20260428.1befabe58: 
-  - feat: Adds Catalan language support
-  - fix(vscode-companion): slash command completion not triggering after message submit
-  - fix(cli): guard gradient rende... (截断)
-
-**热点 Issues（评论数最多的）：**
-1. #3579 - DeepSeek API 400 error — reasoning_content (9条评论)
-2. #3619 - Deepseek V4 调用错误 API Error: 400 (9条评论)
-3. #2688 - 中文文混合文件名处理问题 (7条评论)
-4. #3669 - 使用自定义模型时思考字段出现错误 (5条评论)
-5. #3530 - Maximum update depth exceeded (5条评论)
-
-
-6. #2621 - How can I clean the context used (4条评论)
-7. #3641 - Internal error: 401 invalid access token (4条评论)
-8. #1380 - CLI Error parsing (3条评论)
-9. #3323 - Localize slash command descriptions (3条评论)
-10. #3634 - Background task management roadmap (2条评论)
-
-**重要 PR：**
-1. #3680 - feat(cli): expand TUI markdown rendering
-2. #1279 - mcp config as cli
-3. #3623 - fix(cli): recognize OpenAI-compatible providers in `qwen auth status`
-4. #3677 - fix(openai): parse MiniMax thinking tags
-5. #3642 - feat(core): managed background shell pool with /tasks command
-6. #3645 - fix(cli): correct OPENAI_MODEL precedence
-7. #3648 - fix(acp): repair integration against current core API
-8. #3683 - Upgrade GitHub Actions to latest versions
-9. #3631 - feat(stats): add model cost estimation + fix model priority
-10. #3682 - fix(core,cli): stop stripping reasoning on model switch/history load
-
-**功能需求趋势：**
-- DeepSeek V4 reasoning_content 相关问题
-- 多语言支持（中文、Catalan）
-- IDE 集成
-- 自定义模型支持
-- 背景任务管理
-- 模型成本估算
-- 会话管理
-
-**开发者关注点：**
-- API 兼容性问题（reasoning_content）
-- 模型切换问题
-- 会话上下文管理
-- 认证和 token 问题
-- 文件名处理（中文混合）
-</think>
-
 # Qwen Code 社区动态日报
 
-**日期：** 2026-04-28  
+**日期：** 2026-04-28
 **数据来源：** github.com/QwenLM/qwen-code
 
 ---
@@ -1888,152 +1468,7 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 | 1 | **#3680** feat(cli): expand TUI markdown rendering | ✨ 功能 | ⭐⭐⭐ | CLI 端 Markdown 渲染大升级，支持 Mermaid 图表、数学公式、任务列表、表格等 |
 | 2 | **#3637** fix(core): preserve reasoning_content when merging consecutive assistant messages | 🐛 修复 | ⭐⭐⭐ | **解决 DeepSeek V4 reasoning_content 丢失问题**，消息合并时保留 reasoning_content |
 | 3 | **#3642** feat(core): managed background shell pool with /tasks command | ✨ 功能 | ⭐⭐⭐ | 背景任务管理 - 支持注册、查询状态、终止后台进程（npm run dev 等场景） |
-| 4 | **#3677** fix(openai): parse MiniMax thinking tags | 🐛 修复 | ⭐⭐ | 修复 MiniMax 模型 `<think>` / `<think>` 标签解析，区分 thought parts |
-| 5 | **#3623** fix(cli): recognize OpenAI-compatible providers in `qwen auth status` | 🐛 修复 | ⭐⭐ | `qwen auth status` 现在能正确识别 OpenAI-compatible providers（DeepSeek、Ollama 等） |
-| 6 | **#3631** feat(stats): add model cost estimation + fix model priority | ✨ 功能 | ⭐⭐ | `/stats model` 新增模型成本估算功能，支持用户配置 per-model 定价 |
-| 7 | **#3682** fix(core,cli): stop stripping reasoning on model switch/history load | 🐛 修复 | ⭐⭐ | 模型切换/历史加载时不再丢失 reasoning/thought 内容 |
-| 8 | **#3645** fix(cli): correct OPENAI_MODEL precedence | 🐛 修复 | ⭐ | 修复模型优先级回归问题，`/model` 设置优先于 `OPENAI_MODEL` 环境变量 |
-| 9 | **#3673** feat(memory): add autoSkill background project skill extraction | ✨ 功能 | ⭐ | 会话结束后自动提炼可复用操作流程为 project-level skill |
-| 10 | **#3668** feat(stats): add current session billing estimates | ✨ 功能 | ⭐ | 当前会话计费估算，显示在 `/stats model` 和会话摘要中 |
-
-> 📎 所有 PRs：https://github.com/QwenLM/qwen-code/pulls
-
----
-
-## 5. 功能需求趋势
-
-从今日 Issues 和 PR 活动来看，社区关注的功能方向如下：
-
-| 排名 | 功能方向 | 热度 | 代表 Issue/PR |
-|------|---------|------|---------------|
-| 1️⃣ | **DeepSeek V4 / reasoning_content 兼容** | 🔥🔥🔥 | #3579, #3619, #3670, #3658, #3637 |
-| 2️⃣ | **多模型支持与兼容性** | 🔥🔥 | #3669 (自定义模型), #3677 (MiniMax), #3413 (Fireworks) |
-| 3️⃣ | **背景任务管理** | 🔥🔥 | #3634 (路线图), #3642 (PR 实现) |
-| 4️⃣ | **CLI 体验增强** | 🔥 | #3680 (Markdown 渲染), #3323 (本地化), #2484 (macOS 快捷键) |
-| 5️⃣ | **模型成本/计费估算** | 🔥 | #3631, #3668 |
-| 6️⃣ | **会话管理优化** | 🟡 | #2621 (上下文清理), #3606 (会话恢复), #3644 (Rewind 功能) |
-| 7️⃣ | **IDE 集成增强** | 🟡 | #3625 (Visual Studio 扩展请求), #3571 (VS Code 工具调用顺序) |
-| 8️⃣ | **文件处理鲁棒性** | 🟡 | #2688 (中文文件名), #1380 (Git repo 解析) |
-
----
-
-## 6. 开发者关注点
-
-### 🔴 核心痛点
-
-1. **DeepSeek V4 reasoning_content 丢失**
-   - 至少 5 个 Issue 报告，API 返回 400 错误
-   - 根因：`mergeConsecutiveAssistantMessages` 合并消息时丢弃了 `reasoning_content`
-   - 状态：#3637 已修复，待合并
-
-2. **模型切换导致 API 失败**
-   - #3304 和 #3579 存在冲突：修复跨 provider 切换时 stripping thought blocks，但影响了 reasoning_content 保留
-   - #3682 已修复，需关注后续测试
-
-### 🟡 高频需求
-
-1. **背景任务管理**
-   - 开发者需要在 CLI 中管理 `npm run dev` 等长时间运行进程
-   - 当前完全 detached，无法查询状态或终止
-   - #3642 正在实现 `/tasks` 命令
-
-2. **模型成本可见性**
-   - 多个开发者希望了解实际使用成本
-   - #3631 和 #3668 正在实现计费估算功能
-
-3. **认证/Token 管理**
-   - #3641: 401 错误处理不友好
-   - #3623: `qwen auth status` 无法识别 OpenAI-compatible providers
-
-4. **中文/国际化支持**
-   - #3323: 斜杠命令描述本地化
-   - #2688: 中文文件名处理
-   - #2484: macOS 快捷键符号
-
-### 🟢 新兴功能方向
-
-1. **autoSkill 自动技能提取** (#3673)
-   - 会话结束后自动提炼可复用操作流程
-   - 社区反馈积极，默认关闭需显式开启
-
-2. **HTML 导出浅色主题** (#3678)
-   - 用户反馈深色主题看久眼睛疼
-   - 需增加浅色主题和切换开关
-
----
-
-**📅 报告生成时间：** 2026-04-28  
-**📊 数据覆盖：** 过去 24 小时（2026-04-27 ~ 2026-04-28）  
-**📝 贡献者：** @QwenLM/qwen-code Community
-
-</details>
-
-<details>
-<summary><strong>Pi</strong> — <a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-28 的 Pi 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据来源是 github.com/badlogic/pi-mono，包含：
-1. 最新 Releases（过去24小时）- v0.70.5, v0.70.4, v0.70.3
-2. 最新 Issues（过去24小时内更新）- 50条，展示30条评论最多的
-3. 最新 Pull Requests（过去24小时内更新）- 27条，展示20条评论最多的
-
-让我按照要求的格式生成日报：
-
-**1. 今日速览**
-- v0.70.5 和 v0.70.4 是热修复版本，修复了 HTML 导出和启动失败问题
-- v0.70.3 引入了 pi update 自更新功能和 Azure Cognitive Services 支持
-- 社区活跃，大量 bug 修复和新功能提案
-
-**2. 版本发布**
-- v0.70.5: 修复 HTML 导出保留 ANSI 渲染器尾部填充导致额外空白行的问题
-- v0.70.4: 修复打包的 pi 启动失败问题（会话选择器导入了仅源码可用的工具路径）
-- v0.70.3: pi update 可自更新 + Azure Cognitive Services 端点支持
-  
-**3. 社区热点 Issues**
-从30条中挑选10个最值得关注的：
-
-1. #3715 - local-llm 5分钟超时问题（8条评论，最多）
-2. #3846 - pi-coding-agent 0.70.3 运行失败（4条评论）
-3. #3823 - pi install 必须使用与 pi 本身相同的安装程序 pnpm（4条评论）
-4. #3817 - 添加图像到助手消息内容类型（4条评论）
-5. #3787 - DeepSeek V4 Flash xhigh 推理强度被静默限制为 high（4条评论）
-6. #3767 - pi config 和启动时符号链接资源目录解析不一致（4条评论）
-7. #3850 - 添加 Workers AI 和 AI Gateway 到 Pi（3条评论）
-8. #3828 - Qwen3.5 和 Qwen3.6 模型不工作（3条评论）
-9. #3840 - v0.70.3 PI 更新后无法启动（3条评论）
-10. #3809 - getGlobalNpmRoot() 无法与 bun 作为 npmCommand 配合使用（3条评论）
-
-**4. 重要 PR 进展**
-从20条中挑选10个重要的：
-
-1. #3624 - feat(ai): 添加 Together AI 作为提供商
-2. #3861 - fix(coding-agent): 使用替代逻辑查找 Bun 的 node_modules
-3. #3856 - feat(ai): 添加 Cloudflare AI Gateway 作为提供商
-4. #3851 - feat(ai): 添加 Cloudflare Workers AI 作为提供商
-5. #3819 - fix(coding-agent): 转义导出的图像数据
-6. #3820 - fix(coding-agent): 在配置滚动指示器中显示项目数量而不是行数
-7. #3855 - fix(extensions): 从扩展发现中排除测试/规范文件
-8. #3680 - 添加内置更新命令
-9. #3827 - fix(coding-agent): 修复会话选择器导入
-10. #3837 - docs(coding-agent): 修复文档索引链接
-
-**5. 功能需求趋势**
-- 新提供商支持：Together AI、Cloudflare Workers AI、AI Gateway
-- 更好的多运行时支持（Bun）
-- 图像处理和导出功能
-- 文档和链接修复
-- 扩展系统改进
-
-**6. 开发者关注点**
-- 启动和导入问题
-- 多运行时兼容性
-- 文档准确性
-- 扩展加载机制
-- 会话管理功能
-</think>
-
-# Pi 社区动态日报 | 2026-04-28
+| 4 | **#3677** fix(openai): parse MiniMax thinking tags | 🐛 修复 | ⭐⭐ | 修复 MiniMax 模型 `# Pi 社区动态日报 | 2026-04-28
 
 ---
 

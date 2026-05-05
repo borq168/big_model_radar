@@ -7,52 +7,6 @@
 
 ---
 
-<think>用户要求我生成一份关于 GitHub.com/anthropics/skills 仓库的 Skills 社区热点报告。让我分析提供的数据：
-
-**PR 数据分析（按评论数排序，展示前20条）：**
-1. #514 - document-typography skill - 排版质量控制
-2. #83 - skill-quality-analyzer 和 skill-security-analyzer 元技能
-3. #210 - frontend-design skill 改进
-4. #486 - ODT skill - OpenDocument 处理
-5. #539 - fix(skill-creator): YAML 特殊字符警告
-6. #541 - fix(docx): 防止 tracked change w:id 冲突
-7. #538 - fix(pdf): 大小写敏感文件引用修复
-8. #509 - docs: 添加 CONTRIBUTING.md
-9. #723 - testing-patterns skill
-10. #181 - SAP-RPT-1-OSS predictor skill
-11. #95 - 系统文档和流程图
-12. #568 - ServiceNow 平台 skill
-13. #335 - masonry-generate-image-and-videos skill
-14. #54 - 西班牙语文档改进
-15. #147 - codebase-inventory-audit skill
-16. #806 - sensory skill - macOS AppleScript 自动化
-17. #154 - shodh-memory skill - AI 代理持久化上下文
-18. #666 - 移除重复的 skill-creator skill
-
-
-19. #997 - xiao - 小米扫地机器人 skill
-20. #22 - pptx skill 模板目录
-
-**Issue 数据分析（按评论数排序）：**
-1. #62 - 技能消失错误 (10条评论)
-2. #228 - 组织内技能共享 (9条评论)
-3. #202 - skill-creator 应更新最佳实践 (8条评论)
-4. #556 - run_eval.py 技能触发率 0% (6条评论)
-5. #189 - 文档和示例技能重复 (5条评论)
-6. #492 - 安全问题：社区技能信任滥用 (4条评论)
-7. #412 - 代理治理技能提案 (4条评论)
-8. #29 - Bedrock 使用问题 (4条评论)
-9. #16 - 将技能暴露为 MCP (4条评论)
-10. #184 - agentskills.io 重定向错误 (3条评论)
-11. #61 - 加载技能 404 错误 (3条评论)
-12. #868 - spei 相关 (2条评论)
-13. #532 - skill-creator 需要 API key (2条评论)
-14. #406 - 上传技能服务器错误 (2条评论)
-15. #403 - 删除技能版本 API 错误 (2条评论)
-
-现在需要整理成报告格式。
-</think>
-
 # Skills 社区热点报告
 
 > 数据来源：github.com/anthropics/skills | 统计日期：2026-04-25

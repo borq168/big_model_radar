@@ -7,59 +7,9 @@ Sources:
 
 ---
 
-<think>The user wants me to analyze the GitHub data from the anthropics/skills repository and generate a skills community highlights report. Let me parse through the data carefully.
-
-From the PRs (sorted by comments, showing top 20):
-1. #514 - document-typography skill (typographic quality control)
-2. #538 - fix(pdf): case-sensitive file references
-3. #83 - skill-quality-analyzer and skill-security-analyzer
-4. #210 - Improve frontend-design skill
-5. #486 - ODT skill (OpenDocument)
-6. #539 - fix(skill-creator): warn on unquoted description
-7. #541 - fix(docx): prevent tracked change w:id collision
-8. #509 - docs: add CONTRIBUTING.md
-9. #95 - Add comprehensive system documentation
-10. #181 - SAP-RPT-1-OSS predictor skill
-11. #723 - testing-patterns skill
-12. #335 - masonry-generate-image-and-videos skill
-13. #806 - sensory skill (AppleScript macOS automation)
-14. #54 - docs improvement (Spanish)
-15. #154 - shodh-memory skill (persistent context)
-16. #147 - codebase-inventory-audit skill
-17. #568 - ServiceNow platform skill
-18. #36 - Fix skill-creator frontmatter validation
-19. #664 - claude-obsidian-reporter skill
-20. #616 - HADS skill (Human-AI Document Standard)
-
-From the Issues (sorted by comments, showing top 15):
-1. #62 - Skills disappeared (10 comments)
-2. #228 - Enable org-wide skill sharing (9 comments)
-3. #202 - skill-creator should be updated (8 comments)
-4. #556 - run_eval.py never triggers skills (6 comments)
-
-
-5. #189 - document-skills and example-skills plugins install identical content (5 comments)
-6. #492 - Security: Community skills under anthropic/ namespace (4 comments)
-7. #412 - Skill proposal: agent-governance (4 comments)
-8. #29 - Usage with bedrock (4 comments)
-9. #16 - Expose Skills as MCPs (4 comments)
-10. #184 - agentskills.io page redirect error (3 comments)
-11. #61 - "Not found" error when loading Skills (3 comments)
-12. #868 - spei (2 comments)
-13. #532 - skill-creator: description optimizer requires ANTHROPIC_API_KEY (2 comments)
-14. #406 - unable to upload or replace existing skills (2 comments)
-15. #403 - Unable to delete skill versions (2 comments)
-
-The most active discussions center on skill management and sharing capabilities. Users are experiencing issues with skill visibility and organization, particularly around plugin conflicts and version control. There's also interest in expanding skills to support more platforms and use cases, with some security concerns about namespace handling.
-
-Looking at the PRs, several focus on improving skill quality and documentation. The document-typography skill addresses formatting consistency, while the skill-quality-analyzer and skill-security-analyzer aim to enhance overall skill reliability. The ODT skill introduces OpenDocument support, and the testing-patterns skill provides comprehensive testing coverage. The sensory skill enables AppleScript automation, and the HADS skill establishes a human-AI document standard. The ServiceNow platform skill is also gaining traction.
-
-The Issues reveal critical gaps in the ecosystem. Users want better organization-wide skill sharing mechanisms, improved skill creation tools, and more reliable skill triggering. There's also demand for agent governance capabilities and better integration with external platforms like Bedrock. The community is actively discussing how to expose skills as MCPs and resolve various operational issues that prevent smooth skill deployment.
-</think>
-
 # Skills Community Highlights Report
 
-**Repository:** [github.com/anthropics/skills](https://github.com/anthropics/skills)  
+**Repository:** [github.com/anthropics/skills](https://github.com/anthropics/skills)
 **Data as of:** 2026-05-04 | **PRs analyzed:** 50 | **Issues analyzed:** 50
 
 ---

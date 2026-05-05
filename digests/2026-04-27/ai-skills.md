@@ -7,59 +7,6 @@
 
 ---
 
-<think>用户要求我生成一份关于 GitHub 上 anthropics/skills 仓库的 Skills 社区热点报告。我需要分析提供的 PR 和 Issue 数据，按照要求的四个部分来组织报告。
-
-让我先整理数据：
-
-**PR 数据（按评论数排序，但评论数都是 undefined，所以按更新日期和内容重要性来筛选）：**
-
-1. #514 - document-typography skill - 排版质量控制
-2. #83 - skill-quality-analyzer and skill-security-analyzer - 元技能
-3. #210 - frontend-design skill 改进
-4. #486 - ODT skill - OpenDocument 处理
-5. #539 - fix(skill-creator): warn on unquoted description
-6. #541 - fix(docx): prevent tracked change w:id collision
-7. #538 - fix(pdf): correct case-sensitive file references
-8. #509 - docs: add CONTRIBUTING.md
-9. #723 - testing-patterns skill
-10. #181 - SAP-RPT-1-OSS predictor skill
-11. #95 - Add comprehensive system documentation
-12. #568 - ServiceNow platform skill
-13. #335 - masonry-generate-image-and-videos skill
-14. #147 - codebase-inventory-audit skill
-15. #806 - sensory skill — native macOS automation
-16. #154 - shodh-memory skill
-17. #666 - Remove duplicate skill-creator skill
-18. #997 - xiao — Xiaomi Robot Vacuum
-
-
-19. #22 - Add a 'my_templates' directory for pptx skill
-
-**Issue 数据（按评论数排序）：**
-
-1. #62 - All my skills have disappeared - 评论:10, 👍:1
-2. #228 - Enable org-wide skill sharing - 评论:9, 👍:5
-3. #202 - skill-creator should be updated to best practice - 评论:8, 👍:1
-4. #556 - run_eval.py: claude -p never triggers skills - 评论:6, 👍:6
-5. #189 - document-skills and example-skills plugins install identical content - 评论:5, 👍:7
-6. #492 - Security: Community skills distributed under anthropic/ namespace - 评论:4, 👍:2
-7. #412 - Skill proposal: agent-governance - 评论:4, 👍:0
-8. #29 - Usage with bedrock - 评论:4, 👍:0
-9. #16 - Expose Skills as MCPs - 评论:4, 👍:0
-10. #184 - agentskills.io page is giving "too many redirects" - 评论:3, 👍:4
-11. #61 - "Not found" error when loading Skills - 评论:3, 👍:0
-12. #868 - spei - 评论:2, 👍:0
-13. #532 - skill-creator: description optimizer requires ANTHROPIC_API_KEY - 评论:2, 👍:1
-14. #406 - unable to upload or replace existing skills - 评论:2, 👍:4
-15. #403 - Unable to delete skill versions — API returns 500 - 评论:2, 👍:0
-
-现在需要整理成报告。评论数最多的 PR 都没有显示评论数据，所以按更新日期和内容重要性来筛选。关键修复包括 #539、#541、#538 都是近期活跃的修复型 PR，#514 和 #83 则是功能性的重要提案。
-
-新增技能方面，#723 的 testing-patterns、#568 的 ServiceNow、#806 的 sensory skill 和 #997 的 xiao 都是近期活跃的功能性 PR。
-
-现在需要按四个部分组织报告内容。
-</think>
-
 # Skills 社区热点报告
 
 > 数据来源：github.com/anthropics/skills | 统计日期：2026-04-27

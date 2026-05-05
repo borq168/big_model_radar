@@ -15,62 +15,9 @@
 
 ## 横向对比
 
-<think>用户要求我基于之前生成的六个 AI CLI 工具的社区动态日报，生成一份横向对比分析报告。让我整理各工具的数据：
-
-1. **Claude Code** (github.com/anthropics/claude-code)
-   - Issues: 50条
-   - PRs: 11条
-   - Releases: v2.1.119
-   - 热点：Feb更新后复杂工程任务问题（583评论）、Buddy功能恢复（216评论）、用量异常消耗
-
-2. **OpenAI Codex** (github.com/openai/codex)
-   - Issues: 50条
-   - PRs: 50条
-   - Releases: rust-v0.124.0
-   - 热点：远程开发（596点赞）、macOS高CPU、Linux桌面版需求
-
-3. **Gemini CLI** (github.com/google-gemini/gemini-cli)
-   - Issues: 50条
-   - PRs: 50条
-   - Releases: v0.41.0-nightly, v0.40.0-preview.2, v0.39.0
-   - 热点：权限重复请求、Shell执行卡住、配额消耗加快
-
-4. **GitHub Copilot CLI** (github.com/github/copilot-cli)
-   - Issues: 50条
-   - PRs: 1条
-   - Releases: v1.0.35系列
-   - 热点：模型列表不完整（24评论）、速率限制问题
-
-5. **Kimi Code CLI** (github.com/MoonshotAI/kimi-cli)
-   - Issues: 21条
-   - PRs: 27条
-   - Releases: 无新版本
-   - 热点：K2.5 vs K2.6模型切换、IDE集成问题、输入延迟
-
-6. **OpenCode** (github.com/anomalyco/opencode)
-   - Issues: 50条
-   - PRs: 50条
-   - Releases: v1.14.22, v1.14.21
-   - 热点：内存问题（63评论）、GPT-5.5支持、1.4.6崩溃
-
-7. **Qwen Code** (github.com/QwenLM/qwen-code)
-   - Issues: 24条
-   - PRs: 42条
-   - Releases: v0.15.1, v0.15.1-nightly
-   - 热点：OAuth免费配额政策（117评论）、本地模型配置
-
-8. **Pi** (github.com/badlogic/pi-mono)
-   - Issues: 50条
-   - PRs: 15条
-   - Releases: v0.70.0
-   - 热点：终端进度条可配置、加速update
-
-现在生成横向对比报告。
-</think>
-
 # AI CLI 工具生态横向对比分析报告
 
-**日期：** 2026-04-24  
+**日期：** 2026-04-24
 **覆盖工具：** Claude Code、OpenAI Codex、GitHub Copilot CLI、Gemini CLI、Kimi Code CLI、OpenCode、Qwen Code、Pi
 
 ---
@@ -284,59 +231,6 @@
 <details>
 <summary><strong>Claude Code</strong> — <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-24 的 Claude Code 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases: v2.1.119
-- 最新 Issues: 50条，展示30条评论最多的
-- 最新 PRs: 11条
-
-让我按照要求的结构来组织：
-
-1. 今日速览
-2. 版本发布
-3. 社区热点 Issues (10个)
-4. 重要 PR 进展 (10个)
-5. 功能需求趋势
-6. 开发者关注点
-
-让我开始分析：
-
-**版本发布 v2.1.119:**
-- `/config` 设置现在持久化到 `~/.claude/settings.json`
-- 支持项目/本地/策略覆盖优先级
-- 新增 `prUrlTemplate` 设置
-
-**热点 Issues (按评论数排序):**
-1. #42796 - Claude Code 对复杂工程任务不可用 (583评论, 2077👍) - Feb更新后的问题
-2. #45596 - 要求恢复 Buddy 功能 (216评论, 935👍) - /buddy 技能消失
-3. #41930 - 使用限额异常消耗问题 (108评论, 85👍) - 3月23日以来
-4. #24057 - MCP服务器/hooks/插件应自动重载 (24评论, 8👍)
-
-
-5. #38098 - Telegram插件自动加载问题 (20评论, 7👍)
-6. #11085 - 持久化用户级MCP配置 (20评论, 29👍)
-7. #37793 - 子代理因MCP服务器过多失败 (14评论, 10👍)
-8. #46727 - Opus 4.6 Max 20x 系统性幻觉 (10评论, 3👍)
-9. #27780 - Analytics Admin API不返回订阅用户 (10评论, 9👍)
-10. #44197 - 继续后使用量异常高 (8评论, 0👍)
-
-**重要 PR:**
-- #52650 - 新PR (标题乱码)
-- #47676 - 修复 YAML 解析问题
-- #47674 - 修复 Dockerfile 注释
-- #47673 - 添加缺失的 plugin.json
-- #26328 - session-manager 插件
-- #52239 - 修复 $schema URL
-- #52418 - 防止 heredoc 注入
-- #52417 - 添加排序参数
-- #52416 - 转义正则元字符
-- #52415 - 规范化空白
-- #41518 - 完全开源 Claude Code
-
-现在生成报告。
-</think>
-
 # Claude Code 社区动态日报
 
 **日期**: 2026-04-24
@@ -481,69 +375,9 @@
 <details>
 <summary><strong>OpenAI Codex</strong> — <a href="https://github.com/openai/codex">openai/codex</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-24 的 OpenAI Codex 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据包括：
-1. 最新 Releases - rust-v0.124.0 及其 alpha 版本
-2. 最新 Issues - 50 条，展示评论数最多的 30 条
-3. 最新 Pull Requests - 50 条，展示评论数最多的 20 条
-
-让我按照要求的结构来组织：
-
-## 1. 今日速览
-- 0.124.0 版本发布，包含 TUI 快速推理控制等新功能
-- 多个平台（macOS、Windows、Linux）的 bug 报告涌现
-- 社区对远程开发支持和 Linux 桌面应用需求强烈
-
-## 2. 版本发布
-- rust-v0.124.0 正式发布
-- TUI 新增快速推理控制（Alt+, Alt+.）
-- app-server 支持多环境管理
-
-## 3. 社区热点 Issues（10个）
-需要挑选评论数最多或最有代表性的：
-
-1. #10450 - 远程开发功能请求（156评论，596👍）
-2. #16231 - macOS 高 CPU 使用率（47评论）
-3. #11023 - Linux 版本请求（59👍）
-4. #13555 - Ubuntu 缺失依赖 bug
-
-
-5. #18341 - Mac 模糊覆盖层问题
-6. #3808 - GitHub 代码审查停止工作
-7. #17390 - Windows 更新后无法使用
-8. #11735 - 流断开问题
-9. #19142 - 长上下文回归问题
-10. #16535 - 斜杠命令不工作
-
-## 4. 重要 PR 进展（10个）
-1. #19246 - WebSocket 缓冲区增加
-2. #18950 - 模型提供商发现功能
-3. #18900 - 线程存储迁移
-4. #18880 - 调试追踪减少命令
-5. #19048 - AWS 账户状态暴露
-6. #18897 - 粘性环境 API
-7. #19247 - 统一执行截断策略
-8. #18265 - WebSocket 队列压力处理
-9. #19244 - Unix socket 升级
-10. #19231 - 权限配置文件
-
-## 5. 功能需求趋势
-- 跨平台支持（Linux、远程开发）
-- 性能优化（CPU、内存）
-- 稳定性修复（崩溃、连接问题）
-- 新功能（斜杠命令、上下文管理）
-
-## 6. 开发者关注点
-- 平台兼容性
-- 性能表现
-- 功能完整性
-- 用户体验改进
-</think>
-
 # OpenAI Codex 社区动态日报
 
-**日期：** 2026-04-24  
+**日期：** 2026-04-24
 **数据来源：** github.com/openai/codex
 
 ---
@@ -558,7 +392,7 @@
 
 ### 🆕 rust-v0.124.0 正式发布
 
-**发布时间：** 2026-04-24  
+**发布时间：** 2026-04-24
 **发布地址：** https://github.com/openai/codex/releases/tag/rust-v0.124.0
 
 **核心更新：**
@@ -667,8 +501,8 @@ CPU/性能 (4次) | WebSocket/连接 (3次)
 
 ---
 
-**📅 报告生成时间：** 2026-04-24  
-**数据覆盖：** 过去 24 小时内的 Releases、Issues、Pull Requests  
+**📅 报告生成时间：** 2026-04-24
+**数据覆盖：** 过去 24 小时内的 Releases、Issues、Pull Requests
 **分析师：** MiniMax-M2.7
 
 </details>
@@ -676,76 +510,9 @@ CPU/性能 (4次) | WebSocket/连接 (3次)
 <details>
 <summary><strong>Gemini CLI</strong> — <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-24 的 Gemini CLI 社区动态日报。让我仔细分析数据并按照要求的结构组织内容。
-
-数据包括：
-1. 最新 Releases（3个版本）
-2. 最新 Issues（50条，展示30条评论最多的）
-3. 最新 Pull Requests（50条，展示20条评论最多的）
-
-我需要按照要求的格式生成日报：
-1. 今日速览
-2. 版本发布
-3. 社区热点 Issues（10个）
-4. 重要 PR 进展（10个）
-5. 功能需求趋势
-6. 开发者关注点
-
-让我开始分析：
-
-**版本发布：**
-- v0.41.0-nightly.20260423.gd1c91f526 - 包含 ripgrep 离线支持、YOLO 模式修复
-- v0.40.0-preview.2 - 版本更新、OpenSSL 重试修复
-- v0.39.0 - 策略优先级重构、内存测试工具
-
-**热点 Issues（按评论数排序）：**
-1. #22745 - AST 感知文件读取/搜索/映射（5条评论）- 重要 Epic
-2. #24916 - 权限重复请求问题（3条评论）
-3. #22323 - 子代理 MAX_TURNS 后报告成功（3条评论）
-4. #25892 - Agent 违反项目规则（2条评论）
-
-
-5. #25166 - Shell 命令执行卡住（2条评论）
-6. #23571 - 模型创建临时脚本（2条评论）
-7. #25901 - 配额使用更快（1条评论）
-8. #25216 - 临时路径打开失败（1条评论）
-9. #24915 - 黑色边框问题（1条评论）
-10. #24202 - SSH 文本乱码（1条评论）
-
-**重要 PR：**
-1. #25900 - 修复 Windows PowerShell 问题
-2. #25888 - 添加 gemini-cli-bot 指标和工作流
-3. #25846 - v0.40.0-preview.2 变更日志
-4. #25848 - v0.39.0 变更日志
-5. #25893 - 修复 stderr 流处理
-6. #25894 - 修复输出重定向
-7. #25874 - 更新错误消息
-8. #25409 - ContextManager 和 AgentChatHistory
-9. #25827 - 防止重复渲染
-10. #25873 - 自动记忆草稿本
-
-**功能需求趋势：**
-- Agent 行为改进（权限、规则遵守）
-- 子代理稳定性
-- 内存管理
-- 模型路由
-- 离线支持
-
-（ripgrep）
-- Windows 兼容性
-- 终端渲染优化
-
-**开发者关注点：**
-- Shell 执行稳定性
-- 权限管理
-- 配额消耗
-- 启动性能
-- 终端兼容性
-</think>
-
 # Gemini CLI 社区动态日报
 
-**日期：** 2026-04-24  
+**日期：** 2026-04-24
 **数据来源：** github.com/google-gemini/gemini-cli
 
 ---
@@ -777,7 +544,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ## 3. 社区热点 Issues
 
 ### 🔥 #22745 AST 感知文件操作能力评估
-**评论：5 | 👍：1**  
+**评论：5 | 👍：1**
 [链接](https://github.com/google-gemini/gemini-cli/issues/22745)
 
 **重要性：** 这是一个 Epic 级别的追踪 issue，探讨 AST 感知工具是否能提升代码库分析精度。社区关注度高，可能显著影响 `codebase_investigator` 子代理的能力上限。
@@ -785,7 +552,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### 🔥 #24916 权限重复请求问题
-**评论：3 | 👍：0**  
+**评论：3 | 👍：0**
 [链接](https://github.com/google-gemini/gemini-cli/issues/24916)
 
 **重要性：** 用户反馈同一文件的权限请求反复出现，"Allow for all future sessions" 选项未生效。这是影响日常使用体验的核心问题，已有多人确认。
@@ -793,7 +560,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### 🔥 #22323 子代理 MAX_TURNS 后错误报告成功
-**评论：3 | 👍：2**  
+**评论：3 | 👍：2**
 [链接](https://github.com/google-gemini/gemini-cli/issues/22323)
 
 **重要性：** `codebase_investigator` 子代理在达到最大轮次限制后仍报告 `status: "success"`，隐藏了实际中断状态。这是严重的逻辑缺陷，可能导致用户误判任务完成状态。
@@ -801,7 +568,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### 🔥 #25892 Agent 违反项目编码规范
-**评论：2 | 👍：0**  
+**评论：2 | 👍：0**
 [链接](https://github.com/google-gemini/gemini-cli/issues/25892)
 
 **重要性：** Agent 在执行任务时反复违反项目指南并修改受限文件，且不遵循用户直接指令。这是 Agent 行为可控性的典型投诉。
@@ -809,7 +576,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### 🔥 #25166 Shell 命令执行后卡住
-**评论：2 | 👍：3**  
+**评论：2 | 👍：3**
 [链接](https://github.com/google-gemini/gemini-cli/issues/25166)
 
 **重要性：** 简单的 CLI 命令执行完成后界面持续显示 "Awaiting user input"，命令实际已结束。这是影响核心功能的阻塞性 bug。
@@ -817,7 +584,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### 🔥 #23571 模型频繁创建临时脚本
-**评论：2 | 👍：0**  
+**评论：2 | 👍：0**
 [链接](https://github.com/google-gemini/gemini-cli/issues/23571)
 
 **重要性：** 限制 Shell 执行后，模型转向在多个目录生成编辑脚本，造成工作区清理负担。这是 Agent 资源管理策略的典型问题。
@@ -825,7 +592,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### 🔥 #25901 0.39.0 版本配额消耗加快
-**评论：1 | 👍：0**  
+**评论：1 | 👍：0**
 [链接](https://github.com/google-gemini/gemini-cli/issues/25901)
 
 **重要性：** 用户报告升级后 Pro 订阅配额消耗速度显著加快，从可用 8 小时变为快速耗尽。这是影响用户成本的关键问题。
@@ -833,7 +600,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### 🔥 #25216 Windows 临时路径 EISDIR 错误
-**评论：1 | 👍：0**  
+**评论：1 | 👍：0**
 [链接](https://github.com/google-gemini/gemini-cli/issues/25216)
 
 **重要性：** 在 Windows PowerShell 中使用 `--yolo` 模式时遇到 `EISDIR` 错误，涉及路径处理兼容性。
@@ -841,7 +608,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### 🔥 #24915 终端 UI 黑色边框问题
-**评论：1 | 👍：0**  
+**评论：1 | 👍：0**
 [链接](https://github.com/google-gemini/gemini-cli/issues/24915)
 
 **重要性：** 提示栏顶部和底部出现厚重黑色边框，影响视觉体验。
@@ -849,7 +616,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### 🔥 #24202 SSH 会话文本乱码
-**评论：1 | 👍：0**  
+**评论：1 | 👍：0**
 [链接](https://github.com/google-gemini/gemini-cli/issues/24202)
 
 **重要性：** 通过 SSH 连接到 gLinux cloudtop 后启动 Gemini CLI，文本显示乱码导致无法使用。这是远程工作场景的阻塞问题。
@@ -859,7 +626,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ## 4. 重要 PR 进展
 
 ### ⭐ #25900 修复 Windows PowerShell 双引号问题
-**优先级：P2**  
+**优先级：P2**
 [链接](https://github.com/google-gemini/gemini-cli/pull/25900)
 
 **内容：** 修复 Windows PowerShell 5.1 静默剥离双引号导致的命令执行失败问题，优先使用 `pwsh.exe`。
@@ -867,7 +634,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### ⭐ #25888 gemini-cli-bot 指标和工作流
-**优先级：P1**  
+**优先级：P1**
 [链接](https://github.com/google-gemini/gemini-cli/pull/25888)
 
 **内容：** 引入认知仓库架构，设置高频 "Pulse" 维护工作流和每日 "Brain" 调查工作流，建立完善的指标收集体系。
@@ -875,7 +642,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### ⭐ #25893 修复 StdioClientTransport stderr 流处理
-**状态：Need Issue**  
+**状态：Need Issue**
 [链接](https://github.com/google-gemini/gemini-cli/pull/25893)
 
 **内容：** 修复 MCP 服务器写入 stderr 时 CLI 无限挂起的 bug，未消费的输出填满 OS 管道缓冲区导致死锁。
@@ -883,7 +650,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### ⭐ #25894 修复 CLI 子命令输出重定向
-**状态：Need Issue**  
+**状态：Need Issue**
 [链接](https://github.com/google-gemini/gemini-cli/pull/25894)
 
 **内容：** 修复 `gemini extensions list` 等子命令在管道或重定向时输出被抑制的问题。
@@ -891,7 +658,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### ⭐ #25409 ContextManager 和 AgentChatHistory 集成
-**区域：Agent**  
+**区域：Agent**
 [链接](https://github.com/google-gemini/gemini-cli/pull/25409)
 
 **内容：** 将新的 ContextManager 和 AgentChatHistory 接入核心系统，改善对话上下文管理。
@@ -899,7 +666,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### ⭐ #25873 自动记忆草稿本持久化
-**状态：Maintainer Only**  
+**状态：Maintainer Only**
 [链接](https://github.com/google-gemini/gemini-cli/pull/25873)
 
 **内容：** 将自动记忆 `memoryScratchpad` 持久化到会话元数据，技能提取评估显示平均轮次从 13.2 降至 11.0（-16.7%）。
@@ -907,7 +674,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### ⭐ #25885 防止 ENOENT 崩溃
-**优先级：P0**  
+**优先级：P0**
 [链接](https://github.com/google-gemini/gemini-cli/pull/25885)
 
 **内容：** 修复多命令并发启动时的锁文件竞态条件导致的启动崩溃问题。
@@ -915,7 +682,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### ⭐ #25886 可用性感知的自动路由
-**状态：Need Issue**  
+**状态：Need Issue**
 [链接](https://github.com/google-gemini/gemini-cli/pull/25886)
 
 **内容：** 增强自动模型路由系统，检测 Pro 模型响应过慢时临时切换到 Flash 备用模型，新增 "Best Effort Pro" 设置。
@@ -923,7 +690,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### ⭐ #24174 实时语音模式
-**区域：Core**  
+**区域：Core**
 [链接](://github.com/google-gemini/gemini-cli/pull/24174)
 
 **内容：** 实现实时语音输入，支持云端 Gemini Live API 和本地 Whisper 两种后端。
@@ -931,7 +698,7 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 ---
 
 ### ⭐ #25758 异步获取实验和配额
-**状态：已合并**  
+**状态：已合并**
 [链接](https://github.com/google-gemini/gemini-cli/pull/25758)
 
 **内容：** 重构初始化序列，异步执行网络请求，显著改善启动时间。
@@ -988,51 +755,6 @@ Gemini CLI 在过去 24 小时内发布了 3 个版本，其中 v0.41.0-nightly 
 
 <details>
 <summary><strong>GitHub Copilot CLI</strong> — <a href="https://github.com/github/copilot-cli">github/copilot-cli</a></summary>
-
-<think>用户要求我根据提供的 GitHub Copilot CLI 数据生成一份 2026-04-24 的社区动态日报。让我仔细分析数据并按照要求的结构组织内容。
-
-数据概览：
-1. 最新 Releases：v1.0.35 系列，包含多个小版本更新
-2. 最新 Issues：50条，展示了30条评论最多的
-3. 最新 PRs：1条
-
-让我按照要求的格式生成日报：
-
-## 1. 今日速览
-- v1.0.35 发布，包含 slash commands 补全、shell escape 改进、会话管理增强等
-- 社区关注焦点：模型列表不完整（#1703，24条评论）、速率限制问题持续发酵
-- 新增功能：支持 COPILOT_GH_HOST 环境变量、Ctrl+Y 接受补全建议
-
-## 2. 版本发布
-v1.0.35 系列更新
-
-## 3. 社区热点 Issues
-需要挑选10个最值得关注的：
-
-1. #1703 - 模型列表不完整（24评论，38👍）- 最热门
-2. #1347 - XDG_CONFIG_HOME 支持问题（8评论，13👍）
-3. #2760 - HTTP 429 重试逻辑（7评论）
-4. #2787 - 无限速率限制提示（5评论）
-5. #2416 - 子代理技能截断问题（5评论）
-
-
-6. #35 - Dev Container 功能请求（4评论，9👍）
-7. #20 - 代码库索引支持（3评论，10👍）
-8. #2840 - 速率限制中止子代理（3评论）
-9. #2900 - Windows 会话恢复问题（2评论）
-10. #2937 - macOS 段错误崩溃（1评论）
-
-## 4. 重要 PR 进展
-只有1条 PR #2565
-
-## 5. 功能需求趋势
-需要从 Issues 中提炼
-
-## 6. 开发者关注点
-速率限制处理、模型配置灵活性、系统兼容性、权限管理机制、交互界面优化
-
-现在开始撰写报告内容。
-</think>
 
 # GitHub Copilot CLI 社区动态日报
 
@@ -1204,75 +926,9 @@ v1.0.35 系列更新
 <details>
 <summary><strong>Kimi Code CLI</strong> — <a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-24 的 Kimi Code CLI 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases：过去24小时无新版本
-- 最新 Issues：21条（过去24小时内更新）
-- 最新 Pull Requests：27条（过去24小时内更新）
-
-让我整理关键信息：
-
-**热点 Issues（按评论数和重要性筛选）：**
-
-1. #1925 - K2.5 vs K2.6 模型切换问题（8条评论，热门讨论）
-2. #1990 - IDEA中使用kimi cli导致terminal关闭（2条评论）
-3. #2040 - VS Code扩展通知功能请求（2条评论）
-4. #2038 - 底部工具栏git子进程导致输入延迟（1条评论）
-5. #2022 - 开发环境segfault问题（已关闭，1条评论）
-6. #1714 - Claude兼容本地插件支持（1条评论）
-7. #2031 - MCP stdio服务器初始化问题（1条评论）
-8. #2049 - 会话历史恢复问题（0条评论，但新）
-9. #2048 - 通知hook不触发问题（0条评论）
-
-
-10. #2043 - UTF-8 BOM导致TOML错误（0条评论）
-
-**重要 PR：**
-
-1. #1960 - RalphFlow架构（ephemeral context和收敛检测）
-2. #2039 - /usage配额颜色修复
-3. #2047 - ACP服务器加载mcp.json
-4. #2045 - yolo模式修复和afk模式
-5. #2044 - 技能系统提示词分组
-6. #2046 - /usage仪表盘颜色阈值调整
-7. #2041 - 状态栏显示活跃代理任务数
-8. #2036 - 核心工具启用strict模式
-9. #2035 - 空assistant工具调用消息处理
-10. #2030 - MCP工具参数JSON Schema类型修复
-11. #2025 - 静默authlib警告
-12. #2034 - 错误时包含会话ID
-13. #1985 - 防止TTY挂起和关闭MCP连接
-14. #2028 - inject_yolo_prompt配置
-15. #659 - E2B沙箱集成
-16. #2008 - 测试修复
-17. #2029 - KIMI_MODEL_THINKING_KEEP环境变量
-18. #2005 - 批准请求文本输入渲染
-19. #2026 - 令牌轮换时清理墓碑
-20. #1876 - /btw斜杠命令注册
-
-**功能需求趋势分析：**
-
-1. **IDE集成问题**：VS Code扩展、IDEA集成相关问题较多
-2. **性能问题**：输入延迟、typing lag等问题
-3. **模型相关**：K2.5 vs K2.6切换需求
-4. **MCP兼容性**：MCP服务器集成问题
-5. **用户体验**：通知、approval流程改进
-6. **配置灵活性**：yolo模式、inject_yolo_prompt等
-
-**开发者痛点：**
-1. 终端输入延迟
-2. MCP服务器兼容性问题
-3. 会话管理和历史恢复
-4. 交互式命令的PTY分配问题
-5. 配置文件的编码问题
-
-现在生成日报：
-</think>
-
 # Kimi Code CLI 社区动态日报
 
-**日期：** 2026-04-24  
+**日期：** 2026-04-24
 **数据来源：** github.com/MoonshotAI/kimi-cli
 
 ---
@@ -1294,7 +950,7 @@ v1.0.35 系列更新
 ## 3. 社区热点 Issues
 
 ### 🔥 #1925 - K2.5 vs K2.6 模型切换需求
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/1925  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/1925
 **状态：** OPEN | 评论: 8 | 👍: 0
 
 **为什么重要：** 这是今日评论数最高的 Issue，反映了用户对模型切换能力的强烈需求。用户反馈 K2.6 的思考模式"淹没创造力、增加幻觉"，且失去了原有的产品个性。社区对此展开了热烈讨论，涉及模型行为、system prompt 设计等核心产品方向。
@@ -1302,7 +958,7 @@ v1.0.35 系列更新
 ---
 
 ### 🔥 #1990 - IDEA 中 terminal 直接关闭问题
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/1990  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/1990
 **状态：** OPEN | 评论: 2 | 👍: 0
 
 **为什么重要：** 严重用户体验问题，在 IDEA 中使用 kimi cli 发送消息后整个 terminal 直接关闭，影响用户工作流程。涉及跨平台（macOS Darwin 24.5.0）和 IDE 集成稳定性。
@@ -1310,7 +966,7 @@ v1.0.35 系列更新
 ---
 
 ### 🔥 #2040 - VS Code 扩展审批通知优化
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2040  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2040
 **状态：** OPEN | 评论: 2 | 👍: 0
 
 **为什么重要：** 用户请求在 VS Code 扩展中使用原生通知（`showInformationMessage`）提示审批请求，避免因 VS Code 最小化而错过待审批操作。这是提升 IDE 集成体验的重要 UX 改进。
@@ -1318,7 +974,7 @@ v1.0.35 系列更新
 ---
 
 ### 🔥 #2038 - 底部工具栏 git 子进程导致输入延迟
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2038  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2038
 **状态：** OPEN | 评论: 1 | 👍: 0
 
 **为什么重要：** 通过二分排查确认，底部工具栏的 git branch/status 子进程调用在正常输入时造成明显的按键延迟。这是一个影响日常使用流畅度的性能问题。
@@ -1326,7 +982,7 @@ v1.0.35 系列更新
 ---
 
 ### 🔥 #1714 - Claude 兼容本地插件支持
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/1714  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/1714
 **状态：** OPEN | 评论: 1 | 👍: 0
 
 **为什么重要：** 社区对 Claude 风格插件生态的强烈需求，希望 Kimi Code CLI 能支持 Claude-compatible 本地插件兼容性层，拓展工具生态。
@@ -1334,7 +990,7 @@ v1.0.35 系列更新
 ---
 
 ### 🔥 #2031 - MCP stdio 服务器初始化失败
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2031  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2031
 **状态：** OPEN | 评论: 1 | 👍: 0
 
 **为什么重要：** 由于 fastmcp `keep_alive=True` 导致 MCP stdio 服务器报"Server is already initialized"错误，影响 MCP 生态集成。
@@ -1342,7 +998,7 @@ v1.0.35 系列更新
 ---
 
 ### 🔥 #2049 - 会话历史恢复后丢失
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2049  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2049
 **状态:** OPEN | 评论: 0 | 👍: 0
 
 **为什么重要：** 用户在 Windows 10 环境下执行 `/sessions` 恢复会话后，历史内容显示在屏幕上但实际已丢失。这是一个数据持久化相关的严重 bug。
@@ -1350,7 +1006,7 @@ v1.0.35 系列更新
 ---
 
 ### 🔥 #2048 - permission_prompt 通知 hook 不触发
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2048  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2048
 **状态:** OPEN | 评论: 0 | 👍: 0
 
 **为什么重要：** 文档明确列出 `matcher = "permission_prompt"` 作为示例用例，但实际 hook 从不触发，影响用户自定义审批流程。
@@ -1358,7 +1014,7 @@ v1.0.35 系列更新
 ---
 
 ### 🔥 #2043 - UTF-8 BOM 导致 TOML 配置解析失败
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2043  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2043
 **状态:** OPEN | 评论: 0 | 👍: 0
 
 **为什么重要：** 部分文本编辑器（如某些 Windows 编辑器）会在文件开头添加 BOM，导致 `config.toml` 解析失败并报错"Empty key at line 1 col 0"，影响新用户上手体验。
@@ -1366,7 +1022,7 @@ v1.0.35 系列更新
 ---
 
 ### 🔥 #2037 - Shell 工具交互命令缺少 PTY 分配
-**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2037  
+**链接：** https://github.com/MoonshotAI/kimi-cli/issues/2037
 **状态:** OPEN | 评论: 0 | 👍: 0
 
 **为什么重要：** Shell 工具显式关闭 stdin 且不分配伪终端（PTY），导致交互式命令（`ssh-add`、`sudo`、`npm init` 等）出现输入损坏和挂起，比之前更严重。
@@ -1376,7 +1032,7 @@ v1.0.35 系列更新
 ## 4. 重要 PR 进展
 
 ### ⭐ #1960 - RalphFlow 架构：临时上下文与收敛检测
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/1960  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/1960
 **作者：** @ORDL-AMF
 
 **内容：** 引入 RalphFlow 架构——一个自动化迭代框架，用于防止 Kimi Code CLI agent 陷入无限循环，同时支持稳健的多步骤工作流。核心特性包括 Ephemeral Context（流程迭代在隔离的临时上下文中运行）和收敛检测机制。
@@ -1384,7 +1040,7 @@ v1.0.35 系列更新
 ---
 
 ### ⭐ #2039 / #2046 - /usage 配额颜色修复
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2039 | https://github.com/MoonshotAI/kimi-cli/pull/2046  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2039 | https://github.com/MoonshotAI/kimi-cli/pull/2046
 **作者：** @binichallein / @he-yufeng
 
 **内容：** 修复 `/usage` 命令中配额颜色显示反转的问题。根因是 `_ratio_color()` 接收的是剩余配额比例而非已用比例，但颜色阈值映射逻辑错误。
@@ -1392,7 +1048,7 @@ v1.0.35 系列更新
 ---
 
 ### ⭐ #2047 - ACP 服务器加载 ~/.kimi/mcp.json
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2047  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2047
 **作者：** @natrollus
 
 **内容：** 修复 `kimi acp`（Zed 等编辑器使用的外部 agent 模式）无法加载本地配置的 MCP 服务器问题。交互模式和 `--print` 模式都能正常加载，但 ACP 模式被遗漏。
@@ -1400,7 +1056,7 @@ v1.0.35 系列更新
 ---
 
 ### ⭐ #2045 - yolo 模式修复与 afk 模式正交化
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2045  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2045
 **作者：** @RealKai42
 
 **内容：** 修复 `--yolo` 模式错误地告诉模型"非交互式"且不能调用 `AskUserQuestion` 的问题。将混淆的"自动批准"和"非交互式"语义拆分为两个正交模式：`yolo`（自动批准）和 `afk`（离开键盘）。
@@ -1408,7 +1064,7 @@ v1.0.35 系列更新
 ---
 
 ### ⭐ #2044 - 技能系统提示词分组与项目覆盖
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2044  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2044
 **作者：** @RealKai42
 
 **内容：** 修复项目目录下发现的技能（如 `<project>/.kimi/skills`）对模型"此项目的技能"推理不可见的问题。系统提示词现在按作用域分组技能列表，并尊重项目级覆盖。
@@ -1416,7 +1072,7 @@ v1.0.35 系列更新
 ---
 
 ### ⭐ #2036 - 核心工具启用 strict 模式
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2036  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2036
 **作者：** @kermanx
 
 **内容：** 为 `Shell`、`ReadFile`、`Grep`、`WriteFile`、`StrReplaceFile`、`SetTodoList` 等核心工具启用 OpenAI/Anthropic strict schema 验证，提升工具调用的可靠性。
@@ -1424,7 +1080,7 @@ v1.0.35 系列更新
 ---
 
 ### ⭐ #2029 - KIMI_MODEL_THINKING_KEEP 环境变量
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2029  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2029
 **作者：** @RealKai42
 
 **内容：** 新增 `KIMI_MODEL_THINKING_KEEP` 环境变量，将值透传给 Moonshot API 的 `thinking.keep`，支持保留思考（Preserved Thinking）功能。同时修复了 `Kimi.with_extra_body` 中静默覆盖之前配置项的潜在 bug。
@@ -1432,7 +1088,7 @@ v1.0.35 系列更新
 ---
 
 ### ⭐ #1985 - 防止 TTY 挂起与 MCP 连接关闭
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/1985  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/1985
 **作者：** @thecannabisapp
 
 **内容：** 在 `tty.setcbreak(fd)` 后添加 `os.set_blocking(fd, False)` 使 `os.read()` 变为非阻塞调用，避免 asyncio 任务取消或 prompt_toolkit stdin reader 与 CPR 响应竞争时导致的系统调用阻塞。同时在关闭时正确关闭 MCP 连接。
@@ -1440,7 +1096,7 @@ v1.0.35 系列更新
 ---
 
 ### ⭐ #2030 - MCP 工具参数 JSON Schema 类型修复
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2030  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2030
 **作者：** @wbxl2000
 
 **内容：** 部分解决 #1595，为 MCP 工具参数补全缺失的 JSON Schema `type` 字段。Moonshot 的 JSON Schema 验证器要求每个 property 必须声明 `type`。
@@ -1448,7 +1104,7 @@ v1.0.35 系列更新
 ---
 
 ### ⭐ #2028 - inject_yolo_prompt 配置项
-**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2028  
+**链接：** https://github.com/MoonshotAI/kimi-cli/pull/2028
 **作者：** @powerfooI
 
 **内容：** 新增 `inject_yolo_prompt` 配置字段（默认 `true`），控制是否向对话注入 yolo 模式系统提醒。设为 `false` 允许自定义应用绕过默认行为。
@@ -1503,58 +1159,13 @@ v1.0.35 系列更新
 
 ---
 
-**日报生成时间：** 2026-04-24  
+**日报生成时间：** 2026-04-24
 **数据统计：** 21 Issues / 27 PRs / 0 Releases
 
 </details>
 
 <details>
 <summary><strong>OpenCode</strong> — <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-24 的 OpenCode 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases: v1.14.22 和 v1.14.21
-- 最新 Issues: 50 条，展示评论数最多的 30 条
-- 最新 Pull Requests: 50 条，展示评论数最多的 20 条
-
-让我按照要求的结构来组织内容：
-
-1. **今日速览** - 总结最重要的动态
-2. **版本发布** - v1.14.22 的更新内容
-3. **社区热点 Issues** - 挑选 10 个最值得关注的
-4. **重要 PR 进展** - 挑选 10 个重要的 PR
-5. **功能需求趋势** - 提炼社区关注的功能方向
-6. **开发者关注点** - 总结痛点和高频需求
-
-让我开始分析和撰写：
-
-**版本发布 (v1.14.22)**:
-- Core: 尊重 .npmrc 设置、支持 LSP pull diagnostics、修复 bare git repos 和 worktrees 的项目检测、改善会话压缩、保留 UTF-8
-- Desktop: 修复会话视图和嵌套会话项的状态问题
-
-**社区热点 Issues** (按评论数排序):
-
-
-内存问题持续受到关注，#20695 获得 63 条评论。Bun 崩溃问题 #8785 有 28 条评论，Kimi K2.6 集成讨论 #22408 有 21 条评论。插件事件监听器 #14808 和 1.4.6 崩溃问题 #22683 分别有 15 和 12 条评论。Claude Opus 4.7 的 thinking blocks 持久化问题 #22852 引发讨论。
-
-GPT-5.5 支持需求 #24039 和 #24036 获得较多关注，共 15 条评论。上下文重复问题 #16612 有 10 条评论，Copilot 令牌消耗 #14539 有 9 条评论。PTY 集成 #23449 和 TUI 底部状态栏 #18969 各有 8 条评论。
-
-**重要 PR 进展**:
-自动接受权限请求的 PR #12633 正在开发中。
-
-修复 VCS diff 自动获取的 PR #24079 解决了 OOM 问题。代理环境变量处理 #24070 已关闭。Bash 工具描述改进 #4917 正在开放状态。停止流式传输的修复 #13854 正在处理。移动端触摸优化 #18767 持续推进。Contexty 插件文档 #23269 已添加。处理 Bun 流连接错误 #24076 正在处理。GPT-5.5 Codex OAuth 支持 #24055 已关闭。交互式脉冲效果 #22098 已关闭。
-
-.local.md 变体支持 #16108 正在开放。子代理状态指示器 #23785 正在开发。Open WebUI 提供商 #18306 持续推进。搜索服务 #23890 正在处理。langsmith-tracing 插件文档 #23609 已添加。SSE 流内存增长问题 #24058 已修复。gitignore 文件逐出 #24059 已修复。
-
-**功能需求趋势**:
-社区对 GPT-5.5 和新模型支持表现出强烈兴趣。内存和性能优化仍是关键关注点。IDE 集成和插件系统不断完善。移动端支持需求日益增长。
-
-TUI 增强和用户体验改进也在推进中。
-
-**开发者关注点**:
-内存泄漏和 OOM 问题严重影响开发体验。稳定性问题需要优先解决。模型兼容性和集成是主要痛点。跨平台支持特别是 Windows 面临挑战。
-</think>
 
 # OpenCode 社区动态日报 | 2026-04-24
 
@@ -1697,8 +1308,8 @@ TUI 增强和用户体验改进也在推进中。
 
 ---
 
-**日报生成时间**：2026-04-24  
-**数据来源**：github.com/anomalyco/opencode  
+**日报生成时间**：2026-04-24
+**数据来源**：github.com/anomalyco/opencode
 **分析范围**：过去 24 小时内的 Releases、Issues、PRs 更新
 
 </details>
@@ -1706,61 +1317,9 @@ TUI 增强和用户体验改进也在推进中。
 <details>
 <summary><strong>Qwen Code</strong> — <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-24 的 Qwen Code 社区动态日报。让我仔细分析这些数据，然后按照要求的格式生成日报。
-
-数据包括：
-1. 最新 Releases（2个）
-2. 最新 Issues（24条）
-3. 最新 Pull Requests（42条）
-
-让我开始整理：
-
-## 今日速览
-- v0.15.1 正式版发布，包含流式工具调用解析和 CLI 时间指示器的修复
-- v0.15.1-nightly 版本修复了 ReadFile 工具的空 pages 参数问题，并新增了自动会话标题功能
-- 社区活跃度高，有 24 个 Issues 更新，42 个 PR 更新
-
-## 版本发布
-两个版本：
-1. v0.15.1-nightly.20260424.4e0a37549 - 修复 ReadFile 空 pages 参数，新增自动会话标题
-2. v0.15.1 - 修复流式工具调用解析，CLI 时间指示器改进
-
-## 社区热点 Issues（挑选10个）
-1. #3203 - Qwen OAuth 免费配额政策调整（讨论热烈，117条评论）
-2. #3384 - 无法添加 OpenAI 兼容的本地 LLM
-3. #3530 - 切换模型时的 Maximum update depth exceeded 错误
-
-
-4. #3532 - 本地模型配置问题
-5. #3461 - OpenTelemetry 文档反馈
-6. #3110 - CLI 语音输入功能请求
-7. #3553 - Kimi-K2.5 模型调用技能报错
-8. #3555 - 不支持多个供应商配置相同模型
-9. #3549 - ACP 模式支持 HTTP MCP
-10. #3568 - 添加可配置的并发子代理数量限制
-
-## 重要 PR 进展
-1. #3509 - 修复 MCP 初始化后的空白行问题
-2. #3522 - PR 模板验证指导
-3. #3564 - macOS 桌面应用安装脚本
-4. #3494 - Python SDK 实现
-5. #3463 - ACP Agent 工具调用并发执行
-6. #3569 - 添加繁体中文 UI 语言选项
-7. #3455 - 文件搜索性能优化
-8. #3214 - 替换 fdir 爬虫为 git ls-files + ripgrep
-9. #3318 - API 预连接减少首次调用延迟
-10. #3441 - 对话回溯功能
-
-## 功能需求趋势
-社区对本地模型支持、语音输入、并发控制和国际化扩展表现出强烈兴趣，同时在性能优化和文档完善方面也有明确需求。
-
-## 开发者关注点
-配置灵活性、错误处理和性能表现是开发者反馈的核心痛点。
-</think>
-
 # Qwen Code 社区动态日报
 
-**日期：** 2026-04-24  
+**日期：** 2026-04-24
 **数据来源：** github.com/QwenLM/qwen-code
 
 ---
@@ -2118,60 +1677,14 @@ TUI 增强和用户体验改进也在推进中。
 
 ---
 
-**📅 日报生成时间：** 2026-04-24  
-**📊 数据覆盖：** 过去 24 小时  
+**📅 日报生成时间：** 2026-04-24
+**📊 数据覆盖：** 过去 24 小时
 **🔗 数据来源：** [QwenLM/qwen-code](https://github.com/QwenLM/qwen-code)
 
 </details>
 
 <details>
 <summary><strong>Pi</strong> — <a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-04-24 的 Pi 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据来源是 github.com/badlogic/pi-mono，包含：
-1. 最新 Releases - v0.70.0
-2. 最新 Issues - 50条，展示30条评论最多的
-3. 最新 Pull Requests - 15条
-
-让我整理关键信息：
-
-**版本发布：**
-- v0.70.0: 新增可搜索的认证提供商登录流程
-
-**热门 Issues（按评论数排序）：**
-1. #3588 - 终端进度转义序列可配置（10条评论）- 关于 OSC 进度转义序列在 iTerm2 中显示问题
-2. #2980 - 加速 `pi update`（9条评论）- 性能优化
-3. #3208 - 按模型自定义思考层级（7条评论）- 功能请求
-4. #3600 - 会话中 Enter 键发送提示突然停止（7条评论）- bug
-5. #2514 - 递归设置查找（5条评论）- 功能请求
-6. #2467 - Termux 中显示/隐藏键盘强制完整重绘（5条评论）- bug
-7. #3582 - 高频 bash 输出时剪贴板崩溃（4条评论）- bug
-8. #3543 - 移除长缓存保留的 URL 限制（4条评论）- 功能
-
-
-9. #3575 - Anthropic 兼容代理回归（4条评论）- bug
-10. #2144 - 无法粘贴图片（3条评论）- 功能请求
-
-**重要 PR：**
-1. #3624 - 添加 Together AI Provider（新功能）
-2. #3623 - 修复 tmux 弹出窗口中 CSI-u Ctrl+letter 解码
-3. #3618 - 对齐 GPT-5.5 Codex 能力处理
-4. #3620 - 修复剪贴板竞态条件
-5. #3197 - 添加 interrupt() 中断功能
-6. #3608 - 更新过时的 mock
-7. #3607 - 在页脚显示双按提示
-8. #3583 - 路由硬编码的 pi 品牌
-9. #3603 - 添加 img2sixel sixel 支持
-10. #3596 - 修复扩展标签
-11. #3597 - 关闭时拆除扩展 UI
-12. #3615 - 添加 GPT-5.5
-13. #3593 - 重试 http2 错误
-14. #3572 - 可搜索认证提供商登录流程
-15. #3106 - 无背景色时无尾随空格
-
-现在生成日报。
-</think>
 
 # Pi 社区动态日报 | 2026-04-24
 

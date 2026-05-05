@@ -4,53 +4,6 @@
 
 ---
 
-<think>Let me analyze the Hacker News AI posts from the past 24 hours (2026-04-29) and create a structured digest.
-
-Let me categorize the posts:
-
-**Models & Research:**
-- Post #7: A playable DOOM MCP app (77 points, 28 comments)
-- Post #12: Anthropic's Little Brother (16 points, 1 comment)
-- Post #26: VibeBench: Measuring 1k Engineers' Opinions of New Models (6 points, 2 comments)
-
-**Tools & Engineering:**
-- Post #6: Claude system prompt bug wastes user money and bricks managed agents (92 points, 25 comments)
-
-
-- Post #8: Show HN: Drive any macOS app in the background without stealing the cursor (56 points, 22 comments)
-- Post #10: AMD's Lemonade SDK 10.3 Now 10x Smaller by Getting Rid of Electron (27 points, 5 comments)
-- Post #11: We decreased our LLM costs with Opus (24 points, 3 comments)
-
-**Industry News:**
-- Post #1: OpenAI CEO's Identity Verification Company Announced Fake Bruno Mars Partnership (279 points, 104 comments)
-- Post #2: Claude.ai unavailable and elevated errors on the API (273 points, 231 comments)
-- Post #3: Anthropic Joins the Blender Development Fund as Corporate Patron (240 points, 190 comments)
-- Post #4: OpenAI models coming to Amazon Bedrock (183 points, 71 comments)
-- Post #5: ChatGPT serves ads (142 points, 85 comments)
-- Post #9: Claude for Creative Work (46 points, 36 comments)
-- Post #13: Anthropic's Little Brother (16 points, 1 comment)
-- Post #14: OpenAI Models on Amazon Bedrock (15 points, 3 comments)
-- Post #15: OpenAI Reportedly Working on an AI Smartphone to Rival iPhone (14 points, 8 comments)
-- Post #17: Nvidia executive says AI is more expensive than paying human workers (10 points, 6 comments)
-- Post #21: OpenAI Models, Codex, and Managed Agents Come to AWS (8 points, 0 comments)
-- Post #27: 'It took nine seconds': Claude AI agent deletes company's database (6 points, 1 comment)
-- Post #28: OpenAI Wants Codex to Shut Up About Goblins (5 points, 0 comments)
-- Post #29: Is OpenAI Falling Further Behind in the A.I. Race? (5 points, 2 comments)
-- Post #30: OpenAI Investors Fall After AI Giant Misses Revenue Target (5 points, 0 comments)
-
-**Opinions & Debates:**
-- Post #19: Ask HN: Is it just me or is Claude Code getting worst? (9 points, 10 comments)
-- Post #20: Musk: "The reason OpenAI exists is because Larry Page called me a specieist" (8 points, 1 comment)
-- Post #22: Show HN: Ragnerock, an AI data analysis tool (7 points, 4 comments)
-- Post #23: Tell HN: Your ChatGPT account can be deactivated at any moment, losing your data (7 points, 2 comments)
-- Post #24: 'Stole a charity': Elon Musk accuses Sam Altman of betrayal in courtroom (7 points, 1 comment)
-- Post #25: Civil Rights Division Sues Cloudera for Blocking U.S. Workers from Tech Jobs (7 points, 0 comments)
-
-Now I'm organizing these into a structured digest. The top stories are the fake Bruno Mars partnership claim, Claude.ai's API issues, Anthropic's Blender funding, OpenAI's Bedrock integration, and ChatGPT's ad platform. For models and research, I'm noting the DOOM MCP app and VibeBench as interesting developments, plus the system prompt bug affecting Claude Code users. The tools section covers AMD's SDK optimization work and the background cursor automation project.
-
-Looking at industry dynamics, there's significant news around OpenAI's revenue shortfalls and investor concerns, Anthropic's valuation milestone, and the ongoing Musk versus Altman legal dispute. The community seems particularly focused on Claude's reliability issues and the broader tensions between OpenAI and Anthropic, with some frustration about Claude Code's performance and concerns about ad integration in AI products.
-</think>
-
 # Hacker News AI Community Digest
 **Date:** 2026-04-29 | **Period:** Past 24 Hours
 

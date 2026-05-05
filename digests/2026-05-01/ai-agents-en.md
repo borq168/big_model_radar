@@ -20,27 +20,6 @@
 
 ## OpenClaw Deep Dive
 
-<think>The user wants me to generate a structured project digest for OpenClaw based on the provided GitHub data. Let me analyze the data and create a comprehensive digest following the specified sections.
-
-Key data points:
-- Issues updated in last 24h: 500 (open/active: 479, closed: 21)
-- PRs updated in last 24h: 500 (open: 474, merged/closed: 26)
-- New releases: 5 (all v2026.4.29 variants)
-
-Let me organize this into the requested sections:
-
-1. **Today's Overview** - High activity, 500 issues/PRs updated, 5 releases
-2. **Releases** - v2026.4.29 stable and beta versions
-3. **Project Progress** - 26 PRs merged/closed
-4. **Community Hot Topics** - Most active issues by comments
-5. **Bugs & Stability** - Critical bugs, regressions
-6. **Feature Requests & Roadmap Signals** - Feature requests
-7. **User Feedback Summary** - Pain points
-8. **Backlog Watch** - Long-unanswered issues
-
-Let me create this digest now.
-</think>
-
 # OpenClaw Project Digest — 2026-05-01
 
 ---
@@ -264,85 +243,6 @@ All beta variants share identical feature sets, suggesting rapid iteration throu
 
 ## Cross-Ecosystem Comparison
 
-<think>The user wants a cross-project comparison report based on the digests I just generated for all the projects. Let me analyze the data from each project and create a comprehensive comparison report.
-
-Let me compile the key metrics from each project:
-
-1. **OpenClaw** (github.com/openclaw/openclaw)
-   - Issues: 500 updated (479 open, 21 closed)
-   - PRs: 500 updated (474 open, 26 merged/closed)
-   - Releases: 5 (v2026.4.29 variants)
-   - Health: High activity, stability concerns (v2026.4.26+ regressions)
-
-2. **NanoBot** (github.com/HKUDS/nanobot)
-   - Issues: 14 updated (7 open, 7 closed)
-   - PRs: 27 updated (18 open, 9 merged/closed)
-   - Releases: 0
-   - Health: Good, active development
-
-3. **Zeroclaw** (github.com/zeroclaw-labs/zeroclaw)
-   - Issues: 50 updated (49 open, 1 closed)
-   - PRs: 50 updated (38 open, 12 merged/closed)
-   - Releases: 0 (v0.7.4 in prep)
-   - Health: High activity, onboarding bugs
-
-4. **PicoClaw** (github.com/sipeed/picoclaw)
-   - Issues: 36 updated (35 open, 1 closed)
-   - PRs: 38 updated (32 open, 6 merged/closed)
-   - Releases: 2 (v0.2.8 and nightly)
-   - Health: Good, MCP CLI enhancements
-
-5. **NanoClaw** (github.com/qwibitai/nanoclaw)
-   - Issues: 8 updated (5 open, 3 closed)
-   - PRs: 46 updated (9 open, 37 merged/closed)
-   - Releases: 0
-   - Health: Good, security focus
-
-6. **IronClaw** (github.com/nearai/ironclaw)
-   - Issues: 26 updated (25 open, 1 closed)
-   - PRs: 38 updated (18 open, 20 merged/closed)
-   - Releases: 0
-   - Health: Reborn architecture development, canary failures
-
-7. **LobsterAI** (github.com/netease-youdao/LobsterAI)
-   - Issues: 1 updated (1 open, 0 closed)
-   - PRs: 21 updated (12 open, 9 merged/closed)
-   - Releases: 0
-   - Health: Good, Windows platform focus
-
-8. **TinyClaw** (github.com/TinyAGI/tinyclaw)
-   - No activity
-
-9. **Moltis** (github.com/moltis-org/moltis)
-   - Issues: 10 updated (4 open, 6 closed)
-   - PRs: 21 updated (3 open, 18 merged/closed)
-   - Releases: 1 (20260430.01)
-   - Health: Good, SDK expansion
-
-10. **CoPaw** (github.com/agentscope-ai/CoPaw)
-    - Issues: 50 updated (17 open, 33 closed)
-    - PRs: 15 updated (1 open, 14 merged/closed)
-    - Releases: 1 (v1.1.5.post1)
-    - Health: Good, WeCom channel stability
-
-11. **ZeptoClaw** (github.com/qhkm/zeptoclaw)
-    - No activity
-
-12. **EasyClaw** (github.com/gaoyangz77/easyclaw)
-    - Issues: 0 updated
-    - PRs: 0 updated
-    - Releases: 1 (v1.8.10)
-    - Health: Quiet, macOS focus
-
-13. **NemoClaw** (github.com/NVIDIA/NemoClaw)
-    - Issues: 50 updated (37 open, 13 closed)
-    - PRs: 50 updated (19 open, 31 merged/closed)
-    - Releases: 0
-    - Health: High activity, CLI modernization
-
-Now I'll organize this into the comparison report structure.
-</think>
-
 # Cross-Project Comparison Report: Personal AI Assistant & Agent Open-Source Ecosystem
 
 ## 1. Ecosystem Overview
@@ -366,7 +266,7 @@ The personal AI assistant and agent open-source ecosystem is in a **high-velocit
 | **NanoClaw** | 8 | 46 | 0 | 5 | 9 | 🟢 Good — security hardening |
 | **LobsterAI** | 1 | 21 | 0 | 1 | 12 | 🟢 Good — Windows platform fixes |
 | **EasyClaw** | 0 | 0 | 1 | 0 | 0 | ⚪ Quiet — macOS-only release |
-| **TinyClaw** | 0 | 0 | 0 | 0 | 0 | ⚪ Inactive | 
+| **TinyClaw** | 0 | 0 | 0 | 0 | 0 | ⚪ Inactive |
 | **ZeptoClaw** | 0 | 0 | 0 | 0 | 0 | ⚪ Inactive |
 
 **Notes:**
@@ -580,16 +480,6 @@ General/Consumer
 <details>
 <summary><strong>NanoBot</strong> — <a href="https://github.com/HKUDS/nanobot">HKUDS/nanobot</a></summary>
 
-<think>Let me analyze the GitHub data for NanoBot and generate a structured project digest for 2026-05-01.
-
-Key data points:
-- Issues updated in last 24h: 14 (7 open, 7 closed)
-- PRs updated in last 24h: 27 (18 open, 9 merged/closed)
-- No new releases
-
-Let me organize this into the required sections.
-</think>
-
 # NanoBot Project Digest — 2026-05-01
 
 ## 1. Today's Overview
@@ -748,57 +638,6 @@ Issues or PRs that are important but lack recent activity or maintainer attentio
 
 <details>
 <summary><strong>Zeroclaw</strong> — <a href="https://github.com/zeroclaw-labs/zeroclaw">zeroclaw-labs/zeroclaw</a></summary>
-
-<think>Let me analyze the GitHub data for Zeroclaw and generate a structured project digest for 2026-05-01.
-
-Key observations:
-1. **Issues**: 50 total, 49 open/active, 1 closed in last 24h
-2. **PRs**: 50 total, 38 open, 12 merged/closed in last 24h
-3. **Releases**: None in last 24h (but PR #6248 is a release prep for v0.7.4)
-
-Let me categorize the data:
-
-**High Priority Issues (P1)**:
-- #6123: default_model issue on fresh install (15 comments)
-- #6210: SkillForge auto-integrator emits non-schema fields (3 comments)
-- #6036: Agent infinite tool-call loop on Termux/Android (2 comments)
-- #6237: slack bot_token must be in config file (1 comment)
-- #6224: Cron Job Dispatch to WhatsApp Web (1 comment)
-- #6223: web_fetch in WhatsApp Web not working (1 comment)
-- #6207: Web dashboard / WebSocket bypasses ApprovalManager (1 comment)
-- #6206: Onboarding fails with "Unknown property" for custom OpenAI-compatible (1 comment)
-- #6120: Onboarding: choosing OpenAI Codex prompts for OpenAI API key (1 comment)
-
-**Notable PRs**:
-- #6248: chore(release): v0.7.4 - release prep
-- #6101: hot-switch model & preserve chat context
-- #6179: web onboarding parity via per-property CRUD endpoints
-- #6242: zh-CN WeChat CLI strings
-- #6164: manually trigger cron from webui
-- #5943: add Inworld TTS and STT providers
-- #6247: SOP webhook dispatch
-
-
-- #6218: mark OpenRouter free models in dropdown
-- #6167: implement ACP protocol v1
-- #6217: open agent chat from memory row
-- #6220: chat input lock + stop button
-- #6221: share canvas store across daemon subsystems
-- #6219: fix doctor self-test report
-- #6216: evict cancel_tokens entry
-- #6215: mirror fail-loud model resolution
-- #6214: activate HMAC tool receipts
-- #6046: expose `zeroclaw memory reindex` CLI
-- #6170: sync fr/ja/es translations and add zh-CN
-- #5945: honor tool_timeout_secs for HTTP SSE tool calls
-- #6190: instrument runtime memory ops with OTel GenAI spans
-
-The most active discussions center on a few key areas. Issue #6123 has attracted significant engagement with 15 comments regarding default_model configuration problems on fresh installations. The RFC for multi-agent UX flow (#5890) and schema v3 batch breaking field migrations (#5947) each have 6 comments, indicating substantial design deliberation. Matrix voice transcription failures (#6153) and cron functionality limitations (#5862) round out the most-discussed items with 6 comments each.
-
-Several P1 severity bugs are emerging that warrant immediate attention. The default_model issue on fresh installs appears to be a blocker, along with problems in SkillForge's auto-integrator, infinite tool-call loops on Android/Termux, Slack bot_token configuration requirements, and WhatsApp Web cron job dispatch failures. The web dashboard's WebSocket path bypassing ApprovalManager represents a security concern requiring priority resolution.
-
-On the PR side, I'm tracking significant developments: v0.7.4 is being prepared for release, the web UI is gaining model hot-switching capabilities with chat context preservation, and there's work toward web onboarding parity through per-property CRUD endpoints. The ACP protocol v1 implementation is progressing with tool-call permission and back-channel support, while HMAC tool receipts are being activated. Memory reindex CLI functionality is being exposed, and internationalization efforts include Chinese translations alongside French, Japanese, and Spanish synchronization.
-</think>
 
 # Zeroclaw Project Digest — 2026-05-01
 
@@ -990,34 +829,6 @@ The following notable PRs were merged or closed:
 <details>
 <summary><strong>PicoClaw</strong> — <a href="https://github.com/sipeed/picoclaw">sipeed/picoclaw</a></summary>
 
-<think>Let me analyze the GitHub data for PicoClaw and generate a structured project digest for 2026-05-01.
-
-Key data points:
-- Issues updated in last 24h: 36 (open/active: 35, closed: 1)
-- PRs updated in last 24h: 38 (open: 32, merged/closed: 6)
-- New releases: 2 (nightly build and v0.2.8)
-
-Let me organize this into the required sections.
-
-1. **Today's Overview**: High activity - 36 issues, 38 PRs updated, 2 releases
-2. **Releases**: v0.2.8 and nightly build
-3. **Project Progress**: Need to identify merged/closed PRs
-4. **Community Hot Topics**: Top issues by comments
-5. **Bugs & Stability**: Bug reports
-6. **Feature Requests**: Enhancement requests
-7. **User Feedback**: Pain points from issues
-8. **Backlog Watch**: Long-unanswered issues
-
-Looking at the data:
-- Latest releases: v0.2.8 (with MCP CLI commands) and nightly build
-- Top issues by comments: #2408 (10 comments - LLM Account Stacking), #2225 (9 comments - Ollama cloud), #2171 (9 comments - OpenAI Responses API)
-- Many bug reports across channels (WhatsApp, Feishu, Telegram, QQ)
-- Feature requests for Slack webhook, audio input, streaming, OAuth support
-- Multiple dependency updates via Dependabot
-
-Let me structure this properly.
-</think>
-
 # PicoClaw Project Digest — 2026-05-01
 
 ## 1. Today's Overview
@@ -1200,55 +1011,6 @@ Many issues tagged `[stale]` indicate lack of recent maintainer response. Notabl
 <details>
 <summary><strong>NanoClaw</strong> — <a href="https://github.com/qwibitai/nanoclaw">qwibitai/nanoclaw</a></summary>
 
-<think>Let me analyze the GitHub data for NanoClaw and create a structured project digest for 2026-05-01.
-
-Key data points:
-- Issues updated in last 24h: 8 (open/active: 5, closed: 3)
-- PRs updated in last 24h: 46 (open: 9, merged/closed: 37)
-- New releases: 0
-
-Let me categorize the information:
-
-**Latest Issues (8 total):**
-1. #458 [CLOSED] - Security: Add network restrictions to agent containers (High priority, 4 👍)
-2. #457 [CLOSED] - Security: Container command injection via shell string interpolation (Critical)
-3. #1973 [CLOSED] - Bug: register-claude-token.sh fails with "onecli not found" (PATH issue)
-4. #2150 [OPEN] - Bug: OpenCode provider sends literal @./...md lines (High priority)
-5. #2159 [OPEN] - Bug: OneCLI `ensureAgent` fails due to underscore in agent group IDs (High priority)
-6. #2148 [OPEN] - Bug: OpenCode provider SIGKILL leaks binary (High priority)
-7. #2149 [OPEN] - Bug: OpenCode provider hardcoded 90s idle timeout (Medium priority)
-8. #2147 [OPEN] - Bug: Host sweep orphan processing_ack rows (High priority)
-
-**Latest PRs (46 total, showing top 20):**
-Closed/Merged PRs:
-- #2053 - fix(session-manager): apply outbox path-confinement to inbound attachments
-- #2001 - security fix: prevent host file read/delete via container-controlled outbox paths
-- #2055 - fix(setup): inject ~/.local/bin into PATH
-- #2040 - feat(signal): support outbound attachments
-
-
-- #2114 - fix(poll-loop): apply pre-task scripts to follow-up injections
-- #2033 - fix: defer task messages from follow-up polling
-- #2112 - fix(channels/telegram): wire maxTextLength
-- #2142 - fix(scheduling): include routing in schedule_task content JSON
-- #2141 - feat: dota-feishu decision bridge via IPC
-- #2111 - feat(setup): delete scratch agent after ping-pong
-- #2155 - Add root user warning gate to Linux setup
-- #2027 - v2: add host-actions container skill
-- #1502 - Add PR hygiene check to CLAUDE.md
-- #2157 - refactor(setup): per-step env var reuse
-- #2107 - feat: implement resolveChannelName for Slack and Telegram
-- #2105 - feat: richer channel-approval flow
-- #2158 - feat(setup): show under-the-sea lobster splash at boot
-- #2154 - feat(setup): move URL fallback into the open-browser prompt
-- #2146 - feat(setup): label headless URL fallback with "Get started:"
-
-Open PRs:
-- #2052 - fix(setup): auto-bootstrap local OneCLI admin
-
-The project shows strong momentum with 37 merged PRs and 9 still in review. Security work is a priority, particularly around container isolation and path handling. The setup experience is getting attention with multiple improvements to environment configuration and user guidance. Channel integrations are expanding with richer approval flows and better name resolution across platforms.
-</think>
-
 # NanoClaw Project Digest — 2026-05-01
 
 ## 1. Today's Overview
@@ -1385,28 +1147,6 @@ NanoClaw continues to show high development velocity with **37 PRs merged** and 
 
 <details>
 <summary><strong>IronClaw</strong> — <a href="https://github.com/nearai/ironclaw">nearai/ironclaw</a></summary>
-
-<think>Let me analyze the GitHub data for IronClaw and generate a structured project digest for 2026-05-01.
-
-Key observations:
-1. **Activity**: 26 issues updated in last 24h (25 open, 1 closed), 38 PRs updated (18 open, 20 merged/closed)
-2. **Releases**: None in the last 24h
-3. **Major themes**:
-   - Heavy focus on "Reborn" architecture (many issues/PRs tagged reborn)
-   - Integration testing for Reborn
-   - Configuration-as-Code
-   - WASM runtime lane
-   - Host runtime services
-   - HTTP egress for WASM/Script/MCP
-   - Agent loop implementations
-   - Memory storage/search service
-   - Canary tests failing (public-smoke, persona-rotating, provider-matrix)
-   - User-reported bugs: Gmail authentication issues, mission creation failures, email sending failures
-   - Web IDE API key issues
-   - TUI ASCII display issues
-
-Let me structure this into the required sections.
-</think>
 
 # IronClaw Project Digest — 2026-05-01
 
@@ -1558,23 +1298,6 @@ IronClaw is in a high-velocity development phase centered on the **Reborn archit
 
 <details>
 <summary><strong>LobsterAI</strong> — <a href="https://github.com/netease-youdao/LobsterAI">netease-youdao/LobsterAI</a></summary>
-
-<think>Let me analyze the GitHub data for LobsterAI and generate a structured project digest for 2026-05-01.
-
-Key data points:
-- Issues updated in last 24h: 1 (open/active: 1, closed: 0)
-- PRs updated in last 24h: 21 (open: 12, merged/closed: 9)
-- New releases: 0
-
-Latest Issues:
-- #1878: IM机器人 微信接口 配置扫码后无法输入验证码 (WeChat interface - can't input verification code after scanning)
-
-Latest Pull Requests (showing top 20 by comment count):
-- 9 PRs were closed/merged
-- 12 PRs are open (many marked as stale)
-
-Let me organize this into the required sections.
-</think>
 
 # LobsterAI Project Digest — 2026-05-01
 
@@ -1729,78 +1452,6 @@ No activity in the last 24 hours.
 <details>
 <summary><strong>Moltis</strong> — <a href="https://github.com/moltis-org/moltis">moltis-org/moltis</a></summary>
 
-<think>Let me analyze the GitHub data for Moltis and create a structured project digest for 2026-05-01.
-
-Key data points:
-- Issues updated in last 24h: 10 (open/active: 4, closed: 6)
-- PRs updated in last 24h: 21 (open: 3, merged/closed: 18)
-- New releases: 1 (20260430.01)
-
-Let me organize this into the required sections.
-
-**Today's Overview:**
-- High activity with 10 issues and 21 PRs updated
-- 1 new release (20260430.01)
-- 3 open PRs, 18 merged/closed PRs
-- 4 open issues, 6 closed issues
-- Multiple bug fixes and feature additions
-
-**Releases:**
-- Version 20260430.01 released on 2026-04-30
-
-**Project Progress:**
-Looking at the PRs:
-- 3 open PRs: #944 (Zen provider), #943 (voice buttons), #942 (remote sandbox support)
-- Many closed PRs with significant features:
-  - #33: Google Gemini provider with OAuth
-  - #288: SDK foundations (TypeScript, Python, Go)
-  - #201: Terminal onboarding flow
-  - #935: Per-skill usage telemetry
-  - #941: Fix system-notice text overflow
-  - #940: Handle SIGTERM for Docker
-  - #934: DeepInfra provider, sandbox GPU passthrough
-  - #936: Clipboard copy button fix
-  - #933: Auto-generate session titles
-  - #932: Message action bar
-  - #931: Model probe fix
-  - #925: Scroll hijacking fix
-  - #921: Auto-trigger indexing
-  - #928: Dependency bump
-  - #926: New slash commands
-
-**Community Hot Topics:**
-Looking at issues by comments:
-- #922 (closed): Chat scrolling bug - 3 comments
-
-
-- #266 (closed): 9router support - 2 comments
-
-**Bugs & Stability:**
-Multiple bugs reported and fixed:
-- Chat scrolling issues (#922, #946, #947)
-- Chat layout issues (#945)
-- SIGTERM handling (#939)
-- System-notice text overflow (#938)
-- Settings/terminal tmux error (#937)
-- Model discovery timeout (#919)
-- MCP re-authenticate button (#927)
-
-**Feature Requests:**
-- #266: Native 9router support (closed)
-- #944: Zen provider (open)
-- #942: Remote sandbox support (open)
-
-**User Feedback:**
-- Voice controls need refinement
-- Chat UI/UX issues (scrolling, layout)
-- Docker deployment improvements
-- Better model discovery
-
-**Backlog Watch:**
-- #266: 9router support (created 2026-02-28, closed 2026-04-30)
-- Multiple older issues that were recently closed
-</think>
-
 # Moltis Project Digest — 2026-05-01
 
 ## 1. Today's Overview
@@ -1946,52 +1597,6 @@ Moltis shows **high development velocity** with 21 PRs and 10 issues updated in 
 
 <details>
 <summary><strong>CoPaw</strong> — <a href="https://github.com/agentscope-ai/CoPaw">agentscope-ai/CoPaw</a></summary>
-
-<think>Let me analyze the GitHub data for CoPaw (QwenPaw) and generate a structured project digest for 2026-05-01.
-
-Key data points:
-- Issues updated in last 24h: 50 (open/active: 17, closed: 33)
-- PRs updated in last 24h: 15 (open: 1, merged/closed: 14)
-- New releases: 1 (v1.1.5.post1)
-
-Let me organize this into the required sections.
-
-1. **Today's Overview**: High activity day with 50 issues and 15 PRs updated. One new release v1.1.5.post1. Lots of bug fixes, especially around WeCom channel stability and Feishu integration.
-
-2. **Releases**: v1.1.5.post1 - version bump and FeishuCardHandler feature
-
-3. **Project Progress**: 14 PRs merged/closed, including:
-- WeCom channel fixes (cross-loop runtime error, double reconnect race, stream issues)
-- Feishu interactive buttons for tool_guard approval
-- Security fix for path traversal
-- Console UI fixes (CodeMirror, antd v5 API migration)
-- WeChat/Weixin identifier unification
-
-4. **Community Hot Topics**: 
-- Issue #3955: Windows server arbitrary file traversal vulnerability (12 comments) - SECURITY
-- Issue #3853: Debian page freeze after saving model settings (10 comments)
-- Issue #2757: WeChat channel disconnection issues (7 comments)
-- Issue #3350: Page scrolling lag with many conversation rounds (6 comments)
-- Issue #3957: Agent workspace switching bug (5 comments)
-
-5. **Bugs & Stability**:
-- SECURITY: #3955 - Windows arbitrary file traversal (fixed in PR #3973)
-
-
-- WeCom channel issues dominate the bug reports: asyncio event loop conflicts (#3296, #3978), WeChat file sending failures, and connection stability problems. The Feishu integration also has approval button failures when unsubscribed, plus a Windows exe white screen issue on first launch.
-
-6. **Feature Requests & Roadmap Signals**:
-- /ralph-loop magic command for self-referential task execution
-- Hermes agent concept for autonomous agent evolution
-- Console Web paste image/file functionality
-- Workspace separation for core config vs user files
-- Wide-screen chat interface toggle
-- Timestamp display in chat
-
-7. **User Feedback Summary**: Users report frustration with WeCom channel stability and disconnection problems, Windows compatibility issues causing white screens, workspace management confusion, and performance degradation during extended conversations. The Feishu approval flow needs improvement, and there's demand for better file handling and display capabilities.
-
-8. **Backlog Watch**: Several issues remain unresolved—WeChat channel disconnections (#2757), page scrolling performance with many rounds (#3350), and workspace separation needs (#3967). The Hermes agent evolution concept (#3516) and ACP compatibility (#3886) are still pending review.
-</think>
 
 # CoPaw Project Digest — 2026-05-01
 
@@ -2158,7 +1763,7 @@ CoPaw (QwenPaw) experienced a high-activity day with **50 issues** and **15 PRs*
 
 ---
 
-**Digest Generated:** 2026-05-01  
+**Digest Generated:** 2026-05-01
 **Data Source:** GitHub CoPaw/QwenPaw activity (last 24h)
 
 </details>
@@ -2172,381 +1777,6 @@ No activity in the last 24 hours.
 
 <details>
 <summary><strong>EasyClaw</strong> — <a href="https://github.com/gaoyangz77/easyclaw">gaoyangz77/easyclaw</a></summary>
-
-<think>The user wants a structured English EasyClaw project digest for 2026-05-01, based on the provided GitHub data. The data includes:
-
-- Issues updated in last 24h: 0 (open/active: 0, closed: 0)
-- PRs updated in last 24h: 0 (open: 0, merged/closed: 0)
-- New releases: 1 (v1.8.10: RivonClaw v1.8.10)
-- Installation instructions for macOS (fix for Gatekeeper)
-- No latest issues or PRs.
-
-We need to generate a structured digest with sections:
-
-1. Today's Overview
-2. Releases
-3. Project Progress
-4. Community Hot Topics
-5. Bugs & Stability
-6. Feature Requests & Roadmap Signals
-7. User Feedback Summary
-8. Backlog Watch
-
-We need to be objective, data-driven, highlighting project health. Include GitHub links for each item.
-
-We need to include GitHub links. The repository is github.com/gaoyangz77/easyclaw. The release is v1.8.10. The issues and PRs are none.
-
-We need to note that there were no issues or PRs updated in the last 24h. The release includes installation instructions for macOS, specifically a fix for Gatekeeper blocking unsigned apps.
-
-We should also note that the release is named "RivonClaw v1.8.10". Possibly RivonClaw is the macOS app name.
-
-We should also note that there are no recent issues or PRs to comment on. However, we can mention that the project has no activity in the last 24h, but there is a new release.
-
-We should also include the GitHub link for the release: https://github.com/gaoyangz77/easyclaw/releases/tag/v1.8.10
-
-We should also include the GitHub link for the repository: https://github.com/gaoyangz77/easyclaw
-
-We should also note that there are no open issues or PRs, so the community might be quiet.
-
-We should also note that the release includes installation instructions, which might be a response to user feedback about macOS Gatekeeper issues.
-
-We should also note that there are no bugs reported today.
-
-We should also note that there are no feature requests or PRs.
-
-We should also note that there is no user feedback in the data, but the installation instructions suggest user pain points.
-
-We should also note that there are no long-unanswered issues because there are no issues.
-
-We need to be careful to not invent data. The data says there are 0 issues and PRs. So we should say that there is no activity in the last 24h, but there is a new release.
-
-We can also mention that the release is a patch update that includes installation instructions for macOS, which might indicate that users were having trouble opening the app.
-
-We can also mention that the project health is stable, with no reported bugs or issues.
-
-We should also include the GitHub link for the release in the Releases section.
-
-We should also include the GitHub link for the repository in the first section.
-
-We should also note that the release is named "RivonClaw v1.8.10", which might be the macOS app.
-
-We should also note that the installation instructions are in Chinese and English, indicating a global user base.
-
-We should also note that the release is a fix for macOS Gatekeeper, which is a common issue for unsigned apps.
-
-We should also note that there are no other changes mentioned in the release notes, so it might be a minor update.
-
-We should also note that the project has no open issues or PRs, which might indicate that the project is stable.
-
-We should also note that the project has no activity in the last 24h, but the release is new.
-
-We should also note that the project has a low activity level, but the release might bring some attention.
-
-We should also note that the project is an AI agent and personal AI assistant open-source project, so we can mention that.
-
-We should also note that the release is v1.8.10, which is a minor patch.
-
-We should also note that the release is for RivonClaw, which is the macOS app.
-
-We should also note that the installation instructions are for macOS, and the fix is to open Terminal and run a command.
-
-We should also note that the release is for macOS users, and the fix is to allow the app to run.
-
-We should also note that the project is EasyClaw, and the release is RivonClaw v1.8.10.
-
-We should also note that the release is for macOS, and the issue is Gatekeeper.
-
-We should also note that the release is a patch for macOS installation issues.
-
-We should also note that the project health is good, with no bugs or issues.
-
-We should also note that the community is quiet, with no active issues or PRs.
-
-We should also note that the release is the only activity today.
-
-We should also note that the release is a response to user feedback about macOS installation.
-
-We should also note that the release is a minor update, and the project is stable.
-
-We should also note that the release is v1.8.10, and the previous version might be v1.8.9.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to allow the app to run.
-
-We should also note that the release is for macOS, and the issue is Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to allow the app to run.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is damaged.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is unsigned.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app is blocked by Gatekeeper.
-
-We should also note that the release is for macOS, and the fix is to run a command in Terminal.
-
-We should also note that the release is for macOS, and the issue is that the app
-
-</details>
-
-<details>
-<summary><strong>NemoClaw</strong> — <a href="https://github.com/NVIDIA/NemoClaw">NVIDIA/NemoClaw</a></summary>
-
-<think>Let me analyze the GitHub data for NemoClaw and generate a structured project digest for 2026-05-01.
-
-Key observations:
-1. **Activity**: 50 issues updated in last 24h (37 open, 13 closed), 50 PRs updated (19 open, 31 merged/closed)
-2. **Releases**: None in last 24h
-3. **Top Issues by comments**: #1992 (294 comments) - Nightly E2E failure, #1551 (7 comments) - Docker bridge docs, #2733 (5 comments) - Ollama tool-call issues
-4. **Top PRs**: Several CLI refactoring PRs (#2788, #2787, #2786, #2776, #2775), GPU passthrough feature (#2795), Hermes onboarding fix (#2781)
-5. **Bugs**: Multiple platform-specific issues (macOS, Ubuntu, DGX Spark, WSL2), integration issues (Telegram, Slack, Discord), local model/Ollama issues
-6. **Features**: CLI migration to oclif, GPU passthrough, skill priority in docs, dashboard port conflict hints
-
-Let me structure this into the required format.
-</think>
 
 # NemoClaw Project Digest — 2026-05-01
 

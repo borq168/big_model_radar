@@ -7,46 +7,6 @@ Sources:
 
 ---
 
-<think>Let me analyze the provided data to create a comprehensive skills community highlights report.
-
-First, let me identify the most-discussed PRs (by comments, though all show "undefined" for comments - I'll need to look at other indicators like updates, activity, or just the content of the PRs themselves). Since all PRs show "Comments: undefined", I'll need to use other metrics or just present the most notable ones based on their content and activity.
-
-Let me categorize the data:
-
-**Top Skills (PRs) - Most notable based on content and activity:**
-
-1. #514 - document-typography skill - typographic quality control
-2. #538 - fix(pdf): case-sensitive file references
-3. #83 - skill-quality-analyzer and skill-security-analyzer
-4. #210 - frontend-design skill improvement
-5. #486 - ODT skill (OpenDocument)
-6. #539 - fix(skill-creator): YAML special characters warning
-7. #541 - fix(docx): tracked change w:id collision
-8. #509 - docs: add CONTRIBUTING.md
-9. #723 - testing-patterns skill
-10. #806 - sensory skill (AppleScript/macOS automation)
-
-**Issues - Community Demand:**
-- #62 - Skills disappearing (10 comments) - major UX issue
-- #228 - Org-wide skill sharing (9 comments) - enterprise need
-- #202 - skill-creator best practices (8 comments) - quality concern
-- #556 - run_eval.py skill trigger rate bug (6 comments) - technical issue
-- #189 - duplicate skills from plugins (5 comments) - packaging issue
-- #492 - Security: community skills namespace trust (4 comments) - security concern
-- #412 - agent-governance skill proposal (4 comments) - new direction
-- #29 - Usage with Bedrock (4 comments) - platform support
-- #16 - Expose Skills as MCPs (4 comments) - integration request
-
-
-- #184 - agentskills.io redirect error (3 comments) - broken link
-- #61 - 404 error loading skills (3 comments) - API issue
-- #532 - skill-creator requires ANTHROPIC_API_KEY (2 comments) - enterprise issue
-- #406 - unable to upload skills (2 comments) - upload issue
-- #403 - unable to delete skill versions (2 comments) - API issue
-
-Now I'll structure the report with the most impactful findings. The skill ecosystem shows strong momentum around document handling and quality assurance, with typography, PDF, and ODT skills gaining traction. Enterprise needs like org-wide sharing and SSO integration are driving significant discussion, while technical issues around skill triggering and API reliability need attention. The security concerns around community skill namespaces and the desire to expose skills as MCPs represent important architectural considerations for the platform's future direction.
-</think>
-
 # Skills Community Highlights Report
 **Repository:** github.com/anthropics/skills | **Data as of:** 2026-05-01
 

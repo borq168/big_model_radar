@@ -15,61 +15,6 @@
 
 ## 横向对比
 
-<think>用户要求我基于之前生成的各 AI CLI 工具的日报数据，生成一份横向对比分析报告。让我整理一下各工具的数据：
-
-**Claude Code (Anthropic)**:
-- Issues: 50条
-- PRs: 5条
-- Releases: 无
-- 热点：Session 消失、WSL 剪贴板、订阅认证、插件系统
-
-**OpenAI Codex**:
-- Issues: 50条
-- PRs: 40条
-- Releases: 无
-- 热点：认证问题、Linux 桌面应用、沙箱回归、Frodex 功能
-
-**Gemini CLI (Google)**:
-- Issues: 50条
-- PRs: 15条
-- Releases: 无
-- 热点：代理支持、Flash 降级、Windows 稳定性、AST 感知
-
-**GitHub Copilot CLI**:
-- Issues: 13条
-- PRs: 0条
-- Releases: 无
-- 热点：DeepSeek API、远程会话、模型路由
-
-**Kimi Code CLI (Moonshot)**:
-- Issues: 6条有效
-- PRs: 1条
-- Releases: 无
-- 热点：嵌套 Skill 递归加载、后台任务限制、Prompt 符号配置
-
-**OpenCode (anomalyco)**:
-- Issues: 50条
-- PRs: 50条
-- Releases: 无
-- 热点：内存问题、工具调用兼容性、模型自动发现
-
-**Qwen Code (Alibaba)**:
-
-
-- Issues: 13条
-- PRs: 44条
-- Releases: v0.15.6-nightly
-- 热点：FileReadCache、后台任务管理、OAuth 政策
-
-**Pi (badlogic)**:
-- Issues: 34条
-- PRs: 8条
-- Releases: 无
-- 热点：WebSocket 稳定性、小米区域支持、/model 切换
-
-现在生成横向对比报告。
-</think>
-
 # AI CLI 工具生态横向对比报告
 
 **报告日期**: 2026-05-04
@@ -257,47 +202,6 @@
 <details>
 <summary><strong>Claude Code</strong> — <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-04 的 Claude Code 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases: 无
-- 最新 Issues: 50条，展示30条评论最多的
-- 最新 PRs: 5条
-
-让我按照要求的结构来组织：
-
-1. **今日速览** - 总结最重要动态
-2. **版本发布** - 无新版本，省略
-3. **社区热点 Issues** - 挑选10个最值得关注的
-4. **重要 PR 进展** - 挑选10个重要的（但只有5个PR）
-5. **功能需求趋势** - 提炼社区关注方向
-6. **开发者关注点** - 总结痛点和高频需求
-
-让我分析 Issues 中的热点：
-
-高评论/点赞的 Issues：
-1. #26452 - Session 消失问题，41评论，21👍
-2. #13738 - WSL 剪贴板图片粘贴问题，33评论，41👍
-3. #31012 - Claude Max 20x 订阅不被识别，25评论
-4. #996 - 自动更新失败，17评论，22👍
-5. #9444 - 插件依赖和共享资源支持，17评论，46👍
-6. #29026 - Desktop app 忽略 permissions 设置，16评论，25👍
-
-
-7. #12612 - 添加 'claude model list' CLI 命令，12评论，29👍
-8. #28508 - 远程控制问题，11评论
-9. #52679 - Windows 平台建议
-10. #54588 - Claude Max 订阅问题
-
-还有一些新提交的 Issues：
-- #55916 - Keychain 凭据泄漏问题
-- #55914 - MCP 集成问题
-- #55889 - Hooks 问题
-- #55900 - Hooks 问题
-
-PR 方面，#55857 提出了关于 npm update -g 的警告，#55864 涉及会话持久化插件，#55832 修复了文档问题，#55834 处理了更新检查器插件，还有 #46024 记录了 exclude-dynamic-system-prompt-sections 的相关内容。
-</think>
-
 # Claude Code 社区动态日报
 
 **日期**: 2026-05-04
@@ -403,58 +307,6 @@ PR 方面，#55857 提出了关于 npm update -g 的警告，#55864 涉及会话
 
 <details>
 <summary><strong>OpenAI Codex</strong> — <a href="https://github.com/openai/codex">openai/codex</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-04 的 OpenAI Codex 社区动态日报。我需要：
-
-1. 今日速览 - 2-3句话概括最重要动态
-2. 版本发布 - 无新版本，省略
-3. 社区热点 Issues - 挑选10个最值得关注的
-4. 重要 PR 进展 - 挑选10个重要的
-5. 功能需求趋势 - 从 Issues 提炼
-6. 开发者关注点 - 总结痛点和高频需求
-
-让我分析数据：
-
-**最新 Releases**: 无
-
-**热门 Issues** (按评论数排序):
-1. #20161 - Codex 需要电话号码 (45评论, 38👍) - auth 问题
-2. #11023 - Linux 桌面应用需求 (44评论, 105👍) - enhancement
-3. #14919 - bwrap 沙箱失败 (40评论, 42👍) - regression bug
-4. #987 - 无法使用其他提供商模型 (32评论) - bug
-5. #11013 - 模型自动变为 Medium (30评论) - bug
-6. #12161 - IDE 卡在 "Thinking" (27评论) - bug
-7. #20501 - Alt+Enter 回归问题 (14评论) - regression
-8. #8673 - Shift+Enter 支持 (8评论) - enhancement
-
-
-9. #9184 - vi 编辑模式 (8评论, 40👍) - enhancement
-10. #20547 - 桌面应用性能下降 (7评论) - performance bug
-
-**重要 PRs** (按时间):
-1. #20915 - frodex: pin rollout references by segment
-2. #20897 - Refactor app-server dispatch result flow (CLOSED)
-3. #20891 - Enforce Windows protected metadata targets
-4. #20914 - frodex: restore fork command and debug hooks
-5. #20913 - frodex: restore TUI subagent surface
-6. #20912 - frodex: synchronize agent control tools
-7. #20911 - frodex: add custom models and role prompts
-8. #20910 - frodex: add watchdog runtime handles
-9. #20923 - Add plugin ID to skill analytics
-10. #20909 - frodex: preserve fork prompt cache state
-11. #20892 - feat(tui): add PR summary statusline items
-12. #18748 - emit terminal tool review events
-13. #18747 - add tool review event schema
-14. #17090 - emit tool item events from item lifecycle
-15. #20750 - Unify skip-review handling for approval_mode = "approve"
-16. #20822 - Use structured service tiers across core and app-server
-17. #20853 - Persist MCP Apps specific tool call end event
-18. #7743 - adding support for reading execpolicy from /etc/codex and .codex
-19. #20824 - Drive TUI service-tier commands from model metadata
-20. #15226 - core: eagerly initialize guardian sessions
-
-The frodex feature set is driving significant activity with multiple PRs addressing fork command restoration, TUI subagent surfaces, agent control synchronization, custom model support, and watchdog runtime integration. Analytics improvements include plugin ID tracking and tool review event emission. Service tier handling is being standardized across the codebase, while MCP Apps tool calls and guardian session initialization represent lower-priority but still active development areas.
-</think>
 
 # OpenAI Codex 社区动态日报
 
@@ -587,50 +439,9 @@ The frodex feature set is driving significant activity with multiple PRs address
 <details>
 <summary><strong>Gemini CLI</strong> — <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-04 的 Gemini CLI 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases: 无
-- 最新 Issues: 50条，展示30条评论最多的
-- 最新 PRs: 15条
-
-让我按照要求的结构来组织内容：
-
-1. 今日速览
-2. 版本发布（无）
-3. 社区热点 Issues（10个）
-4. 重要 PR 进展（10个）
-5. 功能需求趋势
-6. 开发者关注点
-
-让我先筛选最重要的 Issues（按评论数和重要性）：
-
-高优先级 Issues:
-1. #24353 - Component Level Evaluations (5评论) - 行为评估测试
-2. #22745 - AST-aware file reads (5评论) - AST感知工具
-3. #22323 - Subagent recovery (4评论) - 子代理恢复问题
-4. #24916 - Permission issues (3评论) - 权限问题
-5. #25166 - Shell command stuck (2评论) - Shell卡住问题
-6. #23571 - Tmp scripts (2评论) - 临时脚本问题
-7. #22267 - Browser Agent settings (2评论) - 浏览器代理设置
-8. #25216 - Table rendering (0评论) - 表格渲染问题
-
-
-9. #24943 - Parallel tool calls (0评论) - 并行工具调用
-10. #24935 - Corruption after editors (0评论) - 编辑器退出后损坏
-
-现在看 PR 进展，#26361 修复了代理支持问题，#25684 实现了 Flash 降级机制，#26418 是文档审计，#26410 修复了主目录检查，#26407 处理了 IDE 初始化竞态条件，#25900 优先使用 pwsh.exe，#26392 解决 Windows 挂起问题，#26404 修复遥测缓冲，#26358 添加退格退出功能，#26401 处理 ENAMETOOLONG 错误。
-
-还有 #25098 清理 URL 末尾标点，#25102 配置 UTF-8 编码，#24736 实现 union-find 上下文压缩，#21296 和 #25633 已关闭。
-
-主要功能方向包括代理支持与网络配置、Flash 模型降级容错、Windows 兼容性与稳定性、IDE 集成与初始化、权限与安全机制、UI 渲染与交互优化、Agent 行为评估与记忆管理、工具调用优化与 AST 感知能力。
-
-开发者需要关注权限管理、Shell 执行稳定性、表格渲染性能、上下文压缩效率以及 Windows 环境下的编码问题。
-</think>
-
 # Gemini CLI 社区动态日报
 
-**日期**: 2026-05-04  
+**日期**: 2026-05-04
 **数据来源**: github.com/google-gemini/gemini-cli
 
 ---
@@ -741,8 +552,8 @@ The frodex feature set is driving significant activity with multiple PRs address
 
 ---
 
-**📅 报告生成时间**: 2026-05-04  
-**分析师**: AI Development Tools Technical Analyst  
+**📅 报告生成时间**: 2026-05-04
+**分析师**: AI Development Tools Technical Analyst
 **数据完整性**: Issues 50条 / PRs 15条 / Releases 0条
 
 </details>
@@ -750,44 +561,9 @@ The frodex feature set is driving significant activity with multiple PRs address
 <details>
 <summary><strong>GitHub Copilot CLI</strong> — <a href="https://github.com/github/copilot-cli">github/copilot-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub Copilot CLI 社区数据，生成一份 2026-05-04 的中文日报。让我仔细分析数据并按照要求的结构组织内容。
-
-数据概览：
-- 最新 Releases：无
-- 最新 Issues：13 条（其中 3 条已关闭）
-- 最新 PRs：无
-
-让我逐一分析 Issues：
-
-1. #2995 - DeepSeek API 配置问题 - 6 👍, 8 评论
-2. #2751 - /remote 命令在组织仓库中报错 - 12 👍, 6 评论
-3. #1354 - 模型路由和子代理模型选择功能请求 - 5 👍, 3 评论
-4. #2979 - Android 应用达到请求限制后远程会话问题 - 0 👍, 2 评论
-5. #2369 - 长结果无法滚动查看 - 4 👍, 2 评论
-6. #2939 - 允许子代理覆盖模型（已关闭） - 0 👍, 2 评论
-7. #3092 - @文件引用不显示当前目录文件（已关闭） - 0 👍, 1 评论
-8. #3083 - v1.0.40 不再加载 .mcp.json - 0 👍, 1 评论
-9. #3093 - 无效 issue - Instagram（已关闭）
-
-
-10. #3098 - PowerShell $home 变量风险 - 0 👍, 0 评论
-11. #3097 - 粘贴长字符串插入额外换行符 - 0 👍, 0 评论
-12. #3096 - ACP 代理添加"Ask"模式 - 0 👍, 0 评论
-13. #3095 - SKILL.md 前端声明字段 - 0 👍, 0 评论
-
-现在按照要求的结构组织日报内容：
-
-1. **今日速览** - 总结关键发现
-2. **版本发布** - 无新版本
-3. **社区热点 Issues** - 重点关注 DeepSeek API 集成、远程会话权限、模型路由功能、滚动显示问题以及 PowerShell 变量风险
-4. **重要 PR 进展** - 无新 PR
-5. **功能需求趋势** - 模型灵活性、跨平台支持、IDE 集成
-6. **开发者关注点** - 配置复杂性、权限管理、用户体验
-</think>
-
 # GitHub Copilot CLI 社区动态日报
 
-**日期：** 2026-05-04  
+**日期：** 2026-05-04
 **数据来源：** github.com/github/copilot-cli
 
 ---
@@ -807,7 +583,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ## 3. 社区热点 Issues
 
 ### 🔥 #2995 | DeepSeek API 无法使用
-**状态：** OPEN | 👍 6 | 💬 8  
+**状态：** OPEN | 👍 6 | 💬 8
 **链接：** https://github.com/github/copilot-cli/issues/2995
 
 **重要性：** 反映了社区对**多模型提供商支持**的强烈需求。用户尝试通过配置环境变量使用 DeepSeek API，但遇到连接问题。
@@ -817,7 +593,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ---
 
 ### 🔥 #2751 | /remote 命令在组织仓库中报错
-**状态：** OPEN | 👍 12 | 💬 6  
+**状态：** OPEN | 👍 12 | 💬 6
 **链接：** https://github.com/github/copilot-cli/issues/2751
 
 **重要性：** 这是目前**点赞数最高**的 Issue，涉及**企业用户**的核心使用场景。错误信息 `Remote session disabled: could not resolve repository` 直接影响团队协作。
@@ -827,7 +603,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ---
 
 ### 🔥 #1354 | 模型路由、子代理模型选择与全局钩子支持
-**状态：** OPEN | 👍 5 | 💬 3  
+**状态：** OPEN | 👍 5 | 💬 3
 **链接：** https://github.com/github/copilot-cli/issues/1354
 
 **重要性：** 提出**三大核心功能增强**，包括可配置模型路由、每个子代理独立选择模型、以及全局钩子支持。这是功能层面的系统性需求。
@@ -837,7 +613,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ---
 
 ### ⚠️ #2369 | 长结果无法滚动查看
-**状态：** OPEN | 👍 4 | 💬 2  
+**状态：** OPEN | 👍 4 | 💬 2
 **链接：** https://github.com/github/copilot-cli/issues/2369
 
 **重要性：** 涉及**基础交互体验**，影响所有需要查看长输出的用户。
@@ -847,7 +623,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ---
 
 ### ⚠️ #3083 | v1.0.40 不再加载 .mcp.json
-**状态：** OPEN | 👍 0 | 💬 1  
+**状态：** OPEN | 👍 0 | 💬 1
 **链接：** https://github.com/github/copilot-cli/issues/3083
 
 **重要性：** 这是一个**版本回归问题**，影响 MCP 服务器配置的正常使用。
@@ -857,7 +633,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ---
 
 ### ⚠️ #3098 | PowerShell $home 变量风险
-**状态：** OPEN | 👍 0 | 💬 0  
+**状态：** OPEN | 👍 0 | 💬 0
 **链接：** https://github.com/github/copilot-cli/issues/3098
 
 **重要性：** 涉及**安全风险**，PowerShell 变量名大小写不敏感可能导致用户配置文件被误删。
@@ -867,7 +643,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ---
 
 ### 📝 #3097 | 粘贴长字符串插入额外换行符
-**状态：** OPEN | 👍 0 | 💬 0  
+**状态：** OPEN | 👍 0 | 💬 0
 **链接：** https://github.com/github/copilot-cli/issues/3097
 
 **重要性：** 影响**文本输入准确性**，在处理代码或 base64 等内容时尤为关键。
@@ -877,7 +653,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ---
 
 ### 📝 #3096 | ACP 代理添加"Ask"模式
-**状态：** OPEN | 👍 0 | 💬 0  
+**状态：** OPEN | 👍 0 | 💬 0
 **链接：** https://github.com/github/copilot-cli/issues/3096
 
 **重要性：** 扩展 **ACP 协议** 的使用场景，支持轻量级问答模式。
@@ -887,7 +663,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ---
 
 ### 📝 #3095 | SKILL.md 前端声明字段
-**状态：** OPEN | 👍 0 | 💬 0  
+**状态：** OPEN | 👍 0 | 💬 0
 **链接：** https://github.com/github/copilot-cli/issues/3095
 
 **重要性：** 推动 **跨工具格式标准化**，与 VS Code Copilot Chat 保持一致。
@@ -897,7 +673,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 ---
 
 ### 📝 #2979 | Android 应用达到请求限制后远程会话问题
-**状态：** OPEN | 👍 0 | 💬 2  
+**状态：** OPEN | 👍 0 | 💬 2
 **链接：** https://github.com/github/copilot-cli/issues/2979
 
 **重要性：** 涉及**移动端用户体验**和**配额管理逻辑**。
@@ -931,13 +707,13 @@ The frodex feature set is driving significant activity with multiple PRs address
 
 ### 🔧 核心痛点
 
-1. **第三方 API 集成困难**  
+1. **第三方 API 集成困难**
    DeepSeek 等非官方模型提供商的配置流程不够顺畅，需要更明确的文档或内置支持。
 
-2. **企业场景适配不足**  
+2. **企业场景适配不足**
    组织仓库中的 `/remote` 功能存在兼容性问题，影响团队协作效率。
 
-3. **版本回归问题**  
+3. **版本回归问题**
    v1.0.40 破坏了 MCP 配置加载功能，需要尽快修复。
 
 ### 📈 高频需求
@@ -949,7 +725,7 @@ The frodex feature set is driving significant activity with multiple PRs address
 
 ---
 
-**日报生成时间：** 2026-05-04  
+**日报生成时间：** 2026-05-04
 **数据统计：** 13 条 Issues | 0 条 PRs | 0 个 Releases
 
 </details>
@@ -957,47 +733,9 @@ The frodex feature set is driving significant activity with multiple PRs address
 <details>
 <summary><strong>Kimi Code CLI</strong> — <a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-04 的 Kimi Code CLI 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases：过去24小时无
-- 最新 Issues：共8条（其中2条已关闭）
-- 最新 Pull Requests：共1条
-
-让我整理一下：
-
-Issues 列表：
-1. #1894 - 递归加载嵌套 skill 目录（enhancement）- OPEN
-2. #2157 - 可配置后台任务限制（enhancement）- OPEN
-3. #2156 - test - CLOSED
-4. #2155 - 可配置 prompt 符号（feature request）- OPEN
-5. #2154 - PermissionRequest hook 事件（feature request）- OPEN
-6. #2153 - 更新 pillow 版本（enhancement）- OPEN
-7. #1493 - CLI 动画不转 bug - CLOSED
-8. #2152 - 支持全局 AGENTS.md（feature request）- OPEN
-
-PR：
-1. #2146 - feat(#1894): 递归发现嵌套子目录中的 skills - OPEN
-
-现在我需要按照要求的格式生成日报：
-
-1. 今日速览
-2. 版本发布（无，跳过）
-3. 社区热点 Issues - 挑选最值得关注的
-4. 重要 PR 进展
-
-
-5. 功能需求趋势
-6. 开发者关注点
-
-用户要求挑选10个最值得关注的 Issue，但实际只有8条，其中2条已关闭（#2156 test, #1493 CLI动画bug）。我需要评估每条 Issue 的重要性和社区反应。#1894 涉及嵌套 skill 目录加载，这是核心功能改进；#2157 关于后台任务限制影响多代理工作流；#2155 和 #2154 分别是 UI 和权限相关的功能请求；#2153 是依赖更新；#2152 涉及全局配置支持。
-
-我会选择所有 OPEN 状态的 Issue（6条）加上 #1493 这个已关闭但有意义的 bug 修复，共7条来满足数量要求。
-</think>
-
 # Kimi Code CLI 社区动态日报
 
-**日期**: 2026-05-04  
+**日期**: 2026-05-04
 **数据来源**: github.com/MoonshotAI/kimi-cli
 
 ---
@@ -1017,7 +755,7 @@ PR：
 ## 3. 社区热点 Issues
 
 ### 🔥 #1894 | 嵌套 Skill 目录递归加载问题
-**状态**: OPEN | **评论**: 3 | **👍**: 0  
+**状态**: OPEN | **评论**: 3 | **👍**: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/1894
 
 **重要性**: 该 Issue 揭示了 Kimi CLI 与 Codex 在 Skill 加载机制上的关键差异。当项目存在 `.agents/skills/{name}/skills/xxx` 这样的多层嵌套结构时，Kimi CLI 无法识别深层 Skill，而 Codex 可以正常加载。这直接影响多项目布局管理的工作流。
@@ -1027,7 +765,7 @@ PR：
 ---
 
 ### 🔥 #2157 | 多代理工作流后台任务并发限制
-**状态**: OPEN | **评论**: 0 | **👍**: 0  
+**状态**: OPEN | **评论**: 0 | **👍**: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2157
 
 **重要性**: 当前 Kimi CLI 对后台/子代理任务有硬编码的 4 个并发上限。当工作流尝试启动第 5 个子代理时，会直接报错 "too many background tasks"，而非排队或优雅降级。这严重阻碍了复杂多代理架构的落地。
@@ -1037,7 +775,7 @@ PR：
 ---
 
 ### 💡 #2155 | Prompt 符号可配置化
-**状态**: OPEN | **评论**: 0 | **👍**: 0  
+**状态**: OPEN | **评论**: 0 | **👍**: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2155
 
 **重要性**: 当前 TUI 的 Prompt 符号（✨/💫/📋）硬编码在源码中，用户无法自定义。这导致两个问题：① 无法通过符号快速定位/搜索历史 Prompt；② 在不支持 emoji 的终端环境中体验受限。
@@ -1047,7 +785,7 @@ PR：
 ---
 
 ### 💡 #2154 | PermissionRequest Hook 事件
-**状态**: OPEN | **评论**: 0 | **👍**: 0  
+**状态**: OPEN | **评论**: 0 | **👍**: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2154
 
 **重要性**: Kimi CLI 已支持 `PreToolUse` 等 Hook 用于阻断危险操作，但缺少**自动批准**机制。所有受 Gate 的工具调用仍需手动确认，影响自动化脚本的执行效率。该 Issue 提议新增 `PermissionRequest` 事件，允许 Hook 层面实现智能放行。
@@ -1057,7 +795,7 @@ PR：
 ---
 
 ### 🛡️ #2153 | 依赖安全更新：Pillow 12.1.0 → 12.2.0
-**状态**: OPEN | **评论**: 0 | **👍**: 0  
+**状态**: OPEN | **评论**: 0 | **👍**: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2153
 
 **重要性**: 当前依赖的 Pillow 12.1.0 存在 CVE-2026-25990 漏洞（PSD 图片加载时的越界写入），在安全严格的环境中会被阻断使用。升级到 12.2.0 可修复该问题。
@@ -1067,7 +805,7 @@ PR：
 ---
 
 ### 📂 #2152 | 全局 AGENTS.md 支持
-**状态**: OPEN | **评论**: 0 | **👍**: 0  
+**状态**: OPEN | **评论**: 0 | **👍**: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/2152
 
 **重要性**: 当前 `AGENTS.md` 仅从当前工作目录加载。对于并行维护 10+ 项目的开发者而言，无法复用统一的编码规范和项目约定，导致大量重复配置。引入 `~/.kimi/AGENTS.md` 全局配置可显著提升多项目管理效率。
@@ -1077,7 +815,7 @@ PR：
 ---
 
 ### ✅ #1493 | CLI 动画不转导致状态不明确（已关闭）
-**状态**: CLOSED | **评论**: 0 | **👍**: 0  
+**状态**: CLOSED | **评论**: 0 | **👍**: 0
 **链接**: https://github.com/MoonshotAI/kimi-cli/issues/1493
 
 **重要性**: 用户在运行 Kimi CLI 时，动画停止转动，无法判断是卡死还是仍在运行，造成使用困惑。该 Issue 已关闭，可能已修复或转为内部追踪。
@@ -1089,11 +827,11 @@ PR：
 ## 4. 重要 PR 进展
 
 ### ✅ #2146 | 递归发现嵌套子目录中的 Skills
-**状态**: OPEN | **作者**: @netwmr01  
-**关联 Issue**: #1894  
+**状态**: OPEN | **作者**: @netwmr01
+**关联 Issue**: #1894
 **链接**: https://github.com/MoonshotAI/kimi-cli/pull/2146
 
-**内容摘要**:  
+**内容摘要**:
 该 PR 直接响应 Issue #1894，旨在解决嵌套 Skill 目录无法加载的问题。核心改动包括：
 
 - 新增 `_discover_subdir_skills()` 辅助函数
@@ -1123,13 +861,13 @@ PR：
 
 ### 核心痛点
 
-1. **多代理场景受限**  
+1. **多代理场景受限**
    硬编码的 4 并发限制直接制约了复杂工作流的实现，开发者期望可配置的任务队列机制。
 
-2. **Skill 加载机制不一致**  
+2. **Skill 加载机制不一致**
    与 Codex 的兼容性问题导致跨平台项目迁移困难，嵌套目录支持是高频诉求。
 
-3. **自动化受阻**  
+3. **自动化受阻**
    Hook 系统缺少自动批准能力，使得 CI/CD 集成和无人值守脚本难以实现。
 
 ### 高频需求
@@ -1146,47 +884,6 @@ PR：
 
 <details>
 <summary><strong>OpenCode</strong> — <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-04 的 OpenCode 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases: 无
-- 最新 Issues: 50条，展示30条评论最多的
-- 最新 PRs: 50条，展示20条
-
-让我按照要求的结构来组织：
-
-1. **今日速览** - 总结最重要的动态
-2. **版本发布** - 无新版本，省略
-3. **社区热点 Issues** - 挑选10个最值得关注的
-4. **重要 PR 进展** - 挑选10个重要的 PR
-5. **功能需求趋势** - 提炼社区关注的功能方向
-6. **开发者关注点** - 总结痛点和高频需求
-
-让我先分析 Issues 中最热门的（按评论数排序）：
-1. #20695 Memory Megathread - 73评论，44👍 - 内存问题集中讨论
-2. #20650 Kimi k2.5 tool calling issues - 46评论 - Kimi模型工具调用问题
-3. #768 Github Copilot Premium Requests - 32评论，70👍 - Copilot配额显示
-4. #6680 view archived sessions - 29评论 - 归档会话查看功能
-5. #15035 agent-teams - 20评论 - agent团队功能
-
-
-6. #7185 gpt-oss-120B vLLM tool calling - 20评论 - 本地模型工具调用问题
-7. #14808 session.created event not firing - 18评论 - 插件事件问题
-8. #12570 GPT-5.3-Codex early termination - 15评论 - 模型响应提前终止
-9. #6231 Auto-discover models - 10评论，106👍 - 模型自动发现
-10. #5182 TUI as ACP Client - 9评论 - TUI作为ACP客户端
-
-这些议题涵盖了内存管理、模型集成、插件系统、用户体验等多个关键领域，反映出社区对性能和功能完整性的持续关注。
-
-在PR方面，pasta-paul的贡献最为突出，包括会话侧边栏改进和SSE事件重连机制。文档更新涉及本地模型配置说明和LSP功能澄清。关键修复包括MCP Accept头处理和会话消息渲染优化。功能增强则集中在免费模型解析、移动端触控优化和调试能力等方面。
-
-新增了对Featherless AI的支持，同时改进了LSP初始化超时设置和Codex OAuth集成。
-
-从这些问题中可以识别出几个关键趋势：内存管理仍是首要关注点，工具调用在不同模型间的兼容性问题频繁出现，模型自动发现功能获得广泛认可，Copilot集成和会话管理功能需求明显，插件事件系统需要完善，本地模型支持也在逐步增强。
-
-开发者们主要在处理内存泄漏、工具调用失败、模型兼容性和认证问题，同时对会话管理和模型发现功能有强烈需求。
-</think>
 
 # OpenCode 社区动态日报 | 2026-05-04
 
@@ -1401,8 +1098,8 @@ PR：
 
 ---
 
-**报告生成时间**: 2026-05-04  
-**数据来源**: github.com/anomalyco/opencode  
+**报告生成时间**: 2026-05-04
+**数据来源**: github.com/anomalyco/opencode
 **分析师**: AI Development Tools Technical Analyst
 
 </details>
@@ -1410,75 +1107,9 @@ PR：
 <details>
 <summary><strong>Qwen Code</strong> — <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-04 的 Qwen Code 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases: v0.15.6-nightly.20260504.e617f20d1
-- 最新 Issues: 13 条（过去24小时更新）
-- 最新 Pull Requests: 44 条（过去24小时内更新）
-
-让我按照要求的格式组织内容：
-
-1. **今日速览** - 2-3句话概括最重要动态
-2. **版本发布** - v0.15.6-nightly.20260504
-3. **社区热点 Issues** - 挑选10个最值得关注的
-4. **重要 PR 进展** - 挑选10个重要的
-5. **功能需求趋势** - 提炼社区关注方向
-6. **开发者关注点** - 总结痛点和高频需求
-
-让我开始整理：
-
-**版本发布**：
-- v0.15.6-nightly.20260504.e617f20d1
-- 主要变更：
-  - chore(release): v0.15.6
-  - feat(core): add FileReadCache and short-circuit unchanged Reads
-  - fix(cli): honor proxy setting
-
-**热点 Issues**（按重要性/评论数排序）：
-1. #3203 - Qwen OAuth Free Tier Policy Adjustment (121评论) - 政策调整讨论
-2. #3307 - "Temporarily out of stock" Alibaba Cloud Coding Plan (8评论) - 购买问题
-
-
-3. #3805 - read、glob工具在长时间会话中失效 - 核心功能缺陷
-4. #3634 - 后台任务管理路线图 - 功能规划
-5. #3816 - /memory show 命令异常
-6. #3812 - 模型名称显示功能（已解决）
-7. #3806 - 界面闪烁问题
-8. #3804 - AskUserQuestion API错误
-9. #3817 - McpClientManager竞态条件
-10. #3803 - Daemon mode提案
-
-**重要 PR**（按功能分类）：
-1. #3815 - 修复快速模型查询配置泄漏问题
-2. #3813 - 遥测关闭超时机制
-3. #3792 - 监控工具和UI路由修复
-4. #3685 - Python SDK PyPI发布流程
-5. #3799 - 模型列表响应解析标准化
-6. #3814 - 防止自动内存召回阻塞主请求
-7. #3783 - 非交互式模型切换功能
-8. #3798 - 错误分类处理
-9. #3809 - 后台长时间命令提示
-10. #3701 - 导出格式补全导航
-
-**功能需求趋势**：
-- 稳定性与可靠性改进
-- 性能优化
-- 模型管理功能
-- 后台任务处理
-- 内存管理
-
-**开发者关注点**：
-- 长时间会话稳定性
-- 内存泄漏问题
-- 模型切换灵活性
-- 错误处理机制
-- 性能表现
-</think>
-
 # Qwen Code 社区动态日报
 
-**日期**: 2026-05-04  
+**日期**: 2026-05-04
 **数据来源**: github.com/QwenLM/qwen-code
 
 ---
@@ -1493,7 +1124,7 @@ PR：
 
 ### v0.15.6-nightly.20260504.e617f20d1
 
-**发布时间**: 2026-05-04  
+**发布时间**: 2026-05-04
 **链接**: https://github.com/QwenLM/qwen-code/pull/3766
 
 | 变更类型 | 内容 | 贡献者 |
@@ -1510,7 +1141,7 @@ PR：
 
 ### 🔥 #3203 - Qwen OAuth 免费额度政策调整（121 评论）
 
-**状态**: OPEN | **标签**: 政策调整、功能请求  
+**状态**: OPEN | **标签**: 政策调整、功能请求
 **链接**: https://github.com/QwenLM/qwen-code/issues/3203
 
 **摘要**: 建议将每日免费请求配额从 1,000 次降至 100 次，并在 20XX 年完全关闭免费入口。
@@ -1521,7 +1152,7 @@ PR：
 
 ### 🔥 #3307 - 阿里云 Coding Plan 长期缺货（8 评论）
 
-**状态**: CLOSED | **标签**: 基础设施问题  
+**状态**: CLOSED | **标签**: 基础设施问题
 **链接**: https://github.com/QwenLM/qwen-code/issues/3307
 
 **摘要**: 阿里云 Coding Plan 已缺货一周，用户持续收到"暂时缺货"提示。
@@ -1532,7 +1163,7 @@ PR：
 
 ### ⚠️ #3805 - 长时间会话中 read/glob 工具失效
 
-**状态**: OPEN | **标签**: Bug、性能问题  
+**状态**: OPEN | **标签**: Bug、性能问题
 **链接**: https://github.com/QwenLM/qwen-code/issues/3805
 
 **摘要**: 会话运行时间较长时，read、glob 等工具无法读取内容或读取后未上送到 LLM。
@@ -1543,7 +1174,7 @@ PR：
 
 ### 📋 #3634 - 后台任务管理路线图
 
-**状态**: OPEN | **标签**: 功能规划  
+**状态**: OPEN | **标签**: 功能规划
 **链接**: https://github.com/QwenLM/qwen-code/issues/3634
 
 **摘要**: 详细规划了后台任务管理的四个阶段：A/B 已合并，C/D 进行中。
@@ -1554,7 +1185,7 @@ PR：
 
 ### 🐛 #3816 - /memory show 命令无法使用
 
-**状态**: OPEN | **标签**: Bug  
+**状态**: OPEN | **标签**: Bug
 **链接**: https://github.com/QwenLM/qwen-code/issues/3816
 
 **摘要**: 执行 `/memory show` 命令后界面显示异常。
@@ -1565,7 +1196,7 @@ PR：
 
 ### 🐛 #3806 - 0.15.6 界面输出闪烁
 
-**状态**: OPEN | **标签**: Bug、UI 问题  
+**状态**: OPEN | **标签**: Bug、UI 问题
 **链接**: https://github.com/QwenLM/qwen-code/issues/3806
 
 **摘要**: 界面输出内容过程中出现闪烁，之前仅在展开过多时闪烁。
@@ -1576,7 +1207,7 @@ PR：
 
 ### 🐛 #3804 - AskUserQuestion 空响应错误
 
-**状态**: OPEN | **标签**: Bug、API 问题  
+**状态**: OPEN | **标签**: Bug、API 问题
 **链接**: https://github.com/QwenLM/qwen-code/issues/3804
 
 **摘要**: 使用 AskUserQuestion 时频繁出现 "Model stream ended with empty response text" 错误。
@@ -1587,7 +1218,7 @@ PR：
 
 ### ⚠️ #3817 - McpClientManager 竞态条件
 
-**状态**: OPEN | **标签**: Bug、并发问题  
+**状态**: OPEN | **标签**: Bug、并发问题
 **链接**: https://github.com/QwenLM/qwen-code/issues/3817
 
 **摘要**: MCP 服务器重启时存在竞态条件，导致重复创建 MCP 进程。
@@ -1598,7 +1229,7 @@ PR：
 
 ### 💡 #3803 - Daemon 模式提案
 
-**状态**: OPEN | **标签**: 功能请求、架构优化  
+**状态**: OPEN | **标签**: 功能请求、架构优化
 **链接**: https://github.com/QwenLM/qwen-code/issues/3803
 
 **摘要**: 提议新增 `qwen serve` 命令以守护进程模式运行 Qwen Code。
@@ -1609,7 +1240,7 @@ PR：
 
 ### 🐛 #3802 - /model 切换本地 LM Studio 模型失败
 
-**状态**: OPEN | **标签**: Bug、本地模型  
+**状态**: OPEN | **标签**: Bug、本地模型
 **链接**: https://github.com/QwenLM/qwen-code/issues/3802
 
 **摘要**: 切换到 LM Studio 本地模型时提示 "Model is unloaded"，JIT 加载被预检拦截。
@@ -1622,7 +1253,7 @@ PR：
 
 ### #3815 - 修复快速模型配置泄漏问题
 
-**状态**: OPEN | **贡献者**: @B-A-M-N  
+**状态**: OPEN | **贡献者**: @B-A-M-N
 **链接**: https://github.com/QwenLM/qwen-code/pull/3815
 
 **内容**: 修复侧查询（会话摘要、标题生成等）使用快速模型时，错误继承主模型的 `ContentGeneratorConfig` 配置，导致 `extra_body`、`samplingParams` 等参数泄漏。
@@ -1631,10 +1262,10 @@ PR：
 
 ### #3813 - 遥测系统稳定性修复
 
-**状态**: OPEN | **贡献者**: @doudouOUC  
+**状态**: OPEN | **贡献者**: @doudouOUC
 **链接**: https://github.com/QwenLM/qwen-code/pull/3813
 
-**内容**: 
+**内容**:
 - 为 `shutdownTelemetry()` 添加 10 秒超时，防止 OTLP 端点不可达时 CLI 挂起
 - 修复 `service.version` 资源属性
 
@@ -1642,7 +1273,7 @@ PR：
 
 ### #3814 - 防止自动内存召回阻塞主请求
 
-**状态**: OPEN | **贡献者**: @B-A-M-N  
+**状态**: OPEN | **贡献者**: @B-A-M-N
 **链接**: https://github.com/QwenLM/qwen-code/pull/3814
 
 **内容**: 修复自动内存召回侧查询的 5 秒超时导致每个用户轮次延迟约 5 秒的问题。
@@ -1651,7 +1282,7 @@ PR：
 
 ### #3810 - 修复 FileReadCache 历史重写路径
 
-**状态**: OPEN | **贡献者**: @wenshao  
+**状态**: OPEN | **贡献者**: @wenshao
 **链接**: https://github.com/QwenLM/qwen-code/pull/3810
 
 **内容**: 修复 #3805，在所有历史重写路径上清除 FileReadCache，确保长时间会话中 read 工具正常工作。
@@ -1660,7 +1291,7 @@ PR：
 
 ### #3809 - 后台长时间前台命令提示
 
-**状态**: OPEN | **贡献者**: @wenshao  
+**状态**: OPEN | **贡献者**: @wenshao
 **链接**: https://github.com/QwenLM/qwen-code/pull/3809
 
 **内容**: Phase D (a) 部分实现：前台 shell 命令运行 ≥60 秒完成后，向 LLM 返回建议下次使用 `is_background: true` 的提示。
@@ -1669,7 +1300,7 @@ PR：
 
 ### #3799 - 模型列表响应解析标准化
 
-**状态**: OPEN | **贡献者**: @B-A-M-N  
+**状态**: OPEN | **贡献者**: @B-A-M-N
 **链接**: https://github.com/QwenLM/qwen-code/pull/3799
 
 **内容**: 统一 `fetchModels()` 处理多种 OpenAI 兼容端点的响应格式（标准格式、带 object 字段、裸数组等）。
@@ -1678,7 +1309,7 @@ PR：
 
 ### #3798 - 错误分类与重试逻辑优化
 
-**状态**: OPEN | **贡献者**: @B-A-M-N  
+**状态**: OPEN | **贡献者**: @B-A-M-N
 **链接**: https://github.com/QwenLM/qwen-code/pull/3798
 
 **内容**: 新增 `classifyError()` 函数，区分可重试错误（429、408、500-599）和确定性错误（400、401、403、404），避免无效重试。
@@ -1687,7 +1318,7 @@ PR：
 
 ### #3783 - 非交互式模型切换
 
-**状态**: OPEN | **贡献者**: @alex-musick  
+**状态**: OPEN | **贡献者**: @alex-musick
 **链接**: https://github.com/QwenLM/qwen-code/pull/3783
 
 **内容**: 新增 CLI 语法支持非交互式模型切换，便于脚本和自动化场景使用。
@@ -1696,7 +1327,7 @@ PR：
 
 ### #3785 - 内存诊断 doctor 命令
 
-**状态**: OPEN | **贡献者**: @yiliang114  
+**状态**: OPEN | **贡献者**: @yiliang114
 **链接**: https://github.com/QwenLM/qwen-code/pull/3785
 
 **内容**: 新增 `/doctor memory` 子命令，提供当前进程的内存诊断快照，支持 `--json` 输出便于问题报告和基准测试。
@@ -1705,7 +1336,7 @@ PR：
 
 ### #3685 - Python SDK PyPI 发布流程
 
-**状态**: OPEN | **贡献者**: @doudouOUC  
+**状态**: OPEN | **贡献者**: @doudouOUC
 **链接**: https://github.com/QwenLM/qwen-code/pull/3685
 
 **内容**: 新增 GitHub Actions 工作流，支持自动构建、验证和发布 `qwen-code-sdk` 到 PyPI。
@@ -1766,66 +1397,14 @@ PR：
 
 ---
 
-**📅 报告生成时间**: 2026-05-04  
-**📊 数据覆盖**: 过去 24 小时  
+**📅 报告生成时间**: 2026-05-04
+**📊 数据覆盖**: 过去 24 小时
 **🔗 订阅此日报**: https://github.com/QwenLM/qwen-code/discussions
 
 </details>
 
 <details>
 <summary><strong>Pi</strong> — <a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-04 的 Pi 社区动态日报。让我仔细分析这些数据：
-
-**数据概览：**
-- 最新 Releases：0 条（过去24小时无新版本）
-- 最新 Issues：34 条（展示30条）
-- 最新 PRs：8 条
-
-**关键信息提取：**
-
-Issues 中评论数最多的（需要重点关注）：
-1. #27 - 11条评论 - 关于错误消息不明确的问题
-2. #3942 - 8条评论 - pi update --self 在 npm --prefix 安装时失败
-3. #4082 - 6条评论 - 小米 MiMo Token Plan 中国区支持问题
-4. #4103 - 4条评论 - Codex WebSocket transport 导致 --print 模式无法退出
-5. #4105 - 4条评论 - pi-tui 自动完成中的 TypeError
-6. #2994 - 3条评论 - pi.sendUserMessage 不执行命令
-7. #4108 - 3条评论 - /export 不保存会话
-8. #4139 - 2条评论 - ppq.ai API key 选项
-9. #3966 - 2条评论 - 添加 --profile 支持
-10. #4137 - 2条评论 - Anthropic OAuth URL 问题
-
-
-11. #4116 - 2条评论 - NVIDIA NIM 作为一级提供商
-
-还有一些今天（2026-05-04）新创建的 Issues：
-- #4149 - 暴露 getSupportedThinkingLevels 和 clampThinkingLevel
-- #4147 - 使 agent.state.tools 变更对运行中的 agent 循环可见
-- #4146 - UI 在高亮大代码块时挂起
-
-**PRs 分析：**
-
-1. #4148 - 修复活跃工具更新问题
-2. #4136 - /model 命令支持切换到之前使用的模型
-3. #4133 - 从 codex websocket 回退到 sse
-4. #4112 - 修复小米默认设置并添加区域 token plan 提供商
-5. #4119 - 稳定化环境敏感的测试用例
-6. #4127 - 在打印模式下禁用提供商会话缓存
-7. #4126 - 对瞬态 HTTP 404/408 状态响应进行重试
-8. #4117 - 添加 stopAfterTurn 控制
-
-**趋势分析：**
-
-1. **Bug 修复为主**：大多数 Issues 和 PRs 都围绕 bug 修复展开
-2. **WebSocket/传输问题**：多个问题涉及 WebSocket transport 和 SSE fallback
-3. **会话管理**：export、session、profile 相关功能需求
-4. **多提供商支持**：小米、NVIDIA NIM、Anthropic 等新提供商集成
-5. **TUI 稳定性**：多个 TUI 相关 bug
-6. **性能问题**：CPU 100%、O(n²) 缓冲区重建等
-
-现在生成日报：
-</think>
 
 # Pi 社区动态日报 | 2026-05-04
 
@@ -1925,7 +1504,7 @@ Issues 中评论数最多的（需要重点关注）：
 ---
 
 > 📊 **数据统计**：日报基于 2026-05-04 GitHub badlogic/pi-mono 仓库数据生成
-> 
+>
 > 🔗 **链接汇总**：[Issues](https://github.com/badlogic/pi-mono/issues) | [PRs](https://github.com/badlogic/pi-mono/pulls) | [Releases](https://github.com/badlogic/pi-mono/releases)
 
 </details>

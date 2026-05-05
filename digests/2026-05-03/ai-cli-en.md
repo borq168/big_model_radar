@@ -15,66 +15,9 @@
 
 ## Cross-Tool Comparison
 
-<think>The user wants a comprehensive cross-tool comparison report synthesizing all the individual digests I just created. Let me analyze the data from each tool's digest and create a structured comparison report.
-
-Let me compile the key data points from each tool:
-
-**Claude Code (github.com/anthropics/claude-code)**
-- Releases: None in last 24h
-- Issues: 30+ issues tracked, top issues around billing/subscription issues (Max plan), Windows compatibility, MCP integration
-- PRs: 8 PRs, focus on plugin ecosystem, dashboard improvements, open source request
-- Key themes: Billing transparency, Windows platform parity, MCP enhancements, session recovery
-
-**OpenAI Codex (github.com/openai/codex)**
-- Releases: None in last 24h (latest v0.128.0)
-- Issues: 30+ issues, Windows Browser Use failures, auth/phone verification, TUI enhancements
-- PRs: 10 PRs, service tier improvements, responsive Markdown, desktop attestation, hook system
-- Key themes: Windows platform support, TUI customization, service tiers, hook/permission system
-
-**Gemini CLI (github.com/google-gemini/gemini-cli)**
-- Releases: None in last 24h
-- Issues: 30+ issues, subagent reliability, permission persistence, shell execution hangs
-- PRs: 10+ PRs, proxy support, flash-lite for quota, Vertex location config, file backups
-- Key themes: Agent reliability, quota management, platform stability, memory management
-
-**GitHub Copilot CLI (github.com/github/copilot-cli)**
-- Releases: None in last 24h (latest v1.0.40)
-- Issues: 28 issues, deadlock in postToolUse hook, Windows compatibility, session management
-- PRs: 1 PR (feature request template improvement)
-
-
-- Key themes: Permission system, Windows compatibility, session management, MCP enhancements
-
-**Kimi Code CLI (github.com/MoonshotAI/kimi-cli)**
-- Releases: None in last 24h (latest v1.41.0)
-- Issues: 9 issues, Windows crash, nested skill discovery, Claude Code parity
-- PRs: 3 PRs, nested skill discovery, session approval persistence, shell mode
-- Key themes: Claude Code parity, Windows stability, nested skill discovery
-
-**OpenCode (github.com/anomalyco/opencode)**
-- Releases: v1.14.33 (plugin agent loading fix)
-- Issues: 50 issues, async sub-agent delegation, streaming toggle, Windows stability
-- PRs: 20+ PRs, Effect-based architecture refactoring, subpath serving, mobile touch optimization
-- Key themes: Architecture modernization, async delegation, platform expansion
-
-**Qwen Code (github.com/QwenLM/qwen-code)**
-- Releases: v0.15.6-nightly.20260503
-- Issues: 11 issues, API retry logic, DeepSeek compatibility, release automation
-- PRs: 30 PRs, reasoning effort support, file read cache, error classification
-- Key themes: Reliability improvements, provider compatibility, release automation
-
-**Pi (github.com/badlogic/pi-mono)**
-- Releases: v0.72.1 (patch for session export, transport issues)
-- Issues: 37+ closed, keyboard handling, provider compatibility, internationalization
-- PRs: 10+ PRs, Xiaomi MiMo provider, keyboard fixes, Together AI provider
-- Key themes: Provider expansion, keyboard handling, international support
-
-Now let me create the cross-tool comparison report with the requested sections.
-</think>
-
 # AI CLI Tools Ecosystem — Cross-Tool Comparison Report
 
-**Date:** 2026-05-03  
+**Date:** 2026-05-03
 **Scope:** Claude Code · OpenAI Codex · Gemini CLI · GitHub Copilot CLI · Kimi Code CLI · OpenCode · Qwen Code · Pi
 
 ---
@@ -190,59 +133,6 @@ OpenAI Codex, Copilot CLI, and Gemini CLI are all investing in PreToolUse hooks,
 <details>
 <summary><strong>Claude Code</strong> — <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></summary>
 
-<think>The user wants me to generate a Claude Code community digest for 2026-05-03 based on the provided GitHub data. Let me analyze the data and create a structured digest following the specified format.
-
-Let me organize the information:
-
-**Releases**: None in the last 24h
-
-**Hot Issues** (by comment count):
-1. #16157 - Bug: Instantly hitting usage limits with Max subscription (1463 comments, 689 👍)
-2. #38335 - Bug: Claude Max plan session limits exhausted abnormally fast (675 comments, 449 👍)
-3. #53262 - HERMES.md in git commit messages causes billing issues (91 comments, 193 👍) - CLOSED
-4. #13480 - Oversized image breaks conversation permanently (86 comments, 82 👍) - CLOSED
-5. #54839 - Bug: credit_balance_too_low despite sufficient credits (27 comments, 10 👍)
-6. #17888 - Bug: An error occurred while executing Claude Code (16 comments, 5 👍)
-7. #36411 - Telegram MCP plugin: inbound notifications never delivered (15 comments, 14 👍)
-8. #53133 - Every command retries up to 10 times on Windows (10 comments, 0 👍)
-9. #37436 - MAX100 subscription abnormal quota consumption (10 comments, 3 👍) - CLOSED
-10. #52679 - Enhancement: share Claude Code options with Claude Desktop (9 comments, 9 👍)
-11. #54204 - Max 5x → Max 20x upgrade stuck in void_invoice loop (6 comments, 0 👍)
-12. #54524 - Scheduled routines no longer have dedicated sidebar section (6 comments, 1 👍) - CLOSED
-13. #46465 - Harness-emitted system-reminder uses prompt injection phrasing (5 comments, 0 👍)
-
-
-14. #54369 - Renderer SIGTRAP crashes on macOS (5 comments, 0 👍)
-15. #35879 - --plugin-dir: Marketplace 'inline' not found (5 comments, 0 👍) - CLOSED
-16. #42264 - "Unchanged since last read" error (4 comments, 4 👍)
-17. #52253 - tree-kill dependency causes pgrep storm / 100% CPU on macOS (4 comments, 1 👍)
-18. #40638 - Bug (3 comments, 0 👍) - CLOSED
-19. #40830 - Frequent 401 Authentication Errors (3 comments, 0 👍) - CLOSED
-20. #55495 - MCP HTTP transport strips path component (2 comments, 0 👍)
-21. #55686 - Claude Opus 4.7: 8-hour session wasted on TPU iteration loop (2 comments, 0 👍)
-22. #55220 - Renderer crash burst on session resume (2 comments, 0 👍)
-23. #55232 - Claude Ghostly cmnd+c (2 comments, 0 👍)
-24. #55676 - macOS auto-memory scoped to home-dir hash (2 comments, 0 👍) - CLOSED
-25. #55696 - Feature request: show MCP tool args but collapse result output (1 comment, 0 👍)
-26. #55681 - Streaming stall: 150s gap mid-tool-call (1 comment, 0 👍) - CLOSED
-27. #55689 - Started to get API Error: 400 (1 comment, 0 👍)
-28. #55688 - workingDirectory not updated on "! cd <dir>" (1 comment, 0 👍)
-29. #55683 - Claude Code performs unrequested file edits (1 comment, 0 👍)
-30. #55618 - Flag for disabling token usage when thinking (1 comment, 0 👍) - CLOSED
-
-**Pull Requests**:
-1. #55484 - Claude/dashboard improvements se h7a (CLOSED)
-2. #41447 - feat: open source claude code (OPEN)
-3. #20448 - Add web4-governance plugin for AI governance (OPEN)
-4. #36594 - feat(plugins): add remote-control plugin (CLOSED)
-5. #36592 - Add comprehensive skill library across three new plugins (CLOSED)
-6. #36562 - Add CLAUDE_CODE_GIT_BASH_PATH environment variable for Windows (CLOSED)
-7. #46025 - docs: add Linux subprocess isolation and CLAUDE_CODE_SCRIPT_CAPS docs (CLOSED)
-8. #55490 - examples/hooks: add snap_pack_on_stop.py (OPEN)
-
-Now I'll organize this into a structured digest format.
-</think>
-
 # Claude Code Community Digest
 
 **Date:** 2026-05-03
@@ -346,44 +236,9 @@ The most significant community frustration centers on Max subscription billing. 
 <details>
 <summary><strong>OpenAI Codex</strong> — <a href="https://github.com/openai/codex">openai/codex</a></summary>
 
-<think>The user wants me to generate an OpenAI Codex community digest for 2026-05-03 based on the provided GitHub data. Let me analyze the data and create a structured digest following the specified format.
-
-Let me organize the information:
-
-**Releases**: None in the last 24h
-
-**Hot Issues** (top 10 by comment count):
-1. #19464 - 1M token context for GPT-5.5 (112 comments, 141 👍)
-2. #20161 - Phone number requirement bug (35 comments, 30 👍)
-3. #8259 - Markdown table formatting (25 comments, 98 👍)
-4. #20591 - `/goal` slash command broken (21 comments, 3 👍)
-5. #10090 - Windows sandbox elevated issue (16 comments, 6 👍)
-6. #17827 - Customizable status line (12 comments, 16 👍)
-7. #20048 - Windows Browser Use fails (9 comments, 3 👍)
-8. #20552 - File tree toggle issue (7 comments, 0 👍)
-9. #19365 - Windows Browser Use Node REPL (6 comments, 9 👍)
-10. #20206 - Browser Use fails on Windows (6 comments, 0 👍)
-
-**Key PRs** (top 10):
-1. #20252 - Responsive Markdown tables
-2. #20824 - Service-tier commands from model metadata
-3. #20822 - Structured service tiers
-4. #20702 - PreToolUse permissionDecision
-5. #20823 - Expose service tiers in app-server (CLOSED)
-6. #20744 - Fix flaky test
-7. #20812 - Backend service-tier metadata (CLOSED)
-8. #20619 - Desktop attestation
-9. #20825 - Read cached metadata for Git plugins
-
-
-10. #20819 - Raw scrollback mode
-
-Now I'll structure this into a professional digest format.
-</think>
-
 # OpenAI Codex Community Digest
 
-**Date:** 2026-05-03  
+**Date:** 2026-05-03
 **Source:** github.com/openai/codex
 
 ---
@@ -473,56 +328,6 @@ Analysis of 50 recent issues reveals these dominant feature directions:
 
 <details>
 <summary><strong>Gemini CLI</strong> — <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></summary>
-
-<think>Let me analyze the GitHub data for the Gemini CLI repository and create a structured digest for 2026-05-03.
-
-Key observations:
-1. No releases in the last 24h
-2. 50 total issues, showing top 30 by comment count
-3. 32 total PRs, showing top 20 by comment count
-
-Let me identify the most important items:
-
-**Hot Issues (by comment count and priority):**
-1. #24353 - Component Level Evaluations (5 comments, P1) - Epic about behavioral evals
-2. #22745 - AST-aware file reads/search (5 comments) - Investigating AST-aware tools
-3. #22323 - Subagent recovery after MAX_TURNS (4 comments, P1) - Bug with misleading success status
-4. #24916 - Permission asking repeatedly (3 comments) - Security/usability issue
-5. #25166 - Shell command stuck "Waiting input" (2 comments) - Core functionality bug
-6. #23571 - Model creates tmp scripts randomly (2 comments, P2) - Workspace cleanliness
-7. #22267 - Browser Agent ignores settings.json (2 comments, P2) - Configuration bug
-8. #24246 - 400 error with >128 tools (1 comment) - API limitation
-9. #22093 - Subagents running without permission (1 comment, P1) - Permission/security issue
-10. #22819 - Memory routing global vs project (1 comment) - Feature request
-
-**Key PRs:**
-1. #26361 - Externalize https-proxy-agent (P1) - Proxy support fix
-2. #25684 - Use flash-lite for utility models - Quota preservation
-3. #25362 - Vertex location config setting - Region override
-4. #26387 - System ripgrep fallback - Missing binary handling
-
-
-5. #25947 - Versioned pre-write backups - File backup system
-6. #26383 - Rate limiting in fallback fetch - Closed
-7. #26374 - Performance optimization for large chats - Closed
-8. #26332 - ACP agent mode disconnect fix - Closed
-9. #26379 - Docs fix for GitHub capitalization
-10. #25072 - Favorite models and model cycling
-11. #25060 - Shortcuts for @ mentions
-12. #26324 - Prevent ghost text wrapping loop
-13. #26367 - Print --version on stdout
-14. #26366 - SEA fork
-
-I'm noticing several PRs focused on performance and stability improvements. The file backup system (#25947) addresses data safety concerns, while the performance optimization for large chats (#26374) tackles scalability issues. The SEA fork handling (#26366) appears to be another infrastructure fix. These changes suggest the team is prioritizing reliability and user experience refinements alongside feature additions.
-
-The core issues cluster around agent behavior and configuration management. Subagent recovery mechanisms need strengthening, particularly around turn limits and permission handling. The AST-aware investigation and memory routing patterns indicate deeper architectural work on how agents interact with file systems and manage state across sessions.
-
-Shell execution reliability remains problematic—commands hang unexpectedly and text rendering breaks in certain environments. The permission system needs refinement to prevent repeated prompts, and the browser agent should respect user-defined settings. These aren't isolated bugs but symptoms of a complex interaction layer that needs systematic hardening.
-
-The PRs address concrete gaps: proxy support through externalized dependencies, quota management via flash-lite utilities, and region configuration for Vertex deployments. File backup mechanisms and ripgrep fallbacks show attention to robustness. Performance improvements for extended sessions and rate limiting refinements indicate the team is tackling scalability concerns alongside feature work.
-
-The core friction points cluster around agent reliability—subagent behavior, permission handling, and configuration persistence—while infrastructure concerns like shell execution and streaming stability round out the pain points. The feature pipeline suggests a focus on extensibility through model preferences and interaction shortcuts, balanced against foundational fixes for large-scale usage scenarios.
-</think>
 
 # Gemini CLI Community Digest — 2026-05-03
 
@@ -620,210 +425,6 @@ Analysis of open issues reveals these dominant feature directions:
 <details>
 <summary><strong>GitHub Copilot CLI</strong> — <a href="https://github.com/github/copilot-cli">github/copilot-cli</a></summary>
 
-<think>The user wants a structured English digest for GitHub Copilot CLI community for 2026-05-03. They provided a data source: github.com/github/copilot-cli. The data includes:
-
-- Latest Releases (last 24h): None
-- Latest Issues (updated in last 24h): 28 items, with details including titles, authors, dates, comments, thumbs up, and summaries.
-- Latest Pull Requests (updated in last 24h): 1 item.
-
-We need to generate a digest with sections:
-
-1. Today's Highlights - 2-3 sentences summarizing the most important updates.
-2. Releases - If new versions exist, summarize changes; omit if none.
-3. Hot Issues - Pick 10 noteworthy Issues, explain why they matter and community reaction.
-4. Key PR Progress - Pick 10 important PRs, describe features or fixes.
-5. Feature Request Trends - Distill the most-requested feature directions from all Issues.
-6. Developer Pain Points - Summarize recurring developer frustrations or high-frequency requests.
-
-We need to include GitHub links for each item.
-
-We need to be concise and professional, suited for technical developers.
-
-We need to ensure we pick the most noteworthy issues and PRs. The data includes many issues; we need to select 10. Also, there is only 1 PR, but we need to pick 10 important PRs. However, there is only 1 PR in the last 24h. We can still mention that PR, but we need to pick 10 important PRs. Since only 1 PR is available, we might need to note that only one PR was updated in the last 24h, but we can still list it as the key PR progress. Alternatively, we can consider older PRs? The instruction says "Pick 10 important PRs", but we only have 1 PR in the data. We can still list the available PR and note that no other PRs were updated in the last 24h. But the instruction says "Pick 10 important PRs", so we might need to interpret that as we should list the available PRs and if there are fewer than 10, we can list what we have. However, the data only has 1 PR. So we can list that one PR and note that it's the only PR updated in the last 24h. Alternatively, we can look at the issues and maybe consider that some issues might be linked to PRs? But the data doesn't provide PR details beyond the one PR. So we will list the one PR.
-
-We need to include GitHub links for each item. The links are provided in the data.
-
-We need to ensure we follow the style guidelines: concise and professional.
-
-Let's first parse the data:
-
-Latest Releases: None.
-
-Latest Issues (28 items). We need to pick 10 noteworthy ones. Noteworthy could be based on comments, thumbs up, severity, or impact.
-
-List of issues with details:
-
-1. #1590 [CLOSED] Execution failed: Error: Failed to get response from the AI model; retried 5 times Last error: Unknown error
-   - Author: @axsaucedo | Created: 2026-02-21 | Updated: 2026-05-02 | Comments: 11 | 👍: 12
-   - Summary: After a long-running execution, the model repeatedly runs into the following behaviour: Response was interrupted due to a server error. Retrying...
-   - This is a significant issue affecting reliability.
-
-2. #1680 [OPEN] [area:platform-windows, area:tools] pwsh.exe hardcoded in 6 places - CLI completely unusable on Windows 11 with only PowerShell 5.1 (closed #411 is still broken in v0.0.417)
-   - Author: @guidegdm | Created: 2026-02-25 | Updated: 2026-05-02 | Comments: 7 | 👍: 9
-   - Summary: Windows PowerShell 5.1 compatibility issue, blocking CLI on Windows.
-
-3. #1313 [OPEN] [area:sessions] Session Branching
-   - Author: @lossyrob | Created: 2026-02-05 | Updated: 2026-05-02 | Comments: 6 | 👍: 9
-   - Summary: Feature request to allow branching sessions, inheriting conversation history.
-
-4. #2751 [OPEN] [area:agents, area:enterprise] `Remote session disabled: could not resolve repository` when using `/remote` on an organization repo
-   - Author: @Hsuanhe-chang | Created: 2026-04-16 | Updated: 2026-05-02 | Comments: 6 | 👍: 12
-   - Summary: Remote session issue in organization repos.
-
-5. #2739 [OPEN] [area:models] xhigh reasoning was removed for gpt-5.4 and gpt-5.3-codex!
-   - Author: @dlukt | Created: 2026-04-15 | Updated: 2026-05-02 | Comments: 5 | 👍: 12
-   - Summary: Missing reasoning levels for certain models.
-
-6. #3077 [CLOSED] [invalid] Clyde_LOp
-   - Not relevant.
-
-7. #2995 [OPEN] [area:models, area:configuration] Can´t use DeepSeek API
-   - Author: @raffaeler | Created: 2026-04-27 | Updated: 2026-05-03 | Comments: 3 | 👍: 5
-   - Summary: Configuration issue with DeepSeek API.
-
-8. #2058 [OPEN] [area:sessions] Add /fork command to branch a session for side quests without derailing the main objective
-   - Author: @grantborthwick | Created: 2026-03-15 | Updated: 2026-05-02 | Comments: 3 | 👍: 7
-   - Summary: Feature request for /fork command.
-
-9. #2364 [OPEN] [area:sessions, area:agents, area:enterprise] [Critical]: Copilot Agent session keeps running indefinitely, cannot stop session or send replies
-   - Author: @erbanku | Created: 2026-03-28 | Updated: 2026-05-02 | Comments: 3 | 👍: 2
-   - Summary: Critical issue with indefinite sessions.
-
-10. #2956 [OPEN] [area:mcp] Add "Disable MCP" option to `/mcp show` interactive menu
-    - Author: @Licantrop0 | Created: 2026-04-24 | Updated: 2026-05-02 | Comments: 2 | 👍: 2
-    - Summary: UX improvement for MCP.
-
-11. #3090 [CLOSED] Improve MCP enable/disable UX in /mcp and /mcp show
-    - Author: @DrEsteban | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 1 | 👍: 0
-    - Summary: Already closed, maybe not noteworthy.
-
-12. #3082 [OPEN] [area:tools] Copilot locks files
-    - Author: @bomzj | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 1 | 👍: 0
-    - Summary: File locking issue.
-
-13. #3080 [OPEN] [area:models] Cannot select reasoning_effort=high; model claude-opus-4.7-high rejects requests with 400 error
-    - Author: @dezgit2025 | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 1 | 👍: 1
-    - Summary: Reasoning effort issue.
-
-14. #3066 [OPEN] [area:models] macOS prerelease /model picker hides routable Opus 4.7 internal/high/xhigh models
-    - Author: @supreeth20 | Created: 2026-05-01 | Updated: 2026-05-02 | Comments: 1 | 👍: 1
-    - Summary: Model picker issue on macOS.
-
-15. #3078 [CLOSED] [invalid] Soluciones
-    - Not relevant.
-
-16. #3076 [CLOSED] [invalid] Clyde
-    - Not relevant.
-
-17. #3091 [OPEN] [area:sessions, area:input-keyboard] Conversation-tree navigation: keybindings + TUI overview for forked/branched sessions (depends on #2058 / #1313)
-    - Author: @PolyphonyRequiem | Created: 2026-05-02 | Updated: 2026-05-03 | Comments: 0 | 👍: 0
-    - Summary: Feature request for navigation.
-
-18. #3089 [OPEN] [area:sessions] Add a /redo command after /undo or /rewind
-    - Author: @DrEsteban | Created: 2026-05-02 | Updated: 2026-05-03 | Comments: 0 | 👍: 0
-    - Summary: Feature request for /redo.
-
-19. #3088 [OPEN] [area:plugins, area:configuration] `copilot plugin marketplace list` CLI command does not respect repository-level overrides
-    - Author: @brian-kelley-intel | Created: 2026-05-02 | Updated: 2026-05-03 | Comments: 0 | 👍: 0
-    - Summary: Configuration override issue.
-
-20. #3087 [CLOSED] copilot plugin marketplace list ignores repo-level extraKnownMarketplaces override in .github/copilot/settings.json
-    - Author: @brian-kelley-intel | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 0 | 👍: 0
-    - Summary: Already closed, maybe not noteworthy.
-
-21. #3086 [OPEN] [area:sessions] 'Go back' from 'session in use' warning leaves a phantom lock on the abandoned session's folder
-    - Author: @CianH | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 0 | 👍: 0
-    - Summary: Session lock issue.
-
-22. #3085 [OPEN] [area:sessions] 'Session in use' warning shows misleading 'last active' timestamp (uses lock file mtime instead of session activity)
-    - Author: @CianH | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 0 | 👍: 0
-    - Summary: Timestamp issue.
-
-23. #3084 [OPEN] [area:permissions, area:plugins] postToolUse hook deadlocks after write-permission request, process spins at 99% CPU and ignores SIGTERM
-    - Author: @CianH | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 0 | 👍: 0
-    - Summary: Deadlock issue.
-
-24. #3083 [OPEN] [area:configuration, area:mcp] v1.0.40 no longer loads mcp servers from ./.mcp.json on start up
-    - Author: @evr-novicell | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 0 | 👍: 0
-    - Summary: MCP loading issue.
-
-25. #3081 [OPEN] [area:platform-linux, area:authentication] NixOS keychain support is broken
-    - Author: @queze1 | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 0 | 👍: 0
-    - Summary: Authentication issue on NixOS.
-
-26. #3073 [OPEN] [area:mcp] feat: Support MCP resources/subscribe and notifications/resources/updated
-    - Author: @scottlz0310-user | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 0 | 👍: 0
-    - Summary: Feature request for MCP resources.
-
-27. #3079 [OPEN] [area:models] Model keeps switching to auto
-    - Author: @kythant | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 0 | 👍: 0
-    - Summary: Model switching issue.
-
-28. #3074 [OPEN] [area:models] Add an `/effort` command to quickly switch reasoning effort for the current model
-    - Author: @DrEsteban | Created: 2026-05-02 | Updated: 2026-05-02 | Comments: 0 | 👍: 0
-    - Summary: Feature request for /effort command.
-
-We need to pick 10 noteworthy issues. We should consider those with high comments, thumbs up, or critical impact. Let's pick:
-
-1. #1590 (closed, but still important for reliability)
-2. #1680 (Windows compatibility)
-3. #1313 (session branching)
-4. #2751 (remote session issue)
-5. #2739 (reasoning levels)
-6. #2995 (DeepSeek API)
-7. #2058 (fork command)
-8. #2364 (critical indefinite sessions)
-9. #3084 (deadlock)
-10. #3083 (MCP loading issue) or #3082 (file locking) or #3081 (NixOS keychain). We might pick #3084 for severity, or #3082 for file locking. Let's pick #3084 for severity (deadlock). Also #3083 is important because it affects MCP loading. We can also consider #3081 for Linux authentication.
-
-But we need to explain why they matter and community reaction. We have comments and thumbs up for each. We'll use those.
-
-Now, for PRs: only one PR available: #3075. We need to pick 10 important PRs, but we only have one. We can note that only one PR was updated in the last 24h, and list that PR. Alternatively, we can consider older PRs? But the data only provides PRs updated in last 24h. So we will list the one PR and note that it's the only PR updated in the last 24h. However, the instruction says "Pick 10 important PRs", so we might need to interpret that as we should list the available PRs and if there are fewer than 10, we can list what we have. But we can also note that no other PRs were updated. However, the instruction is to pick 10 important PRs. Since we only have one, we can list that one and maybe note that there are no other PRs in the last 24h. Alternatively, we can look at the issues and see if any of them are actually PRs? But they are issues. So we will list the one PR.
-
-Now, for Feature Request Trends: we need to distill the most-requested feature directions from all issues. Looking at the issues, we see several feature requests: session branching (#1313), /fork command (#2058), /redo command (#3089), conversation-tree navigation (#3091), /effort command (#3074), MCP resources/subscribe (#3073), etc. Also, there are many issues about models: reasoning effort, DeepSeek API, model switching, etc. Also, Windows compatibility, file locking, deadlock, MCP loading, etc.
-
-We can categorize:
-
-- Session management: branching, forking, undo/redo, navigation, indefinite sessions.
-- Model configuration: reasoning effort, DeepSeek API, model switching, model picker.
-- MCP (Model Context Protocol) enhancements: disable option, resource subscriptions, loading issues.
-- Platform issues: Windows compatibility, NixOS keychain, file locking.
-- Enterprise features: remote session, authentication.
-- Plugin marketplace: configuration overrides.
-
-We need to summarize the most-requested feature directions.
-
-Developer Pain Points: recurring frustrations: reliability issues (model errors, deadlocks), Windows compatibility, file locking, session management issues, MCP configuration problems, model selection issues.
-
-Now, let's structure the digest.
-
-We'll start with Today's Highlights: summarizing the most important updates. Since there are no releases, but there are several issues. We can mention the critical deadlock issue and the Windows compatibility issue, and the new PR for feature request template.
-
-We'll then go to Releases: none.
-
-Hot Issues: list 10 issues with explanations and community reaction.
-
-Key PR Progress: list the one PR and note it's the only one.
-
-Feature Request Trends: summarize.
-
-Developer Pain Points: summarize.
-
-We need to include GitHub links for each item. We'll use the URLs provided.
-
-Let's write the digest.
-
-We'll make sure to keep it concise and professional.
-
-We'll include the links in the format: [GitHub Link](URL)
-
-We'll use the issue numbers and PR numbers for reference.
-
-We'll ensure each section is clearly labeled.
-
-Now, let's draft the content.
-</think>
-
 **GitHub Copilot CLI Community Digest – 2026-05-03**
 
 ---
@@ -841,19 +442,19 @@ No new releases in the last 24 hours. The latest stable version remains v1.0.40 
 ### 3. Hot Issues
 The following 10 issues are noteworthy due to impact, community engagement, or severity:
 
-1. **[#3084](https://github.com/github/copilot-cli/issues/3084) – postToolUse hook deadlocks after write-permission request**  
-   *Area: permissions, plugins*  
-   A critical deadlock occurs when the `postToolUse` hook triggers a write-permission request, causing the process to spin at 99% CPU and ignore SIGTERM. This has been reported with 0 comments but high severity.  
+1. **[#3084](https://github.com/github/copilot-cli/issues/3084) – postToolUse hook deadlocks after write-permission request**
+   *Area: permissions, plugins*
+   A critical deadlock occurs when the `postToolUse` hook triggers a write-permission request, causing the process to spin at 99% CPU and ignore SIGTERM. This has been reported with 0 comments but high severity.
    **Why it matters:** Blocks workflow and consumes resources indefinitely.
 
-2. **[#1680](https://github.com/github/copilot-cli/issues/1680) – pwsh.exe hardcoded, CLI unusable on Windows 11 with PowerShell 5.1**  
-   *Area: platform-windows, tools*  
-   The CLI fails to run on Windows machines with only PowerShell 5.1 due to hardcoded `pwsh.exe` references. This issue has 7 comments and 9 thumbs-up.  
+2. **[#1680](https://github.com/github/copilot-cli/issues/1680) – pwsh.exe hardcoded, CLI unusable on Windows 11 with PowerShell 5.1**
+   *Area: platform-windows, tools*
+   The CLI fails to run on Windows machines with only PowerShell 5.1 due to hardcoded `pwsh.exe` references. This issue has 7 comments and 9 thumbs-up.
    **Why it matters:** Breaks the CLI for a significant Windows user segment.
 
-3. **[#1590](https://github.com/github/copilot-cli/issues/1590) – Execution failed: Failed to get response from AI model (retried 5 times)**  
-   *Closed, but persistent*  
-   Long-running executions encounter repeated server errors, with 11 comments and 12 thumbs-up.  
+3. **[#1590](https://github.com/github/copilot-cli/issues/1590) – Execution failed: Failed to get response from AI model (retried 5 times)**
+   *Closed, but persistent*
+   Long-running executions encounter repeated server errors, with 11 comments and 12 thumbs-up.
    **
 
 </details>
@@ -861,40 +462,9 @@ The following 10 issues are noteworthy due to impact, community engagement, or s
 <details>
 <summary><strong>Kimi Code CLI</strong> — <a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></summary>
 
-<think>The user wants me to generate a structured English digest for the Kimi Code CLI community, based on the provided GitHub data. Let me analyze the data and create the digest.
-
-Let me organize the information:
-
-**Latest Releases (last 24h)**: None
-
-**Latest Issues (updated in last 24h)**: 9 items total
-1. #2040 - Feature Request: VS Code notification when approval is required
-2. #2091 - Bug: Session becomes extremely slow in v1.37.0 after MATLAB work
-3. #1894 - Enhancement: Cannot recursively load nested skill directories
-4. #2151 - Bug: v1.41.0 Windows terminal crash on path completion + image attachment broken
-5. #2150 - UX: API usage display confusing (two quota systems)
-6. #2149 - Feature: Claude Code-style configurable statusline
-7. #2148 - Bug: UserPromptSubmit hook receives empty prompt
-8. #2147 - Feature: Lazy-load MCP tool schemas
-9. #2145 - Enhancement: Hooks
-
-**Latest Pull Requests (updated in last 24h)**: 3 items
-1. #2146 - OPEN - feat(#1894): recursively discover skills in nested subdirectories
-2. #768 - CLOSED - feat(shell): add pseudo-cwd for shell mode
-3. #767 - CLOSED - feat(approval): persist approve_for_session per session
-
-Now I need to create the digest with the requested sections. Let me structure this properly.
-
-For "Hot Issues" - I need to pick 10, but there are only 9 total. I'll include all 9.
-
-For "Key PR Progress" - I need to pick 10, but there are only 3. I'll include all 3.
-
-Let me write the digest now.
-</think>
-
 # Kimi Code CLI Community Digest
 
-**Date:** 2026-05-03  
+**Date:** 2026-05-03
 **Source:** github.com/MoonshotAI/kimi-cli
 
 ---
@@ -1021,50 +591,6 @@ Analysis of recent issues reveals three dominant feature directions:
 <details>
 <summary><strong>OpenCode</strong> — <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></summary>
 
-<think>Let me analyze the GitHub data for OpenCode and create a structured digest for 2026-05-03.
-
-Key observations:
-1. Latest releases: v1.14.33 and v1.14.32 in the last 24h
-2. 50 issues total, showing top 30 by comment count
-3. 50 PRs total, showing top 20 by comment count
-
-Let me organize this into the requested sections.
-
-**Releases:**
-- v1.14.33: Fix for custom agents in plugins not loading, 3 community contributors
-- v1.14.32: Shell mode editability fixed, HTTP API workspace adapters fixed, experimental workspace creation fixes
-
-**Hot Issues (10 most noteworthy):**
-1. #23887 - Kimi K2.6/K2.5 provider error (35 comments, 6 👍)
-2. #785 - Disable streaming mode request (23 comments, 37 👍)
-3. #24418 - Windows CLI stuck on "Loading plugins..." (21 comments)
-4. #14462 - Roslyn C# LSP feature request (19 comments, 8 👍)
-5. #5887 - True Async/Background Sub-Agent Delegation (19 comments, 67 👍)
-6. #23928 - Response cut off with < or <= operators (17 comments)
-7. #22683 - 1.4.6 constantly crashing (17 comments)
-8. #15035 - Agent-teams feature question (14 comments)
-9. #4240 - Native changes review in Zed (14 comments, 17 👍)
-10. #961 - Termux support request (9 comments, 18 👍)
-
-**Key PRs (10 important):**
-1. #25512 - refactor(cli): convert web + account to effectCmd
-2. #25513 - feat: support serving opencode from a subpath
-
-
-3. #25511 - fix(session): detect empty tool args from gpt-5.5
-4. #25358 - Preserve workspace adapter context
-5. #25507 - feat(cli): add instance: false opt-out to effectCmd
-6. #25510 - feat(lifecycle): tie bootstrap fibers to instance scope
-7. #24512 - Refactor v2 session events as schemas
-8. #25466 - fix(agent): initialize plugins before resolving config
-9. #23271 - fix(tui): defer --model validation until providers load
-10. #18767 - feat(app): Mobile Touch Optimization
-
-The PRs show a focus on CLI improvements, session handling, and platform support. Notable themes include plugin initialization order, model validation timing, and mobile optimization.
-
-Several feature requests stand out: async sub-agent delegation, native change reviews in Zed, Termux compatibility, paginated message loading, and manual model refresh. Windows users report memory issues and network mapping problems, while plugin agents face registration failures. There's also demand for Roslyn as a C# LSP alternative and Go plan usage API endpoints.
-</think>
-
 # OpenCode Community Digest — 2026-05-03
 
 ## Today's Highlights
@@ -1076,7 +602,7 @@ OpenCode shipped two releases in the last 24 hours (v1.14.32 and v1.14.33), addr
 ## Releases
 
 ### v1.14.33
-**Core:** Fixed issue with custom agents in plugins not loading (regression from v1.14.32).  
+**Core:** Fixed issue with custom agents in plugins not loading (regression from v1.14.32).
 **Community Contributors:** @jerome-benoit, @OpeOginni, @HyeokjaeLee
 
 ### v1.14.32
@@ -1086,78 +612,78 @@ OpenCode shipped two releases in the last 24 hours (v1.14.32 and v1.14.33), addr
 
 ## Hot Issues
 
-1. **[#23887](https://github.com/anomalyco/opencode/issues/23887)** — **[core][Bug] OpenCode Go + Kimi K2.6/K2.5 returns 'Provider returned error' on CLI 1.14.20**  
-   *35 comments, 6 👍*  
+1. **[#23887](https://github.com/anomalyco/opencode/issues/23887)** — **[core][Bug] OpenCode Go + Kimi K2.6/K2.5 returns 'Provider returned error' on CLI 1.14.20**
+   *35 comments, 6 👍*
    Users report that Kimi K2.6/K2.5 models consistently fail with "Provider returned error" while other models under the same OpenCode Go subscription work fine. This suggests a provider-specific compatibility issue that needs investigation.
 
-2. **[#785](https://github.com/anomalyco/opencode/issues/785)** — **Is there a way to disable streaming mode?**  
-   *23 comments, 37 👍*  
+2. **[#785](https://github.com/anomalyco/opencode/issues/785)** — **Is there a way to disable streaming mode?**
+   *23 comments, 37 👍*
    A long-standing request for a streaming toggle, as some proxy providers (e.g., Credal OpenAI Proxy) don't support streaming. Users need this for broader provider compatibility.
 
-3. **[#24418](https://github.com/anomalyco/opencode/issues/24418)** — **[bug, windows] CLI stuck on "Loading plugins..." screen on startup**  
-   *21 comments*  
+3. **[#24418](https://github.com/anomalyco/opencode/issues/24418)** — **[bug, windows] CLI stuck on "Loading plugins..." screen on startup**
+   *21 comments*
    Windows users experience intermittent hangs (~50% of startups) since v1.14.25, with no workaround other than killing the terminal. High impact on Windows workflow.
 
-4. **[#14462](https://github.com/anomalyco/opencode/issues/14462)** — **[core][FEATURE] add roslyn-language-server as opt-in C# LSP alternative**  
-   *19 comments, 8 👍*  
+4. **[#14462](https://github.com/anomalyco/opencode/issues/14462)** — **[core][FEATURE] add roslyn-language-server as opt-in C# LSP alternative**
+   *19 comments, 8 👍*
    Request to add Microsoft's official Roslyn-based C# LSP as an alternative to the community-maintained csharp-ls. Would improve C# support quality for enterprise users.
 
-5. **[#5887](https://github.com/anomalyco/opencode/issues/5887)** — **[feat] True Async/Background Sub-Agent Delegation**  
-   *19 comments, 67 👍*  
+5. **[#5887](https://github.com/anomalyco/opencode/issues/5887)** — **[feat] True Async/Background Sub-Agent Delegation**
+   *19 comments, 67 👍*
    Currently, sub-agent delegation blocks the primary flow. This highly-upvoted request (67 👍) asks for fire-and-forget delegation so agents can work in parallel without context switching.
 
-6. **[#23928](https://github.com/anomalyco/opencode/issues/23928)** — **[bug, opentui, core] < or <= operators causing responses to get cut off**  
-   *17 comments*  
+6. **[#23928](https://github.com/anomalyco/opencode/issues/23928)** — **[bug, opentui, core] < or <= operators causing responses to get cut off**
+   *17 comments*
    A recurring issue where AI responses are randomly truncated mid-output, potentially related to comparison operators in prompt rendering.
 
-7. **[#22683](https://github.com/anomalyco/opencode/issues/22683)** — **[bug, opentui, perf] 1.4.6 constantly crashing**  
-   *17 comments*  
+7. **[#22683](https://github.com/anomalyco/opencode/issues/22683)** — **[bug, opentui, perf] 1.4.6 constantly crashing**
+   *17 comments*
    Users report frequent crashes after updating to v1.4.6, with memory-related errors. Affects stability for active sessions.
 
-8. **[#15035](https://github.com/anomalyco/opencode/issues/15035)** — **[core] about agent-teams**  
-   *14 comments*  
+8. **[#15035](https://github.com/anomalyco/opencode/issues/15035)** — **[core] about agent-teams**
+   *14 comments*
    Community inquiry about timeline for multi-agent team collaboration features, indicating demand for more advanced agent orchestration.
 
-9. **[#4240](https://github.com/anomalyco/opencode/issues/4240)** — **[bug] acp, zed: does not support native changes review**  
-   *14 comments, 17 👍*  
+9. **[#4240](https://github.com/anomalyco/opencode/issues/4240)** — **[bug] acp, zed: does not support native changes review**
+   *14 comments, 17 👍*
    Unlike Gemini CLI, OpenCode doesn't support native change review inside Zed editor. A fix is in progress via PR #22674.
 
-10. **[#961](https://github.com/anomalyco/opencode/issues/961)** — **Termux support**  
-    *9 comments, 18 👍*  
+10. **[#961](https://github.com/anomalyco/opencode/issues/961)** — **Termux support**
+    *9 comments, 18 👍*
     Mobile/tablet users want to run OpenCode in Termux (Android Linux environment), expanding use cases beyond desktop.
 
 ---
 
 ## Key PR Progress
 
-1. **[#25512](https://github.com/anomalyco/opencode/pull/25512)** — **refactor(cli): convert web + account to effectCmd**  
+1. **[#25512](https://github.com/anomalyco/opencode/pull/25512)** — **refactor(cli): convert web + account to effectCmd**
    Converts `web` and `account` commands to the new Effect-based architecture with `instance: false` opt-out for lightweight execution.
 
-2. **[#25513](https://github.com/anomalyco/opencode/pull/25513)** — **feat: support serving opencode from a subpath**  
+2. **[#25513](https://github.com/anomalyco/opencode/pull/25513)** — **feat: support serving opencode from a subpath**
    Adds native `basePath` support so OpenCode can be served cleanly from subpaths like `/opencode`, enabling reverse proxy deployments.
 
-3. **[#25511](https://github.com/anomalyco/opencode/pull/25511)** — **fix(session): detect empty tool args from gpt-5.5 and prevent abort loop**  
+3. **[#25511](https://github.com/anomalyco/opencode/pull/25511)** — **fix(session): detect empty tool args from gpt-5.5 and prevent abort loop**
    Addresses infinite abort loops when gpt-5.5 (and similar models) return empty/invalid tool arguments during streaming.
 
-4. **[#25358](https://github.com/anomalyco/opencode/pull/25358)** — **Preserve workspace adapter context**  
+4. **[#25358](https://github.com/anomalyco/opencode/pull/25358)** — **Preserve workspace adapter context**
    Converts internal workspace adapters to Effect-native operations while keeping plugin adapters Promise-based, fixing HTTP API workspace creation context loss.
 
-5. **[#25507](https://github.com/anomalyco/opencode/pull/25507)** — **feat(cli): add instance: false opt-out to effectCmd**  
+5. **[#25507](https://github.com/anomalyco/opencode/pull/25507)** — **feat(cli): add instance: false opt-out to effectCmd**
    Adds `instance: false` flag for commands that don't need full project state, reducing startup overhead by skipping InstanceBootstrap.
 
-6. **[#25510](https://github.com/anomalyco/opencode/pull/25510)** — **feat(lifecycle): tie bootstrap fibers to instance scope**  
+6. **[#25510](https://github.com/anomalyco/opencode/pull/25510)** — **feat(lifecycle): tie bootstrap fibers to instance scope**
    Bootstrap resources now live and die with their instance scope, improving resource management and cleanup.
 
-7. **[#24512](https://github.com/anomalyco/opencode/pull/24512)** — **Refactor v2 session events as schemas**  
+7. **[#24512](https://github.com/anomalyco/opencode/pull/24512)** — **Refactor v2 session events as schemas**
    Reworks session events from schema classes to const schema definitions, adding shared prompt attachment schemas.
 
-8. **[#25466](https://github.com/anomalyco/opencode/pull/25466)** — **fix(agent): initialize plugins before resolving config**  
+8. **[#25466](https://github.com/anomalyco/opencode/pull/25466)** — **fix(agent): initialize plugins before resolving config**
    Fixes plugin agent registration issues by reordering initialization—plugins now load before config resolution.
 
-9. **[#23271](https://github.com/anomalyco/opencode/pull/23271)** — **fix(tui): defer --model validation until providers load**  
+9. **[#23271](https://github.com/anomalyco/opencode/pull/23271)** — **fix(tui): defer --model validation until providers load**
    Fixes `--model` flag being rejected at startup because validation ran before provider metadata loaded.
 
-10. **[#18767](https://github.com/anomalyco/opencode/pull/18767)** — **feat(app): Mobile Touch Optimization**  
+10. **[#18767](https://github.com/anomalyco/opencode/pull/18767)** — **feat(app): Mobile Touch Optimization**
     Optimizes OpenCode App for mobile/touch devices while preserving desktop experience.
 
 ---
@@ -1179,22 +705,22 @@ Analysis of open issues reveals these dominant feature directions:
 
 ## Developer Pain Points
 
-1. **Plugin Agent Registration Failures**  
+1. **Plugin Agent Registration Failures**
    Multiple reports (#25457, #25441, #25450) indicate third-party plugins' agents fail to register after v1.14.32, breaking workflows for users of plugins like `oh-my-opencode`.
 
-2. **Windows Stability Issues**  
+2. **Windows Stability Issues**
    Recurring reports of CLI hangs on startup (#24418), excessive memory usage (#24449), and network mapping problems (#17749). Windows users experience a degraded experience compared to macOS/Linux.
 
-3. **Streaming Mode Inflexibility**  
+3. **Streaming Mode Inflexibility**
    The inability to disable streaming (#785) blocks adoption with enterprise proxy providers that don't support it, forcing users to seek alternatives.
 
-4. **Model Compatibility Gaps**  
+4. **Model Compatibility Gaps**
    Specific model combinations (Kimi K2.6/K2.5, local Ollama) fail or hang unpredictably, suggesting gaps in provider adapter testing.
 
-5. **CLI Paste Behavior**  
+5. **CLI Paste Behavior**
    macOS users report `cmd+v` pastes only the first letter (#25312), a regression affecting daily productivity.
 
-6. **Session Resume Failures**  
+6. **Session Resume Failures**
    Users on NixOS and other platforms report blank screens when attempting to resume saved sessions (#23675), losing work context.
 
 ---
@@ -1205,53 +731,6 @@ Analysis of open issues reveals these dominant feature directions:
 
 <details>
 <summary><strong>Qwen Code</strong> — <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></summary>
-
-<think>The user wants me to generate a structured English digest for the Qwen Code community based on the provided GitHub data. Let me analyze the data and create a comprehensive digest with the requested sections.
-
-Let me organize the information:
-
-**Releases:**
-- v0.15.6-nightly.20260503.5037fa762 - includes FileReadCache, proxy fix, and release chore
-
-**Issues (11 total, need to pick 10 noteworthy):**
-1. #3634 - Background task management roadmap - Phase A, B merged, ongoing work
-2. #3004 - API Exponential Backoff & Fallback Retry (P1 priority)
-3. #3748 - Non-interactive mode prints API errors three times (CLOSED)
-4. #3789 - File system directory reading issue on Windows
-5. #3772 - DeepSeek v4 Pro API error 400
-6. #3786 - DeepSeek v4 Pro error (CLOSED)
-7. #3796 - Python SDK release notes inheritance issue
-8. #3795 - Extract shared release helper utilities
-9. #3794 - Add network timeouts to release version helper
-10. #3793 - Standardize TAG_PREFIX convention
-11. #3787 - ACP mode thinking language inconsistency
-
-**Pull Requests (30 total, need to pick 10 important):**
-1. #3692 - Route countSessionMessages through parseLineTolerant
-2. #3800 - Support reasoning effort 'max' tier (DeepSeek extension)
-3. #3214 - Replace fdir crawler with git ls-files + ripgrep fallback
-4. #3783 - Add ability to switch models non-interactively
-5. #3767 - Log the OpenAI request actually sent
-6. #3774 - Enforce prior read before Edit/WriteFile mutates
-7. #3604 - Parallelize skill loading + path-conditional activation
-
-
-8. #3797 - Add /model list subcommand for dynamic model discovery
-9. #3749 - Stop double-wrapping API errors in non-interactive mode (CLOSED)
-10. #3792 - Address post-merge monitor tool and UI routing issues
-11. #3115 - Commit attribution with per-file AI contribution tracking
-12. #3190 - Add /chat file commands for session management
-13. #3743 - Prevent file paths from being treated as slash commands
-14. #3780 - Stats model cost estimation (CLOSED)
-15. #3798 - Classify retryable transport failures vs deterministic errors
-16. #3785 - Add memory diagnostics doctor command
-17. #3698 - Run auto compression before ACP model sends
-18. #3799 - Normalize model list response parsing
-19. #3685 - Add PyPI release workflow for Python SDK
-20. #3776 - Add standalone archive installation
-
-Now I'll structure this into a comprehensive digest.
-</think>
 
 # Qwen Code Community Digest — 2026-05-03
 
@@ -1477,17 +956,6 @@ Analysis of open issues reveals these dominant feature directions:
 <details>
 <summary><strong>Pi</strong> — <a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></summary>
 
-<think>Let me analyze the GitHub data for the pi-mono repository and create a structured digest for 2026-05-03.
-
-Key observations:
-1. Latest release: v0.72.1 (just released)
-2. Many issues closed in the last 24h
-3. Several important PRs merged
-4. Multiple bug reports related to keyboard handling, provider issues, and model compatibility
-
-Let me structure this into the required sections.
-</think>
-
 # Pi Community Digest — 2026-05-03
 
 ## Today's Highlights
@@ -1506,68 +974,68 @@ The v0.72.1 patch release addresses critical regressions including a session exp
 
 ## Hot Issues
 
-1. **[#3259](https://github.com/badlogic/pi-mono/issues/3259)** — *Shift+Enter regression in Zellij* (16 comments)  
+1. **[#3259](https://github.com/badlogic/pi-mono/issues/3259)** — *Shift+Enter regression in Zellij* (16 comments)
    **Why it matters:** A key workflow shortcut broke after upgrading pi, but only inside Zellij terminal multiplexer. Community is actively debugging keybinding conflicts between pi and Zellij's input handling.
 
-2. **[#4026](https://github.com/badlogic/pi-mono/issues/4026)** — *OpenAI Codex verbosity regression* (8 comments)  
+2. **[#4026](https://github.com/badlogic/pi-mono/issues/4026)** — *OpenAI Codex verbosity regression* (8 comments)
    **Why it matters:** Default `text.verbosity = "low"` causes GPT-5.3-Codex to emit commentary instead of tool calls, halting tasks mid-execution. High impact for automated coding workflows.
 
-3. **[#1436](https://github.com/badlogic/pi-mono/issues/1436)** — *Auto-detect light/dark mode* (7 comments)  
+3. **[#1436](https://github.com/badlogic/pi-mono/issues/1436)** — *Auto-detect light/dark mode* (7 comments)
    **Why it matters:** Long-standing request for pi to follow system theme changes without restart. Community sees this as a quality-of-life essential for daily-driver usage.
 
-4. **[#4046](https://github.com/badlogic/pi-mono/issues/4046)** — *Compaction deletes everything* (7 comments)  
+4. **[#4046](https://github.com/badlogic/pi-mono/issues/4046)** — *Compaction deletes everything* (7 comments)
    **Why it matters:** Data loss risk. The compaction operation is silently wiping files, flagged as a critical data safety issue.
 
-5. **[#4082](https://github.com/badlogic/pi-mono/issues/4082)** — *Xiaomi MiMo Token Plan support* (6 comments)  
+5. **[#4082](https://github.com/badlogic/pi-mono/issues/4082)** — *Xiaomi MiMo Token Plan support* (6 comments)
    **Why it matters:** Chinese regional endpoint returns 401 errors. Follow-up PR [#4112](https://github.com/badlogic/pi-mono/pull/4112) already addresses this by splitting provider into API-billing and token-plan regional variants.
 
-6. **[#3780](https://github.com/badlogic/pi-mono/issues/3780)** — *Italian keyboard duplicate chars with Kitty Protocol* (5 comments)  
+6. **[#3780](https://github.com/badlogic/pi-mono/issues/3780)** — *Italian keyboard duplicate chars with Kitty Protocol* (5 comments)
    **Why it matters:** Kitty Keyboard Protocol flag 4 causes double-insertion on Italian layouts. Demonstrates ongoing keyboard protocol edge cases across locales.
 
-7. **[#4086](https://github.com/badlogic/pi-mono/issues/4086)** — *Install failures on fresh machines* (5 comments)  
+7. **[#4086](https://github.com/badlogic/pi-mono/issues/4086)** — *Install failures on fresh machines* (5 comments)
    **Why it matters:** New users cannot onboard. Blocked adoption and first impressions are harmed.
 
-8. **[#4104](https://github.com/badlogic/pi-mono/issues/4104)** — *Overrideable base filesystem operations* (3 comments, 3 👍)  
+8. **[#4104](https://github.com/badlogic/pi-mono/issues/4104)** — *Overrideable base filesystem operations* (3 comments, 3 👍)
    **Why it matters:** Extensions need a function table for core filesystem operations to ensure consistent behavior across all tools. Architectural request with broad extension ecosystem implications.
 
-9. **[#4109](https://github.com/badlogic/pi-mono/issues/4109)** — *Ukrainian Cyrillic Ctrl key combinations* (3 comments)  
+9. **[#4109](https://github.com/badlogic/pi-mono/issues/4109)** — *Ukrainian Cyrillic Ctrl key combinations* (3 comments)
    **Why it matters:** pi's TUI only maps QWERTY keycodes, breaking Ctrl shortcuts for non-Latin keyboard users. Part of a broader internationalization concern.
 
-10. **[#4114](https://github.com/badlogic/pi-mono/issues/4114)** — *resolveToCwd crashes with undefined cwd* (2 comments)  
+10. **[#4114](https://github.com/badlogic/pi-mono/issues/4114)** — *resolveToCwd crashes with undefined cwd* (2 comments)
     **Why it matters:** Non-Claude models crash when `cwd` is undefined in path utilities, affecting extensions that call these functions without context.
 
 ---
 
 ## Key PR Progress
 
-1. **[#4112](https://github.com/badlogic/pi-mono/pull/4112)** — *Xiaomi MiMo: split API billing vs. regional token plan*  
+1. **[#4112](https://github.com/badlogic/pi-mono/pull/4112)** — *Xiaomi MiMo: split API billing vs. regional token plan*
    Follow-up to #4005. Separates Xiaomi MiMo into default API billing endpoint and per-region token plan providers, closing #4082.
 
-2. **[#4110](https://github.com/badlogic/pi-mono/pull/4110)** — *Fix Qwen3.5/3.6 and MiniMax M2.7 model definitions*  
+2. **[#4110](https://github.com/badlogic/pi-mono/pull/4110)** — *Fix Qwen3.5/3.6 and MiniMax M2.7 model definitions*
    Resolves #4106. Corrects API type and endpoint mismatches for three models from OpenCode Go.
 
-3. **[#4090](https://github.com/badlogic/pi-mono/pull/4090)** — *Honor transport field in buildBaseOptions*  
+3. **[#4090](https://github.com/badlogic/pi-mono/pull/4090)** — *Honor transport field in buildBaseOptions*
    Fixes #4083. Ensures the transport field propagates correctly in OpenAI Codex provider options.
 
-4. **[#4094](https://github.com/badlogic/pi-mono/pull/4094)** — *OpenAI image generation in interactive TUI*  
+4. **[#4094](https://github.com/badlogic/pi-mono/pull/4094)** — *OpenAI image generation in interactive TUI*
    Wires native image generation tool for OpenAI Responses/Codex, parsing `image_generation_call` stream items and rendering images in the TUI.
 
-5. **[#4091](https://github.com/badlogic/pi-mono/pull/4091)** — *Forward Codex WebSocket transport in streamSimple*  
+5. **[#4091](https://github.com/badlogic/pi-mono/pull/4091)** — *Forward Codex WebSocket transport in streamSimple*
    Fixes regression where `websocket-cached` transport was ignored by coding-agent callers.
 
-6. **[#4093](https://github.com/badlogic/pi-mono/pull/4093)** — *Fix nested Codex stream error formatting*  
+6. **[#4093](https://github.com/badlogic/pi-mono/pull/4093)** — *Fix nested Codex stream error formatting*
    Handles nested `error` objects in streamed `type: "error"` events from OpenAI Codex.
 
-7. **[#3624](https://github.com/badlogic/pi-mono/pull/3624)** — *Add Together AI as a provider* (Open)  
+7. **[#3624](https://github.com/badlogic/pi-mono/pull/3624)** — *Add Together AI as a provider* (Open)
    Adds native Together AI provider support via OpenAI-compatible Chat Completions API with TOGETHER_API_KEY detection and model filtering.
 
-8. **[#4005](https://github.com/badlogic/pi-mono/pull/4005)** — *Add Xiaomi MiMo provider*  
+8. **[#4005](https://github.com/badlogic/pi-mono/pull/4005)** — *Add Xiaomi MiMo provider*
    Introduces Xiaomi MiMo as a built-in provider, wired through packages/ai and coding-agent.
 
-9. **[#3474](https://github.com/badlogic/pi-mono/pull/3474)** — *Migrate to TypeBox v1 with extension compat*  
+9. **[#3474](https://github.com/badlogic/pi-mono/pull/3474)** — *Migrate to TypeBox v1 with extension compat*
    Replaces AJV-based validation with TypeBox 1.x, maintaining legacy extension imports and JSON schema coercion.
 
-10. **[#3615](https://github.com/badlogic/pi-mono/pull/3615)** — *Add GPT-5.5 model support*  
+10. **[#3615](https://github.com/badlogic/pi-mono/pull/3615)** — *Add GPT-5.5 model support*
     Adds GPT-5.5 to the model roster with appropriate context window and max token settings.
 
 ---
@@ -1586,22 +1054,22 @@ The v0.72.1 patch release addresses critical regressions including a session exp
 
 ## Developer Pain Points
 
-1. **Keyboard handling regressions are frequent and widespread.**  
+1. **Keyboard handling regressions are frequent and widespread.**
    Kitty Keyboard Protocol breaks accented chars, AltGr, F-keys, and Ctrl combos across multiple non-QWERTY layouts. These issues surface repeatedly with each protocol flag change.
 
-2. **Provider transport options are inconsistently honored.**  
+2. **Provider transport options are inconsistently honored.**
    Multiple PRs (#4090, #4091) fixed transport field propagation in the last 24 hours alone, indicating a systemic gap in how base options are built and forwarded.
 
-3. **Model definitions drift from upstream reality.**  
+3. **Model definitions drift from upstream reality.**
    Qwen3.5/3.6, MiniMax M2.7, Kimi K2.5, and Deepseek models all had recent definition mismatches causing 400/404 errors. Keeping model metadata in sync is a maintenance burden.
 
-4. **Non-Claude models hit undefined-cwd crashes.**  
+4. **Non-Claude models hit undefined-cwd crashes.**
    Path utilities assume a defined working directory, but extensions calling these functions without context cause silent crashes for non-Claude models (#4114).
 
-5. **Install and onboarding failures block new users.**  
+5. **Install and onboarding failures block new users.**
    Fresh machine installs fail with missing internal pieces (#4086), and npm extensions with `@latest` slow startup significantly (#1291).
 
-6. **Rate limit handling freezes the TUI.**  
+6. **Rate limit handling freezes the TUI.**
    GitHub Copilot provider's unbounded Retry-After waits leave pi frozen with no user feedback (#3671).
 
 ---

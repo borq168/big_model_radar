@@ -20,49 +20,6 @@
 
 ## OpenClaw Deep Dive
 
-<think>Let me analyze this GitHub data for OpenClaw and create a structured project digest for 2026-04-26.
-
-Key data points:
-- Issues updated in last 24h: 500 (open/active: 427, closed: 73)
-- PRs updated in last 24h: 500 (open: 184, merged/closed: 316)
-- New releases: 6 (v2026.4.24 and several beta versions)
-
-Let me organize this into the required sections.
-
-## Releases
-- v2026.4.24: Main release with Google Meet integration, DeepSeek V4 support
-- v2026.4.24-beta.5 through beta.1: Beta versions leading up to stable
-
-## Latest PRs (showing top activity)
-Looking at the PRs, I can see several recent ones from 2026-04-26:
-- #71871: fix(tasks) - normalize task timestamps
-- #71858: fix - stabilize heartbeat routing and avatar overrides
-- #71887: fix(channels) - remove stale --deep guidance
-- #71881: fix(docker) - default OPENCLAW_DISABLE_BONJOUR for bridge installs
-- #71886: fix - allow tweakcn theme imports in Control UI CSP
-- #71885: fix(tasks) - serialize structured task values for sqlite
-- #71884: fix - allow safe Windows companion node commands
-
-## Community Hot Topics (by comments)
-Top issues by comment count:
-1. #14593 - Skill install fails in Docker (26 comments)
-2. #25592 - Text between tool calls leaks to messaging channels (22 comments)
-3. #12590 - memoryFlush does not fire reliably (18 comments)
-4. #32473 - control ui requires device identity (15 comments)
-
-
-5. #18598 - macOS Sequoia Chrome profile CSV download issue (15 comments)
-
-## Bugs & Stability
-Several critical issues stand out: Docker skill installation failures, tool call text leaking into messaging channels, unreliable memory flush events, and macOS-specific Chrome profile problems. The memoryFlush issue (#12590) is particularly concerning as it affects data consistency.
-
-## Feature Requests
-Users are requesting Slack Block Kit support for richer message formatting, masked secrets to protect sensitive data, and tiered bootstrap file loading for better resource management.
-
-## User Feedback
-The community is highlighting Docker environment problems, cross-platform compatibility issues, and the need for improved secrets handling and workspace isolation controls.
-</think>
-
 # OpenClaw Project Digest — 2026-04-26
 
 ## 1. Today's Overview
@@ -211,94 +168,9 @@ All beta versions share the same feature set as the stable release. **Beta.2** i
 
 ## Cross-Ecosystem Comparison
 
-<think>The user wants me to generate a cross-project comparison report based on the individual project digests I've already created. Let me analyze the data from all 12 projects and create a comprehensive cross-project comparison.
-
-Let me compile the key metrics from each project:
-
-1. **OpenClaw** (core reference)
-   - Issues: 500 updated in 24h (427 open, 73 closed)
-   - PRs: 500 updated in 24h (184 open, 316 merged/closed)
-   - Releases: 6 new (v2026.4.24 stable + 5 beta versions)
-   - Health: Very high activity, mature project
-
-2. **NanoBot** (HKUDS/nanobot)
-   - Issues: 6 updated (6 open/active)
-   - PRs: 28 updated (17 open, 11 merged/closed)
-   - Releases: 0
-   - Health: High activity, security-focused
-
-3. **Zeroclaw** (zeroclaw-labs/zeroclaw)
-   - Issues: 43 updated (33 open, 10 closed)
-   - PRs: 40 updated (30 open, 10 merged/closed)
-   - Releases: 0
-   - Health: High activity, multi-agent focus
-
-4. **PicoClaw** (sipeed/picoclaw)
-   - Issues: 7 updated (2 open, 5 closed)
-   - PRs: 21 updated (9 open, 12 merged/closed)
-   - Releases: 1 (nightly v0.2.7-nightly.20260426.77be169d)
-   - Health: High activity, MCP-focused
-
-5. **NanoClaw** (qwibitai/nanoclaw)
-   - Issues: 3 updated (2 open, 1 closed)
-   - PRs: 32 updated (21 open, 11 merged/closed)
-   - Releases: 0
-   - Health: High activity, skill-focused
-
-6. **IronClaw** (nearai/ironclaw)
-   - Issues: 7 updated (7 open)
-   - PRs: 25 updated (22 open, 3 merged/closed)
-   - Releases: 0
-   - Health: High activity, MCP/security focus
-
-7. **LobsterAI** (netease-youdao/LobsterAI)
-   - Issues: 4 updated (4 open, all stale)
-   - PRs: 11 updated (1 open, 10 merged/closed)
-   - Releases: 0
-   - Health: Moderate activity, stability issues
-
-8. **TinyClaw** (TinyAGI/tinyclaw)
-   - Issues: 0
-   - PRs: 0
-   - Releases: 0
-   - Health: No activity
-
-9. **Moltis** (moltis-org/moltis)
-   - Issues: 2 updated (1 open, 1 closed)
-   - PRs: 6 updated (3 open, 3 merged/closed)
-   - Releases: 0
-   - Health: Moderate activity, cron/skill focus
-
-10. **CoPaw** (agentscope-ai/CoPaw)
-    - Issues: 15 updated (14 open, 1 closed)
-    - PRs: 11 updated (8 open, 3 merged/closed)
-    - Releases: 1 (v1.1.4.post2)
-    - Health: High activity, stability concerns
-
-11. **ZeptoClaw** (qhkm/zeptoclaw)
-    - Issues: 0
-    - PRs: 4 updated (1 open, 3 merged/closed)
-    - Releases: 0
-    - Health: Low activity, CI/deps focus
-
-12. **EasyClaw** (gaoyangz77/easyclaw)
-    - Issues: 0
-    - PRs: 0
-    - Releases: 0
-    - Health: No activity
-
-13. **NemoClaw** (NVIDIA/NemoClaw)
-    - Issues: 13 updated (6 open, 7 closed)
-    - PRs: 39 updated (25 open, 14 merged/closed)
-    - Releases: 0
-    - Health: High activity, sandbox/security focus
-
-Now I'll organize this into the requested sections.
-</think>
-
 # Personal AI Assistant & Agent Open-Source Ecosystem Report
 
-**Date:** 2026-04-26  
+**Date:** 2026-04-26
 **Scope:** Cross-project analysis of 13 OpenClaw-derived and related projects
 
 ---
@@ -523,53 +395,6 @@ The following requirements are emerging across multiple projects simultaneously,
 <details>
 <summary><strong>NanoBot</strong> — <a href="https://github.com/HKUDS/nanobot">HKUDS/nanobot</a></summary>
 
-<think>Let me analyze the GitHub data for NanoBot and create a structured project digest for 2026-04-26.
-
-Key data points:
-- Issues updated in last 24h: 6 (all open/active)
-- PRs updated in last 24h: 28 (17 open, 11 merged/closed)
-- New releases: 0
-
-Let me organize this into the requested sections.
-
-Looking at the issues:
-1. #3376 - Enhancement: Provider/Model Failover support (8 comments, 1 👍)
-2. #3292 - Feature Request: Session-Level Focus Tool (2 comments)
-3. #3436 - Enhancement: Call external agent (1 comment)
-4. #3443 - Bug: reasoning field leaks into user content (0 comments)
-5. #3437 - Enhancement: RFC for on-demand heartbeat trigger (0 comments)
-6. #3435 - Bug: wecom channel media file failure (0 comments)
-
-Looking at PRs (showing top 20):
-Open PRs:
-- #3451 - feat(command): add /ping command
-- #3253 - fix(transcription): retry Whisper calls
-- #3366 - fix(security): prevent shell injection
-- #3252 - fix(security): detect non-http schemes in SSRF scan
-- #3255 - feat(security): enforce history.jsonl protection
-- #3391 - fix(heartbeat): inject delivered messages
-- #3408 - feat(mgp): opt-in MGP sidecar
-- #3416 - feat(provider): prefer_free option for OpenRouter
-- #3303 - feat: spawn_status/spawn_cancel tools
-- #3427 - fix: session replay token budgeting
-- #3444 - fix(provider): disable HTTP keepalive for local endpoints
-- #3449 - feat(feishu): thread-scoped sessions
-
-
-- #3445 - fix(provider): prevent reasoning field leaking
-- #3446 - fix(provider): gate reasoning-to-content fallback
-
-Closed PRs:
-- #3450 - Claude/adoring johnson (closed, no summary)
-- #2345 - docs: add Chinese translation for README
-- #3176 - feat(feishu): thread-scoped sessions (closed)
-- #3447 - fix(msteams): send threaded replies
-- #3336 - feat(read_file): add DOCX, XLSX, PPTX support
-- #2791 - feat(agent): add ask user tool
-
-Now I'll structure the digest with these PRs organized by status and category.
-</think>
-
 # NanoBot Project Digest — 2026-04-26
 
 ## 1. Today's Overview
@@ -714,75 +539,6 @@ The community is actively hardening security boundaries, particularly around she
 <details>
 <summary><strong>Zeroclaw</strong> — <a href="https://github.com/zeroclaw-labs/zeroclaw">zeroclaw-labs/zeroclaw</a></summary>
 
-<think>Let me analyze the GitHub data for Zeroclaw and generate a structured project digest for 2026-04-26.
-
-Key data points:
-- Issues updated in last 24h: 43 (open/active: 33, closed: 10)
-- PRs updated in last 24h: 40 (open: 30, merged/closed: 10)
-- New releases: 0
-
-Let me organize the information:
-
-**Today's Overview:**
-- High activity with 43 issues and 40 PRs updated
-- No new releases
-- Multiple security and bug fixes in progress
-- Several major features being worked on (multi-agent, schema v3, i18n)
-
-**Releases:**
-- None today
-
-**Project Progress:**
-Looking at PRs:
-- #5960: Major onboard rewrite (schema-driven, idempotent, DRY)
-- #5788: i18n and docs overhaul (Mozilla Fluent pipeline)
-- #6107: DeepSeek V4 thinking-mode fix
-- #6112: Matrix improvements
-- #5939: Security fix for git -C vs -c
-- #6098: Dead code removal
-- #6086: Config aliases
-- #6106: SQLite FTS UPDATE trigger fix
-- #6108: Test fixes
-- #6092: Provider config fallback improvements
-- #6109: Binary size benchmark update
-- #6110: Build badge fix
-- #6035: ACP tool output formatting fix
-- #6023: Skill de-identification
-- #6049: Gemini CLI OAuth refresh fix
-- #6048: Nextcloud Talk streaming
-- #6046: Memory reindex CLI
-- #6093: Agent narration fix
-- #6091: Session key normalization
-- #6111: CI rename
-
-**Community Hot Topics:**
-Issues with most comments:
-1. #4866 (25 comments) - Web dashboard not available - S1
-
-
-2. #5982 (7 comments) - Per-sender RBAC for multi-tenant
-3. #5847 (7 comments) - Document web_dist_dir
-4. #5877 (6 comments) - v0.7.4 milestone tracking
-5. #5947 (6 comments) - Schema v3 migrations
-6. #6059 (6 comments) - DeepSeek-V4 API incompatibility
-7. #5890 (5 comments) - Multi-agent UX RFC
-8. #5941 (5 comments) - Tool call issue
-
-**Bugs & Stability:**
-Critical issues include the web dashboard unavailability, DeepSeek-V4 API compatibility problems, and tool call failures. The schema v3 migration work is progressing alongside multi-agent feature development.
-
-Several security and configuration issues are emerging: DeepSeek-V4 thinking mode conflicts, DeepSeek-V4 API format mismatches, Bedrock temperature deprecation errors, and Telegram misconfiguration with Anthropic. There's also a cron UI blocking problem and a web dashboard extraction failure in the install script. The ACP server schema issue is currently blocked.
-
-**Feature Requests & Roadmap Signals:**
-Multi-agent capabilities are being planned with RFC discussions underway. Schema v3 will introduce breaking changes, while i18n support is being implemented through Mozilla Fluent. Per-sender RBAC for multi-tenant deployments is under consideration, and the onboarding experience is being redesigned. Discord channel restrictions and Xcode MCP integration are also being explored.
-
-**User Feedback Summary:**
-The web dashboard setup remains a pain point, and users are struggling with cron functionality. There's confusion around which models are free versus paid, and the install script isn't properly extracting the web dashboard. The config editor has cursor alignment issues, and users want better error message handling.
-
-**Backlog Watch:**
-Several issues need attention: the ACP server v1 schema problem, cancellation support for ACP-protocol sessions, and token propagation into tool execution. The cancel_tokens eviction mechanism for abandoned sessions is also blocked.
-</think>
-
 # Zeroclaw Project Digest — 2026-04-26
 
 ## 1. Today's Overview
@@ -912,16 +668,6 @@ Zeroclaw maintains high development velocity with **43 issues and 40 PRs** updat
 
 <details>
 <summary><strong>PicoClaw</strong> — <a href="https://github.com/sipeed/picoclaw">sipeed/picoclaw</a></summary>
-
-<think>Let me analyze the GitHub data for PicoClaw and generate a structured project digest for 2026-04-26.
-
-Key data points:
-- Issues updated in last 24h: 7 (open/active: 2, closed: 5)
-- PRs updated in last 24h: 21 (open: 9, merged/closed: 12)
-- New releases: 1 (nightly build v0.2.7-nightly.20260426.77be169d)
-
-Let me organize this into the required sections.
-</think>
 
 # PicoClaw Project Digest — 2026-04-26
 
@@ -1069,61 +815,6 @@ PicoClaw shows **high development velocity** on 2026-04-26, with 21 PRs updated 
 <details>
 <summary><strong>NanoClaw</strong> — <a href="https://github.com/qwibitai/nanoclaw">qwibitai/nanoclaw</a></summary>
 
-<think>Let me analyze the GitHub data for NanoClaw and generate a structured project digest for 2026-04-26.
-
-Key data points:
-- Issues updated in last 24h: 3 (open/active: 2, closed: 1)
-- PRs updated in last 24h: 32 (open: 21, merged/closed: 11)
-- New releases: 0
-
-Let me organize this into the required sections:
-
-1. **Today's Overview** - High activity day with 32 PRs updated, 3 issues. No releases. Mixed activity with new features, fixes, and some community engagement.
-
-2. **Releases** - None today
-
-3. **Project Progress** - Let me identify merged/closed PRs:
-- #2015 [CLOSED] ci(review): add jbaruch/coding-policy PR review workflows
-- #1863 [CLOSED] feat: add web channel — browser portal for NanoClaw
-- #2010 [CLOSED] docs(skills): enrich /add-signal with v2 lessons learned, drop redundant v2 skill
-- #2005 [CLOSED] fix(mount-security): clear errors for malformed mount + allowlist shapes
-
-4. **Community Hot Topics** - Looking at PRs with most activity:
-- #2019 [OPEN] feat(wiki): add pre-ingest contradiction detection to llm-wiki skill
-- #967 [OPEN] [PR: Fix, Status: Needs Review] Improve reliability for stuck sessions and runner turns
-- #956 [OPEN] [PR: Fix, Status: Needs Review] Add fast LLM credential sanity checks
-- #954 [OPEN] [PR: Fix, Status: Needs Review] Fix OpenRouter non-Anthropic model routing
-- #2016 [OPEN] Add /add-ynab-tool skill
-
-
-- #2013 [OPEN] Fix poll-loop test teardown
-- #2012 [OPEN] Add /add-usage-logging skill
-- #2009 [OPEN] feat(skills): add-voice-transcription-free-whisper
-- #2008 [OPEN] feat(telegram): route image/video/audio files through typed media APIs
-- #2003 [OPEN] feat(skill): voice transcription V2
-- #1968 [OPEN] End-to-end per-agent provider and model configuration
-
-5. **Bugs & Stability** - Several issues and fixes related to stability:
-- #2014 [OPEN] setup: install-node.sh hangs on Ubuntu when needrestart prompts
-- #2006 [OPEN] Fresh install on Debian 12 LXC: docker socket permission denied
-- #2011 [OPEN] fix: fail closed on invalid engage_pattern regex
-- #2007 [OPEN] fix(reactions): use canonical chat-sdk composite id for inbound lookups
-- #2002 [OPEN] fix(routing): origin-session threading for agent-to-agent replies
-- #2004 [OPEN] [security] fix(setup): trust only canonical channels remote
-
-6. **Feature Requests & Roadmap Signals** - Notable new features:
-- Web channel browser portal
-- YNAB tool integration
-- Usage logging skill
-- Voice transcription (multiple approaches)
-- Per-agent provider and model configuration
-- Telegram media handling improvements
-
-7. **User Feedback Summary** - Positive feedback from #2017 ("keep it going sir this is awesome!"), installation challenges on Ubuntu and Debian 12, and Docker socket permission issues in LXC environments.
-
-8. **Backlog Watch** - Several PRs requiring maintainer review: #967, #956, #954 all marked as needing review since March 11th.
-</think>
-
 # NanoClaw Project Digest — 2026-04-26
 
 ---
@@ -1249,37 +940,6 @@ NanoClaw shows **high development velocity** today with 32 PRs updated in the la
 <details>
 <summary><strong>IronClaw</strong> — <a href="https://github.com/nearai/ironclaw">nearai/ironclaw</a></summary>
 
-<think>Let me analyze the GitHub data for IronClaw and generate a structured project digest for 2026-04-26.
-
-Key observations:
-1. **Activity**: 7 issues updated, 25 PRs updated in last 24h
-2. **Releases**: None today
-3. **PRs**: 22 open, 3 merged/closed
-4. **Notable PRs**:
-   - #2964: Merged - upstream changes from 0.26.0
-   - #2951: Closed - fix llm tool schema shaping for near ai
-   - #2957: Open - fix for stdio MCP activation (duplicate of #2960)
-   - #2960: Open - fix for stdio MCP activation
-   - #2961: Open - fix for llm_backend being overwritten
-
-5. **Issues**:
-   - #2923: Stdio MCP activation fails (has fix PRs #2960, #2957)
-   - #2946: LLM backend overwritten on startup (has fix PR #2961)
-   - #2963: Docker Hub image missing
-   - #2956, #2955: Live canary failures
-
-6. **Feature PRs**:
-   - #2019: Native Matrix channel
-   - #2958: MCP prompts support
-   - #2754: User secrets and durable binding approvals
-   - #2959: Dedicated web_fetch tool
-   - #1120: Prismer Cloud IM WASM channel
-   - #2684: Cryptographic tool call audit (signet-core)
-   - #2728: Engine V2 migrate CLI
-
-Let me structure this into the required format.
-</think>
-
 # IronClaw Project Digest — 2026-04-26
 
 ## 1. Today's Overview
@@ -1402,17 +1062,6 @@ IronClaw shows **high development velocity** with 25 PRs and 7 issues updated in
 
 <details>
 <summary><strong>LobsterAI</strong> — <a href="https://github.com/netease-youdao/LobsterAI">netease-youdao/LobsterAI</a></summary>
-
-<think>Let me analyze the GitHub data for LobsterAI and generate a structured project digest for 2026-04-26.
-
-Key observations:
-1. **Issues**: 4 open issues, all marked as "stale", updated on 2026-04-25
-2. **PRs**: 11 PRs updated in last 24h - 1 open, 10 closed/merged
-3. **Releases**: None in the last 24h
-4. **PR Activity**: Heavy activity around cowork session lifecycle fixes, DeepSeek v4 compatibility, proxy issues
-
-Let me structure this into the required sections.
-</think>
 
 # LobsterAI Project Digest — 2026-04-26
 
@@ -1539,27 +1188,6 @@ No activity in the last 24 hours.
 <details>
 <summary><strong>Moltis</strong> — <a href="https://github.com/moltis-org/moltis">moltis-org/moltis</a></summary>
 
-<think>The user wants me to generate a structured project digest for the Moltis project based on the provided GitHub data. Let me analyze the data and create a comprehensive digest following the specified sections.
-
-Key data points:
-- Issues updated in last 24h: 2 (1 open, 1 closed)
-- PRs updated in last 24h: 6 (3 open, 3 closed/merged)
-- No new releases
-
-Let me structure this into the requested format:
-
-1. **Today's Overview** - Summarize the overall activity
-2. **Releases** - None to report
-3. **Project Progress** - The 3 closed PRs and what they accomplished
-4. **Community Hot Topics** - The issues and PRs with activity
-5. **Bugs & Stability** - The bug-related issue and any fixes
-6. **Feature Requests & Roadmap Signals** - The open PRs as feature work
-7. **User Feedback Summary** - Pain points from issues
-8. **Backlog Watch** - Items needing attention
-
-Let me write this out in a professional, data-driven style.
-</think>
-
 # Moltis Project Digest — 2026-04-26
 
 ## 1. Today's Overview
@@ -1684,16 +1312,6 @@ Three pull requests were closed or merged today, advancing core functionality:
 
 <details>
 <summary><strong>CoPaw</strong> — <a href="https://github.com/agentscope-ai/CoPaw">agentscope-ai/CoPaw</a></summary>
-
-<think>Let me analyze the GitHub data for CoPaw (QwenPaw) and generate a structured project digest for 2026-04-26.
-
-Key data points:
-- Issues updated in last 24h: 15 (open/active: 14, closed: 1)
-- PRs updated in last 24h: 11 (open: 8, merged/closed: 3)
-- New releases: 1 (v1.1.4.post2)
-
-Let me organize this into the required sections.
-</think>
 
 # CoPaw (QwenPaw) Project Digest — 2026-04-26
 
@@ -1893,28 +1511,10 @@ CoPaw (QwenPaw) shows **high activity** on April 26, 2026, with 15 issues and 11
 <details>
 <summary><strong>ZeptoClaw</strong> — <a href="https://github.com/qhkm/zeptoclaw">qhkm/zeptoclaw</a></summary>
 
-<think>Let me analyze the GitHub data for ZeptoClaw and generate a structured project digest for 2026-04-26.
-
-Key data points:
-- Issues updated in last 24h: 0 (open/active: 0, closed: 0)
-- PRs updated in last 24h: 4 (open: 1, merged/closed: 3)
-- New releases: 0
-
-PRs:
-1. #548 [OPEN] chore(ci): expand CI matrix for optional integration features - Author: @qhkm - Created: 2026-04-25
-2. #544 [CLOSED] [codex] expand CI coverage for optional integration features - Author: @manelsen - Created: 2026-04-23, Updated: 2026-04-25
-3. #547 [CLOSED] chore(deps): bump sha2 0.10 → 0.11 - Author: @qhkm - Created: 2026-04-25, Updated: 2026-04-25
-4. #517 [CLOSED] [dependencies, rust] chore(deps): bump sha2 from 0.10.9 to 0.11.0 - Author: @dependabot[bot] - Created: 2026-04-14, Updated: 2026-04-25
-
-No issues, no releases.
-
-Let me structure this into the required format.
-</think>
-
 # ZeptoClaw Project Digest
 
-**Date:** 2026-04-26  
-**Repository:** [github.com/qhkm/zeptoclaw](https://github.com/qhkm/zeptoclaw)  
+**Date:** 2026-04-26
+**Repository:** [github.com/qhkm/zeptoclaw](https://github.com/qhkm/zeptoclaw)
 **Prepared by:** AI Analyst
 
 ---
@@ -1952,10 +1552,10 @@ Three PRs were merged/closed today, advancing project stability:
 
 **Most Active PRs:**
 
-1. **[#548](https://github.com/qhkm/zeptoclaw/pull/548) [OPEN]** — `chore(ci): expand CI matrix for optional integration features`  
-   - **Author:** @qhkm  
-   - **Created:** 2026-04-25  
-   - **Status:** Open (1 open PR in last 24h)  
+1. **[#548](https://github.com/qhkm/zeptoclaw/pull/548) [OPEN]** — `chore(ci): expand CI matrix for optional integration features`
+   - **Author:** @qhkm
+   - **Created:** 2026-04-25
+   - **Status:** Open (1 open PR in last 24h)
    - **Summary:** Cherry-pick of #544 under author-owned branch, resolving OAuth `workflow` scope wall via SSH push. Expands CI feature-matrix to compile-check optional paths (`memory-embedding`, `screensh...`).
 
 **Analysis:** The open PR #548 indicates ongoing CI infrastructure work. The mention of OAuth `workflow` scope issues suggests developers are navigating GitHub Actions permission constraints. The CI expansion reflects a need for more comprehensive integration testing before merges.
@@ -2036,16 +1636,6 @@ No activity in the last 24 hours.
 
 <details>
 <summary><strong>NemoClaw</strong> — <a href="https://github.com/NVIDIA/NemoClaw">NVIDIA/NemoClaw</a></summary>
-
-<think>Let me analyze the GitHub data for NemoClaw and generate a structured project digest for 2026-04-26.
-
-Key data points:
-- Issues updated in last 24h: 13 (open/active: 6, closed: 7)
-- PRs updated in last 24h: 39 (open: 25, merged/closed: 14)
-- New releases: 0
-
-Let me organize this into the required sections.
-</think>
 
 # NemoClaw Project Digest — 2026-04-26
 

@@ -4,48 +4,6 @@
 
 ---
 
-<think>用户要求我作为AI行业资讯分析师，根据2026年4月24日从Hacker News抓取的AI相关热门帖子，生成一份结构清晰的《Hacker News AI 社区动态日报》。
-
-让我先分析这些帖子的内容：
-
-1. **GPT-5.5** - OpenAI发布新模型，1087分，750评论 - 这是最大的热点
-2. **Anthropic Claude Code质量报告更新** - 571分，432评论 - 也很热门
-3. **Tolaria** - 开源macOS应用，管理Markdown知识库
-4. **A Boy That Cried Mythos** - 关于Anthropic验证问题的文章
-5. **Anthropic Claude Desktop App安装未披露的原生消息桥**
-6. **Mythos nothingburger** - 关于Anthropic的Mythos被批评为炒作
-7. **LLM pricing has never made sense** - LLM定价问题
-8. **Endo Familiar** - JavaScript代理沙箱
-9. **LocalLLM** - 本地LLM运行方案
-10. **GPT-5.5 Bio Bug Bounty**
-11. **GPT-5.5 No ARC-AGI-3 scores**
-12. **Anthropic要求新用户验证身份**
-13. **Chestnut** - 防止AI技能萎缩的工具
-14. **AI money squeeze** - AI monetization
-
-
-15. **Ronan Farrow关于Sam Altman** - 信任问题
-16. **Elon Musk与Sam Altman的法庭斗争**
-17. **Zork-bench** - LLM推理评估
-18. **AgentBox** - SDK for Claude Code等
-19. **Anthropic trillion-dollar valuation** - 估值新闻
-20. **30 Days Running ChatGPT Plus, Claude Pro, Google AI Pro** - 对比测评
-21. **Anthropic reaches $1T valuation** - 估值新闻（重复）
-22. **Anthropic valuation** - 估值新闻（重复）
-23. **GPT-5.5 System Card** - 系统卡片
-24. **Preflight** - 测试MCP服务器
-25. **AI GTM plugin for SEO and GEO** - SEO工具
-26. **Claude Code pricing confusion** - 定价混乱
-27. **Apple ML Research at ICLR 2026**
-28. **OpenAI deprecation notice** - 模型下架通知
-29. **Ask HN: Is AI research driving LLM models to be better?** - 讨论AI研究是否推动LLM进步
-30. **Making a 3B Robot Policy Faster** - 机器人策略
-
-现在需要整理这些信息，按照要求的格式生成日报。
-
-首先总结今日要点：GPT-5.5发布成为焦点，Anthropic面临信任危机和身份验证争议，LLM定价混乱引发讨论，Anthropic估值突破万亿。然后按模型与研究、工具与工程、产业动态、观点与争议四个类别组织内容，分析社区情绪，最后指出值得深入阅读的文章。
-</think>
-
 # Hacker News AI 社区动态日报
 
 **日期：2026-04-24**

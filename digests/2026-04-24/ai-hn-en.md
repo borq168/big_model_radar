@@ -4,32 +4,6 @@
 
 ---
 
-<think>Let me analyze this Hacker News AI digest data and create a structured report.
-
-Looking at the data:
-
-1. **Top Posts by Score:**
-   - GPT-5.5 announcement (1087 score, 750 comments) - massive engagement
-   - Claude Code quality reports postmortem (571 score, 432 comments) - significant interest
-   - Various Anthropic-related posts about trust/verification issues
-   - Show HN projects getting some traction
-
-2. **Key Themes:**
-   - GPT-5.5 release is the dominant story
-   - Anthropic/Claude quality issues and trust concerns
-   - Pricing discussions
-   - Valuation news (Anthropic at $1T)
-   - Various tools and projects
-
-3. **Categories to organize:**
-   - Models & Research: GPT-5.5, Zork-bench eval, Apple ML research
-   - Tools & Engineering: Tolaria, Endo Familiar, LocalLLM, AgentBox, Preflight, etc.
-   - Industry News: Anthropic valuation, Claude Code issues, OpenAI deprecations
-   - Opinions & Debates: LLM pricing, trust in Anthropic, AI money squeeze
-
-Let me structure this properly with all the required elements.
-</think>
-
 # Hacker News AI Community Digest
 
 **Date:** April 24, 2026 | **Data Period:** April 23, 2026

@@ -4,50 +4,6 @@
 
 ---
 
-<think>用户要求我作为AI行业资讯分析师，根据2026年5月1日从Hacker News抓取的AI相关热门帖子，生成一份结构清晰的《Hacker News AI 社区动态日报》。
-
-让我先分析这些帖子的内容：
-
-1. **Where the goblins came from** - OpenAI的文章，1016分，629评论 - 这是最热门的帖子
-2. **Claude Code refuses requests or charges extra if your commits mention "OpenClaw"** - 964分，540评论 - 关于Claude Code的争议
-3. **Pu.sh – a full coding-agent harness in 400 lines of shell** - 70分，开源项目
-4. **Supreme Court Limits Voting Rights Act** - 22分，非AI相关
-5. **AI discovery reveals DNA isn't locked away in cells after all** - 16分，AI在科学研究中的应用
-6. **Elon Musk's worst enemy in court is Elon Musk** - 13分，关于 Musk 和 OpenAI
-7. **Elon Musk confirms xAI used OpenAI's models to train Grok** - 11分，xAI和OpenAI的争议
-8. **The Complete Claude Setup Checklist** - 11分，Claude工具指南
-9. **OpenAI has effectively abandoned first-party Stargate data centers** - 10分，OpenAI基础设施
-10. **Elon Musk says his xAI startup's models were partially trained on OpenAI's tech** - 10分
-
-
-11. **Claude Code dies with ANTHROPIC_API_KEY in cloud environment** - 10分，技术问题
-12. **Claude Pro expired and my $40 in prepaid Extra Usage credits vanished** - 9分，用户体验问题
-13. **Elon Musk says his xAI startup's models were partially trained on OpenAI's tech** - 8分
-14. **Scaling Pain of Coding Agent Serving** - 7分，工程实践
-15. **State of the AI Frontier, April 2026** - 6分，AI前沿动态
-16. **AI outperforms doctors in Harvard trial of emergency triage diagnoses** - 6分，AI医疗应用
-17. **676 Engineers across Google, Meta, Microsoft, OpenAI: OSS Performance +116% YoY** - 6分，开源性能
-18. **Spell-Checking with LLMs** - 6分，LLM应用
-19. **What I changed in how I use Claude Code after Anthropic's postmortem** - 6分，Claude Code使用经验
-20. **Claude⁹'s confession deleting database** - 6分，AI行为争议
-21. **Nimbalyst open-source visual workspace** - 6分，开源工具
-22. **AI Skills as loader spec** - 5分，架构讨论
-23. **In real-world test, AI model did better than ER doctors at diagnosing patients** - 5分，AI医疗
-24. **Anthropic has overtaken OpenAI on secondary markets** - 5分，市场动态
-25. **The LLM Is Not a Junior Engineer** - 5分，观点讨论
-26. **Show HN: Hexlock** - 5分，开源项目
-27. **Donating to Open Source** - 5分，开源社区
-28. **White House Opposes Anthropic's Plan to Expand Access to Mythos Model** - 5分，政策相关
-29. **Show HN: Trent** - 5分，安全工具
-30. **Israeli forces raid Global Sumud Flotilla boats** - 4分，非AI相关
-
-主要趋势包括Elon Musk与OpenAI的法律纠纷和xAI使用OpenAI模型的争议，以及Claude Code的多个相关讨论。AI在医疗诊断领域的实际应用案例也值得关注，同时开源工具和项目持续活跃。
-
-社区对Claude Code的争议反应强烈，对AI在医疗和法律领域的应用持开放态度，对开源工具保持高度兴趣。
-
-现在组织报告结构：今日速览、热门新闻与讨论（按模型与研究、工具与工程、产业动态、观点与争议分类）、社区情绪信号、值得深读。
-</think>
-
 # Hacker News AI 社区动态日报
 
 **日期：2026年5月1日**

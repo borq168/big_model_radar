@@ -15,61 +15,6 @@
 
 ## 横向对比
 
-<think>用户要求我基于之前生成的各 AI CLI 工具的社区动态日报，生成一份横向对比分析报告。让我整理各工具的数据并进行对比分析。
-
-各工具数据汇总：
-
-1. **Claude Code** (github.com/anthropics/claude-code)
-   - Issues: 50条（展示30条评论最多的）
-   - PRs: 5条
-   - Releases: v2.1.128
-   - 热点：会话恢复、多代理、插件系统、权限沙箱
-
-2. **OpenAI Codex** (github.com/openai/codex)
-   - Issues: 50条
-   - PRs: 50条
-   - Releases: rust-v0.129.0-alpha.4/5/6
-   - 热点：1M token上下文、Linux桌面应用、认证流程、Browser Use
-
-3. **Gemini CLI** (github.com/google-gemini/gemini-cli)
-   - Issues: 50条
-   - PRs: 50条
-   - Releases: v0.42.0-nightly.20260504
-   - 热点：代理稳定性、Windows支持、权限管理、AST感知工具
-
-4. **GitHub Copilot CLI** (github.com/github/copilot-cli)
-   - Issues: 31条
-   - PRs: 0条
-   - Releases: v1.0.41-0
-   - 热点：请求消耗异常、HTTP/2稳定性、alt-screen、插件系统
-
-5. **Kimi Code CLI** (github.com/MoonshotAI/kimi-cli)
-   - Issues: 5条
-   - PRs: 1条
-   - Releases: 无
-   - 热点：交互体验、插件生态、Web UI
-
-6. **OpenCode** (github.com/anomalyco/opencode)
-   - Issues: 50条
-   - PRs: 50条
-   - Releases: v1.14.35, v1.14.34
-   - 热点：文件安全编辑、后台任务管理、终端渲染
-
-7. **Qwen Code** (github.com/QwenLM/qwen-code)
-   - Issues: 18条
-   - PRs: 40条
-   - Releases: v0.15.6-nightly.20260505
-   - 热点：文件读取缓存、代理设置、文件安全编辑
-
-8. **Pi** (github.com/badlogic/pi-mono)
-   - Issues: 34条
-   - PRs: 13条
-   - Releases: v0.73.0
-   - 热点：本地LLM集成、思考层级自定义、图片内容API
-
-现在生成横向对比分析报告。
-</think>
-
 # AI CLI 工具生态横向对比分析报告
 
 **报告日期**: 2026-05-05
@@ -233,69 +178,9 @@ Issues/PRs 数量 (对数刻度)
 <details>
 <summary><strong>Claude Code</strong> — <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-05 的 Claude Code 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Release: v2.1.128 (过去24小时)
-- Issues: 50条，展示30条评论最多的
-- PRs: 5条
-
-让我按照要求的格式组织内容：
-
-1. 今日速览
-2. 版本发布
-3. 社区热点 Issues (10个)
-4. 重要 PR 进展 (10个，但只有5个PR)
-5. 功能需求趋势
-6. 开发者关注点
-
-让我开始分析：
-
-**版本发布 v2.1.128:**
-- `/color` 无参数时随机选择会话颜色
-- `/mcp` 显示已连接服务器的工具有数量，标记0工具的服务器
-- `--plugin-dir` 支持 .zip 插件压缩包
-- `--channels` 支持控制台
-
-**热点 Issues (按评论数排序):**
-1. #26452 - 会话在登出/重启后消失，如何恢复？ (42评论)
-2. #53610 - 多代理运行时需要机械强制执行：9个缺陷导致无人值守过夜操作失败 (25评论)
-3. #39455 - 插件 userConfig 值在启用时未提示 (20评论)
-
-
-4. #7618 - VS Code 终端窃取焦点 (19评论)
-5. #10258 - 无法禁用有问题的交互式问题工具 (14评论)
-6. #51798 - PreToolUse 权限决策"allow"不再抑制 Bash 沙箱确认提示 (14评论)
-7. #51686 - CLAUDE.md 语言/方言指令在长会话中漂移 (7评论)
-8. #38691 - Windows 上 Claude Desktop 更新后所有会话丢失 (6评论)
-9. #55254 - 会话停止响应错误 (6评论)
-10. #27134 - EnterWorktree 从默认分支创建工作树而非 HEAD (6评论)
-
-**PRs:**
-1. #56176 - Claude/book outline bootstrap toolkit
-2. #55864 - feat: 添加会话持久化插件
-3. #33007 - fix(hookify): 修正停止和提示事件的字段映射
-4. #33006 - fix(code-review): 对齐 README 与实际工作流程
-5. #55832 - Fix: 移除 plugin-validator.md 中的杂散内容
-
-**功能需求趋势:**
-- 多代理/agent 相关功能
-- 会话管理和恢复
-- 平台特定问题（Windows、macOS）
-- 插件系统
-- 权限和沙箱
-- IDE 集成
-
-**开发者关注点:**
-- 会话丢失/恢复问题
-- 权限和沙箱行为
-- 跨平台兼容性
-- 插件开发体验
-</think>
-
 # Claude Code 社区动态日报
 
-**日期：** 2026-05-05  
+**日期：** 2026-05-05
 **版本：** v2.1.128
 
 ---
@@ -340,13 +225,13 @@ Issues/PRs 数量 (对数刻度)
 
 ### 📌 重点 Issue 深度解析
 
-**Issue #26452 - 会话恢复危机**  
+**Issue #26452 - 会话恢复危机**
 用户报告登出或重启 Claude Code Desktop 后，所有会话历史消失，社区贡献了大量临时解决方案。该问题与 [#38691](https://github.com/anthropics/claude-code/issues/38691)、[#53717](https://github.com/anthropics/claude-code/issues/53717) 形成系列性 Windows 平台会话持久化问题集群。
 
-**Issue #53610 - 多代理能力缺口**  
+**Issue #53610 - 多代理能力缺口**
 作者详细列举了 9 个导致无人值守过夜操作失败的场景，包括 CronCreate/ScheduleWakeup 可靠性、Agent() 子调度状态传递、循环终止条件等，显示出 Claude Code 从单代理向多代理演进过程中的工程成熟度挑战。
 
-**Issue #51798 - 沙箱权限回归**  
+**Issue #51798 - 沙箱权限回归**
 2.1.116+ 版本中，PreToolUse 钩子返回 `permissionDecision: "allow"` 不再抑制 `dangerouslyDisableSandbox: true` 的 Bash 确认提示，影响依赖自动化权限管理的开发者。
 
 ---
@@ -365,10 +250,10 @@ Issues/PRs 数量 (对数刻度)
 
 ### 💡 值得关注的 PR
 
-**#55864 - 会话持久化插件**  
+**#55864 - 会话持久化插件**
 针对 Issue #55860 提出的服务端完整修复方案，这是一个客户端侧临时方案，解决窗口关闭导致工作上下文丢失的问题。该 PR 体现了社区对会话连续性问题的迫切需求。
 
-**#33007/#33006 - 插件生态修复**  
+**#33007/#33006 - 插件生态修复**
 两个来自 @daniel-dallimore 的修复 PR 改善了 hookify 和 code-review 插件的稳定性和文档准确性，显示出插件生态的持续成熟。
 
 ---
@@ -401,16 +286,16 @@ Issues/PRs 数量 (对数刻度)
 
 ### 🎯 核心痛点
 
-1. **数据丢失焦虑**  
+1. **数据丢失焦虑**
    多个 Issue 报告会话内容在更新、重启后不可恢复，auto-memory 未保存关键信息（#48782）。开发者强烈要求可靠的会话持久化机制。
 
-2. **跨平台一致性**  
+2. **跨平台一致性**
    Windows 平台问题频发：路径处理（含下划线项目名产生双目录）、MSIX 沙箱 EXDEV 错误、Store 版本会话不持久。macOS 平台则面临 virtiofs 挂载、Cowork 历史丢失等问题。
 
-3. **权限模型混乱**  
+3. **权限模型混乱**
    `dangerouslyDisableSandbox` 与 PreToolUse 钩子的交互在版本间发生变化（#51798），开发者难以构建稳定的自动化工作流。
 
-4. **插件开发体验**  
+4. **插件开发体验**
    配置提示缺失（#39455）、验证器行为不一致（#30611）、文档过时（#33006）等问题影响插件生态健康发展。
 
 ### 💬 社区情绪
@@ -441,61 +326,6 @@ Issues/PRs 数量 (对数刻度)
 
 <details>
 <summary><strong>OpenAI Codex</strong> — <a href="https://github.com/openai/codex">openai/codex</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-05 的 OpenAI Codex 社区动态日报。我需要按照指定的结构来组织内容，包括：
-
-1. 今日速览
-2. 版本发布
-3. 社区热点 Issues（10个）
-4. 重要 PR 进展（10个）
-5. 功能需求趋势
-6. 开发者关注点
-
-让我先分析数据：
-
-**版本发布**：
-- rust-v0.129.0-alpha.6
-- rust-v0.129.0-alpha.5
-- rust-v0.129.0-alpha.4
-
-**热门 Issues**（按评论数排序）：
-1. #19464 - 1M token context 支持 GPT-5.5 (120评论, 153👍)
-2. #20161 - 手机号验证问题 (64评论, 53👍)
-3. #11023 - Linux 桌面应用需求 (45评论, 115👍)
-4. #9936 - Azure 流中断问题 (14评论, 7👍)
-5. #19403 - 安全检查误报 (8评论, 0👍)
-6. #17543 - MCP 自定义通知 (7评论, 0👍)
-7. #20845 - Windows /mcp 打印问题 (6评论, 0👍)
-8. #19891 - 回归bug - 文件名隐藏 (6评论, 6👍)
-
-
-9. #20579 - Browser Use 损坏 (6评论, 3👍)
-10. #19463 - Browser Use 无法发现后端 (5评论, 3👍)
-
-**重要 PRs**：
-- #20825 - Git 插件缓存元数据
-- #20684 - /hooks TUI 审查流程
-- #21069 - 大型 hook 输出溢出
-- #21108 - 远程文件上传
-- #20923 - 插件 ID 到技能分析
-- #21124 - 插件共享访问控制
-- #20321 - hook 信任元数据
-- #21120 - 收紧 marketplace root 移除
-- #21122 - 添加 turn_id 到技能分析
-- #21110 - 延迟图像内容 API
-- #21105 - DNS 超时覆盖
-- #21111 - 无效配置枚举警告
-- #21061 - 连接器工具审批
-- #21109 - 本地文件上传命令
-- #20949 - 线程源重做
-- #20488 - Computer Use 需求
-- #20065 - 会话选择器重新设计
-- #20978 - 模型服务层命令
-- #19650 - 验证代理身份 JWT
-- #20969 - 模型服务层元数据
-
-现在我来组织日报内容。
-</think>
 
 # OpenAI Codex 社区动态日报
 
@@ -721,69 +551,6 @@ Issues/PRs 数量 (对数刻度)
 <details>
 <summary><strong>Gemini CLI</strong> — <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-05 的 Gemini CLI 社区动态日报。我需要：
-
-1. 今日速览 - 2-3句话概括最重要动态
-2. 版本发布 - 总结 v0.42.0-nightly.20260504.g37edd1d4d 的更新
-3. 社区热点 Issues - 挑选 10 个最值得关注的 Issue
-4. 重要 PR 进展 - 挑选 10 个重要的 PR
-5. 功能需求趋势 - 从 Issues 中提炼功能方向
-6. 开发者关注点 - 总结痛点和高频需求
-
-让我分析数据：
-
-**版本发布**：
-- v0.42.0-nightly.20260504.g37edd1d4d
-- 更新内容：
-  - Update documentation workflows with workspace trust by @g-samroberts in PR #26150
-  - refactor(acp): modularize monolithic acpClient into specialized files by @sripasg in PR #26143
-  - test: fix...
-
-**热门 Issues**（按评论数排序）：
-1. #2353 - Windows PowerShell 支持 - 13条评论，10个点赞
-2. #24353 - 组件级评估 - 5条评论
-3. #22745 - AST 感知文件读取 - 5条评论
-4. #22323 - 子代理恢复问题 - 4条评论
-
-
-5. #24916 - 权限重复请求 - 3条评论
-6. #22203 - ToDo 重命名为 Tasks - 3条评论
-7. #25166 - Shell 命令卡住 - 2条评论
-8. #23571 - 临时脚本创建 - 2条评论
-9. #22267 - 浏览器代理忽略设置 - 2条评论
-10. #25216 - 临时路径问题 - 1条评论
-
-**重要 PR**：
-1. #26479 - 修复工具审批竞态条件
-2. #26469 - 修复任务更新竞态条件
-3. #26476 - CI 改进
-4. #26473 - Xcode ACP 客户端自定义认证
-5. #26303 - Bot 评估角色和反馈循环
-6. #26312 - MCP OAuth 令牌刷新
-7. #26477 - 生命周期管理优化
-8. #25890 - 使用 os.homedir()
-9. #23705 - 保留尾部换行符
-10. #21481 - 窗口标题长度可配置
-
-**功能需求趋势**：
-- Windows/PowerShell 支持
-- 代理稳定性和恢复机制
-- 权限管理
-- 性能优化
-- UI/UX 改进
-- AST 感知工具
-- 评估和测试框架
-
-**开发者关注点**：
-- 竞态条件和稳定性问题
-- OAuth 和认证流程
-- Shell 命令执行
-- UI 渲染和交互
-- 路径处理
-
-现在开始撰写日报。
-</think>
-
 # Gemini CLI 社区动态日报
 
 **日期**: 2026-05-05
@@ -906,7 +673,7 @@ Issues/PRs 数量 (对数刻度)
 ---
 
 > 📊 **数据统计**: 过去 24 小时新增 50 个 Issues，50 个 PRs，1 个 Nightly Release
-> 
+>
 > 🔗 **数据来源**: [github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
 
 ---
@@ -918,41 +685,9 @@ Issues/PRs 数量 (对数刻度)
 <details>
 <summary><strong>GitHub Copilot CLI</strong> — <a href="https://github.com/github/copilot-cli">github/copilot-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub Copilot CLI 数据生成一份 2026-05-05 的社区动态日报。让我仔细分析这些数据：
-
-## 数据概览
-
-### 最新 Releases
-- v1.0.41-0: 新增了 `--attachment` flag 用于非交互模式，支持附加图片或原生文档；改进了文件编辑的可靠性；修复了 @-mention 补全功能
-
-### 最新 Issues（31条）
-让我挑选最值得关注的：
-
-1. **#2591** - 单次请求导致无限 premium 请求消耗（31条评论，13个赞）- 这是个严重问题
-2. **#1941** - 突然出现 "400 The requested model is not supported" 错误（10条评论）
-3. **#1799** - 如何关闭 alt-screen 视图（9条评论，4个赞）
-4. **#2421** - HTTP/2 GOAWAY 竞态条件导致请求浪费（7条评论，16个赞）
-5. **#953** - 过度权限请求问题（7条评论，3个赞）
-6. **#1665** - 支持项目/仓库级别的插件（5条评论，11个赞）
-7. **#2795** - --agent 与 --plugin-dir 组合使用问题（4条评论，8个赞）
-
-
-8. **#3019** - .vscode/mcp.json 不再支持（3条评论，2个赞）
-9. **#2528** - 支持仓库级 MCP 配置（3条评论，5个赞）
-10. **#2758** - 子代理模型选择功能请求（2条评论）
-11. **#2052** - 持久化 Token/上下文使用指示器（2条评论，11个赞）
-12. **#2665** - 扩展在无头模式下不加载（1条评论）
-
-还有一些其他问题需要关注。模型相关的有 #2524、#3079、#3099 和 #3101。权限和工具方面存在 #2693 和 #1607 的问题。终端渲染方面有 #3111 和 #3110。还有一些新提交的问题包括 #3113、#3112、#3109、#3108、#3105、#3104、#3106、#3102 和 #3100。
-
-值得注意的是 #1770 已被关闭。
-
-过去 24 小时内没有新的 Pull Requests 更新。现在需要整理一份结构清晰的日报，包括今日速览、版本发布、社区热点 Issues、重要 PR 进展、功能需求趋势和开发者关注点等部分。
-</think>
-
 # GitHub Copilot CLI 社区动态日报
 
-**日期**: 2026-05-05  
+**日期**: 2026-05-05
 **数据来源**: github.com/github/copilot-cli
 
 ---
@@ -1064,38 +799,9 @@ Issues/PRs 数量 (对数刻度)
 <details>
 <summary><strong>Kimi Code CLI</strong> — <a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-05 的 Kimi Code CLI 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据概览：
-- 最新 Releases：过去24小时无新版本
-- 最新 Issues：5条（都在过去24小时内更新）
-- 最新 Pull Requests：1条
-
-让我按照要求的格式生成日报：
-
-1. **今日速览** - 总结今天最重要的动态
-2. **版本发布** - 无新版本，省略
-3. **社区热点 Issues** - 挑选最值得关注的 Issue
-4. **重要 PR 进展** - 挑选重要的 PR
-5. **功能需求趋势** - 提炼社区关注的功能方向
-6. **开发者关注点** - 总结痛点和高频需求
-
-让我详细分析每个 Issue：
-
-1. #2160 - bug: 运行过程中闪退（Windows 用户，kimi 1.41.0）
-2. #1585 - enhancement: 支持自定义快捷键插入换行（Shift+Enter）
-3. #1632 - Feature Request: 使用思考模型时隐藏思考内容
-4. #2161 - Plugin Showcase: kimi-mneme 持久记忆插件
-
-
-5. #2159 - enhancement: 在 Web UI 中显示 yolo & afk 模式状态
-
-PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在开始撰写日报内容。
-</think>
-
 # Kimi Code CLI 社区动态日报
 
-**日期：** 2026-05-05  
+**日期：** 2026-05-05
 **数据来源：** github.com/MoonshotAI/kimi-cli
 
 ---
@@ -1116,7 +822,7 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 
 ### 🔴 高优先级 Bug
 
-**#2160 - [bug] 运行过程中莫名的闪退**  
+**#2160 - [bug] 运行过程中莫名的闪退**
 👤 [@elcky](https://github.com/elcky) | 🕐 2026-05-04 | 💬 3 条评论 | 👍 0
 
 **摘要：** Windows 10.0.26200.0 x64 用户在使用 Kimi Code CLI v1.41.0 和 kimi 2.6 模型时，频繁遇到程序闪退问题。
@@ -1129,7 +835,7 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 
 ### 🟡 功能增强请求
 
-**#1585 - [enhancement] 支持自定义快捷键插入换行（Shift+Enter）**  
+**#1585 - [enhancement] 支持自定义快捷键插入换行（Shift+Enter）**
 👤 [@guyujun](https://github.com/guyujun) | 🕐 2026-03-25 | 💬 2 条评论 | 👍 1
 
 **摘要：** 社区强烈请求支持 Shift+Enter 快捷键插入换行符，当前默认的 Ctrl+J 组合键被认为不够直观。
@@ -1140,7 +846,7 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 
 ---
 
-**#1632 - Feature Request: 使用思考模型时隐藏思考内容**  
+**#1632 - Feature Request: 使用思考模型时隐藏思考内容**
 👤 [@yuantianyu177](https://github.com/yuantianyu177) | 🕐 2026-03-29 | 💬 2 条评论 | 👍 2
 
 **摘要：** 当使用 kimi-k2-thinking-turbo 等思考型模型时，思考过程会实时显示在终端，用户希望能够选择隐藏这些内容以获得更清晰的输出。
@@ -1151,7 +857,7 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 
 ---
 
-**#2159 - [enhancement] 在 Web UI 中显示 yolo & afk 模式状态**  
+**#2159 - [enhancement] 在 Web UI 中显示 yolo & afk 模式状态**
 👤 [@QuantumLiu](https://github.com/QuantumLiu) | 🕐 2026-05-04 | 💬 0 条评论 | 👍 0
 
 **摘要：** 用户希望在 Web UI 界面中能够直观看到当前是否启用了 yolo 模式或 afk 模式。
@@ -1164,7 +870,7 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 
 ### 🟢 社区插件展示
 
-**#2161 - Plugin Showcase: kimi-mneme — 持久记忆插件**  
+**#2161 - Plugin Showcase: kimi-mneme — 持久记忆插件**
 👤 [@barrelc](https://github.com/barrelc) | 🕐 2026-05-04 | 💬 1 条评论 | 👍 0
 
 **摘要：** 社区开发者展示了 kimi-mneme 插件，为 Kimi Code CLI 添加跨会话持久记忆功能，解决每次会话从头开始的"空白状态"问题。
@@ -1179,7 +885,7 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 
 ### ✅ 新增 Pull Request
 
-**#2158 - feat(ui): 添加 Ctrl+T 快捷键切换思考内容可见性**  
+**#2158 - feat(ui): 添加 Ctrl+T 快捷键切换思考内容可见性**
 👤 [@MCMike0399](https://github.com/MCMike0399) | 🕐 2026-05-04 | 🔄 状态：OPEN
 
 **功能描述：**
@@ -1256,72 +962,6 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 
 <details>
 <summary><strong>OpenCode</strong> — <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-05 的 OpenCode 社区动态日报。让我分析数据并按照要求的结构组织内容。
-
-数据概览：
-- 最新 Releases: v1.14.35 和 v1.14.34
-- 最新 Issues: 50 条，展示 30 条评论最多的
-- 最新 PRs: 50 条，展示 20 条评论最多的
-
-让我按照要求的结构来组织：
-
-1. **今日速览** - 总结今天最重要的动态
-2. **版本发布** - v1.14.35 和 v1.14.34 的更新
-3. **社区热点 Issues** - 挑选 10 个最值得关注的
-4. **重要 PR 进展** - 挑选 10 个重要的 PR
-5. **功能需求趋势** - 提炼社区关注的功能方向
-6. **开发者关注点** - 总结痛点和高频需求
-
-让我开始分析和整理：
-
-**版本发布：**
-- v1.14.35: Bugfix - 修复 diff patch boundaries 问题
-- v1.14.34: Improvements - PTY 连接票据、v2 session 失败事件、shell 命令处理改进；Bugfix - Return...
-
-**热点 Issues（按评论数和重要性挑选）：**
-1. #11112 - "Preparing write..." 卡住问题，62 条评论，27 点赞
-
-
-2. #23887 - Kimi K2.6/K2.5 返回 Provider error，37 条评论
-3. #4832 - Gemini 3 Pro function calling 失败，29 条评论
-4. #10490 - 禁用 copy-on-select 功能请求，13 条评论，23 点赞
-5. #25373 - 客户服务质量问题，10 条评论
-6. #24722 - DeepSeek thinking mode reasoning_content 问题，10 条评论
-7. #21326 - 中断的 tool calls 破坏 session history，4 条评论
-8. #25711 - plan mode 限制问题，4 条评论
-9. #15941 - 禁用 copy-on-select 功能请求，4 条评论
-10. #6976 - 压缩模型选择功能，4 条评论
-
-**重要 PRs：**
-1. #25579 - 添加 minimal CLI 模式
-2. #25798 - 修复 session 取消子任务
-3. #25797 - 修复 workspace warp SDK null id
-4. #18767 - 移动端触摸优化
-5. #25634 - 改进 v2 session 消息渲染
-6. #25622 - 可配置 context cost 显示
-7. #25795 - 启用 Electron MCP servers
-8. #25768 - session warping 功能
-9. #25359 - workspace session warp 支持
-10. #25796 - 更新下载资源命名
-
-**功能需求趋势：**
-- 复制选择行为配置
-- 移动端优化
-- 多语言支持（中文本地化）
-- 模型集成与兼容性
-- 会话管理和稳定性
-- 开发者工具扩展
-
-**开发者痛点：**
-- 工具调用中断导致会话状态损坏
-- 模型提供商集成问题
-- 支付和订阅流程障碍
-- 会话历史数据完整性
-- 移动端交互体验
-
-需要确保日报内容准确、逻辑清晰、语言简洁。
-</think>
 
 # OpenCode 社区动态日报 | 2026-05-05
 
@@ -1486,7 +1126,7 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 ### 🔧 #25798 | 修复 Session 子任务取消
 **作者**: kitlangton | **状态**: OPEN
 
-**内容**: 
+**内容**:
 - 将 Task tool 取消操作传播到子 session
 - 使 TaskPromptOps 取消操作可等待，确保 release 时清理能等待子 session 取消完成
 - 新增回归测试覆盖
@@ -1654,8 +1294,8 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 
 ---
 
-**日报生成时间**: 2026-05-05  
-**数据来源**: github.com/anomalyco/opencode  
+**日报生成时间**: 2026-05-05
+**数据来源**: github.com/anomalyco/opencode
 **分析范围**: 过去 24 小时内的 Releases、Issues、PRs 动态
 
 </details>
@@ -1663,122 +1303,9 @@ PR #2158 实现了 Ctrl+T 快捷键来切换思考内容的显示功能。现在
 <details>
 <summary><strong>Qwen Code</strong> — <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></summary>
 
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-05 的 Qwen Code 社区动态日报。让我仔细分析这些数据：
-
-## 数据概览
-- 最新 Releases: v0.15.6-nightly.20260505.2e69d641d
-- 最新 Issues: 18 条（过去24小时更新）
-- 最新 PRs: 40 条（过去24小时更新）
-
-让我整理关键信息：
-
-### Releases
-- v0.15.6-nightly.20260505.2e69d641d
-  - chore(release): v0.15.6
-  - feat(core): add FileReadCache and short-circuit unchanged Reads
-  - fix(cli): honor proxy setting
-
-### 重要 Issues（按重要性排序）
-1. #3669 [CLOSED] 自定义模型思考字段错误 - MiniMax M2.7 兼容性问题
-2. #3606 [CLOSED] 会话恢复失败 - session not found 问题
-3. #3634 [OPEN] 后台任务管理路线图 - Phase A/B 已合并，Phase C 进行中
-4. #3805 [CLOSED] 长时间运行后 read/glob 工具失效
-5. #3213 [OPEN] 终端 resize 显示错乱
-6. #3838 [OPEN] 终端界面无限滚动/刷新循环
-7. #3825 [CLOSED] Zed 集成 401 认证问题
-8. #3822 [OPEN] 大文件编辑导致 session JSONL 膨胀
-
-
-9. #3387 [CLOSED] MiniMax OpenAI 兼容模式思考块泄露
-10. #3228 [CLOSED] MiniMax 思考标签隐藏请求
-11. #3839 [OPEN] Edit/WriteFile 静默覆盖外部修改的文件
-12. #3837 [OPEN] ACP 模式不支持斜杠命令
-13. #3831 [OPEN] Phase D 设计：Ctrl+B 提升前台 shell 到后台
-14. #3830 [OPEN] 追踪结果端路径以实现路径条件技能激活
-15. #3829 [OPEN] Wayland 上无法粘贴图片
-16. #3824 [OPEN] 终端 resize 时蓝色边框残留
-17. #3823 [OPEN] SDK 升级后 CLI 进程报错
-18. #3821 [OPEN] 支持 macOS/readline/emacs 快捷键
-
-### 重要 PRs
-1. #3833 [OPEN] feat(sdk-python): add network timeouts to release version helper
-2. #3774 [OPEN] feat(core): enforce prior read before Edit / WriteFile mutates a file
-3. #3836 [OPEN] feat(core,cli): surface and cancel auto-memory dream tasks
-4. #3813 [OPEN] fix(telemetry): add bounded shutdown timeout and fix service.version resource attribute
-5. #3814 [OPEN] fix(core): prevent auto-memory recall from blocking main request
-6. #3840 [OPEN] feat(core): refuse Edit/WriteFile when the file changed since last read
-7. #3815 [OPEN] fix(core): use per-model settings for fast model side queries
-8. #3677 [CLOSED] fix(openai): parse MiniMax thinking tags
-9. #3819 [OPEN] fix(core): prevent duplicate MCP processes from concurrent discovery
-10. #3598 [OPEN] feat(cli): add --json-schema for structured output in headless mode
-11. #3783 [OPEN] feat(cli): Add ability to switch models non-interactively from the cli
-12. #3701 [OPEN] feat(cli): improve export format completion navigation
-13. #3214 [OPEN] feat(core): replace fdir crawler with git ls-files + ripgrep fallback
-14. #3714 [OPEN] feat(core): write runtime.json sidecar for active sessions
-15. #3698 [OPEN] fix(acp): run auto compression before model sends
-16. #3799 [OPEN] feat(cli): normalize model list response parsing across OpenAI-compatible endpoints
-17. #3762 [OPEN] feat(vscode): add message edit/rewind and message metadata UI
-18. #3826 [OPEN] fix(cli): track model-sent slash command history
-19. #3798 [CLOSED] feat(core): classify retryable transport/provider failures vs deterministic request errors
-20. #3797 [CLOSED] feat(cli): add /model list subcommand for dynamic model discovery
-
-现在生成日报：
-
-## 1. 今日速览
-- v0.15.6-nightly 发布，新增 FileReadCache 缓存机制和代理设置修复
-- 社区活跃度高，40 个 PR 和 18 个 Issues 更新
-- 重点关注：文件安全编辑（防止覆盖外部修改）、后台任务管理、终端渲染问题修复
-
-## 2. 版本发布
-v0.15.6-nightly.20260505.2e69d641d 包含：
-- feat(core): add FileReadCache and short-circuit unchanged Reads
-- fix(cli): honor proxy setting
-
-## 3. 社区热点 Issues（10个）
-1. #3669 - 自定义模型思考字段错误（已关闭，MiniMax 兼容性问题）
-2. #3634 - 后台任务管理路线图（进行中，Phase A/B 已合并）
-3. #3838 - 终端界面无限滚动/刷新循环（影响用户体验）
-4. #3822 - 大文件编辑导致 session JSONL 膨胀（性能问题）
-5. #3839 - Edit/WriteFile 静默覆盖外部修改（安全问题）
-6. #3831 - Phase D 设计：Ctrl+B 提升前台 shell 到后台（功能增强）
-7. #3824 - 终端 resize 时蓝色边框残留（UI 问题）
-8. #3821 - 支持 macOS/readline/emacs 快捷键（用户体验）
-9. #3829 - Wayland 上无法粘贴图片（平台兼容性）
-10. #3823 - SDK 升级后 CLI 进程报错（稳定性问题）
-
-## 4. 重要 PR 进展（10个）
-1. #3774 - 强制 Edit/WriteFile 前必须先 Read（文件安全）
-2. #3840 - 文件变更后拒绝 Edit/WriteFile（与 #3839 对应）
-3. #3836 - surface and cancel auto-memory dream tasks（后台任务管理）
-4. #3814 - 防止 auto-memory recall 阻塞主请求（性能优化）
-5. #3677 - 解析 MiniMax 思考标签（已关闭，MiniMax 兼容）
-6. #3598 - headless 模式添加 --json-schema（结构化输出）
-7. #3214 - 用 git ls-files + ripgrep 替换 fdir（性能优化）
-8. #3815 - fast model 使用独立配置（配置隔离）
-9. #3819 - 防止 MCP 进程重复发现（稳定性）
-10. #3783 - 非交互式切换模型（用户体验）
-
-## 5. 功能需求趋势
-1. 文件安全编辑 - 防止覆盖外部修改
-2. 后台任务管理 - Phase A/B/C/D 路线图
-3. 终端渲染优化 - 滚动、resize、边框问题
-4. 多模型支持 - MiniMax 兼容性、模型切换
-5. 性能优化 - FileReadCache、git ls-files、session 膨胀
-6. IDE 集成 - VSCode、Zed、Wayland
-7. 快捷键支持 - macOS/readline/emacs
-
-## 6. 开发者关注点
-1. 文件编辑安全性 - 外部修改检测
-2. 会话管理 - session 膨胀、resume 性能
-3. 终端 UI - 渲染问题、快捷键
-4. 多模型兼容 - MiniMax 思考标签
-5. SDK 稳定性 - 升级后兼容性问题
-6. 后台任务 - 可取消、可追踪
-</think>
-
 # Qwen Code 社区动态日报
 
-**日期**: 2026-05-05  
+**日期**: 2026-05-05
 **版本**: v0.15.6-nightly.20260505.2e69d641d
 
 ---
@@ -1808,56 +1335,56 @@ v0.15.6-nightly.20260505.2e69d641d 包含：
 
 ### 🔥 高优先级
 
-**1. #3839 - Edit/WriteFile 静默覆盖外部修改的文件**  
-📌 **重要性**: 这是一个潜在的数据安全风险。当文件在 Qwen Code 读取后、写入前被外部程序修改时，当前实现会静默覆盖外部变更，无任何警告。  
-💬 **社区反应**: 0 评论，@ihubanov 已提交对应 PR #3840  
+**1. #3839 - Edit/WriteFile 静默覆盖外部修改的文件**
+📌 **重要性**: 这是一个潜在的数据安全风险。当文件在 Qwen Code 读取后、写入前被外部程序修改时，当前实现会静默覆盖外部变更，无任何警告。
+💬 **社区反应**: 0 评论，@ihubanov 已提交对应 PR #3840
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3839)
 
-**2. #3838 - 终端界面无限滚动/刷新循环**  
-📌 **重要性**: 模型输出时终端进入疯狂刷新循环，文字不断跳动、滚动条无限增长，界面完全无法阅读。影响所有在 Linux/macOS 终端使用 Qwen Code 的开发者。  
-💬 **社区反应**: 1 评论，用户报告 Qwen Code v0.15.6 + Node.js v24.15.0 环境必现  
+**2. #3838 - 终端界面无限滚动/刷新循环**
+📌 **重要性**: 模型输出时终端进入疯狂刷新循环，文字不断跳动、滚动条无限增长，界面完全无法阅读。影响所有在 Linux/macOS 终端使用 Qwen Code 的开发者。
+💬 **社区反应**: 1 评论，用户报告 Qwen Code v0.15.6 + Node.js v24.15.0 环境必现
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3838)
 
-**3. #3822 - 大文件 edit/write 后 session JSONL 膨胀，/resume 极慢**  
-📌 **重要性**: 使用 edit 或 write_file 处理大文件后，session 持久化存储了 originalContent、newContent、fileDiff 等大字段，导致 JSONL 文件膨胀数倍，/resume 加载会话列表时极慢甚至卡死。  
-💬 **社区反应**: 1 评论，根因已定位（toolCallResult.resultDisplay 无大小边界控制）  
+**3. #3822 - 大文件 edit/write 后 session JSONL 膨胀，/resume 极慢**
+📌 **重要性**: 使用 edit 或 write_file 处理大文件后，session 持久化存储了 originalContent、newContent、fileDiff 等大字段，导致 JSONL 文件膨胀数倍，/resume 加载会话列表时极慢甚至卡死。
+💬 **社区反应**: 1 评论，根因已定位（toolCallResult.resultDisplay 无大小边界控制）
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3822)
 
-**4. #3669 - 使用自定义模型时思考字段出现错误**  
-📌 **重要性**: MiniMax M2.7 等自定义模型输出的思考内容因无法正确兼容思考数据标签，导致输出文本中没有正确显示思考内容。  
-💬 **社区反应**: 5 条评论，已通过 PR #3677 修复并关闭  
+**4. #3669 - 使用自定义模型时思考字段出现错误**
+📌 **重要性**: MiniMax M2.7 等自定义模型输出的思考内容因无法正确兼容思考数据标签，导致输出文本中没有正确显示思考内容。
+💬 **社区反应**: 5 条评论，已通过 PR #3677 修复并关闭
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3669)
 
 ### 📌 功能与体验
 
-**5. #3634 - 后台任务管理：路线图和下一步**  
-📌 **重要性**: @wenshao 和 @tanzhenxin 公开了完整的后台任务管理路线图。Phase A（#3471 + #3488）和 Phase B（#3642 + #3687 + #3720）已合并，Phase C 正在进行，Phase D 处于设计阶段。  
-💬 **社区反应**: 2 条评论，社区可追溯所有决策过程  
+**5. #3634 - 后台任务管理：路线图和下一步**
+📌 **重要性**: @wenshao 和 @tanzhenxin 公开了完整的后台任务管理路线图。Phase A（#3471 + #3488）和 Phase B（#3642 + #3687 + #3720）已合并，Phase C 正在进行，Phase D 处于设计阶段。
+💬 **社区反应**: 2 条评论，社区可追溯所有决策过程
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3634)
 
-**6. #3831 - Phase D 设计：Ctrl+B 提升前台 shell 到后台**  
-📌 **重要性**: 设计提案，拟实现类似 tmux 的 Ctrl+B 快捷键，允许将正在运行的前台 shell 命令飞快地发送到后台，不丢失进行中的工作。  
-💬 **社区反应**: 0 评论，处于架构对齐阶段  
+**6. #3831 - Phase D 设计：Ctrl+B 提升前台 shell 到后台**
+📌 **重要性**: 设计提案，拟实现类似 tmux 的 Ctrl+B 快捷键，允许将正在运行的前台 shell 命令飞快地发送到后台，不丢失进行中的工作。
+💬 **社区反应**: 0 评论，处于架构对齐阶段
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3831)
 
-**7. #3821 - 支持 macOS/readline/emacs 快捷键**  
-📌 **重要性**: 用户请求支持 Ctrl+P/Ctrl+N 上下导航等常见快捷键，提升 macOS 用户体验。  
-💬 **社区反应**: 0 评论，功能请求已提交  
+**7. #3821 - 支持 macOS/readline/emacs 快捷键**
+📌 **重要性**: 用户请求支持 Ctrl+P/Ctrl+N 上下导航等常见快捷键，提升 macOS 用户体验。
+💬 **社区反应**: 0 评论，功能请求已提交
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3821)
 
-**8. #3824 - 终端 resize 时蓝色边框/分隔线残留并累积**  
-📌 **重要性**: 拖拽终端窗口大小时，底部输入框的蓝色边框不断残留累积，疑似 Ink 6.2.3 擦除与 reflow 不匹配。  
-💬 **社区反应**: 0 评论，已提供复现截图  
+**8. #3824 - 终端 resize 时蓝色边框/分隔线残留并累积**
+📌 **重要性**: 拖拽终端窗口大小时，底部输入框的蓝色边框不断残留累积，疑似 Ink 6.2.3 擦除与 reflow 不匹配。
+💬 **社区反应**: 0 评论，已提供复现截图
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3824)
 
-**9. #3829 - Wayland 上无法粘贴图片**  
-📌 **重要性**: 与历史 Issue #2885 相同问题，在 Wayland 环境下使用 pacman 安装后无法粘贴图片，已安装 xdg-utils 和 wl-clipboard。  
-💬 **社区反应**: 0 评论，平台兼容性问题  
+**9. #3829 - Wayland 上无法粘贴图片**
+📌 **重要性**: 与历史 Issue #2885 相同问题，在 Wayland 环境下使用 pacman 安装后无法粘贴图片，已安装 xdg-utils 和 wl-clipboard。
+💬 **社区反应**: 0 评论，平台兼容性问题
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3829)
 
-**10. #3823 - SDK 从 0.1.5 升级至 0.1.6/0.1.7 后 CLI 进程报错退出**  
-📌 **重要性**: 使用 @qwen-code/sdk 开发时，升级后有一定概率触发 "CLI process exited with code 1" 错误，影响生产环境稳定性。  
-💬 **社区反应**: 0 评论，需要进一步排查  
+**10. #3823 - SDK 从 0.1.5 升级至 0.1.6/0.1.7 后 CLI 进程报错退出**
+📌 **重要性**: 使用 @qwen-code/sdk 开发时，升级后有一定概率触发 "CLI process exited with code 1" 错误，影响生产环境稳定性。
+💬 **社区反应**: 0 评论，需要进一步排查
 🔗 [查看 Issue](https://github.com/QwenLM/qwen-code/issues/3823)
 
 ---
@@ -1871,7 +1398,7 @@ v0.15.6-nightly.20260505.2e69d641d 包含：
 | **#3774** | enforce prior read before Edit/WriteFile | 🟡 OPEN | 强制 Edit/WriteFile 前必须先 Read，确保模型已看到文件当前内容 |
 | **#3840** | refuse Edit/WriteFile when file changed since last read | 🟡 OPEN | 当文件自上次读取后发生变更时拒绝写入，防止数据丢失 |
 
-> **关联 Issue**: #3839（文件安全漏洞）  
+> **关联 Issue**: #3839（文件安全漏洞）
 > 🔗 [#3774](https://github.com/QwenLM/qwen-code/pull/3774) | [#3840](https://github.com/QwenLM/qwen-code/pull/3840)
 
 ### ⚡ 性能优化
@@ -1945,189 +1472,6 @@ v0.15.6-nightly.20260505.2e69d641d 包含：
 
 <details>
 <summary><strong>Pi</strong> — <a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></summary>
-
-<think>用户要求我根据提供的 GitHub 数据生成一份 2026-05-05 的 Pi 社区动态日报。让我仔细分析数据并按照要求的格式生成报告。
-
-数据来源是 github.com/badlogic/pi-mono，这是一个 AI 开发工具项目。
-
-让我整理关键信息：
-
-**最新 Releases（过去24小时）**
-- v0.73.0: 新增 Xiaomi MiMo API billing 和区域 Token Plan providers
-
-**最新 Issues（过去24小时内更新，共 34 条）**
-评论数最多的 30 条中，我需要挑选 10 个最值得关注的：
-
-1. #3208 - Feature Request: Custom Thinking Levels per Model (14 comments, 13 👍) - 允许模型定义自己的思考层级
-2. #3357 - Official local LLM provider extension (8 comments, 22 👍) - 官方本地 LLM provider 扩展
-3. #4022 - Antigravity Models no working (5 comments) - Antigravity 模型不工作
-4. #3567 - Official llama.cpp provider (4 comments) - 官方 llama.cpp provider
-5. #4157 - Error/warning running `pi-update` on Windows (4 comments) - Windows 上 pi-update 错误
-6. #4173 - /login flow for Anthropic doesn't provide a supported URL for OAuth (3 comments) - Anthropic OAuth 问题
-
-
-7. #4163 - pi -p silently no-ops when prompt starts with `---` (3 comments) - 提示符处理问题
-8. #4158 - TUI markdown nested-list double indent (3 comments) - TUI 渲染问题
-9. #4134 - `pi -p` does not exit and hangs (3 comments) - 进程不退出问题
-10. #4151 - Resource-loader reloads on every turn (3 comments) - 资源加载器重复加载问题
-
-**最新 Pull Requests（过去24小时内更新，共 13 条）**
-我需要从这些 PR 中筛选出 10 个最值得关注的：
-
-1. #4178 - fix(ai): non-empty reasoning_content placeholder for Moonshot K2.6
-2. #3887 - feat: image content
-3. #4162 - feat(coding-agent): allow comments and trailing commas in models.json
-4. #4170 - fix(ai): preserve OpenRouter reasoning with Responses API
-5. #4171 - fix(ai): preserve OpenRouter reasoning with Responses API (重复)
-6. #4165 - fix(coding-agent): stream bash output incrementally
-7. #4154 - feat(coding-agent): add official local-LLM provider extensions
-8. #4161 - chore: unset HF_TOKEN in pi-test.sh --no-env
-9. #4126 - fix(coding-agent): retry on transient HTTP 404/408 status responses
-10. #4159 - fix(coding-agent): retry on transient HTTP 404/408 status responses (重复)
-11. #3737 - fix(ai): correct GPT-5.5 context metadata
-12. #4156 - Fix the wrong branch compaction diagram
-13. #3596 - fix(coding-agent): strip trailing `index.js|ts` from extension labels in startup banner
-
-现在生成日报：
-
-## 1. 今日速览
-
-2026-05-05，Pi 项目发布 v0.73.0 版本，新增 Xiaomi MiMo API billing 支持。本日社区活跃度高，共 34 个 Issues 和 13 个 PR 更新。社区重点关注本地 LLM provider 扩展、思考层级自定义、bash 工具流式输出优化等方向。
-
-## 2. 版本发布
-
-### v0.73.0
-- **Xiaomi MiMo API billing 和区域 Token Plan providers**：新增 `xiaomi` provider 支持 API billing，并引入 `xiaomi-token-plan-{cn,ams,sgp}` 区域 providers
-- 相关文档：docs/providers.md#api-keys 和 README.md#providers--models
-
-## 3. 社区热点 Issues
-
-### #3208 - Feature Request: Custom Thinking Levels per Model
-- **重要性**：允许模型在 `models.json` 中定义自己的思考层级，`Shift+Tab` 只循环模型实际支持的层级
-- **社区反应**：14 条评论，13 个 👍，讨论热烈
-- **链接**：https://github.com/badlogic/pi-mono/issues/3208
-
-### #3357 - Official local LLM provider extension
-- **重要性**：社区强烈需求的 llama.cpp/ollama/LM Studio 本地 LLM 集成方案
-- **社区反应**：8 条评论，22 个 👍，高热度需求
-- **链接**：https://github.com/badlogic/pi-mono/issues/3357
-
-### #3567 - Official llama.cpp provider
-- **重要性**：llama.cpp 是最流行的本地 LLM 推理引擎之一，官方支持意义重大
-- **链接**：https://github.com/badlogic/pi-mono/issues/3567
-
-### #4157 - Error/warning running `pi-update` on Windows
-- **重要性**：Windows 用户更新工具时的 TLS 安全警告问题
-- **链接**：https://github.com/badlogic/pi-mono/issues/4157
-
-### #4173 - /login flow for Anthropic doesn't provide a supported URL for OAuth
-- **重要性**：影响 Claude Code Pro 订阅用户的 OAuth 认证流程
-- **链接**：https://github.com/badlogic/pi-mono/issues/4173
-
-### #4163 - pi -p silently no-ops when prompt starts with `---`
-- **重要性**：非交互模式下以 `---` 开头的提示符静默失败，影响自动化脚本
-- **链接**：https://github.com/badlogic/pi-mono/issues/4163
-
-### #4158 - TUI markdown nested-list double indent
-- **重要性**：TUI 渲染嵌套列表时缩进错误，影响可读性
-- **链接**：https://github.com/badlogic/pi-mono/issues/4158
-
-### #4134 - `pi -p` does not exit and hangs
-- **重要性**：命令行模式下进程不退出，导致自动化脚本挂起
-- **链接**：https://github.com/badlogic/pi-mono/issues/4134
-
-### #4151 - Resource-loader reloads on every turn
-- **重要性**：资源加载器每次调用都重新加载，影响嵌入式场景性能
-- **链接**：https://github.com/badlogic/pi-mono/issues/4151
-
-### #4180 - Links not clickable anymore
-- **重要性**：TUI 中链接不可点击，影响用户体验
-- **链接**：https://github.com/badlogic/pi-mono/issues/4180
-
-## 4. 重要 PR 进展
-
-### #4178 - fix(ai): non-empty reasoning_content placeholder for Moonshot K2.6
-- **内容**：修复 Moonshot K2.6 模型思考模式下 reasoning_content 必须非空的问题
-- **状态**：已合并
-- **链接**：https://github.com/badlogic/pi-mono/pull/4178
-
-### #3887 - feat: image content
-- **内容**：新增图片内容 API，支持图片块和图片模型（Google/OpenRouter）
-- **状态**：开放中
-- **链接**：https://github.com/badlogic/pi-mono/pull/3887
-
-### #4162 - feat(coding-agent): allow comments and trailing commas in models.json
-- **内容**：允许在 models.json 中使用注释和尾随逗号，提升配置灵活性
-- **状态**：已合并
-- **链接**：https://github.com/badlogic/pi-mono/pull/4162
-
-### #4165 - fix(coding-agent): stream bash output incrementally
-- **内容**：优化 bash 工具流式输出性能，解决快速输出时的 TUI 卡顿问题
-- **状态**：已合并
-- **链接**：https://github.com/badlogic/pi-mono/pull/4165
-
-### #4154 - feat(coding-agent): add official local-LLM provider extensions
-- **内容**：实现官方本地 LLM provider 扩展（llama.cpp/ollama/LM Studio/Ollama）
-- **状态**：已合并
-- **链接**：https://github.com/badlogic/pi-mono/pull/4154
-
-### #4170/#4171 - fix(ai): preserve OpenRouter reasoning with Responses API
-- **内容**：修复 OpenRouter 使用 Responses API 时 reasoning 丢失的问题
-- **状态**：已合并
-- **链接**：https://github.com/badlogic/pi-mono/pull/4170
-
-### #4126/#4159 - fix(coding-agent): retry on transient HTTP 404/408 status responses
-- **内容**：对 404/408 状态码实现重试机制，提升网络异常容错能力
-- **状态**：已合并
-- **链接**：https://github.com/badlogic/pi-mono/pull/4126
-
-### #3737 - fix(ai): correct GPT-5.5 context metadata
-- **内容**：修正 GPT-5.5 在不同 provider 的 context window 配置
-- **状态**：已合并
-- **链接**：https://github.com/badlogic/pi-mono/pull/3737
-
-### #4161 - chore: unset HF_TOKEN in pi-test.sh --no-env
-- **内容**：测试脚本清理时同时清除 Hugging Face token
-- **状态**：已合并
-- **链接**：https://github.com/badlogic/pi-mono/pull/4161
-
-## 5. 功能需求趋势
-
-从 Issues 中提炼出以下社区关注方向：
-
-1. **本地 LLM 集成**（#3357, #3567, #4154）：llama.cpp、ollama、LM Studio 等本地推理引擎的官方支持
-2. **思考层级自定义**（#3208）：允许不同模型配置不同的思考层级
-3. **多模态支持**（#3887）：图片输入输出能力
-4. **Provider 扩展性**：更多模型 provider 的接入（Xiaomi MiMo、Moonshot K2.6）
-5. **TUI/CLI 体验优化**：markdown 渲染、链接交互、进程管理等
-
-## 6. 开发者关注点
-
-1. **性能问题**：
-   - bash 工具流式输出 O(n²) 性能问题（已修复）
-   - 资源加载器重复加载问题
-   - 终端消失时的 CPU 100% 死循环问题
-
-2. **跨平台兼容性**：
-   - Windows 上的 TLS 警告
-   - Wayland 剪贴板问题
-   - macOS 沙箱权限问题
-
-3. **API 稳定性**：
-   - 资源加载器 reload 机制
-   - 子进程清理竞态条件
-   - HTTP 错误重试逻辑
-
-4. **配置灵活性**：
-   - models.json 注释支持
-   - 环境变量标准化（AGENT env var）
-   - Python SDK 需求
-
-5. **认证/订阅集成**：
-   - Anthropic OAuth 问题
-   - Codex 使用限额解析
-   - 过期 token 处理
-</think>
 
 # Pi 社区动态日报 | 2026-05-05
 

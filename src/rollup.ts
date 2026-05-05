@@ -5,7 +5,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { callLlm, saveFile, autoGenFooter } from "./report.ts";
+import { callLlm, saveFile, autoGenFooter, stripThinkBlocks } from "./report.ts";
 import { buildWeeklyPrompt, buildMonthlyPrompt } from "./prompts.ts";
 import { createGitHubIssue } from "./github.ts";
 import { loadConfig } from "./config.ts";
@@ -36,7 +36,7 @@ function readDailyDigest(date: string): string | null {
   for (const type of ROLLUP_SOURCES) {
     const p = path.join(DIGESTS_DIR, date, `${type}.md`);
     if (fs.existsSync(p)) {
-      const content = fs.readFileSync(p, "utf-8");
+      const content = stripThinkBlocks(fs.readFileSync(p, "utf-8"));
       const truncated = content.slice(0, MAX_CHARS_PER_REPORT);
       return truncated.length < content.length ? truncated + "\n...[摘要截断]" : truncated;
     }
@@ -48,7 +48,7 @@ function readDailyDigest(date: string): string | null {
 function readWeeklyDigest(date: string): string | null {
   const p = path.join(DIGESTS_DIR, date, "ai-weekly.md");
   if (!fs.existsSync(p)) return null;
-  const content = fs.readFileSync(p, "utf-8");
+  const content = stripThinkBlocks(fs.readFileSync(p, "utf-8"));
   return content.slice(0, 3000) + (content.length > 3000 ? "\n...[截断]" : "");
 }
 

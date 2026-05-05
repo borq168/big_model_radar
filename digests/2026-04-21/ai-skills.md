@@ -7,54 +7,6 @@
 
 ---
 
-<think>Let me analyze the provided data and create a comprehensive Skills community hot report.
-
-Looking at the data:
-
-**PRs (Skills):**
-- #514: document-typography skill - typographic quality control
-- #210: frontend-design skill improvement
-- #83: skill-quality-analyzer and skill-security-analyzer
-- #486: ODT skill - OpenDocument text
-- #541: fix(docx): prevent tracked change w:id collision
-- #539: fix(skill-creator): warn on unquoted description
-- #538: fix(pdf): correct case-sensitive file references
-- #509: docs: add CONTRIBUTING.md
-- #181: SAP-RPT-1-OSS predictor skill
-- #95: Add comprehensive system documentation and flowcharts
-- #806: sensory skill — native macOS automation via AppleScript
-- #54: Añadida mejora en los docs
-- #147: codebase-inventory-audit skill
-- #335: masonry-generate-image-and-videos skill
-- #154: shodh-memory skill: persistent context for AI agents
-- #723: testing-patterns skill
-- #536: roadmap-pilot: incremental codebase cleanup autopilot
-- #36: Fix skill-creator frontmatter validation
-- #363: Fix feature-dev workflow phases skipped
-- #622: hads-convert skill: convert any document to HADS format
-
-**Issues:**
-- #62: Skills disappeared - 10 comments
-- #228: Enable org-wide skill sharing - 9 comments
-- #202: skill-creator should be updated to best practice - 8 comments
-- #556: run_eval.py never triggers skills - 6 comments
-- #189: document-skills and example-skills plugins install identical content - 5 comments
-
-
-- #492: Security: Community skills distributed under anthropic/ namespace - 4 comments
-- #412: Skill proposal: agent-governance — safety patterns - 4 comments
-- #29: Usage with bedrock - 4 comments
-- #16: Expose Skills as MCPs - 4 comments
-- #184: agentskills.io page is giving "too many redirects" error - 3 comments
-- #61: "Not found" error when loading Skills - 3 comments
-- #868: spei - 2 comments
-- #532: skill-creator: description optimizer requires ANTHROPIC_API_KEY - 2 comments
-- #406: unable to upload or replace existing skills - 2 comments
-- #403: Unable to delete skill versions — API returns 500 - 2 comments
-
-The most active discussions center around infrastructure and security concerns. Several issues highlight problems with skill management—skills disappearing, upload failures, and inability to delete versions. There's also a security vulnerability flagged around community skills using the anthropic namespace. The skill-creator tool needs improvements, particularly around API key requirements and evaluation triggers. Cross-platform support questions appear with Bedrock usage, while the agentskills.io site has redirect problems. The MCP exposure proposal and agent-governance safety patterns represent forward-looking feature requests that could shape the platform's direction.
-</think>
-
 # Skills 社区热点报告
 **数据来源：** github.com/anthropics/skills | **快照日期：** 2026-04-21
 

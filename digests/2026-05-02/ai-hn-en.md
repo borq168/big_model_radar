@@ -4,53 +4,6 @@
 
 ---
 
-<think>Let me analyze the Hacker News AI posts from the past 24 hours (2026-05-02) and create a structured digest.
-
-Let me categorize the posts:
-
-**Models & Research:**
-- DeepSeek V4–almost on the frontier, a fraction of the price (Score: 31, Comments: 7)
-- How People ask Claude for personal guidance (Score: 27, Comments: 9)
-- Understand Anything (Score: 105, Comments: 30) - this seems like a model/tool
-
-**Tools & Engineering:**
-- Show HN: AI CAD Harness (Score: 65, Comments: 69)
-
-
-- Show HN: Destiny – Claude Code's fortune Teller skill (Score: 41, Comments: 34)
-- Show HN: Omar – A TUI for managing 100 coding agents (Score: 10, Comments: 2)
-- Friday Studio AI runtime (Score: 8, Comments: 3)
-- Tangled – combat LLM spam (Score: 7, Comments: 1)
-- Superkube - Rewriting Kubernetes in Rust (Score: 9, Comments: 2)
-- Herald – Local-first terminal email client (Score: 5, Comments: 1)
-
-**Industry News:**
-- Uber torches 2026 AI budget on Claude Code in four months (Score: 369, Comments: 430)
-- After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber (Score: 137, Comments: 123)
-- Elon Musk Seemingly Admits xAI Has Used OpenAI's Models to Train Its Own (Score: 11, Comments: 0)
-- A Dark-Money Campaign Is Paying Influencers to Frame Chinese AI as a Threat (Score: 10, Comments: 1)
-- Pentagon inks deals with AI giants, but not Anthropic (Score: 5, Comments: 0)
-- Pentagon reaches agreements with top AI companies, but not Anthropic (Score: 5, Comments: 1)
-- OpenAI to use third-party cookies to advertise products (Score: 4, Comments: 0)
-- Shivon Zilis Operated as Elon Musk's OpenAI Insider (Score: 4, Comments: 0)
-- DeepSeek v4, and the end of the OpenAI/Microsoft AGI clause (Score: 4, Comments: 0)
-- What Microsoft's 10-Q Says About OpenAI (Score: 10, Comments: 0) and (Score: 4, Comments: 0)
-
-**Opinions & Debates:**
-- Tell HN: Claude Opus 4.7 quota suddenly changed to 0 TPM in Bedrock (Score: 11, Comments: 3)
-- So, About That AI Bubble (Score: 7, Comments: 0)
-- Musk Warns of Killer AI, While He and Silicon Valley Cash in on AI That Kills (Score: 6, Comments: 1)
-- Ask HN: How do you feel about AI assisted blogging? (Score: 5, Comments: 7)
-- Tell HN: Claude account suspension after flagging duplicate billing (Score: 5, Comments: 0)
-- AI actors and writers will be ineligible for Oscars (Score: 5, Comments: 3)
-- The LLM Is Not a Junior Engineer (Score: 4, Comments: 0)
-- AI doesn't replace us, but commodizes us (Score: 4, Comments: 0)
-
-Now I'm looking at the top performers to identify what resonates most with the community. The Uber story is dominating with 369 points and 430 comments, followed by the OpenAI restrictions piece at 137 points. There's also a strong showing from the "Understand Anything" project at 105 points, and the AI CAD Harness tool is getting significant engagement at 65 points with 69 comments. The DeepSeek V4 release and Claude personal guidance research are also drawing attention, though with fewer comments.
-
-The community seems particularly interested in practical applications and real-world implications—cost concerns, access restrictions, and how these tools actually perform in production. There's also notable discussion around AI policy and industry dynamics, with pieces on the AI bubble, Oscars eligibility, and Microsoft's relationship with OpenAI generating conversation despite lower scores.
-</think>
-
 # Hacker News AI Community Digest
 **Date:** 2026-05-02 | **Period:** Past 24 hours | **Source:** news.ycombinator.com
 

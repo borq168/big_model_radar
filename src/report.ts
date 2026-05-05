@@ -8,6 +8,10 @@ import path from "node:path";
 
 const DEFAULT_OPENAI_BASE_URL = "https://api.openai.com/v1";
 const DEFAULT_MODEL = "gpt-4.1-mini";
+const THINK_BLOCK_PATTERNS = [
+  /<think\b[^>]*>[\s\S]*?<\/think>\s*/gi,
+  /^```(?:think|thinking)\s*\n[\s\S]*?^```\s*/gim,
+];
 
 function getConfiguredLlmConcurrency(): number {
   const raw = Number(process.env["LLM_CONCURRENCY"] ?? "");
@@ -97,6 +101,19 @@ export function hasLlmCredentials(): boolean {
   return getOpenAiCompatibleApiKey().length > 0;
 }
 
+export function stripThinkBlocks(content: string): string {
+  let cleaned = content.replace(/\r\n/g, "\n");
+
+  for (const pattern of THINK_BLOCK_PATTERNS) {
+    cleaned = cleaned.replace(pattern, "");
+  }
+
+  return cleaned
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 function extractTextContent(content: unknown): string {
   if (typeof content === "string") return content.trim();
   if (Array.isArray(content)) {
@@ -159,7 +176,7 @@ export async function callLlm(prompt: string, maxTokens = 4096): Promise<string>
     await acquireSlot();
     let released = false;
     try {
-      return await callOpenAiCompatibleLlm(prompt, maxTokens);
+      return stripThinkBlocks(await callOpenAiCompatibleLlm(prompt, maxTokens));
     } catch (err) {
       if (attempt < MAX_RETRIES && isRetryableLlmError(err)) {
         releaseSlot();
@@ -182,8 +199,9 @@ export async function callLlm(prompt: string, maxTokens = 4096): Promise<string>
 
 export function saveFile(content: string, ...segments: string[]): string {
   const filepath = path.join("digests", ...segments);
+  const cleanedContent = stripThinkBlocks(content);
   fs.mkdirSync(path.dirname(filepath), { recursive: true });
-  fs.writeFileSync(filepath, content, "utf-8");
+  fs.writeFileSync(filepath, cleanedContent, "utf-8");
   return filepath;
 }
 

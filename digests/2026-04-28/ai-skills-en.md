@@ -7,57 +7,10 @@ Sources:
 
 ---
 
-<think>Let me analyze the data provided from the GitHub repository to create a comprehensive skills community highlights report.
-
-First, let me identify the most-discussed PRs (Skills) by looking at the data:
-
-Looking at the PRs sorted by comments (though comments show "undefined" for most):
-1. #514 - document-typography skill
-2. #83 - skill-quality-analyzer and skill-security-analyzer
-3. #210 - frontend-design skill improvement
-4. #486 - ODT skill
-5. #539 - fix(skill-creator): warn on unquoted description
-6. #541 - fix(docx): prevent tracked change w:id collision
-7. #538 - fix(pdf): correct case-sensitive file references
-8. #509 - docs: add CONTRIBUTING.md
-9. #723 - testing-patterns skill
-10. #95 - comprehensive system documentation and flowcharts
-11. #181 - SAP-RPT-1-OSS predictor skill
-12. #335 - masonry-generate-image-and-videos skill
-13. #54 - Añadida mejora en los docs
-14. #806 - sensory skill — native macOS automation via AppleScript
-15. #147 - codebase-inventory-audit skill
-16. #154 - shodh-memory skill
-17. #568 - ServiceNow platform skill
-18. #666 - Remove duplicate skill-creator skill
-19. #664 - claude-obsidian-reporter
-20. #616 - HADS skill — Human-AI Document Standard
-
-Now let me look at the Issues with the most comments:
-1. #62 - Skills disappeared, errors (10 comments)
-2. #228 - Enable org-wide skill sharing (9 comments)
-3. #202 - skill-creator should be updated to best practice (8 comments)
-
-
-4. #556 - run_eval.py: claude -p never triggers skills (6 comments)
-5. #189 - document-skills and example-skills plugins install identical content (5 comments)
-6. #492 - Security: Community skills distributed under anthropic/ namespace (4 comments)
-7. #412 - Skill proposal: agent-governance (4 comments)
-8. #29 - Usage with bedrock (4 comments)
-9. #16 - Expose Skills as MCPs (4 comments)
-10. #184 - agentskills.io page is giving "too many redirects" error (3 comments)
-
-I notice several critical issues emerging around skill management and evaluation. The most pressing concerns involve skill triggering, plugin conflicts, and namespace security. Key problems include evaluation scripts failing to activate skills, duplicate skill installations, and potential security risks with community-developed skills under the Anthropic namespace.
-
-The issues reveal systemic challenges in skill distribution, testing, and governance. Developers are experiencing difficulties with skill reliability, plugin interactions, and maintaining clean, secure skill ecosystems. These problems suggest a need for more robust testing frameworks, clearer namespace management, and improved skill validation processes.
-
-Proposed solutions focus on enhancing skill discoverability, implementing stricter validation checks, and creating more comprehensive governance mechanisms for skill development and deployment.
-</think>
-
 # Skills Community Highlights Report
 
-**Repository:** github.com/anthropics/skills  
-**Data as of:** 2026-04-28  
+**Repository:** github.com/anthropics/skills
+**Data as of:** 2026-04-28
 **Scope:** 50 PRs, 50 Issues analyzed
 
 ---

@@ -7,53 +7,6 @@ Sources:
 
 ---
 
-<think>Let me analyze the provided data to create a comprehensive skills community highlights report.
-
-First, let me identify the most-discussed PRs (by comments, though all show "undefined" for comments, so I'll need to look at other indicators like engagement, recency, and complexity):
-
-Looking at the PRs:
-1. #514 - document-typography skill - typographic quality control
-2. #210 - frontend-design skill improvement
-3. #83 - skill-quality-analyzer and skill-security-analyzer
-4. #486 - ODT skill (OpenDocument)
-5. #538 - fix(pdf): case-sensitive file references
-6. #539 - fix(skill-creator): YAML special characters
-7. #541 - fix(docx): tracked change w:id collision
-8. #509 - docs: add CONTRIBUTING.md
-9. #181 - SAP-RPT-1-OSS predictor skill
-10. #95 - comprehensive system documentation
-11. #723 - testing-patterns skill
-12. #568 - ServiceNow platform skill
-13. #806 - sensory skill (AppleScript macOS automation)
-14. #360 - AppDeploy skill
-15. #147 - codebase-inventory-audit skill
-16. #335 - masonry-generate-image-and-videos skill
-17. #154 - shodh-memory skill
-18. #299 - Google Workspaces skills
-19. #664 - claude-obsidian-reporter skill
-
-For Issues (sorted by comments):
-1. #62 - Skills disappeared (10 comments)
-2. #228 - Org-wide skill sharing (9 comments)
-3. #202 - skill-creator best practices (8 comments) - CLOSED
-4. #556 - run_eval.py never triggers skills (6 comments)
-5. #189 - document-skills and example-skills duplicates (5 comments)
-
-
-6. #492 - Security: Community skills namespace trust (4 comments)
-7. #412 - Agent governance skill proposal (4 comments) - CLOSED
-8. #29 - Usage with Bedrock (4 comments)
-9. #16 - Expose Skills as MCPs (4 comments)
-10. #184 - agentskills.io redirect error (3 comments) - CLOSED
-11. #61 - "Not found" error loading skills (3 comments)
-12. #868 - spei (2 comments)
-13. #532 - skill-creator API key requirement (2 comments) - CLOSED
-14. #406 - Unable to upload/replace skills (2 comments)
-15. #403 - Unable to delete skill versions (2 comments)
-
-Now I'm organizing this into a structured report format.
-</think>
-
 # Skills Community Highlights Report
 **Repository:** github.com/anthropics/skills | **Data as of:** 2026-05-05
 

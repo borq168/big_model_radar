@@ -4,48 +4,6 @@
 
 ---
 
-<think>用户要求我作为AI开源生态的技术分析师，对2026-04-29的GitHub AI相关热门仓库数据进行筛选、分类和趋势分析，生成一份《AI开源趋势日报》。
-
-让我按照用户的要求逐步进行：
-
-**第一步：过滤**
-
-从Trending榜单（13个仓库）中筛选AI相关项目：
-1. mattpocock/skills - Shell工具，非AI相关，排除
-2. abhigyanpatwari/GitNexus - 知识图谱、Graph RAG Agent，**AI相关**
-3. ComposioHQ/awesome-codex-skills - Codex技能列表，**AI相关**
-4. microsoft/VibeVoice - 语音AI，**AI相关**
-5. davila7/claude-code-templates - Claude Code配置工具，**AI相关**
-6. HunxByts/GhostTrack - 位置追踪，非AI相关，排除
-7. fspecii/ace-step-ui - AI音乐生成，**AI相关**
-8. public-apis/public-apis - API列表，非AI相关，排除
-9. CJackHwang/ds2api - API中间件，支持多模型，**AI相关**
-10. Alishahryar1/free-claude-code - Claude Code免费使用，**AI相关**
-11. donnemartin/system-design-primer - 系统设计学习，非AI相关，排除
-
-
-12. EbookFoundation/free-programming-books - 编程书籍，非AI相关，排除
-13. iamgio/quarkdown - Markdown工具，非AI相关，排除
-
-从主题搜索结果（81个仓库）来看，大部分已按topic分类为AI相关项目，包括RAG、向量数据库、LLM、机器学习、代理模型和AI代理等类别。
-
-**第二步：分类**
-
-现在需要将筛选出的AI相关项目按功能进行分类。
-
-AI基础工具涵盖推理引擎、开发框架和SDK，包括ollama、vllm、transformers、LlamaFactory等推理和训练框架，以及langchain、FlowiseAI等开发工具，还有browser-use、firecrawl等辅助工具。
-
-AI智能体和工作流方向则包括AutoGPT、OpenHands等自主代理系统，CopilotKit、CowAgent等协作工具，以及nanobot、atomic-agents等多智能体框架，还有e2b-dev/E2B这样的沙箱环境。
-
-具体应用层面涵盖开源Web界面、文档处理、代码辅助、OCR识别等多个垂直场景的产品和解决方案。
-
-大模型训练方面则包括预训练模型如transformers和vllm，以及微调工具LlamaFactory等基础设施。
-
-知识管理和检索增强生成系统构成了另一个重要方向，包括向量数据库milvus、qdrant、weaviate等基础设施，以及dify、langchain等RAG框架和知识库工具。
-
-现在需要整理成结构清晰的日报格式。
-</think>
-
 # AI 开源趋势日报 | 2026-04-29
 
 ---

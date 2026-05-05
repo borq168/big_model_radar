@@ -15,71 +15,6 @@
 
 ## Cross-Tool Comparison
 
-<think>The user wants me to generate a cross-tool comparison report synthesizing information from all the AI CLI tool community digests I've created. Let me analyze the data from each tool and create a comprehensive comparison report.
-
-Let me gather the key data points from each digest:
-
-**Claude Code (Anthropic)**
-- Issues: 50 total, 30 shown
-- PRs: 7 total in last 24h
-- Releases: None in last 24h
-- Key themes: IDE integration, transparency/control, memory system, security patterns
-- Pain points: Session resume crashes, context management deadlock, billing routing errors, Windows performance
-
-**OpenAI Codex**
-- Releases: rust-v0.126.0-alpha.2
-- Issues: 50 total, 30 shown
-- PRs: 43 total, 20 shown
-- Key themes: Remote development, extended context windows, session recovery, TUI enhancements
-- Pain points: MCP memory leaks, macOS performance, context compaction failures, safety check false positives
-
-**Gemini CLI (Google)**
-- Releases: None in last 24h
-- Issues: 50 total, 30 shown
-- PRs: 43 total, 20 shown
-- Key themes: AST-aware tooling, subagent reliability, permission management, memory routing
-- Pain points: Permission prompts, shell hanging, MCP disconnections, settings ignored
-
-**GitHub Copilot CLI**
-- Releases: None in last 24h
-- Issues: 11 total
-- PRs: 1 total
-- Key themes: Per-repository MCP config, local auto-memory, master instructions
-- Pain points: Infinite loops, permission failures in SSH, input loss on interruption, MCP transport timeouts
-
-**Kimi Code (Moonshot AI)**
-- Releases: None in last 24h
-- Issues: 6 total
-- PRs: 6 total
-
-
-- Key themes: Remote control, worktree isolation, RalphFlow architecture
-- Pain points: Windows encoding errors, token consumption, MIME type errors, Yolo mode issues
-
-**OpenCode (Anomaly)**
-- Releases: v1.14.25
-- Issues: 50 total, 30 shown
-- PRs: 37 total, 20 shown
-- Key themes: DeepSeek V4 integration, MCP bridging, privacy concerns, subagent visibility
-- Pain points: DeepSeek multi-turn failures, file scanning, /undo incomplete, compaction context loss
-
-**Qwen Code (QwenLM)**
-- Releases: None in last 24h
-- Issues: 50 total, 30 shown
-- PRs: 37 total, 20 shown
-- Key themes: MCP connection limits, local model support, API timeout controls
-- Pain points: MCP connection limits, local model failures, API key persistence, memory usage
-
-**Pi (badlogic/pi-mono)**
-- Releases: None in last 24h
-- Issues: 50 total, 30 shown
-- PRs: 43 total, 20 shown
-- Key themes: Custom thinking levels, provider flexibility, extension API
-- Pain points: Tool execution failures, cross-provider compatibility, streaming timeouts
-
-Now I'll synthesize this into a comprehensive comparison report.
-</think>
-
 # AI CLI Tools Ecosystem — Cross-Tool Comparison Report
 
 **Date:** 2026-04-26
@@ -310,44 +245,6 @@ The following requirements appear across multiple tool communities, indicating i
 <details>
 <summary><strong>Claude Code</strong> — <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></summary>
 
-<think>The user wants me to generate a structured English digest for the Claude Code community based on the provided GitHub data. Let me analyze the data and create a comprehensive digest.
-
-Let me organize the information:
-
-**Releases**: None in the last 24h
-
-**Issues**: 50 total, showing top 30 by comment count
-
-**Pull Requests**: 7 total in the last 24h
-
-Let me pick the most noteworthy items for each section.
-
-**Hot Issues (10)**:
-1. #15942 - VS 2026 Integration (94 comments, 246 👍)
-2. #8477 - Always Show Claude's Thinking (75 comments, 240 👍)
-3. #5771 - CPU/Memory 100% bug (46 comments, 39 👍)
-4. #36151 - Multi-account switching (46 comments, 147 👍)
-5. #23047 - /compact fails with 'Conversation too long' (20 comments, 27 👍) - CLOSED
-6. #45132 - Scala (Metals) LSP support (15 comments, 70 👍)
-7. #28999 - /usage quota in statusLine (14 comments, 39 👍) - CLOSED
-8. #16849 - Dart/Flutter LSP support (12 comments, 83 👍)
-9. #46955 - Hanging/API timeout issues (11 comments, 2 👍)
-10. #25791 - Cowork Bridge integration (7 comments, 17 👍)
-
-**Key PRs (10)**:
-1. #41447 - Open source Claude Code
-2. #53354 - Knowledge compiler scaffold
-3. #53204 - SQL injection and hardcoded secret patterns
-4. #53203 - Security-guidance README
-5. #40458 - Timezone normalization (Europe/Kiev → Europe/Kyiv)
-
-
-6. #46024 - Document --exclude-dynamic-system-prompt-sections
-7. #46025 - Linux subprocess isolation docs
-
-Now I'll structure this into a professional digest format.
-</think>
-
 # Claude Code Community Digest
 
 **Date:** 2026-04-26
@@ -432,122 +329,9 @@ Analysis of open issues reveals these dominant feature directions:
 <details>
 <summary><strong>OpenAI Codex</strong> — <a href="https://github.com/openai/codex">openai/codex</a></summary>
 
-<think>The user wants me to generate a structured digest for the OpenAI Codex community for 2026-04-26 based on the provided GitHub data. Let me analyze the data and create a comprehensive but concise digest.
-
-Let me organize the information:
-
-**Releases:**
-- rust-v0.126.0-alpha.2: 0.126.0-alpha.2 (Release 0.126.0-alpha.2)
-
-**Latest Issues (top 30 by comment count):**
-1. #10450 - Remote Development in Codex Desktop App - 168 comments, 604 👍 - Very popular feature request
-2. #16231 - High CPU usage on macOS - 60 comments, 58 👍 - Bug affecting performance
-3. #8197 - Panel grey after long time - 49 comments, 16 👍 - Bug (CLOSED)
-4. #19464 - Support 1M token context for GPT-5.5 - 33 comments, 29 👍 - Enhancement request
-5. #9203 - Please make "/undo" back - 29 comments, 154 👍 - Feature request
-6. #12491 - MCP child processes not reaped - 17 comments, 3 👍 - Memory leak bug
-7. #14549 - Windows Ctrl+M voice dictation shortcut conflict - 17 comments, 8 👍 - Bug (CLOSED)
-8. #15368 - Increase cap of sessions in VS Code extension - 14 comments, 3 👍 - Enhancement
-9. #17444 - Booting MCP Server - 13 comments, 7 👍 - Bug
-10. #11626 - Add /rewind checkpoint restore - 12 comments, 92 👍 - Feature request
-11. #17354 - Recent Thread history wiped in app - 12 comments, 5 👍 - Bug
-12. #16916 - Azure Foundry tool sessions fail - 11 comments, 0 👍 - Bug (CLOSED)
-
-
-13. #18881 - MCP child processes leak - 9 comments, 0 👍 - Bug
-14. #19181 - VS Code extension flash and blink - 8 comments, 3 👍 - Bug
-15. #18299 - Display dot files and folders - 7 comments, 7 👍 - Enhancement
-16. #9290 - Codex CLI slow startup - 7 comments, 1 👍 - Bug (CLOSED)
-17. #19075 - Windows app hangs on splash - 6 comments, 8 👍 - Bug
-18. #19585 - Pro weekly usage limit depletes fast - 5 comments, 0 👍 - Bug
-19. #19558 - GPT-5.5 remote compaction fails - 5 comments, 2 👍 - Bug
-20. #19052 - Codex Desktop review pane empty for WSL - 4 comments, 0 👍 - Bug
-21. #15485 - Add cursors to thread/read in app-server - 4 comments, 4 👍 - Enhancement
-22. #19569 - VS Code thread title renders but body empty - 4 comments, 0 👍 - Bug
-23. #12464 - /cwd command to switch working directory - 4 comments, 7 👍 - Feature request
-24. #19594 - False positive cyber-risk flag - 4 comments, 0 👍 - Bug (CLOSED)
-25. #19333 - Codex Mac app high memory usage - 4 comments, 0 👍 - Bug
-26. #13925 - enable creating single-use automations - 3 comments, 0 👍 - Enhancement
-27. #19255 - Auto compact error - 3 comments, 6 👍 - Bug (CLOSED)
-28. #19603 - VS Code extension session sidebar - 3 comments, 0 👍 - Enhancement
-29. #19608 - VS Code Remote-SSH session resume hangs - 3 comments, 0 👍 - Bug
-30. #19601 - Getting "This chat was flagged for possible cybersecurity risk" - 3 comments, 0 👍 - Bug (CLOSED)
-
-**Latest Pull Requests (top 20 by comment count):**
-1. #19620 - Escape turn metadata headers as ASCII JSON - OPEN
-2. #19392 - permissions: derive compatibility policies from profiles - OPEN
-3. #19606 - permissions: make runtime config profile-backed - OPEN
-4. #19395 - permissions: finish profile-backed app surfaces - OPEN
-5. #19394 - permissions: remove core legacy policy round trips - OPEN
-6. #19393 - permissions: migrate approval and sandbox consumers to profiles - OPEN
-7. #14428 - Fork sessions into new multiplexer panes - OPEN
-8. #19625 - Reset TUI keyboard reporting on exit - OPEN
-9. #19624 - fix(skills): make budget warning actionable - OPEN
-10. #19617 - feat(tui): add codex logo to session header - OPEN
-11. #18595 - feat(tui): add vim composer mode - OPEN
-12. #18594 - feat(tui): add keymap slash command - OPEN
-13. #18575 - fix(tui): reflow scrollback on terminal resize - CLOSED
-14. #18576 - feat(tui): render markdown tables responsively - OPEN
-15. #19618 - Persist shell mode commands in prompt history - OPEN
-16. #19616 - feat(tui): add codex logo to session header - CLOSED
-17. #19591 - Fix filtered thread-list resume regression in TUI - OPEN
-18. #19458 - ChatGPT Library file upload/download hooks - OPEN
-19. #19389 - Guard npm update readiness - CLOSED
-20. #19609 - restore 30-minute timeout for Bazel builds - CLOSED
-
-Now I'll structure the digest with the required sections. I need to identify the most impactful items across releases, issues, and pull requests to highlight for readers.
-
-**Today's Highlights:**
-- Rust SDK alpha release 0.126.0-alpha.2 is available
-- Multiple permission system refactors are underway to improve profile-backed access controls
-- TUI improvements include vim composer mode, markdown table rendering, and keyboard handling fixes
-- MCP child process leaks are creating significant memory issues for users
-
-**Releases:**
-- rust-v0.126.0-alpha.2
-
-**Hot Issues (10):**
-1. #10450 - Remote Development in Codex Desktop App (168 comments, 604 👍) - Major feature request
-2. #16231 - High CPU usage on macOS (60 comments, 58 👍) - Performance regression
-3. #19464 - Support 1M token context for GPT-5.5 (33 comments, 29 👍) - Context window enhancement
-4. #9203 - Please make "/undo" back (29 comments, 154 👍) - Popular feature request
-5. #12491 - MCP child processes not reaped (17 comments, 3 👍) - Memory leak
-6. #11626 - Add /rewind checkpoint restore (12 comments, 92 👍) - Feature request
-7. #19585 - Pro weekly usage limit depletes fast (5 comments, 0 👍) - Usage/billing concern
-8. #19558 - GPT-5.5 remote compaction fails (5 comments, 2 👍) - Context handling bug
-9. #19333 - Codex Mac app high memory usage (4 comments, 0 👍) - Performance issue
-10. #19601 - Cybersecurity risk flag false positive (3 comments, 0 👍) - Safety check issue
-
-**Key PR Progress (10):**
-1. #19620 - Escape turn metadata headers as ASCII JSON
-2. #19392-#19394 - Permissions system refactoring
-3. #19606 - Runtime config profile-backed
-4. #14428 - Fork sessions into multiplexer panes
-5. #19625 - Reset TUI keyboard reporting on exit
-6. #19624 - Make budget warning actionable
-7. #19617 - Add codex logo to session header
-8. #18595 - Add vim composer mode
-9. #18576 - Render markdown tables responsively
-10. #19618 - Persist shell mode commands in prompt history
-
-**Feature Request Trends:**
-- Remote development capabilities
-- Extended context windows
-- Undo/rewind functionality
-- Session management improvements
-- MCP server enhancements
-
-**Developer Pain Points:**
-- MCP child process leaks causing memory issues
-- High CPU usage on macOS
-- Context compaction failures
-- False positive safety flags
-- Performance regressions in VS Code extension
-</think>
-
 # OpenAI Codex Community Digest
 
-**Date:** 2026-04-26  
+**Date:** 2026-04-26
 **Repository:** github.com/openai/codex
 
 ---
@@ -632,57 +416,6 @@ Analysis of open issues reveals these dominant feature directions:
 
 <details>
 <summary><strong>Gemini CLI</strong> — <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></summary>
-
-<think>Let me analyze the GitHub data for the Gemini CLI repository and create a structured digest for 2026-04-26.
-
-Key observations:
-1. No new releases in the last 24h
-2. 50 issues total, 30 shown - many are workstream-rollup items marked as maintainer-only
-3. 43 PRs total, 20 shown - several open PRs with good activity
-
-Let me identify the most important items:
-
-**Hot Issues to highlight:**
-1. #22745 - AST-aware file reads/search/mapping (5 comments) - Epic tracking important tooling improvements
-2. #22323 - Subagent recovery after MAX_TURNS (4 comments) - P1 priority, affects reliability
-3. #24916 - Permission prompts repeatedly asking (3 comments) - User experience issue
-4. #25166 - Shell command stuck with "Waiting input" (2 comments) - Core functionality bug
-5. #23571 - Model creates tmp scripts in random spots (2 comments) - Workspace cleanliness
-6. #22267 - Browser Agent ignores settings.json (2 comments) - Configuration bug
-7. #25992 - MCP servers disconnected on Windows/WSL (0 comments but new) - Platform issue
-8. #25218 - Table renders incrementally during streaming (0 comments) - Accessibility/UX
-9. #24546 - Helper to detect SSH (0 comments) - Feature request
-10. #24470 - Scroll issues with long chats (0 comments) - UX issue
-
-**Key PRs to highlight:**
-1. #25958 - Signal forwarding in relaunchAppInChildProcess (fixes #25590)
-2. #25990 - Customize Gemini Code Assist behavior (repo maintenance)
-3. #25959 - Tool repair and continuation auto-recovery
-4. #25957 - Event-driven hook system messages
-
-
-5. #25633 - Record response's modelVersion in session transcript
-6. #25989 - Handle hyphenated server names in MCP tool dispatch
-7. #25947 - Versioned pre-write backups with agent-driven restore
-8. #25067 - Pass session UUID to deleteSession
-9. #25943 - Add modifyOtherKeys fallback for Ctrl+Backspace
-10. #25981 - Dismiss update banner when /clear runs
-
-**Feature Request Trends:**
-- AST-aware tooling and codebase mapping capabilities
-- Enhanced subagent reliability and recovery mechanisms
-- Improved permission and approval workflow management
-- Memory routing and persistence across sessions
-- Better MCP server integration and platform support
-- UI/UX refinements for accessibility and interaction patterns
-
-**Developer Pain Points:**
-- Permission prompts repeatedly appearing
-- Shell command execution getting stuck
-- MCP server connectivity problems on Windows/WSL
-- Scroll and rendering performance issues
-- Configuration settings not being respected
-</think>
 
 # Gemini CLI Community Digest
 
@@ -784,84 +517,6 @@ Based on issue analysis, the community is requesting:
 <details>
 <summary><strong>GitHub Copilot CLI</strong> — <a href="https://github.com/github/copilot-cli">github/copilot-cli</a></summary>
 
-<think>The user wants a structured English digest for the GitHub Copilot CLI community for the date 2026-04-26. The data includes:
-
-- Latest releases: none
-- Latest issues (11 items) with details
-- Latest PRs (1 item)
-
-We need to produce a digest with sections:
-
-1. Today's Highlights (2-3 sentences)
-2. Releases (if any)
-3. Hot Issues (pick 10 noteworthy issues, explain why they matter and community reaction)
-4. Key PR Progress (pick 10 important PRs, describe features or fixes)
-5. Feature Request Trends (distill most-requested feature directions from all issues)
-6. Developer Pain Points (summarize recurring developer frustrations or high-frequency requests)
-
-We need to be concise and professional, include GitHub links for each item.
-
-We have only 1 PR, not 10. We need to perhaps include that one PR and maybe note that there are no other PRs. But the instruction says "Pick 10 important PRs". Since only 1 PR is present, we can mention that only one PR is present and describe it. Or we can note that there are no other PRs. But we can also perhaps treat the PR as the only one. Or we can mention that there are no other PRs in the last 24h. The instruction says "Pick 10 important PRs". If there are fewer, we can mention the available ones. So we can mention the only PR.
-
-For Hot Issues, we have 11 issues. We need to pick 10. We can include all except maybe one that is less relevant. The issues include:
-
-- #1540 (closed) endless loop quota
-- #2528 (open) per-repository MCP server config
-- #2892 (open) MCP stdio transport for sub-agents closes after ~4 seconds
-- #2976 (closed) master instructions file
-- #2972 (closed) UX gap: Esc cancels agent but clears typed input buffer
-- #2969 (open) autopilot infinite loop on externally blocked task
-- #2974 (open) no access to Pro+ models
-- #2975 (open) triage bug report (no details)
-- #2971 (open) autopilot write operations silently fail after VS Code SSH dev container network reconnect
-- #2930 (open) feature request: local auto-memory
-- #2968 (open) line wraps break URL links in Windows Terminal
-
-We need to pick 10. We can include all except maybe #2975 (triage bug report with no details). But we can include it as it's a bug report. However, it's not informative. We might skip it. But we need to pick 10. There are 11, so we can pick 10. Let's pick the most impactful ones.
-
-We should include links for each issue.
-
-For PR: #2970 (open) create devcontainer.json. We can describe it.
-
-Now, we need to produce the digest.
-
-We need to follow the style: concise and professional.
-
-We need to include GitHub links for each item. The links are provided in the data.
-
-Let's structure the digest.
-
-We need to ensure we include the date 2026-04-26 in the header.
-
-Let's write the digest.
-
-We need to be careful with the format: each section with a heading, and items with bullet points or numbered lists.
-
-We need to include the links. The links are like:
-
-- Issue #1540: https://github.com/github/copilot-cli/issues/1540
-- Issue #2528: https://github.com/github/copilot-cli/issues/2528
-- etc.
-
-We need to make sure the links are correct.
-
-We also need to include the PR link: https://github.com/github/copilot-cli/pull/2970
-
-Now, let's write the digest.
-
-We need to note that there are no releases in the last 24h.
-
-We need to highlight the most important issues: the endless loop quota issue, the MCP per-repository config, the MCP stdio transport bug, the autopilot infinite loop, the permission denied issue, the local auto-memory feature request, and the Windows Terminal URL wrapping.
-
-We need to explain why they matter.
-
-We need to note the community reaction: some issues have thumbs up (e.g., #2528 has 5 thumbs up), others have 0.
-
-We need to mention the comments count.
-
-Now, let's write the digest.
-</think>
-
 # GitHub Copilot CLI Community Digest – 2026-04-26
 
 ## 1. Today's Highlights
@@ -870,54 +525,54 @@ Now, let's write the digest.
 - **Feature requests surge**: Community is actively requesting per-repository MCP configuration, local auto-memory, and master instruction files, indicating strong demand for deeper customization and offline capabilities.
 
 ## 2. Releases
-- **No new releases** in the past 24 hours.  
+- **No new releases** in the past 24 hours.
   Latest version: **0.0.411** (see [release history](https://github.com/github/copilot-cli/releases)).
 
 ## 3. Hot Issues (10 Noteworthy Items)
-1. **[#1540](https://github.com/github/copilot-cli/issues/1540) – Endless loop eat all my quota** (CLOSED)  
-   - **Why it matters**: A user lost all premium quota due to an endless loop when the model failed to find the `task_complete` tool. This highlights a critical failure mode that can lead to unexpected costs.  
+1. **[#1540](https://github.com/github/copilot-cli/issues/1540) – Endless loop eat all my quota** (CLOSED)
+   - **Why it matters**: A user lost all premium quota due to an endless loop when the model failed to find the `task_complete` tool. This highlights a critical failure mode that can lead to unexpected costs.
    - **Reaction**: 3 comments, 0 thumbs up. Closed with no clear resolution yet.
 
-2. **[#2528](https://github.com/github/copilot-cli/issues/2528) – Support per-repository MCP server configuration (.github/mcp.json)** (OPEN)  
-   - **Why it matters**: Currently, MCP servers are user-level only. Per-repository config would enable teams to define context-specific tools, improving project isolation and reproducibility.  
+2. **[#2528](https://github.com/github/copilot-cli/issues/2528) – Support per-repository MCP server configuration (.github/mcp.json)** (OPEN)
+   - **Why it matters**: Currently, MCP servers are user-level only. Per-repository config would enable teams to define context-specific tools, improving project isolation and reproducibility.
    - **Reaction**: 2 comments, 5 thumbs up—significant community interest.
 
-3. **[#2892](https://github.com/github/copilot-cli/issues/2892) – MCP stdio transport for sub-agents closes after ~4 seconds** (OPEN)  
-   - **Why it matters**: Breaks long-running sub-agents, causing MCP tool calls to fail mid-generation. This blocks advanced agent workflows.  
+3. **[#2892](https://github.com/github/copilot-cli/issues/2892) – MCP stdio transport for sub-agents closes after ~4 seconds** (OPEN)
+   - **Why it matters**: Breaks long-running sub-agents, causing MCP tool calls to fail mid-generation. This blocks advanced agent workflows.
    - **Reaction**: 1 comment, 0 thumbs up. Needs investigation.
 
-4. **[#2976](https://github.com/github/copilot-cli/issues/2976) – Master instructions file** (CLOSED)  
-   - **Why it matters**: Request for a global instruction file that Copilot follows in all sessions, regardless of context. Could enforce organization-wide policies.  
+4. **[#2976](https://github.com/github/copilot-cli/issues/2976) – Master instructions file** (CLOSED)
+   - **Why it matters**: Request for a global instruction file that Copilot follows in all sessions, regardless of context. Could enforce organization-wide policies.
    - **Reaction**: 1 comment, 0 thumbs up. Closed—likely deferred or out of scope.
 
-5. **[#2972](https://github.com/github/copilot-cli/issues/2972) – UX gap: Esc cancels agent but clears typed input buffer** (CLOSED)  
-   - **Why it matters**: Users lose typed follow-up messages when interrupting the agent, forcing rework. Poor UX for iterative workflows.  
+5. **[#2972](https://github.com/github/copilot-cli/issues/2972) – UX gap: Esc cancels agent but clears typed input buffer** (CLOSED)
+   - **Why it matters**: Users lose typed follow-up messages when interrupting the agent, forcing rework. Poor UX for iterative workflows.
    - **Reaction**: 1 comment, 0 thumbs up. Closed—needs design review.
 
-6. **[#2969](https://github.com/github/copilot-cli/issues/2969) – Autopilot infinite loop on externally blocked task** (OPEN)  
-   - **Why it matters**: Autopilot relaunches blocked agents indefinitely, consuming premium requests. Leads to quota exhaustion without user intervention.  
+6. **[#2969](https://github.com/github/copilot-cli/issues/2969) – Autopilot infinite loop on externally blocked task** (OPEN)
+   - **Why it matters**: Autopilot relaunches blocked agents indefinitely, consuming premium requests. Leads to quota exhaustion without user intervention.
    - **Reaction**: 1 comment, 0 thumbs up. Critical for cost control.
 
-7. **[#2974](https://github.com/github/copilot-cli/issues/2974) – No Access to Pro+ models** (OPEN)  
-   - **Why it matters**: Users with paid subscriptions cannot access higher-tier models in the CLI, limiting capability.  
+7. **[#2974](https://github.com/github/copilot-cli/issues/2974) – No Access to Pro+ models** (OPEN)
+   - **Why it matters**: Users with paid subscriptions cannot access higher-tier models in the CLI, limiting capability.
    - **Reaction**: 0 comments, 0 thumbs up. Needs clarification on subscription tiers.
 
-8. **[#2971](https://github.com/github/copilot-cli/issues/2971) – Autopilot write operations silently fail after VS Code SSH dev container network reconnect** (OPEN)  
-   - **Why it matters**: In SSH dev containers, write tools permanently fail with "Permission denied", causing infinite retry loops. Blocks remote development workflows.  
+8. **[#2971](https://github.com/github/copilot-cli/issues/2971) – Autopilot write operations silently fail after VS Code SSH dev container network reconnect** (OPEN)
+   - **Why it matters**: In SSH dev containers, write tools permanently fail with "Permission denied", causing infinite retry loops. Blocks remote development workflows.
    - **Reaction**: 0 comments, 0 thumbs up. High priority for remote devs.
 
-9. **[#2930](https://github.com/github/copilot-cli/issues/2930) – Feature Request: Local auto-memory (agent-initiated, no remote storage)** (OPEN)  
-   - **Why it matters**: Organizations disabling remote Copilot Memory have no local alternative. Local auto-memory would enable accumulation of knowledge without cloud storage, addressing security concerns.  
+9. **[#2930](https://github.com/github/copilot-cli/issues/2930) – Feature Request: Local auto-memory (agent-initiated, no remote storage)** (OPEN)
+   - **Why it matters**: Organizations disabling remote Copilot Memory have no local alternative. Local auto-memory would enable accumulation of knowledge without cloud storage, addressing security concerns.
    - **Reaction**: 0 comments, 0 thumbs up. Strategic for enterprise adoption.
 
-10. **[#2968](https://github.com/github/copilot-cli/issues/2968) – Line wraps break URL links in Windows Terminal** (OPEN)  
-    - **Why it matters**: Long URLs wrap incorrectly in Windows Terminal, making links unclickable. Degrades usability on Windows.  
+10. **[#2968](https://github.com/github/copilot-cli/issues/2968) – Line wraps break URL links in Windows Terminal** (OPEN)
+    - **Why it matters**: Long URLs wrap incorrectly in Windows Terminal, making links unclickable. Degrades usability on Windows.
     - **Reaction**: 0 comments, 0 thumbs up. Minor but annoying UX bug.
 
 ## 4. Key PR Progress
-- **[#2970](https://github.com/github/copilot-cli/pull/2970) – Create devcontainer.json** (OPEN)  
-  - **What it does**: Adds a development container configuration to simplify contributor setup.  
-  - **Significance**: Lowers barrier to entry for external contributors, potentially accelerating community involvement.  
+- **[#2970](https://github.com/github/copilot-cli/pull/2970) – Create devcontainer.json** (OPEN)
+  - **What it does**: Adds a development container configuration to simplify contributor setup.
+  - **Significance**: Lowers barrier to entry for external contributors, potentially accelerating community involvement.
   - **Status**: Open, 0 comments, 0 thumbs up.
 
 ## 5. Feature Request Trends
@@ -941,139 +596,6 @@ Now, let's write the digest.
 
 <details>
 <summary><strong>Kimi Code CLI</strong> — <a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></summary>
-
-<think>We need to generate a structured English digest for the Kimi Code CLI community for date 2026-04-26. The data includes:
-
-- Latest Releases (last 24h): None.
-- Latest Issues (updated in last 24h): Total 6 items. They are:
-
-1. #1282 [OPEN] [enhancement] Feature Request: Remote Control - Continue local sessions from any device. Author: @CatKang, created 2026-02-27, updated 2026-04-25, comments 3, 👍 3.
-2. #2070 [OPEN] [bug] Windows Chinese system: 1.38.0+ version built-in skill file encoding error. Author: @RocJetFei, created 2026-04-25, updated 2026-04-25, comments 2, 👍 0.
-3. #2059 [OPEN] [bug] The error message also consumes tokens. Author: @wangshuai67, created 2026-04-24, updated 2026-04-25, comments 1, 👍 0.
-4. #2074 [OPEN] [Bug] v1.39.0 /web mode JavaScript file MIME type error causes page to fail loading. Author: @edision, created 2026-04-25, updated 2026-04-25, comments 0, 👍 0.
-5. #2072 [OPEN] [enhancement] Yolo mode incorrectly conflates auto-approve with non-interactive, blocking AskUserQuestion. Author: @junvon843, created 2026-04-25, updated 2026-04-25, comments 0, 👍 0.
-6. #2071 [OPEN] [Feature Request] Mandatory project skill loading gates (.kimi/require-skills). Author: @dzw1995, created 2026-04-25, updated 2026-04-25, comments 0, 👍 0.
-
-- Latest Pull Requests (updated in last 24h): Total 6 items:
-
-1. #2076 [OPEN] feat(web): worktree UI for isolated sessions (stacked on #2073). Author: @cal-gooo, created 2026-04-26, updated 2026-04-26.
-2. #2075 [OPEN] feat(web): show running indicator for active sessions in sidebar. Author: @cal-gooo, created 2026-04-26, updated 2026-04-26.
-3. #1960 [OPEN] feat(soul): RalphFlow architecture with ephemeral context and convergence detection. Author: @ORDL-AMF, created 2026-04-20, updated 2026-04-25.
-4. #2047 [OPEN] fix(acp): load ~/.kimi/mcp.json in ACP server sessions. Author: @natrollus, created 2026-04-23, updated 2026-04-25.
-5. #2073 [OPEN] feat(cli): add git worktree support for isolated sessions. Author: @cal-gooo, created 2026-04-25, updated 2026-04-25.
-6. #1896 [CLOSED] fix(core): honor http_proxy env vars via aiohttp trust_env=True. Author: @hao-cyber, created 2026-04-15, updated 2026-04-25.
-
-We need to produce a structured digest with sections:
-
-1. Today's Highlights (2-3 sentences summarizing the most important updates)
-2. Releases (if new versions exist, summarize changes; omit if none)
-3. Hot Issues (Pick 10 noteworthy Issues, explain why they matter and community reaction)
-4. Key PR Progress (Pick 10 important PRs, describe features or fixes)
-5. Feature Request Trends (Distill the most-requested feature directions from all Issues)
-6. Developer Pain Points (Summarize recurring developer frustrations or high-frequency requests)
-
-We have only 6 issues in last 24h. However we can also consider older issues? The instruction says "Pick 10 noteworthy Issues". But we only have 6. Possibly we can include all 6 and note that only 6 were updated. Or we can pick 10 from the entire set, but we only have data for the latest issues. The instruction says "Pick 10 noteworthy Issues, explain why they matter and community reaction". We have only 6. We could note that only 6 issues were updated in the last 24h, but we can still highlight them. Or we can combine with older issues if we have data? The data provided only includes the latest issues (total 6 items). So we can pick all 6. But the instruction says "Pick 10 noteworthy Issues". We can note that there are only 6 new issues, but we can still highlight them. Possibly we can also include older issues that are still open and have high engagement, but we don't have data. We can just mention that there are only 6 new issues, and we will discuss them.
-
-Similarly for PRs: we have 6 PRs, but we need to pick 10. We can mention all 6. Or we can note that there are only 6 PRs updated, so we will discuss them.
-
-We need to include GitHub links for each item. The URLs are provided for each issue and PR.
-
-We need to be concise and professional.
-
-We need to generate the digest in English.
-
-We need to follow the structure.
-
-Let's break down each issue and PR:
-
-Issues:
-
-1. #1282: Remote Control feature request. This is a feature request to continue local sessions from any device. It has 3 comments and 3 upvotes. It is an enhancement. It matters because it would enable cross-device workflow continuity. Community reaction: moderate interest.
-
-2. #2070: Windows Chinese system encoding error in skill files for version 1.38.0+. This is a bug. It matters because it affects Chinese Windows users, causing errors due to encoding issues. It has 2 comments, 0 upvotes.
-
-3. #2059: Error messages consuming tokens. This is a bug: the error messages themselves consume token budget, leading to faster token consumption. It has 1 comment, 0 upvotes. It matters because it impacts cost and usage.
-
-4. #2074: v1.39.0 /web mode JavaScript file MIME type error causing page load failure. This is a bug. It matters because it breaks the web mode for Windows users. 0 comments, 0 upvotes.
-
-5. #2072: Yolo mode incorrectly conflates auto-approve with non-interactive, blocking AskUserQuestion. This is an enhancement. It matters because it affects the behavior of the Yolo mode and user interaction. 0 comments, 0 upvotes.
-
-6. #2071: Mandatory project skill loading gates (.kimi/require-skills). This is a feature request. It matters because it would allow projects to enforce skill loading, ensuring compliance with workflow rules. 0 comments, 0 upvotes.
-
-PRs:
-
-1. #2076: feat(web): worktree UI for isolated sessions (stacked on #2073). This adds a UI for worktree sessions in the web interface. It matters because it enables users to manage worktree-backed sessions via the web UI.
-
-2. #2075: feat(web): show running indicator for active sessions in sidebar. This adds a visual indicator for running sessions. It matters because it improves UX.
-
-3. #1960: feat(soul): RalphFlow architecture with ephemeral context and convergence detection. This introduces a new architecture to prevent infinite loops and enable multi-step workflows. It matters because it addresses core agent behavior.
-
-4. #2047: fix(acp): load ~/.kimi/mcp.json in ACP server sessions. This fixes an issue where MCP servers are not loaded in ACP server sessions. It matters because it ensures consistent tool availability.
-
-5. #2073: feat(cli): add git worktree support for isolated sessions. This adds a --worktree flag to create isolated sessions using git worktree. It matters because it allows parallel sessions without conflicts.
-
-6. #1896: fix(core): honor http_proxy env vars via aiohttp trust_env=True. This is a fix to respect proxy environment variables. It is closed. It matters because it enables the CLI to work behind proxies.
-
-Now, we need to produce the digest.
-
-We need to include sections:
-
-1. Today's Highlights: Summarize the most important updates. Since there are no releases, we can mention the new PRs and issues. Possibly highlight the worktree support and the new web UI features, as well as the encoding bug and token consumption bug.
-
-2. Releases: None.
-
-3. Hot Issues: We have 6 issues. We can discuss each. But the instruction says "Pick 10 noteworthy Issues". We can note that only 6 were updated in the last 24h, so we will discuss all of them. We can also mention that these are the only new issues.
-
-4. Key PR Progress: We have 6 PRs. We can discuss all. But the instruction says "Pick 10 important PRs". We can note that only 6 were updated, so we will discuss all.
-
-5. Feature Request Trends: We need to distill the most-requested feature directions from all Issues. We have issues that are feature requests: #1282 (remote control), #2072 (Yolo mode), #2071 (mandatory skill loading). Also maybe #2070 and #2074 are bugs, #2059 is bug. So feature requests are around remote control, Yolo mode improvements, mandatory skill loading. Also maybe we can look at the PRs for feature directions: worktree support, web UI improvements, RalphFlow architecture, ACP server fixes.
-
-We can summarize: Remote control/cross-device session continuation, project-level skill enforcement, Yolo mode interaction improvements, and improved web UI for session management.
-
-6. Developer Pain Points: Summarize recurring frustrations. From issues: encoding errors on Windows Chinese systems, token consumption by error messages, MIME type errors in web mode, lack of proxy support (but that's fixed in a PR). Also the ACP server not loading MCP config. Also the Yolo mode issue. Also the lack of worktree support (but that's being added). So pain points: Windows compatibility issues (encoding, MIME), token usage concerns, missing MCP configuration in ACP mode, Yolo mode interaction issues.
-
-We need to include GitHub links for each item. We have the URLs.
-
-We need to be concise.
-
-Let's structure the digest.
-
-We'll start with a header: "Kimi Code CLI Community Digest – 2026-04-26"
-
-Then sections.
-
-We'll include bullet points for each item, with a brief description and a link.
-
-We need to ensure we follow the style: concise and professional.
-
-We'll include the links in the format: #<number> – <description> (link). The links are like: https://github.com/MoonshotAI/kimi-cli/issues/<number> for issues, and https://github.com/MoonshotAI/kimi-cli/pull/<number> for PRs.
-
-We'll include the issue/PR numbers and titles.
-
-We need to be careful with the formatting.
-
-We'll produce the digest accordingly.
-
-Now, let's write the content.
-
-We'll start with "Today's Highlights".
-
-We'll mention the new PRs for worktree support and web UI, and the bugs.
-
-We'll mention that there are no new releases.
-
-We'll then list the issues.
-
-We'll then list the PRs.
-
-We'll then summarize trends and pain points.
-
-We'll make sure to include the links.
-
-We'll keep each section concise.
-
-Let's begin.
-</think>
 
 **Kimi Code CLI Community Digest – 2026-04-26**
 
@@ -1150,68 +672,6 @@ These points highlight a need for better locale handling, transparent token acco
 <details>
 <summary><strong>OpenCode</strong> — <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></summary>
 
-<think>Let me analyze the GitHub data for OpenCode and create a structured digest for 2026-04-26.
-
-**Today's Highlights:**
-- v1.14.25 released with permission config improvements and LSP enhancements
-- Multiple DeepSeek V4 related bugs being actively discussed (multi-turn tool calls, reasoning_content issues)
-- Several security/privacy concerns raised (iCloud access, file scanning, PostHog)
-- Active development on MCP (Model Context Protocol) bridging and OAuth endpoints
-
-**Releases:**
-- v1.14.25: Core fixes for permission config, LSP prompts, and shell commands
-
-**Hot Issues (10 most noteworthy):**
-1. #14982 - iCloud/Photos access requests (25 comments) - privacy concern
-2. #6680 - View archived sessions feature (25 comments) - feature request
-3. #24190 - DeepSeek V4 multi-turn tool calls 400 error (23 comments) - critical bug
-4. #5474 - /undo command not rolling back file changes (21 comments) - UX bug
-5. #459 - Privacy and Data Collection clarification (14 comments) - privacy concern
-6. #14368 - Compaction loses conversation (7 comments) - data loss bug
-7. #24261 - DeepSeek reasoning_content not passed back (6 comments) - related to #24190
-8. #24342 - Agents freeze indefinitely on Windows (6 comments) - stability issue
-9. #15163 - CLI scans outside workspace on macOS (5 comments) - security issue
-10. #22187 - Desktop scans random system folders (5 comments) - security issue
-
-**Key PR Progress:**
-1. #24407 - HTTP API bridge for experimental tool routes (CLOSED)
-2. #24401 - Guard against undefined MCP tool output (CLOSED)
-3. #18767 - Mobile Touch Optimization (OPEN)
-
-
-4. #13854 - Stop streaming markdown after message completes (OPEN)
-5. #24283 - Add opencode-provider-alias to ecosystem (OPEN)
-6. #24412 - Buffer stdin before prompt UI (OPEN)
-7. #24411 - Avoid invalid Kilo reasoning details (OPEN)
-8. #20039 - Bash to shell tool rename + PowerShell support (OPEN)
-9. #24392 - Add changelog sync workflow (CLOSED)
-10. #19266 - Harden session diffs handling (OPEN)
-
-**Feature Request Trends:**
-1. Subagent visibility and status feedback
-2. Archived sessions viewing
-3. Desktop notifications
-4. Visual indicators (project status, task completion)
-5. Dismissible toasts
-6. Privacy controls and transparency
-7. Mobile/touch optimization
-8. Theme customization
-
-**Developer Pain Points:**
-1. DeepSeek V4 integration issues (multi-turn, reasoning_content)
-2. File scanning outside workspace (security/privacy)
-3. /undo command incomplete functionality
-4. Subagent behavior in Plan/Build mode
-5. Session compaction losing context
-6. PostHog telemetry concerns
-7. LSP activation timing confusion
-8. Mobile experience gaps
-9. Windows stability issues (freezing)
-10. MCP tool loading issues
-
-The core challenges center on AI provider reliability, workspace security boundaries, and cross-platform consistency. Users report DeepSeek V4 struggles with multi-turn conversations and reasoning content handling, while privacy concerns emerge around file access patterns and telemetry. The /undo command and subagent mode need refinement, particularly on Windows where stability issues persist. Mobile optimization and theme customization remain secondary priorities alongside resolving MCP tool loading failures.
-</think>
-
 # OpenCode Community Digest — 2026-04-26
 
 ## Today's Highlights
@@ -1233,43 +693,43 @@ The OpenCode community saw significant activity around AI provider integration, 
 ## Hot Issues
 
 ### 1. DeepSeek V4 Multi-Turn Tool Calls Failing with 400 Error
-**#24190** | 23 comments | 👍 8  
+**#24190** | 23 comments | 👍 8
 Multi-turn conversations with DeepSeek V4 Pro/Flash fail with 400 errors starting from the second turn. The first turn always succeeds, but subsequent turns break. This is a critical integration bug affecting users relying on DeepSeek models via OpenRouter or direct API.
 
 ### 2. /undo Command Only Reverts Chat, Not File Changes
-**#5474** | 21 comments | 👍 7  
+**#5474** | 21 comments | 👍 7
 When using `/undo` to revert AI-generated changes, only the conversation message rolls back—the actual file modifications persist. This creates a dangerous mismatch between what the user sees and the actual codebase state.
 
 ### 3. Privacy and Data Collection Clarification Request
-**#459** | 14 comments | 👍 50  
+**#459** | 14 comments | 👍 50
 Users are requesting explicit documentation about OpenCode's privacy practices and data collection policies. While the project positions itself as local-first, users want clearer transparency about what data is transmitted.
 
 ### 4. CLI Scans Outside Workspace on macOS
-**#15163** | 5 comments | 👍 3  
+**#15163** | 5 comments | 👍 3
 The `opencode-cli` on macOS indexes files beyond the intended project scope, touching `~/Library` and application cache directories, triggering security alerts. This is a significant privacy and security concern.
 
 ### 5. Desktop App Scans Random System Folders
-**#22187** | 5 comments | 👍 4  
+**#22187** | 5 comments | 👍 4
 OpenCode Desktop causes 100% CPU usage on multiple cores while scanning random system folders. Logs are empty, making debugging difficult. Affects both Linux and Windows.
 
 ### 6. Compaction Loses Entire Conversation
-**#14368** | 7 comments  
+**#14368** | 7 comments
 When context limits trigger compaction, OpenCode forgets the entire conversation context, rendering the session unusable.
 
 ### 7. DeepSeek reasoning_content Not Passed Back in Multi-Turn
-**#24261** | 6 comments | 👍 2  
+**#24261** | 6 comments | 👍 2
 Related to #24190—DeepSeek models with thinking mode enabled don't properly pass reasoning content back in multi-turn conversations, breaking the reasoning chain.
 
 ### 8. Sub Agents Do Not Obey Plan/Build Mode
-**#23533** | 4 comments  
+**#23533** | 4 comments
 Sub-agents ignore Plan mode and start implementing changes when the user expects them to only diagnose. Spawned agents have been observed making live changes during what should be a planning phase.
 
 ### 9. PostHog Network Error and Telemetry Concerns
-**#23644** | 5 comments  
+**#23644** | 5 comments
 Users encounter `PostHogFetchNetworkError` when trying to disable telemetry. Combined with #459, there's growing community concern about data collection practices.
 
 ### 10. Mobile Touch Optimization Needed
-**#18767** (PR) | Active development  
+**#18767** (PR) | Active development
 While not an issue, this PR highlights the need for better mobile/touch device support, indicating a gap in the current experience for mobile developers.
 
 ---
@@ -1277,43 +737,43 @@ While not an issue, this PR highlights the need for better mobile/touch device s
 ## Key PR Progress
 
 ### 1. HTTP API Bridge for Experimental Tool Routes
-**#24407** | CLOSED  
+**#24407** | CLOSED
 Bridges Console org switching and experimental tool list endpoints through the HttpApi path. Updates the route checklist for bridged experimental routes.
 
 ### 2. Guard Against Undefined MCP Tool Output
-**#24401** | CLOSED  
+**#24401** | CLOSED
 Fixes a crash when MCP tools return results with no text content (images only, empty content array). Resolves `TypeError: undefined is not an object (evaluating 'output.split')`.
 
 ### 3. Buffer Stdin Before Prompt UI Appears
-**#24412** | OPEN  
+**#24412** | OPEN
 Addresses characters being dropped while typing between launching OpenCode and the prompt UI rendering by buffering stdin input.
 
 ### 4. Avoid Invalid Kilo Reasoning Details
-**#24411** | OPEN  
+**#24411** | OPEN
 Fixes invalid request bodies when prior assistant reasoning is converted into a plain string for Kilo/Kimi K2.6 models.
 
 ### 5. Bash → Shell Tool Rename with PowerShell Support
-**#20039** | OPEN  
+**#20039** | OPEN
 Renames the bash tool to shell, maintains legacy bash compatibility, and adds shell-specific prompts for PowerShell/cmd so agents receive appropriate instructions.
 
 ### 6. MCP OAuth Endpoints Bridged
-**#24405** | CLOSED  
+**#24405** | CLOSED
 Bridges MCP OAuth start/callback/authenticate/remove through the experimental HttpApi path, marking MCP as fully bridged.
 
 ### 7. MCP Control Endpoints Bridged
-**#24403** | CLOSED  
+**#24403** | CLOSED
 Adds bridge coverage for MCP add/connect/disconnect endpoints through the HttpApi.
 
 ### 8. Reconnect on Network Disruptions
-**#19116** | OPEN  
+**#19116** | OPEN
 Implements automatic reconnection when VPN switches, SSE timeouts, or connections reset occur. Closes multiple related issues (#17574, #15350, #17099, #15247).
 
 ### 9. Mobile Touch Optimization
-**#18767** | OPEN  
+**#18767** | OPEN
 Optimizes OpenCode App for mobile/touch devices while preserving desktop experience.
 
 ### 10. Add Changelog Sync Workflow
-**#24392** | CLOSED  
+**#24392** | CLOSED
 Adds GitHub Actions workflow that automatically fetches and syncs changelog entries.
 
 ---
@@ -1376,57 +836,6 @@ Users report LSP activation timing (#24325) doesn't match documentation—tools 
 
 <details>
 <summary><strong>Qwen Code</strong> — <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></summary>
-
-<think>Let me analyze the GitHub data for Qwen Code and create a structured digest for 2026-04-26.
-
-Key observations:
-1. No releases in the last 24h
-2. 50 issues total, showing top 30 by comment count
-3. 37 PRs total, showing top 20 by comment count
-
-Let me identify the most important items:
-
-**Hot Issues (by comment count and severity):**
-1. #3277 - MCP Client Limited to 2 Connections (CRITICAL, 7 comments) - Production multi-node infrastructure issue
-2. #643 - Xcode 无法使用qwen3-coder-plus (P1, 7 comments)
-3. #528 - Parameter "todos" must be an array (7 comments)
-4. #1281 - Model returns JSON-format responses (6 comments)
-5. #2466 - Adding branching for MCP (feature request, 5 comments)
-6. #1105 - Missing Accept Diff and Close Diff Editor commands (5 comments)
-7. #548 - MCP related errors (5 comments)
-8. #1316 - Conversation history cleared after init file modification (4 comments)
-9. #1280 - Cannot use local Ollama deployment (4 comments)
-10. #659 - Dialogue has too many lines (4 comments)
-
-**Key PRs:**
-1. #3629 - feat(config): support API timeout env override (new, 2026-04-26)
-2. #3627 - feat: add macOS desktop app installer (updated 2026-04-26)
-3. #3507 - feat(cli): add sticky todo panel to app layouts (updated 2026-04-26)
-4. #3622 - fix(test): update rewind E2E Test (closed)
-5. #3498 - docs(telemetry): clarify Alibaba Cloud console entry (closed)
-
-
-6. #3495 - fix(core): preserve settings-sourced apiKey (closed, fixes #3417)
-7. #3318 - feat(cli): add API preconnect to reduce first-call latency
-8. #3576 - Feat/openrouter auth
-9. #3609 - fix(vscode-companion): slash command completion
-10. #3564 - feat: add macOS Desktop App installation script (closed)
-
-**Feature Request Trends:**
-1. MCP improvements (branching, connection limits)
-2. Better local model support (Ollama, LM Studio)
-3. UI/UX improvements (todo panel, diff commands)
-4. Third-party model integration (OpenRouter, GLM)
-5. Performance optimizations (preconnect, timeout controls)
-
-**Developer Pain Points:**
-1. MCP connection limitations blocking production deployments
-2. Local model deployment challenges with Ollama and LM Studio
-3. VSCode extension functionality gaps (missing diff commands, slash completion)
-4. Third-party model quality inconsistencies, particularly with GLM
-5. Memory consumption and system stability issues
-6. API key management and session persistence problems
-</think>
 
 # Qwen Code Community Digest
 
@@ -1534,58 +943,6 @@ Based on issue analysis, the community is requesting:
 <details>
 <summary><strong>Pi</strong> — <a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></summary>
 
-<think>The user wants me to generate a Pi community digest for 2026-04-26 based on the provided GitHub data. Let me analyze the data and create a structured digest with the requested sections.
-
-Let me organize the key information:
-
-**Releases**: None in the last 24h
-
-**Notable Issues** (by comment count or importance):
-1. #3208 - Feature Request: Custom Thinking Levels per Model (9 comments, 8 👍)
-2. #3521 - Bash tool not working (9 comments)
-3. #2023 - Add pi.runWhenIdle() (8 comments)
-4. #2203 - No hotkey for new line on Ubuntu (4 comments)
-5. #3679 - Connection error troubleshooting (4 comments)
-6. #3724 - Documentation PR approval (3 comments)
-7. #3730 - displayName for providers from extensions (2 comments)
-8. #3728 - AnthropicMessagesCompat: supportsCacheControl flag (2 comments)
-9. #3560 - execute_command `/reload` gets stuck in loop (2 comments)
-10. #3665 - normalizeToolCallId returns empty string (2 comments)
-11. #3686 - pi.setSessionName() doesn't refresh terminal title (2 comments)
-12. #3563 - Claude models fail via Antigravity (2 comments)
-13. #3688 - /tree cancellation leaving Pi stuck (2 comments)
-14. #3708 - Anthropic SSE parser crashes on [DONE] sentinel (2 comments)
-15. #3662 - DeepSeek V4 Pro reasoning effort clamped (2 comments)
-16. #3706 - Intermittent spawn EBADF for bash/custom tools (2 comments)
-17. #3700 - Inline autocomplete skills issue (2 comments)
-
-
-18. #3676 - Rendered line exceeds terminal width (2 comments)
-19. #3695 - Allow /tree to suggest dynamic branch-summary (2 comments)
-20. #3699 - google-vertex: ADC requests 404 (2 comments)
-
-**Notable PRs**:
-1. #3725 - docs: explain issue triage policy
-2. #3723 - docs: explain issue triage policy (duplicate)
-3. #3719 - chore(models): regenerate models.generated.ts (adds github-copilot/gpt-5.5)
-4. #3718 - Merge upstream/main (v0.70.2) into fork
-5. #3527 - fix(bedrock): check model.name for prompt caching and adaptive thinking
-6. #3624 - feat(ai): add together provider (supports deepseek v4)
-7. #3716 - feat(ai): add CrofAI provider
-8. #3714 - perf(mom): parallelize thread message deletion
-9. #3709 - feat(ai): add Ark (Volcano Engine) provider via Responses API
-10. #3680 - Add built-in update command
-11. #3694 - test(ai): add unit tests for repairJson and parseStreamingJson utilities
-12. #3702 - Update docs on System prompt explanation
-13. #3664 - fix(ai): fall back to placeholder for empty Anthropic tool_use.id
-14. #3697 - Fix typo: 'teh' → 'the' in test-sessions.ts
-15. #3696 - Capture resolved model from OpenAI-compatible stream chunks
-16. #3691 - fix: preserve thinking blocks for cross-model reasoning calls
-17. #3690 - fix(coding-agent): clear tree navigation busy state on cancel
-
-The PRs span documentation improvements, model registry updates, provider integrations for AI services, performance optimizations, and bug fixes across the codebase. Notable additions include support for Together AI and Ark providers, while fixes address issues with Anthropic tool handling and tree navigation state management.
-</think>
-
 # Pi Community Digest — 2026-04-26
 
 ## Today's Highlights
@@ -1602,68 +959,68 @@ No new releases in the last 24 hours.
 
 ## Hot Issues
 
-**1. [Feature Request: Custom Thinking Levels per Model](https://github.com/badlogic/pi-mono/issues/3208)** — 9 comments, 8 👍  
+**1. [Feature Request: Custom Thinking Levels per Model](https://github.com/badlogic/pi-mono/issues/3208)** — 9 comments, 8 👍
 Users want models to define their own thinking levels in `models.json`, allowing `Shift+Tab` to cycle only through levels each model supports. The extension API should also expose this via `pi.registerProvider()`. High community interest suggests this is a widely desired customization feature.
 
-**2. [Bash tool not working, not reading from settings.json](https://github.com/badlogic/pi-mono/issues/3521)** — 9 comments  
+**2. [Bash tool not working, not reading from settings.json](https://github.com/badlogic/pi-mono/issues/3521)** — 9 comments
 Bash tool fails with "No bash shell found" errors on Windows, even when Git Bash is installed. Users report the tool isn't respecting `shellPath` in `settings.json`. This is a blocking issue for Windows developers.
 
-**3. [Add pi.runWhenIdle() to schedule work after the agent has fully settled](https://github.com/badlogic/pi-mono/issues/2023)** — 8 comments  
+**3. [Add pi.runWhenIdle() to schedule work after the agent has fully settled](https://github.com/badlogic/pi-mono/issues/2023)** — 8 comments
 Extension developers need an API to schedule work after the agent completes its current turn. The existing `sendUserMessage` workaround is fragile and doesn't guarantee proper timing.
 
-**4. [No hotkey for new line on Ubuntu terminal by default](https://github.com/badlogic/pi-mono/issues/2203)** — 4 comments  
+**4. [No hotkey for new line on Ubuntu terminal by default](https://github.com/badlogic/pi-mono/issues/2203)** — 4 comments
 Default Ptyxis terminal on Ubuntu lacks a hotkey for new line. Users must manually configure `followUp: "alt+down"` in keybindings.json. Documentation update requested.
 
-**5. [Receiving Error: Connection error](https://github.com/badlogic/pi-mono/issues/3679)** — 4 comments  
+**5. [Receiving Error: Connection error](https://github.com/badlogic/pi-mono/issues/3679)** — 4 comments
 Users behind new network security face connection failures but lack debug logging options to diagnose issues. Request for better diagnostic tooling.
 
-**6. [displayName for providers registered by extensions](https://github.com/badlogic/pi-mono/issues/3730)** — 2 comments  
+**6. [displayName for providers registered by extensions](https://github.com/badlogic/pi-mono/issues/3730)** — 2 comments
 Extension-registered providers show raw `providerId` in `/login` instead of human-friendly names. Built-in providers display properly, creating inconsistent UX.
 
-**7. [AnthropicMessagesCompat: add supportsCacheControl flag](https://github.com/badlogic/pi-mono/issues/3728)** — 2 comments  
+**7. [AnthropicMessagesCompat: add supportsCacheControl flag](https://github.com/badlogic/pi-mono/issues/3728)** — 2 comments
 Fireworks AI's Anthropic-compatible API rejects `cache_control` on tool schema definitions. Need to conditionally omit this field for compatibility.
 
-**8. [execute_command `/reload` gets stuck in a loop](https://github.com/badlogic/pi-mono/issues/3560)** — 2 comments  
+**8. [execute_command `/reload` gets stuck in a loop](https://github.com/badlogic/pi-mono/issues/3560)** — 2 comments
 GPT-5.4 enters infinite loop when attempting `/reload` at session end. Reproducible with specific model and skill update workflows.
 
-**9. [pi.setSessionName() does not refresh terminal title](https://github.com/badlogic/pi-mono/issues/3686)** — 2 comments  
+**9. [pi.setSessionName() does not refresh terminal title](https://github.com/badlogic/pi-mono/issues/3686)** — 2 comments
 Extension API's `setSessionName()` persists session info but doesn't update terminal window title, unlike the built-in `/name` command.
 
-**10. [DeepSeek V4 Pro: xhigh reasoning effort silently clamped to high](https://github.com/badlogic/pi-mono/issues/3662)** — 2 comments  
+**10. [DeepSeek V4 Pro: xhigh reasoning effort silently clamped to high](https://github.com/badlogic/pi-mono/issues/3662)** — 2 comments
 DeepSeek V4 Pro supports `reasoning_effort=max` but `supportsXhigh()` doesn't recognize the model, causing silent degradation to `high` instead of raising an error.
 
 ---
 
 ## Key PR Progress
 
-**1. [chore(models): regenerate models.generated.ts (adds github-copilot/gpt-5.5)](https://github.com/badlogic/pi-mono/pull/3719)**  
+**1. [chore(models): regenerate models.generated.ts (adds github-copilot/gpt-5.5)](https://github.com/badlogic/pi-mono/pull/3719)**
 Updated model registry to include GitHub Copilot's new `gpt-5.5` model, enabling access to the latest OpenAI models through Copilot integration.
 
-**2. [feat(ai): add together provider (supports deepseek v4)](https://github.com/badlogic/pi-mono/pull/3624)**  
+**2. [feat(ai): add together provider (supports deepseek v4)](https://github.com/badlogic/pi-mono/pull/3624)**
 Added native Together AI provider support via OpenAI-compatible Chat Completions API, with automatic API key detection and filtered tool-capable models.
 
-**3. [feat(ai): add CrofAI provider](https://github.com/badlogic/pi-mono/pull/3716)**  
+**3. [feat(ai): add CrofAI provider](https://github.com/badlogic/pi-mono/pull/3716)**
 Integrated CrofAI as a new built-in provider, supporting models from DeepSeek, MoonshotAI, Z.AI, Google, MiniMax, and Qwen with streaming and tool use.
 
-**4. [feat(ai): add Ark (Volcano Engine) provider via Responses API](https://github.com/badlogic/pi-mono/pull/3709)**  
+**4. [feat(ai): add Ark (Volcano Engine) provider via Responses API](https://github.com/badlogic/pi-mono/pull/3709)**
 Added support for Volcano Engine's Ark platform using the Responses API protocol, supporting streaming, tool calling, and reasoning models.
 
-**5. [fix(bedrock): check model.name for prompt caching and adaptive thinking](https://github.com/badlogic/pi-mono/pull/3527)**  
+**5. [fix(bedrock): check model.name for prompt caching and adaptive thinking](https://github.com/badlogic/pi-mono/pull/3527)**
 Fixed AWS Bedrock provider to correctly detect Claude models using `model.name` instead of opaque application inference profile ARNs.
 
-**6. [fix(ai): fall back to placeholder for empty Anthropic tool_use.id](https://github.com/badlogic/pi-mono/pull/3664)**  
+**6. [fix(ai): fall back to placeholder for empty Anthropic tool_use.id](https://github.com/badlogic/pi-mono/pull/3664)**
 Ensured `normalizeToolCallId` always returns valid IDs matching Anthropic's regex pattern, preventing 400 errors during cross-provider session replay.
 
-**7. [fix: preserve thinking blocks for cross-model reasoning calls](https://github.com/badlogic/pi-mono/pull/3691)**  
+**7. [fix: preserve thinking blocks for cross-model reasoning calls](https://github.com/badlogic/pi-mono/pull/3691)**
 Fixed DeepSeek V4 Pro and R1 reasoning models by preserving `reasoning_content` in assistant messages when thinking mode is active.
 
-**8. [fix(coding-agent): clear tree navigation busy state on cancel](https://github.com/badlogic/pi-mono/pull/3690)**  
+**8. [fix(coding-agent): clear tree navigation busy state on cancel](https://github.com/badlogic/pi-mono/pull/3690)**
 Resolved issue where `/tree` cancellation left Pi stuck in "compacting" state, treating normal input as queued messages.
 
-**9. [perf(mom): parallelize thread message deletion](https://github.com/badlogic/pi-mono/pull/3714)**  
+**9. [perf(mom): parallelize thread message deletion](https://github.com/badlogic/pi-mono/pull/3714)**
 Optimized message deletion by replacing sequential loops with `Promise.allSettled`, significantly reducing cleanup time for threads with many messages.
 
-**10. [Add built-in update command](https://github.com/badlogic/pi-mono/pull/3680)**  
+**10. [Add built-in update command](https://github.com/badlogic/pi-mono/pull/3680)**
 Implemented `pi update` command to self-update Pi, automatically upgrading when running older versions.
 
 ---

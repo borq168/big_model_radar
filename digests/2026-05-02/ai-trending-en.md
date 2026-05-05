@@ -4,52 +4,6 @@
 
 ---
 
-<think>Let me analyze the data provided and create a structured AI Open Source Trends Report.
-
-First, let me filter AI-related projects from the trending list:
-
-From the trending list (9 repos):
-1. TauricResearch/TradingAgents - AI-related (Multi-Agents LLM Financial Trading Framework) ✓
-2. soxoj/maigret - Not AI (OSINT tool for username search) ✗
-3. warpdotdev/warp - Not AI (terminal, dev environment) ✗
-4. 1jehuang/jcode - Partially AI (Coding Agent Harness) - includes AI agent aspects
-5. mattpocock/skills - Not AI (skills for engineers) ✗
-6. browserbase/skills - AI-related (Claude Agent SDK) ✓
-7. simstudioai/sim - AI-related (AI agents orchestration) ✓
-8. obra/superpowers - AI-related (agentic skills framework) ✓
-9. Flowseal/zapret-discord-youtube - Not AI ✗
-
-From the topic search (81 repos, all AI-related based on topic tags):
-All seem to be AI/ML related based on the topics (ml, llm-model, ai-agent, vector-db, llm, rag)
-
-Now let me categorize:
-
-**🔧 AI Infrastructure:**
-- tensorflow/tensorflow
-- huggingface/transformers
-- pytorch/pytorch
-- scikit-learn/scikit-learn
-- keras-team/keras
-- vllm-project/vllm
-- ollama/ollama
-- langchain-ai/langchain
-- 0xPlaygrounds/rig (Rust LLM framework)
-- langchain4j/langchain4j (Java)
-- apache/casbin-gateway (AI & MCP security gateway)
-- googleworkspace/cli (AI agent skills)
-
-
-- **🤖 AI Agents / Workflows:** TradingAgents, jcode, browserbase/skills, sim, superpowers, NousResearch/hermes-agent, CherryHQ/cherry-studio, CowAgent, nanobot, CopilotKit, openclaude, activepieces, OpenCLI, leon-ai, trycua/cua, E2B, OpenHands, deer-flow, FlowiseAI/Flowise, hello-agents, graphify, mem0ai/mem0, mindsdb/mindsdb
-
-**📦 AI Applications:** TradingAgents, OpenBB-finance/OpenBB, ScrapeGraphAI/Scrapegraph-ai
-
-**🧠 LLMs / Training:** minimind, awesome-japanese-llm, home-llm, LlamaFactory, Stable Diffusion, Stable Diffusion WebUI
-
-**🔍 RAG / Knowledge:** LlamaIndex, Milvus, Qdrant, Meilisearch, txtai, PageIndex, cognee, Weaviate, LEANN, claude-context, LanceDB, OceanBase, zvec
-
-Now I'll organize this into a structured report.
-</think>
-
 # AI Open Source Trends Report
 **Date:** 2026-05-02 | **Source:** GitHub Trending + AI Topic Search
 

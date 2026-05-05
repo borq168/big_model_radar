@@ -4,52 +4,6 @@
 
 ---
 
-<think>The user wants me to generate a comprehensive monthly report for April 2026 based on the four weekly digest summaries provided. Let me analyze the data from all four weeks (W15, W16, W17, W18) and synthesize it into a cohesive monthly report.
-
-Let me extract the key data points:
-
-**W18 (April 21-27)**:
-- Claude Code: v2.1.116-120, 50 Issues/PRs daily
-- OpenAI Codex: Rust v0.122.0-0.126.0, 50 Issues/PRs daily
-- Gemini CLI: v0.39.0-0.41.0, 50 Issues/PRs daily
-- GitHub Copilot CLI: v1.0.34-36, declining activity
-- Kimi Code CLI: v1.37.0-1.39.0, growing
-- OpenCode: v1.14.19-26, 50 Issues/PRs daily
-- Qwen Code: v0.14.5-0.15.2, policy controversy
-- Pi: v0.70.0-2, stable
-
-**W17 (April 14-20)**:
-- Claude Code: v2.1.105-114
-- OpenAI Codex: Rust v0.119.0-alpha.10-14
-- Gemini CLI: v0.37.2, nightly builds
-- GitHub Copilot CLI: v1.0.29-31
-- Kimi Code CLI: v1.36.0, show_thinking_stream default
-- OpenCode: v1.3.17, Effect migration
-- Qwen Code: v0.14.5-nightly, ACP hooks
-
-**W16 (April 7-13)**:
-- Claude Code: v2.1.96-101, team-onboarding
-
-
-- OpenAI Codex: Rust v0.119.0-alpha.19-24
-- Gemini CLI: v0.39.0-nightly
-- GitHub Copilot CLI: v1.0.22, Agentic Workflows
-- Kimi Code CLI: TypeScript refactor
-- OpenCode: v1.3.17, Effect framework
-- Qwen Code: v0.14.3-nightly, CJK support
-
-**W15 (March 31 - April 6)**:
-- Claude Code: v2.1.92, token consumption issue
-- OpenAI Codex: Rust v0.119.0-alpha.9-11
-- Gemini CLI: v0.37.0-preview.1
-- GitHub Copilot CLI: v1.0.18, Critic Agent
-- Kimi Code CLI: Bun/TS migration
-- OpenCode: v1.3.15, plugin system
-- Qwen Code: v0.14.3, Qwen 3.6 support
-
-Now I'll synthesize this into a comprehensive monthly report.
-</think>
-
 # AI Tools Ecosystem Monthly Report — April 2026
 
 **Report Period: April 1 – April 30, 2026**

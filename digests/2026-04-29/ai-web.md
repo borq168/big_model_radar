@@ -8,43 +8,6 @@
 
 ---
 
-<think>用户要求我生成一份《内容追踪报告》，分析2026年4月29日从Anthropic和OpenAI抓取的内容。我需要：
-
-1. 今日速览 - 3-5句话概括最重要发布
-2. 各来源内容精选 - 按来源和分类整理
-3. 跨来源战略信号解读
-4. 值得关注的细节
-
-让我分析抓取的内容：
-
-**Anthropic (Claude) - 2篇新内容：**
-1. "Claude for Creative Work" (2026-04-28) - 宣布与Adobe、Blender、Autodesk、Ableton、Splice等合作，推出创意工具连接器
-2. "An update on our election safeguards" (2026-04-24) - 更新选举安全措施，强调政治中立性
-
-**OpenAI - 69篇新内容，但大部分内容提取失败（"无法提取文本内容"）：**
-从标题可以识别的重要发布：
-1. Sora 2 - 多个页面（2026-04-29）- 重大发布
-2. Sora 2 System Card (2026-04-29)
-3. Creating With Sora Safely (2026-04-29)
-4. Sora Feed Philosophy (2026-04-29)
-5. Sora Is Here (2026-04-29)
-6. Shipping Sora For Android With Codex (2026-04-29)
-7. GPT-5.5 System Card (2026-04-28)
-
-
-8. GPT-5.4 (2026-04-28)
-9. Open Source Codex Orchestration Symphony (2026-04-28)
-10. ChatGPT for Teachers (2026-04-28)
-11. ChatGPT for Excel (2026-04-28)
-12. The State of Enterprise AI 2025 Report (2026-04-28)
-13. Next Phase Of Microsoft Partnership (2026-04-29)
-14. OpenAI on AWS (2026-04-29)
-
-OpenAI在4月28-29日密集发布了多个重要产品，包括Sora 2视频生成模型、GPT-5.4和5.5版本、Codex编排工具，以及面向教育和企业市场的ChatGPT应用。同时深化了与微软和AWS的合作关系。
-
-Anthropic则专注于创意工作流集成和选举安全防护。两大AI公司都在加速产品化和生态扩展。
-</think>
-
 # 内容追踪报告
 
 **报告日期：2026-04-29**

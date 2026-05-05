@@ -15,44 +15,9 @@
 
 ## Cross-Tool Comparison
 
-<think>The user wants me to generate a cross-tool comparison report across all the AI CLI tools I've already analyzed in the individual digests. Let me synthesize the data from all seven tools:
-
-1. Claude Code (anthropics/claude-code)
-2. OpenAI Codex (openai/codex)
-3. Gemini CLI (google-gemini/gemini-cli)
-4. GitHub Copilot CLI (github/copilot-cli)
-5. Kimi Code CLI (MoonshotAI/kimi-cli)
-6. OpenCode (anomalyco/opencode)
-7. Qwen Code (QwenLM/qwen-code)
-8. Pi (badlogic/pi-mono)
-
-Let me compile the key metrics and insights:
-
-**Activity Comparison:**
-- Claude Code: 50 issues, 50 PRs, 1 release (v2.1.126)
-- OpenAI Codex: 50 issues, 50 PRs, 3 releases (v0.128.0, v0.129.0-alpha.1, v0.128.0-alpha.1)
-- Gemini CLI: 50 issues, 50 PRs, 2 releases (v0.40.1, v0.41.0-preview.1)
-- GitHub Copilot CLI: 41 issues, 1 PR, 3 releases (v1.0.40-1/2/3)
-- Kimi Code CLI: 7 issues, 13 PRs, 1 release (v1.41.0)
-- OpenCode: 50 issues, 50 PRs, no releases
-- Qwen Code: 28 issues, 39 PRs, 3 releases (v0.15.6-nightly, v0.15.6, v0.15.6-preview.0)
-- Pi: 50 issues, 50 PRs, 1 release (v0.71.0)
-
-**Shared Feature Directions:**
-
-
-All tools are converging on several key capabilities: multi-model support with dynamic switching, granular tool permissions and auto-approval controls, session persistence and memory management, and enhanced terminal compatibility across platforms. There's also a push toward MCP integration and improved UX through undo functionality and visual feedback mechanisms.
-
-**Differentiation:**
-Claude Code emphasizes billing transparency and gateway model discovery, while OpenAI Codex prioritizes goal workflows and multi-environment support. Gemini CLI focuses on agent reliability and memory routing, whereas GitHub Copilot CLI centers on OAuth authentication for MCP servers. Kimi Code CLI is building out ACP protocol support, OpenCode is refactoring instance context, and Qwen Code is developing file read caching alongside SubAgent display improvements. Pi differentiates through Cloudflare AI Gateway integration and syntax highlighting capabilities.
-
-**Community Momentum:**
-Claude Code, OpenAI Codex, and Gemini CLI maintain the largest and most active communities with substantial engagement. OpenCode shows strong contributor participation, while Qwen Code and Pi maintain moderate momentum. Kimi Code CLI has lower activity but steady progress, and GitHub Copilot CLI has limited community visibility despite its Microsoft backing.
-</think>
-
 # AI CLI Tools Ecosystem: Cross-Tool Comparison Report
 
-**Date:** 2026-05-01  
+**Date:** 2026-05-01
 **Scope:** Claude Code, OpenAI Codex, Gemini CLI, GitHub Copilot CLI, Kimi Code CLI, OpenCode, Qwen Code, Pi
 
 ---
@@ -298,33 +263,6 @@ The AI CLI tools ecosystem is in a **high-velocity maturation phase** with all m
 <details>
 <summary><strong>Claude Code</strong> — <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></summary>
 
-<think>The user wants me to generate a structured digest for Claude Code community based on the provided GitHub data. Let me analyze the data and create a well-organized digest following the specified sections.
-
-Let me organize the key information:
-
-**Releases:**
-- v2.1.126 - Model picker now lists models from gateway's /v1/models endpoint, added `claude project purge [path]` command
-
-**Hot Issues (top by comments):**
-1. #53262 - HERMES.md in git commits causing billing issues (81 comments, 177 👍) - CLOSED
-2. #41581 - Max subscription downgraded to Free plan (35 comments)
-3. #6481 - CLI Window Resize issues on Windows (23 comments)
-4. #3473 - Feature request: change working directory (23 comments)
-5. #16550 - Feature request: Allow Claude to Write/Update Project Files (21 comments)
-6. #55053 - Session window depletes faster since Apr 29 (19 comments)
-7. #50466 - SIGILL crash on Ivy Bridge Intel Macs (14 comments) - CLOSED
-8. #24285 - Can't see Claude's thinking (7 comments)
-9. #54200 - Memory leak since v2.1.118 (5 comments)
-10. #44297 - Desktop app blocks sessions with "Git is required" (5 comments)
-
-**Pull Requests:**
-1. #55098 - Statusline script with context window and rate limit bars
-2. #19871 - Fix ipset duplicate entry error in devcontainer
-3. #54873 - Fix hookify YAML parser and new_text field
-
-Let me create the digest now.
-</think>
-
 # Claude Code Community Digest — 2026-05-01
 
 ## Today's Highlights
@@ -467,61 +405,9 @@ Analysis of open issues reveals these dominant feature directions:
 <details>
 <summary><strong>OpenAI Codex</strong> — <a href="https://github.com/openai/codex">openai/codex</a></summary>
 
-<think>Let me analyze the GitHub data and create a structured digest for the OpenAI Codex community.
-
-Key data points:
-1. Latest Releases: rust-v0.128.0, rust-v0.129.0-alpha.1, rust-v0.128.0-alpha.1
-2. Issues: 50 total, showing top 30 by comment count
-3. Pull Requests: 50 total, showing top 20 by comment count
-
-Let me organize this into the required sections:
-
-**Today's Highlights:**
-- Major release v0.128.0 with persisted /goal workflows
-- Multiple Windows-specific issues (browser-use, performance, freezes)
-- Rate limit and context compaction issues with GPT-5.5
-- Multi-environment support PRs
-
-**Releases:**
-- v0.128.0: Major features including /goal workflows, app-server APIs, model tools, runtime continuation, TUI controls
-- v0.129.0-alpha.1 and v0.128.0-alpha.1: Alpha releases
-
-**Hot Issues (10):**
-1. #18258 - macOS Computer Use plugin unavailable (32 comments, 36 👍)
-2. #9203 - /undo feature request (31 comments, 168 👍)
-3. #19585 - Pro weekly usage limit depletes fast on 5.5 (23 comments, 9 👍)
-4. #18341 - Mac app blurred overlay on Intel Mac (23 comments, 9 👍)
-5. #20161 - Codex need phone number (13 comments, 6 👍)
-6. #11014 - Scrolling breaks over SSH with iOS client (13 comments, 2 👍)
-7. #4218 - Shift+Enter regression (13 comments, 13 👍)
-8. #3941 - Environment setup hanging (12 comments, 0 👍)
-
-
-9. #18450 - Remote compact task stream disconnected (10 comments, 6 👍)
-10. #19601 - False positive cybersecurity flag (8 comments, 3 👍)
-
-**Key PR Progress (10):**
-1. #20281 - Selected turn environments for runtime context
-2. #20520 - Persist selected environments in turn context replay
-3. #20314 - Gate multi-environment process tool model surface
-4. #20530 - Support multi-env filesystem tools
-5. #20488 - Add Computer Use requirements
-6. #19431 - Route opted-in MCP elicitations through Guardian
-7. #20300 - Centralize thread analytics state
-8. #20514 - Add core item timing production
-9. #20265 - Key remote plugin cache by account
-10. #20150 - Add remote plugin skill read API
-
-**Feature Request Trends:**
-The community is pushing for undo functionality, dynamic reasoning adjustments mid-session, session lifecycle hooks, and improved account management. There's also demand for better documentation around /goal commands and multi-environment support.
-
-**Developer Pain Points:**
-Windows platform issues are dominating—browser-use conflicts with security tools, performance bottlenecks, and access restrictions on bundled executables. macOS has its own set of problems including plugin availability and UI rendering glitches. Rate limiting and context compaction are creating friction with GPT-5.5, while SSH and terminal scrolling remain unreliable. Auth edge cases and VS Code extension stability issues round out the complaints.
-</think>
-
 # OpenAI Codex Community Digest
 
-**Date:** 2026-05-01  
+**Date:** 2026-05-01
 **Source:** github.com/openai/codex
 
 ---
@@ -610,16 +496,6 @@ The v0.128.0 release introduces **persisted `/goal` workflows** with full app-se
 
 <details>
 <summary><strong>Gemini CLI</strong> — <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></summary>
-
-<think>Let me analyze the GitHub data for the Gemini CLI repository and create a structured digest for 2026-05-01.
-
-Key observations:
-1. **Releases**: Two new releases - v0.41.0-preview.1 and v0.40.1, both patch releases with cherry-picked fixes
-2. **Issues**: 50 total issues, many marked as maintainer-only or workstream-rollup
-3. **PRs**: 50 total PRs, with several new ones today
-
-Let me structure this into the requested format.
-</think>
 
 # Gemini CLI Community Digest — 2026-05-01
 
@@ -710,38 +586,9 @@ Analysis of 50 recent issues reveals these dominant feature directions:
 <details>
 <summary><strong>GitHub Copilot CLI</strong> — <a href="https://github.com/github/copilot-cli">github/copilot-cli</a></summary>
 
-<think>The user wants a structured digest for GitHub Copilot CLI community for 2026-05-01. I need to analyze the provided GitHub data and generate a professional technical digest.
-
-Let me organize the data:
-
-**Releases (last 24h):**
-- v1.0.40-3: Added client_credentials OAuth for MCP servers, improved Ctrl+C handling, /research uses orchestrator/subagent
-- v1.0.40-2: Fixed /update re-submitting prompt
-- v1.0.40-1: Azure DevOps detection, session history/file tracking/chronicle available to all, Skills as slash commands in ACP
-
-**Issues (41 total, showing 30):**
-Let me pick 10 noteworthy ones based on comment count and relevance:
-
-1. #107 - Segmentation Fault on Alpine Linux (14 comments) - critical bug
-2. #1455 - Auto-inject Co-authored by Copilot (10 comments) - feature request
-3. #1973 - Tool whitelist for Interactive Mode (9 comments, 13 👍) - feature request
-4. #2769 - Weekly Rate Limit Not Resetting (9 comments) - bug
-5. #1799 - Turn off alt-screen views (8 comments) - configuration request
-6. #334 - Add shell completions (6 comments, 11 👍) - feature request
-7. #975 - Git commit attribution for AI-assisted changes (5 comments) - feature request
-8. #3028 - MCP permissions configuration (3 comments) - feature request
-9. #1322 - Show subagent tool call details (3 comments, 10 👍) - feature request
-10. #2828 - Weekly rate limiting suggestions (3 comments) - feature request
-
-**Pull Requests (1 item):**
-- #1968 - install: retry without token when authenticated requests fail
-
-Let me structure this properly with the required sections.
-</think>
-
 # GitHub Copilot CLI Community Digest
 
-**Date:** 2026-05-01  
+**Date:** 2026-05-01
 **Repository:** github.com/github/copilot-cli
 
 ---
@@ -773,53 +620,53 @@ GitHub Copilot CLI has released three rapid updates (v1.0.40-1/2/3) introducing 
 ## 3. Hot Issues
 
 ### 1. Tool Calls Cause Segmentation Fault on Alpine Linux
-**Issue #107** | 14 comments | 4 👍  
-A critical bug affecting Alpine Linux users causes segmentation faults during any tool call in interactive mode or with the `-p` flag. This blocks production use in Docker Alpine containers.  
+**Issue #107** | 14 comments | 4 👍
+A critical bug affecting Alpine Linux users causes segmentation faults during any tool call in interactive mode or with the `-p` flag. This blocks production use in Docker Alpine containers.
 🔗 https://github.com/github/copilot-cli/issues/107
 
 ### 2. Auto-Inject Co-authored by Copilot for Commits
-**Issue #1455** | 10 comments | 2 👍  
-Feature request to automatically add "Co-authored by Copilot" attribution to commits, similar to Claude's implementation. Users currently rely on commit hooks for this functionality.  
+**Issue #1455** | 10 comments | 2 👍
+Feature request to automatically add "Co-authored by Copilot" attribution to commits, similar to Claude's implementation. Users currently rely on commit hooks for this functionality.
 🔗 https://github.com/github/copilot-cli/issues/1455
 
 ### 3. Tool Whitelist for Interactive Mode
-**Issue #1973** | 9 comments | 13 👍  
-Users request granular permission control to auto-approve safe read-only operations (grep, cat, find, git log) without enabling destructive tools. Currently, only `/allow-all` or manual approval per tool exists.  
+**Issue #1973** | 9 comments | 13 👍
+Users request granular permission control to auto-approve safe read-only operations (grep, cat, find, git log) without enabling destructive tools. Currently, only `/allow-all` or manual approval per tool exists.
 🔗 https://github.com/github/copilot-cli/issues/1973
 
 ### 4. Weekly Rate Limit Not Resetting (Copilot Pro+)
-**Issue #2769** | 9 comments | 3 👍  
-Pro+ subscribers report rate limits not resetting at expected times, causing service interruptions.  
+**Issue #2769** | 9 comments | 3 👍
+Pro+ subscribers report rate limits not resetting at expected times, causing service interruptions.
 🔗 https://github.com/github/copilot-cli/issues/2769
 
 ### 5. Turn Off Alt-Screen Views
-**Issue #1799** | 8 comments | 4 👍  
-Recent alt-screen implementation causing issues for multiple users; request for configuration option to disable.  
+**Issue #1799** | 8 comments | 4 👍
+Recent alt-screen implementation causing issues for multiple users; request for configuration option to disable.
 🔗 https://github.com/github/copilot-cli/issues/1799
 
 ### 6. Add Shell Completions
-**Issue #334** | 6 comments | 11 👍  
-Long-standing request for `copilot completion zsh/bash/fish` command to generate shell tab completions.  
+**Issue #334** | 6 comments | 11 👍
+Long-standing request for `copilot completion zsh/bash/fish` command to generate shell tab completions.
 🔗 https://github.com/github/copilot-cli/issues/334
 
 ### 7. Git Commit Attribution for AI-Assisted Changes
-**Issue #975** | 5 comments | 3 👍  
-Request to automatically include AI attribution metadata in Git commits when code was generated or modified by Copilot.  
+**Issue #975** | 5 comments | 3 👍
+Request to automatically include AI attribution metadata in Git commits when code was generated or modified by Copilot.
 🔗 https://github.com/github/copilot-cli/issues/975
 
 ### 8. MCP Permissions Configuration
-**Issue #3028** | 3 comments | 1 👍  
-Feature request for configuration allowance to control which tools from MCP servers can be used, similar to trustedFolders configuration.  
+**Issue #3028** | 3 comments | 1 👍
+Feature request for configuration allowance to control which tools from MCP servers can be used, similar to trustedFolders configuration.
 🔗 https://github.com/github/copilot-cli/issues/3028
 
 ### 9. Show Subagent Tool Call Details
-**Issue #1322** | 3 comments | 10 👍  
-Request for visibility into subagent tool calls during execution, matching VS Code Copilot Chat's drill-down capability.  
+**Issue #1322** | 3 comments | 10 👍
+Request for visibility into subagent tool calls during execution, matching VS Code Copilot Chat's drill-down capability.
 🔗 https://github.com/github/copilot-cli/issues/1322
 
 ### 10. Weekly Rate Limiting - Include Suggestions
-**Issue #2828** | 3 comments | 3 👍  
-When rate limited, users want actionable suggestions on how to proceed rather than just reset time.  
+**Issue #2828** | 3 comments | 3 👍
+When rate limited, users want actionable suggestions on how to proceed rather than just reset time.
 🔗 https://github.com/github/copilot-cli/issues/2828
 
 ---
@@ -827,8 +674,8 @@ When rate limited, users want actionable suggestions on how to proceed rather th
 ## 4. Key PR Progress
 
 ### 1. Install: Retry Without Token When Authenticated Requests Fail
-**PR #1968** | Author: @devm33  
-Adds automatic retry logic for installation: attempts download with `GITHUB_TOKEN` first, then falls back to unauthenticated request if SAML enforcement rejects the token. Resolves installation failures for org members without SSO authorization.  
+**PR #1968** | Author: @devm33
+Adds automatic retry logic for installation: attempts download with `GITHUB_TOKEN` first, then falls back to unauthenticated request if SAML enforcement rejects the token. Resolves installation failures for org members without SSO authorization.
 🔗 https://github.com/github/copilot-cli/pull/1968
 
 ---
@@ -872,7 +719,7 @@ Analysis of 41 active issues reveals the following dominant feature directions:
 
 ---
 
-*Generated from GitHub Copilot CLI community data*  
+*Generated from GitHub Copilot CLI community data*
 *Next digest will be available 2026-05-02*
 
 </details>
@@ -880,45 +727,9 @@ Analysis of 41 active issues reveals the following dominant feature directions:
 <details>
 <summary><strong>Kimi Code CLI</strong> — <a href="https://github.com/MoonshotAI/kimi-cli">MoonshotAI/kimi-cli</a></summary>
 
-<think>Let me analyze the GitHub data and create a structured digest for the Kimi Code CLI community.
-
-First, let me organize the data:
-
-**Latest Releases:**
-- 1.41.0 released with fixes for clipboard paste on headless Linux over SSH and plugin installation from .zip URLs
-
-**Latest Issues (7 total):**
-1. #1283 - Memory System feature request (persistent context across sessions)
-2. #1617 - Ctrl-V cannot paste pictures in Windows Terminal
-3. #2131 - kimi-cli pollutes session environment variables causing Kimi desktop crash
-4. #2127 - ACP protocol session/list, session/get not implemented (Zed integration broken)
-5. #1994 - Usage calculation problem (token consumption issues)
-6. #2122 - Shell mode should use user's default shell instead of /bin/sh
-7. #2121 - Shift+Enter for line breaks support
-
-**Latest Pull Requests (13 total):**
-1. #2136 - fix(shell): reduce hidden modal input latency
-2. #2135 - fix(shell): throttle toolbar git metadata
-3. #2134 - fix(shell): ignore xterm focus events
-4. #2133 - fix(agent): include AGENTS.md for custom prompts
-5. #2132 - fix(acp): replay session history on load
-6. #2114 - feat(config): Add Granular Auto-Approval Rules
-7. #884 - chore(deps-dev): bump ruff from 0.14.14 to 0.15.0
-8. #2130 - chore(release): bump kimi-cli to 1.41.0 (CLOSED)
-9. #2129 - fix(plan): respect KIMI_SHARE_DIR for plan files
-10. #2064 - fix(plan): respect KIMI_SHARE_DIR for plan files (CLOSED)
-
-
-11. #1972 - feat(shell): visual context progress bar with color coding
-12. #2126 - fix(plugin): support installing from .zip URL (CLOSED)
-13. #2115 - fix(clipboard): enable clipboard paste on headless Linux over SSH (CLOSED)
-
-Now I'll structure this into a professional digest with the required sections.
-</think>
-
 # Kimi Code CLI Community Digest
 
-**Date:** 2026-05-01  
+**Date:** 2026-05-01
 **Source:** github.com/MoonshotAI/kimi-cli
 
 ---
@@ -943,36 +754,36 @@ Two key fixes included in this release:
 
 ### 🔴 Critical / High Priority
 
-**1. [#2131](https://github.com/MoonshotAI/kimi-cli/issues/2131) - Environment Variable Pollution Causing Desktop App Crash**  
-*Author: @vmware001 | 1 comment*  
+**1. [#2131](https://github.com/MoonshotAI/kimi-cli/issues/2131) - Environment Variable Pollution Causing Desktop App Crash**
+*Author: @vmware001 | 1 comment*
 Kimi Code CLI v1.40.0 pollutes session environment variables, causing the Kimi desktop application to crash immediately on startup. This is a blocking issue for users who run both CLI and desktop versions.
 
-**2. [#2127](https://github.com/MoonshotAI/kimi-cli/issues/2127) - ACP Protocol Session Methods Not Implemented**  
-*Author: @zhaoxu-233 | 0 comments*  
+**2. [#2127](https://github.com/MoonshotAI/kimi-cli/issues/2127) - ACP Protocol Session Methods Not Implemented**
+*Author: @zhaoxu-233 | 0 comments*
 The `session/list` and `session/get` methods of the ACP protocol are missing, preventing Zed editor from loading conversation history. This breaks the Zed integration workflow.
 
-**3. [#1617](https://github.com/MoonshotAI/kimi-cli/issues/1617) - Ctrl-V Cannot Paste Pictures in Windows Terminal**  
-*Author: @zhatlas | 3 comments*  
+**3. [#1617](https://github.com/MoonshotAI/kimi-cli/issues/1617) - Ctrl-V Cannot Paste Pictures in Windows Terminal**
+*Author: @zhatlas | 3 comments*
 Image paste functionality via Ctrl-V is broken in Windows Terminal, affecting users on the Allegretto subscription using `kimi-for-coding`.
 
 ### 🟡 Feature Requests / Enhancements
 
-**4. [#1283](https://github.com/MoonshotAI/kimi-cli/issues/1283) - Memory System: Persistent Context Across Sessions**  
-*Author: @CatKang | 5 comments*  
+**4. [#1283](https://github.com/MoonshotAI/kimi-cli/issues/1283) - Memory System: Persistent Context Across Sessions**
+*Author: @CatKang | 5 comments*
 Major feature request for a comprehensive memory system that remembers project patterns, user preferences, and context across sessions. Includes both AI-managed automatic memory and user-defined manual instructions.
 
-**5. [#2121](https://github.com/MoonshotAI/kimi-cli/issues/2121) - Shift+Enter for Line Breaks**  
-*Author: @beykery | 0 comments*  
+**5. [#2121](https://github.com/MoonshotAI/kimi-cli/issues/2121) - Shift+Enter for Line Breaks**
+*Author: @beykery | 0 comments*
 Users request Shift+Enter support for line breaks instead of Ctrl+J, aligning with other CLI tools' conventions.
 
-**6. [#2122](https://github.com/MoonshotAI/kimi-cli/issues/2122) - Shell Mode Should Use User's Default Shell**  
-*Author: @scottli139 | 0 comments*  
+**6. [#2122](https://github.com/MoonshotAI/kimi-cli/issues/2122) - Shell Mode Should Use User's Default Shell**
+*Author: @scottli139 | 0 comments*
 Currently, Shell mode (Ctrl+X) executes commands via fixed `/bin/sh` instead of the user's default shell (zsh/fish), breaking aliases and functions.
 
 ### 🟢 Bug Reports / Usability
 
-**7. [#1994](https://github.com/MoonshotAI/kimi-cli/issues/1994) - Usage Calculation Problem**  
-*Author: @wanghonghust | 0 comments | 👍: 4*  
+**7. [#1994](https://github.com/MoonshotAI/kimi-cli/issues/1994) - Usage Calculation Problem**
+*Author: @wanghonghust | 0 comments | 👍: 4*
 Token consumption is unexpectedly high due to K2.6's extended chain-of-thought output, exhausting subscription quotas quickly. Users report 2 tasks consuming 2 hours of quota.
 
 **8. [#1283](https://github.com/MoonshotAI/kimi-cli/issues/1283) - (Already listed above)**
@@ -992,40 +803,40 @@ Token consumption is unexpectedly high due to K2.6's extended chain-of-thought o
 
 ### Open PRs Under Review
 
-**1. [#2136](https://github.com/MoonshotAI/kimi-cli/pull/2136) - fix(shell): reduce hidden modal input latency**  
-*Author: @bugkeep*  
+**1. [#2136](https://github.com/MoonshotAI/kimi-cli/pull/2136) - fix(shell): reduce hidden modal input latency**
+*Author: @bugkeep*
 Optimizes completion startup and refresh intervals for hidden modal inputs, improving UI responsiveness.
 
-**2. [#2135](https://github.com/MoonshotAI/kimi-cli/pull/2135) - fix(shell): throttle toolbar git metadata**  
-*Author: @bugkeep*  
+**2. [#2135](https://github.com/MoonshotAI/kimi-cli/pull/2135) - fix(shell): throttle toolbar git metadata**
+*Author: @bugkeep*
 Caches git branch/status metadata per session to prevent subprocess polling on every keystroke.
 
-**3. [#2134](https://github.com/MoonshotAI/kimi-cli/pull/2134) - fix(shell): ignore xterm focus events**  
-*Author: @bugkeep*  
+**3. [#2134](https://github.com/MoonshotAI/kimi-cli/pull/2134) - fix(shell): ignore xterm focus events**
+*Author: @bugkeep*
 Registers xterm focus events as ignored keys to prevent focus reports from leaking into input.
 
-**4. [#2133](https://github.com/MoonshotAI/kimi-cli/pull/2133) - fix(agent): include AGENTS.md for custom prompts**  
-*Author: @bugkeep*  
+**4. [#2133](https://github.com/MoonshotAI/kimi-cli/pull/2133) - fix(agent): include AGENTS.md for custom prompts**
+*Author: @bugkeep*
 Ensures custom agent prompts receive merged AGENTS.md instructions without duplication.
 
-**5. [#2132](https://github.com/MoonshotAI/kimi-cli/pull/2132) - fix(acp): replay session history on load**  
-*Author: @bugkeep*  
+**5. [#2132](https://github.com/MoonshotAI/kimi-cli/pull/2132) - fix(acp): replay session history on load**
+*Author: @bugkeep*
 Persists wire history for ACP runs and replays user/assistant/thought/tool updates during session load—directly addresses issue #2127.
 
-**6. [#2114](https://github.com/MoonshotAI/kimi-cli/pull/2114) - feat(config): Add Granular Auto-Approval Rules**  
-*Author: @suJayhh*  
+**6. [#2114](https://github.com/MoonshotAI/kimi-cli/pull/2114) - feat(config): Add Granular Auto-Approval Rules**
+*Author: @suJayhh*
 Adds Claude Code-style granular auto-approval rules to `config.toml`, allowing users to configure approval behavior per operation type.
 
-**7. [#2129](https://github.com/MoonshotAI/kimi-cli/pull/2129) - fix(plan): respect KIMI_SHARE_DIR for plan files**  
-*Author: @XYenon*  
+**7. [#2129](https://github.com/MoonshotAI/kimi-cli/pull/2129) - fix(plan): respect KIMI_SHARE_DIR for plan files**
+*Author: @XYenon*
 Resolves plan files under configured share directory instead of hardcoded `~/.kimi/plans`.
 
-**8. [#1972](https://github.com/MoonshotAI/kimi-cli/pull/1972) - feat(shell): visual context progress bar with color coding**  
-*Author: @xiaoye5200*  
+**8. [#1972](https://github.com/MoonshotAI/kimi-cli/pull/1972) - feat(shell): visual context progress bar with color coding**
+*Author: @xiaoye5200*
 Replaces plain-text context indicator with a color-coded Unicode block progress bar for better visual feedback.
 
-**9. [#884](https://github.com/MoonshotAI/kimi-cli/pull/884) - chore(deps-dev): bump ruff from 0.14.14 to 0.15.0**  
-*Author: @dependabot[bot]*  
+**9. [#884](https://github.com/MoonshotAI/kimi-cli/pull/884) - chore(deps-dev): bump ruff from 0.14.14 to 0.15.0**
+*Author: @dependabot[bot]*
 Dependency update for the linting tool.
 
 ---
@@ -1048,19 +859,19 @@ Analysis of open issues reveals these dominant feature directions:
 
 ### Recurring Frustrations
 
-1. **Environment Pollution**  
+1. **Environment Pollution**
    CLI modifies session environment variables, causing conflicts with other applications (desktop client crash).
 
-2. **Broken Integrations**  
+2. **Broken Integrations**
    ACP protocol gaps prevent proper Zed editor integration for session history.
 
-3. **Token Quota Confusion**  
+3. **Token Quota Confusion**
    K2.6's extended chain-of-thought consumes tokens faster than users expect, leading to rapid quota exhaustion.
 
-4. **Shell Mode Limitations**  
+4. **Shell Mode Limitations**
    Forced `/bin/sh` execution breaks zsh/fish workflows with aliases and functions.
 
-5. **Cross-Platform Clipboard Issues**  
+5. **Cross-Platform Clipboard Issues**
    Inconsistent clipboard behavior across Windows Terminal, headless Linux, and SSH environments.
 
 ---
@@ -1071,56 +882,6 @@ Analysis of open issues reveals these dominant feature directions:
 
 <details>
 <summary><strong>OpenCode</strong> — <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></summary>
-
-<think>Let me analyze the GitHub data for the OpenCode community digest for 2026-05-01.
-
-**Today's Highlights:**
-- No new releases in the last 24h
-- Memory issues megathread is the most active issue (70 comments)
-- Multiple DeepSeek V4 thinking mode bugs being reported
-- Several PRs from contributor @kitlangton refactoring instance context
-- AWS Bedrock integration issues being addressed
-
-**Hot Issues to highlight (10):**
-1. #20695 - Memory Megathread (70 comments) - Major performance concern
-2. #25148 - BYOK request cap exceeded bug (16 comments)
-3. #24648 - AWS Bedrock problem with dual models (8 comments)
-4. #24751 - GPT 5.5 context limits not respected (8 comments)
-5. #20261 - Colors render incorrectly after editor mode (7 comments)
-6. #11391 - Google Stitch MCP integration question (7 comments)
-7. #24803 - DeepSeek V4 thinking mode multi-turn bug (6 comments)
-8. #23566 - LSP docs suggest enabled by default (6 comments)
-9. #6273 - Vue syntax highlighting not working (6 comments)
-10. #23464 - Opus 4.7 tool call failures (5 comments)
-
-**Key PRs to highlight (10):**
-1. #25207 - refactor(session): yield instance context in system prompt
-2. #25205 - refactor(file): yield instance context in watcher
-3. #25206 - refactor(sync): capture instance context for publish
-4. #25204 - refactor(project): yield instance context in bootstrap
-5. #25203 - test(effect): stabilize runner active shell check
-6. #25200 - refactor(session): yield instance context in llm
-
-
-7. #25114 - fix(desktop): Prevent Model response Interruption when opening settings dialog
-8. #25201 - Pass CORS options to HttpApi backend
-9. #13854 - fix(tui): stop streaming markdown/code after message completes
-10. #25198 - fix: fix AI refusing to commit
-
-**Feature Request Trends:**
-- Better terminal/bash management
-- Mobile touch optimization
-- Configurable content area width
-- Disable default providers list
-- Markdown preview toggle
-
-**Developer Pain Points:**
-- Memory issues (megathread with 70 comments)
-- DeepSeek V4 thinking mode bugs
-- AWS Bedrock integration issues
-- BYOK request cap issues
-- LSP configuration confusion
-</think>
 
 # OpenCode Community Digest — 2026-05-01
 
@@ -1211,57 +972,6 @@ The OpenCode community is actively addressing critical memory performance concer
 
 <details>
 <summary><strong>Qwen Code</strong> — <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></summary>
-
-<think>The user wants me to generate a Qwen Code community digest for 2026-05-01 based on the provided GitHub data. I need to create a structured English digest with specific sections:
-
-1. Today's Highlights - 2-3 sentences summarizing the most important updates
-2. Releases - Summarize changes if new versions exist
-3. Hot Issues - Pick 10 noteworthy Issues with explanations
-4. Key PR Progress - Pick 10 important PRs with descriptions
-5. Feature Request Trends - Distill most-requested feature directions
-6. Developer Pain Points - Summarize recurring frustrations
-
-Let me analyze the data:
-
-**Releases (last 24h):**
-- v0.15.6-nightly.20260501.8b6b0d64f - includes FileReadCache, proxy fix
-- v0.15.6 - includes memory transcript fix, SubAgent display fix
-- v0.15.6-preview.0 - same as v0.15.6
-
-**Issues (28 total, showing many):**
-Key issues to highlight:
-1. #3652 - Internal error 400 with input length (P1)
-2. #3000 - Memory Diagnostics feature request (P3)
-3. #3738 - Download connection failure
-4. #3185 - Windows /quit command hangs with ansiRegex3 error
-5. #3730 - Qwen code automatically stops task (P1)
-6. #3678 - Light theme for /export HTML (feature request)
-7. #3426 - VSCode Plugin context settings not honored
-8. #3759 - Auto-memory recall blocks every user turn for 5s
-9. #3765 - Side queries use main model's settings instead of fast model
-10. #3772 - DeepSeek v4 pro API error 400
-
-**PRs (39 total, showing 20):**
-Key PRs to highlight:
-
-
-1. #3779 - Telemetry OTLP endpoint behavior
-2. #3190 - /chat file commands for session management
-3. #3631 - Model cost estimation
-4. #3684 - Event monitor tool with throttled streaming
-5. #3774 - Enforce prior read before Edit/WriteFile
-6. #3778 - Desktop app package
-7. #3769 - Isolate fast model side queries
-8. #3762 - VSCode message edit/rewind
-9. #3754 - Review pipeline expansion
-10. #3749 - Fix double-wrapping API errors in non-interactive mode
-
-I'm noticing several critical issues emerging around memory management, task interruption, and model configuration. The auto-memory recall blocking and fast model side queries suggest underlying performance and configuration challenges that need addressing. The desktop app and VSCode enhancements indicate a push towards more comprehensive IDE integration and user experience improvements.
-
-The feature requests reveal a strong community desire for more granular control, better session management, and enhanced diagnostic capabilities. Key themes include performance optimization, user interface refinements, and more flexible model interactions.
-
-Developers are experiencing significant friction with memory handling, session persistence, and configuration reliability. The recurring issues around auto-memory recall, session state management, and model-specific settings highlight critical areas needing immediate attention.
-</think>
 
 # Qwen Code Community Digest — 2026-05-01
 
@@ -1384,44 +1094,6 @@ Analysis of open issues reveals these dominant feature directions:
 
 <details>
 <summary><strong>Pi</strong> — <a href="https://github.com/badlogic/pi-mono">badlogic/pi-mono</a></summary>
-
-<think>The user wants me to generate a Pi community digest for 2026-05-01 based on the provided GitHub data. Let me analyze the data and create a structured digest with the requested sections.
-
-Let me organize the information:
-
-**Releases:**
-- v0.71.0 released with breaking changes (removed Google Gemini CLI and Google Antigravity support) and new Cloudflare AI Gateway provider support
-
-**Latest Issues (top 10 by comment count):**
-1. #3942 - pi update --self fails with npm --prefix (7 comments) - OPEN
-2. #3959 - Error with Mistral (7 comments) - CLOSED
-3. #3462 - Support for auto-refreshing Bedrock bearer tokens (7 comments) - CLOSED
-4. #3941 - pi.dev package copy button not working on Firefox (7 comments) - CLOSED
-5. #4035 - Restrict Auth Credentials access from context (6 comments) - CLOSED
-6. #2469 - Clipboard image paste to WSL silently fails (5 comments) - CLOSED
-7. #2717 - Make context-file discovery configurable (5 comments) - CLOSED
-8. #3575 - Anthropic-compatible proxy regression (5 comments) - CLOSED
-9. #3828 - Qwen3.5 and Qwen3.6 models from OpenCode Go provider don't work (5 comments) - CLOSED
-10. #4026 - openai-codex-responses default verbosity regression (4 comments) - CLOSED
-
-**Key PRs (top 10):**
-1. #4040 - fix(openai-completions): honor compat.supportsTools=false - CLOSED
-2. #4039 - fix: regenerate package-lock.json - CLOSED
-3. #4037 - fix: handle shift+enter in legacy terminals - CLOSED
-
-
-4. #3678 - fix(ai): honor Fireworks Anthropic tool compat - CLOSED
-5. #3832 - Remove Qwen CLI OAuth provider extension - CLOSED
-6. #3856 - feat(ai): add Cloudflare AI Gateway as a provider - CLOSED
-7. #4028 - fix(coding-agent): preserve .agents provenance in skill metadata - OPEN
-8. #4013 - fix(coding-agent): remove detached: true on Windows - CLOSED
-9. #4025 - feat(coding-agent): support auth json env - CLOSED
-10. #4024 - feat(coding-agent): support session dir env - CLOSED
-
-The PRs show active maintenance across multiple areas: compatibility fixes for OpenAI and Fireworks, terminal handling improvements, provider additions like Cloudflare AI Gateway, and several coding agent enhancements including session management and Windows-specific fixes. There's also cleanup work removing deprecated Qwen CLI OAuth support.
-
-Additional work includes migrating syntax highlighting to Shiki, adding Xiaomi MiMo as a provider, updating model IDs in tests, fixing path display issues, correcting edit access failure reporting, handling duplicate session entries, and reworking Bun package manager integration. New features are being added like Mistral Medium 3.5 support and local-LLM provider extensions, with some dependency updates as well.
-</think>
 
 # Pi Community Digest — 2026-05-01
 

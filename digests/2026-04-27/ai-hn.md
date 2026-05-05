@@ -4,59 +4,6 @@
 
 ---
 
-<think>Let me analyze the Hacker News AI community dynamics for 2026-04-27 based on the provided data.
-
-Let me organize the information:
-
-**Top posts by score:**
-1. SWE-bench Verified no longer measures frontier coding capabilities - 249 pts, 141 comments
-2. AI memory with biological decay - 59 pts, 30 comments
-3. Google banks on AI edge - 55 pts, 16 comments
-4. Tiao board game - 31 pts, 7 comments
-5. SpaceX AI burning cash - 18 pts, 0 comments
-6. Neal Stephenson video - 16 pts, 3 comments
-7. Startup Equity Adventure Game - 14 pts, 7 comments
-8. How OpenAI Kills Oracle - 11 pts, 2 comments
-9. Linux Kernel AI Bot - 10 pts, 1 comment
-10. DSS spreadsheet editor - 7 pts, 0 comments
-
-Let me categorize:
-
-**模型与研究:**
-- SWE-bench Verified no longer measures frontier coding capabilities (249 pts, 141 comments) - OpenAI's analysis of SWE-bench
-- Linux Kernel AI Bot (10 pts) - Clanker T1000 AMD Ryzen AI Max
-
-
-- DeepSeek drops input cache price (6 pts)
-- New text generator built by OpenAI considered too dangerous to release (2019) (4 pts)
-
-**工具与工程:**
-- AI memory with biological decay (59 pts, 30 comments) - YourMemory
-- Tiao board game (31 pts, 7 comments)
-- DSS spreadsheet editor (7 pts)
-- 8v CLI for AI agent (7 pts)
-- Claude Code listen before it codes (5 pts)
-- Semble code search (5 pts)
-- Lambda ERP (5 pts)
-- GPT Image Generation Models Prompting Guide (3 pts)
-
-**产业动态:**
-- Google banks on AI edge (55 pts, 16 comments)
-- SpaceX AI burning cash (18 pts)
-- Elon Musk's xAI discussed partnership with Mistral (4 pts)
-- Elon Musk's legal battle with OpenAI (4 pts)
-- The reporters at this news site are AI bots (6 pts)
-- CIOs struggle to find clarity in their organizations' AI strategies (5 pts)
-
-**观点与争议:**
-- Neal Stephenson: The Real Threat Isn't AI, It's Us (16 pts, 3 comments)
-- How OpenAI Kills Oracle (11 pts, 2 comments)
-- Ask HN: Has Claude Opus 4.7 nerfed? (4 pts, 7 comments)
-- Startup Equity Adventure Game (14 pts, 7 comments)
-
-Now I'm ready to synthesize these into a structured analysis.
-</think>
-
 # Hacker News AI 社区动态日报
 
 **2026 年 4 月 27 日**
