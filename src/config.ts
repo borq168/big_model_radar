@@ -1,7 +1,7 @@
 /**
  * Loads and validates Big Model Radar configuration from config.yml.
- * Supports both the legacy schema and the new `tracks[]` schema.
- * Falls back to built-in defaults if the file is missing or a section is absent.
+ * The runtime only accepts the `tracks[]` schema.
+ * Falls back to built-in defaults only when the config file itself is missing.
  */
 
 import fs from "node:fs";
@@ -21,10 +21,6 @@ interface RawRepoEntry {
 }
 
 interface RawConfig {
-  cli_repos?: RawRepoEntry[];
-  skills_repo?: string;
-  openclaw?: RawRepoEntry;
-  openclaw_peers?: RawRepoEntry[];
   tracks?: RawTrack[];
 }
 
@@ -153,7 +149,7 @@ export interface RadarConfig {
 }
 
 // ---------------------------------------------------------------------------
-// Defaults (mirrors the original hard-coded values)
+// Defaults used only when config.yml is absent
 // ---------------------------------------------------------------------------
 
 const DEFAULT_CLI_REPOS: RepoConfig[] = [
@@ -464,51 +460,7 @@ function deriveContentTracks(tracks: RadarTrack[]): ContentGroupTrack[] {
   return tracks.filter((track): track is ContentGroupTrack => track.kind === "content_group");
 }
 
-function buildLegacyConfig(raw: RawConfig): RadarConfig {
-  const cliRepos =
-    Array.isArray(raw?.cli_repos) && raw.cli_repos.length > 0
-      ? raw.cli_repos.map(toRepoConfig)
-      : DEFAULT_CLI_REPOS;
-
-  const skillsRepo =
-    typeof raw?.skills_repo === "string" && raw.skills_repo.trim()
-      ? raw.skills_repo.trim()
-      : DEFAULT_SKILLS_REPO;
-  const skillsRepos = [{ id: "claude-code-skills", repo: skillsRepo, name: "Claude Code Skills" }];
-
-  const openclaw = raw?.openclaw?.id && raw.openclaw.repo ? toRepoConfig(raw.openclaw) : DEFAULT_OPENCLAW;
-
-  const openclawPeers =
-    Array.isArray(raw?.openclaw_peers) && raw.openclaw_peers.length > 0
-      ? raw.openclaw_peers.map(toRepoConfig)
-      : DEFAULT_OPENCLAW_PEERS;
-
-  const tracks = buildDefaultTracks().map((track) => {
-    if (track.id === "ai-cli" && track.kind === "github_group") return { ...track, members: cliRepos };
-    if (track.id === "ai-skills" && track.kind === "github_group") {
-      return {
-        ...track,
-        members: skillsRepos,
-      };
-    }
-    if (track.id === "ai-agents" && track.kind === "github_group") {
-      return { ...track, primaryMemberId: openclaw.id, members: [openclaw, ...openclawPeers] };
-    }
-    return track;
-  });
-
-  return {
-    cliRepos,
-    skillsRepo,
-    skillsRepos,
-    openclaw,
-    openclawPeers,
-    contentTracks: deriveContentTracks(tracks),
-    tracks,
-  };
-}
-
-function buildTracksConfig(raw: RawConfig, tracks: RadarTrack[]): RadarConfig {
+function buildTracksConfig(tracks: RadarTrack[]): RadarConfig {
   const cliTrack = findGithubTrack(
     tracks,
     (track) => track.id === "ai-cli" || track.analysisProfile === "cli",
@@ -559,14 +511,19 @@ export function loadConfig(configPath = "config.yml"): RadarConfig {
   const raw = yaml.load(fs.readFileSync(resolved, "utf-8")) as RawConfig;
 
   const tracks = parseTracks(raw?.tracks);
-  const config = tracks.length > 0 ? buildTracksConfig(raw, tracks) : buildLegacyConfig(raw);
+  if (tracks.length === 0) {
+    throw new Error(
+      `[config] ${configPath} must define a non-empty tracks[] array. ` +
+        `Legacy keys (cli_repos / skills_repo / openclaw / openclaw_peers) are no longer supported.`,
+    );
+  }
 
-  const mode = tracks.length > 0 ? "tracks[]" : "legacy";
+  const config = buildTracksConfig(tracks);
 
   console.log(
     `[config] Loaded from ${configPath}: ` +
       `${config.cliRepos.length} CLI repos, ${config.openclawPeers.length} OpenClaw peers, ` +
-      `${config.tracks.length} tracks (${mode} schema)`,
+      `${config.tracks.length} tracks (tracks[] schema)`,
   );
 
   return config;

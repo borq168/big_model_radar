@@ -340,7 +340,7 @@ tracks:
 
 建议承担以下模块：
 
-- 配置加载：读取 `config.yml` 或新的统一配置文件
+- 配置加载：读取 `config.yml`
 - 组执行器：执行 `github_group` / `content_group`
 - 报告生成器：生成 Markdown
 - registry 生成器：生成 report registry JSON
@@ -442,6 +442,7 @@ docs/
 | 本地日报全链路验证（OpenAI-compatible + 抓取容错） | 进行中 | `pnpm typecheck`、`pnpm lint` 已通过；接下来以 OpenAI-compatible 路径继续做完整链路复验 |
 | `github_group` 执行器重构 | 进行中 | Skills 已独立化并接入多仓库聚合，但 CLI / OpenClaw / Skills 仍未完全抽象成统一执行器 |
 | `content_group` 执行器重构 | 已完成 | `src/web.ts` 已泛化为配置驱动执行器，支持多个 content track 与多来源抓取 |
+| legacy schema 兼容逻辑移除 | 已完成 | `src/config.ts` 现仅接受 `tracks[]`；`config.yml` 成为唯一运行时配置入口 |
 | RSS / Atom 支持 | 已完成 | 已作为 `content_group` 的 discovery 类型接入运行时 |
 | 通用内容状态文件 | 已完成 | `digests/web-state.json` 已升级为按 source-id 记录的通用状态结构，并兼容旧数据 |
 | 内容 / Trending / HN 抓取韧性加固 | 已完成 | `src/web.ts`、`src/trending.ts`、`src/hn.ts` 已为超时、AbortError、429 / 5xx 与瞬时网络错误增加有限重试与退避 |
@@ -551,7 +552,7 @@ docs/
 - 在 `src/generate-manifest.ts` 中生成 `report-registry.json` 与 `tracks.runtime.json`，并让 feed / manifest 统一走 registry。
 - 让 `index.html`、`src/notify.ts` 与 `mcp/src/index.ts` 改为消费 `report-registry.json`，移除各自维护的报告标签枚举。
 - 让 `src/rollup.ts` 改为通过 registry 的 `includeInRollups` 决定周报 / 月报输入源。
-- 在 `src/config.ts` 中加入 `tracks[]` schema 支持，并新增 `config.tracks.example.yml` 作为迁移示例。
+- 在 `src/config.ts` 中加入 `tracks[]` schema 支持，并开始将配置入口收敛到 `config.yml`。
 - 在 `src/github.ts` 中加入 GitHub API 瞬时网络错误 / 429 / 5xx 的重试退避逻辑，并让抓取层支持部分失败降级。
 - 在 `src/index.ts` 中把单仓库 / skills 抓取失败从“整次中止”改为“局部告警 + 继续生成可用报告”。
 - 已从运行时代码中移除 Copilot CLI provider、本地 session 回退逻辑及相关配置入口。
@@ -561,3 +562,10 @@ docs/
 - 在 `src/web.ts`、`src/trending.ts` 与 `src/hn.ts` 中补齐抓取超时、AbortError 与瞬时网络失败的有限重试退避，降低真实运行时的偶发网络抖动影响。
 - 建立本迭代文档。
 - 在 `README.md` 与 `README.zh.md` 中加入本文档入口。
+
+### 2026-05-05
+
+- 移除 `src/config.ts` 中对 `cli_repos` / `skills_repo` / `openclaw` / `openclaw_peers` 的 legacy schema 兼容逻辑。
+- 约定 `config.yml` 为唯一运行时配置入口；存在配置文件但缺少 `tracks[]` 时会直接报错。
+- 删除重复的 `config.tracks.example.yml`，避免与正式配置入口并存。
+- 更新 `README.md`、`README.zh.md` 中关于 legacy schema、迁移示例文件和固定 peer 数量的过时说明。

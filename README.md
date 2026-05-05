@@ -114,21 +114,14 @@ PRs and issues are fetched without a date filter and sorted by popularity (comme
 
 ### OpenClaw + AI agent ecosystem (GitHub)
 
-OpenClaw is tracked as the primary reference project. Ten peer projects in the personal AI assistant / autonomous agent space are tracked alongside it for cross-ecosystem comparison.
+OpenClaw is tracked as the primary reference project. The current default config compares it with three peer projects in the personal AI assistant / autonomous agent space.
 
-| Project | Repository | Stars |
-|---------|-----------|-------|
-| OpenClaw | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 240.5k |
-| NanoBot | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | 26.9k |
-| Zeroclaw | [zeroclaw-labs/zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) | 21.2k |
-| PicoClaw | [sipeed/picoclaw](https://github.com/sipeed/picoclaw) | 21.1k |
-| NanoClaw | [qwibitai/nanoclaw](https://github.com/qwibitai/nanoclaw) | 16.6k |
-| IronClaw | [nearai/ironclaw](https://github.com/nearai/ironclaw) | 3.9k |
-| LobsterAI | [netease-youdao/LobsterAI](https://github.com/netease-youdao/LobsterAI) | 3.0k |
-| TinyClaw | [TinyAGI/tinyclaw](https://github.com/TinyAGI/tinyclaw) | 2.8k |
-| CoPaw | [agentscope-ai/CoPaw](https://github.com/agentscope-ai/CoPaw) | 2.2k |
-| ZeptoClaw | [qhkm/zeptoclaw](https://github.com/qhkm/zeptoclaw) | 394 |
-| EasyClaw | [gaoyangz77/easyclaw](https://github.com/gaoyangz77/easyclaw) | 102 |
+| Project | Repository |
+|---------|-----------|
+| OpenClaw | [openclaw/openclaw](https://github.com/openclaw/openclaw) |
+| NanoBot | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) |
+| Zeroclaw | [zeroclaw-labs/zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) |
+| PicoClaw | [sipeed/picoclaw](https://github.com/sipeed/picoclaw) |
 
 ### GitHub AI Trending
 
@@ -147,10 +140,11 @@ Top AI stories from the last 24 hours, fetched via the [Algolia HN Search API](h
 
 ### Official web content (sitemap-based)
 
-| Organization | Site | Tracked sections |
+| Organization | Site | Discovery |
 |---|---|---|
-| Anthropic | [anthropic.com](https://www.anthropic.com) | `/news/`, `/research/`, `/engineering/`, `/learn/` |
-| OpenAI | [openai.com](https://openai.com) | research, publication, release, company, engineering, milestone, learn-guides, safety, product |
+| Anthropic | [anthropic.com](https://www.anthropic.com) | Sitemap |
+| OpenAI | [openai.com](https://openai.com) | Sitemap index template: research / publication / release / company / engineering / milestone / learn-guides / safety / product |
+| Cloudflare Blog | [blog.cloudflare.com](https://blog.cloudflare.com/) | RSS feed |
 
 New articles are detected by comparing sitemap `lastmod` timestamps against a persisted state file (`digests/web-state.json`). On the **first run**, up to 25 recent articles per site are fetched and a comprehensive overview report is generated. On subsequent runs, only new or updated URLs trigger a report; if nothing changed, the web report step is skipped entirely.
 
@@ -159,27 +153,24 @@ New articles are detected by comparing sitemap `lastmod` timestamps against a pe
 - Fetches issues, pull requests, and releases updated in the last 24 hours across all tracked repos
 - Tracks trending Claude Code Skills — sorted by community engagement, not recency
 - Generates a per-tool summary for each CLI repository and a cross-tool comparative analysis
-- Generates a deep OpenClaw project report plus a cross-ecosystem comparison against 10 peer projects
+- Generates a deep OpenClaw project report plus a cross-ecosystem comparison against the configured peer projects
 - Scrapes official Anthropic and OpenAI web content via sitemaps; detects new articles incrementally
 - Monitors GitHub Trending daily + searches 6 AI topic tags; classifies repos by dimension and extracts trend signals
 - Fetches top-30 AI stories from Hacker News (last 24h, ranked by points); generates community sentiment report
 - Publishes GitHub Issues for each report type; commits Markdown files to `digests/YYYY-MM-DD/`
 - Runs on a daily schedule via GitHub Actions; supports manual triggering
 - All tracked repositories are configurable via `config.yml` — no code changes needed
-- The loader now supports both the legacy schema and the new V2-style `tracks[]` schema
+- The runtime configuration is defined in `config.yml` using the `tracks[]` schema
 
 ## Setup
 
 ### 1. Fork this repository
 
-### 2. Customize `config.yml` (optional)
+### 2. Customize `config.yml`
 
-Edit `config.yml` in the repo root to add, remove, or replace the tracked repositories. The file is fully commented. No code changes are needed — the pipeline reads it on every run and falls back to built-in defaults if the file is absent.
+Edit `config.yml` in the repo root to add, remove, or replace tracked repositories and content sources. This file is the single runtime configuration entrypoint and must define a `tracks[]` array.
 
-The runtime currently supports **two config shapes**:
-
-- **Legacy schema** — `cli_repos`, `skills_repo`, `openclaw`, `openclaw_peers` (stable today)
-- **V2-style `tracks[]` schema** — supported by the loader and ready for staged migration; see [`config.tracks.example.yml`](./config.tracks.example.yml)
+Legacy keys such as `cli_repos`, `skills_repo`, `openclaw`, and `openclaw_peers` are no longer supported.
 
 Current `tracks[]` support boundary:
 
@@ -190,20 +181,23 @@ Current `tracks[]` support boundary:
 - supported extraction modes: `full-page`, `metadata-only`, `feed-first`
 
 ```yaml
-# Add a new CLI tool
-cli_repos:
-  - id: my-tool
-    repo: owner/my-ai-cli
-    name: My AI Tool
+# Add a new CLI tool under the ai-cli track
+tracks:
+  - id: ai-cli
+    kind: github_group
+    members:
+      - id: my-tool
+        repo: owner/my-ai-cli
+        name: My AI Tool
 
-# Add a new peer project to the OpenClaw ecosystem comparison
-openclaw_peers:
-  - id: my-agent
-    repo: owner/my-agent
-    name: My Agent
+# Add a new peer project under the ai-agents track
+  - id: ai-agents
+    kind: github_group
+    members:
+      - id: my-agent
+        repo: owner/my-agent
+        name: My Agent
 ```
-
-  If you want to start migrating to the V2 config model without replacing your current setup yet, copy [`config.tracks.example.yml`](./config.tracks.example.yml) into a branch and iterate there first.
 
 ### 3. Add Secrets and Variables
 
@@ -275,7 +269,7 @@ Files are written to `digests/YYYY-MM-DD/`:
 |------|---------|-------------------|
 | `ai-cli.md` | CLI digest — cross-tool comparison + per-tool details | `digest` |
 | `ai-skills.md` | Skills ecosystem digest — cross-repository skills highlights | `skills` |
-| `ai-agents.md` | OpenClaw deep report + cross-ecosystem comparison + 10 peer details | `openclaw` |
+| `ai-agents.md` | OpenClaw deep report + cross-ecosystem comparison + configured peer details | `openclaw` |
 | `ai-web.md` | Official web content report (only written when new content exists) | `web` |
 | `ai-trending.md` | GitHub AI trending report — repos classified by dimension + trend signals (only written when data is available) | `trending` |
 | `ai-hn.md` | Hacker News AI community digest — top stories + sentiment analysis (only written when fetch succeeds) | `hn` |
@@ -310,7 +304,7 @@ Each report is generated in both Chinese (`ai-cli.md`) and English (`ai-cli-en.m
 
 `ai-agents.md` / `ai-agents-en.md` structure:
 ```
-Issues: N | PRs: N | Projects covered: 10
+Issues: N | PRs: N | Projects covered: configured peer set
 
 ## OpenClaw Deep Dive
   Today's summary / Releases / Project progress / Community highlights /
@@ -321,16 +315,9 @@ Issues: N | PRs: N | Projects covered: 10
   Shared technical directions / Differentiation / Community maturity / Trend signals
 
 ## Peer Project Reports
-  <details> Zeroclaw   — Today's summary / Releases / Progress / ... (8 sections)
-  <details> EasyClaw   — ...
-  <details> LobsterAI  — ...
-  <details> ZeptoClaw  — ...
-  <details> NanoBot    — ...
+  <details> NanoBot    — Today's summary / Releases / Progress / ... (8 sections)
+  <details> Zeroclaw   — ...
   <details> PicoClaw   — ...
-  <details> NanoClaw   — ...
-  <details> IronClaw   — ...
-  <details> TinyClaw   — ...
-  <details> CoPaw      — ...
 ```
 
 `ai-web.md` / `ai-web-en.md` structure:
