@@ -28,7 +28,7 @@ export DIGEST_REPO=owner/repo   # omit to skip GitHub issue creation
 
 The pipeline runs in four sequential phases, each implemented as a named async function in `src/index.ts`:
 
-1. **`fetchAllData`** — all network I/O in parallel: GitHub API (issues/PRs/releases) for 17 repos, Codex Skills, Anthropic/OpenAI sitemaps, GitHub Trending HTML + Search API, Hacker News Algolia API.
+1. **`fetchAllData`** — all network I/O in parallel: GitHub API (issues/PRs/releases) for 17 repos, Codex Skills, configured content feeds/sitemaps, GitHub Trending HTML + Search API, Hacker News Algolia API.
 2. **`generateSummaries`** — per-repo LLM calls, all in parallel, rate-limited to 5 concurrent requests by a queue in `src/report.ts`.
 3. **Comparisons** — two LLM calls: cross-tool CLI comparison and OpenClaw cross-ecosystem comparison.
 4. **Save phase** — `buildCliReportContent` / `buildOpenclawReportContent` build Markdown strings; `saveContentReport` / `saveTrendingReport` / `saveHnReport` call LLM + write file + create GitHub Issue; `saveIntegratedDailyReport` then creates the reader-facing daily entrypoint from the generated reports.
@@ -78,7 +78,8 @@ Files written to `digests/YYYY-MM-DD/`:
 - The concurrency limiter (`LLM_CONCURRENCY = 5`) prevents 429s when many parallel LLM calls fire. Do not bypass it by calling the Anthropic SDK directly.
 - GitHub issue label colors are defined in `LABEL_COLORS` in `src/github.ts`. Add new labels there.
 - `sampleNote(total, sampled)` in `src/prompts.ts` formats the "(共 N 条，展示前 M 条)" note. Reuse it — do not inline the same string format.
-- Content state (`digests/web-state.json`) is committed to git on every run. It is the source of truth for which source items / URLs have been seen.
+- Content state (`digests/web-state.json`) is committed to git on every run. It is the source of truth for which source items / URLs have been seen. Feed sources normalize URL keys, so switching from sitemap URLs to RSS links does not treat only trailing-slash differences as new content.
+- OpenAI uses its official RSS feed. Anthropic does not currently expose an official RSS/Atom feed, so the default Anthropic source is a community RSS mirror that links back to original `anthropic.com` URLs.
 
 ## Web UI & RSS Feed
 

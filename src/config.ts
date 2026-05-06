@@ -32,7 +32,7 @@ interface RawTrackReport {
 }
 
 interface RawContentExtract {
-  mode?: "full-page" | "metadata-only" | "feed-first";
+  mode?: "full-page" | "metadata-only" | "feed-first" | "feed-only";
 }
 
 interface RawSitemapDiscovery {
@@ -101,7 +101,7 @@ export interface RadarTrackReport {
   includeInRollups?: boolean;
 }
 
-export type ContentExtractMode = "full-page" | "metadata-only" | "feed-first";
+export type ContentExtractMode = "full-page" | "metadata-only" | "feed-first" | "feed-only";
 
 export type ContentDiscovery =
   | { kind: "sitemap"; url: string; prefixes?: string[] }
@@ -192,31 +192,19 @@ const DEFAULT_CONTENT_SOURCES: ContentSource[] = [
     id: "anthropic",
     name: "Anthropic (Claude)",
     discovery: {
-      kind: "sitemap",
-      url: "https://www.anthropic.com/sitemap.xml",
-      prefixes: ["/news/", "/research/", "/engineering/", "/learn/"],
+      kind: "rss",
+      url: "https://raw.githubusercontent.com/0xSMW/rss-feeds/main/feeds/feed_anthropic_news.xml",
     },
-    extract: { mode: "full-page" },
+    extract: { mode: "feed-only" },
   },
   {
     id: "openai",
     name: "OpenAI",
     discovery: {
-      kind: "sitemap-index-template",
-      template: "https://openai.com/sitemap.xml/{name}/",
-      names: [
-        "research",
-        "publication",
-        "release",
-        "company",
-        "engineering",
-        "milestone",
-        "learn-guides",
-        "safety",
-        "product",
-      ],
+      kind: "rss",
+      url: "https://openai.com/news/rss.xml",
     },
-    extract: { mode: "metadata-only" },
+    extract: { mode: "feed-only" },
   },
 ];
 

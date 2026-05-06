@@ -138,15 +138,15 @@ The LLM filters out non-AI repos from the trending list, classifies the rest by 
 
 Top AI stories from the last 24 hours, fetched via the [Algolia HN Search API](https://hn.algolia.com/api). Six queries run in parallel (`AI`, `LLM`, `Claude`, `OpenAI`, `Anthropic`, `machine learning`), results are deduplicated and ranked by points. The top 30 stories are passed to the LLM for analysis.
 
-### Official web content (sitemap-based)
+### Official web content (feed-based)
 
 | Organization | Site | Discovery |
 |---|---|---|
-| Anthropic | [anthropic.com](https://www.anthropic.com) | Sitemap |
-| OpenAI | [openai.com](https://openai.com) | Sitemap index template: research / publication / release / company / engineering / milestone / learn-guides / safety / product |
+| Anthropic | [anthropic.com](https://www.anthropic.com) | RSS mirror of Anthropic newsroom content |
+| OpenAI | [openai.com](https://openai.com) | Official RSS feed: `https://openai.com/news/rss.xml` |
 | Cloudflare Blog | [blog.cloudflare.com](https://blog.cloudflare.com/) | RSS feed |
 
-New articles are detected by comparing sitemap `lastmod` timestamps against a persisted state file (`digests/web-state.json`). On the **first run**, up to 25 recent articles per site are fetched and a comprehensive overview report is generated. On subsequent runs, only new or updated URLs trigger a report; if nothing changed, the web report step is skipped entirely.
+New articles are detected by comparing feed identifiers, URLs, and publish timestamps against a persisted state file (`digests/web-state.json`). On the **first run**, up to 25 recent articles per site are fetched and a comprehensive overview report is generated. On subsequent runs, only new or updated feed entries trigger a report; if nothing changed, the web report step is skipped entirely. Anthropic does not currently publish an official RSS/Atom feed, so the default configuration uses a community RSS mirror that links back to original `anthropic.com` URLs.
 
 ## Features
 
@@ -154,7 +154,7 @@ New articles are detected by comparing sitemap `lastmod` timestamps against a pe
 - Tracks trending Claude Code Skills — sorted by community engagement, not recency
 - Generates a per-tool summary for each CLI repository and a cross-tool comparative analysis
 - Generates a deep OpenClaw project report plus a cross-ecosystem comparison against the configured peer projects
-- Scrapes official Anthropic and OpenAI web content via sitemaps; detects new articles incrementally
+- Tracks official-site content through feed-style sources; detects new articles incrementally
 - Monitors GitHub Trending daily + searches 6 AI topic tags; classifies repos by dimension and records hot-list observations
 - Fetches top-30 AI stories from Hacker News (last 24h, ranked by points); generates community sentiment report
 - Generates `ai-daily.md` as the reader-facing entrypoint across all detailed daily reports, and uses it as the preferred source for weekly/monthly rollups
@@ -179,7 +179,7 @@ Current `tracks[]` support boundary:
 - skills tracks can now aggregate **multiple** repositories into one skills ecosystem summary
 - `content_group` tracks now execute through the runtime with config-driven source discovery and extraction
 - supported content discovery kinds: `sitemap`, `sitemap-index`, `sitemap-index-template`, `rss`, `atom`
-- supported extraction modes: `full-page`, `metadata-only`, `feed-first`
+- supported extraction modes: `full-page`, `metadata-only`, `feed-first`, `feed-only`
 
 ```yaml
 # Add a new CLI tool under the ai-cli track

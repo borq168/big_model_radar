@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-06T07:12:45.246Z",
+  "generated": "2026-05-06T07:35:45.094Z",
   "tracks": [
     {
       "id": "ai-cli",
@@ -120,33 +120,22 @@
           "id": "anthropic",
           "name": "Anthropic",
           "discovery": {
-            "kind": "sitemap",
-            "url": "https://www.anthropic.com/sitemap.xml"
+            "kind": "rss",
+            "url": "https://raw.githubusercontent.com/0xSMW/rss-feeds/main/feeds/feed_anthropic_news.xml"
           },
           "extract": {
-            "mode": "full-page"
+            "mode": "feed-only"
           }
         },
         {
           "id": "openai",
           "name": "OpenAI",
           "discovery": {
-            "kind": "sitemap-index-template",
-            "template": "https://openai.com/sitemap.xml/{name}/",
-            "names": [
-              "research",
-              "publication",
-              "release",
-              "company",
-              "engineering",
-              "milestone",
-              "learn-guides",
-              "safety",
-              "product"
-            ]
+            "kind": "rss",
+            "url": "https://openai.com/news/rss.xml"
           },
           "extract": {
-            "mode": "metadata-only"
+            "mode": "feed-only"
           }
         },
         {

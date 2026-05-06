@@ -138,15 +138,15 @@ LLM 负责过滤非 AI 项目，将结果按维度分类（AI 基础工具 / AI 
 
 通过 [Algolia HN Search API](https://hn.algolia.com/api) 并行执行 6 个查询（`AI`、`LLM`、`Claude`、`OpenAI`、`Anthropic`、`machine learning`），抓取过去 24 小时内的 AI 相关帖子，去重后按分数排序，取 top 30 传入 LLM 进行社区情绪分析。
 
-### 官网内容（基于 Sitemap）
+### 官网内容（基于 Feed）
 
 | 组织 | 网站 | 发现方式 |
 |------|------|---------|
-| Anthropic | [anthropic.com](https://www.anthropic.com) | Sitemap |
-| OpenAI | [openai.com](https://openai.com) | Sitemap index template：research、publication、release、company、engineering、milestone、learn-guides、safety、product |
+| Anthropic | [anthropic.com](https://www.anthropic.com) | Anthropic 新闻内容的 RSS 镜像 |
+| OpenAI | [openai.com](https://openai.com) | 官方 RSS feed：`https://openai.com/news/rss.xml` |
 | Cloudflare Blog | [blog.cloudflare.com](https://blog.cloudflare.com/) | RSS feed |
 
-通过对比 Sitemap 中的 `lastmod` 时间戳与持久化状态文件（`digests/web-state.json`）来检测新文章。**首次运行**时，每个站点最多抓取 25 篇近期文章并生成全量概览报告；后续运行仅处理新增或更新的 URL，无新内容则跳过网页报告步骤。
+通过对比 feed 标识、URL 和发布时间与持久化状态文件（`digests/web-state.json`）来检测新文章。**首次运行**时，每个站点最多抓取 25 篇近期文章并生成全量概览报告；后续运行仅处理新增或更新的 feed 条目，无新内容则跳过网页报告步骤。Anthropic 目前没有官方 RSS/Atom feed，默认配置使用社区 RSS 镜像，但条目链接仍指向原始 `anthropic.com` URL。
 
 ## 功能特性
 
@@ -154,7 +154,7 @@ LLM 负责过滤非 AI 项目，将结果按维度分类（AI 基础工具 / AI 
 - 追踪热门 Claude Code Skills，按社区参与度而非时间排序
 - 为每个 CLI 仓库生成单独摘要，并输出跨工具横向对比分析
 - 生成 OpenClaw 深度项目报告，并与已配置的同赛道项目进行横向对比
-- 通过 Sitemap 抓取 Anthropic 和 OpenAI 官网内容，增量检测新文章
+- 通过 feed 形态的来源追踪官网内容，增量检测新文章
 - 每日监测 GitHub Trending + 搜索 6 个 AI 主题标签，按维度分类并记录热榜观察
 - 抓取 Hacker News 过去 24 小时 AI 热门帖子（top 30，按分数排序），生成社区情绪报告
 - 生成 `ai-daily.md` 整合日报，作为当天所有明细报告的阅读入口，并优先作为周报/月报输入源
@@ -179,7 +179,7 @@ LLM 负责过滤非 AI 项目，将结果按维度分类（AI 基础工具 / AI 
 - skills track 现已支持聚合 **多个** 仓库生成统一的 skills 生态摘要
 - `content_group` 已接入运行时，可通过配置驱动来源发现与提取
 - 已支持的内容发现协议：`sitemap`、`sitemap-index`、`sitemap-index-template`、`rss`、`atom`
-- 已支持的提取模式：`full-page`、`metadata-only`、`feed-first`
+- 已支持的提取模式：`full-page`、`metadata-only`、`feed-first`、`feed-only`
 
 ```yaml
 # 在 ai-cli track 下添加新的 CLI 工具

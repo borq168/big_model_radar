@@ -9,7 +9,7 @@
 # - The skills runtime can aggregate multiple skills repositories into one summary section
 # - `content_group` tracks are now executed by the runtime via configurable source discovery
 # - Supported discovery kinds: `sitemap`, `sitemap-index`, `sitemap-index-template`, `rss`, `atom`
-# - Supported extract modes: `full-page`, `metadata-only`, `feed-first`
+# - Supported extract modes: `full-page`, `metadata-only`, `feed-first`, `feed-only`
 
 tracks:
   - id: ai-cli
@@ -101,27 +101,19 @@ tracks:
       - id: anthropic
         name: Anthropic
         discovery:
-          kind: sitemap
-          url: https://www.anthropic.com/sitemap.xml
+          # Anthropic does not currently expose an official RSS/Atom feed.
+          # This mirror is RSS-shaped and links back to original anthropic.com URLs.
+          kind: rss
+          url: https://raw.githubusercontent.com/0xSMW/rss-feeds/main/feeds/feed_anthropic_news.xml
         extract:
-          mode: full-page
+          mode: feed-only
       - id: openai
         name: OpenAI
         discovery:
-          kind: sitemap-index-template
-          template: https://openai.com/sitemap.xml/{name}/
-          names:
-            - research
-            - publication
-            - release
-            - company
-            - engineering
-            - milestone
-            - learn-guides
-            - safety
-            - product
+          kind: rss
+          url: https://openai.com/news/rss.xml
         extract:
-          mode: metadata-only
+          mode: feed-only
       - id: cloudflare-blog
         name: Cloudflare Blog
         discovery:

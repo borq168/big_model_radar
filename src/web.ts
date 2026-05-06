@@ -189,6 +189,66 @@ function stripTags(text: string): string {
     .trim();
 }
 
+function canonicalContentKey(value: string): string {
+  const trimmed = value.trim();
+  if (!trimmed) return "";
+
+  try {
+    const url = new URL(trimmed);
+    url.hash = "";
+    if (url.pathname.length > 1) {
+      url.pathname = url.pathname.replace(/\/+$/, "");
+    }
+    return url.toString();
+  } catch {
+    return trimmed.replace(/\/+$/, "");
+  }
+}
+
+function trailingSlashContentKey(value: string): string {
+  try {
+    const url = new URL(value);
+    if (!url.pathname.endsWith("/")) {
+      url.pathname = `${url.pathname}/`;
+    }
+    return url.toString();
+  } catch {
+    return value.endsWith("/") ? value : `${value}/`;
+  }
+}
+
+function contentKeyCandidates(...values: string[]): string[] {
+  const candidates = new Set<string>();
+
+  for (const value of values) {
+    const trimmed = value.trim();
+    if (!trimmed) continue;
+
+    const canonical = canonicalContentKey(trimmed);
+    candidates.add(trimmed);
+    if (canonical) {
+      candidates.add(canonical);
+      candidates.add(trailingSlashContentKey(canonical));
+    }
+  }
+
+  return [...candidates];
+}
+
+function getSeenMarker(sourceState: SourceState, ...keys: string[]): string | undefined {
+  for (const key of contentKeyCandidates(...keys)) {
+    const marker = sourceState.seenUrls[key];
+    if (marker) return marker;
+  }
+  return undefined;
+}
+
+function markSeen(sourceState: SourceState, marker: string, ...keys: string[]): void {
+  for (const key of contentKeyCandidates(...keys)) {
+    sourceState.seenUrls[key] = marker;
+  }
+}
+
 function extractTag(block: string, tag: string): string {
   const match = block.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`, "i"));
   return match?.[1] ? decodeEntities(match[1]).trim() : "";
@@ -433,7 +493,7 @@ async function discoverFeedEntries(source: ContentSource): Promise<FeedEntry[]> 
 async function buildSitemapItems(source: ContentSource, entries: DiscoveredUrl[]): Promise<ContentItem[]> {
   const items: ContentItem[] = [];
 
-  if (source.extract.mode === "metadata-only") {
+  if (source.extract.mode === "metadata-only" || source.extract.mode === "feed-only") {
     for (const { loc, lastmod } of entries) {
       items.push({
         sourceId: source.id,
@@ -496,7 +556,10 @@ async function buildFeedItems(source: ContentSource, entries: FeedEntry[]): Prom
       url: entry.url,
       title: pageTitle || entry.title || titleFromUrl(entry.url),
       publishedAt: entry.publishedAt,
-      content: source.extract.mode === "metadata-only" ? entry.content : pageContent || entry.content,
+      content:
+        source.extract.mode === "metadata-only" || source.extract.mode === "feed-only"
+          ? entry.content
+          : pageContent || entry.content,
       category: entry.category,
     });
   }
@@ -523,7 +586,7 @@ export async function fetchSiteContent(
     allEntries.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
     const newEntries = allEntries.filter((entry) => {
-      const prev = sourceState.seenUrls[entry.id] ?? sourceState.seenUrls[entry.url];
+      const prev = getSeenMarker(sourceState, entry.id, entry.url);
       if (!prev) return true;
       return entry.publishedAt && entry.publishedAt > prev;
     });
@@ -538,8 +601,7 @@ export async function fetchSiteContent(
 
     for (const entry of allEntries) {
       const marker = entry.publishedAt || "seen";
-      sourceState.seenUrls[entry.id] = marker;
-      sourceState.seenUrls[entry.url] = marker;
+      markSeen(sourceState, marker, entry.id, entry.url);
     }
     sourceState.lastChecked = new Date().toISOString();
 
@@ -564,7 +626,7 @@ export async function fetchSiteContent(
   });
 
   const newUrls = allDiscovered.filter(({ loc, lastmod }) => {
-    const prev = sourceState.seenUrls[loc];
+    const prev = getSeenMarker(sourceState, loc);
     if (!prev) return true;
     if (lastmod && lastmod > prev) return true;
     return false;
@@ -579,7 +641,7 @@ export async function fetchSiteContent(
   const items = await buildSitemapItems(source, toFetch);
 
   for (const { loc, lastmod } of allDiscovered) {
-    sourceState.seenUrls[loc] = lastmod ?? "seen";
+    markSeen(sourceState, lastmod ?? "seen", loc);
   }
   sourceState.lastChecked = new Date().toISOString();
 
