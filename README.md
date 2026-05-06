@@ -2,7 +2,7 @@
 
 English | [中文](./README.zh.md)
 
-A GitHub Actions workflow that runs every morning at 08:00 CST. It tracks GitHub activity from AI CLI tools, OpenClaw and its peer projects in the AI agent ecosystem, scrapes official news and research from Anthropic and OpenAI, and monitors the GitHub AI trending repos daily — then publishes bilingual (Chinese + English) daily digests as GitHub Issues and committed Markdown files. Weekly and monthly rollup reports are also generated automatically.
+A GitHub Actions workflow that runs every morning at 08:00 CST. It tracks GitHub activity from AI CLI tools, OpenClaw and its peer projects in the AI agent ecosystem, scrapes official news and research from Anthropic and OpenAI, and monitors the GitHub AI daily hot list — then publishes bilingual (Chinese + English) daily digests as GitHub Issues and committed Markdown files. Weekly and monthly rollup reports are also generated automatically.
 
 ## Architecture roadmap
 
@@ -50,7 +50,7 @@ A hosted [Model Context Protocol](https://modelcontextprotocol.io) server that e
 Restart Claude Desktop after saving. You can then ask Claude things like:
 - *"What's the latest in AI CLI tools?"* → calls `get_latest`
 - *"Search for Claude Code mentions this week"* → calls `search`
-- *"Show me the AI trending report for 2026-03-05"* → calls `get_report`
+- *"Show me the GitHub AI hot-list report for 2026-03-05"* → calls `get_report`
 
 **OpenClaw setup** — run the following command:
 
@@ -74,7 +74,7 @@ Or add it manually to `~/.openclaw/openclaw.json`:
 You can then ask OpenClaw things like:
 - *"What's the latest in AI CLI tools?"* → calls `get_latest`
 - *"Search for Claude Code mentions this week"* → calls `search`
-- *"Show me the AI trending report for 2026-03-05"* → calls `get_report`
+- *"Show me the GitHub AI hot-list report for 2026-03-05"* → calls `get_report`
 
 **Self-hosting** — deploy your own instance from the `mcp/` directory:
 
@@ -123,7 +123,7 @@ OpenClaw is tracked as the primary reference project. The current default config
 | Zeroclaw | [zeroclaw-labs/zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) |
 | PicoClaw | [sipeed/picoclaw](https://github.com/sipeed/picoclaw) |
 
-### GitHub AI Trending
+### GitHub AI Hot List
 
 Two data sources are fetched in parallel every day:
 
@@ -132,7 +132,7 @@ Two data sources are fetched in parallel every day:
 | [github.com/trending](https://github.com/trending?since=daily) | Today's trending repos — parsed from HTML; includes today's new star count |
 | GitHub Search API | Repos active in the last 7 days matching 6 AI topics: `llm`, `ai-agent`, `rag`, `vector-database`, `large-language-model`, `machine-learning` |
 
-The LLM filters out non-AI repos from the trending list, classifies the rest by dimension (AI infrastructure / agents / applications / models / RAG), and extracts trend signals.
+The LLM filters out non-AI repos from the trending list, classifies the rest by dimension (AI infrastructure / agents / applications / models / RAG), and records daily hot-list observations without forcing long-term trend conclusions from one day of data.
 
 ### Hacker News
 
@@ -155,8 +155,9 @@ New articles are detected by comparing sitemap `lastmod` timestamps against a pe
 - Generates a per-tool summary for each CLI repository and a cross-tool comparative analysis
 - Generates a deep OpenClaw project report plus a cross-ecosystem comparison against the configured peer projects
 - Scrapes official Anthropic and OpenAI web content via sitemaps; detects new articles incrementally
-- Monitors GitHub Trending daily + searches 6 AI topic tags; classifies repos by dimension and extracts trend signals
+- Monitors GitHub Trending daily + searches 6 AI topic tags; classifies repos by dimension and records hot-list observations
 - Fetches top-30 AI stories from Hacker News (last 24h, ranked by points); generates community sentiment report
+- Generates `ai-daily.md` as the reader-facing entrypoint across all detailed daily reports, and uses it as the preferred source for weekly/monthly rollups
 - Publishes GitHub Issues for each report type; commits Markdown files to `digests/YYYY-MM-DD/`
 - Runs on a daily schedule via GitHub Actions; supports manual triggering
 - All tracked repositories are configurable via `config.yml` — no code changes needed
@@ -267,11 +268,12 @@ Files are written to `digests/YYYY-MM-DD/`:
 
 | File | Content | GitHub Issue label |
 |------|---------|-------------------|
+| `ai-daily.md` | AI ecosystem daily brief — entrypoint across all detailed reports for the day | `daily` |
 | `ai-cli.md` | CLI digest — cross-tool comparison + per-tool details | `digest` |
 | `ai-skills.md` | Skills ecosystem digest — cross-repository skills highlights | `skills` |
 | `ai-agents.md` | OpenClaw deep report + cross-ecosystem comparison + configured peer details | `openclaw` |
 | `ai-web.md` | Official web content report (only written when new content exists) | `web` |
-| `ai-trending.md` | GitHub AI trending report — repos classified by dimension + trend signals (only written when data is available) | `trending` |
+| `ai-trending.md` | GitHub AI trending digest — repos classified by dimension + hot-list observations (only written when data is available) | `trending` |
 | `ai-hn.md` | Hacker News AI community digest — top stories + sentiment analysis (only written when fetch succeeds) | `hn` |
 
 A shared state file `digests/web-state.json` tracks which web URLs have been seen; it is committed alongside the daily digests.
@@ -280,14 +282,23 @@ Each report is generated in both Chinese (`ai-cli.md`) and English (`ai-cli-en.m
 
 ---
 
+`ai-daily.md` / `ai-daily-en.md` structure:
+```
+At a glance                 (8-12 factual bullets with source tags)
+Browse by theme             (CLI / Agents / Skills / Official / GitHub / HN)
+Follow-up watch             (explicitly unresolved, newly released, or active items)
+Detailed report index       (what each detailed report is for + filename)
+Data gaps                   (only when a source report was skipped or failed)
+```
+
 `ai-cli.md` / `ai-cli-en.md` structure:
 ```
 ## Cross-Tool Comparison
-  Ecosystem overview / Activity comparison table / Shared themes / Differentiation / Trend signals
+  Daily overview / Activity comparison table / Shared themes / Differentiation / Evidence-backed observations
 
 ## Per-Tool Reports
-  <details> Claude Code    — Today's summary / Hot issues / PR progress / Trends
-  <details> OpenAI Codex   — Today's summary / Hot issues / PR progress / Trends
+  <details> Claude Code    — Today's update brief / Hot issues / PR progress / Demand clusters
+  <details> OpenAI Codex   — Today's update brief / Hot issues / PR progress / Demand clusters
   <details> Gemini CLI     — ...
   <details> GitHub Copilot CLI — ...
   <details> Kimi Code CLI  — ...
@@ -299,7 +310,7 @@ Each report is generated in both Chinese (`ai-cli.md`) and English (`ai-cli-en.m
 ```
 ## Skills Ecosystem Highlights
   Top skills across repositories / Repository-by-repository highlights /
-  Community demand trends / High-potential pending skills / Cross-repo insight
+  Community demand clusters / Active pending skills / Cross-repo daily notes
 ```
 
 `ai-agents.md` / `ai-agents-en.md` structure:
@@ -312,7 +323,7 @@ Issues: N | PRs: N | Projects covered: configured peer set
 
 ## Cross-Ecosystem Comparison
   Ecosystem overview / Activity table / OpenClaw positioning /
-  Shared technical directions / Differentiation / Community maturity / Trend signals
+  Shared technical directions / Differentiation / Community activity / Evidence-backed observations
 
 ## Peer Project Reports
   <details> NanoBot    — Today's summary / Releases / Progress / ... (8 sections)
@@ -326,8 +337,7 @@ Sources: configured content sources (each source shows new/discovered counts)
 
 Today's summary
 Per-source highlights          (organized by source and category)
-Cross-source signal analysis
-Strategic signals
+Cross-source update notes
 Notable details
 [First full crawl also includes: Content landscape overview]
 ```
@@ -343,8 +353,8 @@ Top repos by dimension
   📦 AI Applications    — vertical products / solutions
   🧠 Models & Training  — model weights / training frameworks / fine-tuning
   🔍 RAG & Knowledge    — vector databases / retrieval augmentation
-Trend signal analysis
-Community focus
+Hot-list observations
+Projects to track
 ```
 
 `ai-hn.md` / `ai-hn-en.md` structure:
@@ -357,7 +367,7 @@ Top stories & discussions
   🛠️ Tools & Engineering — open-source projects / frameworks / engineering practice
   🏢 Industry news      — company news / funding / product launches
   💬 Opinions & debate  — Ask HN / Show HN / hot threads
-Community sentiment signals
+Community discussion notes
 Worth reading
 ```
 

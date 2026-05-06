@@ -279,6 +279,7 @@ export async function createGitHubIssue(title: string, body: string, label: stri
     body = body.slice(0, GITHUB_ISSUE_BODY_LIMIT - TRUNCATION_NOTICE.length) + TRUNCATION_NOTICE;
   }
   const LABEL_COLORS: Record<string, string> = {
+    daily: "0ea5e9",
     digest: "2563eb",
     openclaw: "e11d48",
     skills: "7c3aed",
@@ -287,6 +288,7 @@ export async function createGitHubIssue(title: string, body: string, label: stri
     hn: "ff6600",
     weekly: "7c3aed",
     monthly: "0d9488",
+    "daily-en": "38bdf8",
     "digest-en": "1d76db",
     "openclaw-en": "f472b6",
     "skills-en": "8b5cf6",

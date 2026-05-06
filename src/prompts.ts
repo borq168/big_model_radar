@@ -25,6 +25,13 @@ export interface SkillsRepoSnapshot {
   prs: GitHubItem[];
 }
 
+export interface DailySourceReport {
+  id: string;
+  title: string;
+  filename: string;
+  content: string;
+}
+
 // ---------------------------------------------------------------------------
 // Formatting
 // ---------------------------------------------------------------------------
@@ -74,6 +81,23 @@ function sampleNote(total: number, sampled: number, lang: "zh" | "en" = "zh"): s
   return total > sampled ? `（共 ${total} 条，以下展示评论数最多的 ${sampled} 条）` : `（共 ${total} 条）`;
 }
 
+function dailyWritingRules(lang: "zh" | "en" = "zh"): string {
+  if (lang === "en") {
+    return `## Daily Writing Rules
+- Treat this as a daily record, not a weekly/monthly strategy report.
+- Prioritize facts, counts, concrete changes, user requests, maintainer responses, and links.
+- Do not force strong conclusions, broad ecosystem judgments, forecasts, or tool-selection advice.
+- Only call something a trend when multiple independent items in today's data clearly support it; otherwise describe it as an observation or omit it.
+- Avoid unsupported claims such as "becoming the standard", "core competitive moat", "clear inflection point", or "market reshaping".`;
+  }
+
+  return `## 日报写作边界
+- 这是日报，不是周报、月报或投研报告；优先记录事实、数量、具体变化、用户诉求、维护者回应和链接。
+- 不要为了凑结构强行给出鲜明观点、生态格局判断、趋势研判、路线图预测或工具选型建议。
+- 只有当今日数据中有多条独立证据互相支撑时，才可写成“趋势”；证据不足时写成“观察”，或直接省略。
+- 避免使用“正在成为事实标准”“核心竞争力”“拐点”“爆发”“一超多强”等缺少充分证据的强判断。`;
+}
+
 // ---------------------------------------------------------------------------
 // Prompts
 // ---------------------------------------------------------------------------
@@ -117,13 +141,15 @@ ${prsText}
 
 ---
 
+${dailyWritingRules(lang)}
+
 Generate a structured English digest with the following sections:
 
-1. **Today's Highlights** - 2-3 sentences summarizing the most important updates
+1. **Today's Update Brief** - 2-3 sentences summarizing the concrete updates and activity level
 2. **Releases** - If new versions exist, summarize changes; omit if none
-3. **Hot Issues** - Pick 10 noteworthy Issues, explain why they matter and community reaction
+3. **Hot Issues** - Pick 10 noteworthy Issues, explain the affected workflow, impact, and community reaction
 4. **Key PR Progress** - Pick 10 important PRs, describe features or fixes
-5. **Feature Request Trends** - Distill the most-requested feature directions from all Issues
+5. **Feature Request Clusters** - Group recurring feature requests from Issues without predicting roadmap outcomes
 6. **Developer Pain Points** - Summarize recurring developer frustrations or high-frequency requests
 
 Style: concise and professional, suited for technical developers. Include GitHub links for each item.
@@ -145,13 +171,15 @@ ${prsText}
 
 ---
 
+${dailyWritingRules(lang)}
+
 请生成一份结构清晰的中文日报，包含以下部分：
 
-1. **今日速览** - 用2-3句话概括今天最重要的动态
+1. **今日更新概览** - 用2-3句话概括今天的具体更新和活跃情况
 2. **版本发布** - 如有新版本，总结更新内容；无则省略
-3. **社区热点 Issues** - 挑选 10 个最值得关注的 Issue，说明为什么重要、社区反应如何
+3. **社区热点 Issues** - 挑选 10 个值得记录的 Issue，说明影响的使用场景、问题范围和社区反应
 4. **重要 PR 进展** - 挑选 10 个重要的 PR，说明功能或修复内容
-5. **功能需求趋势** - 从所有 Issues 中提炼出社区最关注的功能方向（如 IDE 集成、性能、新模型支持等）
+5. **功能需求归类** - 从 Issues 中归类用户反复提到的功能方向（如 IDE 集成、性能、新模型支持等），不要预测路线图
 6. **开发者关注点** - 总结开发者反馈中的痛点或高频需求
 
 语言要求：简洁专业，适合技术开发者阅读。每个条目附上 GitHub 链接。
@@ -211,18 +239,20 @@ ${prsText}
 
 ---
 
+${dailyWritingRules(lang)}
+
 Generate a structured English ${cfg.name} project digest with the following sections:
 
-1. **Today's Overview** - 3-5 sentences summarizing project status, including activity assessment
+1. **Today's Activity Brief** - 3-5 sentences summarizing activity counts and concrete project updates
 2. **Releases** - If new versions exist, detail changes, breaking changes, migration notes; omit if none
 3. **Project Progress** - Merged/closed PRs today, what features advanced or were fixed
 4. **Community Hot Topics** - Most active Issues/PRs with most comments/reactions (with links), analyze underlying needs
 5. **Bugs & Stability** - Bugs, crashes, regressions reported today, ranked by severity, note if fix PRs exist
-6. **Feature Requests & Roadmap Signals** - User-requested features, predict which might be in next version
+6. **Feature Request Clusters** - User-requested features and related PRs; do not predict what will ship next
 7. **User Feedback Summary** - Real user pain points, use cases, satisfaction/dissatisfaction
 8. **Backlog Watch** - Long-unanswered important Issues or PRs needing maintainer attention
 
-Style: objective, data-driven, highlighting project health. Include GitHub links for each item.
+Style: objective and data-driven, recording project activity without overstating project health. Include GitHub links for each item.
 `;
   }
 
@@ -244,18 +274,20 @@ ${prsText}
 
 ---
 
+${dailyWritingRules(lang)}
+
 请生成一份结构清晰的 ${cfg.name} 项目日报，包含以下部分：
 
-1. **今日速览** - 用3-5句话概括项目今日整体状态，包括活跃度评估
+1. **今日活动概览** - 用3-5句话概括今日更新数量、发布情况和具体变化
 2. **版本发布** - 如有新版本，详细说明更新内容、破坏性变更、迁移注意事项；无则省略
-3. **项目进展** - 今日合并/关闭的重要 PR，说明推进了哪些功能或修复，项目整体向前迈进了多少
+3. **项目进展** - 今日合并/关闭的重要 PR，说明推进了哪些功能或修复
 4. **社区热点** - 今日讨论最活跃、评论最多、反应最多的 Issues/PRs（附链接），分析背后的诉求
 5. **Bug 与稳定性** - 今日报告的 Bug、崩溃、回归问题，按严重程度排列，标注是否已有 fix PR
-6. **功能请求与路线图信号** - 用户提出的新功能需求，结合已有 PR 判断哪些可能被纳入下一版本
+6. **功能请求归类** - 用户提出的新功能需求和相关 PR，只记录证据，不预测下一版本路线图
 7. **用户反馈摘要** - 从 Issues 评论中提炼真实用户痛点、使用场景、满意/不满意的地方
 8. **待处理积压** - 长期未响应的重要 Issue 或 PR，提醒维护者关注
 
-语言要求：客观专业，数据驱动，突出项目健康度。每个条目附上 GitHub 链接。
+语言要求：客观专业，数据驱动，记录项目活跃情况但不夸大健康度判断。每个条目附上 GitHub 链接。
 `;
 }
 
@@ -291,15 +323,17 @@ ${peerSections}
 
 ---
 
+${dailyWritingRules(lang)}
+
 Generate a cross-project comparison report in English with these sections:
 
-1. **Ecosystem Overview** - 3-5 sentences on the overall personal AI assistant / agent open-source landscape
-2. **Activity Comparison** - Table comparing Issues count, PR count, Release status, and health score for each project
-3. **OpenClaw's Position** - Advantages vs peers, technical approach differences, community size comparison
-4. **Shared Technical Focus Areas** - Requirements emerging across multiple projects (note which projects, specific needs)
+1. **Daily Cross-Project Overview** - 3-5 sentences on today's concrete activity across the tracked projects
+2. **Activity Comparison** - Table comparing Issues count, PR count, Release status, and a factual activity note for each project
+3. **OpenClaw Compared With Peers** - Concrete differences visible in today's data: activity volume, technical focus, community surface area
+4. **Shared Technical Focus Areas** - Requirements appearing across multiple projects today (note which projects and specific needs)
 5. **Differentiation Analysis** - Key differences in feature focus, target users, technical architecture
-6. **Community Momentum & Maturity** - Activity tiers, which are rapidly iterating, which are stabilizing
-7. **Trend Signals** - Industry trends extracted from community feedback, value for AI agent developers
+6. **Community Activity Notes** - Activity tiers based only on today's counts and releases; avoid maturity scoring unless directly evidenced
+7. **Evidence-Backed Observations** - 3-5 observations supported by multiple items; say "no clear cross-project signal" if evidence is weak
 
 Style: concise and professional, data-backed, suited for technical decision-makers and developers.
 `;
@@ -315,15 +349,17 @@ ${peerSections}
 
 ---
 
+${dailyWritingRules(lang)}
+
 请基于上述各项目的动态，生成一份横向对比分析报告，包含以下部分：
 
-1. **生态全景** - 用3-5句话概括个人 AI 助手/自主智能体开源生态整体态势
-2. **各项目活跃度对比** - 以表格形式汇总各项目今日的 Issues 数、PR 数、Release 情况及健康度评估
-3. **OpenClaw 在生态中的定位** - 与同类相比的优势、技术路线差异、社区规模对比
-4. **共同关注的技术方向** - 多项目共同涌现的需求（注明涉及哪些项目、具体诉求）
+1. **今日横向概览** - 用3-5句话概括今日各项目的具体活动情况
+2. **各项目活跃度对比** - 以表格形式汇总各项目今日的 Issues 数、PR 数、Release 情况和事实性备注
+3. **OpenClaw 与同类对照** - 只基于今日数据说明活动量、技术重点和社区讨论面的差异
+4. **共同出现的技术方向** - 多项目今日都出现的需求（注明涉及哪些项目、具体诉求）
 5. **差异化定位分析** - 功能侧重、目标用户、技术架构的关键差异
-6. **社区热度与成熟度** - 活跃度分层，哪些处于快速迭代阶段，哪些在质量巩固阶段
-7. **值得关注的趋势信号** - 从社区反馈中提炼行业趋势，对 AI 智能体开发者的参考价值
+6. **社区活跃度记录** - 基于今日数量和发布记录做活跃度分层；除非有直接证据，不做成熟度评分
+7. **有证据支撑的观察** - 给出 3~5 条由多条数据支撑的观察；证据弱时直接写“今日暂无明确跨项目信号”
 
 语言要求：简洁专业，有数据支撑，适合技术决策者和开发者阅读。
 `;
@@ -379,12 +415,14 @@ ${repoSections}
 
 ---
 
+${dailyWritingRules(lang)}
+
 Generate a skills community highlights report in English with these sections:
 
 1. **Top Skills Ranking** - List the 5-8 most-discussed Skills (PRs), describe each Skill's functionality, discussion highlights, and current status
-2. **Community Demand Trends** - From Issues, distill the most-anticipated new Skill directions
-3. **High-Potential Pending Skills** - Active-comment PRs not yet merged; these Skills may land soon
-4. **Skills Ecosystem Insight** - One concise summary sentence: what is the community's most concentrated demand at the Skills level?
+2. **Community Demand Clusters** - From Issues, group the most-mentioned new Skill directions without overstating trend strength
+3. **Active Pending Skills** - Active-comment PRs not yet merged; describe current discussion and status without predicting landing time
+4. **Daily Notes** - 1-3 evidence-backed notes on what today's data shows; say if there is no clear signal
 
 Style: concise and professional, include GitHub links for each item.`;
     }
@@ -400,13 +438,15 @@ ${repoSections}
 
 ---
 
+${dailyWritingRules(lang)}
+
 Generate a cross-repository skills ecosystem highlights report in English with these sections:
 
 1. **Top Skills Across Repositories** - List the 6-10 most-discussed Skills or Skill PRs across all repositories, noting which repo each one belongs to
 2. **Repository-by-Repository Highlights** - For each skills repo, summarize its current focus, strongest discussions, and contribution momentum in 2-4 sentences
-3. **Community Demand Trends** - Distill the most-requested new Skill directions across repositories, grouping similar themes together
-4. **High-Potential Pending Skills** - Identify active-comment PRs that appear close to landing, and explain why they matter
-5. **Cross-Repo Ecosystem Insight** - Compare how the repositories differ in focus, target users, or contribution style, then close with one concise ecosystem takeaway
+3. **Community Demand Clusters** - Group similar requested Skill directions across repositories without overstating trend strength
+4. **Active Pending Skills** - Identify active-comment PRs and explain current discussion, status, and practical use case without predicting landing time
+5. **Cross-Repo Daily Notes** - Compare focus, target users, or contribution style only where today's data supports it; close with 1-3 factual notes, not a sweeping takeaway
 
 Style: concise and professional, include GitHub links for each item.`;
   }
@@ -424,12 +464,14 @@ ${repoSections}
 
 ---
 
+${dailyWritingRules(lang)}
+
 请生成一份 Skills 社区热点报告，包含以下部分：
 
 1. **热门 Skills 排行** - 列出评论/关注度最高的 5~8 个 Skills（PR），说明每个 Skill 的功能、讨论热点和当前状态
-2. **社区需求趋势** - 从 Issues 中提炼社区最期待的新 Skill 方向
-3. **高潜力待合并 Skills** - 评论活跃但尚未合并的 PR，这些 Skills 可能近期落地
-4. **Skills 生态洞察** - 用一句话总结：当前社区在 Skills 层面最集中的诉求是什么
+2. **社区需求归类** - 从 Issues 中归类社区提到的新 Skill 方向，不夸大趋势强度
+3. **活跃待合并 Skills** - 评论活跃但尚未合并的 PR，说明当前讨论和状态，不预测落地时间
+4. **今日记录备注** - 用 1~3 条说明今日数据呈现的事实；没有清晰信号时直接说明
 
 语言要求：简洁专业，每个条目附上 GitHub 链接。`;
   }
@@ -445,13 +487,15 @@ ${repoSections}
 
 ---
 
+${dailyWritingRules(lang)}
+
 请生成一份跨仓库 Skills 生态热点报告，包含以下部分：
 
 1. **全生态热门 Skills** - 列出全体仓库中评论/关注度最高的 6~10 个 Skills / Skill PR，并注明所属仓库
 2. **各仓库亮点** - 对每个 skills repo 用 2~4 句话概括其当前重点、讨论热点和贡献活跃度
-3. **社区需求趋势** - 汇总多个仓库共同出现的 Skill 方向，把相近诉求归类分析
-4. **高潜力待合并 Skills** - 找出评论活跃、最可能近期落地的 PR，并解释其意义
-5. **跨仓库生态洞察** - 比较这些仓库在关注重点、目标用户或贡献方式上的差异，最后给出一句整体判断
+3. **社区需求归类** - 汇总多个仓库中出现的 Skill 方向，把相近诉求归类，不夸大趋势强度
+4. **活跃待合并 Skills** - 找出评论活跃的 PR，说明当前讨论、状态和实际用途，不预测落地时间
+5. **跨仓库今日备注** - 只在今日数据支持时比较仓库关注重点、目标用户或贡献方式；结尾给 1~3 条事实备注，不写整体判断
 
 语言要求：简洁专业，每个条目附上 GitHub 链接。`;
 }
@@ -478,14 +522,16 @@ ${sections}
 
 ---
 
+${dailyWritingRules(lang)}
+
 Generate a cross-tool comparison report in English with these sections:
 
-1. **Ecosystem Overview** - 3-5 sentences on the overall AI CLI tools development landscape
+1. **Daily Cross-Tool Overview** - 3-5 sentences on today's concrete activity across the tracked AI CLI tools
 2. **Activity Comparison** - Table comparing Issues count, PR count, Release status for each tool today
-3. **Shared Feature Directions** - Requirements appearing across multiple tool communities (note which tools, specific needs)
+3. **Shared Feature Directions** - Requirements appearing across multiple tool communities today (note which tools, specific needs)
 4. **Differentiation Analysis** - Differences in feature focus, target users, and technical approach
-5. **Community Momentum & Maturity** - Which tools have more active communities, which are rapidly iterating
-6. **Trend Signals** - Industry trends from community feedback, reference value for developers
+5. **Community Activity Notes** - Which tools are more active today by count, release, and maintainer response
+6. **Evidence-Backed Observations** - 3-5 observations supported by multiple items; say "no clear cross-tool signal" if evidence is weak
 
 Style: concise and professional, data-backed, suited for technical decision-makers and developers.
 `;
@@ -497,14 +543,16 @@ ${sections}
 
 ---
 
+${dailyWritingRules(lang)}
+
 请基于上述各工具的动态，生成一份横向对比分析报告，包含以下部分：
 
-1. **生态全景** - 用3-5句话概括当前 AI CLI 工具整体发展态势
+1. **今日横向概览** - 用3-5句话概括今日各 AI CLI 工具的具体活动情况
 2. **各工具活跃度对比** - 以表格形式汇总各工具今日的 Issues 数、PR 数、Release 情况
-3. **共同关注的功能方向** - 多个工具社区都在关注的需求（说明哪些工具、具体诉求）
+3. **共同出现的功能方向** - 多个工具社区今日都出现的需求（说明哪些工具、具体诉求）
 4. **差异化定位分析** - 各工具在功能侧重、目标用户、技术路线上的差异
-5. **社区热度与成熟度** - 哪些工具社区更活跃，哪些处于快速迭代阶段
-6. **值得关注的趋势信号** - 从社区反馈中提炼出的行业趋势，对开发者有何参考价值
+5. **社区活跃度记录** - 基于今日数量、发布、维护者回应记录哪些工具更活跃
+6. **有证据支撑的观察** - 给出 3~5 条由多条数据支撑的观察；证据弱时直接写“今日暂无明确跨工具信号”
 
 语言要求：简洁专业，有数据支撑，适合技术决策者和开发者阅读。
 `;
@@ -545,7 +593,7 @@ export function buildTrendingPrompt(data: TrendingData, dateStr: string, lang: "
         : "（无搜索结果）";
 
   if (lang === "en") {
-    return `You are a technical analyst focused on the AI open-source ecosystem. The following is ${dateStr} GitHub AI-related trending repository data. Please filter for AI relevance, categorize, and analyze trends.
+    return `You are a technical analyst focused on the AI open-source ecosystem. The following is ${dateStr} GitHub AI-related trending repository data. Please filter for AI relevance, categorize, and summarize today's hot list.
 
 ## Data Sources
 - **Trending List** (github.com/trending, today's stars most reliable): Real-time hot list with today's new stars
@@ -563,7 +611,7 @@ ${searchSection}
 
 ---
 
-Generate a structured AI Open Source Trends Report in English:
+Generate a structured GitHub AI Trending Digest in English:
 
 **Step 1 (Filter)**: From the above data, select projects clearly related to AI/ML (exclude unrelated general tools, frontend frameworks, games, etc.). Skip non-AI trending repos.
 
@@ -576,17 +624,19 @@ Generate a structured AI Open Source Trends Report in English:
 
 **Step 3 (Output Report)** with these sections:
 
-1. **Today's Highlights** — 3-5 sentences on the most noteworthy AI open-source developments today
+${dailyWritingRules(lang)}
+
+1. **Today's Hot List Brief** — 3-5 sentences on the most active AI-related repositories today
 
 2. **Top Projects by Category** — For each category, list 3-8 representative projects, each with:
    - Project name (with link)
    - Stars data (total + today's new, if available)
    - One sentence: what it is and why it's worth attention today
 
-3. **Trend Signal Analysis** — 200-300 words, distill from today's hot list:
-   - Which type of AI tool is getting explosive community attention?
-   - Any new tech stacks or directions appearing for the first time?
-   - Connection to recent LLM releases / industry events
+3. **Hot List Observations** — 150-250 words, describe today's distribution:
+   - Which categories appear most often in today's data?
+   - Any clearly new or unusual project types visible in the list?
+   - Only mention connections to LLM releases / industry events when directly evidenced by the provided data
 
 4. **Community Hot Spots** — Bullet list of 3-5 specific projects or directions worth developer focus, with brief reasoning
 
@@ -594,7 +644,7 @@ Style: English, professional and concise, must include GitHub links for every pr
 `;
   }
 
-  return `你是一位专注于 AI 开源生态的技术分析师。以下是 ${dateStr} 的 GitHub AI 相关热门仓库数据，请进行 AI 相关性筛选、分类和趋势分析。
+  return `你是一位专注于 AI 开源生态的技术分析师。以下是 ${dateStr} 的 GitHub AI 相关热门仓库数据，请进行 AI 相关性筛选、分类，并整理今日热榜。
 
 ## 数据说明
 - **Trending 榜单**（github.com/trending，今日 stars 数最可信）：今日实时热榜，含今日新增 stars
@@ -612,7 +662,7 @@ ${searchSection}
 
 ---
 
-请生成一份结构清晰的《AI 开源趋势日报》，要求：
+请生成一份结构清晰的《GitHub AI 热榜日报》，要求：
 
 **第一步（过滤）**：从以上数据中筛选出与 AI/ML 明确相关的项目（排除与 AI 无关的通用工具、前端框架、游戏等），对于 Trending 榜单中的非 AI 项目直接略去。
 
@@ -625,19 +675,21 @@ ${searchSection}
 
 **第三步（输出报告）**，包含以下部分：
 
-1. **今日速览** — 3~5 句话概括今日 AI 开源领域最值得关注的动向
+${dailyWritingRules(lang)}
+
+1. **今日热榜概览** — 3~5 句话概括今日 AI 相关热门仓库的具体分布
 
 2. **各维度热门项目** — 每个维度列出 3~8 个代表项目，每项包含：
    - 项目名（附链接）
    - stars 数据（总量 + 今日新增，如有）
    - 一句话说明：这个项目是什么，为什么今天值得关注
 
-3. **趋势信号分析** — 200~300 字，从今日热榜中提炼：
-   - 哪类 AI 工具正在获得社区爆发性关注？
-   - 有无新兴技术栈或方向首次登榜？
-   - 与近期大模型发布/行业事件的关联
+3. **热榜观察** — 150~250 字，说明今日热榜呈现的事实分布：
+   - 哪些类别在今日数据中出现较多？
+   - 是否有明确的新类型或少见项目出现？
+   - 只有在输入数据直接支持时，才提及与大模型发布/行业事件的关联
 
-4. **社区关注热点** — 以 bullet 形式列出 3~5 个值得开发者重点关注的具体项目或方向，给出简短理由
+4. **可跟踪项目** — 以 bullet 形式列出 3~5 个值得继续跟踪的具体项目或方向，给出简短理由
 
 语言要求：中文，专业简洁，每个项目必须附 GitHub 链接。
 `;
@@ -692,14 +744,14 @@ export function buildWebReportPrompt(
   const firstRunNote =
     lang === "en"
       ? isAnyFirstRun
-        ? "This is the first full crawl. Please focus on the overall content landscape, historical context, and core themes of each site, rather than individual articles."
-        : "This is an incremental update. Please focus on today's new content and assess its strategic significance in context."
+        ? "This is the first full crawl. Please focus on the content landscape, historical context, and core themes of each site, rather than individual articles."
+        : "This is an incremental update. Please focus on today's new content and add only necessary context; do not turn routine updates into strategy claims."
       : isAnyFirstRun
         ? "本次为首次全量抓取，请重点梳理各站点的内容格局、历史脉络与核心主题，而非仅关注单篇文章。"
-        : "本次为增量更新，请聚焦今日新增内容，并结合上下文判断其战略意义。";
+        : "本次为增量更新，请聚焦今日新增内容，只补充必要上下文，不把日常更新延伸成战略判断。";
 
   if (lang === "en") {
-    return `You are a deep content analyst focused on AI and developer ecosystems, skilled at extracting strategic signals from official announcements, technical blogs, research papers, product documentation, and curated feeds.
+    return `You are a content analyst focused on AI and developer ecosystems, skilled at summarizing official announcements, technical blogs, research papers, product documentation, and curated feeds with appropriate context.
 
   The following content was crawled on ${dateStr} from these configured sources: ${sourceNames}. ${firstRunNote}
 
@@ -709,28 +761,30 @@ ${siteSections}
 
   Generate a detailed content tracking report in English with these sections:
 
-1. **Today's Highlights** — 3-5 sentences on the most important new releases or developments, calling out key highlights
+${dailyWritingRules(lang)}
+
+1. **Today's Update Brief** — 3-5 sentences on the most important new releases or developments, stated as concrete updates
 
   2. **Per-Source Highlights** — For each source, organize the important content by category:
-    - For each piece, write 2-4 sentences extracting core insights, technical details, or strategic significance
+    - For each piece, write 2-4 sentences extracting core content, technical details, or practical relevance
     - Note publication date and original link
     - If first full crawl, trace major milestones chronologically where helpful
 
-  3. **Cross-Source Signal Analysis** — Based on release cadence and content focus across sources, analyze:
-    - Which technical priorities are most visible right now (model capabilities / safety / productization / ecosystem / developer workflows)
-    - Whether different sources are converging on the same themes or emphasizing different directions
-    - Potential impact on developers, builders, and enterprise users
+  3. **Cross-Source Update Notes** — Based on release cadence and content focus across sources, summarize:
+    - Which technical topics appear most often in today's data
+    - Whether different sources clearly mention similar themes, or are simply independent updates
+    - Practical relevance for developers, builders, and enterprise users only when directly supported by the content
 
-  4. **Notable Details** — Extract hidden signals from titles, phrasing, timing, and source mix, e.g.:
+  4. **Notable Details** — Record details from titles, phrasing, timing, and source mix, e.g.:
    - New terms or topics appearing for the first time
-   - Dense releases in a category (may signal a product milestone)
+   - Dense releases in a category, described as a daily cluster unless a milestone is explicit
     - Policy, compliance, ecosystem, or safety developments
 
   ${isAnyFirstRun ? "5. **Content Landscape Overview** — First full crawl only: summarize the content category distribution across sources and describe each source's content strategy style (research-oriented vs product-oriented vs ecosystem-oriented vs community-oriented, etc.)\n\n" : ""}Style: English, professional and detailed, suited for AI researchers, product managers, and technical decision-makers. Every item must include official links.
 `;
   }
 
-  return `你是一位专注于 AI 与开发者生态的深度内容分析师，擅长从官方公告、技术博客、研究论文、产品文档和信息流中提炼战略信号。
+  return `你是一位专注于 AI 与开发者生态的内容分析师，擅长从官方公告、技术博客、研究论文、产品文档和信息流中提炼事实摘要与必要上下文。
 
   以下是 ${dateStr} 从这些已配置来源抓取的内容：${sourceNames}。${firstRunNote}
 
@@ -740,25 +794,91 @@ ${siteSections}
 
   请生成一份详实的《内容追踪报告》，包含以下部分：
 
-1. **今日速览** — 3~5 句话概括最重要的新发布或动向，点出核心亮点
+${dailyWritingRules(lang)}
+
+1. **今日更新概览** — 3~5 句话概括最重要的新发布或更新，按具体事实表述
 
   2. **各来源内容精选** — 按来源和分类逐条整理重要内容：
-   - 每篇用 2~4 句话提炼核心观点、技术细节或业务意义
+   - 每篇用 2~4 句话提炼核心内容、技术细节或实际影响
    - 标注发布日期和原文链接
    - 如首次全量，按时间线梳理重要里程碑
 
-  3. **跨来源战略信号解读** — 基于各来源的发布节奏和内容重点，分析：
-    - 当前最突出的技术优先级（模型能力 / 安全 / 产品化 / 生态 / 开发者工作流）
-    - 不同来源是在收敛到同一主题，还是各自强调不同方向
-    - 对开发者、创业团队和企业用户的潜在影响
+  3. **跨来源更新脉络** — 基于各来源的发布节奏和内容重点，说明：
+    - 今日数据中出现较多的技术主题（模型能力 / 安全 / 产品化 / 生态 / 开发者工作流）
+    - 不同来源是否明确提到相近主题，还是只是各自独立更新
+    - 仅在内容直接支持时，说明对开发者、创业团队和企业用户的实际影响
 
-  4. **值得关注的细节** — 从标题、措辞、发布时机和来源组合中提取隐含信号，例如：
+  4. **值得记录的细节** — 从标题、措辞、发布时机和来源组合中记录具体细节，例如：
    - 新兴词汇或话题的首次出现
-   - 某类主题的密集发布（可能预示产品节点）
+   - 某类主题的密集发布（除非原文明确，否则只写成日内集中出现）
     - 政策、合规、生态、安全方面的动向
 
   ${isAnyFirstRun ? "5. **内容格局总览** — 首次全量独有：汇总各来源的内容类别分布，并说明各自的内容运营风格（研究导向 / 产品导向 / 生态导向 / 社区导向等）\n\n" : ""}语言要求：中文，专业深入，内容详实，适合 AI 领域研究者、产品经理和技术决策者阅读。每个条目必须附上官网链接。
 `;
+}
+
+export function buildIntegratedDailyPrompt(
+  reports: DailySourceReport[],
+  dateStr: string,
+  lang: "zh" | "en" = "zh",
+): string {
+  const reportSections = reports
+    .map(
+      (report) => `## ${report.title} (${report.filename})
+
+${report.content}`,
+    )
+    .join("\n\n---\n\n");
+
+  if (lang === "en") {
+    return `You are editing the reader-facing entrypoint for Big Model Radar. The following source reports were generated for ${dateStr}. Create one integrated daily digest that helps readers decide what to open next.
+
+${dailyWritingRules(lang)}
+
+Source reports:
+
+${reportSections}
+
+---
+
+Generate **AI Ecosystem Daily Brief ${dateStr}** in English with these sections:
+
+1. **At a Glance** — 8-12 factual bullets. Prefix each bullet with one source tag: [CLI], [Agents], [Skills], [Official], [GitHub], or [HN].
+2. **Browse by Theme** — Use only themes that appear in the source reports. Group facts under practical headings such as Developer Tools, Agent Projects, Skills & Workflows, Official Updates, GitHub Hot List, and HN Discussions.
+3. **Follow-Up Watch** — 3-8 items that are explicitly unresolved, newly released, unusually active, or worth checking again. For each item, include the source report and a short reason. If there is no clear follow-up item, say so directly.
+4. **Detailed Report Index** — A table with one row per source report: report name, what to read it for, and the local Markdown filename.
+5. **Data Gaps** — Mention skipped or failed source reports only when the input clearly shows a gap.
+
+Rules:
+- This is an entrypoint, not another deep analysis report.
+- Preserve concrete names, issue/PR numbers, release names, and links already present in the sources.
+- Do not invent links, facts, project names, or broad conclusions.
+- Keep the whole brief compact enough to scan in 3-5 minutes.`;
+  }
+
+  return `你是 Big Model Radar 的整合日报编辑。以下是 ${dateStr} 已生成的各份来源报告。请把它们整理成一份读者入口型日报，帮助读者快速判断今天先看什么、去哪里看细节。
+
+${dailyWritingRules(lang)}
+
+来源报告：
+
+${reportSections}
+
+---
+
+请生成《AI 生态整合日报 ${dateStr}》，包含以下部分：
+
+1. **今日一屏** — 8~12 条事实型要点。每条开头标注一个来源标签：[CLI]、[Agents]、[Skills]、[Official]、[GitHub]、[HN]。
+2. **按主题浏览** — 只使用来源报告中确实出现的主题。可按“开发工具与 CLI”“Agent / 个人助手项目”“Skills / 工作流”“官方发布与技术博客”“GitHub 热榜项目”“HN 社区讨论”等分组。
+3. **需要继续跟踪** — 3~8 条明确未关闭、新发布、讨论异常活跃或值得复查的事项。每条说明来源报告和简短理由；没有清晰事项时直接说明。
+4. **详细报告入口** — 表格列出每份来源报告：报告名、适合看什么、本地 Markdown 文件名。
+5. **数据缺口** — 只有当输入中明确显示某类报告跳过或失败时才写。
+
+写作规则：
+- 这是入口日报，不是另一份深度分析报告。
+- 保留来源中已有的具体项目名、Issue/PR 编号、版本名和链接。
+- 不编造链接、事实、项目名或宏观结论。
+- 控制篇幅，让读者 3~5 分钟能扫完。`;
 }
 
 export function buildWeeklyPrompt(
@@ -885,9 +1005,11 @@ ${storiesText}
 
 ---
 
+${dailyWritingRules(lang)}
+
 Generate a structured Hacker News AI Community Digest in English:
 
-1. **Today's Highlights** — 3-5 sentences on the hottest AI discussion topics and community sentiment on HN today
+1. **Today's Discussion Brief** — 3-5 sentences on the most active AI discussion topics and visible community mood on HN today
 
 2. **Top News & Discussions** — Organized by category, select the 2-5 most representative items per category, each with:
    - Title (with original link) + HN discussion link
@@ -900,10 +1022,10 @@ Generate a structured Hacker News AI Community Digest in English:
    - 🏢 Industry News (company news, funding, product launches)
    - 💬 Opinions & Debates (notable Ask HN, Show HN, or hot discussion threads)
 
-3. **Community Sentiment Signal** — 100-200 words analyzing today's HN AI discussion mood and focus:
+3. **Community Discussion Notes** — 100-200 words recording today's HN AI discussion mood and focus:
    - Which topics are most active (high score + high comments)?
    - Any clear points of controversy or consensus?
-   - Compared to last cycle, any notable shift in focus?
+   - Do not compare with a previous cycle unless the provided data includes that comparison
 
 4. **Worth Deep Reading** — List 2-3 pieces most worth developers/researchers reading in depth, with brief reasoning
 
@@ -919,9 +1041,11 @@ ${storiesText}
 
 ---
 
+${dailyWritingRules(lang)}
+
 请生成一份结构清晰的《Hacker News AI 社区动态日报》，要求：
 
-1. **今日速览** — 3~5 句话，概括今日 HN 社区围绕 AI 最热门的讨论方向和情绪
+1. **今日讨论概览** — 3~5 句话，概括今日 HN 社区围绕 AI 最活跃的讨论方向和可见情绪
 
 2. **热门新闻与讨论** — 按以下分类整理，每类选取最具代表性的 2~5 条，每条包含：
    - 标题（附原文链接）+ HN 讨论链接
@@ -934,10 +1058,10 @@ ${storiesText}
    - 🏢 产业动态（公司新闻、融资、产品发布）
    - 💬 观点与争议（值得关注的 Ask HN、Show HN 或热议帖子）
 
-3. **社区情绪信号** — 100~200 字，分析今日 HN AI 讨论的整体情绪和关注重点：
+3. **社区讨论备注** — 100~200 字，记录今日 HN AI 讨论的整体情绪和关注重点：
    - 社区对哪类话题最活跃（高分 + 高评论）？
    - 有无明显的争议点或共识？
-   - 与上周期相比，关注方向有无明显变化？
+   - 除非输入数据包含对比依据，否则不要与上周期比较
 
 4. **值得深读** — 列出 2~3 条今日最值得开发者/研究者深入阅读的内容，简述理由
 

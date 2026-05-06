@@ -2,6 +2,26 @@
   "generated": "2026-05-06T02:10:19.753Z",
   "tracks": [
     {
+      "id": "ai-daily",
+      "kind": "rollup",
+      "order": 5,
+      "includeInRollups": true,
+      "variants": [
+        {
+          "id": "ai-daily",
+          "language": "zh",
+          "shortLabel": "AI 生态整合日报",
+          "fullTitle": "AI 生态整合日报"
+        },
+        {
+          "id": "ai-daily-en",
+          "language": "en",
+          "shortLabel": "AI Daily Brief",
+          "fullTitle": "AI Ecosystem Daily Brief"
+        }
+      ]
+    },
+    {
       "id": "ai-cli",
       "kind": "github_group",
       "order": 10,
@@ -90,14 +110,14 @@
         {
           "id": "ai-trending",
           "language": "zh",
-          "shortLabel": "GitHub AI 趋势",
-          "fullTitle": "AI 开源趋势日报"
+          "shortLabel": "GitHub AI 热榜",
+          "fullTitle": "GitHub AI 热榜日报"
         },
         {
           "id": "ai-trending-en",
           "language": "en",
-          "shortLabel": "GitHub AI Trends",
-          "fullTitle": "AI Open Source Trends"
+          "shortLabel": "GitHub AI Trending",
+          "fullTitle": "GitHub AI Trending Digest"
         }
       ]
     },
@@ -163,6 +183,32 @@
     }
   ],
   "reports": [
+    {
+      "id": "ai-daily",
+      "baseId": "ai-daily",
+      "kind": "rollup",
+      "order": 5,
+      "filename": "ai-daily.md",
+      "language": "zh",
+      "shortLabel": "AI 生态整合日报",
+      "fullTitle": "AI 生态整合日报",
+      "includeInRollups": true,
+      "includeInSearch": true,
+      "pairId": "ai-daily-en"
+    },
+    {
+      "id": "ai-daily-en",
+      "baseId": "ai-daily",
+      "kind": "rollup",
+      "order": 5,
+      "filename": "ai-daily-en.md",
+      "language": "en",
+      "shortLabel": "AI Daily Brief",
+      "fullTitle": "AI Ecosystem Daily Brief",
+      "includeInRollups": true,
+      "includeInSearch": false,
+      "pairId": "ai-daily"
+    },
     {
       "id": "ai-cli",
       "baseId": "ai-cli",
@@ -274,8 +320,8 @@
       "order": 40,
       "filename": "ai-trending.md",
       "language": "zh",
-      "shortLabel": "GitHub AI 趋势",
-      "fullTitle": "AI 开源趋势日报",
+      "shortLabel": "GitHub AI 热榜",
+      "fullTitle": "GitHub AI 热榜日报",
       "includeInRollups": true,
       "includeInSearch": true,
       "pairId": "ai-trending-en"
@@ -287,8 +333,8 @@
       "order": 40,
       "filename": "ai-trending-en.md",
       "language": "en",
-      "shortLabel": "GitHub AI Trends",
-      "fullTitle": "AI Open Source Trends",
+      "shortLabel": "GitHub AI Trending",
+      "fullTitle": "GitHub AI Trending Digest",
       "includeInRollups": true,
       "includeInSearch": false,
       "pairId": "ai-trending"

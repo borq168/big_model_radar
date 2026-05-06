@@ -65,6 +65,28 @@ interface DynamicTrackReportOverride {
 
 const BASE_REPORT_DEFINITIONS: BaseReportDefinition[] = [
   {
+    baseId: "ai-daily",
+    kind: "rollup",
+    order: 5,
+    includeInRollups: true,
+    variants: {
+      zh: {
+        id: "ai-daily",
+        shortLabel: "AI 生态整合日报",
+        fullTitle: "AI 生态整合日报",
+        language: "zh",
+        includeInSearch: true,
+      },
+      en: {
+        id: "ai-daily-en",
+        shortLabel: "AI Daily Brief",
+        fullTitle: "AI Ecosystem Daily Brief",
+        language: "en",
+        includeInSearch: false,
+      },
+    },
+  },
+  {
     baseId: "ai-cli",
     kind: "github_group",
     order: 10,
@@ -138,15 +160,15 @@ const BASE_REPORT_DEFINITIONS: BaseReportDefinition[] = [
     variants: {
       zh: {
         id: "ai-trending",
-        shortLabel: "GitHub AI 趋势",
-        fullTitle: "AI 开源趋势日报",
+        shortLabel: "GitHub AI 热榜",
+        fullTitle: "GitHub AI 热榜日报",
         language: "zh",
         includeInSearch: true,
       },
       en: {
         id: "ai-trending-en",
-        shortLabel: "GitHub AI Trends",
-        fullTitle: "AI Open Source Trends",
+        shortLabel: "GitHub AI Trending",
+        fullTitle: "GitHub AI Trending Digest",
         language: "en",
         includeInSearch: false,
       },
