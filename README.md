@@ -10,13 +10,13 @@ The ongoing V2 architecture plan / status board lives in [`docs/architecture-v2.
 
 ## Web UI
 
-**[https://gsscsd.github.io/big_model_radar](https://gsscsd.github.io/big_model_radar)**
+**[https://borq168.github.io/big_model_radar](https://borq168.github.io/big_model_radar)**
 
 Browse all historical digests in a clean, dark-themed interface — no login required. Reports are rendered from the Markdown files in this repo via GitHub Pages.
 
 ## RSS Feed
 
-**[https://gsscsd.github.io/big_model_radar/feed.xml](https://gsscsd.github.io/big_model_radar/feed.xml)**
+**[https://borq168.github.io/big_model_radar/feed.xml](https://borq168.github.io/big_model_radar/feed.xml)**
 
 Subscribe in any RSS reader (Feedly, Reeder, NewsBlur, etc.) to receive new digests automatically. The feed includes the latest 30 reports across all report types, updated daily alongside `manifest.json`.
 

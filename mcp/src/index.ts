@@ -11,7 +11,7 @@
  *   search        — keyword search across recent reports
  */
 
-const PAGES_URL = "https://gsscsd.github.io/big_model_radar";
+const PAGES_URL = "https://borq168.github.io/big_model_radar";
 
 interface ManifestDate {
   date: string;
