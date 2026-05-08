@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-05-07T02:04:01.905Z",
+      "lastChecked": "2026-05-08T02:10:46.957Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -468,7 +468,7 @@
       }
     },
     "openai": {
-      "lastChecked": "2026-05-07T02:04:02.125Z",
+      "lastChecked": "2026-05-08T02:10:47.039Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -671,7 +671,7 @@
         "https://openai.com/index/accelerating-biological-research-in-the-wet-lab/": "2025-12-16T08:00:00.000Z",
         "https://openai.com/index/introducing-gpt-5-3-codex-spark/": "2026-02-12T10:00:00.000Z",
         "https://openai.com/index/developers-can-now-submit-apps-to-chatgpt/": "2025-12-17T00:00:00.000Z",
-        "https://openai.com/index/testing-ads-in-chatgpt/": "2026-02-09T11:00:00.000Z",
+        "https://openai.com/index/testing-ads-in-chatgpt/": "2026-05-07T00:00:00.000Z",
         "https://openai.com/index/introducing-gpt-5-3-codex/": "2026-02-05T00:00:00.000Z",
         "https://openai.com/index/our-approach-to-advertising-and-expanding-access/": "2026-01-16T00:00:00.000Z",
         "https://openai.com/index/introducing-chatgpt-health/": "2026-01-07T00:00:00.000Z",
@@ -1350,7 +1350,7 @@
         "https://openai.com/index/scaling-social-science-research": "2026-02-13T09:00:00.000Z",
         "https://openai.com/index/introducing-gpt-5-3-codex-spark": "2026-02-12T10:00:00.000Z",
         "https://openai.com/index/harness-engineering": "2026-02-11T09:00:00.000Z",
-        "https://openai.com/index/testing-ads-in-chatgpt": "2026-02-09T11:00:00.000Z",
+        "https://openai.com/index/testing-ads-in-chatgpt": "2026-05-07T00:00:00.000Z",
         "https://openai.com/index/bringing-chatgpt-to-genaimil": "2026-02-09T11:00:00.000Z",
         "https://openai.com/index/bringing-chatgpt-to-genaimil/": "2026-02-09T11:00:00.000Z",
         "https://openai.com/index/our-approach-to-localization": "2026-02-06T10:00:00.000Z",
@@ -2386,11 +2386,21 @@
         "https://openai.com/index/welcome-pieter-and-shivon": "2016-04-26T07:00:00.000Z",
         "https://openai.com/index/team-plus-plus": "2016-03-31T07:00:00.000Z",
         "https://openai.com/index/weight-normalization": "2016-02-25T08:00:00.000Z",
-        "https://openai.com/index/introducing-openai": "2015-12-11T08:00:00.000Z"
+        "https://openai.com/index/introducing-openai": "2015-12-11T08:00:00.000Z",
+        "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber": "2026-05-07T13:00:00.000Z",
+        "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/": "2026-05-07T13:00:00.000Z",
+        "https://openai.com/index/parloa": "2026-05-07T11:00:00.000Z",
+        "https://openai.com/index/parloa/": "2026-05-07T11:00:00.000Z",
+        "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api": "2026-05-07T10:00:00.000Z",
+        "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/": "2026-05-07T10:00:00.000Z",
+        "https://openai.com/index/introducing-trusted-contact-in-chatgpt": "2026-05-07T00:00:00.000Z",
+        "https://openai.com/index/introducing-trusted-contact-in-chatgpt/": "2026-05-07T00:00:00.000Z",
+        "https://openai.com/index/simplex": "2026-05-07T00:00:00.000Z",
+        "https://openai.com/index/simplex/": "2026-05-07T00:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-05-07T02:04:01.980Z",
+      "lastChecked": "2026-05-08T02:10:46.982Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
@@ -2473,7 +2483,15 @@
         "2vIUFXJLJcMgjgY6jFnQ7G/": "2026-04-16T14:05:00.000Z",
         "https://blog.cloudflare.com/ai-platform": "2026-04-16T14:05:00.000Z",
         "71xNLfh83S7Fg78QEcgdhf/": "2026-04-16T14:00:00.000Z",
-        "https://blog.cloudflare.com/high-performance-llms": "2026-04-16T14:00:00.000Z"
+        "https://blog.cloudflare.com/high-performance-llms": "2026-04-16T14:00:00.000Z",
+        "4XKENJm0fq33smsBSmUIc5": "2026-05-07T20:15:12.000Z",
+        "4XKENJm0fq33smsBSmUIc5/": "2026-05-07T20:15:12.000Z",
+        "https://blog.cloudflare.com/building-for-the-future/": "2026-05-07T20:15:12.000Z",
+        "https://blog.cloudflare.com/building-for-the-future": "2026-05-07T20:15:12.000Z",
+        "7JN0oOT8V9YgCD6JFW92my": "2026-05-07T13:00:00.000Z",
+        "7JN0oOT8V9YgCD6JFW92my/": "2026-05-07T13:00:00.000Z",
+        "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/": "2026-05-07T13:00:00.000Z",
+        "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation": "2026-05-07T13:00:00.000Z"
       }
     }
   }
