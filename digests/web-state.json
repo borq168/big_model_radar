@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-05-08T02:10:46.957Z",
+      "lastChecked": "2026-05-09T02:04:37.116Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -468,7 +468,7 @@
       }
     },
     "openai": {
-      "lastChecked": "2026-05-08T02:10:47.039Z",
+      "lastChecked": "2026-05-09T02:04:37.360Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -2396,11 +2396,17 @@
         "https://openai.com/index/introducing-trusted-contact-in-chatgpt": "2026-05-07T00:00:00.000Z",
         "https://openai.com/index/introducing-trusted-contact-in-chatgpt/": "2026-05-07T00:00:00.000Z",
         "https://openai.com/index/simplex": "2026-05-07T00:00:00.000Z",
-        "https://openai.com/index/simplex/": "2026-05-07T00:00:00.000Z"
+        "https://openai.com/index/simplex/": "2026-05-07T00:00:00.000Z",
+        "https://openai.com/index/running-codex-safely": "2026-05-08T12:30:00.000Z",
+        "https://openai.com/index/running-codex-safely/": "2026-05-08T12:30:00.000Z",
+        "https://openai.com/index/how-chatgpt-protects-privacy": "2026-05-06T08:00:00.000Z",
+        "https://openai.com/index/how-chatgpt-protects-privacy/": "2026-05-06T08:00:00.000Z",
+        "https://openai.com/index/advancing-youth-safety-in-emea": "2026-05-05T00:00:00.000Z",
+        "https://openai.com/index/advancing-youth-safety-in-emea/": "2026-05-05T00:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-05-08T02:10:46.982Z",
+      "lastChecked": "2026-05-09T02:04:37.196Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
