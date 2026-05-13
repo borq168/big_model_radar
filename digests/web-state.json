@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-05-12T02:09:40.090Z",
+      "lastChecked": "2026-05-13T02:15:31.687Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -468,7 +468,7 @@
       }
     },
     "openai": {
-      "lastChecked": "2026-05-12T02:09:40.324Z",
+      "lastChecked": "2026-05-13T02:15:31.813Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -2410,11 +2410,19 @@
         "https://openai.com/index/openai-campus-network-student-club-interest-form": "2026-05-11T10:00:00.000Z",
         "https://openai.com/index/openai-campus-network-student-club-interest-form/": "2026-05-11T10:00:00.000Z",
         "https://openai.com/index/openai-launches-the-deployment-company": "2026-05-11T06:00:00.000Z",
-        "https://openai.com/index/openai-launches-the-deployment-company/": "2026-05-11T06:00:00.000Z"
+        "https://openai.com/index/openai-launches-the-deployment-company/": "2026-05-11T06:00:00.000Z",
+        "https://openai.com/academy/how-finance-teams-use-codex": "2026-05-12T15:00:00.000Z",
+        "https://openai.com/academy/how-finance-teams-use-codex/": "2026-05-12T15:00:00.000Z",
+        "https://openai.com/index/nvidia": "2026-05-12T00:00:00.000Z",
+        "https://openai.com/index/nvidia/": "2026-05-12T00:00:00.000Z",
+        "https://openai.com/index/what-parameter-golf-taught-us": "2026-05-12T00:00:00.000Z",
+        "https://openai.com/index/what-parameter-golf-taught-us/": "2026-05-12T00:00:00.000Z",
+        "https://openai.com/index/autoscout24": "2026-05-12T00:00:00.000Z",
+        "https://openai.com/index/autoscout24/": "2026-05-12T00:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-05-12T02:09:40.143Z",
+      "lastChecked": "2026-05-13T02:15:31.927Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
@@ -2505,7 +2513,11 @@
         "7JN0oOT8V9YgCD6JFW92my": "2026-05-07T13:00:00.000Z",
         "7JN0oOT8V9YgCD6JFW92my/": "2026-05-07T13:00:00.000Z",
         "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/": "2026-05-07T13:00:00.000Z",
-        "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation": "2026-05-07T13:00:00.000Z"
+        "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation": "2026-05-07T13:00:00.000Z",
+        "1zBGqAHw4u2LDu0ldcF3AM": "2026-05-12T13:00:00.000Z",
+        "1zBGqAHw4u2LDu0ldcF3AM/": "2026-05-12T13:00:00.000Z",
+        "https://blog.cloudflare.com/quic-death-spiral-fix/": "2026-05-12T13:00:00.000Z",
+        "https://blog.cloudflare.com/quic-death-spiral-fix": "2026-05-12T13:00:00.000Z"
       }
     }
   }
