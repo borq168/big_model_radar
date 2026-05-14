@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-05-13T02:15:31.687Z",
+      "lastChecked": "2026-05-14T02:26:42.920Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -464,11 +464,13 @@
         "https://www.anthropic.com/news/claude-sonnet-4-5/": "2025-09-29T00:00:00.000Z",
         "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation/": "2025-09-02T00:00:00.000Z",
         "https://www.anthropic.com/news/thoughts-on-america-s-ai-action-plan/": "2025-07-23T00:00:00.000Z",
-        "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy/": "seen"
+        "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy/": "seen",
+        "https://www.anthropic.com/news/claude-for-small-business": "2026-05-13T00:00:00.000Z",
+        "https://www.anthropic.com/news/claude-for-small-business/": "2026-05-13T00:00:00.000Z"
       }
     },
     "openai": {
-      "lastChecked": "2026-05-13T02:15:31.813Z",
+      "lastChecked": "2026-05-14T02:26:43.029Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -2418,11 +2420,13 @@
         "https://openai.com/index/what-parameter-golf-taught-us": "2026-05-12T00:00:00.000Z",
         "https://openai.com/index/what-parameter-golf-taught-us/": "2026-05-12T00:00:00.000Z",
         "https://openai.com/index/autoscout24": "2026-05-12T00:00:00.000Z",
-        "https://openai.com/index/autoscout24/": "2026-05-12T00:00:00.000Z"
+        "https://openai.com/index/autoscout24/": "2026-05-12T00:00:00.000Z",
+        "https://openai.com/index/building-codex-windows-sandbox": "2026-05-13T11:00:00.000Z",
+        "https://openai.com/index/building-codex-windows-sandbox/": "2026-05-13T11:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-05-13T02:15:31.927Z",
+      "lastChecked": "2026-05-14T02:26:42.948Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
@@ -2517,7 +2521,11 @@
         "1zBGqAHw4u2LDu0ldcF3AM": "2026-05-12T13:00:00.000Z",
         "1zBGqAHw4u2LDu0ldcF3AM/": "2026-05-12T13:00:00.000Z",
         "https://blog.cloudflare.com/quic-death-spiral-fix/": "2026-05-12T13:00:00.000Z",
-        "https://blog.cloudflare.com/quic-death-spiral-fix": "2026-05-12T13:00:00.000Z"
+        "https://blog.cloudflare.com/quic-death-spiral-fix": "2026-05-12T13:00:00.000Z",
+        "6hwTzVHKEOlPBwzj6rWnRM": "2026-05-13T13:00:00.000Z",
+        "6hwTzVHKEOlPBwzj6rWnRM/": "2026-05-13T13:00:00.000Z",
+        "https://blog.cloudflare.com/browser-run-containers/": "2026-05-13T13:00:00.000Z",
+        "https://blog.cloudflare.com/browser-run-containers": "2026-05-13T13:00:00.000Z"
       }
     }
   }
