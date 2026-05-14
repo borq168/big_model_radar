@@ -283,6 +283,45 @@ function renderMarkdown(raw) {
   });
 }
 
+const ABSOLUTE_URL_RE = /^[a-zA-Z][a-zA-Z\d+.-]*:/;
+const DIGEST_ROUTE_RE = /^digests\/(\d{4}-\d{2}-\d{2})\/([^/]+)\.md$/;
+
+function getAppBaseUrl() {
+  return new URL('.', location.href.split('#')[0]);
+}
+
+function getMarkdownBaseUrl(date, report) {
+  return new URL(`digests/${date}/${report}.md`, getAppBaseUrl());
+}
+
+function toDigestHash(resolvedUrl) {
+  const appRoot = getAppBaseUrl().pathname;
+  const relativePath = resolvedUrl.pathname.startsWith(appRoot)
+    ? resolvedUrl.pathname.slice(appRoot.length)
+    : resolvedUrl.pathname.replace(/^\//, '');
+  const match = relativePath.match(DIGEST_ROUTE_RE);
+  if (!match) return null;
+  return `#${match[1]}/${match[2]}`;
+}
+
+function resolveReportLink(href, date, report) {
+  if (!href || href.startsWith('#') || href.startsWith('//') || ABSOLUTE_URL_RE.test(href)) {
+    return href;
+  }
+
+  const resolvedUrl = new URL(href, getMarkdownBaseUrl(date, report));
+  return toDigestHash(resolvedUrl) || resolvedUrl.toString();
+}
+
+function rewriteReportLinks(container, date, report) {
+  container.querySelectorAll('a[href]').forEach((link) => {
+    const href = link.getAttribute('href');
+    const rewrittenHref = resolveReportLink(href, date, report);
+    if (!rewrittenHref || rewrittenHref === href) return;
+    link.setAttribute('href', rewrittenHref);
+  });
+}
+
 const FALLBACK_LABELS = {
   'ai-daily':       'AI 生态整合日报',
   'ai-daily-en':    'AI Daily Brief',
@@ -455,6 +494,8 @@ async function loadReport(date, report, push = true) {
     const raw = await res.text();
     const safe = renderMarkdown(raw);
     setContent(`<div class="md fade">${safe}</div>`);
+    const markdownEl = document.querySelector('#content .md');
+    if (markdownEl) rewriteReportLinks(markdownEl, date, report);
   } catch (e) {
     setContent(`<div class="msg"><div class="msg-icon">⚠️</div><div>加载失败：${e.message}</div></div>`);
   }
@@ -532,6 +573,11 @@ function buildNav(dates) {
 }
 
 window.addEventListener('popstate', () => {
+  const h = getHash();
+  if (h) loadReport(h.date, h.report, false);
+});
+
+window.addEventListener('hashchange', () => {
   const h = getHash();
   if (h) loadReport(h.date, h.report, false);
 });
