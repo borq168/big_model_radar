@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-05-18T02:32:33.289Z",
+      "lastChecked": "2026-05-19T02:31:27.473Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -470,11 +470,13 @@
         "https://www.anthropic.com/news/gates-foundation-partnership": "2026-05-14T00:00:00.000Z",
         "https://www.anthropic.com/news/gates-foundation-partnership/": "2026-05-14T00:00:00.000Z",
         "https://www.anthropic.com/news/pwc-expanded-partnership": "2026-05-14T00:00:00.000Z",
-        "https://www.anthropic.com/news/pwc-expanded-partnership/": "2026-05-14T00:00:00.000Z"
+        "https://www.anthropic.com/news/pwc-expanded-partnership/": "2026-05-14T00:00:00.000Z",
+        "https://www.anthropic.com/news/anthropic-acquires-stainless": "2026-05-18T00:00:00.000Z",
+        "https://www.anthropic.com/news/anthropic-acquires-stainless/": "2026-05-18T00:00:00.000Z"
       }
     },
     "openai": {
-      "lastChecked": "2026-05-18T02:32:33.348Z",
+      "lastChecked": "2026-05-19T02:31:27.599Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -2446,11 +2448,13 @@
         "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex": "2026-05-15T00:00:00.000Z",
         "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex/": "2026-05-15T00:00:00.000Z",
         "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex": "2026-05-15T00:00:00.000Z",
-        "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex/": "2026-05-15T00:00:00.000Z"
+        "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex/": "2026-05-15T00:00:00.000Z",
+        "https://openai.com/index/dell-codex-enterprise-partnership": "2026-05-18T10:00:00.000Z",
+        "https://openai.com/index/dell-codex-enterprise-partnership/": "2026-05-18T10:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-05-18T02:32:33.261Z",
+      "lastChecked": "2026-05-19T02:31:27.789Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
@@ -2553,7 +2557,11 @@
         "65sE8zefBt1cYbclYLhqjA": "2026-05-14T13:00:00.000Z",
         "65sE8zefBt1cYbclYLhqjA/": "2026-05-14T13:00:00.000Z",
         "https://blog.cloudflare.com/clickhouse-query-plan-contention/": "2026-05-14T13:00:00.000Z",
-        "https://blog.cloudflare.com/clickhouse-query-plan-contention": "2026-05-14T13:00:00.000Z"
+        "https://blog.cloudflare.com/clickhouse-query-plan-contention": "2026-05-14T13:00:00.000Z",
+        "xrcYtr7kU54LNDB8MEmQY": "2026-05-18T06:00:00.000Z",
+        "xrcYtr7kU54LNDB8MEmQY/": "2026-05-18T06:00:00.000Z",
+        "https://blog.cloudflare.com/cyber-frontier-models/": "2026-05-18T06:00:00.000Z",
+        "https://blog.cloudflare.com/cyber-frontier-models": "2026-05-18T06:00:00.000Z"
       }
     }
   }
