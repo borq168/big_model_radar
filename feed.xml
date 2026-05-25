@@ -6,7 +6,7 @@
     <description>AI 开源生态每日简报 · Daily AI ecosystem digest</description>
     <language>zh-CN</language>
     <atom:link href="https://borq168.github.io/big_model_radar/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 25 May 2026 02:42:53 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2026 05:15:00 +0000</lastBuildDate>
     <item>
       <title>AI 生态整合日报 2026-05-25</title>
       <link>https://borq168.github.io/big_model_radar/#2026-05-25/ai-daily</link>
@@ -90,6 +90,20 @@
       <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-05-25/ai-hn-en</guid>
       <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
       <description>Hacker News AI Community Digest 2026-05-25</description>
+    </item>
+    <item>
+      <title>AI 工具生态周报 2026-05-25</title>
+      <link>https://borq168.github.io/big_model_radar/#2026-05-25/ai-weekly</link>
+      <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-05-25/ai-weekly</guid>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+      <description>AI 工具生态周报 2026-05-25</description>
+    </item>
+    <item>
+      <title>AI Tools Weekly Digest 2026-05-25</title>
+      <link>https://borq168.github.io/big_model_radar/#2026-05-25/ai-weekly-en</link>
+      <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-05-25/ai-weekly-en</guid>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+      <description>AI Tools Weekly Digest 2026-05-25</description>
     </item>
     <item>
       <title>AI 生态整合日报 2026-05-24</title>
@@ -202,20 +216,6 @@
       <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-05-23/ai-cli-en</guid>
       <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
       <description>AI CLI Tools Digest 2026-05-23</description>
-    </item>
-    <item>
-      <title>Skills 生态热点 2026-05-23</title>
-      <link>https://borq168.github.io/big_model_radar/#2026-05-23/ai-skills</link>
-      <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-05-23/ai-skills</guid>
-      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
-      <description>Skills 生态热点 2026-05-23</description>
-    </item>
-    <item>
-      <title>Skills Ecosystem Highlights 2026-05-23</title>
-      <link>https://borq168.github.io/big_model_radar/#2026-05-23/ai-skills-en</link>
-      <guid isPermaLink="true">https://borq168.github.io/big_model_radar/#2026-05-23/ai-skills-en</guid>
-      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
-      <description>Skills Ecosystem Highlights 2026-05-23</description>
     </item>
   </channel>
 </rss>
