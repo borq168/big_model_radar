@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-05-25T02:37:40.552Z",
+      "lastChecked": "2026-05-26T02:28:07.248Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -476,11 +476,13 @@
         "https://www.anthropic.com/news/anthropic-kpmg": "2026-05-19T00:00:00.000Z",
         "https://www.anthropic.com/news/anthropic-kpmg/": "2026-05-19T00:00:00.000Z",
         "https://www.anthropic.com/news/widening-conversation-ai": "2026-05-19T00:00:00.000Z",
-        "https://www.anthropic.com/news/widening-conversation-ai/": "2026-05-19T00:00:00.000Z"
+        "https://www.anthropic.com/news/widening-conversation-ai/": "2026-05-19T00:00:00.000Z",
+        "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical": "2026-05-25T00:00:00.000Z",
+        "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical/": "2026-05-25T00:00:00.000Z"
       }
     },
     "openai": {
-      "lastChecked": "2026-05-25T02:37:40.950Z",
+      "lastChecked": "2026-05-26T02:28:07.536Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -2470,11 +2472,13 @@
         "https://openai.com/index/gartner-2026-agentic-coding-leader": "2026-05-22T00:00:00.000Z",
         "https://openai.com/index/gartner-2026-agentic-coding-leader/": "2026-05-22T00:00:00.000Z",
         "https://openai.com/index/virgin-atlantic": "2026-05-22T00:00:00.000Z",
-        "https://openai.com/index/virgin-atlantic/": "2026-05-22T00:00:00.000Z"
+        "https://openai.com/index/virgin-atlantic/": "2026-05-22T00:00:00.000Z",
+        "https://openai.com/index/grupo-folha-grupo-uol-partnership": "2026-05-25T00:00:00.000Z",
+        "https://openai.com/index/grupo-folha-grupo-uol-partnership/": "2026-05-25T00:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-05-25T02:37:40.690Z",
+      "lastChecked": "2026-05-26T02:28:07.399Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
