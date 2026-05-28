@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-05-27T02:37:32.053Z",
+      "lastChecked": "2026-05-28T02:13:58.672Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -484,7 +484,7 @@
       }
     },
     "openai": {
-      "lastChecked": "2026-05-27T02:37:32.114Z",
+      "lastChecked": "2026-05-28T02:13:58.864Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -1411,8 +1411,8 @@
         "https://openai.com/index/horizon-1000/": "2026-01-20T21:00:00.000Z",
         "https://openai.com/index/stargate-community": "2026-01-20T19:00:00.000Z",
         "https://openai.com/index/stargate-community/": "2026-01-20T19:00:00.000Z",
-        "https://openai.com/index/cisco": "2026-01-20T11:00:00.000Z",
-        "https://openai.com/index/cisco/": "2026-01-20T11:00:00.000Z",
+        "https://openai.com/index/cisco": "2026-05-27T11:00:00.000Z",
+        "https://openai.com/index/cisco/": "2026-05-27T11:00:00.000Z",
         "https://openai.com/index/servicenow-powers-actionable-enterprise-ai-with-openai": "2026-01-20T05:45:00.000Z",
         "https://openai.com/index/servicenow-powers-actionable-enterprise-ai-with-openai/": "2026-01-20T05:45:00.000Z",
         "https://openai.com/index/our-approach-to-age-prediction": "2026-01-20T00:00:00.000Z",
@@ -2476,11 +2476,19 @@
         "https://openai.com/index/virgin-atlantic": "2026-05-22T00:00:00.000Z",
         "https://openai.com/index/virgin-atlantic/": "2026-05-22T00:00:00.000Z",
         "https://openai.com/index/grupo-folha-grupo-uol-partnership": "2026-05-25T00:00:00.000Z",
-        "https://openai.com/index/grupo-folha-grupo-uol-partnership/": "2026-05-25T00:00:00.000Z"
+        "https://openai.com/index/grupo-folha-grupo-uol-partnership/": "2026-05-25T00:00:00.000Z",
+        "https://openai.com/index/building-self-improving-tax-agents-with-codex": "2026-05-27T07:00:00.000Z",
+        "https://openai.com/index/building-self-improving-tax-agents-with-codex/": "2026-05-27T07:00:00.000Z",
+        "https://openai.com/index/warp": "2026-05-27T00:00:00.000Z",
+        "https://openai.com/index/warp/": "2026-05-27T00:00:00.000Z",
+        "https://openai.com/index/election-safeguards-2026": "2026-05-27T00:00:00.000Z",
+        "https://openai.com/index/election-safeguards-2026/": "2026-05-27T00:00:00.000Z",
+        "https://openai.com/academy/how-to-use-codex-for-everyday-work": "2026-04-23T10:00:00.000Z",
+        "https://openai.com/academy/how-to-use-codex-for-everyday-work/": "2026-04-23T10:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-05-27T02:37:32.434Z",
+      "lastChecked": "2026-05-28T02:13:58.804Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
@@ -2595,7 +2603,11 @@
         "6jEQvtyNrxoxhmH9OfOBvX": "2026-05-21T17:00:00.000Z",
         "6jEQvtyNrxoxhmH9OfOBvX/": "2026-05-21T17:00:00.000Z",
         "https://blog.cloudflare.com/casb-anthropic-integration/": "2026-05-21T17:00:00.000Z",
-        "https://blog.cloudflare.com/casb-anthropic-integration": "2026-05-21T17:00:00.000Z"
+        "https://blog.cloudflare.com/casb-anthropic-integration": "2026-05-21T17:00:00.000Z",
+        "5VkjKrKCgZPffHiZoeDsKW": "2026-05-27T17:25:00.000Z",
+        "5VkjKrKCgZPffHiZoeDsKW/": "2026-05-27T17:25:00.000Z",
+        "https://blog.cloudflare.com/iran-internet-partially-restored-may-2026/": "2026-05-27T17:25:00.000Z",
+        "https://blog.cloudflare.com/iran-internet-partially-restored-may-2026": "2026-05-27T17:25:00.000Z"
       }
     }
   }
