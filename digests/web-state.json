@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-05-28T02:13:58.672Z",
+      "lastChecked": "2026-05-29T02:28:36.250Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -480,11 +480,17 @@
         "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical": "2026-05-25T00:00:00.000Z",
         "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical/": "2026-05-25T00:00:00.000Z",
         "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea": "2026-05-26T00:00:00.000Z",
-        "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea/": "2026-05-26T00:00:00.000Z"
+        "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea/": "2026-05-26T00:00:00.000Z",
+        "https://www.anthropic.com/news/series-h": "2026-05-28T00:00:00.000Z",
+        "https://www.anthropic.com/news/series-h/": "2026-05-28T00:00:00.000Z",
+        "https://www.anthropic.com/news/claude-opus-4-8": "2026-05-28T00:00:00.000Z",
+        "https://www.anthropic.com/news/claude-opus-4-8/": "2026-05-28T00:00:00.000Z",
+        "https://www.anthropic.com/news/milan-office-opening": "2026-05-27T00:00:00.000Z",
+        "https://www.anthropic.com/news/milan-office-opening/": "2026-05-27T00:00:00.000Z"
       }
     },
     "openai": {
-      "lastChecked": "2026-05-28T02:13:58.864Z",
+      "lastChecked": "2026-05-29T02:28:36.313Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -2484,11 +2490,15 @@
         "https://openai.com/index/election-safeguards-2026": "2026-05-27T00:00:00.000Z",
         "https://openai.com/index/election-safeguards-2026/": "2026-05-27T00:00:00.000Z",
         "https://openai.com/academy/how-to-use-codex-for-everyday-work": "2026-04-23T10:00:00.000Z",
-        "https://openai.com/academy/how-to-use-codex-for-everyday-work/": "2026-04-23T10:00:00.000Z"
+        "https://openai.com/academy/how-to-use-codex-for-everyday-work/": "2026-04-23T10:00:00.000Z",
+        "https://openai.com/index/endava": "2026-05-28T12:00:00.000Z",
+        "https://openai.com/index/endava/": "2026-05-28T12:00:00.000Z",
+        "https://openai.com/index/openai-frontier-governance-framework": "2026-05-28T00:00:00.000Z",
+        "https://openai.com/index/openai-frontier-governance-framework/": "2026-05-28T00:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-05-28T02:13:58.804Z",
+      "lastChecked": "2026-05-29T02:28:36.389Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
@@ -2607,7 +2617,11 @@
         "5VkjKrKCgZPffHiZoeDsKW": "2026-05-27T17:25:00.000Z",
         "5VkjKrKCgZPffHiZoeDsKW/": "2026-05-27T17:25:00.000Z",
         "https://blog.cloudflare.com/iran-internet-partially-restored-may-2026/": "2026-05-27T17:25:00.000Z",
-        "https://blog.cloudflare.com/iran-internet-partially-restored-may-2026": "2026-05-27T17:25:00.000Z"
+        "https://blog.cloudflare.com/iran-internet-partially-restored-may-2026": "2026-05-27T17:25:00.000Z",
+        "5kM0Nfgzw6beOD5mSzIqw4": "2026-05-28T13:00:00.000Z",
+        "5kM0Nfgzw6beOD5mSzIqw4/": "2026-05-28T13:00:00.000Z",
+        "https://blog.cloudflare.com/our-unified-data-platform/": "2026-05-28T13:00:00.000Z",
+        "https://blog.cloudflare.com/our-unified-data-platform": "2026-05-28T13:00:00.000Z"
       }
     }
   }
