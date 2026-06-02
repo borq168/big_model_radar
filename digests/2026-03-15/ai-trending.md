@@ -71,4 +71,4 @@
 - **RAG 一体化平台（如 `openrag`）**：降低 RAG 落地门槛，标志检索增强技术进入“开箱即用”阶段。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

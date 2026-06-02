@@ -103,4 +103,4 @@ Anthropic 正式启动《Science Blog》，定位为 AI 与科学交叉领域的
 **报告说明**：本报告基于 2026-03-24 抓取的官方内容生成，聚焦增量信息。OpenAI 部分因文本不可提取，依赖标题与分类进行合理推断，实际内容以官网为准。建议持续关注两家公司在 agentic workflows、科学发现、全球合规三大方向的后续动作。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -74,4 +74,4 @@
 - **claude-mem**：解决代理“失忆”痛点，通过上下文压缩与注入实现长期对话一致性，实用性强。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

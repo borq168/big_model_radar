@@ -166,4 +166,4 @@ OpenAI 今日爆发式发布 **38 篇新内容**，形成三大核心战役：**
 *建议下次追踪重点：Anthropic 是否回应青少年安全议题；Codex App 的实际用户数据；GPT-5.3 的第三方基准评测结果*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

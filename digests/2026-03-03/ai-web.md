@@ -192,4 +192,4 @@
 *数据来源：官方官网增量抓取 | 分析框架：战略信号学 + 技术传播学*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

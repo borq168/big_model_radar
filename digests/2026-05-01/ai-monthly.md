@@ -339,4 +339,4 @@ Windows/WSL 兼容性从“边缘问题”升级为“核心痛点”。Gemini C
 *本报告基于 2026-W15 至 W18 共 4 份周报综合分析，数据截至 2026-04-27。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

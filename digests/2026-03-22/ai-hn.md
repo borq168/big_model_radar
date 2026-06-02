@@ -90,4 +90,4 @@
    *理由*：真实反映创意行业从业者在 AI 冲击下的生存困境，为政策与技术伦理讨论提供鲜活案例。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

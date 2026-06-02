@@ -94,4 +94,4 @@
    理由：不仅是技术奇观，更隐喻了 AI 的“去中心化”可能性，适合思考计算民主化与历史技术路径的呼应。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

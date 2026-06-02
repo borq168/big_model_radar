@@ -86,7 +86,7 @@ const STATE_FILE = path.join("digests", "web-state.json");
 // ---------------------------------------------------------------------------
 
 const WEB_HEADERS = {
-  "User-Agent": "Mozilla/5.0 (compatible; big-model-radar/1.0; +https://github.com/search?q=big_model_radar)",
+  "User-Agent": "Mozilla/5.0 (compatible; radar-forge/1.0; +https://github.com/borq168/radar-forge)",
   Accept: "text/html,application/xml,text/xml,application/rss+xml,application/atom+xml,*/*",
   "Accept-Language": "en-US,en;q=0.9",
 };

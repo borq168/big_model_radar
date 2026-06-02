@@ -85,4 +85,4 @@
    *理由：展示极端量化技术的实际落地可能，为边缘设备与低资源场景下的 AI 部署提供新思路。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

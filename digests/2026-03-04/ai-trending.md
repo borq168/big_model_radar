@@ -174,4 +174,4 @@ Claude Code 生态的繁荣（claude-scientific-skills、superset、零配置工
 *数据来源：GitHub Trending & Search API*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

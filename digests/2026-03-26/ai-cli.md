@@ -786,4 +786,4 @@ Qwen Code 社区在昨日迎来多个关键更新：发布 v0.14.0-preview.0 预
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

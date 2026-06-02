@@ -205,4 +205,4 @@ OpenAI 今日 68 篇内容中，[Why We No Longer Evaluate Swe Bench Verified](h
 **报告编制说明**：本报告基于 2026-02-27 官网抓取数据，OpenAI 大量历史档案内容因文本提取失败未展开分析，建议后续补充完整内容抓取以深化技术细节解读。Anthropic 声明的截断文本建议人工核实原文。
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

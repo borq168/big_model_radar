@@ -136,7 +136,7 @@ async function fetchGitHubTrending(): Promise<{ repos: TrendingRepo[]; success: 
   try {
     const resp = await fetchWithRetry("https://github.com/trending?since=daily&spoken_language_code=", {
       headers: {
-        "User-Agent": "Mozilla/5.0 (compatible; big-model-radar/1.0)",
+        "User-Agent": "Mozilla/5.0 (compatible; radar-forge/1.0; +https://github.com/borq168/radar-forge)",
         Accept: "text/html",
       },
     });

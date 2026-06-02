@@ -294,4 +294,4 @@ OpenAI 今日同时宣布了 **Chief Compliance Officer** 和 **Chief Economist*
 *本报告基于 2026-05-02 的增量抓取数据生成。OpenAI 部分条目的正文内容因技术限制未能提取，建议后续对高优先级条目进行手动验证。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

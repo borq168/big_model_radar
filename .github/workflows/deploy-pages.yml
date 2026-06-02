@@ -13,9 +13,9 @@ on:
       - '.github/workflows/deploy-pages.yml'
   workflow_run:
     workflows:
-      - Daily Big Model Radar
-      - Weekly Big Model Radar
-      - Monthly Big Model Radar
+      - Daily Radar Forge
+      - Weekly Radar Forge
+      - Monthly Radar Forge
     types:
       - completed
     branches:

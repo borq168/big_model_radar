@@ -136,4 +136,4 @@ Windows 平台一等公民化 —— 7/7 工具存在严重问题
 **下次更新**：2026-03-16（W12）
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

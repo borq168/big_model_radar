@@ -85,4 +85,4 @@
    *理由：触及 AI 生态权力结构的核心问题，引发对去中心化训练可行性与资源协作模式的深层思考。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

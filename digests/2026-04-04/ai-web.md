@@ -97,4 +97,4 @@
 *报告基于2026年4月3日官网增量内容分析，持续追踪AI战略演进。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -71,4 +71,4 @@
 - **LightRAG**：学术界与工业界结合的典范，以简洁架构实现高效 RAG，值得 RAG 开发者重点关注。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -1,4 +1,4 @@
-name: Daily Big Model Radar
+name: Daily Radar Forge
 
 on:
   schedule:

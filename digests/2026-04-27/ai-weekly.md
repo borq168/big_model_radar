@@ -145,4 +145,4 @@ Rust 重构进入冲刺阶段，Goal Mode 功能完成度达 100%。Alpha 版本
 *数据来源：各工具 GitHub 公开数据 | 生成时间：2026-04-27 UTC*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

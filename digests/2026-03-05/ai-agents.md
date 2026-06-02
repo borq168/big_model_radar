@@ -1710,4 +1710,4 @@ EasyClaw 项目今日处于**低活跃维护期**。过去24小时内无新增 I
 </details>
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

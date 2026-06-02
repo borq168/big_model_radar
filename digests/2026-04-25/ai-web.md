@@ -341,4 +341,4 @@ OpenAI发布**GPT OSS**，可能是面向开源社区的模型权重或工具链
 **免责声明：** 本报告基于公开可获取信息进行分析，OpenAI部分内容因页面限制未能提取全文，战略解读存在信息不完整风险。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

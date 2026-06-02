@@ -179,4 +179,4 @@ Anthropic 案例可能触发：
 *下次更新建议：关注 Anthropic 是否收到正式政府通知、OpenAI Codex 产品发布时间表、以及国会对此事件的反应*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

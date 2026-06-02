@@ -128,4 +128,4 @@ OpenClaw 今日保持**极高活跃度**：24小时内处理 500 条 Issues（33
 *日报生成时间：2026-02-25 | 数据来源：GitHub API 与社区活动流*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

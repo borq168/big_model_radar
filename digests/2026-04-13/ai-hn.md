@@ -85,4 +85,4 @@
    > 跳出常规效率叙事，提供理解 AI 社会影响的全新视角，适合政策研究者与长期战略思考者阅读。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

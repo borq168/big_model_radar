@@ -69,4 +69,4 @@
 - **PageIndex**：探索无向量 RAG，挑战传统检索范式，技术前瞻性高。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

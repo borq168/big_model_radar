@@ -121,4 +121,4 @@ Anthropic 自2026年初以来持续强化其在 AI 安全与宪法式训练（Co
 **报告说明**：本报告基于 OpenAI 与 Anthropic 官网公开内容分析，所有链接均来自官方域名（openai.com / anthropic.com），内容真实可溯源。建议持续关注 Codex 生态演进与 Anthropic 下一轮模型发布节奏。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

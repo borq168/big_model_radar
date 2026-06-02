@@ -67,4 +67,4 @@
 - **RAG + Agent 融合架构（`ragflow`、`dify`）**：代表下一代知识型 AI 应用方向，适合构建企业级智能客服、研发助手等系统。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

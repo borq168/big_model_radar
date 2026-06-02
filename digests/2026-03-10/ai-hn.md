@@ -76,4 +76,4 @@
    → 少有的 AI 内容版权实践复盘，为生成式 AI 的伦理与商业模式提供可操作参考。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

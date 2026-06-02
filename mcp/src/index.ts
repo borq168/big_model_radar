@@ -1,7 +1,7 @@
 /**
- * Big Model Radar MCP Server — Cloudflare Worker
+ * Radar Forge MCP Server — Cloudflare Worker
  *
- * Exposes Big Model Radar digest data as MCP tools so any MCP-compatible
+ * Exposes Radar Forge digest data as MCP tools so any MCP-compatible
  * client (Claude Desktop, OpenClaw, etc.) can query the latest AI ecosystem reports.
  *
  * Tools:
@@ -11,7 +11,7 @@
  *   search        — keyword search across recent reports
  */
 
-const PAGES_URL = "https://borq168.github.io/big_model_radar";
+const PAGES_URL = "https://borq168.github.io/radar-forge";
 
 interface ManifestDate {
   date: string;
@@ -167,7 +167,7 @@ const TOOLS = [
   {
     name: "list_reports",
     description:
-      "List available digest dates and report types from Big Model Radar. Returns the last N days of available reports.",
+      "List available digest dates and report types from Radar Forge. Returns the last N days of available reports.",
     inputSchema: {
       type: "object",
       properties: {
@@ -177,7 +177,7 @@ const TOOLS = [
   },
   {
     name: "get_report",
-    description: "Fetch the full content of a specific Big Model Radar digest report.",
+    description: "Fetch the full content of a specific Radar Forge digest report.",
     inputSchema: {
       type: "object",
       properties: {
@@ -205,7 +205,7 @@ const TOOLS = [
   },
   {
     name: "search",
-    description: "Search for a keyword or phrase across recent Big Model Radar digest reports.",
+    description: "Search for a keyword or phrase across recent Radar Forge digest reports.",
     inputSchema: {
       type: "object",
       properties: {
@@ -237,7 +237,7 @@ async function handleMcp(body: unknown): Promise<unknown> {
           result: {
             protocolVersion: "2024-11-05",
             capabilities: { tools: {} },
-            serverInfo: { name: "big-model-radar", version: "1.0.0" },
+            serverInfo: { name: "radar-forge", version: "1.0.0" },
           },
         };
 
@@ -303,7 +303,7 @@ export default {
     // Health check
     if (request.method === "GET" && url.pathname === "/") {
       return Response.json(
-        { name: "big-model-radar-mcp", status: "ok", tools: TOOLS.map((t) => t.name) },
+        { name: "radar-forge-mcp", status: "ok", tools: TOOLS.map((t) => t.name) },
         { headers: CORS },
       );
     }

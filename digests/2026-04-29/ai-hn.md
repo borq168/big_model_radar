@@ -127,4 +127,4 @@
 *本报告基于 2026-04-29 Hacker News AI 相关热门帖子生成，涵盖 30 条内容，覆盖模型研究、工具工程、产业动态和社区观点四大维度。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

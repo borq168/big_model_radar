@@ -68,4 +68,4 @@
 - **大厂开源 Agent 框架**：deer-flow 的发布可能带动更多企业将内部 Agent 基础设施开源，值得跟踪其生态演进。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

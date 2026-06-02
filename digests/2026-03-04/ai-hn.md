@@ -83,4 +83,4 @@
 | **Ask HN: What Online LLM / Chat do you use?** [HN](https://news.ycombinator.com/item?id=47227046) | 看似平常的实用讨论，实则是观察用户迁移模式的窗口。结合今日军事合作背景，评论区中"因伦理立场切换工具"的陈述提供了罕见的**消费端伦理偏好数据**，对研究 AI 治理的市场机制有参考价值。 |
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

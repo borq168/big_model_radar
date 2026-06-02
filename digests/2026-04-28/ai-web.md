@@ -665,4 +665,4 @@ Anthropic: "让AI安全落地" —— 深度优先，差异化战略
 **免责声明**：本报告基于公开信息整理，战略解读代表分析观点，不构成投资或业务建议。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

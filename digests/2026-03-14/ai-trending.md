@@ -73,4 +73,4 @@
 - **LiteRT**：Google 官方端侧推理框架迭代，预示 TensorFlow Lite 生态将向 GenAI 深度优化转型。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

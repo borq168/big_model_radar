@@ -75,4 +75,4 @@
 - **AI 财务自动化**（[TaxHacker](https://github.com/vas3k/TaxHacker)）：验证 LLM 在专业垂直场景的实用价值，预示更多行业应用将涌现。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

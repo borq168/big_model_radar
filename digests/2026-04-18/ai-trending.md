@@ -71,4 +71,4 @@
 - **Claude Code 生态扩展项目**：反映“Agent as a Platform”趋势，开发者可基于此快速搭建垂直领域智能体。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

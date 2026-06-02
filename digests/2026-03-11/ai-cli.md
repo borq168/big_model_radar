@@ -767,4 +767,4 @@ Qwen Code 发布 v0.12.1-nightly 和 v0.12.0-preview.2，重点修复了 MCP 权
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

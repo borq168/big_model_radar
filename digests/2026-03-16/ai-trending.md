@@ -67,4 +67,4 @@
 - **离线 AI 应用（如 Project N.O.M.A.D）**：边缘场景下自主 AI 系统需求显现，值得提前布局
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

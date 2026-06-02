@@ -85,4 +85,4 @@ OpenAI正加速构建“**AI操作系统**”：以ChatGPT为入口，Sora为内
 *分析周期：2026-03-28 至 2026-03-29*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

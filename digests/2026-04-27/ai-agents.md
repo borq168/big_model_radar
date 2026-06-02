@@ -2165,4 +2165,4 @@ NemoClaw 今日保持高度活跃，共处理 **8 条 Issues**（4 开 4 闭）�
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

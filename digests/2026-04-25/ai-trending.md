@@ -207,4 +207,4 @@
 *报告生成时间：2026-04-25 | 数据覆盖：GitHub Trending 实时 + AI 主题 7 日活跃*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -100,4 +100,4 @@
 > 🔍 **重点关注**：3 月底是否有 Anthropic 或 OpenAI 关于 MCP 标准化的联合声明。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

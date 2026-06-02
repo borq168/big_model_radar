@@ -109,4 +109,4 @@
    理由：Anthropic 在科学推理方向的新探索，虽分数不高但研究路径独特，值得研究者关注其方法论创新。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -348,4 +348,4 @@ OpenAI 发布企业 AI 采用现状报告，基于大规模企业用户调研，
 **分析师备注：部分 OpenAI 页面内容未能成功提取，建议后续对 Sora 2 系列、GPT-5.5 System Card、Codex 开源文档进行专项抓取以补充分析。**
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

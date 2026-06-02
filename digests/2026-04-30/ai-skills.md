@@ -93,4 +93,4 @@ The most commented issues reveal critical problems: skills disappearing with err
 The most active PRs by engagement show document-typography (#514) and ODT (#486) skills with no comments but addressing universal problems. Testing-patterns (#723) and ServiceNow platform (#568) skills have no comments but cover broad domains. The skill-quality-analyzer and skill-security-analyzer (#83) add meta capabilities. The SAP-RPT-1-OSS predictor (#181) enables predictive analytics. Sensory skill (#806) focuses on macOS
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

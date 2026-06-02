@@ -107,4 +107,4 @@
 - **🔥 airi（AI 伴侣人格化）** — 实时语音 + 游戏交互 + 多平台支持，代表消费级 AI 应用向"数字生命"体验的探索方向
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

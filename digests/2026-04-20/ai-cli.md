@@ -682,4 +682,4 @@ OpenCode 社区今日聚焦于核心稳定性修复与用户体验优化，v1.14
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

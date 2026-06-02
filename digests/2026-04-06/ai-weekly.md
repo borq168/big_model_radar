@@ -98,4 +98,4 @@
 **分析师备注**：本周生态呈现“高迭代、强反馈、低信任”特征，厂商需在 **工程可靠性** 与 **生态开放性** 之间找到新平衡点。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

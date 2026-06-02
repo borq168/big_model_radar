@@ -81,4 +81,4 @@
    *基于大规模调研的冷静反思，有助于破除 AI 神话，推动更务实的部署策略。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

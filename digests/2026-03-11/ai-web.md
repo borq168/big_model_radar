@@ -111,4 +111,4 @@
 *报告基于 Anthropic 与 OpenAI 官网 2026-03-10 至 2026-03-11 增量内容分析，所有链接均来自官方域名。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

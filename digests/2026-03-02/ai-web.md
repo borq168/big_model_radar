@@ -181,4 +181,4 @@ OpenAI 在 3 月 1-2 日集中释放 9 篇内容，形成罕见的"内容轰炸"
 *报告完。建议后续追踪：Anthropic 是否在一周内回应"Stateful Runtime"概念；OpenAI 是否发布 Harness API 文档或开发者预览；以及 Microsoft 合作声明中的财务条款细节。*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

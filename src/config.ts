@@ -1,5 +1,5 @@
 /**
- * Loads and validates Big Model Radar configuration from config.yml.
+ * Loads and validates Radar Forge configuration from config.yml.
  * The runtime only accepts the `tracks[]` schema.
  * Falls back to built-in defaults only when the config file itself is missing.
  */

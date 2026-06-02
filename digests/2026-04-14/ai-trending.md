@@ -67,4 +67,4 @@
 - **`multica` 托管智能体平台**：探索“AI 队友”协作模式，预示未来软件开发组织形态变革。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

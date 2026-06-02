@@ -85,4 +85,4 @@
    *理由：代表“小模型+智能路由”的新工程范式，为资源受限场景提供高效解决方案，值得技术团队研究。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

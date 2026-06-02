@@ -104,4 +104,4 @@ Anthropic 与澳大利亚政府签署谅解备忘录（MOU），承诺在 AI 安
 **报告说明**：本报告基于 2026-04-02 抓取的官方增量内容生成，聚焦战略信号而非技术细节。所有链接均来自 anthropic.com 与 openai.com 官网，确保信息溯源可信。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

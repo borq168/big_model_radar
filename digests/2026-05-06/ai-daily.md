@@ -73,4 +73,4 @@
 - Cloudflare Agents Week 的一组基础设施发布较集中，后续可观察其文档、示例、SDK 和用户案例是否补齐。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -80,4 +80,4 @@
 - **OpenScreen**：+1838 stars 显示创作者对无订阅、无水印 AI 工具强烈需求，反映“去中心化创作工具”崛起。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

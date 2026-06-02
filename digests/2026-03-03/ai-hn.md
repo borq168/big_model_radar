@@ -93,4 +93,4 @@
 *数据来源：Hacker News API | 分析师：AI Industry Analyst*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

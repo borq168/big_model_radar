@@ -88,4 +88,4 @@
    → 基于真实泄露代码的代理能力分析，为 AI 工程研究与产品设计提供一线数据支撑。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

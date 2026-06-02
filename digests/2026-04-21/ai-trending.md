@@ -71,4 +71,4 @@
 - **一体化 RAG 平台（anything-llm）**：降低企业部署门槛，集成度与隐私保护设计使其在中小团队中极具吸引力。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

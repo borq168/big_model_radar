@@ -101,4 +101,4 @@ Anthropic 发布一项关键研究《Automated Alignment Researchers》，探索
 **结语**：2026年4月中旬，AI双雄的战略轮廓愈发清晰——Anthropic 深耕对齐与治理，为AGI时代铺路；OpenAI 加速产品矩阵扩张，争夺当下市场。开发者需关注前者提供的安全范式，企业用户则应评估后者带来的效率变革与集成成本。两者共同推动AI从“技术奇观”走向“社会基础设施”。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

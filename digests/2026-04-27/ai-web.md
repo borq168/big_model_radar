@@ -219,4 +219,4 @@ Stargate UK与Stargate Norway的宣布，叠加Japan Economic Blueprint，显示
 **免责声明**: 本报告基于公开可获取信息进行分析，结论仅供参考，不构成投资或战略决策依据。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -93,4 +93,4 @@ OpenAI 收购 TBPN 成为今日焦点，引发对 AI 基础设施整合与垄断
    Anthropic 在模型可解释性上的前沿探索，为理解 LLM 内部表征机制提供重要线索，适合研究者细读。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

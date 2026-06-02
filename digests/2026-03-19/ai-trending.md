@@ -75,4 +75,4 @@
 - **企业级 Agent 编排平台成熟**：Activepieces 集成数百 MCP 服务，标志 AI 工作流进入可组合、可运维阶段。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

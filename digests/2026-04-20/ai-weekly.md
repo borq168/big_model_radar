@@ -98,4 +98,4 @@
 **分析师备注**：AI CLI 工具已从“功能竞赛”进入“信任重建”阶段，工程可靠性将成为下一轮洗牌的核心变量。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

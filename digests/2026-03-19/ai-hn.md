@@ -93,4 +93,4 @@
    *系统性重构 AI 组织模式，主张以软件工程工业化方法论驱动 AI 落地，适合技术管理者深度研读。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -357,4 +357,4 @@ Agents SDK 的重大更新和 Codex 编排框架的开源，表明 OpenAI 正在
 **免责声明**：本报告基于公开可获取信息进行分析，战略解读代表分析者观点，可能存在偏差。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

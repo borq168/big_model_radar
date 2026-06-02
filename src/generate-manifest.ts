@@ -151,9 +151,9 @@ const feedXml =
   `<?xml version="1.0" encoding="UTF-8"?>\n` +
   `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n` +
   `  <channel>\n` +
-  `    <title>Big Model Radar</title>\n` +
+  `    <title>Radar Forge</title>\n` +
   `    <link>${SITE_URL}</link>\n` +
-  `    <description>AI 开源生态每日简报 · Daily AI ecosystem digest</description>\n` +
+  `    <description>Agent-powered open-source project radar · AI ecosystem daily digest</description>\n` +
   `    <language>zh-CN</language>\n` +
   `    <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>\n` +
   `    <lastBuildDate>${buildDate}</lastBuildDate>\n` +

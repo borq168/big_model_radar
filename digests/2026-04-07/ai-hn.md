@@ -85,4 +85,4 @@
    > 揭示头部 AI 公司正从算法竞争转向全栈算力掌控，预示未来 AI 基础设施格局将更趋集中化，影响深远。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

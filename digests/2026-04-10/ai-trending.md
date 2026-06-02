@@ -62,4 +62,4 @@
 - **Claude Code 生态插件**（如 claudian、claude-mem）：显示 IDE 级 AI 协作工具正通过插件体系快速扩展能力边界。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

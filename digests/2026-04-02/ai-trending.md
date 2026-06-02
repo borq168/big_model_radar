@@ -67,4 +67,4 @@
 - **MCP 协议普及**：Activepieces、CopilotKit 等项目广泛集成 MCP，预示“模型上下文协议”将成为 Agent 互联事实标准。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

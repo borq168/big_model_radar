@@ -81,4 +81,4 @@
    *理由：极端事件背后是公众对 AI 权力集中的情绪爆发，为技术伦理与社会心理学研究提供现实案例。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

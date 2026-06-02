@@ -75,4 +75,4 @@
 - **qmd**：本地文档搜索 + SOTA 方法追踪，代表“AI 增强个人知识管理”的新范式。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

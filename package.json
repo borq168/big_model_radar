@@ -1,5 +1,5 @@
 {
-  "name": "big-model-radar",
+  "name": "radar-forge",
   "version": "1.0.0",
   "type": "module",
   "packageManager": "pnpm@9.15.9",

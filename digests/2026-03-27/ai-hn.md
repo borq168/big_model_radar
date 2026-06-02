@@ -91,4 +91,4 @@
    理由：由知名安全研究者提出，为解决 LLM 生成代码的安全隐患提供系统性思路，适合关注 AI 安全的研究者与工程师深入研读。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

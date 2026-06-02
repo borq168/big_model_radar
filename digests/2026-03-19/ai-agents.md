@@ -1525,4 +1525,4 @@ CoPaw 项目在2026年3月18日至19日期间保持高度活跃，24小时内处
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

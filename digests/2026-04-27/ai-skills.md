@@ -102,4 +102,4 @@
 *报告生成时间：2026-04-27 | 数据覆盖：50 条 PR + 50 条 Issues*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

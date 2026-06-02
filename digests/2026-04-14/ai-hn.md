@@ -85,4 +85,4 @@
    → 展示 LLM 在文化内容生成中的敏捷创新潜力，启发开发者思考“小场景、高价值”的应用路径。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

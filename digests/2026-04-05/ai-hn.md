@@ -101,4 +101,4 @@
    *揭示 AI 增长背后的基础设施危机，对政策制定者、云服务商与投资者具重要预警意义，需深入理解供应链与能源约束。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -1,4 +1,4 @@
-# Big Model Radar configuration (`tracks[]` schema)
+# Radar Forge configuration (`tracks[]` schema)
 #
 # This is the single runtime configuration entrypoint.
 # Edit this file directly to customize tracked repositories and content sources.

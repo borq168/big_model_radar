@@ -74,4 +74,4 @@
 - **PageIndex（[@VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex)）**：挑战“向量即答案”范式，探索无向量 RAG 路径，值得关注其性能边界。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

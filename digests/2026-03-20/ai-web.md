@@ -131,4 +131,4 @@ OpenAI 在**产品创新速度与生态广度**上遥遥领先，尤其在代理
 > 本报告基于 OpenAI 官网 2026-03-19 增量内容分析，所有链接均来自官方域名 [openai.com](https://openai.com)。建议开发者关注 [OpenAI Developer Portal](https://platform.openai.com) 获取 API 更新，企业用户留意 [OpenAI for Business](https://openai.com/business) 政策调整。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

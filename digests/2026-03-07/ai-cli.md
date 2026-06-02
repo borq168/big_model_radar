@@ -831,4 +831,4 @@ pie title 社区关注方向分布（基于今日 Issues）
 </details>
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

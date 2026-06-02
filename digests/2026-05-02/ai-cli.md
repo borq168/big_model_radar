@@ -1583,4 +1583,4 @@ Compaction 功能异常，删除会话中的所有内容而非压缩。紧急 bu
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

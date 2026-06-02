@@ -79,4 +79,4 @@
 - **ragflow (infiniflow/ragflow)**：融合 RAG + Agent，定位企业知识中枢，反映 RAG 向智能化工作流演进趋势。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

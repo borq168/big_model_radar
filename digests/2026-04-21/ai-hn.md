@@ -85,4 +85,4 @@
    *深入剖析模型“自由”的幻觉，挑战当前关于 AI 自主性的主流叙事，值得研究者深思。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

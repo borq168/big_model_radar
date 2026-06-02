@@ -86,4 +86,4 @@ Anthropic 于 2026 年 3 月 11 日集中发布三大战略级内容：**Claude 
 **报告说明**：本报告基于 2026-03-12 抓取的官网增量内容生成，OpenAI 部分因文本提取限制存在推断成分，建议结合后续官方博客或系统卡进一步验证。所有链接均来自 anthropic.com 与 openai.com 官网。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

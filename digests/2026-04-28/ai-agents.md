@@ -1999,4 +1999,4 @@ LobsterAI 项目在过去 24 小时内保持高度活跃状态，共处理 **38 
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

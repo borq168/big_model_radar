@@ -79,4 +79,4 @@
 *日报基于 Hacker News 公开数据生成，不代表编辑立场*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

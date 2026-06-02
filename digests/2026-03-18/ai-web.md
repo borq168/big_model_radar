@@ -126,4 +126,4 @@ Anthropic 发布关于 AI 对劳动力市场影响的实证研究，提出“观
 > 本报告基于 2026-03-18 抓取的官方内容生成，所有链接均来自 anthropic.com 与 openai.com。建议持续关注 OpenAI 的 DevDay 动态及 Anthropic 的后续劳动力研究系列。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

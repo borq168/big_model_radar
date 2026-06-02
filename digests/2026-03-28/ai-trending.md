@@ -73,4 +73,4 @@
 - **VibeVoice**：微软入局开源语音模型，或将加速语音 AI 在客服、教育等场景的落地。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

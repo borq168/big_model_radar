@@ -71,4 +71,4 @@
 - **Claude Code 插件生态爆发**：Ruflo、mem、ralph-claude-code 等项目密集涌现，开发者应关注 Anthropic 工具链集成机会。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

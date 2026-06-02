@@ -101,4 +101,4 @@ OpenAI 今日动作密集，主导了“AI for Science”、“国防AI”、“
 *报告基于 OpenAI 与 Anthropic 官网公开内容分析，链接均指向原始页面。建议持续监控 research 与 safety 板块的动态更新。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -73,4 +73,4 @@
 - **🏗️ [alibaba/OpenSandbox](https://github.com/alibaba/OpenSandbox)**：统一沙箱平台支持多类型 Agent 运行，是构建企业级 AI 基础设施的关键层。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -179,4 +179,4 @@
 *本报告基于公开官网信息分析，部分推断内容需以官方最终发布为准。*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

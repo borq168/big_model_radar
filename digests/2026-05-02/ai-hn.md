@@ -78,4 +78,4 @@
 *本日报基于 2026-05-02 Hacker News 公开数据整理，仅代表社区公开讨论趋势，不构成投资或技术选型建议。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

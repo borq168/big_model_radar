@@ -97,4 +97,4 @@
 *数据来源：GitHub 公开仓库、Hacker News、社区讨论摘要（2026-W12）*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

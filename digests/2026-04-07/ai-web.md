@@ -121,4 +121,4 @@
 *报告基于 Anthropic 与 OpenAI 官网公开内容分析，链接均指向原始页面。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

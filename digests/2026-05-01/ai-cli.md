@@ -2097,4 +2097,4 @@ Kimi Code CLI 发布 **v1.41.0**，新增插件从 `.zip` URL 直接安装功能
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -69,4 +69,4 @@ Anthropic 官网（anthropic.com）及 claude.com 在 2026-03-23 未发布任何
 *数据来源：openai.com, anthropic.com（截至 2026-03-23 00:00 UTC）*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

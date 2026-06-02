@@ -171,4 +171,4 @@ Anthropic今日官网零更新，与其近期"低调发布"策略一致。对比
 *本报告基于公开官网内容分析，不构成投资建议或法律意见。日期标注"2026-02-26"为抓取系统时间，部分历史文档的实际发布时间见正文标注。*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

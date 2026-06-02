@@ -85,4 +85,4 @@
    *展示如何利用 Apple 硬件特性优化推理性能，为本地 AI 应用提供可复用的工程范式。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

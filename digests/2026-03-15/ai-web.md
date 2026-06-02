@@ -123,4 +123,4 @@ OpenAI 于 2026 年 3 月 14 日集中发布了 **517 篇新内容**，构成一
 > 分析师：AI 深度内容分析团队
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

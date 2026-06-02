@@ -94,4 +94,4 @@
 | 基础设施类 Issue（影响可用性） | 5 |
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

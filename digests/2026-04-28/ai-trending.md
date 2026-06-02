@@ -189,4 +189,4 @@
 *本报告基于 GitHub Trending 实时数据与 AI 主题搜索生成，数据更新时间：2026-04-28*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

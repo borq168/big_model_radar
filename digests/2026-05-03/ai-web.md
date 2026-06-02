@@ -178,4 +178,4 @@ GPT-5.1 ──┬── GPT-5.2 ── GPT-5.4 ── GPT-5.5 (Bio)
 **免责声明：** 本报告基于公开可获取信息进行分析，实际情况请以官方最新公告为准。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

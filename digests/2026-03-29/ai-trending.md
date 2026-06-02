@@ -58,4 +58,4 @@
 - **mem0**：记忆层成为 Agent 架构新标配，预示“有状态 AI”将成为下一代智能体核心特征。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -1447,4 +1447,4 @@ TinyClaw 今日呈现**高活跃度开发态势**，24小时内产生 **8 个 PR
 </details>
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

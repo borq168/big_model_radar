@@ -101,4 +101,4 @@ OpenAI 今日集中发布9篇面向企业用户的指南与资源，主题高度
 *数据来源：anthropic.com, openai.com | 分析时间：2026-04-14*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

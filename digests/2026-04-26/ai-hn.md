@@ -128,4 +128,4 @@
 深度分析 AI 行业面临的公众信任危机，理解行业叙事与用户感知之间的鸿沟，对 AI 产品设计和营销策略有重要参考价值
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

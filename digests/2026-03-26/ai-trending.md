@@ -79,4 +79,4 @@
 - **RuView（WiFi DensePose）**：无摄像头人体姿态估计，代表非视觉感知 AI 的新方向，具强隐私保护潜力。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

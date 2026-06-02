@@ -76,4 +76,4 @@ OpenAI 正以“品牌+基础设施”双轮驱动加速商业化闭环，而 An
 > 分析时间：2026-03-16 UTC+8
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

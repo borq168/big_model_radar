@@ -87,4 +87,4 @@ Anthropic 发布 **Claude Developer Platform 高级工具使用（Advanced Tool 
 **报告说明**：本报告基于 2026-03-17 抓取的官方增量内容生成，聚焦战略信号与技术趋势，适用于 AI 产品经理、技术架构师及投资研究员参考。所有信息源均来自 Anthropic 与 OpenAI 官网公开页面。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

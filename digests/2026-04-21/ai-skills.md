@@ -87,4 +87,4 @@
 | 新兴 Skill | [#514](https://github.com/anthropics/skills/pull/514) · [#806](https://github.com/anthropics/skills/pull/806) · [#723](https://github.com/anthropics/skills/pull/723) |
 
 ---
-*本日报由 [Big Model Radar](https://github.com/owner/repo) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

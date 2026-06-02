@@ -74,4 +74,4 @@
 - **unsloth**：持续优化本地训练效率，使个人设备微调 7B+ 模型成为常态，推动开源模型民主化。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

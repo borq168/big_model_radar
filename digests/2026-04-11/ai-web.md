@@ -113,4 +113,4 @@ OpenAI 则密集发布 15 项新内容，涵盖模型迭代（GPT-5.2、GPT-5.4 
 > 本报告基于 Anthropic 与 OpenAI 官网公开内容分析，所有内容均来自官方渠道。建议开发者关注 Anthropic 的 MCP 生态集成文档，企业用户评估 OpenAI 轻量模型在成本敏感场景的适用性，政策研究者追踪儿童安全与心理健康 AI 的治理演进。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

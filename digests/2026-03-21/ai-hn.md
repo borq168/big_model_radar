@@ -81,4 +81,4 @@
    理由：冷静剖析 AI 与劳动力市场的关系，提出“增强而非替代”的务实观点，适合政策制定者与管理者阅读。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

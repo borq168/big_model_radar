@@ -1,4 +1,4 @@
-name = "big-model-radar-mcp"
+name = "radar-forge-mcp"
 main = "src/index.ts"
 compatibility_date = "2025-11-01"
 

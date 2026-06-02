@@ -291,4 +291,4 @@
 *说明：OpenAI 大量页面内容未能提取，文中部分分析基于标题推断，建议直接访问原文获取完整信息。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -1376,4 +1376,4 @@ LobsterAI 在2026年3月22日继续保持高活跃度，社区贡献与核心开
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

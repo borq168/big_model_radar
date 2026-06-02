@@ -831,7 +831,7 @@ ${report.content}`,
     .join("\n\n---\n\n");
 
   if (lang === "en") {
-    return `You are editing the reader-facing entrypoint for Big Model Radar. The following source reports were generated for ${dateStr}. Create one integrated daily digest that helps readers decide what to open next.
+    return `You are editing the reader-facing entrypoint for Radar Forge. The following source reports were generated for ${dateStr}. Create one integrated daily digest that helps readers decide what to open next.
 
 ${dailyWritingRules(lang)}
 
@@ -856,7 +856,7 @@ Rules:
 - Keep the whole brief compact enough to scan in 3-5 minutes.`;
   }
 
-  return `你是 Big Model Radar 的整合日报编辑。以下是 ${dateStr} 已生成的各份来源报告。请把它们整理成一份读者入口型日报，帮助读者快速判断今天先看什么、去哪里看细节。
+  return `你是 Radar Forge 的整合日报编辑。以下是 ${dateStr} 已生成的各份来源报告。请把它们整理成一份读者入口型日报，帮助读者快速判断今天先看什么、去哪里看细节。
 
 ${dailyWritingRules(lang)}
 

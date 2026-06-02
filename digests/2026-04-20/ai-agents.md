@@ -1277,4 +1277,4 @@ PR 方面：所有9个 PR 仍处于“待合并”状态，无新合并代码，
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -73,4 +73,4 @@
 - **Minimind 小模型训练教程**：推动“轻量模型+高效训练”理念，呼应边缘部署与隐私计算需求，适合资源受限团队参考。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

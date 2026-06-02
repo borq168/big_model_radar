@@ -136,4 +136,4 @@ OpenAI 今日重新发布了大量早期技术博客，包括：
 *报告生成时间：2026-03-13 | 数据来源：anthropic.com / openai.com*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

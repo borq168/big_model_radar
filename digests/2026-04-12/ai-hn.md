@@ -85,4 +85,4 @@
    理由：在 AI 应用成本持续高企背景下，此类高效中间件代表工程优化的前沿方向，适合架构师与 DevOps 深入研究其设计模式。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

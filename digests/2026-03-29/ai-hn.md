@@ -95,4 +95,4 @@
    > 深度解析泄露文档的技术细节与安全隐患，为 AI 安全研究人员提供宝贵的一手资料。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

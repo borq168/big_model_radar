@@ -79,4 +79,4 @@ Anthropic 自2026年初以来发布频率显著放缓，最近一次重大更新
 *数据来源：openai.com, anthropic.com（截至2026-04-13）*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

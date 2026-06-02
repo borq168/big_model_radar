@@ -75,4 +75,4 @@
 - **`LEANN`**：在个人设备上实现高效私有 RAG，契合隐私与成本双重需求，是本地化 AI 的关键突破。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

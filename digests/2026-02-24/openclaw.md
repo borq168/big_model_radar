@@ -138,4 +138,4 @@ OpenClaw 今日展现出**极高的社区活跃度**，24小时内 Issues 更新
 *日报生成时间：2026-02-24 | 数据来源：OpenClaw GitHub 仓库*
 
 ---
-*本日报由 [agents-radar](https://github.com/duanyytop/agents-radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

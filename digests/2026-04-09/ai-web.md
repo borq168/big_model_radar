@@ -112,4 +112,4 @@ Anthropic 发布三篇深度技术内容，聚焦**托管智能体架构设计**
 > 本报告基于 2026-04-09 抓取的官方内容生成，聚焦增量信息。建议持续关注 Anthropic 的 Agent 平台演进与 OpenAI 的 SearchGPT 实际表现，二者或将定义下一代人机协作范式。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

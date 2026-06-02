@@ -1786,4 +1786,4 @@ Pi v0.70.0 正式发布，带来可搜索的认证提供商登录流程，大幅
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

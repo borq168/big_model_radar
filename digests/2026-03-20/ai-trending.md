@@ -69,4 +69,4 @@
 - **记忆层标准化**（如 `mem0`）：长期记忆成为 Agent 核心能力，有望成为类似“数据库”的基础中间件。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

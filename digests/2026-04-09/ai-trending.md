@@ -69,4 +69,4 @@
 - **CUA（Computer-Use Agents）基础设施**：trycua/cua 提供跨平台桌面控制能力，预示 Agent 将突破聊天边界，进入真实操作系统交互时代。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -1735,4 +1735,4 @@ GitHub Copilot CLI 发布 **v1.0.37** 版本，重点增强了基于位置的权
 </details>
 
 ---
-*本日报由 [Big Model Radar](https://github.com/borq168/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

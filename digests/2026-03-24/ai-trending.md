@@ -61,4 +61,4 @@
 - **pentagi**：AI 渗透测试 Agent 的首次完整开源实现，预示 AI 在网络安全攻防中的实战价值提升。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

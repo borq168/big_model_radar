@@ -84,4 +84,4 @@
    此案可能重塑 AI 训练数据合法性标准，建议关注其法律论证与潜在行业影响，尤其对内容密集型 AI 应用开发者至关重要。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

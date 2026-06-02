@@ -105,4 +105,4 @@ OpenAI 则在 2026 年 4 月 23 日迎来“内容爆发日”，单日更新 **
 *报告生成时间：2026-04-23 | 数据来源：anthropic.com / openai.com*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

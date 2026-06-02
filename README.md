@@ -1,8 +1,8 @@
-# Big Model Radar
+# Radar Forge
 
 English | [中文](./README.zh.md)
 
-A GitHub Actions workflow that runs every morning at 08:00 CST. It tracks GitHub activity from AI CLI tools, OpenClaw and its peer projects in the AI agent ecosystem, scrapes official news and research from Anthropic and OpenAI, and monitors the GitHub AI daily hot list — then publishes bilingual (Chinese + English) daily digests as GitHub Issues and committed Markdown files. Weekly and monthly rollup reports are also generated automatically.
+An agent-powered GitHub Actions workflow that acts as a radar for open-source projects and ecosystem signals. The default configuration tracks GitHub activity from AI CLI tools, OpenClaw and its peer projects in the AI agent ecosystem, scrapes official news and research from Anthropic and OpenAI, monitors the GitHub AI daily hot list, and watches Hacker News — then publishes bilingual (Chinese + English) daily digests as GitHub Issues and committed Markdown files. Weekly and monthly rollup reports are also generated automatically.
 
 ## Architecture roadmap
 
@@ -10,21 +10,21 @@ The ongoing V2 architecture plan / status board lives in [`docs/architecture-v2.
 
 ## Web UI
 
-**[https://borq168.github.io/big_model_radar](https://borq168.github.io/big_model_radar)**
+**[https://borq168.github.io/radar-forge](https://borq168.github.io/radar-forge)**
 
 Browse all historical digests in a clean, dark-themed interface — no login required. Reports are rendered from the Markdown files in this repo via GitHub Pages.
 
 ## RSS Feed
 
-**[https://borq168.github.io/big_model_radar/feed.xml](https://borq168.github.io/big_model_radar/feed.xml)**
+**[https://borq168.github.io/radar-forge/feed.xml](https://borq168.github.io/radar-forge/feed.xml)**
 
 Subscribe in any RSS reader (Feedly, Reeder, NewsBlur, etc.) to receive new digests automatically. The feed includes the latest 30 reports across all report types, updated daily alongside `manifest.json`.
 
 ## MCP Server
 
-**`https://big-model-radar-mcp.<your-subdomain>.workers.dev`**
+**`https://radar-forge-mcp.<your-subdomain>.workers.dev`**
 
-A hosted [Model Context Protocol](https://modelcontextprotocol.io) server that exposes Big Model Radar data as tools. Any MCP-compatible client (Claude Desktop, OpenClaw, etc.) can query the latest AI ecosystem reports directly.
+A hosted [Model Context Protocol](https://modelcontextprotocol.io) server that exposes Radar Forge data as tools. Any MCP-compatible client (Claude Desktop, OpenClaw, etc.) can query the latest AI ecosystem reports directly.
 
 **Available tools:**
 
@@ -40,8 +40,8 @@ A hosted [Model Context Protocol](https://modelcontextprotocol.io) server that e
 ```json
 {
   "mcpServers": {
-    "big-model-radar": {
-      "url": "https://big-model-radar-mcp.<your-subdomain>.workers.dev"
+    "radar-forge": {
+      "url": "https://radar-forge-mcp.<your-subdomain>.workers.dev"
     }
   }
 }
@@ -55,7 +55,7 @@ Restart Claude Desktop after saving. You can then ask Claude things like:
 **OpenClaw setup** — run the following command:
 
 ```bash
-openclaw mcp add --transport http big-model-radar https://big-model-radar-mcp.<your-subdomain>.workers.dev
+openclaw mcp add --transport http radar-forge https://radar-forge-mcp.<your-subdomain>.workers.dev
 ```
 
 Or add it manually to `~/.openclaw/openclaw.json`:
@@ -63,9 +63,9 @@ Or add it manually to `~/.openclaw/openclaw.json`:
 ```json
 {
   "mcpServers": {
-    "big-model-radar": {
+    "radar-forge": {
       "type": "http",
-      "url": "https://big-model-radar-mcp.<your-subdomain>.workers.dev"
+      "url": "https://radar-forge-mcp.<your-subdomain>.workers.dev"
     }
   }
 }
@@ -210,7 +210,7 @@ Go to **Settings → Secrets and variables → Actions** and add:
 | `OPENAI_BASE_URL` | optional | API endpoint override. Leave unset for OpenAI, or set a compatible provider URL such as `https://api.openai.com/v1` |
 | `OPENAI_MODEL` | optional | Model name passed to `chat/completions`, e.g. `gpt-4.1-mini` |
 | `REPORT_LANGS` | optional | Report languages, e.g. `zh` or `zh,en` (default: `zh`) |
-| `PAGES_URL` | recommended | Public site base URL, e.g. `https://your-user.github.io/big_model_radar`. Prefer a repository variable for this |
+| `PAGES_URL` | recommended | Public site base URL, e.g. `https://your-user.github.io/radar-forge`. Prefer a repository variable for this |
 | `TELEGRAM_BOT_TOKEN` | optional | Telegram bot token from [@BotFather](https://t.me/BotFather). If set, a message is sent after each digest run |
 | `TELEGRAM_CHAT_ID` | optional | Telegram chat/channel/group ID to send notifications to. Required if you enable Telegram notifications |
 
@@ -231,7 +231,7 @@ Go to **Settings → Secrets and variables → Actions** and add:
 
 Confirm the workflow is enabled in the **Actions** tab.
 
-To test immediately, go to **Actions → Daily Big Model Radar → Run workflow**.
+To test immediately, go to **Actions → Daily Radar Forge → Run workflow**.
 
 > **First run note**: The web content step will fetch up to 50 articles (25 per site) and may take a few extra minutes. Subsequent runs are fast — only new articles are processed.
 
@@ -249,7 +249,7 @@ export OPENAI_BASE_URL=https://api.openai.com/v1
 export OPENAI_API_KEY=sk-xxxxxxxx
 export OPENAI_MODEL=gpt-4.1-mini
 export REPORT_LANGS=zh
-export DIGEST_REPO=your-username/big_model_radar  # optional; omit to only write files
+export DIGEST_REPO=your-username/radar-forge  # optional; omit to only write files
 
 pnpm start
 ```
@@ -407,4 +407,4 @@ To change the schedule, edit the cron expressions in the corresponding workflow 
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=gsscsd/big_model_radar&type=Date)](https://star-history.com/#gsscsd/big_model_radar&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=borq168/radar-forge&type=Date)](https://star-history.com/#borq168/radar-forge&Date)

@@ -85,4 +85,4 @@
    → 创新性地用“无意义语法”测试 LLM 是否真正理解逻辑，对评估方法论有启发价值。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

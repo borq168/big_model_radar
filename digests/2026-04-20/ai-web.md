@@ -85,4 +85,4 @@ OpenAI 于2026年4月19日密集发布7项新内容，聚焦社会影响与AI普
 > 本报告基于公开官网信息分析，不构成投资建议。持续追踪请关注 [OpenAI Blog](https://openai.com/blog) 与 [Anthropic Research](https://www.anthropic.com/research)。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

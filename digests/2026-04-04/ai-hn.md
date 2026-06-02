@@ -99,4 +99,4 @@
    *不仅是政策变更，更是平台与开发者权力关系的重构，评论区充满一线开发者的真实困境与应对策略。*
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

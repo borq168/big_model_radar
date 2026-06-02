@@ -71,4 +71,4 @@
 - **OpenAI Agents Python**：官方背书的多智能体框架，可能成为未来 Agent 开发的事实标准，建议早期适配。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

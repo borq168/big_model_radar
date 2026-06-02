@@ -89,4 +89,4 @@ Anthropic 成为今日焦点，其新模型 **Claude Mythos** 及配套安全项
    → 独立技术观察者的冷静分析，指出项目潜力与局限，帮助开发者避免陷入企业宣传叙事。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

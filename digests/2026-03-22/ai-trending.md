@@ -68,4 +68,4 @@
 - **Computer-Use Agent 基础设施**：cua 项目提供跨平台沙箱与评估标准，是 GUI 自动化走向实用的关键一步。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

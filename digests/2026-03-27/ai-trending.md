@@ -73,4 +73,4 @@
 - **Chandra OCR**：在复杂文档解析领域表现突出，是 RAG 系统中提升输入质量的关键组件。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

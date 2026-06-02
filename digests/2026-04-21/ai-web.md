@@ -115,4 +115,4 @@ Anthropic 与 Amazon 达成十年期超百亿美元合作，锁定高达 **5 吉
 **报告说明**：本报告基于 2026-04-20 至 2026-04-21 期间 Anthropic 与 OpenAI 官网增量内容生成，聚焦战略动向与技术信号。所有链接均来自官方域名，确保信息溯源可靠性。建议开发者关注 Anthropic 的 Bedrock 集成更新，企业用户则应评估 OpenAI 新增安全功能对内部合规流程的影响。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

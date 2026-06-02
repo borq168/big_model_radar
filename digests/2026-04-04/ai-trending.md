@@ -67,4 +67,4 @@
 - **Dify 与 Onyx 双平台竞争**：两者均瞄准“企业级 AI 应用平台”，其功能演进将定义未来低代码 AI 工作流标准。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

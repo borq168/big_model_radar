@@ -103,4 +103,4 @@
 **报告说明**：本报告基于 2026-03-20 官网增量内容分析，所有链接均来自官方源站。建议持续关注两家公司在 **agent 安全框架**、**轻量模型性能基准** 及 **企业协作功能互操作性** 方面的后续动作。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

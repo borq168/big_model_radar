@@ -121,4 +121,4 @@ Anthropic 在“AI for Science”和“eval integrity”等前沿议题上明显
 > 本报告基于 2026-03-19 抓取的 Anthropic 与 OpenAI 官网增量内容生成，所有链接均来自官方域名（anthropic.com / openai.com），确保信息溯源可靠。建议持续关注两家公司在“代理评估”、“科学自动化”及“轻量模型”三大方向的后续动作。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

@@ -64,4 +64,4 @@ AI 编程工具的实际效能引发两极评价：
    Simon Willison 提出“代理式工程模式”，系统阐述如何以 AI 提升代码质量而非仅加速编写，对工程团队有直接指导价值。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*

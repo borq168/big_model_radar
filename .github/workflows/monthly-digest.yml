@@ -1,4 +1,4 @@
-name: Monthly Big Model Radar
+name: Monthly Radar Forge
 
 on:
   schedule:

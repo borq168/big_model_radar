@@ -71,4 +71,4 @@
 - **`mem0` 与 `cua`**：分别解决 Agent 的“记忆”与“执行环境”问题，二者结合可构建更完整的本地 Agent 基础设施。
 
 ---
-*本日报由 [Big Model Radar](https://github.com/gsscsd/big_model_radar) 自动生成。*
+*本日报由 [Radar Forge](https://github.com/borq168/radar-forge) 自动生成。*
