@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-06-01T02:47:53.889Z",
+      "lastChecked": "2026-06-02T02:45:31.057Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -486,11 +486,13 @@
         "https://www.anthropic.com/news/claude-opus-4-8": "2026-05-28T00:00:00.000Z",
         "https://www.anthropic.com/news/claude-opus-4-8/": "2026-05-28T00:00:00.000Z",
         "https://www.anthropic.com/news/milan-office-opening": "2026-05-27T00:00:00.000Z",
-        "https://www.anthropic.com/news/milan-office-opening/": "2026-05-27T00:00:00.000Z"
+        "https://www.anthropic.com/news/milan-office-opening/": "2026-05-27T00:00:00.000Z",
+        "https://www.anthropic.com/news/confidential-draft-s1-sec": "2026-06-01T00:00:00.000Z",
+        "https://www.anthropic.com/news/confidential-draft-s1-sec/": "2026-06-01T00:00:00.000Z"
       }
     },
     "openai": {
-      "lastChecked": "2026-06-01T02:47:54.005Z",
+      "lastChecked": "2026-06-02T02:45:31.186Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -2504,11 +2506,17 @@
         "https://openai.com/index/trustworthy-third-party-evaluations-foundations": "2026-05-29T00:00:00.000Z",
         "https://openai.com/index/trustworthy-third-party-evaluations-foundations/": "2026-05-29T00:00:00.000Z",
         "https://openai.com/index/mufg": "2026-05-28T00:00:00.000Z",
-        "https://openai.com/index/mufg/": "2026-05-28T00:00:00.000Z"
+        "https://openai.com/index/mufg/": "2026-05-28T00:00:00.000Z",
+        "https://openai.com/index/our-views-on-ai-policy-and-political-advocacy": "2026-06-01T17:00:00.000Z",
+        "https://openai.com/index/our-views-on-ai-policy-and-political-advocacy/": "2026-06-01T17:00:00.000Z",
+        "https://openai.com/index/stargate-michigan-data-center": "2026-06-01T12:00:00.000Z",
+        "https://openai.com/index/stargate-michigan-data-center/": "2026-06-01T12:00:00.000Z",
+        "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws": "2026-06-01T10:00:00.000Z",
+        "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws/": "2026-06-01T10:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-06-01T02:47:53.950Z",
+      "lastChecked": "2026-06-02T02:45:31.135Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
@@ -2631,7 +2639,11 @@
         "5kM0Nfgzw6beOD5mSzIqw4": "2026-05-28T13:00:00.000Z",
         "5kM0Nfgzw6beOD5mSzIqw4/": "2026-05-28T13:00:00.000Z",
         "https://blog.cloudflare.com/our-unified-data-platform/": "2026-05-28T13:00:00.000Z",
-        "https://blog.cloudflare.com/our-unified-data-platform": "2026-05-28T13:00:00.000Z"
+        "https://blog.cloudflare.com/our-unified-data-platform": "2026-05-28T13:00:00.000Z",
+        "14SzggagKjSpBr8SZxHcYL": "2026-06-01T16:53:39.000Z",
+        "14SzggagKjSpBr8SZxHcYL/": "2026-06-01T16:53:39.000Z",
+        "https://blog.cloudflare.com/optimizing-core-unit-boot-time/": "2026-06-01T16:53:39.000Z",
+        "https://blog.cloudflare.com/optimizing-core-unit-boot-time": "2026-06-01T16:53:39.000Z"
       }
     }
   }
