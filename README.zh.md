@@ -6,7 +6,7 @@
 
 ## 架构迭代状态
 
-V2 架构的持续迭代计划、已完成事项和未完成事项统一维护在 [`docs/architecture-v2.md`](./docs/architecture-v2.md)。后续架构调整以这份文档为准。
+V2 架构主体已经落地，当前剩下的是少量收尾项。已完成事项、剩余事项和具体状态统一维护在 [`docs/architecture-v2.md`](./docs/architecture-v2.md)；后续架构调整以这份文档为准。
 
 ## Web UI
 

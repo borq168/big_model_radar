@@ -6,7 +6,7 @@ An agent-powered GitHub Actions workflow that acts as a radar for open-source pr
 
 ## Architecture roadmap
 
-The ongoing V2 architecture plan / status board lives in [`docs/architecture-v2.md`](./docs/architecture-v2.md). This is the canonical place for what has been decided, what has been done, and what is still pending.
+The V2 architecture has largely landed. The remaining tail-work and status board live in [`docs/architecture-v2.md`](./docs/architecture-v2.md). This is the canonical place for what has shipped already and what is still being cleaned up.
 
 ## Web UI
 
