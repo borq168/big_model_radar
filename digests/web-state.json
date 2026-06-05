@@ -1,7 +1,7 @@
 {
   "sources": {
     "anthropic": {
-      "lastChecked": "2026-06-04T02:49:05.274Z",
+      "lastChecked": "2026-06-05T02:36:08.464Z",
       "seenUrls": {
         "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-24T00:00:00.000Z",
         "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -498,7 +498,7 @@
       }
     },
     "openai": {
-      "lastChecked": "2026-06-04T02:49:05.500Z",
+      "lastChecked": "2026-06-05T02:36:08.841Z",
       "seenUrls": {
         "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-02-24T13:40:00.000Z",
         "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2024-12-09T00:00:00.000Z",
@@ -2534,11 +2534,17 @@
         "https://openai.com/index/frontier-safety-blueprint": "2026-06-03T10:00:00.000Z",
         "https://openai.com/index/frontier-safety-blueprint/": "2026-06-03T10:00:00.000Z",
         "https://openai.com/index/public-policy-agenda": "2026-06-03T10:00:00.000Z",
-        "https://openai.com/index/public-policy-agenda/": "2026-06-03T10:00:00.000Z"
+        "https://openai.com/index/public-policy-agenda/": "2026-06-03T10:00:00.000Z",
+        "https://openai.com/index/endava-frontiers": "2026-06-04T12:00:00.000Z",
+        "https://openai.com/index/endava-frontiers/": "2026-06-04T12:00:00.000Z",
+        "https://openai.com/index/chatgpt-memory-dreaming": "2026-06-04T09:00:00.000Z",
+        "https://openai.com/index/chatgpt-memory-dreaming/": "2026-06-04T09:00:00.000Z",
+        "https://openai.com/index/biodefense-in-the-intelligence-age": "2026-06-04T00:00:00.000Z",
+        "https://openai.com/index/biodefense-in-the-intelligence-age/": "2026-06-04T00:00:00.000Z"
       }
     },
     "cloudflare-blog": {
-      "lastChecked": "2026-06-04T02:49:05.442Z",
+      "lastChecked": "2026-06-05T02:36:08.554Z",
       "seenUrls": {
         "6EfXlJEx6OJ21w9NlnS59D": "2026-05-01T21:07:30.000Z",
         "https://blog.cloudflare.com/code-orange-fail-small-complete/": "2026-05-01T21:07:30.000Z",
@@ -2669,7 +2675,11 @@
         "3DirDATXQ2gKSrJoeWtdTd": "2026-06-03T17:00:00.000Z",
         "3DirDATXQ2gKSrJoeWtdTd/": "2026-06-03T17:00:00.000Z",
         "https://blog.cloudflare.com/enforce-first-as-bgp/": "2026-06-03T17:00:00.000Z",
-        "https://blog.cloudflare.com/enforce-first-as-bgp": "2026-06-03T17:00:00.000Z"
+        "https://blog.cloudflare.com/enforce-first-as-bgp": "2026-06-03T17:00:00.000Z",
+        "1laDOhrU8AchkELZi1AHGz": "2026-06-04T12:59:00.000Z",
+        "1laDOhrU8AchkELZi1AHGz/": "2026-06-04T12:59:00.000Z",
+        "https://blog.cloudflare.com/voidzero-joins-cloudflare/": "2026-06-04T12:59:00.000Z",
+        "https://blog.cloudflare.com/voidzero-joins-cloudflare": "2026-06-04T12:59:00.000Z"
       }
     }
   }
